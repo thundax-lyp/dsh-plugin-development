@@ -1,0 +1,178 @@
+name: PR Verify
+
+on:
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+concurrency:
+    group: pr-verify-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    governance:
+        name: Governance
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Set up pnpm
+              uses: pnpm/action-setup@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
+
+            - name: Install formatting dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: Verify Prettier formatting
+              run: pnpm format:check
+
+            - name: Verify repository structure
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  required_files=(
+                    AGENTS.md
+                    README.md
+                    README_zh-CN.md
+                    LICENSE
+                    .github/pull_request_template.md
+                    .agents/skills/dsh-plugin-development/SKILL.md
+                    .agents/skills/dsh-plugin-development/agents/openai.yaml
+                    .agents/skills/dsh-plugin-development/references/plugin-development-routing.md
+                    .agents/skills/dsh-plugin-development/references/source-map.md
+                    .agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md
+                  )
+
+                  for required_file in "${required_files[@]}"; do
+                    test -s "$required_file"
+                  done
+
+            - name: Verify pull request diff formatting
+              if: github.event_name == 'pull_request'
+              shell: bash
+              env:
+                  BASE_SHA: ${{ github.event.pull_request.base.sha }}
+                  HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+              run: git diff --check "$BASE_SHA...$HEAD_SHA"
+
+            - name: Verify repository formatting
+              if: github.event_name == 'workflow_dispatch'
+              run: git diff --check HEAD^
+
+    skill-integrity:
+        name: Skill Integrity
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
+
+            - name: Verify Skill frontmatter
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  skill=.agents/skills/dsh-plugin-development/SKILL.md
+                  test "$(sed -n '1p' "$skill")" = '---'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: dsh-plugin-development$'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
+
+            - name: Verify Skill metadata
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  metadata=.agents/skills/dsh-plugin-development/agents/openai.yaml
+                  grep -Eq '^interface:$' "$metadata"
+                  grep -Eq '^    display_name: .+' "$metadata"
+                  grep -Eq '^    short_description: .+' "$metadata"
+                  grep -Eq '^    default_prompt: .+' "$metadata"
+
+            - name: Verify pinned baseline consistency
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  files=(
+                    README.md
+                    README_zh-CN.md
+                    AGENTS.md
+                    .agents/skills/dsh-plugin-development/SKILL.md
+                    .agents/skills/dsh-plugin-development/references/source-map.md
+                    .agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md
+                  )
+
+                  for file in "${files[@]}"; do
+                    grep -Fq 'dsh-v0.1.1-rc.2' "$file"
+                  done
+
+            - name: Verify offline Skill boundary
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  if grep -RInE 'https?://' .agents/skills/dsh-plugin-development; then
+                    echo 'HTTP(S) URL found inside the offline Skill directory.' >&2
+                    exit 1
+                  fi
+
+            - name: Verify local Markdown targets
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  ruby -e '
+                    files = Dir.glob("**/*.md", File::FNM_DOTMATCH)
+                      .reject { |file| file.start_with?(".git/", "node_modules/") }
+                    missing = []
+
+                    files.each do |file|
+                      File.read(file).scan(/\[[^\]]*\]\(([^)]+)\)/).flatten.each do |url|
+                        next if url.match?(/\A(?:https?:|mailto:|#)/)
+                        path = url.split("#", 2).first
+                        next if path.empty?
+
+                        target = File.expand_path(path, File.dirname(file))
+                        missing << "#{file}: #{url}" unless File.exist?(target)
+                      end
+                    end
+
+                    abort("Missing local Markdown targets:\n#{missing.join("\n")}") unless missing.empty?
+                    puts "Verified #{files.size} Markdown files."
+                  '
+
+            - name: Parse JSON code fences
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  ruby -rjson -e '
+                    count = 0
+                    files = Dir.glob("**/*.md", File::FNM_DOTMATCH)
+                      .reject { |file| file.start_with?(".git/", "node_modules/") }
+
+                    files.each do |file|
+                      File.read(file).scan(/^```json\s*$\n(.*?)^```\s*$/m).each_with_index do |match, index|
+                        count += 1
+                        begin
+                          JSON.parse(match.first)
+                        rescue JSON::ParserError => error
+                          abort("#{file} JSON fence #{index + 1}: #{error.message}")
+                        end
+                      end
+                    end
+
+                    puts "Parsed #{count} JSON code fences."
+                  '

@@ -1,0 +1,12 @@
+{
+    "name": "dsh-plugin-development-skill",
+    "private": true,
+    "packageManager": "pnpm@11.24.0",
+    "scripts": {
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "prettier": "3.9.6"
+    }
+}
