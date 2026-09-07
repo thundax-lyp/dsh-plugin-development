@@ -115,7 +115,7 @@ jobs:
                   )
 
                   for file in "${files[@]}"; do
-                    grep -Fq 'dsh-v0.1.1-rc.2' "$file"
+                    grep -Fq 'dsh-v0.1.2-rc.1' "$file"
                   done
 
             - name: Verify offline Skill boundary
@@ -128,51 +128,13 @@ jobs:
                     exit 1
                   fi
 
-            - name: Verify local Markdown targets
-              shell: bash
-              run: |
-                  set -euo pipefail
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
 
-                  ruby -e '
-                    files = Dir.glob("**/*.md", File::FNM_DOTMATCH)
-                      .reject { |file| file.start_with?(".git/", "node_modules/") }
-                    missing = []
+            - name: Verify Markdown links, anchors and JSON fences
+              run: python3 scripts/validate_skill.py
 
-                    files.each do |file|
-                      File.read(file).scan(/\[[^\]]*\]\(([^)]+)\)/).flatten.each do |url|
-                        next if url.match?(/\A(?:https?:|mailto:|#)/)
-                        path = url.split("#", 2).first
-                        next if path.empty?
-
-                        target = File.expand_path(path, File.dirname(file))
-                        missing << "#{file}: #{url}" unless File.exist?(target)
-                      end
-                    end
-
-                    abort("Missing local Markdown targets:\n#{missing.join("\n")}") unless missing.empty?
-                    puts "Verified #{files.size} Markdown files."
-                  '
-
-            - name: Parse JSON code fences
-              shell: bash
-              run: |
-                  set -euo pipefail
-
-                  ruby -rjson -e '
-                    count = 0
-                    files = Dir.glob("**/*.md", File::FNM_DOTMATCH)
-                      .reject { |file| file.start_with?(".git/", "node_modules/") }
-
-                    files.each do |file|
-                      File.read(file).scan(/^```json\s*$\n(.*?)^```\s*$/m).each_with_index do |match, index|
-                        count += 1
-                        begin
-                          JSON.parse(match.first)
-                        rescue JSON::ParserError => error
-                          abort("#{file} JSON fence #{index + 1}: #{error.message}")
-                        end
-                      end
-                    end
-
-                    puts "Parsed #{count} JSON code fences."
-                  '
+            - name: Test validation failure cases
+              run: python3 -B -m unittest discover -s scripts -p 'test_*.py'
