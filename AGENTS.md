@@ -1,332 +1,141 @@
-# Repository Guidelines
+# 仓库协作规范
 
-## Project purpose
+## 定位与边界
 
-This repository contains the `dsh-plugin-development` Agent Skill. It is an
-offline development guide for implementing or modifying DeepSeek Harness (DSH)
-Cordis packages and plugins. It is not a runnable DSH plugin and does not
-contain the DSH source tree.
+本仓库维护 `dsh-plugin-development` Agent Skill：面向 DeepSeek Harness（DSH）Cordis 包和插件的离线开发指南。唯一固定基线为 **`dsh-v0.1.2-rc.1`**；只有用户明确要求升级时才能改变，不混用其他 tag 或持续变化分支的事实与 API。
 
-The Skill has one pinned target baseline: `dsh-v0.1.2-rc.1`. Do not silently
-apply facts or APIs from another tag or a moving branch.
+仓库只容纳 Skill、参考文档及其维护设施。不添加 DSH runtime、示例产品、生成的能力目录或无关插件实现；不将示例、快照或实验包当作已发布默认组件。有源文件和生成器的产物必须通过所属生成流程更新。
 
-## Repository layout
+## 文件职责
 
-- `README.md` is the public project overview.
-- `.agents/skills/dsh-plugin-development/SKILL.md` is the Skill entry point.
-- `.agents/skills/dsh-plugin-development/agents/openai.yaml` contains display
-  metadata and the default prompt.
-- `.agents/skills/dsh-plugin-development/references/` contains the offline,
-  topic-specific development references.
-- `references/plugin-development-routing.md` routes development tasks to the
-  minimum relevant reference set.
-- `references/source-map.md` records the pinned DSH repository evidence used to
-  maintain the references.
-- `references/testing-docs-maintenance.md` defines validation and release
-  maintenance requirements.
+| 文件或目录                                                                                     | 职责                                             |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| `README.md`、`README_zh-CN.md`                                                                 | 对外说明项目用途、使用方式与边界                 |
+| `.agents/skills/dsh-plugin-development/SKILL.md`                                               | 适用场景、基线、路由流程、跨主题不变量和完成边界 |
+| `.agents/skills/dsh-plugin-development/agents/openai.yaml`                                     | 展示元数据、默认提示词和调用策略                 |
+| `.agents/skills/dsh-plugin-development/references/`                                            | 自包含的主题参考文档、示例及验证矩阵             |
+| [开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)     | 按任务选择最小相关参考集，不复制正文             |
+| [源码映射](.agents/skills/dsh-plugin-development/references/source-map.md)                     | 维护与审计使用的固定版本证据索引                 |
+| [测试与文档维护](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md) | 详细验证命令、生成流程及发布检查                 |
+| [PR 模板](.github/pull_request_template.md)                                                    | PR 交付说明与验证证据格式                        |
 
-## Scope of changes
+## 工作流程
 
-Keep this repository focused on the Skill and its offline references.
+1. **确认现状。** 检查 `git status` 和相关差异，区分当前任务、用户已有变更与暂存内容。保留无关或归属不明确的改动。
+2. **定位事实。** 普通插件开发使用路由和主题参考；维护 Skill 时从 source-map 定位精确基线中的实现及证据，不借用其他分支的同名文件。
+3. **修改事实所属文件。** 同步受影响的入口、元数据、路由和中英文概览；没有事实变化的文件不为形式一致而改写。
+4. **验证并交付。** 按下方矩阵运行检查，审阅完整任务差异，报告结果与剩余限制。默认保留工作区变更，不暂存或提交。
 
-- Do not add a DSH runtime, example product, generated catalog, or unrelated
-  plugin implementation to this repository.
-- Do not promote examples or experimental DSH packages to default product
-  components.
-- Do not change the pinned baseline unless the task explicitly requests a
-  baseline upgrade.
-- Do not infer permission to call external services, modify credentials, push,
-  publish, or release.
+## 内容与证据
 
-## Editing rules
+### 事实裁决
 
-### Skill entry point
+冲突按以下优先级处理：**公开类型与运行时代码 → 可执行仓库门禁 → 行为测试 → 所属包 README → 其他叙述文档**。
 
-Keep `SKILL.md` concise. It should define:
+明确区分目标版本已实现的行为、仓库强制规则、基于现有原语推导的建议和外部协议要求。不将设计建议写成产品事实。文件、符号或测试路径存在，只能作为定位线索，不能代替语义核查或实际验证结果。
 
-- when the Skill applies and when it does not;
-- the pinned DSH baseline;
-- the routing procedure;
-- cross-cutting implementation invariants;
-- completion and authorization boundaries.
+### 文档组织
 
-Move detailed explanations, code skeletons, and validation matrices into the
-appropriate reference rather than expanding `SKILL.md` indefinitely.
+- 每项事实只有一个权威归属，其他位置通过相对链接引用；标题和锚点保持稳定。
+- 每份 reference 对其路由主题自包含，不依赖无关文档才能理解；路由保持索引职责。
+- `SKILL.md` 保持简洁，详细解释、代码骨架和验证矩阵放入对应 reference。
+- 公开文档描述当前行为；保持概览、Skill 入口、元数据、路由与参考内容一致，不将编辑历史写入产品说明。
 
-### References
+### 代码示例
 
-Each reference must be self-contained for the topic selected by the router.
-Avoid requiring an Agent to read unrelated references to understand a selected
-one.
+示例必须匹配固定 tag 的公开类型、包导出和运行时行为，不虚构 API。使用完整、最小的骨架，并满足：
 
-- Give each fact one authoritative home; link to it instead of duplicating it.
-- Keep the router as an index, not a second copy of the reference content.
-- Use relative links and stable Markdown headings.
-- Distinguish clearly between:
-    - behavior implemented in `dsh-v0.1.2-rc.1`;
-    - rules enforced by the DSH repository;
-    - guidance derived from existing primitives;
-    - behavior required only by an external protocol.
-- Do not turn a design recommendation into a claim that the product already
-  implements it.
-- Do not treat an example or snapshot as proof of a published default.
+- 每个注册和异步资源都明确所有权、失败、取消与清理路径。
+- 模型可见事实能从 Session 日志重建。
+- 模型工具只有一份规范 JSON 结果，渲染保持纯函数。
 
-### Code examples
+## 验证与报告
 
-Code examples must match the public types and runtime behavior of the pinned
-tag. Prefer complete, minimal skeletons that expose ownership, failure,
-cancellation, and cleanup behavior.
+按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或分发变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。具体命令与发布流程以[测试与文档维护](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)为准。
 
-- Preserve DSH package export conventions.
-- Show lifecycle ownership for every registration and asynchronous resource.
-- Keep model-visible facts reconstructable from the Session log.
-- Use one canonical JSON result for model tools and keep rendering pure.
-- Do not invent APIs that are absent from the pinned tag.
+| 变更面                | 必需检查                                                                                              |
+| --------------------- | ----------------------------------------------------------------------------------------------------- |
+| 任意文档或治理变更    | 格式、本地 Markdown 链接及锚点、行尾空白、`git diff --check`、任务差异范围                            |
+| 任意 Skill 变更       | 上述检查，加 frontmatter/元数据合法且一致、基线一致、全部 JSON 代码块可解析、Skill 目录无 HTTP(S) URL |
+| TypeScript 示例变化   | 对照固定版本声明编译；Host/Client 编译面分开验证                                                      |
+| source-map 变化       | 在精确基线 checkout 核查每条路径及专题归属                                                            |
+| 基线升级或 Skill 发布 | 完整发布验证，含示例编译、源码映射和必要的生成声明/构建前置                                           |
 
-### Public documentation
+CI 保持两个独立、可见的 job：`Governance` 检查必需文件与格式；`Skill Integrity` 检查 Skill 元数据、基线、离线边界、Markdown 目标和 JSON 代码块。不能将两者隐藏在一个不透明的聚合脚本中。当前 CI **不覆盖** TypeScript 示例编译或独立 DSH checkout 的 source-map 路径检查。
 
-Keep `README.md`, `SKILL.md`, metadata, routing entries, and references aligned.
-Update public documentation only when its owned facts change. Describe current
-behavior rather than editing history.
+只报告实际运行并观察到的结果。缺少 checkout、声明或命令时，记录未运行/失败/受阻的检查、原因与影响。报告分别说明设计就绪、行为实现和验证完成情况；自动检查通过不证明全部生命周期、权限、恢复或用户可见行为正确。PR 中未覆盖的检查放入 `Not Covered`。
 
-## Evidence policy
+## 基线升级
 
-When maintaining technical claims, resolve conflicts in this order:
+升级要求刷新整个参考库的证据，不能只替换版本字符串：
 
-1. Public types and runtime code.
-2. Executable repository gates.
-3. Behavioral tests.
-4. The owning package README.
-5. Other narrative documentation.
+1. 在独立 checkout 精确检出目标 tag，记录 tag 与 commit，避免混淆代码和文档分支。
+2. 从旧 source-map 逐路径核对公开类型、实现、测试、manifest、导出与门禁，记录删除、迁移和契约变化。
+3. 比较新旧 DOCS，并检查目标版本未发生 diff 的章节；将文档变化回查新代码，补查旧参考库可能一直遗漏的能力。
+4. 合并源码与文档两条核查结果，更新新增、删除或重命名扩展点的参考文档、路由和证据；明确不可用 API、实验限制与不纳入项的理由。
+5. 同步基线相关的公开文档、元数据和治理配置，运行完整发布验证。
 
-Use `references/source-map.md` to locate evidence only when maintaining the
-Skill or auditing its basis. Normal DSH plugin-development tasks should use the
-router and selected topic references instead.
+包、符号和文档清单用于防漏，不能仅凭清单覆盖率宣称能力契约完整；不得将多个基线混入同一参考集。
 
-Do not claim that a command passed unless its output was actually observed.
-Keep design readiness, implemented behavior, and completed validation separate
-in reports.
+## 授权与 Git 安全
 
-## Validation
+- 修改、检查、审查或验证不构成提交授权。用户明确要求提交后才暂存并提交当前任务文件；暂存、提交、推送、创建 PR 和合并 PR 的授权不互相替代。
+- 不推定已获准调用外部服务或修改凭证。Reset、rebase、amend、squash、其他历史重写、推送、创建 PR、发布和合并均须用户明确要求对应操作。
+- 重写已推送或共享的历史前，必须明确确认目标与风险；获准强制推送时使用 lease 保护。
+- 不用破坏性命令丢弃提交、工作区变更或未跟踪文件。不混入无关格式化、重构、临时数据、凭证、本地绝对路径或用户拥有的改动。
+- GitHub connector 与 `gh` 可能使用不同凭证；渠道失败不直接代表操作不可行，更换渠道也不扩大授权。回复、解决讨论、reaction、删除和关闭等写操作仍需对应授权。
+- 使用 `gh` 前核实仓库、目标 PR/讨论/评论及 `gh auth status`。每次 GitHub 写入后回读验证最终状态，不能用命令退出成功代替回读。
 
-Choose checks according to the changed surface. Documentation-only changes do
-not require unrelated DSH runtime suites, but they still require structural
-validation.
+## 提交规范
 
-For every Skill change, check at minimum:
+### 提交边界
 
-1. Skill frontmatter and metadata remain valid and consistent.
-2. Every local Markdown link and heading anchor resolves.
-3. JSON code fences parse successfully.
-4. TypeScript code fences compile against the pinned declarations when code
-   examples changed.
-5. Every path listed in `references/source-map.md` resolves in an exact
-   `dsh-v0.1.2-rc.1` checkout when evidence mappings changed.
-6. The Skill directory contains no HTTP(S) URL.
-7. Files contain no unintended trailing whitespace.
-8. The final diff contains only task-related changes.
+一个提交表达一个能用一句话概括的工程判断、能力变更、证据锁定、配置组合或文档规则。同一判断必需的源码、测试、契约、配置和文档一起提交；独立判断、独立风险或应独立回退的变更分开。
 
-Follow the complete maintenance procedure in
-`.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md`.
-If a required DSH checkout, generated declaration, or repository command is not
-available, report that validation as not run instead of treating it as passed.
+不拆出无法独立理解或验证的中间提交，也不为减少数量而机械 squash。文件数量只用于辅助判断内聚性，不决定拆分或合并。
 
-## Baseline upgrades
+### 标题与项目
 
-A baseline upgrade is a repository-wide evidence refresh, not a version-string
-replacement. When explicitly requested:
-
-1. Check out the exact new DSH tag.
-2. Revisit every path in `references/source-map.md`.
-3. Reconcile examples with public types, runtime code, tests, manifests, and
-   executable gates.
-4. Update routing and references for added, removed, or renamed extension
-   points.
-5. Run the full Skill publication validation described above.
-6. Document unavailable or changed APIs explicitly; never blend multiple DSH
-   baselines into one reference set.
-
-## Commit rules
-
-### Authorization
-
-- Leave completed changes in the working tree by default. Stage and commit only
-  when the user explicitly asks for a commit.
-- Staging, committing, pushing, creating a PR, and merging a PR are separate
-  operations. Authorization for one does not authorize another.
-- A request to modify, inspect, review, or validate does not authorize a
-  commit.
-- When a commit is requested, include only files owned by the current task.
-  Preserve unrelated or ambiguously owned working-tree and index changes.
-
-### Commit boundary
-
-- One commit should express one engineering decision, small capability change,
-  evidence lock, configuration assembly, or documentation rule that can be
-  summarized in one sentence.
-- Keep the source, tests, public contract, configuration, and documentation
-  required by the same decision in the same commit.
-- Split independent decisions, independent risks, or changes that should be
-  independently reversible.
-- Do not mechanically squash merely to reduce the commit count.
-- Do not split a decision into intermediate commits that cannot be understood
-  or validated on their own.
-- File count is a cohesion signal, not a mechanical split or merge rule.
-- Do not mix unrelated formatting, refactoring, temporary files, credentials,
-  local absolute paths, or user-owned changes into a commit.
-
-### Commit message
-
-Use this format:
+提交信息和 PR 标题统一使用：
 
 ```text
-Type(<project>[/<module>]): <中文工程判断>
+Type(<project>[/<module>]): <中文工程判断或阶段性交付结论>
 ```
 
-Allowed `Type` values include `Feat`, `Fix`, `Docs`, `Test`, `Refactor`, and
-`CI`. The summary must state the resulting engineering decision or capability;
-avoid vague wording such as “调整”, “修改”, or “优化”.
+`Type` 可使用 `Feat`、`Fix`、`Docs`、`Test`、`Refactor`、`CI`。摘要说明最终工程判断或能力，避免“调整”“修改”“优化”等含糊表述。可选 module 表示项目内的稳定领域，不能代替 project；不使用未注册项目名或临时别名。
 
-Project Registry:
+| 项目    | 范围                                     | 边界                                        |
+| ------- | ---------------------------------------- | ------------------------------------------- |
+| `repo`  | 根目录治理、公开文档、CI、共享配置       | 不用于 Skill 内部内容                       |
+| `skill` | `.agents/skills/dsh-plugin-development/` | 入口、元数据、路由、参考、示例及 Skill 验证 |
 
-| Project | Scope                                                                 | Boundary                                                                         |
-| ------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `repo`  | Root governance, public docs, CI, and shared repository configuration | Do not use for the internal content of one Skill                                 |
-| `skill` | `.agents/skills/dsh-plugin-development/`                              | Skill entry point, metadata, routing, references, examples, and Skill validation |
-
-The optional module identifies a stable area within the selected project; it
-does not replace the project. Do not invent temporary project names or use
-unregistered aliases.
-
-When a decision truly cannot be split across registered projects, use:
+确实无法按项目拆分的同一判断使用以下格式；可独立理解、验证和回退的变更不使用 `cross-project`：
 
 ```text
 Type(cross-project): <中文工程判断>
 
 Projects: <project-a>, <project-b>
-Decision: <why the projects must change atomically>
-Verification: <evidence covering each project and their shared contract>
+Decision: <这些项目必须原子变更的原因>
+Verification: <覆盖各项目及其共享契约的证据>
 ```
 
-Do not use `cross-project` when the changes can be understood, validated, and
-reverted independently.
+### 提交前检查
 
-### Before committing
+确认授权及文件归属，阅读**完整暂存差异**，检查敏感信息、临时文件和无关内容；确认文档已按行为、API、架构、运维或流程变化同步，验证证据有效。运行 `git diff --cached --check`，确保暂存区恰好对应本次提交边界。
 
-1. Inspect `git status` and distinguish current-task files from pre-existing
-   user changes.
-2. Read the complete staged diff and check for credentials, temporary data,
-   absolute paths, and unrelated changes.
-3. Run the narrowest validation set appropriate to the change risk.
-4. Report unrun, failed, or blocked checks accurately; never present them as
-   passed.
-5. Check whether behavior, API, architecture, operations, or workflow changes
-   require synchronized documentation.
-6. Run `git diff --cached --check` and confirm the staged diff is the intended
-   commit boundary.
+## PR 与合并
 
-### History safety
+开发变更通过 `branch -> PR -> review -> merge` 进入 `main`，不直接推送开发中的内容。分支使用简短稳定的英文名，如 `docs/clarify-maintenance`。每个 PR 围绕一个可审查、可验证的目标，可包含多个内聚的提交；跨项目或技术领域时说明不能拆分的原因、跨边界影响并扩大验证。Draft 同样必须说明范围、风险与验证。
 
-- Do not amend, rebase, squash, or otherwise rewrite existing commits unless
-  the user explicitly requests that exact history operation.
-- Do not rewrite history already pushed or shared with collaborators without
-  explicit confirmation of the target and risk.
-- If an explicitly authorized published-history update requires a force push,
-  use lease protection; never use an unprotected force push.
-- Do not use destructive commands to discard commits, working-tree changes, or
-  untracked files.
+使用 [PR 模板](.github/pull_request_template.md)，说明交付结果而非只列文件，完整填写：
 
-## Pull request rules
+- `Closure`、`Scope`：完成结果、纳入与排除的工作。
+- `Verification Evidence`、`Not Covered`：实际命令和结果，未覆盖检查及原因、影响。
+- `Cross-boundary Impact`：API、生命周期、权限、数据、配置和分发影响。
+- `Documentation And Task Closure`、`Risks`：文档同步、剩余工作、残余风险与运行依赖。
 
-### Delivery boundary
+不适用项填写 `N/A` 并说明原因，不留空或假称通过。不包含凭证、本地绝对路径、临时文件、未发布草稿、个人机器信息或 Agent 内部执行叙述。
 
-- Development changes enter `main` through `branch -> PR -> review -> merge`.
-  Do not push in-progress development directly to `main`.
-- Organize each branch and PR around one reviewable, verifiable delivery goal.
-- A PR may contain one or more compliant commits, but together they must form a
-  coherent delivery boundary.
-- Draft status does not justify omitting scope, risk, or validation details.
-- If a PR must span multiple projects or technical domains, explain why it
-  cannot be split, identify the cross-boundary impact, and expand validation.
+审查从 merge base 开始的完整 PR 差异，评估需求、契约、所有权、失败路径和验证。每个问题说明具体触发条件、可观察影响与修正方向，不将猜测或纯风格偏好当缺陷。请求合并前解决可执行反馈，重跑受影响检查。
 
-Use short, stable English branch names such as
-`docs/clarify-maintenance` or `feat/add-provider-reference`.
-
-### PR title and description
-
-Use the same title structure as commit messages:
-
-```text
-Type(<project>[/<module>]): <阶段性交付结论>
-```
-
-The PR description must explain the delivered result, not merely list changed
-files. It must cover:
-
-- `Closure`: the completed and reviewable outcome;
-- `Scope`: included work and explicit exclusions;
-- `Verification Evidence`: commands actually run and their observed results;
-- `Not Covered`: checks not automated, not run, blocked, or intentionally
-  excluded, with reasons and impact;
-- `Cross-boundary Impact`: effects on APIs, lifecycle, permissions, data,
-  configuration, or distribution;
-- `Documentation And Task Closure`: documentation and remaining task status;
-- `Risks`: residual risks, runtime dependencies, and follow-up concerns.
-
-Use the repository PR template when one exists. Fill non-applicable fields with
-`N/A` and a reason rather than leaving them blank or marking them as passed.
-Do not include credentials, local absolute paths, temporary files, unpublished
-drafts, personal machine details, or an Agent's internal execution narrative.
-
-### Verification evidence
-
-- The repository PR workflow exposes two checks: `Governance` verifies required
-  repository files and diff formatting; `Skill Integrity` verifies Skill
-  frontmatter, metadata, pinned-baseline consistency, the offline boundary,
-  local Markdown targets, and JSON code fences.
-- Keep these checks visible as separate jobs. Do not hide all validation behind
-  one opaque aggregate script.
-- Record only checks that were actually run and observed.
-- Prefer the narrowest checks matching the diff; expand for public contracts,
-  shared infrastructure, lifecycle behavior, or distribution changes.
-- Automated green checks are evidence, not proof that lifecycle, permissions,
-  recovery behavior, and user-visible behavior are correct.
-- Put blocked or unavailable checks in `Not Covered` with their likely impact.
-- Before requesting merge, resolve executable review feedback and rerun checks
-  affected by the fix.
-
-The current CI does not compile TypeScript code fences or validate every source
-map path against a separate exact DSH checkout. Report those checks under `Not
-Covered` unless they were run through the full publication procedure described
-in `references/testing-docs-maintenance.md`.
-
-### GitHub tooling and authorization
-
-- A GitHub connector and local `gh` CLI may have different credentials and
-  permissions. A connector failure does not by itself prove the requested
-  GitHub operation is impossible.
-- Changing the access channel does not expand user authorization. Push, reply,
-  resolve, reaction, deletion, close, and merge remain separately authorized
-  writes.
-- Before using `gh`, verify the repository and target PR, thread, or comment,
-  and confirm that `gh auth status` has access to the repository.
-- After every GitHub write, read the target resource back and verify its final
-  state. A successful command exit is not a substitute for readback.
-
-### Review and merge
-
-- Review the complete PR diff from its merge base and assess requirements,
-  contracts, lifecycle ownership, failure paths, and validation evidence.
-- A finding must state its concrete trigger, observable impact, and correction
-  direction; do not report unsupported speculation or pure style preference as
-  a defect.
-- Default to a normal merge commit so small, meaningful branch commits remain
-  visible. Squash only when the user explicitly requests it.
-- Never merge a PR automatically. Merge only when the user explicitly asks for
-  that operation.
-
-## Side effects
-
-- Do not reset, rebase, push, open a PR, publish, release, or merge unless the
-  user explicitly requests the corresponding operation.
-- Do not edit generated files when a source and generator own the output.
+**只有用户明确要求时才合并 PR。** 默认使用普通 merge commit 保留有意义的分支提交；用户明确要求 squash 时才采用该方式。
