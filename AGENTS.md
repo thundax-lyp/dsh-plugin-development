@@ -7,7 +7,7 @@ offline development guide for implementing or modifying DeepSeek Harness (DSH)
 Cordis packages and plugins. It is not a runnable DSH plugin and does not
 contain the DSH source tree.
 
-The Skill has one pinned target baseline: `dsh-v0.1.1-rc.2`. Do not silently
+The Skill has one pinned target baseline: `dsh-v0.1.2-rc.1`. Do not silently
 apply facts or APIs from another tag or a moving branch.
 
 ## Repository layout
@@ -63,7 +63,7 @@ one.
 - Keep the router as an index, not a second copy of the reference content.
 - Use relative links and stable Markdown headings.
 - Distinguish clearly between:
-    - behavior implemented in `dsh-v0.1.1-rc.2`;
+    - behavior implemented in `dsh-v0.1.2-rc.1`;
     - rules enforced by the DSH repository;
     - guidance derived from existing primitives;
     - behavior required only by an external protocol.
@@ -121,7 +121,7 @@ For every Skill change, check at minimum:
 4. TypeScript code fences compile against the pinned declarations when code
    examples changed.
 5. Every path listed in `references/source-map.md` resolves in an exact
-   `dsh-v0.1.1-rc.2` checkout when evidence mappings changed.
+   `dsh-v0.1.2-rc.1` checkout when evidence mappings changed.
 6. The Skill directory contains no HTTP(S) URL.
 7. Files contain no unintended trailing whitespace.
 8. The final diff contains only task-related changes.

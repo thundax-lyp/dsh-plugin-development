@@ -4,7 +4,10 @@
     "packageManager": "pnpm@11.24.0",
     "scripts": {
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "verify:skill": "python3 scripts/validate_skill.py",
+        "verify:examples": "node scripts/check_examples.cjs",
+        "test:validation": "python3 -B -m unittest discover -s scripts -p \"test_*.py\""
     },
     "devDependencies": {
         "prettier": "3.9.6"

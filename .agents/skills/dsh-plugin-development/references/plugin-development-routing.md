@@ -1,65 +1,91 @@
 # 插件开发路由
 
-本索引指向离线的 rc.2 reference 库。目标仓库说明可以收紧本地实现要求，但不要把 rc.2 之后才出现的 API 引入本 skill 的基线。
+本索引用于 `dsh-v0.1.2-rc.1` 的离线参考库。按任务结果选择入口，不按文件名顺序通读；后面的表是检索索引，不是必读清单。事实优先级：公开类型与实现 → 可执行门禁 → 行为测试 → 所属包 README → 其他文档。
 
-事实冲突时按以下顺序裁决：公开类型与运行时代码、执行中的 repository gate、行为测试、所属包 README、其他叙述文档。
+## 阅读流程
 
-## 基线
+1. **确认基线与目标。** 检查目标版本、目标仓库贡献规则及现有实现。确定要改变的可观察行为及其所属包；不把后续版本 API 套进当前基线。
+2. **选主路径。** 在下表选与当前结果最直接相关的一行，按“先读”进入。复合任务可选多行，合并重复前置；不要预先加载整组文档。
+3. **先契约，后骨架。** 阅读文档开头的适用范围与导航，再读相关完整章节，包括同一契约的失败、取消、权限、持久化、恢复与清理。跨章节的这些约束不能因为按需阅读而跳过。
+4. **条件补读。** 只在实现确实触及第三列或横切条件时继续。链接是定位线索，不自动构成新的必读依赖；已读且未变的内容不用重复加载。
+5. **转入实现与验证。** 能确定 owner、公开接口、失败/资源边界和验证方式后停止扩展阅读，检查目标实现并动手；发现具体缺口再回查对应章节。验证清单应在设计时选好，完成后执行。
 
-- 先读[架构与插件形式](cordis-lifecycle.md#架构与插件形式)和[生命周期与 effect](cordis-lifecycle.md#生命周期与-effect)。
-- 再定位目标包的局部规则、README、配置和最接近的现有实现。
+首次编写或改变 Cordis 插件注册时，先读[架构与插件形式](cordis-lifecycle.md#架构与插件形式)和[生命周期与 effect](cordis-lifecycle.md#生命周期与-effect)。仅改现有文案、配置值或纯转换逻辑时，不要求重读整套生命周期资料。
 
 ## 选择主路径
 
-先按用户要求产生的可观察结果选择一条或多条功能入口。只加载命中行涉及的 reference，并完整读取这些文件；表中链接用于定位当前任务最相关的章节。
+### 工具、模型与执行能力
 
-| 变更                                          | 何时选择                                                                                | 阅读的离线章节                                                                                                                                                                                                                                               | 在目标仓库中检查                                                                           |
-| --------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| 模型工具                                      | 模型需要主动调用一个具有 JSON 输入和规范 JSON 结果的操作                                | [工具职责](tools.md#工具职责)；[完整定义骨架](tools.md#完整定义骨架)；[策略与观察](tools.md#策略与观察)；[展示意图](tools.md#展示意图)                                                                                                                       | 同类 tool、render intent、策略监听器和组合 fixture                                         |
-| Service、Provider 或能力接缝                  | 多个插件需要通过稳定 API 消费可替换实现，而不是调用具体包                               | [三角色接缝](capability-seams-providers.md#三角色接缝)；[设计工作表](capability-seams-providers.md#设计工作表)；[Provider 边界](capability-seams-providers.md#provider-边界)                                                                                 | Definition、所有 Provider 与现有 Consumer                                                  |
-| LLM Adapter                                   | 需要把 provider-neutral 模型请求转换为 vendor 请求和流式增量                            | [Adapter 职责](llm-provider-adapters.md#adapter-职责)；[完整 Adapter 入口](llm-provider-adapters.md#完整-adapter-入口)；[凭证与配置](llm-provider-adapters.md#凭证与配置)                                                                                    | Provider replay、凭证解析、catalog 和 transport 测试                                       |
-| Agent 生命周期或输入                          | 需要创建或恢复 live Agent，或 queue、steer、inject、interrupt 其输入                    | [Agent 生命周期](agent-subagent-workflow.md#agent-生命周期)；[Agent 输入选择](session-durable-context.md#agent-输入选择)                                                                                                                                     | Agent 所有者、driver、Session event 与取消路径                                             |
-| Subagent Provider、控制、TeamTask 或 workflow | 需要委派 child Agent、跨 activation 继续工作、协调 task DAG，或隔离执行 workflow script | [Subagent 接缝](agent-subagent-workflow.md#subagent-接缝)；[Provider 实现清单](agent-subagent-workflow.md#provider-实现清单)；[Workflow 接缝](agent-subagent-workflow.md#workflow-接缝)；[实验性 Agent Teams](agent-subagent-workflow.md#实验性-agent-teams) | Definition/Provider/Consumer 包及真实组合控制路径                                          |
-| Prompt、context 或 skill 贡献                 | 新 instruction、动态运行时事实或 skill catalog/body 需要进入模型请求                    | [Prompt section、runtime context 与 skill](session-durable-context.md#prompt-sectionruntime-context-与-skill)；[Agent 输入选择](session-durable-context.md#agent-输入选择)                                                                                   | scoped 注册与模型可见内容的持久日志路径                                                    |
-| Human command                                 | 用户需要直接运行不交给模型解释的 `/command`                                             | [机制选择](human-interaction.md#机制选择)；[Human command](human-interaction.md#human-command)                                                                                                                                                               | command definition、scope shadow、attachments、无 turn 的 event pairing、取消与 UI adapter |
-| 普通用户提问                                  | tool 或 plugin 必须等待业务选择、表单答案或自由文本后才能继续                           | [机制选择](human-interaction.md#机制选择)；[普通用户提问](human-interaction.md#普通用户提问)                                                                                                                                                                 | live runtime root、UI Provider、结构化答案、取消与 no-provider failure                     |
-| 一次动作审批                                  | 敏感动作需要在当前 open turn 中取得一次 allow/reject 决策                               | [机制选择](human-interaction.md#机制选择)；[动作审批](human-interaction.md#动作审批)                                                                                                                                                                         | policy、answerer waterfall、audit pair、取消与 headless fail-closed                        |
-| Client UI                                     | Browser 需要向已声明 slot 注入 component、store、action 或 locale                       | [Client UI 插件](client-ui.md#client-ui-插件)                                                                                                                                                                                                                | slot 所有者、同类 browser contribution、Client aggregate 与 GUI 测试通道                   |
-| Conversation Node                             | Browser 需要把一族持久 Session event 增量组装成 Chat 业务行或 Turn/Step 数据            | [Conversation Node](client-conversation-nodes.md#conversation-node)；[事件族与 identity](client-conversation-nodes.md#事件族与-identity)；[增量组装](client-conversation-nodes.md#增量组装)                                                                  | event producer、Definition、keyed renderer、分页/replay/live 等价与 GUI 测试               |
-| Typert Remote API                             | Browser 或 SDK 需要通过 Gateway 调用 Host Service 的 typed method                       | [Typert Remote API](typert-remote-api.md#typert-remote-api)                                                                                                                                                                                                  | Host Service、生成导出、API remotes assembly 与 Gateway carrier 测试                       |
-| rc.2 Webhook 接收器                           | 外部系统需要主动通过 HTTP 向 Harness 投递不可信请求                                     | [rc.2 Webhook 接收器](web-ingress.md#rc2-webhook-接收器)                                                                                                                                                                                                     | WebServer 组合、认证规则、exact route 与请求测试；rc.2 没有命名 webhook API                |
-| 其他外部协议                                  | 需要翻译 Webhook、LLM 和现有 Service 未覆盖的第三方 wire protocol                       | [Provider 边界](capability-seams-providers.md#provider-边界)；[组合测试步骤](composition-config-credentials.md#组合测试步骤)                                                                                                                                 | 认证、解析、内部接缝与真实 carrier 组合                                                    |
+| 用户要改变的结果                               | 先读                                                                         | 条件补读                                                                                                                                         |
+| ---------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 新增模型工具或改变执行/结果                    | [Tools](tools.md)：职责与策略，再读结果/replay、展示意图和骨架               | 修改已有工具先用[内置工具](builtin-tool-contracts.md)定位工具族；Native/PTC、restriction、timeout 变更读 Tools 对应章节                          |
+| 替换已有工具实现或调整工具选型                 | [内置工具契约](builtin-tool-contracts.md)：能力与 owner，再选对应行为段      | 改 schema/执行/渲染再读[Tools](tools.md)；文件、Jobs、PTY 等按工具表链接补读                                                                     |
+| 定义 Service/Provider 或替换实现               | [能力接缝](capability-seams-providers.md)：三角色、选择与失败、Provider 边界 | 同时阅读该能力对应的下列专题；新包才补[包规范](package-authoring.md)                                                                             |
+| 实现 LLM Adapter、stream/replay 或 retry       | [LLM Adapter](llm-provider-adapters.md)：职责与流式契约，再看骨架和验证      | 内置 route、模型/effort、图像 Files 配置读[模型路由](llm-model-routing.md)                                                                       |
+| 调整已有模型、认证或图像请求                   | [模型路由](llm-model-routing.md)：Service 边界，再选 DeepSeek 或 pi-ai       | 改 Adapter 协议或官方请求字段读[LLM Adapter](llm-provider-adapters.md)；账号 flow 读[授权](credentials-authorization.md)                         |
+| 读写文件、观察版本或限制文件操作               | [文件系统策略](filesystem-policy.md)                                         | 图片和进程路径映射读[运行时资源](runtime-resources.md)；修改 shell confinement 再读[权限与 Sandbox](human-interaction.md#plan权限预设与-sandbox) |
+| 图片附件、Spill、Subprocess、Shell 或 Terminal | [运行时资源](runtime-resources.md)：按开头导航选完整能力段                   | 发布后台 handle 读[Jobs](jobs-background-work.md)；实现异步资源 owner 读[防御性生命周期](defensive-lifecycle.md)                                 |
+| LSP 或 MCP 集成                                | [运行时资源](runtime-resources.md)：LSP 段，或连续读取 MCP 两段              | 修改工具 schema/输出读[Tools](tools.md)；MCP 不桥接的协议能力不能自行假定存在                                                                    |
+| E2B 或远程文件/进程执行                        | [远程执行](remote-execution.md)：三包组合，再读路径和终止边界                | 改公共文件/进程契约时分别补[文件策略](filesystem-policy.md)与[运行时资源](runtime-resources.md)                                                  |
+| 后台任务、输出收集和完成通知                   | [Jobs](jobs-background-work.md)：准入 → Producer 状态 → 输出与通知           | Producer 是子进程/PTY 时补[运行时资源](runtime-resources.md)；工具暴露读[Tools](tools.md)                                                        |
+| 出站 Web 搜索、抓取或网络策略                  | [Web 能力](web-capabilities.md)：选择 → 请求 → 网络边界                      | 新 Provider 读[能力接缝](capability-seams-providers.md)；这不属于入站 Webhook 路径                                                               |
+
+### Agent、上下文与持久状态
+
+| 用户要改变的结果                                                 | 先读                                                                                      | 条件补读                                                                                                                                |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Agent 创建、恢复、输入或调度                                     | [Agent 生命周期](agent-subagent-workflow.md#agent-生命周期)及后续创建/publication 章节    | 改 queue/steer/inject 或输入事实时读[Agent 输入](session-durable-context.md#agent-输入选择)                                             |
+| Subagent、亲子消息、Workflow 或实验 Teams                        | [Agent/Subagent](agent-subagent-workflow.md)：按导航选择对应契约                          | one-shot 先核对 Provider flags；修改 workflow/ralph 工具读[内置工具](builtin-tool-contracts.md#workflow-与-ralph)；普通委派不必读 Teams |
+| Prompt、runtime context 或新的 Session 事实                      | [Session 与持久上下文](session-durable-context.md)：事实源，再选 Prompt、event 或输入章节 | 按 scope 注册读[作用域](scoped-registration.md)；实际改压缩/恢复才读[上下文恢复](context-recovery.md)                                   |
+| Preset、Persona、workspace instructions、时间上下文              | [Preset 与 Context](presets-context.md)：选择相应能力段                                   | 改模型可见持久事实读[Session](session-durable-context.md)；改组合共享/可见性读[作用域](scoped-registration.md)                          |
+| Skill discovery、正文加载或调用策略                              | [Skill Provider](skill-providers.md)：发现 → 调用资格 → 模型目录                          | 改 Prompt/event 的记录方式读[Session](session-durable-context.md)                                                                       |
+| Compaction、TokenMeter、checkpoint 或 crash recovery             | [上下文恢复](context-recovery.md)                                                         | 不熟悉 log 与 surface 区别时先读[Session 事实源](session-durable-context.md#持久事实源)；不把 flush 当外部效果 exactly-once             |
+| 插件持久数据、Session projection、cache、统计或 feedback sidecar | [Storage 与 Projection](storage-projections.md)：先做三类状态选择，再按导航读分支         | 新增权威 Session event 先读[Session](session-durable-context.md)；不为查询需求复制一份事实源                                            |
+| 冷查询、全文索引、trace 或日志导出                               | [Session 查询](session-query-index.md)                                                    | 改 live/history carrier 读[Session/Workspace API](session-workspace-api.md)；改 cache/fold 读[Projection](storage-projections.md)       |
+| Plan、Goal、Todo 或提醒                                          | [规划与调度](planning-scheduling.md)：按意图表选分支                                      | Schedule 必须连读时间和 live/fork/durability；改实际权限才补[人类交互](human-interaction.md)                                            |
+
+### 人类交互、Client 与集成
+
+| 用户要改变的结果                                     | 先读                                                                              | 条件补读                                                                                                                     |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Human command、业务提问或单次动作审批                | [人类交互](human-interaction.md)：机制选择，再读命中机制与证据                    | 只有修改权限预设/Sandbox 才进入该分支；账号登录不是单次审批，走[授权](credentials-authorization.md)                          |
+| Credential record、账号 flow、登录与取消             | [凭证与授权](credentials-authorization.md)                                        | UI 设置入口补[用户设置](user-settings.md)；普通 env reference 使用[凭证所有权](composition-config-credentials.md#凭证所有权) |
+| Claude Code/Codex hooks                              | [Hooks](hooks-compatibility.md)：支持点、决策和未实现协议                         | 改事件持久化补[Session](session-durable-context.md)；外部协议要求不能代替当前已实现契约                                      |
+| Client slot、component、store、action、locale 或主题 | [Client UI](client-ui.md)                                                         | 设置卡片补[用户设置](user-settings.md)；会话行使用下一行，不自行扫描日志造第二份状态                                         |
+| Conversation Node 与历史展示                         | [Conversation Node](client-conversation-nodes.md)：事件族 → 增量 → packed history | 新 Client 插件先读[Client UI](client-ui.md)；改变权威 event 时补[Session](session-durable-context.md)                        |
+| Session/Workspace 命令、历史、分页与重连             | [应用 API](session-workspace-api.md)                                              | 改底层 Remote descriptor/carrier 再读[Typert](typert-remote-api.md)；冷索引读[Session 查询](session-query-index.md)          |
+| 新 Remote method、stream 或选定事件转发              | [Typert Remote API](typert-remote-api.md)                                         | 新增 Client 消费端读[Client UI](client-ui.md)；先复用现成 Session/Workspace API，避免重复暴露控制面                          |
+| SDK launcher、Python 分发或 ACP 协议                 | [SDK/ACP](sdk-acp-integration.md)：按导航先启动/结果，再看协议                    | 改应用装配读[组合配置](composition-config-credentials.md)；只消费 SDK 不要求先读 Typert 实现                                 |
+| WebServer、入站 Webhook 或签名验证                   | [Web ingress](web-ingress.md)                                                     | 新协议 adapter 补[能力接缝](capability-seams-providers.md)及[组合测试](composition-config-credentials.md#组合测试步骤)       |
+| 动态 Cordis define/run、inspection 或 Client half    | [动态 Cordis](dynamic-cordis.md)：发现 → Package/Run → Client                     | 仅在确实使用 Client half 时补[Client UI](client-ui.md)；遵守精确 run 与清理边界                                              |
+| Host 环境、目录选择、inventory 或实验平台            | [Host 支持](host-platform-support.md)：按目标能力选段                             | 平台进程行为补[运行时资源](runtime-resources.md)；实验入口不能按稳定 Node/默认 profile 推断                                  |
 
 ## 叠加横切路径
 
-检查主路径是否同时命中下表；一次变更可以叠加多行。用户直接要求其中一种结果时，该行本身就是主路径，例如“为插件增加持久状态”。
+以下能力也可以直接成为主任务。先阅读会影响接口和数据设计的前置，再写代码；不在实现完后才发现 owner 或持久化选错。
 
-| 影响                                       | 何时叠加                                                                          | 阅读的离线章节                                                                                                                                                                                        | 在目标仓库中检查                                                                                |
-| ------------------------------------------ | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 新包或拆包                                 | 没有现有包能单独拥有该职责，或现有角色需要独立发布和演进                          | [包文件集合](package-authoring.md#包文件集合)；[完整入口骨架](package-authoring.md#完整入口骨架)                                                                                                      | 所属 README、同类包、manifest、编译配置和 invariant；涉及可替换能力时再叠加 Service/Provider 行 |
-| 持久 Session event                         | 新事实属于一段 Session 的权威历史，必须参与日志回放或重建模型可见输入             | [持久事实源](session-durable-context.md#持久事实源)；[扩展 Session event](session-durable-context.md#扩展-session-event)；[回放与 projection 清单](session-durable-context.md#回放与-projection-清单) | Session event、持久化/load、replay fold、invariant 和 SDK 输出                                  |
-| 插件自有持久状态                           | 数据需要跨重启保留，但不是某个 Session 的事件历史                                 | [三类状态的选择](storage-projections.md#三类状态的选择)；[Storage domain](storage-projections.md#storage-domain)；[生命周期与提交顺序](storage-projections.md#生命周期与提交顺序)                     | domain spec、backend route、schema、format version、close 与失败测试                            |
-| Session projection                         | UI、SDK 或 Host 需要从 Session log 获得完整当前值，而不是自行扫描或保存第二份事实 | [Session projection](storage-projections.md#session-projection)；[回放与 projection 清单](session-durable-context.md#回放与-projection-清单)                                                          | event producer、纯 fold、wire schema、state version、carrier 与 cache                           |
-| 并发任务、subprocess、socket 或 teardown   | 插件拥有超过一次同步调用的异步资源，需要取消、回滚和静默清理                      | [生命周期与 effect](cordis-lifecycle.md#生命周期与-effect)；[防御性生命周期](defensive-lifecycle.md#防御性生命周期)；[Provider 边界](capability-seams-providers.md#provider-边界)                     | 操作所有者、取消、回滚、回调隔离、环境/临时路径与静默完成                                       |
-| Profile、bundle、boot 或配置               | 部署需要在不改包代码的情况下选择插件、Provider 或 tunable                         | [组合所有权](composition-config-credentials.md#组合所有权)；[配置规则](composition-config-credentials.md#配置规则)；[组合测试步骤](composition-config-credentials.md#组合测试步骤)                    | 实际 profile patch、boot/bundle 包与 resolver manifest                                          |
-| 用户可编辑设置或设置卡片                   | 运行中的用户需要持久修改插件拥有的配置子集，或 Browser 需要编辑该 namespace       | [Config、Settings 与 Credential](user-settings.md#configsettings-与-credential)；[Host namespace](user-settings.md#host-namespace)；[Browser 设置卡片](user-settings.md#browser-设置卡片)             | Settings Provider、同名 namespace、secret redaction、revision fencing 与 Client bundle          |
-| 凭证或账号授权                             | 功能需要引用或轮换 secret，或通过用户交互建立可复用的账号授权                     | [凭证所有权](composition-config-credentials.md#凭证所有权)；[凭证与配置](llm-provider-adapters.md#凭证与配置)                                                                                         | Credential Definition/Provider 与消费操作边界                                                   |
-| 代码变更附带的测试、文档、生成物或发布检查 | 为插件代码变更补齐证据、公共说明、生成 projection 或发布表面                      | [按变更面选择证据](testing-docs-maintenance.md#按变更面选择证据)；[文档交付](testing-docs-maintenance.md#文档交付)                                                                                    | 所属测试、generator、公共 README 与 decision record；纯文档任务不由本 skill 路由                |
+| 触发条件                                | 阅读顺序                                                                                                                                         |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 新建/拆分包或改变 exports/build faces   | [包规范](package-authoring.md)：包文件与 Host/Client 编译面 → 骨架 → invariant/README 规则                                                       |
+| 注册/隔离/shadow/re-parent 的作用域改变 | [Cordis 生命周期](cordis-lifecycle.md) → [Scoped 注册](scoped-registration.md) → 所属能力契约                                                    |
+| 新增长期异步资源或修改 teardown         | [生命周期与 effect](cordis-lifecycle.md#生命周期与-effect) → [防御性生命周期](defensive-lifecycle.md) → 具体资源 Provider                        |
+| 新增持久事实或改变恢复关系              | [Session 事实源](session-durable-context.md#持久事实源) → [三类状态选择](storage-projections.md#三类状态的选择) → 选中 owner 的完整提交/恢复契约 |
+| 修改 Profile、bundle、boot 或配置       | [组合配置](composition-config-credentials.md)：组合所有权 → 相关 profile/配置 → 组合测试                                                         |
+| 用户可编辑 Settings 或设置卡片          | [用户设置](user-settings.md)：Config/Settings/Credential 区别 → Host namespace → 有 UI 时再读 Browser 卡片                                       |
 
-## 完成前
+## 验证与停止条件
 
-实现完成后读取[按变更面选择证据](testing-docs-maintenance.md#按变更面选择证据)和[验证命令矩阵](testing-docs-maintenance.md#验证命令矩阵)，选择覆盖实际变更面的最小检查。
+在实现前从[按变更面选择证据](testing-docs-maintenance.md#按变更面选择证据)和[验证命令矩阵](testing-docs-maintenance.md#验证命令矩阵)确定检查；实现后运行选中的验证，并补齐发生变化的公开文档。当前任务能回答以下问题时，不再为了“读全”加载其他专题：
 
-## 证据与生成物
+- 行为由哪个包、Service/Provider/Consumer 和生命周期 owner 负责？
+- 使用哪些公开接口，输入/结果/权限及失败、取消、清理如何处理？
+- 模型可见或跨重启事实由谁记录，回放/恢复有什么边界？不涉及持久事实时明确不适用。
+- 哪些实际检查能覆盖组合后的行为，哪些仍未验证？
 
-- 用生成的 catalog 发现事实，但修改其源并运行所属 generator/check；不要手工编辑生成区域。
-- 示例只证明一种组合，不等于已发布默认值。除非用户明确改变产品边界，实验包保持 opt-in。
-- 仅在包 README、cookbook 或源码注释指向与当前决策相关的 Agent Note 时读取。Archived note 是历史记录，不是当前要求。
+生成 catalog 只用于发现，修改其源并运行所属生成器；只在相关源码或 README 指向时读取 Agent Note，Archived note 不作为当前要求。示例、实验包和外部协议不自动扩大任务范围或授权。
 
-## 最终检查
+## 维护路径
 
-1. 实现拥有自己的状态、清理和失败行为。
-2. 所有模型可见行为都能从 Session log 重建。
-3. 插件生命周期结束时，其注册全部消失。
-4. 聚焦测试覆盖实际 Loader/应用路径。
-5. 只在所属事实变化时更新文档、生成物、snapshot 与 Agent Note。
+只有维护本 Skill、升级基线或审计参考依据时使用此路径。先读[Skill 发布维护](testing-docs-maintenance.md#skill-发布维护)与[完整性审计](testing-docs-maintenance.md#完整性审计)，再按待核对专题进入[source-map](source-map.md)，读取精确 tag 的类型、实现、测试与文档。
+
+普通插件开发无需通读 source-map。单专题维护只查该专题及实际依赖；完整基线升级才按维护流程遍历全部证据和 DOCS，不能把普通开发的按需阅读规则用来跳过升级审计。

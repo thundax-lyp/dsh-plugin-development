@@ -1,6 +1,6 @@
 # Cordis 生命周期
 
-本 reference 覆盖 `dsh-v0.1.1-rc.2` 的 Cordis 插件形式与 effect 所有权。
+本 reference 覆盖 `dsh-v0.1.2-rc.1` 的 Cordis 插件形式与 effect 所有权。
 
 ## 架构与插件形式
 
@@ -12,7 +12,7 @@ Loader 有两种入口。Service 包默认导出 Service class；函数插件具
 
 注册必须可撤销，但调用方应遵守具体 API 的所有权规则：
 
-| 操作                                        | rc.2 正确所有权                                      |
+| 操作                                        | v0.1.2-rc.1 正确所有权                               |
 | ------------------------------------------- | ---------------------------------------------------- |
 | `ctx.on(event, listener)`                   | 直接调用；Cordis 绑定到调用 fiber。                  |
 | `ctx.tools.register(definition)`            | 直接调用；Tools registry 创建调用 fiber 的 effect。  |
@@ -44,6 +44,4 @@ export function apply(ctx: Context): void {
 
 ## Scoped 注册
 
-Scope 同时决定 contribution 对哪个 live Agent 可见，以及这些注册由哪个 Cordis fiber 清理。使用目标 registry 提供的 scoped registration context；不要只把 Agent id 存进值里再由 Consumer 手工过滤。`ScopeKey` 是按对象 identity 比较的 opaque key，shipped runtime 使用 live Agent object。Scope-filtered event 通过 `scopeTarget(base, key)` 形成 routing receiver，真实 subject 仍在 event payload 中。
-
-实现 scoped registry 时，全局 layer 与 exact-scope layer 分离；读取合并后的 global contribution 加 scoped shadow。注册必须通过同一个 tagged context 同时取得 visibility 和 effect ownership，scope dispose 必须等待其注册达到静默。普通插件消费已有 scoped registry 时不应自行重建 `ScopedLayers`。
+注册的可见性与清理由同一个 tagged context 绑定；不要只保存 Agent id 再手工过滤。涉及 scoped registry、父 scope 继承或 scope-filtered event 时读取 [Scoped 注册与继承](scoped-registration.md)。普通插件直接消费已有 registry，不重建其分层存储。

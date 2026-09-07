@@ -11,7 +11,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/thundax-lyp/dsh-plugin-development?style=for-the-badge&color=yellow&label=Stars)](https://github.com/thundax-lyp/dsh-plugin-development/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/thundax-lyp/dsh-plugin-development?style=for-the-badge&color=blue&label=Forks)](https://github.com/thundax-lyp/dsh-plugin-development/network/members)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](LICENSE)
-[![DSH: v0.1.1-rc.2](https://img.shields.io/badge/DSH-v0.1.1--rc.2-4D6BFE?style=for-the-badge)](#兼容性)
+[![DSH: v0.1.2-rc.1](https://img.shields.io/badge/DSH-v0.1.2--rc.1-4D6BFE?style=for-the-badge)](#兼容性)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-8257D0?style=for-the-badge)](.agents/skills/dsh-plugin-development/SKILL.md)
 [![Offline](https://img.shields.io/badge/References-Offline-2EA44F?style=for-the-badge)](.agents/skills/dsh-plugin-development/references/)
 
@@ -25,17 +25,19 @@
 版本的离线开发指南，帮助 Agent 识别正确的扩展点、遵守 Cordis 生命周期与持久
 上下文约束，并为实际变更选择合适的验证证据。
 
-> 当前唯一支持的基线：`dsh-v0.1.1-rc.2`
+> 当前唯一支持的基线：`dsh-v0.1.2-rc.1`
+
+<a id="兼容性"></a>
 
 ## 🔌 兼容性
 
-| 范围             | 状态                       |
-| ---------------- | -------------------------- |
-| DeepSeek Harness | 仅支持 `dsh-v0.1.1-rc.2`   |
-| 分发形式         | 普通工作区 Agent Skill     |
-| 运行时代码       | 无                         |
-| 网络访问         | 不需要；reference 全部离线 |
-| 项目文档         | 英文和简体中文             |
+| 范围             | 状态                                   |
+| ---------------- | -------------------------------------- |
+| DeepSeek Harness | 仅支持 `dsh-v0.1.2-rc.1`               |
+| 分发形式         | 普通工作区 Agent Skill                 |
+| 运行时代码       | 不包含 DSH runtime                     |
+| 网络访问         | 不需要；reference 全部离线             |
+| 项目文档         | 中英文概览；Skill 和参考文档以中文为主 |
 
 ## 🎯 解决什么问题
 
@@ -56,22 +58,22 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
 
 ## 🧭 覆盖范围
 
-Skill 内置的离线 reference 覆盖以下开发路径：
+参考库按任务组织已实现的能力、开发契约和已知限制。下表是入口，不是阅读顺序，也不表示所有能力都默认启用。
 
-| 领域       | 能力                                                            |
-| ---------- | --------------------------------------------------------------- |
-| 模型能力   | Tool、render intent、system prompt、runtime context、Skill 贡献 |
-| Provider   | Service/Provider/Consumer 接缝、LLM Adapter、第三方协议         |
-| Agent      | Agent 生命周期、输入控制、Subagent、TeamTask、Workflow          |
-| 人机交互   | Human command、普通用户提问、一次动作审批                       |
-| Client     | UI slot、component/store/action/locale、Conversation Node       |
-| 远程访问   | Typert Remote API、Gateway carrier、rc.2 Webhook 接收器         |
-| 状态与存储 | Session event、projection、Storage domain、插件持久状态         |
-| 组合与配置 | Profile、bundle、boot、Config、Settings、Credential             |
-| 工程交付   | 新包、生命周期测试、组合快照、文档、生成物和发布检查            |
+| 领域          | 内容                                                                                | 参考入口                                                                                                                                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 工具与模型    | 工具 schema、规范 JSON 结果、Native/PTC、LLM Adapter、模型路由与图像请求            | [tools](.agents/skills/dsh-plugin-development/references/tools.md) · [llm-model-routing](.agents/skills/dsh-plugin-development/references/llm-model-routing.md)                                               |
+| Agent 与协作  | Agent 生命周期、输入控制、Subagent、Workflow、Ralph；Agent Teams 单列为实验能力     | [agent-subagent-workflow](.agents/skills/dsh-plugin-development/references/agent-subagent-workflow.md) · [builtin-tool-contracts](.agents/skills/dsh-plugin-development/references/builtin-tool-contracts.md) |
+| 上下文与恢复  | Session 日志、Prompt、Preset、Persona、Skills、Compaction、TokenMeter 与 checkpoint | [session-durable-context](.agents/skills/dsh-plugin-development/references/session-durable-context.md) · [context-recovery](.agents/skills/dsh-plugin-development/references/context-recovery.md)             |
+| 状态与调度    | Storage domain、Projection/cache、查询与导出、Plan、Goal、Todo、Schedule            | [storage-projections](.agents/skills/dsh-plugin-development/references/storage-projections.md) · [planning-scheduling](.agents/skills/dsh-plugin-development/references/planning-scheduling.md)               |
+| 文件与执行    | 文件观察与写入策略、图片附件、Spill、进程、Terminal、Jobs、E2B                      | [filesystem-policy](.agents/skills/dsh-plugin-development/references/filesystem-policy.md) · [runtime-resources](.agents/skills/dsh-plugin-development/references/runtime-resources.md)                       |
+| 外部能力      | Web search/fetch、LSP、MCP，以及各 Provider 的协议与执行边界                        | [web-capabilities](.agents/skills/dsh-plugin-development/references/web-capabilities.md) · [runtime-resources](.agents/skills/dsh-plugin-development/references/runtime-resources.md)                         |
+| 交互与授权    | Human command、业务提问、动作审批、Credential records、登录 flow、Hooks             | [human-interaction](.agents/skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](.agents/skills/dsh-plugin-development/references/credentials-authorization.md)       |
+| Client 与协议 | UI slots、Conversation Nodes、Session/Workspace API、Typert、SDK/ACP、Webhook       | [client-ui](.agents/skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](.agents/skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
+| 装配与扩展    | Profile、bundle、Settings、scoped registry、动态 Cordis 与 Host 支持                | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
+| 开发与交付    | 包边界、生命周期、代码示例、组合测试、文档和发布验证                                | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs-maintenance](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)         |
 
-完整任务索引见
-[`plugin-development-routing.md`](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)。
+从[开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)选择主契约，再按实际影响补读。实验包、外部协议未实现部分及平台限制在各专题中分别标明。
 
 ## 🚀 使用方式
 
@@ -90,6 +92,8 @@ Skill 内置的离线 reference 覆盖以下开发路径：
 
 ### 2. 在 DSH 开发任务中调用
 
+当前工作区元数据允许匹配任务时隐式调用，也可以显式使用 `$dsh-plugin-development`。
+
 示例提示词：
 
 ```text
@@ -107,15 +111,17 @@ Skill 内置的离线 reference 覆盖以下开发路径：
 Skill 适用于实现或修改 DSH 扩展，不适用于普通 DSH 使用指导，也不用于与代码变更
 无关的纯文档编辑。
 
+开发前区分 DSH monorepo 与独立插件项目：仓库内的 `workspace:^` 和 vendor 编译路径不能直接复制到独立项目。外部插件通过 Profile 的加载边界、模板适用范围和未验证部分见[包开发](.agents/skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境)。
+
 ## 🔄 Agent 的工作流程
 
 使用本 Skill 时，Agent 应按以下顺序工作：
 
-1. 确认目标代码基于 `dsh-v0.1.1-rc.2`。
+1. 确认目标代码基于 `dsh-v0.1.2-rc.1`。
 2. 阅读目标仓库及目标包的贡献说明和相邻实现。
 3. 根据可观察结果，从路由表选择一条或多条主路径。
 4. 叠加持久化、配置、凭证、并发资源或交付物等横切路径。
-5. 完整读取命中的 reference，再根据目标仓库的源码、类型和测试实施变更。
+5. 按命中 reference 的范围与导航读取相关完整契约，包括失败、取消、权限、持久化和清理规则；按需补读其他专题，再根据目标仓库源码、类型和测试实施变更。
 6. 按实际变更面执行最小但充分的验证。
 7. 只报告真正运行并观察到结果的命令。
 
@@ -143,34 +149,28 @@ Skill 适用于实现或修改 DSH 扩展，不适用于普通 DSH 使用指导�
 
 ```text
 .
-├── README.md
-├── README_zh-CN.md
+├── README.md / README_zh-CN.md
 ├── AGENTS.md
-├── LICENSE
+├── package.json
+├── scripts/
+│   ├── validate_skill.py
+│   ├── test_validate_skill.py
+│   └── check_examples.cjs
 └── .agents/skills/dsh-plugin-development/
-    ├── SKILL.md                  # Skill 入口、触发范围和全局规则
-    ├── agents/openai.yaml        # 展示名称与默认提示词
+    ├── SKILL.md
+    ├── agents/openai.yaml
     └── references/
         ├── plugin-development-routing.md
-        ├── cordis-lifecycle.md
-        ├── tools.md
-        ├── capability-seams-providers.md
-        ├── llm-provider-adapters.md
-        ├── agent-subagent-workflow.md
-        ├── session-durable-context.md
-        ├── storage-projections.md
-        ├── client-ui.md
-        ├── client-conversation-nodes.md
-        ├── typert-remote-api.md
+        ├── source-map.md
+        ├── testing-docs-maintenance.md
         └── ...
 ```
 
-`SKILL.md` 保持精简，只定义入口和不变量。详细知识按主题拆分到 `references/`，Agent
-只加载当前任务命中的资料，避免把整套文档无差别加入上下文。
+Skill 目录是可复制的离线资料；根目录的 scripts 是维护工具，不是 DSH runtime。普通开发从路由按需阅读；只有维护或升级基线时才按专题使用 source-map。
 
 ## ⚠️ 版本与边界
 
-本 Skill 的资料固定到 `dsh-v0.1.1-rc.2`，不跟随 moving branch。目标仓库版本不匹配
+本 Skill 的资料固定到 `dsh-v0.1.2-rc.1`，不跟随 moving branch。目标仓库版本不匹配
 时，不应直接套用这里的代码骨架或 API 假设，而应先重新核对对应版本的公开类型、
 运行时代码和测试。
 
@@ -181,20 +181,35 @@ Skill 适用于实现或修改 DSH 扩展，不适用于普通 DSH 使用指导�
 - 不代表 reference 中的所有建议都已成为 DSH 默认产品能力；
 - 不会授权 Agent 执行外部调用、修改凭证、push 或 release。
 
-## 🛠️ 维护
+## 🛠️ 维护与验证
 
-维护或升级 Skill 基线时，应先阅读
-[`source-map.md`](.agents/skills/dsh-plugin-development/references/source-map.md) 和
-[`testing-docs-maintenance.md`](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)。
+先读[维护流程](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)，再通过[source-map](.agents/skills/dsh-plugin-development/references/source-map.md)定位精确 tag 的代码证据。升级时先核对旧映射对应的类型、实现、测试与门禁，再比较新旧 DOCS 并回查新代码，最后合并结果、删除过期内容并同步路由。
 
-更新要求包括：
+在本维护仓库安装依赖并执行结构检查：
 
-- 在精确的目标 tag 上重新核对所有真相源路径；
-- 重新对齐公开类型、运行时代码、测试和可执行 gate；
-- 编译检查 TypeScript code fence，并解析 JSON code fence；
-- 验证所有本地 Markdown 链接和 heading anchor；
-- 保持 Skill 完全离线，不在 Skill 目录中引入 HTTP(S) URL；
-- 不把新版本才存在的 API 静默写入旧版本基线。
+```sh
+pnpm install --frozen-lockfile
+pnpm verify:skill
+pnpm test:validation
+```
+
+源码和示例检查需要另行准备精确的 `dsh-v0.1.2-rc.1` checkout，安装其锁定依赖，并运行维护流程要求的 Host/Client 构建。将下方路径替换为该 checkout：
+
+```sh
+pnpm verify:skill --dsh /path/to/dsh-checkout
+pnpm verify:examples --dsh /path/to/dsh-checkout
+```
+
+| 检查                    | 覆盖与限制                                                                                     |
+| ----------------------- | ---------------------------------------------------------------------------------------------- |
+| `verify:skill`          | 本地 Markdown 文件与锚点、JSON 代码块、离线边界和行尾空白；不带 `--dsh` 时明确跳过源码路径验证 |
+| `verify:skill --dsh`    | 另核查固定 tag/commit 与 source-map 路径                                                       |
+| `test:validation`       | 检查器的成功与失败场景，不是 DSH 产品测试                                                      |
+| `verify:examples --dsh` | 校验基线与 tracked 源码状态，分开编译 Host/Client；使用临时副本并清理，不修改上游 tracked 文件 |
+
+CI 保留独立的 `Governance` 与 `Skill Integrity` 检查。CI 不包含独立 DSH checkout，因此源码路径与示例编译需要单独执行；静态验证也不替代真实模型、云端、GUI 或跨平台集成测试。
+
+这些命令属于维护仓库，不随单独复制的 Skill 目录分发。缺少依赖或构建声明时，报告未验证或失败，不视为通过。
 
 ## 📄 License
 
