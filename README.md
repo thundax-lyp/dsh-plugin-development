@@ -74,7 +74,7 @@ The references organize implemented capabilities, development contracts and know
 | Interaction and authorization | Human commands, business questions, action approval, credential records, sign-in flows and hooks        | [human-interaction](.agents/skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](.agents/skills/dsh-plugin-development/references/credentials-authorization.md)       |
 | Client and protocols          | UI slots, Conversation Nodes, Session/Workspace APIs, Typert, SDK/ACP and webhooks                      | [client-ui](.agents/skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](.agents/skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
 | Composition and extensions    | Profiles, bundles, Settings, scoped registries, dynamic Cordis and Host support                         | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
-| Development and delivery      | Package boundaries, lifecycle, examples, composition tests, documentation and publication checks        | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs-maintenance](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)         |
+| Development and delivery      | Package boundaries, lifecycle, examples, composition tests, documentation and publication checks        | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](.agents/skills/dsh-plugin-development/references/testing-docs.md)                                 |
 
 Start with the [task router](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md), then add contracts required by the change. Experimental packages, unsupported protocol features and platform limits are identified in their owning references.
 
@@ -114,8 +114,7 @@ Use $dsh-plugin-development to add persistent settings and a Browser settings
 card to an existing plugin.
 ```
 
-The Skill applies to implementing or modifying DSH extensions. It is not for
-ordinary DSH usage or documentation-only work unrelated to a code change.
+The Skill supports requirements clarification, application design and implementation of DSH extensions. Start with [requirements discovery](.agents/skills/dsh-plugin-development/references/requirements-discovery.md) for scope and acceptance criteria, or [application design](.agents/skills/dsh-plugin-development/references/application-design.md) for capability selection and composition. It is not for ordinary DSH usage or unrelated documentation polishing.
 
 Distinguish DSH monorepo work from a standalone plugin project: `workspace:^` dependencies and vendor compiler paths are not portable templates. See [package authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境) for the Profile loading boundary, template scope and unverified standalone setup.
 
@@ -177,10 +176,15 @@ public types and runtime code
 └── .agents/skills/dsh-plugin-development/
     ├── SKILL.md
     ├── agents/openai.yaml
+    ├── assets/github-review/
+    ├── maintenance/
+    │   ├── source-map.md
+    │   └── skill-maintenance.md
     └── references/
+        ├── requirements-discovery.md
+        ├── application-design.md
         ├── plugin-development-routing.md
-        ├── source-map.md
-        ├── testing-docs-maintenance.md
+        ├── testing-docs.md
         └── ...
 ```
 
@@ -205,7 +209,7 @@ This project also:
 
 ## 🛠️ Maintenance and validation
 
-Read the [maintenance procedure](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md), then use [source-map](.agents/skills/dsh-plugin-development/references/source-map.md) to locate exact-tag evidence. For upgrades, revisit the old mappings against types, runtime code, tests and gates; compare old/new DOCS and verify their changes against new code; then merge the findings, remove obsolete guidance and update routing.
+Read the [maintenance procedure](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md), then use [source-map](.agents/skills/dsh-plugin-development/maintenance/source-map.md) to locate exact-tag evidence. For upgrades, revisit the old mappings against types, runtime code, tests and gates; compare old/new DOCS and verify their changes against new code; then merge the findings, remove obsolete guidance and update routing.
 
 Install dependencies and run structural checks from this maintenance repository:
 
