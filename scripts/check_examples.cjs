@@ -31,7 +31,10 @@ function git(...args) {
 }
 let workspace, checkerCopy;
 try {
-    const map = fs.readFileSync(path.join(refs, "source-map.md"), "utf8");
+    const map = fs.readFileSync(
+        path.join(refs, "../maintenance/source-map.md"),
+        "utf8",
+    );
     const tag = map.match(/`(dsh-v[^`]+)`/)[1];
     const sha = map.match(/commit `([0-9a-f]{40})`/)[1];
     for (const ref of ["HEAD", tag]) {

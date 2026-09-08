@@ -71,7 +71,7 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
 | 交互与授权    | Human command、业务提问、动作审批、Credential records、登录 flow、Hooks             | [human-interaction](.agents/skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](.agents/skills/dsh-plugin-development/references/credentials-authorization.md)       |
 | Client 与协议 | UI slots、Conversation Nodes、Session/Workspace API、Typert、SDK/ACP、Webhook       | [client-ui](.agents/skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](.agents/skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
 | 装配与扩展    | Profile、bundle、Settings、scoped registry、动态 Cordis 与 Host 支持                | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
-| 开发与交付    | 包边界、生命周期、代码示例、组合测试、文档和发布验证                                | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs-maintenance](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)         |
+| 开发与交付    | 包边界、生命周期、代码示例、组合测试、文档和发布验证                                | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](.agents/skills/dsh-plugin-development/references/testing-docs.md)                                 |
 
 从[开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)选择主契约，再按实际影响补读。实验包、外部协议未实现部分及平台限制在各专题中分别标明。
 
@@ -108,8 +108,7 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
 使用 $dsh-plugin-development，为现有插件增加可持久化设置和 Browser 设置卡片。
 ```
 
-Skill 适用于实现或修改 DSH 扩展，不适用于普通 DSH 使用指导，也不用于与代码变更
-无关的纯文档编辑。
+Skill 适用于需求澄清、应用设计和 DSH 扩展实现。明确范围与验收时从[需求澄清](.agents/skills/dsh-plugin-development/references/requirements-discovery.md)进入，选择能力与应用组合时从[应用设计](.agents/skills/dsh-plugin-development/references/application-design.md)进入；不适用于普通 DSH 操作或无关文档润色。
 
 开发前区分 DSH monorepo 与独立插件项目：仓库内的 `workspace:^` 和 vendor 编译路径不能直接复制到独立项目。外部插件通过 Profile 的加载边界、模板适用范围和未验证部分见[包开发](.agents/skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境)。
 
@@ -159,10 +158,15 @@ Skill 适用于实现或修改 DSH 扩展，不适用于普通 DSH 使用指导�
 └── .agents/skills/dsh-plugin-development/
     ├── SKILL.md
     ├── agents/openai.yaml
+    ├── assets/github-review/
+    ├── maintenance/
+    │   ├── source-map.md
+    │   └── skill-maintenance.md
     └── references/
+        ├── requirements-discovery.md
+        ├── application-design.md
         ├── plugin-development-routing.md
-        ├── source-map.md
-        ├── testing-docs-maintenance.md
+        ├── testing-docs.md
         └── ...
 ```
 
@@ -183,7 +187,7 @@ Skill 目录是可复制的离线资料；根目录的 scripts 是维护工具�
 
 ## 🛠️ 维护与验证
 
-先读[维护流程](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)，再通过[source-map](.agents/skills/dsh-plugin-development/references/source-map.md)定位精确 tag 的代码证据。升级时先核对旧映射对应的类型、实现、测试与门禁，再比较新旧 DOCS 并回查新代码，最后合并结果、删除过期内容并同步路由。
+先读[维护流程](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md)，再通过[source-map](.agents/skills/dsh-plugin-development/maintenance/source-map.md)定位精确 tag 的代码证据。升级时先核对旧映射对应的类型、实现、测试与门禁，再比较新旧 DOCS 并回查新代码，最后合并结果、删除过期内容并同步路由。
 
 在本维护仓库安装依赖并执行结构检查：
 

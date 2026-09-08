@@ -1,6 +1,6 @@
-# 测试、文档与 Skill 维护
+# 测试与文档交付
 
-本 reference 覆盖证据选择、v0.1.2-rc.1 命令、公共文档交付、生成物与本离线 skill 的维护。
+本文覆盖插件开发的证据选择、v0.1.2-rc.1 命令、公共文档交付、生成物与 runtime invariant。
 
 ## 按变更面选择证据
 
@@ -24,7 +24,7 @@
 
 ## 验证命令矩阵
 
-从仓库根目录运行最小适用集合，只报告实际观察到输出的命令。
+下表命令只适用于精确目标版本的 DSH monorepo，从其根目录运行。独立插件先检查自身 package.json、贡献规则与验证入口，把上节的证据要求映射到已有测试、构建和真实 Profile smoke；不要照搬上游目录、脚本、README gate 或新建 monorepo 结构。缺少能覆盖变更面的检查时，说明缺少的证据，不把命令不存在当成产品失败，也不把其他检查替代为通过。只报告实际观察到输出的命令。
 
 | 变更面                               | v0.1.2-rc.1 命令                                                       | 前置条件与证据                                                                                                                   |
 | ------------------------------------ | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,29 +50,9 @@
 
 Public behavior 变化时同步更新 JSDoc 与所属包 README。记录 parameter、non-void return、event dispatch mode、failure、timing、cancellation、ownership 与 safe-use fact。使用当前状态表述，一项事实只有一个位置；不要叙述实现历史或复述代码。
 
-包 README 的准确 Model Experience/KV Cache/Known Limitations 模板在 package-authoring reference 中。Generated catalog 是 projection：修改源并运行所属 generator，不手工编辑生成区域。
+DSH monorepo 的包 README 使用 package-authoring reference 中的 Model Experience/KV Cache/Known Limitations 模板；独立插件按目标仓库的文档归属记录相同的相关行为事实，不引入上游 gate 专属格式。Generated catalog 是 projection：修改源并运行所属 generator，不手工编辑生成区域。
 
 非平凡设计决策按仓库活跃 decision-record 惯例记录；不得修改 archived record。例行局部或机械修改可按目标仓库规则豁免。
-
-## Skill 发布维护
-
-本 skill 只针对 `dsh-v0.1.2-rc.1`。改变基线前，更新 [真相源映射](source-map.md)，在新 tag 检查每个映射文件，并用已发布 manifest、可执行 gate 与源码重新对齐所有示例。不得静默读取 moving branch。较新分支才有的 API 在 pinned tag 缺失时，应明确写“不可用”，不要复制。
-
-发布 skill 必须离线：skill 目录内不得出现 HTTP(S) URL。每个 reference 对其路由主题自包含，每项事实只有一个归属；router 可以使用本地相对链接。仓库依据只记录在本地 `source-map.md`，正常插件开发不读取该映射。
-
-每次维护在独立 worktree 精确检出目标 tag，不切换或借用 moving branch 的声明。先从旧 source-map 逐路径比对类型、实现、gate 与测试；再比较两版 DOCS，把新增/变化指导回查目标源码；合并去重后刷新 references、router、入口和 source-map。文档滞后或相互冲突时记录裁决依据，不复制未实现设计。临时差异、checker 修改和构建日志放在维护工作目录，不进入 Skill。
-
-发布验证分为两个仓库上下文，不能混用工作目录：
-
-1. 在精确 DSH tag checkout 安装 pinned lockfile 依赖，运行 `pnpm run build:lib:host` 和 `pnpm run typecheck:contracts-ready`，准备 Host/Client 与 generated Remote 声明。
-2. 在本 Skill **维护仓库根目录**运行 `pnpm verify:skill --dsh <DSH-checkout>`：验证所有本地 Markdown 文件/标题锚点、JSON 代码块、离线边界、格式空白以及 source-map 路径；HEAD 和 tag 都必须解析到 source-map 中的固定 commit。不带 `--dsh` 时只做结构验证，并明确输出源码路径验证未运行。
-3. 在同一维护仓库运行 `pnpm verify:examples --dsh <DSH-checkout>`。命令拒绝错误基线或有 tracked 修改的 DSH checkout，使用唯一临时目录及 checker 副本调用上游 Host 检查，再按 Client compiler face 单独编译 Client 片段。上游文件不被改写，成功或失败均清理自身临时资源；编译失败以非零退出，不以“已运行 checker”冒充通过。
-4. 当前 `ts ignore-check` 的 Client 片段由维护命令显式归类并检查；新增未归类 TypeScript fence 会失败，必须完善分类后再发布。Host/Client Context 不在同一个 program 混编，Remote 类型从实际所属 manifest 导出解析，不手工伪造声明。
-5. 运行 Skill quick validator、仓库格式检查和 `git diff --check`，核对元数据、基线及任务差异；报告 Host/Client 实际检查数量，以及上游 ignored/type-equiv/derivative 等不属于本次编译的片段。
-
-这些维护命令由 Skill 仓库的 scripts/package.json 提供，不是 DSH CLI 命令，也不是复制 Skill 目录到其他项目后自带的工具。检查器回归测试使用 `pnpm test:validation`，与真实 DSH runtime 测试分开。
-
-Code-fence compilation 是发布必需证据。缺少依赖、构建声明或不兼容上游 checker 时，命令失败；记录失败位置与未验证部分，不禁用诊断或删示例来通过。CI 的 Governance 与 Skill Integrity 保持独立：后者执行结构验证及检查器回归测试，但没有独立 DSH checkout，因此不覆盖示例编译和源码路径存在性。
 
 ## Runtime invariant 的注册边界
 
@@ -80,10 +60,4 @@ Invariant 检查包拥有的可观察关系，不检查 service/method 是否存
 
 不要根据叙述文档中“每包必须有空 companion”的旧规则新增空 invariant；目标 gate 只允许拥有实际关系的 companion。包文件要求见 [Invariant 与 README](package-authoring.md#invariant-companion)。
 
-## 完整性审计
-
-版本升级不能只从旧 source-map 出发：另列两版 package/exports/bin、Service/Remote、默认 bundle/preset、配置/数据格式、仓库 gate 和 DOCS 的完整变化。每项标记“补充”“已有覆盖”或“不纳入及理由”，附代码 owner 与目标 reference；实验包、示例和翻译可按明确类别处置，不能直接从清单删除。文件/符号差异清单是索引，不是语义审计已完成的证明。
-
 聚焦 specs 会与其他 worker/gate 并发；独占端口、临时路径、环境和子进程并可靠 teardown，不能以仅单跑成功掩盖污染。修改 Client 文案运行 verify-client-ui-i18n，修改包分层/exports 运行对应 package-dependency 与 module-boundary gate；catalog、subsystem page、README omission 等文档规则由各可执行 gate 决定。
-
-完整 DOCS 对照还要检查目标版本未发生 diff 的章节：旧 reference 可能一直没有覆盖该契约。逐项记录保留、补充、删除/替换或不纳入的依据。发现文档与目标代码/gate 冲突时保留代码裁决，不能以“同步 docs”为由重新引入旧 API、空 invariant 或旧格式限制。

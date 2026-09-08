@@ -8,16 +8,16 @@
 
 ## 文件职责
 
-| 文件或目录                                                                                     | 职责                                             |
-| ---------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| `README.md`、`README_zh-CN.md`                                                                 | 对外说明项目用途、使用方式与边界                 |
-| `.agents/skills/dsh-plugin-development/SKILL.md`                                               | 适用场景、基线、路由流程、跨主题不变量和完成边界 |
-| `.agents/skills/dsh-plugin-development/agents/openai.yaml`                                     | 展示元数据、默认提示词和调用策略                 |
-| `.agents/skills/dsh-plugin-development/references/`                                            | 自包含的主题参考文档、示例及验证矩阵             |
-| [开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)     | 按任务选择最小相关参考集，不复制正文             |
-| [源码映射](.agents/skills/dsh-plugin-development/references/source-map.md)                     | 维护与审计使用的固定版本证据索引                 |
-| [测试与文档维护](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md) | 详细验证命令、生成流程及发布检查                 |
-| [PR 模板](.github/pull_request_template.md)                                                    | PR 交付说明与验证证据格式                        |
+| 文件或目录                                                                                 | 职责                                             |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| `README.md`、`README_zh-CN.md`                                                             | 对外说明项目用途、使用方式与边界                 |
+| `.agents/skills/dsh-plugin-development/SKILL.md`                                           | 适用场景、基线、路由流程、跨主题不变量和完成边界 |
+| `.agents/skills/dsh-plugin-development/agents/openai.yaml`                                 | 展示元数据、默认提示词和调用策略                 |
+| `.agents/skills/dsh-plugin-development/references/`                                        | 自包含的主题参考文档、示例及验证矩阵             |
+| [开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md) | 按任务选择最小相关参考集，不复制正文             |
+| [源码映射](.agents/skills/dsh-plugin-development/maintenance/source-map.md)                | 维护与审计使用的固定版本证据索引                 |
+| [测试与文档维护](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md)   | 详细验证命令、生成流程及发布检查                 |
+| [PR 模板](.github/pull_request_template.md)                                                | PR 交付说明与验证证据格式                        |
 
 ## 工作流程
 
@@ -51,7 +51,7 @@
 
 ## 验证与报告
 
-按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或分发变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。具体命令与发布流程以[测试与文档维护](.agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md)为准。
+按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或分发变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。具体命令与发布流程以[测试与文档维护](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md)为准。
 
 | 变更面                | 必需检查                                                                                              |
 | --------------------- | ----------------------------------------------------------------------------------------------------- |

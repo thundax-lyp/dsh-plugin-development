@@ -52,8 +52,8 @@ jobs:
                     .agents/skills/dsh-plugin-development/SKILL.md
                     .agents/skills/dsh-plugin-development/agents/openai.yaml
                     .agents/skills/dsh-plugin-development/references/plugin-development-routing.md
-                    .agents/skills/dsh-plugin-development/references/source-map.md
-                    .agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md
+                    .agents/skills/dsh-plugin-development/maintenance/source-map.md
+                    .agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md
                   )
 
                   for required_file in "${required_files[@]}"; do
@@ -110,8 +110,8 @@ jobs:
                     README_zh-CN.md
                     AGENTS.md
                     .agents/skills/dsh-plugin-development/SKILL.md
-                    .agents/skills/dsh-plugin-development/references/source-map.md
-                    .agents/skills/dsh-plugin-development/references/testing-docs-maintenance.md
+                    .agents/skills/dsh-plugin-development/maintenance/source-map.md
+                    .agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md
                   )
 
                   for file in "${files[@]}"; do

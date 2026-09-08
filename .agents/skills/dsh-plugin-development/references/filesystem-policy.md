@@ -1,6 +1,10 @@
 # 文件系统与观察策略
 
-本 reference 针对 `dsh-v0.1.2-rc.1` 的 FileSystem Provider 和模型文件工具。图片与执行环境映射另见 [运行时资源](runtime-resources.md)。
+本文针对 `dsh-v0.1.2-rc.1` 的 FileSystem Provider 和模型文件工具。图片与执行环境映射另见 [运行时资源](runtime-resources.md)。
+
+## 条件补读
+
+- 图片和进程路径映射读[运行时资源](runtime-resources.md)；修改 shell confinement 再读[权限与 Sandbox](human-interaction.md#plan权限预设与-sandbox)
 
 ## Provider、策略与 Consumer
 

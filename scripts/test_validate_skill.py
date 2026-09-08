@@ -16,7 +16,9 @@ class NavigationValidation(unittest.TestCase):
         shutil.copyfile(Path(__file__).with_name('validate_skill.py'), self.root / 'scripts/validate_skill.py')
         self.refs = self.root / '.agents/skills/dsh-plugin-development/references'
         self.refs.mkdir(parents=True)
-        (self.refs / 'source-map.md').write_text('# Evidence\n')
+        maintenance = self.refs.parent / 'maintenance'
+        maintenance.mkdir()
+        (maintenance / 'source-map.md').write_text('# Evidence\n')
         (self.root / '.gitignore').write_text('/tmp/\n')
         (self.root / 'tmp').mkdir()
         (self.root / 'tmp/ignored.md').write_text('[broken](missing.md)\n```json\ninvalid\n```\n')

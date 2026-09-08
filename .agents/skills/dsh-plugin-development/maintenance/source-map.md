@@ -4,11 +4,11 @@
 
 ## 使用方法
 
-每个 reference 在下方只有一个证据入口。先按其主题查公开类型与实现，再查可执行 gate、行为测试、所属包 README 和其他文档；冲突按此顺序裁决。路径均相对于目标 DSH 仓库根目录，reference 链接相对于本文件。
+每个 reference 在下方只有一个证据入口。先按其主题查公开类型与实现，再查可执行 gate、行为测试、所属包 README 和其他文档；冲突按此顺序裁决。路径均相对于目标 DSH 仓库根目录，文档链接相对于本文件。
 
 “类型与实现”定位具体契约；“规则与验证工具”定位仓库要求；“行为测试”用于核对边界，但路径存在不等于测试已运行；“包与目录”用于继续查 exports、配置、Provider 或平台变体，不表示整个目录都已逐行验证；“文档参考”只作辅助。模型工具的动态配置名和 MCP 远端 discovery 不具有固定全集。
 
-维护时区分已实现行为、仓库规则、由现有原语推导的指导和外部协议要求。私有实验包或 snapshot 不构成已发布默认能力的证据。正常插件开发使用 [路由](plugin-development-routing.md)，验证程序由 [测试与文档维护](testing-docs-maintenance.md) 拥有；本文件不复制验证结果或临时审计清单。
+维护时区分已实现行为、仓库规则、由现有原语推导的指导和外部协议要求。私有实验包或 snapshot 不构成已发布默认能力的证据。正常插件开发使用 [路由](../references/plugin-development-routing.md)，插件验证由 [测试与文档交付](../references/testing-docs.md) 指导，Skill 发布与升级流程由 [维护流程](skill-maintenance.md) 拥有；本文件不复制验证结果或临时审计清单。
 
 ## 文档冲突的裁决
 
@@ -16,9 +16,105 @@
 
 ## 专题证据
 
+### 需求澄清流程
+
+对应 [requirements-discovery.md](../references/requirements-discovery.md)。
+
+这是 Skill 自有的需求整理方法，不宣称 DSH 实现了需求管理能力。流程中的 DSH 可行性判断转入对应能力专题核对；不以源码路径数量证明需求覆盖。
+
+### Storage Backend 开发
+
+对应 [storage-backend-development.md](../references/storage-backend-development.md)。
+
+**类型与实现**
+
+- `packages/storage/storage/src/backend.ts`
+- `packages/storage/storage/src/index.ts`
+- `packages/storage/storage/src/registry.ts`
+- `packages/storage/storage/src/error.ts`
+- `packages/storage/storage-domain/src/index.ts`
+- `packages/storage/storage-json/src/index.ts`
+- `packages/storage/storage-json/src/format.ts`
+- `packages/storage/storage-json/src/per-record-unit.ts`
+
+**行为测试**
+
+- `packages/storage/storage/tests/contract.ts`
+
+**文档参考**
+
+- `packages/storage/storage/README.md`
+
+### HOW-TO：事件驱动应用案例
+
+对应 [how-to-build-event-driven-app.md](../references/how-to-build-event-driven-app.md)。
+
+案例行为取自上游 GitHub review guide 与真实 overlay/rule；步骤组织和迁移问题为 Skill 导读。`assets/github-review/` 提供改编模块与配置：直接使用 self-binding register，仓库和 Workspace 改为必填环境配置。本地探针由 Skill 编写，只验证入站 acknowledgement，不能替代 DSH 组合测试。外部 patch 的相对模块路径按 profile Loader 解析规则核对，不因 guide 展示启动命令而推断相对于 patch 目录。
+
+**类型与实现**
+
+- `apps/cli/config/examples/github-review/cordis.yml`
+- `apps/cli/config/examples/github-review/github-ready-review-rule.mjs`
+- `packages/webhook/webhook/src/index.ts`
+- `packages/webhook/webhook-github/src/index.ts`
+- `packages/boot/app-boot/src/profile.ts`
+
+**行为测试**
+
+- `packages/webhook/webhook/tests/runtime.spec.ts`
+- `packages/webhook/webhook/tests/session.spec.ts`
+- `packages/webhook/webhook/tests/loader-composition.spec.ts`
+- `packages/webhook/webhook-github/tests/handler.spec.ts`
+- `packages/webhook/webhook-github/tests/loader-composition.spec.ts`
+
+**文档参考**
+
+- `docs/user/guide/github-review.md`
+- `docs/user/develop/basic/index.md`
+- `docs/user/develop/basic/tool.md`
+- `docs/user/develop/practice/index.md`
+- `packages/webhook/webhook/README.md`
+
+### 应用设计与能力组合
+
+对应 [application-design.md](../references/application-design.md)。
+
+本专题的能力选择和组合边界来自下列基线材料；设计流程、设计交付表和分析助手示例是基于公开原语整理的指导，不是上游已实现的业务应用。各能力的精确接口、状态和失败契约继续按所属专题核对。上游 cookbook 的通用 “Scheduled tasks (cron)” 行不能覆盖 Schedule 实现的 Session-local fixed-interval 限制；不要照抄成已支持通用 Cron 的结论。
+
+**类型与实现**
+
+- `packages/boot/app-boot/src/profile.ts`
+- `packages/boot/app-boot/src/index.ts`
+- `packages/bundle/base/cordis.patch.yml`
+- `packages/bundle/web-app/cordis.patch.yml`
+- `packages/bundle/headless/cordis.patch.yml`
+- `packages/bundle/sdk-app/cordis.patch.yml`
+- `packages/bundle/sdk-minimal/cordis.patch.yml`
+- `packages/bundle/acp-app/cordis.patch.yml`
+
+**规则与验证工具**
+
+- `scripts/verify-application-entrypoints.ts`
+
+**行为测试**
+
+- `packages/boot/app-boot/tests/profile.spec.ts`
+- `packages/boot/app-boot/tests/loader-shape.compat.spec.ts`
+- `packages/bundle/sdk-minimal/tests/sdk-minimal.spec.ts`
+- `apps/cli/tests/profiles/sdk/keyless-smoke.e2e.ts`
+- `apps/cli/tests/profiles/headless/tests/keyless-smoke.e2e.ts`
+
+**文档参考**
+
+- `docs/architecture.md`
+- `docs/cookbook/extension-cookbook.md`
+- `docs/cookbook/adding-a-package.md`
+- `packages/boot/app-boot/README.md`
+- `packages/bundle/sdk-minimal/README.md`
+
 ### Agent、Subagent、Agent Teams 与 Workflow
 
-对应 [agent-subagent-workflow.md](agent-subagent-workflow.md)。
+对应 [agent-subagent-workflow.md](../references/agent-subagent-workflow.md)。
 
 **类型与实现**
 
@@ -79,7 +175,7 @@
 
 ### 内置工具的组合与行为契约
 
-对应 [builtin-tool-contracts.md](builtin-tool-contracts.md)。
+对应 [builtin-tool-contracts.md](../references/builtin-tool-contracts.md)。
 
 **类型与实现**
 
@@ -121,7 +217,7 @@
 
 ### 能力接缝与 Provider
 
-对应 [capability-seams-providers.md](capability-seams-providers.md)。
+对应 [capability-seams-providers.md](../references/capability-seams-providers.md)。
 
 **类型与实现**
 
@@ -141,7 +237,7 @@
 
 ### Client Conversation Node
 
-对应 [client-conversation-nodes.md](client-conversation-nodes.md)。
+对应 [client-conversation-nodes.md](../references/client-conversation-nodes.md)。
 
 **类型与实现**
 
@@ -149,6 +245,7 @@
 - `packages/client/ui-chat/src/client/conversation-nodes/inbox.ts`
 - `packages/client/ui-chat/src/client/conversation-nodes/message.ts`
 - `packages/client/ui-chat/src/client/conversation-nodes/register.ts`
+- `packages/client/ui-conversation/src/client/contract/conversation.ts`
 - `packages/client/ui-conversation/src/client/contract/input.ts`
 - `packages/client/ui-conversation/src/client/conversation/assembler.ts`
 - `packages/client/ui-conversation/src/client/conversation/assembly.ts`
@@ -170,7 +267,7 @@
 
 ### DSH Client UI
 
-对应 [client-ui.md](client-ui.md)。
+对应 [client-ui.md](../references/client-ui.md)。
 
 **类型与实现**
 
@@ -256,7 +353,7 @@
 
 ### 组合、配置与凭证
 
-对应 [composition-config-credentials.md](composition-config-credentials.md)。
+对应 [composition-config-credentials.md](../references/composition-config-credentials.md)。
 
 **类型与实现**
 
@@ -316,7 +413,7 @@
 
 ### 上下文压缩、计量与持久恢复
 
-对应 [context-recovery.md](context-recovery.md)。
+对应 [context-recovery.md](../references/context-recovery.md)。
 
 **类型与实现**
 
@@ -352,7 +449,7 @@
 
 ### Cordis 生命周期
 
-对应 [cordis-lifecycle.md](cordis-lifecycle.md)。
+对应 [cordis-lifecycle.md](../references/cordis-lifecycle.md)。
 
 **类型与实现**
 
@@ -383,7 +480,7 @@
 
 ### Credential records 与交互授权
 
-对应 [credentials-authorization.md](credentials-authorization.md)。
+对应 [credentials-authorization.md](../references/credentials-authorization.md)。
 
 **类型与实现**
 
@@ -415,7 +512,7 @@
 
 ### 防御性生命周期
 
-对应 [defensive-lifecycle.md](defensive-lifecycle.md)。
+对应 [defensive-lifecycle.md](../references/defensive-lifecycle.md)。
 
 **类型与实现**
 
@@ -431,7 +528,7 @@
 
 ### 动态 Cordis 扩展
 
-对应 [dynamic-cordis.md](dynamic-cordis.md)。
+对应 [dynamic-cordis.md](../references/dynamic-cordis.md)。
 
 **类型与实现**
 
@@ -460,7 +557,7 @@
 
 ### 文件系统与观察策略
 
-对应 [filesystem-policy.md](filesystem-policy.md)。
+对应 [filesystem-policy.md](../references/filesystem-policy.md)。
 
 **类型与实现**
 
@@ -485,7 +582,7 @@
 
 ### Claude Code 与 Codex Hook 桥接
 
-对应 [hooks-compatibility.md](hooks-compatibility.md)。
+对应 [hooks-compatibility.md](../references/hooks-compatibility.md)。
 
 **类型与实现**
 
@@ -518,7 +615,7 @@
 
 ### Host 平台、启动环境与支持库
 
-对应 [host-platform-support.md](host-platform-support.md)。
+对应 [host-platform-support.md](../references/host-platform-support.md)。
 
 **类型与实现**
 
@@ -641,7 +738,7 @@
 
 ### 人类交互
 
-对应 [human-interaction.md](human-interaction.md)。
+对应 [human-interaction.md](../references/human-interaction.md)。
 
 **类型与实现**
 
@@ -680,7 +777,7 @@
 
 ### Jobs 后台工作与完成通知
 
-对应 [jobs-background-work.md](jobs-background-work.md)。
+对应 [jobs-background-work.md](../references/jobs-background-work.md)。
 
 **类型与实现**
 
@@ -710,7 +807,7 @@
 
 ### 模型目录、内置 Adapter 与图像请求
 
-对应 [llm-model-routing.md](llm-model-routing.md)。
+对应 [llm-model-routing.md](../references/llm-model-routing.md)。
 
 **类型与实现**
 
@@ -732,22 +829,26 @@
 
 ### LLM Provider Adapter
 
-对应 [llm-provider-adapters.md](llm-provider-adapters.md)。
+对应 [llm-provider-adapters.md](../references/llm-provider-adapters.md)。
 
 **类型与实现**
 
 - `packages/llm/deepseek-llm-api-extensions/src/index.ts`
 - `packages/llm/deepseek-llm-api-extensions/src/types.ts`
+- `packages/llm/llm-deepseek/src/adapter.ts`
 - `packages/llm/llm-deepseek/src/index.ts`
 - `packages/llm/llm-pi-ai/src/index.ts`
 - `packages/llm/llm/src/index.ts`
 - `packages/llm/llm/src/types.ts`
 - `packages/llm/plugin-package-inventory-deepseek/src/index.ts`
+- `packages/llm/token-meter/src/route-pricing.ts`
 - `packages/session/session-log-deepseek/src/index.ts`
 
 **行为测试**
 
+- `packages/llm/llm-deepseek/tests/adapter.spec.ts`
 - `packages/llm/llm-pi-ai/tests/adapter.spec.ts`
+- `packages/llm/token-meter/tests/route-pricing.spec.ts`
 
 **包与目录**
 
@@ -765,7 +866,7 @@
 
 ### DSH 包开发
 
-对应 [package-authoring.md](package-authoring.md)。
+对应 [package-authoring.md](../references/package-authoring.md)。
 
 **类型与实现**
 
@@ -800,7 +901,7 @@
 
 ### Plan、Goal、Todo 与 Schedule
 
-对应 [planning-scheduling.md](planning-scheduling.md)。
+对应 [planning-scheduling.md](../references/planning-scheduling.md)。
 
 **类型与实现**
 
@@ -809,10 +910,15 @@
 - `packages/plan/plan-mode/src/index.ts`
 - `packages/plan/plan-mode/src/types.ts`
 - `packages/schedule/schedule/src/domain.ts`
+- `packages/schedule/schedule/src/index.ts`
 - `packages/schedule/schedule/src/runtime.ts`
 - `packages/schedule/schedule/src/tools.ts`
 - `packages/schedule/schedule/src/transaction.ts`
 - `packages/schedule/schedule/src/types.ts`
+
+**行为测试**
+
+- `packages/schedule/schedule/tests/plugin.spec.ts`
 
 **包与目录**
 
@@ -834,7 +940,7 @@
 
 ### 插件开发路由
 
-对应 [plugin-development-routing.md](plugin-development-routing.md)。
+对应 [plugin-development-routing.md](../references/plugin-development-routing.md)。
 
 **类型与实现**
 
@@ -854,7 +960,7 @@
 
 ### Agent Preset、Persona 与上下文插件
 
-对应 [presets-context.md](presets-context.md)。
+对应 [presets-context.md](../references/presets-context.md)。
 
 **类型与实现**
 
@@ -894,7 +1000,7 @@
 
 ### E2B 远程执行环境
 
-对应 [remote-execution.md](remote-execution.md)。
+对应 [remote-execution.md](../references/remote-execution.md)。
 
 **类型与实现**
 
@@ -925,7 +1031,7 @@
 
 ### 文件、图片、Spill 与进程资源
 
-对应 [runtime-resources.md](runtime-resources.md)。
+对应 [runtime-resources.md](../references/runtime-resources.md)。
 
 **类型与实现**
 
@@ -991,7 +1097,7 @@
 
 ### Scoped registration
 
-对应 [scoped-registration.md](scoped-registration.md)。
+对应 [scoped-registration.md](../references/scoped-registration.md)。
 
 **类型与实现**
 
@@ -1009,12 +1115,13 @@
 
 ### SDK 与 ACP 集成
 
-对应 [sdk-acp-integration.md](sdk-acp-integration.md)。
+对应 [sdk-acp-integration.md](../references/sdk-acp-integration.md)。
 
 **类型与实现**
 
 - `packages/acp/acp/src/index.ts`
 - `packages/acp/acp/src/session.ts`
+- `packages/sdk/client/src/api.ts`
 - `packages/sdk/client/src/client.ts`
 - `packages/sdk/client/src/launch.ts`
 - `packages/sdk/client/src/types.ts`
@@ -1025,6 +1132,7 @@
 **行为测试**
 
 - `packages/sdk/client/tests/launch.spec.ts`
+- `packages/sdk/client/tests/sdk-client.spec.ts`
 - `python/sdk/tests/test_client.py`
 
 **包与目录**
@@ -1036,7 +1144,7 @@
 
 ### Session event 与持久模型上下文
 
-对应 [session-durable-context.md](session-durable-context.md)。
+对应 [session-durable-context.md](../references/session-durable-context.md)。
 
 **类型与实现**
 
@@ -1080,7 +1188,7 @@
 
 ### Session 查询、索引与导出
 
-对应 [session-query-index.md](session-query-index.md)。
+对应 [session-query-index.md](../references/session-query-index.md)。
 
 **类型与实现**
 
@@ -1115,7 +1223,7 @@
 
 ### Session 与 Workspace 的应用 API
 
-对应 [session-workspace-api.md](session-workspace-api.md)。
+对应 [session-workspace-api.md](../references/session-workspace-api.md)。
 
 **类型与实现**
 
@@ -1150,7 +1258,7 @@
 
 ### DSH Skill Provider 与调用策略
 
-对应 [skill-providers.md](skill-providers.md)。
+对应 [skill-providers.md](../references/skill-providers.md)。
 
 **类型与实现**
 
@@ -1171,7 +1279,7 @@
 
 ### Storage 与 Session projection
 
-对应 [storage-projections.md](storage-projections.md)。
+对应 [storage-projections.md](../references/storage-projections.md)。
 
 **类型与实现**
 
@@ -1218,7 +1326,7 @@
 
 ### 测试、文档与 Skill 维护
 
-对应 [testing-docs-maintenance.md](testing-docs-maintenance.md)。
+对应 [testing-docs.md](../references/testing-docs.md)。
 
 **类型与实现**
 
@@ -1255,7 +1363,7 @@
 
 ### 模型工具
 
-对应 [tools.md](tools.md)。
+对应 [tools.md](../references/tools.md)。
 
 **类型与实现**
 
@@ -1293,7 +1401,7 @@
 
 ### Typert Remote API
 
-对应 [typert-remote-api.md](typert-remote-api.md)。
+对应 [typert-remote-api.md](../references/typert-remote-api.md)。
 
 **类型与实现**
 
@@ -1329,7 +1437,7 @@
 
 ### 用户设置
 
-对应 [user-settings.md](user-settings.md)。
+对应 [user-settings.md](../references/user-settings.md)。
 
 **类型与实现**
 
@@ -1354,7 +1462,7 @@
 
 ### Web 搜索与抓取
 
-对应 [web-capabilities.md](web-capabilities.md)。
+对应 [web-capabilities.md](../references/web-capabilities.md)。
 
 **类型与实现**
 
@@ -1385,7 +1493,7 @@
 
 ### Web ingress
 
-对应 [web-ingress.md](web-ingress.md)。
+对应 [web-ingress.md](../references/web-ingress.md)。
 
 **类型与实现**
 

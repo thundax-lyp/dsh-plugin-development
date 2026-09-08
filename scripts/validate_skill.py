@@ -68,7 +68,7 @@ def validate(root, dsh=None):
         if path.is_file() and re.search(r'https?://|/Volumes/|/Users/', path.read_text()):
             errors.append(f'offline/local-path violation: {path.relative_to(root)}')
 
-    source_map = (skill / 'references/source-map.md').read_text()
+    source_map = (skill / 'maintenance/source-map.md').read_text()
     paths = set(SOURCE_PATHS.findall(source_map))
     if dsh:
         tag = re.search(r'`(dsh-v[^`]+)`', source_map)[1]

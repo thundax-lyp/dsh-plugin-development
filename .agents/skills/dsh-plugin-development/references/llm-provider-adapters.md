@@ -1,6 +1,10 @@
 # LLM Provider Adapter
 
-本 reference 覆盖 v0.1.2-rc.1 的 LLM adapter registry、request/stream 转换、凭证、replay state 与 Provider 验证。
+本文覆盖 v0.1.2-rc.1 的 LLM adapter registry、request/stream 转换、凭证、replay state 与 Provider 验证。
+
+## 条件补读
+
+- 内置 route、模型/effort、图像 Files 配置读[模型路由](llm-model-routing.md)
 
 ## Adapter 职责
 
@@ -70,7 +74,7 @@ Endpoint 与 mapping 若能独立验证，应在 load 时失败。只有运行�
 
 `registerModelDiscovery(namespace, (request, signal?) => ...)` 的 cancellation 是独立参数，不在 request 中。已配置 route 的 discovery 使用 Host 持有的凭证和 headers，不能让 redacted UI 自行重建 secret。图片读取遵守 Attachment 与 FS 路径转换，不把 Host 路径直接交给隔离执行环境。
 
-Adapter 可实现同步无 I/O 的 `imageRequestPricing(provider, model)`，按每次图片出现顺序返回视觉 token 与替代/附带文本；没有该能力则保留中立估算，不虚构精确计费。Usage 的 reasoningTokens 已包含在 outputTokens 中；可选 totalTokens 只保留可核实的总量，不重复累加。
+Adapter 的 `imageRequestPricing(provider, model)` 同步返回该准确 route 的 `LlmImageRequestPricing | undefined`，不是逐图价格数组。调用方再执行定价对象的 `priceImages(images)`，取得与输入图片每次出现按索引一一对应的 `readonly LlmImageRequestPrice[]`；每项包含 `visualTokens` 与替代/附带的 `text`，文字 token 由调用方估算。两步均不得执行 I/O；返回 undefined 时使用中立估算，不虚构精确计费。Usage 的 reasoningTokens 已包含在 outputTokens 中；可选 totalTokens 只保留可核实的总量，不重复累加。
 
 `ctx.deepseekLlmApiExtensions` 是官方 DeepSeek 的独立顶层 body field registry。贡献者独占字段，以 `prepare(request)` 生成 detached JSON 和可选 accept callback；Adapter 在 HTTP 2xx 后执行幂等 acceptance transaction。Preparation、字段冲突和 acceptance failure 都会使请求失败，不能把 2xx 后 bookkeeping 失败描述为未发送。
 
