@@ -6,16 +6,16 @@
 
 从 `@deepseek-ai/dsh-storage` 导入 `StorageBackend`、`KvFacet`、`KvUnit`、`KvUnitDescriptor`、`StorageError`、`UNIT_NAME_RE` 和 `storageBackendServiceKey`；它们是公开 exports。按目标工程实现介质，不复制上游私有 unit 类或直接让业务 Consumer 调用介质。
 
-| 接口 | 必须实现的行为 |
-| --- | --- |
-| `StorageBackend` | 可选 `readonly kv?: KvFacet`，以及 `close(): Promise<void>`；未提供 facet 时显式缺失，不伪造空数据。close 排空所有 unit 的写入并释放介质，并发重复调用等待同一静默结果。 |
-| `KvFacet.open(descriptor): Promise<KvUnit>` | 创建或打开指定 unit；新 unit 立即可读为空。打开同名未关闭 unit 拒绝；版本/介质异常按下方布局契约处理。 |
-| `KvUnit.loadAll()` | Promise 返回 `{ tables: Record<string, Record<string, unknown>>, global: unknown }`；global 未写入或未声明时为 `null`。Backend 不解释领域 schema。 |
-| `putRecord(table, key, value)` | 整条替换，返回 `Promise<void>`；每次调用原子且 resolve 后 durable，重启再打开能读到已确认写入。 |
-| `deleteRecord(table, key)` | 返回 `Promise<void>`；删除缺失记录为幂等 no-op。 |
-| `setGlobal(value)` | 返回 `Promise<void>`；只有 descriptor 声明 `hasGlobal` 才允许。 |
-| `backupRecord?(table, key)` | 返回 `Promise<string>` 诊断位置；保留原字节并移出可读集合，随后读取为缺失、再次写入可重建。没有对应介质能力就省略，不假装备份成功。 |
-| `KvUnit.close()` | 返回 `Promise<void>`；drain 后释放 unit，幂等，关闭后的调用拒绝 `closed`。 |
+| 接口                                        | 必须实现的行为                                                                                                                                                           |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `StorageBackend`                            | 可选 `readonly kv?: KvFacet`，以及 `close(): Promise<void>`；未提供 facet 时显式缺失，不伪造空数据。close 排空所有 unit 的写入并释放介质，并发重复调用等待同一静默结果。 |
+| `KvFacet.open(descriptor): Promise<KvUnit>` | 创建或打开指定 unit；新 unit 立即可读为空。打开同名未关闭 unit 拒绝；版本/介质异常按下方布局契约处理。                                                                   |
+| `KvUnit.loadAll()`                          | Promise 返回 `{ tables: Record<string, Record<string, unknown>>, global: unknown }`；global 未写入或未声明时为 `null`。Backend 不解释领域 schema。                       |
+| `putRecord(table, key, value)`              | 整条替换，返回 `Promise<void>`；每次调用原子且 resolve 后 durable，重启再打开能读到已确认写入。                                                                          |
+| `deleteRecord(table, key)`                  | 返回 `Promise<void>`；删除缺失记录为幂等 no-op。                                                                                                                         |
+| `setGlobal(value)`                          | 返回 `Promise<void>`；只有 descriptor 声明 `hasGlobal` 才允许。                                                                                                          |
+| `backupRecord?(table, key)`                 | 返回 `Promise<string>` 诊断位置；保留原字节并移出可读集合，随后读取为缺失、再次写入可重建。没有对应介质能力就省略，不假装备份成功。                                      |
+| `KvUnit.close()`                            | 返回 `Promise<void>`；drain 后释放 unit，幂等，关闭后的调用拒绝 `closed`。                                                                                               |
 
 Descriptor 包含 `name`、非负整数 `version`、`tables`、`hasGlobal`，以及可选 `layout`、`compatibleVersions`。Unit/table 名匹配 `^[a-z][a-z0-9_]*$`。记录 key 与版本兼容受布局约束，完整规则统一见[布局与版本说明](storage-projections.md#storage-domain)。不要把 single 的 `version-mismatch`、per-record 的记录缺失处置或 layout 转换混为一种通用恢复行为。
 

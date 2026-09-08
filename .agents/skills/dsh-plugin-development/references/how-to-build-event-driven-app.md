@@ -18,13 +18,13 @@
 
 这一步的产物是装配清单：
 
-| 组件 | 为什么需要 | 案例如何提供 |
-| --- | --- | --- |
-| Web 应用及 Agent/Workspace 基础能力 | 创建并展示评审会话 | 既有 `web` profile |
-| GitHub 入站 adapter | 验证签名、解析事件、交给 runtime | `@deepseek-ai/dsh-webhook-github` |
-| Webhook runtime | 调用规则，将其返回值落实为 Workspace Session | `@deepseek-ai/dsh-webhook` |
-| 业务规则插件 | 决定哪些 PR 需要评审、在哪执行、给模型什么任务 | `github-ready-review-rule.mjs` |
-| 独立 ingress WebServer | 只对外提供 webhook 接口 | isolated `webServer` realm 下的 `@deepseek-ai/dsh-host-webserver` |
+| 组件                                | 为什么需要                                     | 案例如何提供                                                      |
+| ----------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------- |
+| Web 应用及 Agent/Workspace 基础能力 | 创建并展示评审会话                             | 既有 `web` profile                                                |
+| GitHub 入站 adapter                 | 验证签名、解析事件、交给 runtime               | `@deepseek-ai/dsh-webhook-github`                                 |
+| Webhook runtime                     | 调用规则，将其返回值落实为 Workspace Session   | `@deepseek-ai/dsh-webhook`                                        |
+| 业务规则插件                        | 决定哪些 PR 需要评审、在哪执行、给模型什么任务 | `github-ready-review-rule.mjs`                                    |
+| 独立 ingress WebServer              | 只对外提供 webhook 接口                        | isolated `webServer` realm 下的 `@deepseek-ai/dsh-host-webserver` |
 
 不把包已随 CLI 分发等同于默认启用；该案例通过 overlay 激活 webhook 包。
 
@@ -92,13 +92,13 @@ GitHub ready_for_review delivery
 
 ## 步骤 5：检查失败和恢复边界
 
-| 场景 | 上游案例的语义 | 设计者应如何处理 |
-| --- | --- | --- |
-| 合法签名但仓库或 action 不匹配 | 规则返回 `null`，不创建评审 Session；仍可能返回 HTTP `202` | 验证业务筛选，不能只看 HTTP 状态 |
-| 重复 delivery | 再次运行规则，可能再创建 Session | 只有需求要求去重时才设计持久去重 owner；`deliveryId` 本身不去重 |
-| 初始 prompt 尚未接受时进程退出 | 内存中的规则调用可能丢失，无内置队列或重试 | 可靠交付需求需要额外明确协议，不能宣称已满足 |
-| prompt 已接受但评审失败 | 后续由普通 Agent/Session 生命周期处理 | 不把入站成功作为业务成功；按需求定义失败展示 |
-| 规则卸载 | 先停止接收，再 abort 并等待正在运行的回调 | 自定义异步规则需响应 signal，不能遗留未托管工作 |
+| 场景                           | 上游案例的语义                                             | 设计者应如何处理                                                |
+| ------------------------------ | ---------------------------------------------------------- | --------------------------------------------------------------- |
+| 合法签名但仓库或 action 不匹配 | 规则返回 `null`，不创建评审 Session；仍可能返回 HTTP `202` | 验证业务筛选，不能只看 HTTP 状态                                |
+| 重复 delivery                  | 再次运行规则，可能再创建 Session                           | 只有需求要求去重时才设计持久去重 owner；`deliveryId` 本身不去重 |
+| 初始 prompt 尚未接受时进程退出 | 内存中的规则调用可能丢失，无内置队列或重试                 | 可靠交付需求需要额外明确协议，不能宣称已满足                    |
+| prompt 已接受但评审失败        | 后续由普通 Agent/Session 生命周期处理                      | 不把入站成功作为业务成功；按需求定义失败展示                    |
+| 规则卸载                       | 先停止接收，再 abort 并等待正在运行的回调                  | 自定义异步规则需响应 signal，不能遗留未托管工作                 |
 
 ## 步骤 6：验证组合，再迁移到自己的场景
 

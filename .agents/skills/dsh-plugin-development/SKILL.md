@@ -9,12 +9,12 @@ description: 为基于 DeepSeek Harness 的应用与 Cordis 插件澄清需求�
 
 ## 选择入口
 
-| 当前任务 | 先读 | 交付结果 |
-| --- | --- | --- |
-| 只有想法，需要明确范围、规则或验收 | [需求澄清](references/requirements-discovery.md) | 有依据的需求、验收条件和未决项 |
-| 需求已明确，需要选择能力或设计应用 | [应用设计](references/application-design.md) | 职责、接口、状态、应用组合和验证计划 |
-| 实现或修改具体功能 | [开发路由](references/plugin-development-routing.md) | 实现、相关文档与实际验证结果 |
-| 想先理解完整应用案例 | [事件驱动应用 HOW-TO](references/how-to-build-event-driven-app.md) | 从触发事件到 Agent 结果的组合方法 |
+| 当前任务                           | 先读                                                               | 交付结果                             |
+| ---------------------------------- | ------------------------------------------------------------------ | ------------------------------------ |
+| 只有想法，需要明确范围、规则或验收 | [需求澄清](references/requirements-discovery.md)                   | 有依据的需求、验收条件和未决项       |
+| 需求已明确，需要选择能力或设计应用 | [应用设计](references/application-design.md)                       | 职责、接口、状态、应用组合和验证计划 |
+| 实现或修改具体功能                 | [开发路由](references/plugin-development-routing.md)               | 实现、相关文档与实际验证结果         |
+| 想先理解完整应用案例               | [事件驱动应用 HOW-TO](references/how-to-build-event-driven-app.md) | 从触发事件到 Agent 结果的组合方法    |
 
 按用户要求停在相应阶段。已有需求与设计可直接复用；只有缺少会影响当前实现的职责、接口或恢复边界时，才补齐对应设计，不重做整个项目规划。需求草案与设计候选不自动成为已确认的实现依据。
 

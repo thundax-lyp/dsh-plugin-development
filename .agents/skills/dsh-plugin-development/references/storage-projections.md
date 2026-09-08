@@ -23,10 +23,10 @@
 
 产品 Consumer 依赖 typed domain facility，不直接调用具体 backend。Domain owner 用 `defineDomain()` 声明唯一名称、非负 format version、可选 global 和 typed tables；table key 优先使用 producer-owned branded id。Schema 在打开现有介质时验证数据。布局与版本语义见下表；选择前先确定业务数据是否允许被视作缺失。默认 invalid record 拒绝打开；仅对可丢弃派生数据使用 `invalidRecords: backup-and-skip`，且 backend 必须提供 `backupRecord()`，否则仍拒绝。Global slot 始终拒绝无效值，权威业务数据不应使用跳过恢复。
 
-| 布局 | 版本与 key 边界 |
-| --- | --- |
-| `single`（默认） | 整个 unit 的版本必须精确匹配，`compatibleVersions` 不放宽此检查；不匹配报 `version-mismatch`。记录 key 为 opaque string，不因 branded type 自动变成安全路径。 |
-| `per-record` | JSON backend 接受当前版本及 `compatibleVersions` 中的记录；写入标记当前版本。key 必须匹配 `[a-zA-Z0-9_-]+`，含 `/`、`:` 等复合 key 会在写入时拒绝，需先确定稳定且无碰撞的编码。 |
+| 布局             | 版本与 key 边界                                                                                                                                                                 |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `single`（默认） | 整个 unit 的版本必须精确匹配，`compatibleVersions` 不放宽此检查；不匹配报 `version-mismatch`。记录 key 为 opaque string，不因 branded type 自动变成安全路径。                   |
+| `per-record`     | JSON backend 接受当前版本及 `compatibleVersions` 中的记录；写入标记当前版本。key 必须匹配 `[a-zA-Z0-9_-]+`，含 `/`、`:` 等复合 key 会在写入时拒绝，需先确定稳定且无碰撞的编码。 |
 
 JSON `per-record` 对 malformed 或不在接受版本集合内的文档按记录缺失处理，这发生在 Domain schema 验证之前，不能被 `invalidRecords: reject` 补救。因此该布局不能直接承诺所有损坏和旧版本都会拒绝打开；权威数据需证明这与恢复要求一致。Legacy whole-unit bootstrap 仅在新树没有任何 document path 时尝试，接受版本才导入，否则保持旧文件并呈现空 unit；新树有 unreadable/stale document 也会抑制 bootstrap。它不是通用迁移。`compatibleVersions` 只声明旧 schema 可读性，不运行升级转换。
 

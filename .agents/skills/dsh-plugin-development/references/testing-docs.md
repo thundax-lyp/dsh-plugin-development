@@ -60,5 +60,4 @@ Invariant 检查包拥有的可观察关系，不检查 service/method 是否存
 
 不要根据叙述文档中“每包必须有空 companion”的旧规则新增空 invariant；目标 gate 只允许拥有实际关系的 companion。包文件要求见 [Invariant 与 README](package-authoring.md#invariant-companion)。
 
-
 聚焦 specs 会与其他 worker/gate 并发；独占端口、临时路径、环境和子进程并可靠 teardown，不能以仅单跑成功掩盖污染。修改 Client 文案运行 verify-client-ui-i18n，修改包分层/exports 运行对应 package-dependency 与 module-boundary gate；catalog、subsystem page、README omission 等文档规则由各可执行 gate 决定。

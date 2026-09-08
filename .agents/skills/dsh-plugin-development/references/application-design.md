@@ -20,13 +20,13 @@
 
 已有应用先沿用其入口并核对实际组合；新应用根据调用者和交互方式选择候选。下表是已发布模板的用途，不要求一个项目同时采用多种入口。
 
-| 使用场景 | 候选入口 | 组合与边界 |
-| --- | --- | --- |
-| 扩展 DSH 内置浏览器应用 | `web` | base + Web application；业务后端与 Client 展示分工，UI 不因此取得任意 Host 权限 |
-| 一次性执行并输出结果，无服务器 | `headless` | base + one-shot runner；不适合作为持续交互界面的生命周期 |
-| 外部 TypeScript/Python 程序驱动 Agent | `sdk` | base + SDK server，通过 SDK 协议连接；核对同版本 launcher 和公开协议覆盖面 |
-| 外部自动化客户端要求 ACP | `acp` | base + ACP server；只按已实现的 automation-only 协议设计，不推断完整编辑器能力 |
-| SDK 确实只需精简编码 Agent | `sdk-minimal` | 独立完整树，不继承 base；缺少 jobs、subagents、skills 等共享能力，不能因名字含 minimal 就当通用起点；默认全权限文件/执行策略也须与目标隔离要求匹配 |
+| 使用场景                              | 候选入口      | 组合与边界                                                                                                                                         |
+| ------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 扩展 DSH 内置浏览器应用               | `web`         | base + Web application；业务后端与 Client 展示分工，UI 不因此取得任意 Host 权限                                                                    |
+| 一次性执行并输出结果，无服务器        | `headless`    | base + one-shot runner；不适合作为持续交互界面的生命周期                                                                                           |
+| 外部 TypeScript/Python 程序驱动 Agent | `sdk`         | base + SDK server，通过 SDK 协议连接；核对同版本 launcher 和公开协议覆盖面                                                                         |
+| 外部自动化客户端要求 ACP              | `acp`         | base + ACP server；只按已实现的 automation-only 协议设计，不推断完整编辑器能力                                                                     |
+| SDK 确实只需精简编码 Agent            | `sdk-minimal` | 独立完整树，不继承 base；缺少 jobs、subagents、skills 等共享能力，不能因名字含 minimal 就当通用起点；默认全权限文件/执行策略也须与目标隔离要求匹配 |
 
 支持的 Node 应用通过 `dsh` CLI、命名 profile 和有序 patch 启动。Profile 选择应用树；bundle 分发一组配置与代码；Agent preset 选择某个 Agent 的组合。不要用新增启动器或调用方内联整棵 Cordis 树绕过应用入口。具体规则读[组合配置](composition-config-credentials.md)，外部调用再读 [SDK/ACP](sdk-acp-integration.md)。
 
@@ -34,20 +34,20 @@
 
 对每项可观察行为，先判断已有配置或公开能力能否完成；只有具体契约缺口才新增插件逻辑。下表帮助选择，选中后再查对应 reference 的限制及实际 profile 是否挂载。
 
-| 什么时候需要 | 首选机制与阅读入口 | 不能据此推断 |
-| --- | --- | --- |
-| 模型需要选择并调用业务动作 | [Tool](tools.md)，调用插件业务逻辑或既有 Service | 每个内部函数都需要变成工具 |
-| 人直接执行明确命令，或回答问题/批准动作 | [Human command、UserQuestions、Approval](human-interaction.md)，按交互意图区分 | 普通回答等于授权；所有按钮都应触发模型轮次 |
-| 给模型稳定指导或下一步上下文 | [Prompt section、followup/steer/inject](session-durable-context.md)；角色组合读 [Preset](presets-context.md) | `inject()` 会自行唤醒 Agent；提示词能替代权限控制 |
-| 调整工具可见范围或执行策略 | [Tool restriction、guard 与执行事件](tools.md) | 只隐藏 schema 就能禁止执行；Plan mode 是安全隔离 |
-| 使用另一模型、文件系统、执行环境或外部工具 | 优先现有 [Provider](capability-seams-providers.md)；按需读[模型路由](llm-model-routing.md)、[资源/MCP](runtime-resources.md)、[远程执行](remote-execution.md) | 换一个文件 Provider 就自动迁移全部执行资源；MCP 桥接所有协议能力 |
-| 一次委派获得结果，或维护可多轮继续的子身份 | [one-shot / continuable Subagent](agent-subagent-workflow.md)；先确定 parent 与生命周期 | 普通 Agent 必须使用 Subagent；同级子 Agent 可以直接互发消息 |
-| 多步骤动态委派确实需要 workflow 的执行模型 | [Workflow](agent-subagent-workflow.md)，核对实际 Provider 与结构化结果约束 | 多步骤业务必然需要 Workflow；实验 Teams 是默认协调能力 |
-| 同一 Session 的目标推进、任务展示或以后提醒 | [Goal / Todo / Schedule](planning-scheduling.md)，按意图选一项 | Todo 自动调度；Schedule 是可靠业务队列或通用 Cron |
-| 长时工作需要返回 handle、收集输出或停止 | [Jobs](jobs-background-work.md)，明确 Producer 与取消 owner | 后台任务自动成为跨重启可靠工作流 |
-| 增加浏览器页面、Chat 业务节点或远程业务接口 | [Client UI](client-ui.md)、[Conversation](client-conversation-nodes.md)、[Typert API](typert-remote-api.md)；已有控制面先查 [Session/Workspace API](session-workspace-api.md) | Chat renderer 拥有业务状态或 Agent 生命周期 |
-| 外部事件触发新 Session | [Webhook 与入站适配](web-ingress.md) | 出站 Web 搜索提供入站协议；签名验证等于业务幂等 |
-| 数据要保存、回放或派生查询 | [三类状态选择](storage-projections.md#三类状态的选择)，再定事实源与 projection | 所有业务数据都放 Session event；projection 是第二份权威数据 |
+| 什么时候需要                                | 首选机制与阅读入口                                                                                                                                                            | 不能据此推断                                                     |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 模型需要选择并调用业务动作                  | [Tool](tools.md)，调用插件业务逻辑或既有 Service                                                                                                                              | 每个内部函数都需要变成工具                                       |
+| 人直接执行明确命令，或回答问题/批准动作     | [Human command、UserQuestions、Approval](human-interaction.md)，按交互意图区分                                                                                                | 普通回答等于授权；所有按钮都应触发模型轮次                       |
+| 给模型稳定指导或下一步上下文                | [Prompt section、followup/steer/inject](session-durable-context.md)；角色组合读 [Preset](presets-context.md)                                                                  | `inject()` 会自行唤醒 Agent；提示词能替代权限控制                |
+| 调整工具可见范围或执行策略                  | [Tool restriction、guard 与执行事件](tools.md)                                                                                                                                | 只隐藏 schema 就能禁止执行；Plan mode 是安全隔离                 |
+| 使用另一模型、文件系统、执行环境或外部工具  | 优先现有 [Provider](capability-seams-providers.md)；按需读[模型路由](llm-model-routing.md)、[资源/MCP](runtime-resources.md)、[远程执行](remote-execution.md)                 | 换一个文件 Provider 就自动迁移全部执行资源；MCP 桥接所有协议能力 |
+| 一次委派获得结果，或维护可多轮继续的子身份  | [one-shot / continuable Subagent](agent-subagent-workflow.md)；先确定 parent 与生命周期                                                                                       | 普通 Agent 必须使用 Subagent；同级子 Agent 可以直接互发消息      |
+| 多步骤动态委派确实需要 workflow 的执行模型  | [Workflow](agent-subagent-workflow.md)，核对实际 Provider 与结构化结果约束                                                                                                    | 多步骤业务必然需要 Workflow；实验 Teams 是默认协调能力           |
+| 同一 Session 的目标推进、任务展示或以后提醒 | [Goal / Todo / Schedule](planning-scheduling.md)，按意图选一项                                                                                                                | Todo 自动调度；Schedule 是可靠业务队列或通用 Cron                |
+| 长时工作需要返回 handle、收集输出或停止     | [Jobs](jobs-background-work.md)，明确 Producer 与取消 owner                                                                                                                   | 后台任务自动成为跨重启可靠工作流                                 |
+| 增加浏览器页面、Chat 业务节点或远程业务接口 | [Client UI](client-ui.md)、[Conversation](client-conversation-nodes.md)、[Typert API](typert-remote-api.md)；已有控制面先查 [Session/Workspace API](session-workspace-api.md) | Chat renderer 拥有业务状态或 Agent 生命周期                      |
+| 外部事件触发新 Session                      | [Webhook 与入站适配](web-ingress.md)                                                                                                                                          | 出站 Web 搜索提供入站协议；签名验证等于业务幂等                  |
+| 数据要保存、回放或派生查询                  | [三类状态选择](storage-projections.md#三类状态的选择)，再定事实源与 projection                                                                                                | 所有业务数据都放 Session event；projection 是第二份权威数据      |
 
 ## 4. 明确业务职责、状态与生命周期
 
@@ -83,8 +83,8 @@ DSH 提供执行、会话和扩展原语；项目自己的领域规则、业务�
 
 按任务规模在回复或目标项目规定的设计文档中给出以下内容，不为流程本身新建治理文件：
 
-| 场景与验收结果 | DSH 能力及契约依据 | 插件自有职责 | 入口/组合与 owner | 限制及未决项 | 验证方式 |
-| --- | --- | --- | --- | --- | --- |
+| 场景与验收结果           | DSH 能力及契约依据            | 插件自有职责         | 入口/组合与 owner                    | 限制及未决项               | 验证方式             |
+| ------------------------ | ----------------------------- | -------------------- | ------------------------------------ | -------------------------- | -------------------- |
 | 使用具体触发与可观察结果 | 链接选中 reference 的相关契约 | 领域行为、状态或边界 | profile、Service、Session/资源 owner | 版本、缺失能力与待确认决策 | 能暴露错误方案的用例 |
 
 同时给出一条端到端正常路径和相关失败路径。分开标注“基线已有契约”“本项目拟采用、组合待验证”“尚未决定”；基线已支持不代表目标项目已挂载或已通过测试。
