@@ -1,6 +1,6 @@
 # Plan、Goal、Todo 与 Schedule
 
-本 reference 针对 `dsh-v0.1.2-rc.1` 的任务协作状态。四者都是可选领域能力，不能互相替代。
+本文针对 `dsh-v0.1.2-rc.1` 的任务协作状态。四者都是可选领域能力，不能互相替代。
 
 | 意图                        | Owner                 | 不能推断的能力                       |
 | --------------------------- | --------------------- | ------------------------------------ |
@@ -10,6 +10,10 @@
 | 在原 Session 以后排入提醒   | Schedule              | 不是通用 Cron 或可靠业务消息队列     |
 
 **阅读导航：** 根据开头的意图表选择 Plan、Goal/Todo 或 Schedule。提醒任务必须连续读[时间与重放](#schedule-的时间与重放)和[交付与持久化](#live-deliveryfork-与-durability)，不能只读创建参数。最后核对[验证](#验证)。
+
+## 条件补读
+
+- Schedule 必须连读时间和 live/fork/durability；改实际权限才补[人类交互](human-interaction.md)
 
 ## Plan 的已记录状态与 pending
 
@@ -33,7 +37,9 @@ schedule/change 是 durable authority，id 在 Session 内不可复用。Dispatc
 
 ## Live delivery、fork 与 durability
 
-冷 Session 不执行提醒；重新打开为 live Agent 后才重建 timer 并处理 overdue。到期任务等 Agent 完全 idle 并取得 maintenance phase，再重新 fold、采样时间、调用 followup 和追加 dispatch；不用 steer 打断当前 turn。One-shot 优先，每次一个 later turn；没有到期 one-shot 时才合并 overdue Every。
+Schedule 只为插件加载后经 `agent/created` 发布的 runtime root Agent 安装工具和 timer；不会补装到已经存在的 Agent，也不安装到 owned child。动态启用或重载插件不能让已有 live Agent 自动获得该能力。冷 Session 不执行提醒；在插件已加载的组合中恢复并发布为 root Agent 后，才重建 timer 并处理 overdue。
+
+到期任务等所属 Agent 完全 idle 并取得 maintenance phase，再重新 fold、采样时间、调用 followup 和追加 dispatch；不用 steer 打断当前 turn。One-shot 优先，每次一个 later turn；没有到期 one-shot 时才合并 overdue Every。
 
 Fork 仅 fold inheritedEventCount 之后的 Schedule 事件，不继承父 Session 的活跃提醒。正常 restore 保留 active records 与已用 id，不能只缓存当前 active 数组而丢掉复用检测。管理与到期操作在 Agent-scoped queue 串行，经共享 persistence barrier；失败返回 persistence_uncertain，不猜测 eager write 是否落盘。
 
@@ -41,4 +47,4 @@ Fork 仅 fold inheritedEventCount 之后的 Schedule 事件，不继承父 Sessi
 
 ## 验证
 
-覆盖 pending selection 的拒绝/延后、Plan 与权限独立、Goal revision/round、Schedule 时间边界/DST、missed tick 合并、replay 和 dispatch admission。不要用定时器触发一次证明持久提醒恢复正确。
+覆盖 pending selection 的拒绝/延后、Plan 与权限独立、Goal revision/round、Schedule 仅安装到加载后发布的 root Agent、已有 Agent 与 owned child 不安装、插件卸载清理、时间边界/DST、missed tick 合并、replay 和 dispatch admission。不要用定时器触发一次证明持久提醒恢复正确。

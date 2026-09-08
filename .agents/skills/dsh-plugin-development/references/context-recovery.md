@@ -1,6 +1,10 @@
 # 上下文压缩、计量与持久恢复
 
-本 reference 固定到 `dsh-v0.1.2-rc.1`，补充 [Session 事件](session-durable-context.md) 的历史压缩、token pressure 与恢复边界。Compaction 是可选能力，不应塞进普通工具或 Provider。
+本文固定到 `dsh-v0.1.2-rc.1`，补充 [Session 事件](session-durable-context.md) 的历史压缩、token pressure 与恢复边界。Compaction 是可选能力，不应塞进普通工具或 Provider。
+
+## 条件补读
+
+- 不熟悉 log 与 surface 区别时先读[Session 事实源](session-durable-context.md#持久事实源)；不把 flush 当外部效果 exactly-once
 
 ## Surface 不是按 seq 排序的全部日志
 

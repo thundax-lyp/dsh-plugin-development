@@ -1,6 +1,10 @@
 # 模型工具
 
-本 reference 覆盖 v0.1.2-rc.1 的 tool definition、execution、policy、result 与 presentation 表面。
+本文覆盖 v0.1.2-rc.1 的 tool definition、execution、policy、result 与 presentation 表面。
+
+## 条件补读
+
+- 修改已有工具先用[内置工具](builtin-tool-contracts.md)定位工具族；Native/PTC、restriction、timeout 变更读 Tools 对应章节
 
 ## 工具职责
 

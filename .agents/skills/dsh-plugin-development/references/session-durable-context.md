@@ -1,6 +1,10 @@
 # Session event 与持久模型上下文
 
-本 reference 覆盖 v0.1.2-rc.1 的 Session 扩展、回放所有权、prompt section、skill 和会进入模型上下文的 Agent 输入。
+本文覆盖 v0.1.2-rc.1 的 Session 扩展、回放所有权、prompt section、skill 和会进入模型上下文的 Agent 输入。
+
+## 条件补读
+
+- 按 scope 注册读[作用域](scoped-registration.md)；实际改压缩/恢复才读[上下文恢复](context-recovery.md)
 
 ## 持久事实源
 

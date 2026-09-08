@@ -1,8 +1,13 @@
 # 文件、图片、Spill 与进程资源
 
-本 reference 覆盖 `dsh-v0.1.2-rc.1` 中插件跨 Host 文件系统、执行环境与进程边界的契约。统一工具结果规则见 [模型工具](tools.md)，通用清理原则见 [防御性生命周期](defensive-lifecycle.md)。
+本文覆盖 `dsh-v0.1.2-rc.1` 中插件跨 Host 文件系统、执行环境与进程边界的契约。统一工具结果规则见 [模型工具](tools.md)，通用清理原则见 [防御性生命周期](defensive-lifecycle.md)。
 
 **阅读导航：** 附件：先读[执行环境](#文件与图片的执行环境)，再读[存取契约](#attachmentstore-的存取契约)。输出保留读[Spill](#spill-的可恢复性与保留期)；进程/PTY 读[子进程与终端](#子进程与终端)；语言服务读[LSP](#lsp-坐标与注册)；MCP 连续读[命名作用域](#mcp-命名作用域)与[同步恢复](#mcp-同步恢复与兼容子集)。最后检查[验证](#验证)中命中的分支。
+
+## 条件补读
+
+- 发布后台 handle 读[Jobs](jobs-background-work.md)；实现异步资源 owner 读[防御性生命周期](defensive-lifecycle.md)
+- 修改工具 schema/输出读[Tools](tools.md)；MCP 不桥接的协议能力不能自行假定存在
 
 ## 文件与图片的执行环境
 
@@ -38,7 +43,7 @@ Terminal 启动就绪是 backend 协议事实。PowerShell 使用 `stdin_read` �
 
 Subprocess Provider 的 executable lookup、cwd、process 与所挂载 FileSystem 必须处在同一执行环境。Spawn spec 显式声明 argv、目录、stdio disposition 和限制，argv 不经 shell 解释。先 scrub ambient `DSH_*` 与凭证，再合并 caller 的显式 env；`undefined` 是删除 ambient 值的 tombstone。
 
-Collect reader 使用 whole-stream byte offset，读取不消费，不同 reader 不抢数据；raw pipe 由 caller 拥有。`terminate()` 负责进程树 TERM、宽限期、KILL，`waitForExit()` 观察整棵树。`done` 只返回 exit facts，deadline/abort 的原因由拥有 signal 的 Consumer 判定；settle 后 collected output 仍可读。
+Collect reader 使用 whole-stream byte offset，读取不消费，不同 reader 不抢数据；raw pipe 由 caller 拥有。`SubprocessHandle.terminate()` 发起进程树终止，本身不等待退出；POSIX 使用 TERM、宽限期、KILL，Windows 立即强制终止。`waitForExit(signal?)` 返回 true 才表示整棵树已退出，false 只表示等待被取消，不能宣布 cleanup 完成。`done` 在直接进程 close 时 resolve exit facts，但 spawn-level failure 会 reject；它不同于 Jobs Producer 的不拒绝 `done` 契约，也不替代整棵树退出的等待。Deadline/abort 的原因由拥有 signal 的 Consumer 判定；进程退出后 collected output 仍可读。
 
 Shell Consumer 先将可选 request 解析为完整 spec；stdin/env/stdoutMaxBytes 等可信插件输入不应自动暴露为模型 tool 参数。ShellProcess 本身没有 job id，由 tool 的 Jobs adapter 决定是否发布后台 handle。Sandbox runner failure 在 foreground 可作为基础设施异常抛出，后台结果则保留 runnerFailed 事实，不能统称为命令非零退出。
 
