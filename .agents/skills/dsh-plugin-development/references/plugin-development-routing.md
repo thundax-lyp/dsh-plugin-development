@@ -50,19 +50,19 @@
 
 ### 人类交互、Client 与集成
 
-| 用户要改变的结果                                     | 先读                                                                              |
-| ---------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Human command、业务提问或单次动作审批                | [人类交互](human-interaction.md)：机制选择，再读命中机制与证据                    |
-| Credential record、账号 flow、登录与取消             | [凭证与授权](credentials-authorization.md)                                        |
-| Claude Code/Codex hooks                              | [Hooks](hooks-compatibility.md)：支持点、决策和未实现协议                         |
-| Client slot、component、store、action、locale 或主题 | [Client UI](client-ui.md)                                                         |
-| Conversation Node 与历史展示                         | [Conversation Node](client-conversation-nodes.md)：事件族 → 增量 → packed history |
-| Session/Workspace 命令、历史、分页与重连             | [应用 API](session-workspace-api.md)                                              |
-| 新 Remote method、stream 或选定事件转发              | [Typert Remote API](typert-remote-api.md)                                         |
-| SDK launcher、Python 分发或 ACP 协议                 | [SDK/ACP](sdk-acp-integration.md)：按导航先启动/结果，再看协议                    |
-| WebServer、入站 Webhook 或签名验证                   | [Web ingress](web-ingress.md)                                                     |
-| 动态 Cordis define/run、inspection 或 Client half    | [动态 Cordis](dynamic-cordis.md)：发现 → Package/Run → Client                     |
-| Host 环境、目录选择、inventory 或实验平台            | [Host 支持](host-platform-support.md)：按目标能力选段                             |
+| 用户要改变的结果                                                         | 先读                                                                              |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Human command、业务提问或单次动作审批                                    | [人类交互](human-interaction.md)：机制选择，再读命中机制与证据                    |
+| Credential record、账号 flow、登录与取消                                 | [凭证与授权](credentials-authorization.md)                                        |
+| Claude Code/Codex hooks                                                  | [Hooks](hooks-compatibility.md)：支持点、决策和未实现协议                         |
+| Client slot、component、store、action、locale、主题或 UI Primitives 复用 | [Client UI](client-ui.md)：按阅读导航选择集成或组件复用路径                       |
+| Conversation Node 与历史展示                                             | [Conversation Node](client-conversation-nodes.md)：事件族 → 增量 → packed history |
+| Session/Workspace 命令、历史、分页与重连                                 | [应用 API](session-workspace-api.md)                                              |
+| 新 Remote method、stream 或选定事件转发                                  | [Typert Remote API](typert-remote-api.md)                                         |
+| SDK launcher、Python 分发或 ACP 协议                                     | [SDK/ACP](sdk-acp-integration.md)：按导航先启动/结果，再看协议                    |
+| WebServer、入站 Webhook 或签名验证                                       | [Web ingress](web-ingress.md)                                                     |
+| 动态 Cordis define/run、inspection 或 Client half                        | [动态 Cordis](dynamic-cordis.md)：发现 → Package/Run → Client                     |
+| Host 环境、目录选择、inventory 或实验平台                                | [Host 支持](host-platform-support.md)：按目标能力选段                             |
 
 ## 叠加横切路径
 
