@@ -4,10 +4,7 @@ const path = require("node:path");
 const cp = require("node:child_process");
 const crypto = require("node:crypto");
 const repo = path.resolve(__dirname, "..");
-const refs = path.join(
-    repo,
-    ".agents/skills/dsh-plugin-development/references",
-);
+const refs = path.join(repo, "skills/dsh-plugin-development/references");
 const argv = process.argv.slice(2);
 if (argv.length !== 2 || argv[0] !== "--dsh") {
     console.error(

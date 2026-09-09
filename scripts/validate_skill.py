@@ -34,7 +34,7 @@ def headings(path):
 
 
 def validate(root, dsh=None):
-    skill = root / '.agents/skills/dsh-plugin-development'
+    skill = root / 'skills/dsh-plugin-development'
     listed = subprocess.check_output(
         ['git', 'ls-files', '--cached', '--others', '--exclude-standard'],
         cwd=root, text=True,

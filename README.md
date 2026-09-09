@@ -12,8 +12,8 @@ Lifecycle ownership · durable context · Providers · tools · Client UI · val
 [![GitHub forks](https://img.shields.io/github/forks/thundax-lyp/dsh-plugin-development?style=for-the-badge&color=blue&label=Forks)](https://github.com/thundax-lyp/dsh-plugin-development/network/members)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](LICENSE)
 [![DSH: v0.1.2-rc.1](https://img.shields.io/badge/DSH-v0.1.2--rc.1-4D6BFE?style=for-the-badge)](#compatibility)
-[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8257D0?style=for-the-badge)](.agents/skills/dsh-plugin-development/SKILL.md)
-[![Offline](https://img.shields.io/badge/References-Offline-2EA44F?style=for-the-badge)](.agents/skills/dsh-plugin-development/references/)
+[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8257D0?style=for-the-badge)](skills/dsh-plugin-development/SKILL.md)
+[![Offline](https://img.shields.io/badge/References-Offline-2EA44F?style=for-the-badge)](skills/dsh-plugin-development/references/)
 
 </div>
 
@@ -63,28 +63,31 @@ can:
 
 The references organize implemented capabilities, development contracts and known limitations by task. The table is an index, not a reading order or a promise that every capability is enabled by default.
 
-| Area                          | Contents                                                                                                | References                                                                                                                                                                                                    |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tools and models              | Tool schemas, canonical JSON results, Native/PTC, LLM Adapters, model routes and image requests         | [tools](.agents/skills/dsh-plugin-development/references/tools.md) · [llm-model-routing](.agents/skills/dsh-plugin-development/references/llm-model-routing.md)                                               |
-| Agents and coordination       | Agent lifecycle, input control, Subagents, Workflow and Ralph; Agent Teams is experimental              | [agent-subagent-workflow](.agents/skills/dsh-plugin-development/references/agent-subagent-workflow.md) · [builtin-tool-contracts](.agents/skills/dsh-plugin-development/references/builtin-tool-contracts.md) |
-| Context and recovery          | Session logs, prompts, presets, personas, Skills, compaction, token metering and checkpoints            | [session-durable-context](.agents/skills/dsh-plugin-development/references/session-durable-context.md) · [context-recovery](.agents/skills/dsh-plugin-development/references/context-recovery.md)             |
-| State and scheduling          | Storage domains, projections/caches, queries and exports, Plan, Goal, Todo and Schedule                 | [storage-projections](.agents/skills/dsh-plugin-development/references/storage-projections.md) · [planning-scheduling](.agents/skills/dsh-plugin-development/references/planning-scheduling.md)               |
-| Files and execution           | Filesystem observation and write policies, image attachments, Spill, processes, terminals, Jobs and E2B | [filesystem-policy](.agents/skills/dsh-plugin-development/references/filesystem-policy.md) · [runtime-resources](.agents/skills/dsh-plugin-development/references/runtime-resources.md)                       |
-| External capabilities         | Web search/fetch, LSP, MCP and Provider-specific protocol and execution boundaries                      | [web-capabilities](.agents/skills/dsh-plugin-development/references/web-capabilities.md) · [runtime-resources](.agents/skills/dsh-plugin-development/references/runtime-resources.md)                         |
-| Interaction and authorization | Human commands, business questions, action approval, credential records, sign-in flows and hooks        | [human-interaction](.agents/skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](.agents/skills/dsh-plugin-development/references/credentials-authorization.md)       |
-| Client and protocols          | UI slots, Conversation Nodes, Session/Workspace APIs, Typert, SDK/ACP and webhooks                      | [client-ui](.agents/skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](.agents/skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
-| Composition and extensions    | Profiles, bundles, Settings, scoped registries, dynamic Cordis and Host support                         | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
-| Development and delivery      | Package boundaries, lifecycle, examples, composition tests, documentation and publication checks        | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](.agents/skills/dsh-plugin-development/references/testing-docs.md)                                 |
+| Area                          | Contents                                                                                                | References                                                                                                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tools and models              | Tool schemas, canonical JSON results, Native/PTC, LLM Adapters, model routes and image requests         | [tools](skills/dsh-plugin-development/references/tools.md) · [llm-model-routing](skills/dsh-plugin-development/references/llm-model-routing.md)                                               |
+| Agents and coordination       | Agent lifecycle, input control, Subagents, Workflow and Ralph; Agent Teams is experimental              | [agent-subagent-workflow](skills/dsh-plugin-development/references/agent-subagent-workflow.md) · [builtin-tool-contracts](skills/dsh-plugin-development/references/builtin-tool-contracts.md) |
+| Context and recovery          | Session logs, prompts, presets, personas, Skills, compaction, token metering and checkpoints            | [session-durable-context](skills/dsh-plugin-development/references/session-durable-context.md) · [context-recovery](skills/dsh-plugin-development/references/context-recovery.md)             |
+| State and scheduling          | Storage domains, projections/caches, queries and exports, Plan, Goal, Todo and Schedule                 | [storage-projections](skills/dsh-plugin-development/references/storage-projections.md) · [planning-scheduling](skills/dsh-plugin-development/references/planning-scheduling.md)               |
+| Files and execution           | Filesystem observation and write policies, image attachments, Spill, processes, terminals, Jobs and E2B | [filesystem-policy](skills/dsh-plugin-development/references/filesystem-policy.md) · [runtime-resources](skills/dsh-plugin-development/references/runtime-resources.md)                       |
+| External capabilities         | Web search/fetch, LSP, MCP and Provider-specific protocol and execution boundaries                      | [web-capabilities](skills/dsh-plugin-development/references/web-capabilities.md) · [runtime-resources](skills/dsh-plugin-development/references/runtime-resources.md)                         |
+| Interaction and authorization | Human commands, business questions, action approval, credential records, sign-in flows and hooks        | [human-interaction](skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](skills/dsh-plugin-development/references/credentials-authorization.md)       |
+| Client and protocols          | UI slots, Conversation Nodes, Session/Workspace APIs, Typert, SDK/ACP and webhooks                      | [client-ui](skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
+| Composition and extensions    | Profiles, bundles, Settings, scoped registries, dynamic Cordis and Host support                         | [composition-config-credentials](skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](skills/dsh-plugin-development/references/dynamic-cordis.md)   |
+| Development and delivery      | Package boundaries, lifecycle, examples, composition tests, documentation and publication checks        | [package-authoring](skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](skills/dsh-plugin-development/references/testing-docs.md)                                 |
 
-For shared controls, overlays, icons and output renderers, see [UI Primitives](.agents/skills/dsh-plugin-development/references/client-ui-primitives.md) for component selection, host integration, behavior limits and consumer validation.
+For shared controls, overlays, icons and output renderers, see [UI Primitives](skills/dsh-plugin-development/references/client-ui-primitives.md) for component selection, host integration, behavior limits and consumer validation.
 
-Start with the [task router](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md), then add contracts required by the change. Experimental packages, unsupported protocol features and platform limits are identified in their owning references.
+Start with the [task router](skills/dsh-plugin-development/references/plugin-development-routing.md), then add contracts required by the change. Experimental packages, unsupported protocol features and platform limits are identified in their owning references.
 
 ## 🚀 Usage
 
 ### 1. Place the Skill in a workspace
 
-This repository already uses the workspace Skill layout:
+This repository maintains Skill source in `skills/dsh-plugin-development/`.
+It does not install that source as an active Skill for this maintenance workspace.
+
+Copy `skills/dsh-plugin-development/` into the target workspace as:
 
 ```text
 .agents/
@@ -92,11 +95,8 @@ This repository already uses the workspace Skill layout:
     └── dsh-plugin-development/
 ```
 
-Clone this repository directly, or copy
-`.agents/skills/dsh-plugin-development` into the corresponding Skill directory
-of the target workspace.
-
-The workspace metadata allows implicit invocation for matching tasks; explicit invocation remains available.
+After installation, the Skill metadata allows implicit invocation for matching
+tasks; explicit invocation remains available.
 
 ### 2. Invoke it for a DSH development task
 
@@ -116,9 +116,9 @@ Use $dsh-plugin-development to add persistent settings and a Browser settings
 card to an existing plugin.
 ```
 
-The Skill supports requirements clarification, application design and implementation of DSH extensions. Start with [requirements discovery](.agents/skills/dsh-plugin-development/references/requirements-discovery.md) for scope and acceptance criteria, or [application design](.agents/skills/dsh-plugin-development/references/application-design.md) for capability selection and composition. It is not for ordinary DSH usage or unrelated documentation polishing.
+The Skill supports requirements clarification, application design and implementation of DSH extensions. Start with [requirements discovery](skills/dsh-plugin-development/references/requirements-discovery.md) for scope and acceptance criteria, or [application design](skills/dsh-plugin-development/references/application-design.md) for capability selection and composition. It is not for ordinary DSH usage or unrelated documentation polishing.
 
-Distinguish DSH monorepo work from a standalone plugin project: `workspace:^` dependencies and vendor compiler paths are not portable templates. See [package authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境) for the Profile loading boundary, template scope and unverified standalone setup.
+Distinguish DSH monorepo work from a standalone plugin project: `workspace:^` dependencies and vendor compiler paths are not portable templates. See [package authoring](skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境) for the Profile loading boundary, template scope and unverified standalone setup.
 
 ## 🔄 Agent workflow
 
@@ -175,7 +175,7 @@ public types and runtime code
 │   ├── validate_skill.py
 │   ├── test_validate_skill.py
 │   └── check_examples.cjs
-└── .agents/skills/dsh-plugin-development/
+└── skills/dsh-plugin-development/
     ├── SKILL.md
     ├── agents/openai.yaml
     ├── assets/github-review/
@@ -211,7 +211,7 @@ This project also:
 
 ## 🛠️ Maintenance and validation
 
-Read the [maintenance procedure](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md), then use [source-map](.agents/skills/dsh-plugin-development/maintenance/source-map.md) to locate exact-tag evidence. For upgrades, revisit the old mappings against types, runtime code, tests and gates; compare old/new DOCS and verify their changes against new code; then merge the findings, remove obsolete guidance and update routing.
+Read the [maintenance procedure](skills/dsh-plugin-development/maintenance/skill-maintenance.md), then use [source-map](skills/dsh-plugin-development/maintenance/source-map.md) to locate exact-tag evidence. For upgrades, revisit the old mappings against types, runtime code, tests and gates; compare old/new DOCS and verify their changes against new code; then merge the findings, remove obsolete guidance and update routing.
 
 Install dependencies and run structural checks from this maintenance repository:
 
