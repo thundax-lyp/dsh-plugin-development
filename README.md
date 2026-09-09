@@ -76,6 +76,8 @@ The references organize implemented capabilities, development contracts and know
 | Composition and extensions    | Profiles, bundles, Settings, scoped registries, dynamic Cordis and Host support                         | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
 | Development and delivery      | Package boundaries, lifecycle, examples, composition tests, documentation and publication checks        | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](.agents/skills/dsh-plugin-development/references/testing-docs.md)                                 |
 
+For shared controls, overlays, icons and output renderers, see [UI Primitives](.agents/skills/dsh-plugin-development/references/client-ui-primitives.md) for component selection, host integration, behavior limits and consumer validation.
+
 Start with the [task router](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md), then add contracts required by the change. Experimental packages, unsupported protocol features and platform limits are identified in their owning references.
 
 ## 🚀 Usage

@@ -73,6 +73,8 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
 | 装配与扩展    | Profile、bundle、Settings、scoped registry、动态 Cordis 与 Host 支持                | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
 | 开发与交付    | 包边界、生命周期、代码示例、组合测试、文档和发布验证                                | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](.agents/skills/dsh-plugin-development/references/testing-docs.md)                                 |
 
+复用共享控件、浮层、图标和输出 renderer 时，参阅 [UI Primitives](.agents/skills/dsh-plugin-development/references/client-ui-primitives.md)，了解组件选型、宿主装配、行为限制与消费方验证。
+
 从[开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)选择主契约，再按实际影响补读。实验包、外部协议未实现部分及平台限制在各专题中分别标明。
 
 ## 🚀 使用方式
