@@ -12,8 +12,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/thundax-lyp/dsh-plugin-development?style=for-the-badge&color=blue&label=Forks)](https://github.com/thundax-lyp/dsh-plugin-development/network/members)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](LICENSE)
 [![DSH: v0.1.2-rc.1](https://img.shields.io/badge/DSH-v0.1.2--rc.1-4D6BFE?style=for-the-badge)](#兼容性)
-[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8257D0?style=for-the-badge)](.agents/skills/dsh-plugin-development/SKILL.md)
-[![Offline](https://img.shields.io/badge/References-Offline-2EA44F?style=for-the-badge)](.agents/skills/dsh-plugin-development/references/)
+[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8257D0?style=for-the-badge)](skills/dsh-plugin-development/SKILL.md)
+[![Offline](https://img.shields.io/badge/References-Offline-2EA44F?style=for-the-badge)](skills/dsh-plugin-development/references/)
 
 </div>
 
@@ -60,26 +60,30 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
 
 参考库按任务组织已实现的能力、开发契约和已知限制。下表是入口，不是阅读顺序，也不表示所有能力都默认启用。
 
-| 领域          | 内容                                                                                | 参考入口                                                                                                                                                                                                      |
-| ------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 工具与模型    | 工具 schema、规范 JSON 结果、Native/PTC、LLM Adapter、模型路由与图像请求            | [tools](.agents/skills/dsh-plugin-development/references/tools.md) · [llm-model-routing](.agents/skills/dsh-plugin-development/references/llm-model-routing.md)                                               |
-| Agent 与协作  | Agent 生命周期、输入控制、Subagent、Workflow、Ralph；Agent Teams 单列为实验能力     | [agent-subagent-workflow](.agents/skills/dsh-plugin-development/references/agent-subagent-workflow.md) · [builtin-tool-contracts](.agents/skills/dsh-plugin-development/references/builtin-tool-contracts.md) |
-| 上下文与恢复  | Session 日志、Prompt、Preset、Persona、Skills、Compaction、TokenMeter 与 checkpoint | [session-durable-context](.agents/skills/dsh-plugin-development/references/session-durable-context.md) · [context-recovery](.agents/skills/dsh-plugin-development/references/context-recovery.md)             |
-| 状态与调度    | Storage domain、Projection/cache、查询与导出、Plan、Goal、Todo、Schedule            | [storage-projections](.agents/skills/dsh-plugin-development/references/storage-projections.md) · [planning-scheduling](.agents/skills/dsh-plugin-development/references/planning-scheduling.md)               |
-| 文件与执行    | 文件观察与写入策略、图片附件、Spill、进程、Terminal、Jobs、E2B                      | [filesystem-policy](.agents/skills/dsh-plugin-development/references/filesystem-policy.md) · [runtime-resources](.agents/skills/dsh-plugin-development/references/runtime-resources.md)                       |
-| 外部能力      | Web search/fetch、LSP、MCP，以及各 Provider 的协议与执行边界                        | [web-capabilities](.agents/skills/dsh-plugin-development/references/web-capabilities.md) · [runtime-resources](.agents/skills/dsh-plugin-development/references/runtime-resources.md)                         |
-| 交互与授权    | Human command、业务提问、动作审批、Credential records、登录 flow、Hooks             | [human-interaction](.agents/skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](.agents/skills/dsh-plugin-development/references/credentials-authorization.md)       |
-| Client 与协议 | UI slots、Conversation Nodes、Session/Workspace API、Typert、SDK/ACP、Webhook       | [client-ui](.agents/skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](.agents/skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
-| 装配与扩展    | Profile、bundle、Settings、scoped registry、动态 Cordis 与 Host 支持                | [composition-config-credentials](.agents/skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](.agents/skills/dsh-plugin-development/references/dynamic-cordis.md)   |
-| 开发与交付    | 包边界、生命周期、代码示例、组合测试、文档和发布验证                                | [package-authoring](.agents/skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](.agents/skills/dsh-plugin-development/references/testing-docs.md)                                 |
+| 领域          | 内容                                                                                | 参考入口                                                                                                                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 工具与模型    | 工具 schema、规范 JSON 结果、Native/PTC、LLM Adapter、模型路由与图像请求            | [tools](skills/dsh-plugin-development/references/tools.md) · [llm-model-routing](skills/dsh-plugin-development/references/llm-model-routing.md)                                               |
+| Agent 与协作  | Agent 生命周期、输入控制、Subagent、Workflow、Ralph；Agent Teams 单列为实验能力     | [agent-subagent-workflow](skills/dsh-plugin-development/references/agent-subagent-workflow.md) · [builtin-tool-contracts](skills/dsh-plugin-development/references/builtin-tool-contracts.md) |
+| 上下文与恢复  | Session 日志、Prompt、Preset、Persona、Skills、Compaction、TokenMeter 与 checkpoint | [session-durable-context](skills/dsh-plugin-development/references/session-durable-context.md) · [context-recovery](skills/dsh-plugin-development/references/context-recovery.md)             |
+| 状态与调度    | Storage domain、Projection/cache、查询与导出、Plan、Goal、Todo、Schedule            | [storage-projections](skills/dsh-plugin-development/references/storage-projections.md) · [planning-scheduling](skills/dsh-plugin-development/references/planning-scheduling.md)               |
+| 文件与执行    | 文件观察与写入策略、图片附件、Spill、进程、Terminal、Jobs、E2B                      | [filesystem-policy](skills/dsh-plugin-development/references/filesystem-policy.md) · [runtime-resources](skills/dsh-plugin-development/references/runtime-resources.md)                       |
+| 外部能力      | Web search/fetch、LSP、MCP，以及各 Provider 的协议与执行边界                        | [web-capabilities](skills/dsh-plugin-development/references/web-capabilities.md) · [runtime-resources](skills/dsh-plugin-development/references/runtime-resources.md)                         |
+| 交互与授权    | Human command、业务提问、动作审批、Credential records、登录 flow、Hooks             | [human-interaction](skills/dsh-plugin-development/references/human-interaction.md) · [credentials-authorization](skills/dsh-plugin-development/references/credentials-authorization.md)       |
+| Client 与协议 | UI slots、Conversation Nodes、Session/Workspace API、Typert、SDK/ACP、Webhook       | [client-ui](skills/dsh-plugin-development/references/client-ui.md) · [sdk-acp-integration](skills/dsh-plugin-development/references/sdk-acp-integration.md)                                   |
+| 装配与扩展    | Profile、bundle、Settings、scoped registry、动态 Cordis 与 Host 支持                | [composition-config-credentials](skills/dsh-plugin-development/references/composition-config-credentials.md) · [dynamic-cordis](skills/dsh-plugin-development/references/dynamic-cordis.md)   |
+| 开发与交付    | 包边界、生命周期、代码示例、组合测试、文档和发布验证                                | [package-authoring](skills/dsh-plugin-development/references/package-authoring.md) · [testing-docs](skills/dsh-plugin-development/references/testing-docs.md)                                 |
 
-从[开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md)选择主契约，再按实际影响补读。实验包、外部协议未实现部分及平台限制在各专题中分别标明。
+复用共享控件、浮层、图标和输出 renderer 时，参阅 [UI Primitives](skills/dsh-plugin-development/references/client-ui-primitives.md)，了解组件选型、宿主装配、行为限制与消费方验证。
+
+从[开发路由](skills/dsh-plugin-development/references/plugin-development-routing.md)选择主契约，再按实际影响补读。实验包、外部协议未实现部分及平台限制在各专题中分别标明。
 
 ## 🚀 使用方式
 
 ### 1. 将 Skill 放入工作区
 
-仓库已经采用工作区 Skill 目录结构：
+本仓库在 `skills/dsh-plugin-development/` 维护 Skill 源文件，不将其安装为本维护工作区的活动 Skill。
+
+将 `skills/dsh-plugin-development/` 复制到目标工作区，安装后的目录结构为：
 
 ```text
 .agents/
@@ -87,12 +91,9 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
     └── dsh-plugin-development/
 ```
 
-可以直接克隆本仓库，或者将
-`.agents/skills/dsh-plugin-development` 复制到目标工作区对应的 Skill 目录。
-
 ### 2. 在 DSH 开发任务中调用
 
-当前工作区元数据允许匹配任务时隐式调用，也可以显式使用 `$dsh-plugin-development`。
+安装后的 Skill 元数据允许匹配任务时隐式调用，也可以显式使用 `$dsh-plugin-development`。
 
 示例提示词：
 
@@ -108,9 +109,9 @@ Session 日志、持久状态、配置、凭证、UI 组合、取消与清理，
 使用 $dsh-plugin-development，为现有插件增加可持久化设置和 Browser 设置卡片。
 ```
 
-Skill 适用于需求澄清、应用设计和 DSH 扩展实现。明确范围与验收时从[需求澄清](.agents/skills/dsh-plugin-development/references/requirements-discovery.md)进入，选择能力与应用组合时从[应用设计](.agents/skills/dsh-plugin-development/references/application-design.md)进入；不适用于普通 DSH 操作或无关文档润色。
+Skill 适用于需求澄清、应用设计和 DSH 扩展实现。明确范围与验收时从[需求澄清](skills/dsh-plugin-development/references/requirements-discovery.md)进入，选择能力与应用组合时从[应用设计](skills/dsh-plugin-development/references/application-design.md)进入；不适用于普通 DSH 操作或无关文档润色。
 
-开发前区分 DSH monorepo 与独立插件项目：仓库内的 `workspace:^` 和 vendor 编译路径不能直接复制到独立项目。外部插件通过 Profile 的加载边界、模板适用范围和未验证部分见[包开发](.agents/skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境)。
+开发前区分 DSH monorepo 与独立插件项目：仓库内的 `workspace:^` 和 vendor 编译路径不能直接复制到独立项目。外部插件通过 Profile 的加载边界、模板适用范围和未验证部分见[包开发](skills/dsh-plugin-development/references/package-authoring.md#先区分开发环境)。
 
 ## 🔄 Agent 的工作流程
 
@@ -155,7 +156,7 @@ Skill 适用于需求澄清、应用设计和 DSH 扩展实现。明确范围与
 │   ├── validate_skill.py
 │   ├── test_validate_skill.py
 │   └── check_examples.cjs
-└── .agents/skills/dsh-plugin-development/
+└── skills/dsh-plugin-development/
     ├── SKILL.md
     ├── agents/openai.yaml
     ├── assets/github-review/
@@ -187,7 +188,7 @@ Skill 目录是可复制的离线资料；根目录的 scripts 是维护工具�
 
 ## 🛠️ 维护与验证
 
-先读[维护流程](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md)，再通过[source-map](.agents/skills/dsh-plugin-development/maintenance/source-map.md)定位精确 tag 的代码证据。升级时先核对旧映射对应的类型、实现、测试与门禁，再比较新旧 DOCS 并回查新代码，最后合并结果、删除过期内容并同步路由。
+先读[维护流程](skills/dsh-plugin-development/maintenance/skill-maintenance.md)，再通过[source-map](skills/dsh-plugin-development/maintenance/source-map.md)定位精确 tag 的代码证据。升级时先核对旧映射对应的类型、实现、测试与门禁，再比较新旧 DOCS 并回查新代码，最后合并结果、删除过期内容并同步路由。
 
 在本维护仓库安装依赖并执行结构检查：
 

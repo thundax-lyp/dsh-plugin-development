@@ -14,7 +14,7 @@ class NavigationValidation(unittest.TestCase):
         subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
         (self.root / 'scripts').mkdir()
         shutil.copyfile(Path(__file__).with_name('validate_skill.py'), self.root / 'scripts/validate_skill.py')
-        self.refs = self.root / '.agents/skills/dsh-plugin-development/references'
+        self.refs = self.root / 'skills/dsh-plugin-development/references'
         self.refs.mkdir(parents=True)
         maintenance = self.refs.parent / 'maintenance'
         maintenance.mkdir()
@@ -29,7 +29,7 @@ class NavigationValidation(unittest.TestCase):
 
     def test_unicode_duplicate_headings_and_cross_file_links(self):
         (self.refs / 'topic.md').write_text('# 接口\n## 清理\n## 清理\n[重复](#清理-1)\n')
-        (self.root / 'README.md').write_text('[入口](.agents/skills/dsh-plugin-development/references/topic.md#%E6%B8%85%E7%90%86)\n')
+        (self.root / 'README.md').write_text('[入口](skills/dsh-plugin-development/references/topic.md#%E6%B8%85%E7%90%86)\n')
         result = self.run_check()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
@@ -41,10 +41,16 @@ class NavigationValidation(unittest.TestCase):
 
     def test_missing_cross_file_anchor_after_rename(self):
         (self.refs / 'topic.md').write_text('# 新标题\n')
-        (self.root / 'README.md').write_text('[旧入口](.agents/skills/dsh-plugin-development/references/topic.md#旧标题)\n')
+        (self.root / 'README.md').write_text('[旧入口](skills/dsh-plugin-development/references/topic.md#旧标题)\n')
         result = self.run_check()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('missing anchor', result.stdout)
+
+    def test_offline_boundary_in_skill_source(self):
+        (self.refs / 'topic.md').write_text('# Reference\nhttps://example.com\n')
+        result = self.run_check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('offline/local-path violation', result.stdout)
 
     def test_invalid_json_fails(self):
         (self.refs / 'topic.md').write_text('# 示例\n```json\n{"broken":}\n```\n')

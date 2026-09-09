@@ -4,20 +4,22 @@
 
 本仓库维护 `dsh-plugin-development` Agent Skill：面向 DeepSeek Harness（DSH）Cordis 包和插件的离线开发指南。唯一固定基线为 **`dsh-v0.1.2-rc.1`**；只有用户明确要求升级时才能改变，不混用其他 tag 或持续变化分支的事实与 API。
 
+`skills/` 是待编辑和分发的 Skill 源目录，不是本仓库的 Agent Skill 安装目录；消费项目安装时才复制到其 `.agents/skills/`。
+
 仓库只容纳 Skill、参考文档及其维护设施。不添加 DSH runtime、示例产品、生成的能力目录或无关插件实现；不将示例、快照或实验包当作已发布默认组件。有源文件和生成器的产物必须通过所属生成流程更新。
 
 ## 文件职责
 
-| 文件或目录                                                                                 | 职责                                             |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------ |
-| `README.md`、`README_zh-CN.md`                                                             | 对外说明项目用途、使用方式与边界                 |
-| `.agents/skills/dsh-plugin-development/SKILL.md`                                           | 适用场景、基线、路由流程、跨主题不变量和完成边界 |
-| `.agents/skills/dsh-plugin-development/agents/openai.yaml`                                 | 展示元数据、默认提示词和调用策略                 |
-| `.agents/skills/dsh-plugin-development/references/`                                        | 自包含的主题参考文档、示例及验证矩阵             |
-| [开发路由](.agents/skills/dsh-plugin-development/references/plugin-development-routing.md) | 按任务选择最小相关参考集，不复制正文             |
-| [源码映射](.agents/skills/dsh-plugin-development/maintenance/source-map.md)                | 维护与审计使用的固定版本证据索引                 |
-| [测试与文档维护](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md)   | 详细验证命令、生成流程及发布检查                 |
-| [PR 模板](.github/pull_request_template.md)                                                | PR 交付说明与验证证据格式                        |
+| 文件或目录                                                                         | 职责                                             |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------ |
+| `README.md`、`README_zh-CN.md`                                                     | 对外说明项目用途、使用方式与边界                 |
+| `skills/dsh-plugin-development/SKILL.md`                                           | 适用场景、基线、路由流程、跨主题不变量和完成边界 |
+| `skills/dsh-plugin-development/agents/openai.yaml`                                 | 展示元数据、默认提示词和调用策略                 |
+| `skills/dsh-plugin-development/references/`                                        | 自包含的主题参考文档、示例及验证矩阵             |
+| [开发路由](skills/dsh-plugin-development/references/plugin-development-routing.md) | 按任务选择最小相关参考集，不复制正文             |
+| [源码映射](skills/dsh-plugin-development/maintenance/source-map.md)                | 维护与审计使用的固定版本证据索引                 |
+| [测试与文档维护](skills/dsh-plugin-development/maintenance/skill-maintenance.md)   | 详细验证命令、生成流程及发布检查                 |
+| [PR 模板](.github/pull_request_template.md)                                        | PR 交付说明与验证证据格式                        |
 
 ## 工作流程
 
@@ -51,7 +53,7 @@
 
 ## 验证与报告
 
-按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或分发变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。具体命令与发布流程以[测试与文档维护](.agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md)为准。
+按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或分发变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。具体命令与发布流程以[测试与文档维护](skills/dsh-plugin-development/maintenance/skill-maintenance.md)为准。
 
 | 变更面                | 必需检查                                                                                              |
 | --------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -104,10 +106,10 @@ Type(<project>[/<module>]): <中文工程判断或阶段性交付结论>
 
 `Type` 可使用 `Feat`、`Fix`、`Docs`、`Test`、`Refactor`、`CI`。摘要说明最终工程判断或能力，避免“调整”“修改”“优化”等含糊表述。可选 module 表示项目内的稳定领域，不能代替 project；不使用未注册项目名或临时别名。
 
-| 项目    | 范围                                     | 边界                                        |
-| ------- | ---------------------------------------- | ------------------------------------------- |
-| `repo`  | 根目录治理、公开文档、CI、共享配置       | 不用于 Skill 内部内容                       |
-| `skill` | `.agents/skills/dsh-plugin-development/` | 入口、元数据、路由、参考、示例及 Skill 验证 |
+| 项目    | 范围                               | 边界                                        |
+| ------- | ---------------------------------- | ------------------------------------------- |
+| `repo`  | 根目录治理、公开文档、CI、共享配置 | 不用于 Skill 内部内容                       |
+| `skill` | `skills/dsh-plugin-development/`   | 入口、元数据、路由、参考、示例及 Skill 验证 |
 
 确实无法按项目拆分的同一判断使用以下格式；可独立理解、验证和回退的变更不使用 `cross-project`：
 

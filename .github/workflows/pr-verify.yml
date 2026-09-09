@@ -49,11 +49,11 @@ jobs:
                     README_zh-CN.md
                     LICENSE
                     .github/pull_request_template.md
-                    .agents/skills/dsh-plugin-development/SKILL.md
-                    .agents/skills/dsh-plugin-development/agents/openai.yaml
-                    .agents/skills/dsh-plugin-development/references/plugin-development-routing.md
-                    .agents/skills/dsh-plugin-development/maintenance/source-map.md
-                    .agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md
+                    skills/dsh-plugin-development/SKILL.md
+                    skills/dsh-plugin-development/agents/openai.yaml
+                    skills/dsh-plugin-development/references/plugin-development-routing.md
+                    skills/dsh-plugin-development/maintenance/source-map.md
+                    skills/dsh-plugin-development/maintenance/skill-maintenance.md
                   )
 
                   for required_file in "${required_files[@]}"; do
@@ -84,7 +84,7 @@ jobs:
               run: |
                   set -euo pipefail
 
-                  skill=.agents/skills/dsh-plugin-development/SKILL.md
+                  skill=skills/dsh-plugin-development/SKILL.md
                   test "$(sed -n '1p' "$skill")" = '---'
                   sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: dsh-plugin-development$'
                   sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
@@ -94,7 +94,7 @@ jobs:
               run: |
                   set -euo pipefail
 
-                  metadata=.agents/skills/dsh-plugin-development/agents/openai.yaml
+                  metadata=skills/dsh-plugin-development/agents/openai.yaml
                   grep -Eq '^interface:$' "$metadata"
                   grep -Eq '^    display_name: .+' "$metadata"
                   grep -Eq '^    short_description: .+' "$metadata"
@@ -109,9 +109,9 @@ jobs:
                     README.md
                     README_zh-CN.md
                     AGENTS.md
-                    .agents/skills/dsh-plugin-development/SKILL.md
-                    .agents/skills/dsh-plugin-development/maintenance/source-map.md
-                    .agents/skills/dsh-plugin-development/maintenance/skill-maintenance.md
+                    skills/dsh-plugin-development/SKILL.md
+                    skills/dsh-plugin-development/maintenance/source-map.md
+                    skills/dsh-plugin-development/maintenance/skill-maintenance.md
                   )
 
                   for file in "${files[@]}"; do
@@ -123,7 +123,7 @@ jobs:
               run: |
                   set -euo pipefail
 
-                  if grep -RInE 'https?://' .agents/skills/dsh-plugin-development; then
+                  if grep -RInE 'https?://' skills/dsh-plugin-development; then
                     echo 'HTTP(S) URL found inside the offline Skill directory.' >&2
                     exit 1
                   fi
