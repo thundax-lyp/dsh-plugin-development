@@ -19,6 +19,9 @@
 | [开发路由](skills/dsh-plugin-development/references/plugin-development-routing.md) | 按任务选择最小相关参考集，不复制正文             |
 | [源码映射](skills/dsh-plugin-development/maintenance/source-map.md)                | 维护与审计使用的固定版本证据索引                 |
 | [测试与文档维护](skills/dsh-plugin-development/maintenance/skill-maintenance.md)   | 详细验证命令、生成流程及发布检查                 |
+| [基线升级 Skill](.agents/skills/dsh-skill-upgrade/SKILL.md)                        | 人工唤起的完整基线升级流程                       |
+| [提交规则](docs/00-governance/COMMIT-RULES.md)                                     | 提交边界、标题与提交前检查                       |
+| [PR 规则](docs/00-governance/PR-RULES.md)                                          | 分支、PR 交付、审查与合并规则                    |
 | [PR 模板](.github/pull_request_template.md)                                        | PR 交付说明与验证证据格式                        |
 
 ## 工作流程
@@ -69,15 +72,7 @@ CI 保持两个独立、可见的 job：`Governance` 检查必需文件与格式
 
 ## 基线升级
 
-升级要求刷新整个参考库的证据，不能只替换版本字符串：
-
-1. 在独立 checkout 精确检出目标 tag，记录 tag 与 commit，避免混淆代码和文档分支。
-2. 从旧 source-map 逐路径核对公开类型、实现、测试、manifest、导出与门禁，记录删除、迁移和契约变化。
-3. 比较新旧 DOCS，并检查目标版本未发生 diff 的章节；将文档变化回查新代码，补查旧参考库可能一直遗漏的能力。
-4. 合并源码与文档两条核查结果，更新新增、删除或重命名扩展点的参考文档、路由和证据；明确不可用 API、实验限制与不纳入项的理由。
-5. 同步基线相关的公开文档、元数据和治理配置，运行完整发布验证。
-
-包、符号和文档清单用于防漏，不能仅凭清单覆盖率宣称能力契约完整；不得将多个基线混入同一参考集。
+完整升级流程由人工唤起的 [基线升级 Skill](.agents/skills/dsh-skill-upgrade/SKILL.md) 负责；固定基线与版本不混用的仓库约束仍按本文件执行。
 
 ## 授权与 Git 安全
 
@@ -88,56 +83,6 @@ CI 保持两个独立、可见的 job：`Governance` 检查必需文件与格式
 - GitHub connector 与 `gh` 可能使用不同凭证；渠道失败不直接代表操作不可行，更换渠道也不扩大授权。回复、解决讨论、reaction、删除和关闭等写操作仍需对应授权。
 - 使用 `gh` 前核实仓库、目标 PR/讨论/评论及 `gh auth status`。每次 GitHub 写入后回读验证最终状态，不能用命令退出成功代替回读。
 
-## 提交规范
+## 提交与 PR
 
-### 提交边界
-
-一个提交表达一个能用一句话概括的工程判断、能力变更、证据锁定、配置组合或文档规则。同一判断必需的源码、测试、契约、配置和文档一起提交；独立判断、独立风险或应独立回退的变更分开。
-
-不拆出无法独立理解或验证的中间提交，也不为减少数量而机械 squash。文件数量只用于辅助判断内聚性，不决定拆分或合并。
-
-### 标题与项目
-
-提交信息和 PR 标题统一使用：
-
-```text
-Type(<project>[/<module>]): <中文工程判断或阶段性交付结论>
-```
-
-`Type` 可使用 `Feat`、`Fix`、`Docs`、`Test`、`Refactor`、`CI`。摘要说明最终工程判断或能力，避免“调整”“修改”“优化”等含糊表述。可选 module 表示项目内的稳定领域，不能代替 project；不使用未注册项目名或临时别名。
-
-| 项目    | 范围                               | 边界                                        |
-| ------- | ---------------------------------- | ------------------------------------------- |
-| `repo`  | 根目录治理、公开文档、CI、共享配置 | 不用于 Skill 内部内容                       |
-| `skill` | `skills/dsh-plugin-development/`   | 入口、元数据、路由、参考、示例及 Skill 验证 |
-
-确实无法按项目拆分的同一判断使用以下格式；可独立理解、验证和回退的变更不使用 `cross-project`：
-
-```text
-Type(cross-project): <中文工程判断>
-
-Projects: <project-a>, <project-b>
-Decision: <这些项目必须原子变更的原因>
-Verification: <覆盖各项目及其共享契约的证据>
-```
-
-### 提交前检查
-
-确认授权及文件归属，阅读**完整暂存差异**，检查敏感信息、临时文件和无关内容；确认文档已按行为、API、架构、运维或流程变化同步，验证证据有效。运行 `git diff --cached --check`，确保暂存区恰好对应本次提交边界。
-
-## PR 与合并
-
-开发变更通过 `branch -> PR -> review -> merge` 进入 `main`，不直接推送开发中的内容。分支使用简短稳定的英文名，如 `docs/clarify-maintenance`。每个 PR 围绕一个可审查、可验证的目标，可包含多个内聚的提交；跨项目或技术领域时说明不能拆分的原因、跨边界影响并扩大验证。Draft 同样必须说明范围、风险与验证。
-
-使用 [PR 模板](.github/pull_request_template.md)，说明交付结果而非只列文件，完整填写：
-
-- `Closure`、`Scope`：完成结果、纳入与排除的工作。
-- `Verification Evidence`、`Not Covered`：实际命令和结果，未覆盖检查及原因、影响。
-- `Cross-boundary Impact`：API、生命周期、权限、数据、配置和分发影响。
-- `Documentation And Task Closure`、`Risks`：文档同步、剩余工作、残余风险与运行依赖。
-
-不适用项填写 `N/A` 并说明原因，不留空或假称通过。不包含凭证、本地绝对路径、临时文件、未发布草稿、个人机器信息或 Agent 内部执行叙述。
-
-审查从 merge base 开始的完整 PR 差异，评估需求、契约、所有权、失败路径和验证。每个问题说明具体触发条件、可观察影响与修正方向，不将猜测或纯风格偏好当缺陷。请求合并前解决可执行反馈，重跑受影响检查。
-
-**只有用户明确要求时才合并 PR。** 默认使用普通 merge commit 保留有意义的分支提交；用户明确要求 squash 时才采用该方式。
+暂存或提交前读取[提交规则](docs/00-governance/COMMIT-RULES.md)；准备 PR、审查或合并前读取[PR 规则](docs/00-governance/PR-RULES.md)。授权与 Git 安全仍按上节执行。

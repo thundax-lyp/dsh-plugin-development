@@ -45,6 +45,8 @@ jobs:
 
                   required_files=(
                     AGENTS.md
+                    docs/00-governance/COMMIT-RULES.md
+                    docs/00-governance/PR-RULES.md
                     README.md
                     README_zh-CN.md
                     LICENSE
