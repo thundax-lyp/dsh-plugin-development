@@ -81,6 +81,11 @@ jobs:
             - name: Check out repository
               uses: actions/checkout@v4
 
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+
             - name: Verify Skill frontmatter
               shell: bash
               run: |
@@ -140,3 +145,6 @@ jobs:
 
             - name: Test validation failure cases
               run: python3 -B -m unittest discover -s scripts -p 'test_*.py'
+
+            - name: Test DSH Skill creation workflow
+              run: node --test .agents/skills/create-dsh-skill/tests/*.test.mjs
