@@ -19,7 +19,6 @@
 | [开发路由](skills/dsh-plugin-development/references/plugin-development-routing.md) | 按任务选择最小相关参考集，不复制正文             |
 | [源码映射](skills/dsh-plugin-development/maintenance/source-map.md)                | 维护与审计使用的固定版本证据索引                 |
 | [测试与文档维护](skills/dsh-plugin-development/maintenance/skill-maintenance.md)   | 详细验证命令、生成流程及发布检查                 |
-| [基线升级 Skill](.agents/skills/dsh-skill-upgrade/SKILL.md)                        | 人工唤起的完整基线升级流程                       |
 | [提交规则](docs/00-governance/COMMIT-RULES.md)                                     | 提交边界、标题与提交前检查                       |
 | [PR 规则](docs/00-governance/PR-RULES.md)                                          | 分支、PR 交付、审查与合并规则                    |
 | [PR 模板](.github/pull_request_template.md)                                        | PR 交付说明与验证证据格式                        |
@@ -69,10 +68,6 @@
 CI 保持两个独立、可见的 job：`Governance` 检查必需文件与格式；`Skill Integrity` 检查 Skill 元数据、基线、离线边界、Markdown 目标和 JSON 代码块。不能将两者隐藏在一个不透明的聚合脚本中。当前 CI **不覆盖** TypeScript 示例编译或独立 DSH checkout 的 source-map 路径检查。
 
 只报告实际运行并观察到的结果。缺少 checkout、声明或命令时，记录未运行/失败/受阻的检查、原因与影响。报告分别说明设计就绪、行为实现和验证完成情况；自动检查通过不证明全部生命周期、权限、恢复或用户可见行为正确。PR 中未覆盖的检查放入 `Not Covered`。
-
-## 基线升级
-
-完整升级流程由人工唤起的 [基线升级 Skill](.agents/skills/dsh-skill-upgrade/SKILL.md) 负责；固定基线与版本不混用的仓库约束仍按本文件执行。
 
 ## 授权与 Git 安全
 
