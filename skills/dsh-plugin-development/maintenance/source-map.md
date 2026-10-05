@@ -16,6 +16,22 @@
 
 ## 专题证据
 
+### 跨专题术语与边界
+
+对应 [terminology.md](../references/terminology.md)。
+
+本专题只汇总其他专题已经核对的术语边界，用于消歧和阅读路由，不新增能力契约。每个术语的接口、生命周期、状态归属和完成语义仍由表中链接的专题拥有；维护时先更新所属专题，再同步本表。
+
+**规则与验证工具**
+
+- `packages/AGENTS.md`
+
+**文档参考**
+
+- `docs/glossary.md`
+- `docs/architecture.md`
+- `docs/capability-seams.md`
+
 ### 需求澄清流程
 
 对应 [requirements-discovery.md](../references/requirements-discovery.md)。
@@ -278,6 +294,12 @@
 - `packages/client/ui-primitives/src/Input.tsx`
 - `packages/client/ui-primitives/src/Pill.tsx`
 - `packages/client/ui-primitives/src/StateDot.tsx`
+- `packages/client/ui-primitives/src/DisclosureRow.tsx`
+- `packages/client/ui-primitives/src/ReferenceIcon.tsx`
+- `packages/client/ui-primitives/src/FishLogo.tsx`
+- `packages/client/ui-primitives/src/BrandWordmark.tsx`
+- `packages/client/ui-primitives/src/icons/index.tsx`
+- `packages/client/ui-primitives/src/icons/props.ts`
 - `packages/client/ui-primitives/src/Toast.tsx`
 - `packages/client/ui-primitives/src/Modal.tsx`
 - `packages/client/ui-primitives/src/RiskConfirmation.tsx`
@@ -285,6 +307,11 @@
 - `packages/client/ui-primitives/src/ConnectionIndicator.tsx`
 - `packages/client/ui-primitives/src/markdown/MarkdownText.tsx`
 - `packages/client/ui-primitives/src/markdown/MessageText.tsx`
+- `packages/client/ui-primitives/src/markdown/CodeBlock.tsx`
+- `packages/client/ui-primitives/src/markdown/JsonBlock.tsx`
+- `packages/client/ui-primitives/src/markdown/plain-text.ts`
+- `packages/client/ui-primitives/src/JsonTree.tsx`
+- `packages/client/ui-primitives/src/TerminalBlock.tsx`
 - `packages/client/web/src/platform.ts`
 - `packages/client/web/src/seed.ts`
 - `packages/client/ui-primitives/src/Menu.tsx`
