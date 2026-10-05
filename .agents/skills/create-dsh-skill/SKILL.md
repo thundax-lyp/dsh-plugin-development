@@ -68,7 +68,7 @@ node .agents/skills/create-dsh-skill/scripts/inventory-dsh-surface.mjs <target>
 
 独立遍历目标 tag 的包、公开声明、exports/bin、Service/Remote、默认 bundle/preset、manifest、配置与持久化格式、运行时实现、仓库 gate、行为测试以及完整 DOCS。按能力主题把原始定位和观察结果写入 `evidence/`，不按旧 Skill 的目录或主题反向决定调查范围。
 
-事实按以下顺序裁决：公开类型与运行时代码、可执行仓库门禁、行为测试、所属包 README、其他叙述文档。DOCS 只能提供线索和交叉核对；文档与代码冲突时保留代码结论并记录冲突。路径、符号或测试存在只表示需要继续核查，不能单独证明公开可用性或运行时语义。
+事实按以下顺序裁决：公开类型与运行时代码、可执行仓库门禁、行为测试、所属包 README、其他叙述文档。DOCS 只能提供线索和交叉核对；文档与代码冲突时保留代码结论并记录冲突。证据路径必须是目标 commit 跟踪的普通文件；路径、符号或测试存在只表示需要继续核查，不能单独证明公开可用性或运行时语义。
 
 对每项能力核查公开导出、可用侧、输入输出、生命周期所有权、失败、取消、清理、权限或 manifest 条件、默认挂载状态以及稳定性。私有实现、实验入口、示例、翻译、快照和生成文件按实际归属记录，不得当作已发布默认 API。设计建议、可由原语组合出的方案和外部协议要求必须与 DSH 已实现事实分开。
 
@@ -117,7 +117,7 @@ node .agents/skills/create-dsh-skill/scripts/build-dsh-plugin-development-skill.
 node .agents/skills/create-dsh-skill/scripts/verify-generated-skill.mjs <target>
 ```
 
-构建器每次先清空纯产物目录 `generated-skill/`，再从冻结素材新建。验证通过后运行整目录替换；替换脚本先拒绝正式 Skill 中未保存的工作区修改，再移除整个旧目录并放入新目录，不做覆盖合并：
+构建器每次先清空纯产物目录 `generated-skill/`，再从冻结素材新建。验证通过后运行整目录替换；替换脚本先拒绝正式 Skill 中未保存的工作区修改，再移除整个旧目录并放入新目录，不做覆盖合并。新目录就位前的错误必须恢复旧目录；就位后的备份清理失败作为已完成替换的警告返回：
 
 ```text
 node .agents/skills/create-dsh-skill/scripts/replace-generated-skill.mjs <target>

@@ -19,9 +19,9 @@ node .agents/skills/create-dsh-skill/scripts/verify-generated-skill.mjs <target>
 验证器确认：
 
 - 生成目录只包含 manifest 声明的文件，内容与冻结源一致；
-- Skill frontmatter、展示元数据、目标 tag 与 commit 存在；
+- Skill frontmatter 与展示元数据是结构合法、字段完整的受支持 YAML，目标 tag 与 commit 存在；
 - 本地 Markdown 链接和锚点、JSON 代码块、行尾空白有效；
-- Skill 内没有 HTTP(S) URL 或本地绝对路径。
+- Skill 内全部 UTF-8 文本产物没有 HTTP(S) URL 或作者机器路径。
 
 以上检查通过后，维护者才可整体替换正式 Skill 目录。替换属于仓库修改，不代表已经暂存、提交、推送、创建 PR 或发布。
 
@@ -29,4 +29,4 @@ node .agents/skills/create-dsh-skill/scripts/verify-generated-skill.mjs <target>
 node .agents/skills/create-dsh-skill/scripts/replace-generated-skill.mjs <target>
 ```
 
-替换脚本拒绝正式 Skill 中已有的工作区修改。它先复制已验证的新产物，随后把正式旧目录整体移走并将新目录放入；发生文件系统错误时恢复旧目录。成功后删除临时旧目录，不进行逐文件覆盖或保留。
+替换脚本拒绝正式 Skill 中已有的工作区修改。它先复制并核对已验证的新产物，再把正式旧目录整体移走并将新目录放入。新目录就位是明确的替换提交点：提交点前发生错误时恢复旧目录；提交点后的旧备份清理失败不撤销已经完成的替换，而是在成功结果中返回 `cleanupWarning` 与残留 `backupPath`，供维护者处理。不进行逐文件覆盖或选择性保留。

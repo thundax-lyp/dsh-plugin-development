@@ -48,4 +48,4 @@
 
 前四类使用 `decision: accepted` 并指向唯一正式输出文件。`excluded` 使用 `decision: excluded` 和非空 `reason`。不能保留未裁决项后冻结素材。
 
-`evidence.category` 必须是 `public-api`、`runtime`、`exports`、`gates`、`tests` 或 `documentation`，路径相对于精确 checkout。`implemented-behavior` 不能只有文档证据；`repository-rule` 必须包含 gate 证据。
+`evidence.category` 必须是 `public-api`、`runtime`、`exports`、`gates`、`tests` 或 `documentation`，路径相对于精确 checkout，并且必须是目标 commit 跟踪的普通文件；未跟踪、忽略、目录或符号链接不能作为证据。`implemented-behavior` 不能只有文档证据；`repository-rule` 必须包含 gate 证据。

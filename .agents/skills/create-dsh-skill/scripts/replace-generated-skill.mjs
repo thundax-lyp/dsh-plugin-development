@@ -2,7 +2,7 @@
 
 import { execFileSync } from "node:child_process";
 import { cpSync, existsSync, renameSync, rmSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { directoryDigest } from "./skill-build-contract.mjs";
 import { verifyGeneratedSkill } from "./verify-generated-skill.mjs";
@@ -11,7 +11,71 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const workspaceRoot = resolve(scriptDirectory, "../../../..");
 const formalSkillPath = join(workspaceRoot, "skills", "dsh-plugin-development");
 
-function replaceGeneratedSkill(targetArgument) {
+export function installGeneratedSkill(
+    generatedSkillPath,
+    formalPath,
+    result,
+    options = {},
+) {
+    const remove = options.remove ?? rmSync;
+    const processId = options.processId ?? process.pid;
+    const parentPath = dirname(formalPath);
+    const formalName = basename(formalPath);
+    const stagedPath = join(parentPath, `.${formalName}-new-${processId}`);
+    const backupPath = join(parentPath, `.${formalName}-old-${processId}`);
+    try {
+        cpSync(generatedSkillPath, stagedPath, {
+            recursive: true,
+            dereference: false,
+            preserveTimestamps: true,
+            errorOnExist: true,
+            force: false,
+        });
+        if (
+            directoryDigest(stagedPath) !== directoryDigest(generatedSkillPath)
+        ) {
+            throw new Error(
+                "Staged Skill differs from verified generated output.",
+            );
+        }
+    } catch (error) {
+        remove(stagedPath, { recursive: true, force: true });
+        throw error;
+    }
+
+    let oldMoved = false;
+    try {
+        if (existsSync(formalPath)) {
+            renameSync(formalPath, backupPath);
+            oldMoved = true;
+        }
+        renameSync(stagedPath, formalPath);
+    } catch (error) {
+        if (!existsSync(formalPath) && oldMoved && existsSync(backupPath)) {
+            renameSync(backupPath, formalPath);
+        }
+        remove(stagedPath, { recursive: true, force: true });
+        throw error;
+    }
+
+    let cleanupWarning;
+    if (oldMoved) {
+        try {
+            remove(backupPath, { recursive: true, force: true });
+        } catch (error) {
+            cleanupWarning =
+                `Replacement committed, but the old Skill backup could not be removed: ${backupPath}: ` +
+                `${error instanceof Error ? error.message : String(error)}`;
+        }
+    }
+    return {
+        ...result,
+        replaced: true,
+        ...(cleanupWarning ? { cleanupWarning, backupPath } : {}),
+    };
+}
+
+export function replaceGeneratedSkill(targetArgument) {
     const result = verifyGeneratedSkill(targetArgument);
     const targetPath = resolve(targetArgument);
     const generatedSkillPath = join(targetPath, "generated-skill");
@@ -31,49 +95,7 @@ function replaceGeneratedSkill(targetArgument) {
             "Formal Skill has working-tree changes; preserve them before whole-directory replacement.",
         );
     }
-
-    const stagedPath = join(
-        workspaceRoot,
-        "skills",
-        `.dsh-plugin-development-new-${process.pid}`,
-    );
-    const backupPath = join(
-        workspaceRoot,
-        "skills",
-        `.dsh-plugin-development-old-${process.pid}`,
-    );
-    cpSync(generatedSkillPath, stagedPath, {
-        recursive: true,
-        dereference: false,
-        preserveTimestamps: true,
-        errorOnExist: true,
-        force: false,
-    });
-    if (directoryDigest(stagedPath) !== directoryDigest(generatedSkillPath)) {
-        rmSync(stagedPath, { recursive: true, force: true });
-        throw new Error("Staged Skill differs from verified generated output.");
-    }
-
-    let oldMoved = false;
-    try {
-        if (existsSync(formalSkillPath)) {
-            renameSync(formalSkillPath, backupPath);
-            oldMoved = true;
-        }
-        renameSync(stagedPath, formalSkillPath);
-        if (oldMoved) rmSync(backupPath, { recursive: true, force: true });
-    } catch (error) {
-        if (
-            !existsSync(formalSkillPath) &&
-            oldMoved &&
-            existsSync(backupPath)
-        ) {
-            renameSync(backupPath, formalSkillPath);
-        }
-        rmSync(stagedPath, { recursive: true, force: true });
-        throw error;
-    }
-    return result;
+    return installGeneratedSkill(generatedSkillPath, formalSkillPath, result);
 }
 
 function main() {

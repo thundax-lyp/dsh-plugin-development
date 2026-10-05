@@ -11,6 +11,141 @@ import {
 import { validateSkillSource } from "./validate-skill-source.mjs";
 
 const fencePattern = /^```[^\n]*\n.*?^```\s*$/gms;
+const textDecoder = new TextDecoder("utf-8", { fatal: true });
+
+function readUtf8Text(path) {
+    const buffer = readFileSync(path);
+    if (buffer.includes(0)) return null;
+    try {
+        return textDecoder.decode(buffer);
+    } catch {
+        return null;
+    }
+}
+
+function parseYamlScalar(raw, label) {
+    if (raw.startsWith('"')) {
+        try {
+            const parsed = JSON.parse(raw);
+            if (typeof parsed !== "string")
+                throw new Error(`${label} must be a string.`);
+            return parsed;
+        } catch (error) {
+            throw new Error(
+                `${label} has invalid quoted YAML: ${error.message}`,
+            );
+        }
+    }
+    if (raw.startsWith("'")) {
+        if (!raw.endsWith("'") || raw.length < 2) {
+            throw new Error(`${label} has invalid quoted YAML.`);
+        }
+        return raw.slice(1, -1).replaceAll("''", "'");
+    }
+    if (raw === "true") return true;
+    if (raw === "false") return false;
+    if (raw === "null" || raw === "~") return null;
+    if (/^[+-]?(?:\d+\.?\d*|\.\d+)$/.test(raw)) return Number(raw);
+    if (/^[!&*|>{[]/.test(raw)) {
+        throw new Error(`${label} uses unsupported YAML syntax.`);
+    }
+    if (raw.includes(": ") || /\s#/.test(raw)) {
+        throw new Error(`${label} must quote this YAML string.`);
+    }
+    return raw;
+}
+
+function parseSimpleYamlMapping(text, label) {
+    if (text.includes("\t")) throw new Error(`${label} contains a tab.`);
+    const root = Object.create(null);
+    const stack = [{ indent: -4, value: root }];
+    for (const [index, line] of text.split(/\r?\n/).entries()) {
+        if (line.trim() === "" || line.trimStart().startsWith("#")) continue;
+        const match = /^( *)([A-Za-z_][A-Za-z0-9_-]*):(?: +(.*))?$/.exec(line);
+        if (!match) {
+            throw new Error(
+                `${label}:${index + 1} is not a supported mapping.`,
+            );
+        }
+        const indent = match[1].length;
+        if (indent % 4 !== 0) {
+            throw new Error(
+                `${label}:${index + 1} must use four-space indentation.`,
+            );
+        }
+        while (stack.at(-1).indent >= indent) stack.pop();
+        const parent = stack.at(-1);
+        if (!parent || indent !== parent.indent + 4) {
+            throw new Error(`${label}:${index + 1} has invalid indentation.`);
+        }
+        const key = match[2];
+        if (Object.hasOwn(parent.value, key)) {
+            throw new Error(`${label}:${index + 1} duplicates ${key}.`);
+        }
+        const raw = match[3];
+        if (raw === undefined || raw === "") {
+            const child = Object.create(null);
+            parent.value[key] = child;
+            stack.push({ indent, value: child });
+        } else {
+            parent.value[key] = parseYamlScalar(raw, `${label}:${index + 1}`);
+        }
+    }
+    return root;
+}
+
+function validateEntrypoint(entrypoint, errors) {
+    const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(entrypoint);
+    if (!match) {
+        errors.push("SKILL.md: missing or unclosed YAML frontmatter");
+        return;
+    }
+    try {
+        const frontmatter = parseSimpleYamlMapping(
+            match[1],
+            "SKILL.md frontmatter",
+        );
+        if (frontmatter.name !== "dsh-plugin-development") {
+            errors.push("SKILL.md: name must be dsh-plugin-development");
+        }
+        if (
+            typeof frontmatter.description !== "string" ||
+            frontmatter.description.trim() === ""
+        ) {
+            errors.push("SKILL.md: description must be a non-empty string");
+        }
+    } catch (error) {
+        errors.push(`SKILL.md: ${error.message}`);
+    }
+}
+
+function validateMetadata(metadata, errors) {
+    try {
+        const parsed = parseSimpleYamlMapping(metadata, "agents/openai.yaml");
+        if (
+            !parsed.interface ||
+            typeof parsed.interface !== "object" ||
+            Array.isArray(parsed.interface)
+        ) {
+            errors.push("agents/openai.yaml: interface must be a mapping");
+            return;
+        }
+        for (const field of [
+            "display_name",
+            "short_description",
+            "default_prompt",
+        ]) {
+            const value = parsed.interface[field];
+            if (typeof value !== "string" || value.trim() === "") {
+                errors.push(
+                    `agents/openai.yaml: interface.${field} must be a non-empty string`,
+                );
+            }
+        }
+    } catch (error) {
+        errors.push(`agents/openai.yaml: ${error.message}`);
+    }
+}
 
 function markdownAnchors(text) {
     const anchors = new Set();
@@ -47,14 +182,16 @@ function validateMarkdown(root, path, errors) {
         const url = match[1];
         if (/^\w+:/.test(url)) continue;
         const [filename, encodedAnchor] = url.split("#", 2);
-        const target = resolveInside(
-            root,
-            join(
-                dirname(path.slice(root.length + 1)),
-                decodeURIComponent(filename),
-            ),
-            "Markdown link",
-        );
+        const target = filename
+            ? resolveInside(
+                  root,
+                  join(
+                      dirname(path.slice(root.length + 1)),
+                      decodeURIComponent(filename),
+                  ),
+                  "Markdown link",
+              )
+            : path;
         if (!existsSync(target)) {
             errors.push(`${path}: missing local link ${url}`);
         } else if (encodedAnchor && extname(target) === ".md") {
@@ -108,22 +245,13 @@ export function verifyGeneratedSkill(targetArgument) {
             output,
             "generated output",
         );
+        const text = readUtf8Text(path);
+        if (text === null) continue;
         if (
-            ![
-                ".md",
-                ".yaml",
-                ".yml",
-                ".json",
-                ".js",
-                ".mjs",
-                ".ts",
-                ".tsx",
-            ].includes(extname(path))
+            /https?:\/\/|\/(?:Users|Volumes)\/|[A-Za-z]:[\\/]Users[\\/]/.test(
+                text,
+            )
         ) {
-            continue;
-        }
-        const text = readFileSync(path, "utf8");
-        if (/https?:\/\/|\/(?:Users|Volumes)\//.test(text)) {
             errors.push(`${output}: offline or local-path boundary violation`);
         }
         if (/[\t ]+$/m.test(text))
@@ -136,13 +264,7 @@ export function verifyGeneratedSkill(targetArgument) {
         join(target.generatedSkillPath, "SKILL.md"),
         "utf8",
     );
-    if (
-        !/^---\n[\s\S]*?^name: dsh-plugin-development$[\s\S]*?^---$/m.test(
-            entrypoint,
-        )
-    ) {
-        errors.push("SKILL.md: invalid dsh-plugin-development frontmatter");
-    }
+    validateEntrypoint(entrypoint, errors);
     if (!entrypoint.includes(target.provenance.tag)) {
         errors.push(`SKILL.md: missing target tag ${target.provenance.tag}`);
     }
@@ -158,15 +280,7 @@ export function verifyGeneratedSkill(targetArgument) {
         join(target.generatedSkillPath, "agents", "openai.yaml"),
         "utf8",
     );
-    for (const field of [
-        "interface:",
-        "display_name:",
-        "short_description:",
-        "default_prompt:",
-    ]) {
-        if (!metadata.includes(field))
-            errors.push(`agents/openai.yaml: missing ${field}`);
-    }
+    validateMetadata(metadata, errors);
     if (errors.length > 0) throw new Error(errors.join("\n"));
     return {
         files: actual.length,

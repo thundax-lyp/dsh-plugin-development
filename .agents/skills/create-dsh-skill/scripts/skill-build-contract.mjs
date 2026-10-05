@@ -130,11 +130,11 @@ export function loadTarget(targetArgument) {
     }
     const status = execFileSync(
         "git",
-        ["status", "--porcelain", "--untracked-files=no"],
+        ["status", "--porcelain", "--untracked-files=all"],
         { cwd: checkoutPath, encoding: "utf8" },
     ).trim();
     if (status !== "")
-        throw new Error("Target checkout has tracked modifications.");
+        throw new Error("Target checkout has working-tree modifications.");
     return {
         targetPath,
         checkoutPath,

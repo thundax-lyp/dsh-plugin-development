@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-import { existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, lstatSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import {
     assertIdentity,
     loadTarget,
+    normalizeRelativePath,
     readJson,
     resolveInside,
     sha256File,
@@ -87,6 +89,15 @@ export function validateSkillSource(targetArgument, options = {}) {
             "skill-source/claims.json must contain adjudicated claims.",
         );
     }
+    const trackedEvidencePaths = new Set(
+        execFileSync("git", ["ls-files", "-z"], {
+            cwd: target.checkoutPath,
+            encoding: "utf8",
+        })
+            .split("\0")
+            .filter(Boolean)
+            .map((path) => path.replaceAll("\\", "/")),
+    );
 
     const sources = new Set();
     const outputs = new Set();
@@ -195,15 +206,27 @@ export function validateSkillSource(targetArgument, options = {}) {
                 throw new Error(`${evidenceLabel}.category is unsupported.`);
             }
             requireString(evidence.path, `${evidenceLabel}.path`);
-            categories.add(evidence.category);
-            const evidencePath = resolveInside(
-                target.checkoutPath,
+            const normalizedEvidencePath = normalizeRelativePath(
                 evidence.path,
                 `${evidenceLabel}.path`,
             );
-            if (!existsSync(evidencePath)) {
+            if (!trackedEvidencePaths.has(normalizedEvidencePath)) {
                 throw new Error(
-                    `${evidenceLabel}.path does not exist: ${evidence.path}`,
+                    `${evidenceLabel}.path is not tracked by the target commit: ${evidence.path}`,
+                );
+            }
+            categories.add(evidence.category);
+            const evidencePath = resolveInside(
+                target.checkoutPath,
+                normalizedEvidencePath,
+                `${evidenceLabel}.path`,
+            );
+            if (
+                !existsSync(evidencePath) ||
+                !lstatSync(evidencePath).isFile()
+            ) {
+                throw new Error(
+                    `${evidenceLabel}.path is not a regular tracked file: ${evidence.path}`,
                 );
             }
         }
