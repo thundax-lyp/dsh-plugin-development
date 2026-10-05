@@ -1,3 +1,5 @@
 /.idea/
 /node_modules/
-/.dsh-upgrade/
+/.dsh-skill-build/repository/
+/.dsh-skill-build/targets/*/checkout/
+/.dsh-skill-build/targets/*/upstream-docs/
