@@ -23,8 +23,8 @@ const repositoryUrl = "https://github.com/deepseek-ai/deepseek-harness.git";
 const packageName = "@deepseek-ai/dsh-agent";
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const workspaceRoot = resolve(scriptDirectory, "../../../..");
-const upgradeRoot = join(workspaceRoot, ".dsh-upgrade");
-const repositoryPath = join(upgradeRoot, "repository");
+const buildRoot = join(workspaceRoot, ".dsh-skill-build");
+const repositoryPath = join(buildRoot, "repository");
 
 function run(command, args, options = {}) {
     const output = execFileSync(command, args, {
@@ -48,7 +48,7 @@ function resolveVersion(requestedVersion) {
 }
 
 function ensureRepository() {
-    mkdirSync(upgradeRoot, { recursive: true });
+    mkdirSync(buildRoot, { recursive: true });
     if (!existsSync(repositoryPath)) {
         run("git", ["clone", repositoryUrl, repositoryPath]);
     }
@@ -218,14 +218,14 @@ function ensureJsonFile(path, expected, initial = expected) {
         }
         return;
     }
-    writeFileSync(path, `${JSON.stringify(initial, null, 2)}\n`);
+    writeFileSync(path, `${JSON.stringify(initial, null, 4)}\n`);
 }
 
 function main() {
     const args = process.argv.slice(2);
     if (args.length > 1) {
         throw new Error(
-            "Usage: prepare-dsh-upgrade-target.mjs [exact-published-version]",
+            "Usage: prepare-dsh-skill-target.mjs [exact-published-version]",
         );
     }
 
@@ -237,11 +237,7 @@ function main() {
         ["rev-parse", "--verify", `refs/tags/${tag}^{commit}`],
         { cwd: repositoryPath, capture: true },
     );
-    const targetPath = join(
-        upgradeRoot,
-        "targets",
-        encodeURIComponent(version),
-    );
+    const targetPath = join(buildRoot, "targets", encodeURIComponent(version));
     const checkoutPath = join(targetPath, "checkout");
 
     ensureCheckout(checkoutPath, commit);
@@ -260,6 +256,12 @@ function main() {
         "skill-source/api-guardrails",
         "skill-source/concepts",
         "skill-source/how-to",
+        "skill-source/entrypoint",
+        "skill-source/metadata",
+        "skill-source/indexes",
+        "skill-source/maintenance",
+        "skill-source/assets",
+        "generated-skill",
     ]) {
         mkdirSync(join(targetPath, path), { recursive: true });
     }
@@ -277,11 +279,42 @@ function main() {
         commit,
         remote: normalizeRemote(remote),
     };
-    ensureJsonFile(
-        join(targetPath, "skill-source", "manifest.json"),
-        skillSourceIdentity,
-        { ...skillSourceIdentity, status: "draft", topics: [] },
+    const skillSourceManifestPath = join(
+        targetPath,
+        "skill-source",
+        "manifest.json",
     );
+    ensureJsonFile(skillSourceManifestPath, skillSourceIdentity, {
+        schemaVersion: 1,
+        ...skillSourceIdentity,
+        status: "draft",
+        topics: [],
+        files: [],
+    });
+    const skillSourceManifest = JSON.parse(
+        readFileSync(skillSourceManifestPath, "utf8"),
+    );
+    if (
+        skillSourceManifest.schemaVersion === undefined &&
+        skillSourceManifest.status === "draft" &&
+        Array.isArray(skillSourceManifest.topics) &&
+        skillSourceManifest.topics.length === 0 &&
+        skillSourceManifest.files === undefined
+    ) {
+        writeFileSync(
+            skillSourceManifestPath,
+            `${JSON.stringify(
+                {
+                    schemaVersion: 1,
+                    ...skillSourceManifest,
+                    files: [],
+                },
+                null,
+                4,
+            )}\n`,
+        );
+    }
+    ensureJsonFile(join(targetPath, "skill-source", "claims.json"), {}, []);
 
     process.stdout.write(
         `${JSON.stringify({ version, tag, commit, targetPath }, null, 2)}\n`,
