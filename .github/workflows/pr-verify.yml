@@ -51,11 +51,12 @@ jobs:
                     README_zh-CN.md
                     LICENSE
                     .github/pull_request_template.md
-                    skills/dsh-plugin-development/SKILL.md
-                    skills/dsh-plugin-development/agents/openai.yaml
-                    skills/dsh-plugin-development/references/plugin-development-routing.md
-                    skills/dsh-plugin-development/maintenance/source-map.md
-                    skills/dsh-plugin-development/maintenance/skill-maintenance.md
+                    .agents/skills/create-dsh-skill/SKILL.md
+                    .agents/skills/create-dsh-skill/agents/openai.yaml
+                    .agents/skills/create-dsh-skill/references/entrypoint-scope.md
+                    .agents/skills/create-dsh-skill/references/reference-template.md
+                    .agents/skills/create-dsh-skill/references/skill-source-contract.md
+                    .agents/skills/create-dsh-skill/references/output-contract.md
                   )
 
                   for required_file in "${required_files[@]}"; do
@@ -91,48 +92,58 @@ jobs:
               run: |
                   set -euo pipefail
 
-                  skill=skills/dsh-plugin-development/SKILL.md
+                  skill=.agents/skills/create-dsh-skill/SKILL.md
                   test "$(sed -n '1p' "$skill")" = '---'
-                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: dsh-plugin-development$'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: create-dsh-skill$'
                   sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
+
+                  if test -f skills/dsh-plugin-development/SKILL.md; then
+                    skill=skills/dsh-plugin-development/SKILL.md
+                    test "$(sed -n '1p' "$skill")" = '---'
+                    sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: dsh-plugin-development$'
+                    sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
+                  fi
 
             - name: Verify Skill metadata
               shell: bash
               run: |
                   set -euo pipefail
 
-                  metadata=skills/dsh-plugin-development/agents/openai.yaml
-                  grep -Eq '^interface:$' "$metadata"
-                  grep -Eq '^    display_name: .+' "$metadata"
-                  grep -Eq '^    short_description: .+' "$metadata"
-                  grep -Eq '^    default_prompt: .+' "$metadata"
+                  creator_metadata=.agents/skills/create-dsh-skill/agents/openai.yaml
+                  grep -Eq '^policy:$' "$creator_metadata"
+                  grep -Eq '^    allow_implicit_invocation: false$' "$creator_metadata"
 
-            - name: Verify pinned baseline consistency
+                  if test -f skills/dsh-plugin-development/SKILL.md; then
+                    metadata=skills/dsh-plugin-development/agents/openai.yaml
+                    grep -Eq '^interface:$' "$metadata"
+                    grep -Eq '^    display_name: .+' "$metadata"
+                    grep -Eq '^    short_description: .+' "$metadata"
+                    grep -Eq '^    default_prompt: .+' "$metadata"
+                  fi
+
+            - name: Verify generated Skill version identity when present
               shell: bash
               run: |
                   set -euo pipefail
-
-                  files=(
-                    README.md
-                    README_zh-CN.md
-                    AGENTS.md
-                    skills/dsh-plugin-development/SKILL.md
-                    skills/dsh-plugin-development/maintenance/source-map.md
-                    skills/dsh-plugin-development/maintenance/skill-maintenance.md
-                  )
-
-                  for file in "${files[@]}"; do
-                    grep -Fq 'dsh-v0.1.2-rc.1' "$file"
-                  done
+                  skill=skills/dsh-plugin-development/SKILL.md
+                  if test -f "$skill"; then
+                    source_map=skills/dsh-plugin-development/maintenance/source-map.md
+                    test -s "$source_map"
+                    tag=$(grep -Eo 'dsh-v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?' "$source_map" | head -n 1)
+                    test -n "$tag"
+                    grep -Fq "$tag" "$skill"
+                  fi
 
             - name: Verify offline Skill boundary
               shell: bash
               run: |
                   set -euo pipefail
 
-                  if grep -RInE 'https?://' skills/dsh-plugin-development; then
-                    echo 'HTTP(S) URL found inside the offline Skill directory.' >&2
-                    exit 1
+                  if test -d skills/dsh-plugin-development; then
+                    if grep -RInE 'https?://' skills/dsh-plugin-development; then
+                      echo 'HTTP(S) URL found inside the offline Skill directory.' >&2
+                      exit 1
+                    fi
                   fi
 
             - name: Set up Python
@@ -140,8 +151,16 @@ jobs:
               with:
                   python-version: "3.12"
 
-            - name: Verify Markdown links, anchors and JSON fences
+            - name: Verify repository Markdown links, anchors and JSON fences
               run: python3 scripts/validate_skill.py
+
+            - name: Verify generated Skill when present
+              shell: bash
+              run: |
+                  set -euo pipefail
+                  if test -f skills/dsh-plugin-development/SKILL.md; then
+                    python3 scripts/validate_skill.py --skill skills/dsh-plugin-development
+                  fi
 
             - name: Test validation failure cases
               run: python3 -B -m unittest discover -s scripts -p 'test_*.py'
