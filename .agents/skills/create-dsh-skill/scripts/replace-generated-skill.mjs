@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, renameSync, rmSync } from "node:fs";
-import { basename, dirname, join, resolve } from "node:path";
+import { cpSync, existsSync, mkdtempSync, renameSync, rmSync } from "node:fs";
+import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { directoryDigest } from "./skill-build-contract.mjs";
+import { directoryDigest, listFiles } from "./skill-build-contract.mjs";
 import { verifyGeneratedSkill } from "./verify-generated-skill.mjs";
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
@@ -18,11 +18,13 @@ export function installGeneratedSkill(
     options = {},
 ) {
     const remove = options.remove ?? rmSync;
-    const processId = options.processId ?? process.pid;
     const parentPath = dirname(formalPath);
     const formalName = basename(formalPath);
-    const stagedPath = join(parentPath, `.${formalName}-new-${processId}`);
-    const backupPath = join(parentPath, `.${formalName}-old-${processId}`);
+    const transactionPath = mkdtempSync(
+        join(parentPath, `.${formalName}-replace-`),
+    );
+    const stagedPath = join(transactionPath, "new");
+    const backupPath = join(transactionPath, "old");
     try {
         cpSync(generatedSkillPath, stagedPath, {
             recursive: true,
@@ -39,7 +41,7 @@ export function installGeneratedSkill(
             );
         }
     } catch (error) {
-        remove(stagedPath, { recursive: true, force: true });
+        remove(transactionPath, { recursive: true, force: true });
         throw error;
     }
 
@@ -52,21 +54,28 @@ export function installGeneratedSkill(
         renameSync(stagedPath, formalPath);
     } catch (error) {
         if (!existsSync(formalPath) && oldMoved && existsSync(backupPath)) {
-            renameSync(backupPath, formalPath);
+            try {
+                renameSync(backupPath, formalPath);
+                oldMoved = false;
+            } catch (rollbackError) {
+                throw new AggregateError(
+                    [error, rollbackError],
+                    `Skill replacement and rollback failed; old Skill remains at ${backupPath}.`,
+                );
+            }
         }
-        remove(stagedPath, { recursive: true, force: true });
+        if (!oldMoved)
+            remove(transactionPath, { recursive: true, force: true });
         throw error;
     }
 
     let cleanupWarning;
-    if (oldMoved) {
-        try {
-            remove(backupPath, { recursive: true, force: true });
-        } catch (error) {
-            cleanupWarning =
-                `Replacement committed, but the old Skill backup could not be removed: ${backupPath}: ` +
-                `${error instanceof Error ? error.message : String(error)}`;
-        }
+    try {
+        remove(transactionPath, { recursive: true, force: true });
+    } catch (error) {
+        cleanupWarning =
+            `Replacement committed, but the transaction directory could not be removed: ${transactionPath}: ` +
+            `${error instanceof Error ? error.message : String(error)}`;
     }
     return {
         ...result,
@@ -75,26 +84,38 @@ export function installGeneratedSkill(
     };
 }
 
-export function replaceGeneratedSkill(targetArgument) {
-    const result = verifyGeneratedSkill(targetArgument);
-    const targetPath = resolve(targetArgument);
-    const generatedSkillPath = join(targetPath, "generated-skill");
+export function assertReplaceableFormalSkill(rootPath, formalPath) {
+    const relativeSkillPath = relative(rootPath, formalPath);
     const repositoryStatus = execFileSync(
         "git",
         [
             "status",
             "--porcelain",
+            "-z",
+            "--ignored=matching",
             "--untracked-files=all",
             "--",
-            "skills/dsh-plugin-development",
+            relativeSkillPath,
         ],
-        { cwd: workspaceRoot, encoding: "utf8" },
-    ).trim();
-    if (repositoryStatus !== "") {
+        { cwd: rootPath, encoding: "utf8" },
+    );
+    const statuses = repositoryStatus.split("\0").filter(Boolean);
+    const preparedDeletion =
+        statuses.length > 0 &&
+        statuses.every((entry) => ["D ", " D"].includes(entry.slice(0, 2))) &&
+        (!existsSync(formalPath) || listFiles(formalPath).length === 0);
+    if (statuses.length > 0 && !preparedDeletion) {
         throw new Error(
-            "Formal Skill has working-tree changes; preserve them before whole-directory replacement.",
+            "Formal Skill has changes other than an empty directory with deleted tracked files; preserve them before whole-directory replacement.",
         );
     }
+}
+
+export function replaceGeneratedSkill(targetArgument) {
+    const result = verifyGeneratedSkill(targetArgument);
+    const targetPath = resolve(targetArgument);
+    const generatedSkillPath = join(targetPath, "generated-skill");
+    assertReplaceableFormalSkill(workspaceRoot, formalSkillPath);
     return installGeneratedSkill(generatedSkillPath, formalSkillPath, result);
 }
 

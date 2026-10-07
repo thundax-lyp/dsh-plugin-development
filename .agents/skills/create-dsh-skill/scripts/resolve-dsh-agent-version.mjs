@@ -9,15 +9,8 @@ const stableRcPattern = /^(\d+)\.(\d+)\.(\d+)-rc\.(\d+)$/;
 export function selectLatestStableRc(versions) {
     const candidates = versions.flatMap((version) => {
         const match = stableRcPattern.exec(version);
-        if (!match) return [];
-        return [
-            {
-                version,
-                order: match.slice(1).map(Number),
-            },
-        ];
+        return match ? [{ version, order: match.slice(1).map(Number) }] : [];
     });
-
     candidates.sort((left, right) => {
         for (let index = 0; index < left.order.length; index += 1) {
             const difference = left.order[index] - right.order[index];
@@ -25,7 +18,6 @@ export function selectLatestStableRc(versions) {
         }
         return 0;
     });
-
     const latest = candidates.at(-1);
     if (!latest) {
         throw new Error(
@@ -36,9 +28,7 @@ export function selectLatestStableRc(versions) {
 }
 
 export function resolvePublishedVersion(versions, requestedVersion) {
-    if (requestedVersion === undefined) {
-        return selectLatestStableRc(versions);
-    }
+    if (requestedVersion === undefined) return selectLatestStableRc(versions);
     if (!versions.includes(requestedVersion)) {
         throw new Error(
             `${packageName} version "${requestedVersion}" is not published in the npm registry.`,

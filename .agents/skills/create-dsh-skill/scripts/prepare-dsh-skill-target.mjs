@@ -91,9 +91,43 @@ function ensureRepository() {
 function ensureCheckout(checkoutPath, commit) {
     if (!existsSync(checkoutPath)) {
         mkdirSync(dirname(checkoutPath), { recursive: true });
-        run("git", ["worktree", "add", "--detach", checkoutPath, commit], {
+        const registrations = run("git", ["worktree", "list", "--porcelain"], {
             cwd: repositoryPath,
+            capture: true,
         });
+        const registered = registrations
+            .split(/\n\s*\n/)
+            .map((record) => record.split("\n"))
+            .find((lines) => lines.includes(`worktree ${checkoutPath}`));
+        if (
+            registered &&
+            (!registered.includes(`HEAD ${commit}`) ||
+                !registered.some((line) => line.startsWith("prunable ")) ||
+                registered.some((line) => line.startsWith("locked")))
+        ) {
+            throw new Error(
+                `Existing worktree registration is not safely recoverable: ${checkoutPath}`,
+            );
+        }
+        if (registered) {
+            process.stderr.write(
+                `Recovering missing worktree registered at ${checkoutPath}.\n`,
+            );
+        }
+        run(
+            "git",
+            [
+                "worktree",
+                "add",
+                ...(registered ? ["--force"] : []),
+                "--detach",
+                checkoutPath,
+                commit,
+            ],
+            {
+                cwd: repositoryPath,
+            },
+        );
     }
 
     const actualRoot = realpathSync(
@@ -285,7 +319,7 @@ function main() {
         "manifest.json",
     );
     ensureJsonFile(skillSourceManifestPath, skillSourceIdentity, {
-        schemaVersion: 1,
+        schemaVersion: 3,
         ...skillSourceIdentity,
         status: "draft",
         topics: [],
@@ -315,6 +349,21 @@ function main() {
         );
     }
     ensureJsonFile(join(targetPath, "skill-source", "claims.json"), {}, []);
+    ensureJsonFile(
+        join(targetPath, "skill-source", "coverage.json"),
+        {},
+        {
+            schemaVersion: 3,
+            dispositions: [],
+            taskPaths: [],
+            taskDiscoveries: [],
+        },
+    );
+    ensureJsonFile(
+        join(targetPath, "skill-source", "api-surface.json"),
+        {},
+        { schemaVersion: 1, ...skillSourceIdentity, entries: [], objects: [] },
+    );
 
     process.stdout.write(
         `${JSON.stringify({ version, tag, commit, targetPath }, null, 2)}\n`,

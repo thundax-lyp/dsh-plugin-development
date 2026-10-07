@@ -247,9 +247,15 @@ export function verifyGeneratedSkill(targetArgument) {
         );
         const text = readUtf8Text(path);
         if (text === null) continue;
+        const offlineBoundaryText =
+            extname(path) === ".md"
+                ? text
+                      .replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\s*$/gm, "")
+                      .replace(/`[^`\n]*`/g, "")
+                : text;
         if (
             /https?:\/\/|\/(?:Users|Volumes)\/|[A-Za-z]:[\\/]Users[\\/]/.test(
-                text,
+                offlineBoundaryText,
             )
         ) {
             errors.push(`${output}: offline or local-path boundary violation`);
