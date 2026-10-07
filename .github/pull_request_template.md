@@ -15,7 +15,7 @@
 - Skill frontmatter and metadata: result, or `N/A` with reason.
 - Markdown navigation and local links: result, or `N/A` with reason.
 - Code-fence validation: commands and results, or `N/A` with reason.
-- Pinned DSH evidence validation: result, or `N/A` with reason.
+- Creator workflow tests and generated output evidence validation: result, or `N/A` with reason.
 - GitHub operation channel: Connector, `gh`, or `N/A`; when fallback occurs,
   record the reason and readback result.
 
@@ -30,7 +30,7 @@
 - [ ] Skill trigger, scope, or metadata
 - [ ] Routing or reference ownership
 - [ ] DSH API, lifecycle, Session, Provider, or Client guidance
-- [ ] Pinned baseline or evidence mapping
+- [ ] Per-output version identity or evidence mapping
 - [ ] Public documentation or distribution layout
 
 Details:
