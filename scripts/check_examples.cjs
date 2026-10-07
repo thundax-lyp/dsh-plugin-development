@@ -82,6 +82,27 @@ try {
     }
     workspace = fs.mkdtempSync(path.join(root, ".skill-validation-"));
     const name = path.basename(workspace);
+    const reviewRemoteDeclaration = path.join(
+        workspace,
+        "acme-dsh-review-remote.d.ts",
+    );
+    fs.writeFileSync(
+        reviewRemoteDeclaration,
+        [
+            "import type { RemoteResult, TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'",
+            "declare module '@deepseek-ai/dsh-typert-protocol' {",
+            "  interface TypertRemoteNamespace$726576696577 {",
+            "    label: (signal?: AbortSignal) => Promise<RemoteResult<string>>",
+            "  }",
+            "  interface TypertRemoteNamespaceMap {",
+            "    review: TypertRemoteNamespace$726576696577",
+            "  }",
+            "}",
+            "declare const reviewRemote: TypertRemoteContribution",
+            "export default reviewRemote",
+            "",
+        ].join("\n"),
+    );
     let hostCount = 0;
     const client = [];
     const multiFileExamples = new Set([
@@ -197,6 +218,10 @@ try {
                 path.resolve(root, path.dirname(file), types),
             ];
     }
+    // The Client/Remote HOW-TO models a third-party package whose generated
+    // artifact does not live in the pinned DSH checkout. This declaration is
+    // the generator-owned output contract, not a handwritten example API.
+    options.paths["@acme/dsh-review/remote"] = [reviewRemoteDeclaration];
     const program = ts.createProgram(
         client.map((b) => b.filename),
         options,

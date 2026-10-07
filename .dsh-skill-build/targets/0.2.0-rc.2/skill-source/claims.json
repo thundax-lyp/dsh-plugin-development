@@ -1,0 +1,128 @@
+[
+  {
+    "id": "host-contract",
+    "kind": "implemented-behavior",
+    "topic": "host-core",
+    "decision": "accepted",
+    "owner": "references/api-host-core.md",
+    "summary": "Host/Core registrations are scope-owned, cancellation-aware, and Session-visible facts must be reconstructible.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "host-surface",
+    "kind": "implemented-behavior",
+    "topic": "host-core",
+    "decision": "accepted",
+    "owner": "references/api-host-core-surface.md",
+    "summary": "Selected Host/Core public objects and signatures are exported by the target packages.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/agent/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "host-how-to",
+    "kind": "derived-guidance",
+    "topic": "host-core",
+    "decision": "accepted",
+    "owner": "references/how-to-host-core.md",
+    "summary": "The documented Host tasks compose target public services and their verified lifecycle boundaries.",
+    "evidence": [
+      {
+        "category": "documentation",
+        "path": "docs/cookbook/adding-a-tool.md"
+      }
+    ]
+  },
+  {
+    "id": "client-contract",
+    "kind": "implemented-behavior",
+    "topic": "client-web",
+    "decision": "accepted",
+    "owner": "references/api-client-web.md",
+    "summary": "Client plugins load through declared client metadata, slots, stores, and generated Remote contributions.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-slots/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-surface",
+    "kind": "implemented-behavior",
+    "topic": "client-web",
+    "decision": "accepted",
+    "owner": "references/api-client-web-surface.md",
+    "summary": "Selected Client/Web public objects and signatures are exported by the target packages.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/store/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-how-to",
+    "kind": "derived-guidance",
+    "topic": "client-web",
+    "decision": "accepted",
+    "owner": "references/how-to-client-web.md",
+    "summary": "The dual-sided example follows the target Host, Remote, Client slot, and settings contracts.",
+    "evidence": [
+      {
+        "category": "documentation",
+        "path": "docs/cookbook/adding-a-remote-api.md"
+      }
+    ]
+  },
+  {
+    "id": "infra-contract",
+    "kind": "implemented-behavior",
+    "topic": "infra-runtime",
+    "decision": "accepted",
+    "owner": "references/api-infra-runtime.md",
+    "summary": "Infrastructure capabilities expose stable seams while providers own cleanup and deployment-specific behavior.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/package-manifest/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "infra-surface",
+    "kind": "implemented-behavior",
+    "topic": "infra-runtime",
+    "decision": "accepted",
+    "owner": "references/api-infra-runtime-surface.md",
+    "summary": "Selected infrastructure public objects and signatures are exported by the target packages.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/fs/fs/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "infra-how-to",
+    "kind": "derived-guidance",
+    "topic": "infra-runtime",
+    "decision": "accepted",
+    "owner": "references/how-to-infra-runtime.md",
+    "summary": "A package manifest and bundle patch compose a provider into a target Profile without copying product bundles.",
+    "evidence": [
+      {
+        "category": "documentation",
+        "path": "docs/cordis-tutorial/06-composition-and-hmr.md"
+      }
+    ]
+  }
+]

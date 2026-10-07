@@ -1,0 +1,1340 @@
+{
+  "schemaVersion": 1,
+  "target": {
+    "version": "0.2.0-rc.2",
+    "tag": "dsh-v0.2.0-rc.2",
+    "commit": "639ed015397290b3745d163aafe02ffee4aa3f84"
+  },
+  "scope": "infra-runtime",
+  "capabilities": [
+    {
+      "capability": "package-and-compose-infrastructure-plugin",
+      "apiEntries": [
+        "@deepseek-ai/dsh-package-manifest",
+        "Cordis Loader YAML entries",
+        "@deepseek-ai/dsh-app-boot Profile declarations"
+      ],
+      "objects": [
+        "DshPackageManifest",
+        "DshManifest",
+        "DshBundleManifest",
+        "DshProfileManifest",
+        "DshClientManifest"
+      ],
+      "members": [
+        "dsh.manifestVersion",
+        "dsh.bundle.patch",
+        "dsh.profile.bundles",
+        "dsh.client",
+        "engines.dsh"
+      ],
+      "claims": [
+        "Bundle patch paths are package-root-relative and ordered.",
+        "Manifest types do not parse JSON or universally enforce compatibility.",
+        "Missing injected services leave a Loader fiber PENDING."
+      ],
+      "taskPath": {
+        "result": "packed plugin installs into an isolated Profile and activates",
+        "compositionSteps": [
+          "compile Host and optional Client surfaces",
+          "declare package and bundle patch",
+          "install packed package",
+          "boot exact-target Profile",
+          "inspect ACTIVE/PENDING fibers",
+          "observe behavior",
+          "unload and verify cleanup"
+        ]
+      },
+      "evidence": [
+        "packages/util/package-manifest/src/types.ts",
+        "packages/boot/app-boot/src/index.ts",
+        "docs/cordis-tutorial/06-composition-and-hmr.md",
+        "packages/bundle/base/cordis.patch.yml"
+      ],
+      "notCovered": [
+        "isolated install/Profile boot not run"
+      ]
+    },
+    {
+      "capability": "resource-seams-and-providers",
+      "apiEntries": [
+        "dsh-attachment",
+        "dsh-credentials",
+        "dsh-authorization",
+        "dsh-fs",
+        "dsh-lsp",
+        "dsh-mcp-resources",
+        "dsh-ptc-runtime",
+        "dsh-sandbox",
+        "dsh-shell",
+        "dsh-spill",
+        "dsh-storage",
+        "dsh-subprocess"
+      ],
+      "objects": [
+        "AttachmentStore",
+        "CredentialProvider",
+        "AuthorizationService",
+        "FileSystem",
+        "LspService",
+        "McpResourceRuntime",
+        "PtcRuntime",
+        "SandboxProvider",
+        "ShellExecutor",
+        "SpillStore",
+        "Storage",
+        "Domain",
+        "SubprocessRuntime"
+      ],
+      "members": [
+        "register/registerProvider/mount disposers",
+        "AbortSignal parameters",
+        "FileSystem.watch async close",
+        "Domain.close",
+        "SubprocessHandle termination/wait"
+      ],
+      "claims": [
+        "Contract seams are separate from local, SSH, sandbox, stdio, JSON, SQLite and Node providers.",
+        "Unload stops admission, cancels owned work and awaits cleanup.",
+        "Cancellation does not prove an externally delivered effect was undone."
+      ],
+      "taskPath": {
+        "result": "provider replaces or extends infrastructure without changing consumers",
+        "compositionSteps": [
+          "mount seam/provider once",
+          "inject service into consumer",
+          "exercise success/error/cancel",
+          "dispose consumer then provider",
+          "assert quiescence"
+        ]
+      },
+      "evidence": [
+        "docs/subsystems/attachment.md",
+        "docs/subsystems/credentials.md",
+        "docs/subsystems/filesystem.md",
+        "docs/subsystems/lsp.md",
+        "docs/subsystems/mcp.md",
+        "docs/subsystems/ptc-runtime.md",
+        "docs/subsystems/sandbox.md",
+        "docs/subsystems/shell.md",
+        "docs/subsystems/spill.md",
+        "docs/subsystems/storage.md",
+        "docs/subsystems/subprocess.md"
+      ],
+      "notCovered": [
+        "native, SSH, MCP and process smokes not run"
+      ]
+    },
+    {
+      "capability": "web-route-and-webhook",
+      "apiEntries": [
+        "@deepseek-ai/dsh-host-webserver",
+        "@deepseek-ai/dsh-webhook",
+        "@deepseek-ai/dsh-webhook-github"
+      ],
+      "objects": [
+        "WebServer",
+        "WebhookRuntime"
+      ],
+      "members": [
+        "register",
+        "registerUpgrade",
+        "registerFallback",
+        "tapIndex",
+        "WebhookRuntime.register",
+        "WebhookRuntime.dispatch"
+      ],
+      "claims": [
+        "Routes and the single fallback seat are effect-owned collision domains.",
+        "WebServer provides no TLS/auth/origin policy.",
+        "Webhook dispatch is fire-and-forget; rule disposal aborts and drains active callbacks."
+      ],
+      "taskPath": {
+        "result": "authenticated external event starts plugin work without callbacks surviving unload",
+        "compositionSteps": [
+          "register exact route",
+          "verify/authenticate raw request",
+          "dispatch normalized delivery",
+          "return transport response",
+          "await rule and route disposal"
+        ]
+      },
+      "evidence": [
+        "packages/host/webserver/src/index.ts",
+        "packages/host/webserver/README.md",
+        "packages/webhook/webhook/src/index.ts",
+        "docs/subsystems/webhook.md"
+      ],
+      "notCovered": [
+        "HTTP runtime smoke not run"
+      ]
+    },
+    {
+      "capability": "remote-and-preset-composition",
+      "apiEntries": [
+        "@deepseek-ai/dsh-agent-preset",
+        "@deepseek-ai/dsh-agent-preset-registry",
+        "@deepseek-ai/dsh-typert-protocol",
+        "@deepseek-ai/dsh-typert-registry"
+      ],
+      "objects": [
+        "AgentPresetRegistry",
+        "TypertRegistry",
+        "Remote",
+        "RemoteStream"
+      ],
+      "members": [
+        "AgentPresetRegistry.register/mount/select/acquireScope",
+        "TypertRegistry.register",
+        "RemoteStream.dispose"
+      ],
+      "claims": [
+        "Preset revisions retain their Loader tree until the final scope releases.",
+        "Activation audits reject import, activation and leaked-service failures.",
+        "Remote streams must be iterated or disposed and carrier cancellation is separate from business arguments."
+      ],
+      "taskPath": {
+        "result": "Host API reaches Client through generated Remote binding",
+        "compositionSteps": [
+          "define Host contract",
+          "generate Typert Host/Remote artifacts",
+          "mount Host contribution",
+          "bind Client remote",
+          "exercise method and stream cancellation",
+          "dispose connection and preset scope"
+        ]
+      },
+      "evidence": [
+        "packages/preset/agent-preset-registry/src/index.ts",
+        "packages/preset/agent-preset-registry/README.md",
+        "packages/typert/protocol/src/index.ts",
+        "docs/subsystems/typert.md",
+        "docs/cookbook/adding-a-remote-api.md"
+      ],
+      "notCovered": [
+        "generated Remote consumer not compiled or connected"
+      ]
+    },
+    {
+      "capability": "experimental-browser-computer-provider-selection",
+      "apiEntries": [
+        "@deepseek-ai/dsh-browser-use",
+        "@deepseek-ai/dsh-computer-use",
+        "experimental provider packages"
+      ],
+      "objects": [
+        "BrowserUseRegistry",
+        "ComputerUseRegistry"
+      ],
+      "members": [
+        "providerName",
+        "register(name): async disposer"
+      ],
+      "claims": [
+        "Each registry accepts one provider and exposes no common operation API.",
+        "Providers require explicit activation and remain experimental.",
+        "Shutdown holds registration until tools/resources drain; cancellation cannot undo delivered actions."
+      ],
+      "taskPath": {
+        "result": "one explicitly selected provider contributes tools for the intended environment",
+        "compositionSteps": [
+          "mount stable registry",
+          "mount one experimental provider",
+          "create/resume applicable Session",
+          "observe provider tools",
+          "cancel one call",
+          "unload and await provider cleanup"
+        ]
+      },
+      "evidence": [
+        "docs/subsystems/browser-use.md",
+        "docs/subsystems/computer-use.md",
+        "packages/browser-use/browser-use/src/index.ts",
+        "packages/computer-use/computer-use/src/index.ts",
+        "packages/experimental/browser-use-runtime/README.md"
+      ],
+      "notCovered": [
+        "browser and desktop environment smoke not run"
+      ]
+    }
+  ],
+  "capabilityCandidateDispositions": {
+    "composition:packages/bundle/acp-app/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/bundle/base/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/bundle/headless/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/bundle/sdk-app/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/bundle/sdk-minimal/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/bundle/web-app/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/bundle/web-app/presets/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/experimental/agent-team-profile/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/experimental/auto-review/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/experimental/inspector/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/experimental/inspector/cordis.source.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/experimental/schedule-bundle/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/experimental/voice-input-bundle/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/preset/agent-preset/skills/cordis-plugin-development/templates/decoration/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "composition:packages/preset/agent-preset/skills/cordis-plugin-development/templates/mcp/cordis.patch.yml": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs."
+    },
+    "package:@deepseek-ai/cordis": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cordis-plugin-group": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cordis-plugin-hmr": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cordis-plugin-include": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cordis-plugin-loader": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cordis-plugin-logger-console": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cordis-plugin-timer": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/cosmokit": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    },
+    "package:@deepseek-ai/dsh-acp": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-acp-app": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Product bundle is composition evidence; authors publish a smaller layer rather than importing the product tree as an API."
+    },
+    "package:@deepseek-ai/dsh-agent-loop-testkit": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-agent-preset": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-agent-preset-registry": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-anonymous-user-id": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-app-boot": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-atomic-write": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-attachment": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-attachment-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-authorization": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-base": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Product bundle is composition evidence; authors publish a smaller layer rather than importing the product tree as an API."
+    },
+    "package:@deepseek-ai/dsh-bash-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-bash-sandbox": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-brand": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-browser-use": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-chunked-list": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-client-test-runtime": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-cmdline": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-command-compact": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-compaction": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-compaction-basic": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-compaction-image-offload": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-compaction-tool-result-pruner": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-computer-use": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-config-editor": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-credentials": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-credentials-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-deepseek-account": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-deepseek-account-platform": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-deque": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-experimental-agent-team": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-agent-team-profile": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-api-speech-to-text": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-auto-review": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp": {
+      "decision": "merged",
+      "topic": "experimental-provider-selection",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "browser-computer-provider-selection",
+      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry."
+    },
+    "package:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp": {
+      "decision": "merged",
+      "topic": "experimental-provider-selection",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "browser-computer-provider-selection",
+      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry."
+    },
+    "package:@deepseek-ai/dsh-experimental-browser-use-runtime": {
+      "decision": "merged",
+      "topic": "experimental-provider-selection",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "browser-computer-provider-selection",
+      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry."
+    },
+    "package:@deepseek-ai/dsh-experimental-browser-use-stagehand-native": {
+      "decision": "merged",
+      "topic": "experimental-provider-selection",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "browser-computer-provider-selection",
+      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry."
+    },
+    "package:@deepseek-ai/dsh-experimental-client-ui-agent-team": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-client-ui-voice-input": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp": {
+      "decision": "merged",
+      "topic": "experimental-provider-selection",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "browser-computer-provider-selection",
+      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry."
+    },
+    "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-native": {
+      "decision": "merged",
+      "topic": "experimental-provider-selection",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "browser-computer-provider-selection",
+      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry."
+    },
+    "package:@deepseek-ai/dsh-experimental-inspector": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-ptc-runtime-python": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-schedule-bundle": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-speech-to-text": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-tool-agent-team": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-voice-input-bundle": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-webworker-packer": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-experimental-webworker-runtime": {
+      "decision": "excluded",
+      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension."
+    },
+    "package:@deepseek-ai/dsh-fs": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-fs-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-fs-observation-policy": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-fs-sandbox": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-fs-ssh": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-headless": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Product bundle is composition evidence; authors publish a smaller layer rather than importing the product tree as an API."
+    },
+    "package:@deepseek-ai/dsh-hmr": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-home-paths": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-host-directory-picker": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-directory-picker-auto": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-directory-picker-browse": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-directory-picker-native": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-frontend-static": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-open-in-app": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-plugin-inventory": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-product-telemetry-otel": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-host-webserver": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-http-proxy": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-invariants": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-launch-environment": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-lazy-require": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-llm-mock-server": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-llm-replay": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-loader-smoke": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-lsp": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-lsp-stdio": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-mcp-client": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-mcp-resources": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-native-command": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-otel": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-output-retention": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-package-manifest": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-persona": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-plugin-manager": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-ptc-runtime": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-ptc-runtime-node": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-pwsh-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-pwsh-sandbox": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-remote-mock": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-sandbox": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-sandbox-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-sandbox-policy": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-sandbox-ssh": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-sandbox-windows-acl": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-sdk-app": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Product bundle is composition evidence; authors publish a smaller layer rather than importing the product tree as an API."
+    },
+    "package:@deepseek-ai/dsh-sdk-client": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-sdk-jsonrpc-server": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-sdk-minimal": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Product bundle is composition evidence; authors publish a smaller layer rather than importing the product tree as an API."
+    },
+    "package:@deepseek-ai/dsh-sdk-protocol": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-session-snapshot": {
+      "decision": "excluded",
+      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers."
+    },
+    "package:@deepseek-ai/dsh-shell": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-shell-env": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-spill": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-spill-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-spill-policy": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-ssh": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-storage": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-storage-domain": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-storage-json": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-storage-sqlite": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-subprocess": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-subprocess-local": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-subprocess-ssh": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-timeout": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-tool-bash": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-bash-persistent": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-fs": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-fs-search": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-lsp": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-pwsh": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-pwsh-persistent": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-tool-str-replace-editor": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-typert-generator": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-typert-loader": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-typert-protocol": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-typert-registry": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-util-code-language": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-util-crypto": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-util-time": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-util-values": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-util-workspace-path": {
+      "decision": "excluded",
+      "reason": "Low-level implementation utility; package-manifest is the only utility in this group required for ordinary plugin authoring."
+    },
+    "package:@deepseek-ai/dsh-web-app": {
+      "decision": "merged",
+      "topic": "composition-and-profile",
+      "owner": "how-to/infra-runtime.md",
+      "mergedInto": "package-and-compose-infrastructure-plugin",
+      "reason": "Product bundle is composition evidence; authors publish a smaller layer rather than importing the product tree as an API."
+    },
+    "package:@deepseek-ai/dsh-webhook": {
+      "decision": "included",
+      "topic": "infra-runtime",
+      "owner": "api-guardrails/infra-runtime.md",
+      "reason": "Stable public contract directly used to implement, mount, or consume plugin infrastructure."
+    },
+    "package:@deepseek-ai/dsh-webhook-github": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/dsh-win32-process": {
+      "decision": "merged",
+      "topic": "infra-runtime-provider",
+      "owner": "api-guardrails/infra-runtime.md",
+      "mergedInto": "stable-capability-seam",
+      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path."
+    },
+    "package:@deepseek-ai/node-addon-system": {
+      "decision": "excluded",
+      "reason": "Platform artifact/package selected by runtime packaging; it is not a Cordis plugin authoring entrypoint."
+    },
+    "package:@deepseek-ai/node-addon-system-darwin-arm64": {
+      "decision": "excluded",
+      "reason": "Platform artifact/package selected by runtime packaging; it is not a Cordis plugin authoring entrypoint."
+    },
+    "package:@deepseek-ai/node-addon-system-darwin-x64": {
+      "decision": "excluded",
+      "reason": "Platform artifact/package selected by runtime packaging; it is not a Cordis plugin authoring entrypoint."
+    },
+    "package:@deepseek-ai/node-addon-system-linux-arm64": {
+      "decision": "excluded",
+      "reason": "Platform artifact/package selected by runtime packaging; it is not a Cordis plugin authoring entrypoint."
+    },
+    "package:@deepseek-ai/node-addon-system-linux-x64": {
+      "decision": "excluded",
+      "reason": "Platform artifact/package selected by runtime packaging; it is not a Cordis plugin authoring entrypoint."
+    },
+    "package:@deepseek-ai/schemastery": {
+      "decision": "merged",
+      "topic": "cordis-composition",
+      "owner": "cross-owner:cordis-core",
+      "mergedInto": "cordis-plugin-lifecycle",
+      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup."
+    }
+  },
+  "taskCandidateDispositions": {
+    "task:docs/cookbook/adding-a-package.md:1": {
+      "decision": "merged",
+      "owner": "how-to/infra-runtime.md",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    },
+    "task:docs/cookbook/adding-a-package.zh.md:31": {
+      "decision": "merged",
+      "owner": "how-to/infra-runtime.md",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    },
+    "task:docs/cookbook/adding-a-package.zh.md:76": {
+      "decision": "merged",
+      "owner": "how-to/infra-runtime.md",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    },
+    "task:docs/cookbook/adding-a-remote-api.md:1": {
+      "decision": "merged",
+      "owner": "how-to/infra-runtime.md",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    },
+    "task:docs/cookbook/adding-a-session-format-version.md:1": {
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Repository Session persistence migration procedure, not an external plugin extension point."
+    },
+    "task:docs/cookbook/adding-a-session-format-version.zh.md:120": {
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Repository Session persistence migration procedure, not an external plugin extension point."
+    },
+    "task:docs/cookbook/adding-a-session-format-version.zh.md:149": {
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Repository Session persistence migration procedure, not an external plugin extension point."
+    },
+    "task:docs/cookbook/adding-a-settings-card.zh.md:1": {
+      "decision": "merged",
+      "owner": "cross-owner:client-settings",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    },
+    "task:docs/cookbook/adding-a-tool.zh.md:1": {
+      "decision": "merged",
+      "owner": "cross-owner:tool-authoring",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    },
+    "task:docs/cookbook/adding-an-llm-adapter.md:1": {
+      "decision": "merged",
+      "owner": "cross-owner:llm",
+      "reason": "Contributes composition/infrastructure steps to an end-to-end plugin task."
+    }
+  },
+  "uncovered": [
+    "No commands executed against target tests.",
+    "No declaration/example compilation.",
+    "No isolated package install or Profile activation.",
+    "No Client, Remote, SDK, MCP, SSH, native, browser or desktop smoke.",
+    "Detailed product-only experimental packages were classified but not expanded into regular authoring references."
+  ],
+  "crossOwners": [
+    "Cordis core owns framework lifecycle details.",
+    "Tool owner owns adding-a-tool.",
+    "LLM owner owns adding-an-llm-adapter.",
+    "Client/Settings owns settings cards.",
+    "Session owner owns persistence formats.",
+    "Agent/Core owns Agent Team semantics."
+  ]
+}
