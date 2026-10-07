@@ -1,0 +1,7 @@
+interface:
+    display_name: "Codex Comment Fix"
+    short_description: "Fix and close Codex review findings on a PR."
+    default_prompt: "Use $codex-comment-fix to process Codex findings for PR #7 or 7."
+
+policy:
+    allow_implicit_invocation: false
