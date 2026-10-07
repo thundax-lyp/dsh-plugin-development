@@ -1,0 +1,4 @@
+interface:
+    display_name: "DSH Plugin Development 0.2.0-rc.1"
+    short_description: "精确版本的 DSH 插件制作与验证"
+    default_prompt: "使用 $dsh-plugin-development，从 dsh-v0.2.0-rc.1 的公开契约完成我的插件开发任务，并给出可运行的验证步骤。"

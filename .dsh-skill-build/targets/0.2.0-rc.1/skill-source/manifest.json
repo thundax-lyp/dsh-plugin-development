@@ -1,0 +1,1316 @@
+{
+    "schemaVersion": 3,
+    "version": "0.2.0-rc.1",
+    "tag": "dsh-v0.2.0-rc.1",
+    "commit": "4878cdabd87d4041bdaff61d04c966883b9fd07a",
+    "remote": "https://github.com/deepseek-ai/deepseek-harness",
+    "status": "frozen",
+    "topics": [
+        "agent-instructions",
+        "agent-presets-persona",
+        "attachment-store",
+        "authorization",
+        "browser-computer-use",
+        "client-command-ui",
+        "client-connection",
+        "client-file-upload",
+        "client-hmr",
+        "client-input-trigger",
+        "client-locale",
+        "client-main-panels",
+        "client-modules",
+        "client-resources",
+        "client-settings-forms",
+        "client-shortcuts",
+        "client-slots",
+        "client-store",
+        "client-theme",
+        "client-ui-primitives",
+        "cmdline",
+        "compaction-context-recovery",
+        "config-editor",
+        "conversation-nodes",
+        "cordis-core",
+        "cordis-inspect-provider",
+        "credentials",
+        "deepseek-account-auth",
+        "deepseek-request-extensions",
+        "experimental-agent-team",
+        "experimental-inspector",
+        "file-reference",
+        "filesystem-policy",
+        "goal",
+        "hook-bridges-guards",
+        "host-hmr",
+        "host-platform",
+        "host-plugin-inventory",
+        "http-proxy",
+        "human-commands-questions",
+        "jobs",
+        "llm-builtins-retry-meter",
+        "llm-model-routing",
+        "llm-providers",
+        "loader-composition",
+        "loader-smoke-profile",
+        "lsp",
+        "mcp-client",
+        "office-to-pdf",
+        "opt-in-context-plugins",
+        "output-retention",
+        "permission-presets",
+        "planning",
+        "plugin-manager",
+        "profile-bundle",
+        "ptc-runtime",
+        "remote-api",
+        "runtime-diagnostics-telemetry",
+        "sandbox",
+        "schedule",
+        "scope-registry",
+        "sdk-runtime",
+        "session-log",
+        "session-persistence",
+        "session-projection",
+        "session-query",
+        "session-reference",
+        "session-title",
+        "settings",
+        "shell-env",
+        "shell-tool",
+        "sidebar-right-tabs",
+        "skill-bundled-consumers",
+        "skill-providers",
+        "speech-provider",
+        "spill",
+        "ssh",
+        "storage-backend",
+        "storage-domain",
+        "subagent-acp",
+        "subagent-provider",
+        "subagent-tools",
+        "subprocess",
+        "system-prompt-context",
+        "terminal",
+        "testing-support",
+        "timer",
+        "tool-policy-hooks",
+        "tools",
+        "user-feedback",
+        "web-ingress",
+        "web-provider",
+        "webhook-rules",
+        "workflow-agent-loop",
+        "workspace",
+        "workspace-changes",
+        "workspace-dependencies"
+    ],
+    "files": [
+        {
+            "source": "api-guardrails/tools.md",
+            "output": "references/api-tools.md",
+            "kind": "api-guardrail",
+            "sha256": "35f91c3451aa266636347d181865fcac400d77856a779bb4e917c91ce7840802"
+        },
+        {
+            "source": "how-to/register-model-tool.md",
+            "output": "references/how-to-register-model-tool.md",
+            "kind": "how-to",
+            "sha256": "9aaad93ea4a26782f7e0da6b2f2cb16fea25fe52b67a4fe6d7dfa039ec4b8544"
+        },
+        {
+            "source": "maintenance/source-map.md",
+            "output": "maintenance/source-map.md",
+            "kind": "maintenance",
+            "sha256": "e9d9f27db53fd2f73f621dfc66c143655700813dc3acf85f8c78a30477fd53ea"
+        },
+        {
+            "source": "api-guardrails/profile-bundle.md",
+            "output": "references/api-profile-bundle.md",
+            "kind": "api-guardrail",
+            "sha256": "088980298863bc86976b0107630f37414632a0d7bf19f64978aa5c1d77fd6bc0"
+        },
+        {
+            "source": "api-guardrails/cordis-core.md",
+            "output": "references/api-cordis-core.md",
+            "kind": "api-guardrail",
+            "sha256": "3d55216566d0bca5e8a2597409655e31d67c093360c67b7c7e631367b48c7ddd"
+        },
+        {
+            "source": "api-guardrails/timer.md",
+            "output": "references/api-timer.md",
+            "kind": "api-guardrail",
+            "sha256": "4d3d07b9ddc91a2c6035985ebde0656f18be7cbe71ade6013764dce4e25b3a95"
+        },
+        {
+            "source": "api-guardrails/loader-composition.md",
+            "output": "references/api-loader-composition.md",
+            "kind": "api-guardrail",
+            "sha256": "a31267c3467d9e17adaf430d3d14c77f261405df5dfb9d6c4d302241a2d743f4"
+        },
+        {
+            "source": "how-to/nest-plugin-under-group.md",
+            "output": "references/how-to-nest-plugin-under-group.md",
+            "kind": "how-to",
+            "sha256": "7a83e70086dd0c2af5d13c89cbd2b1286709e8972afbaf3fa2b1499420518e15"
+        },
+        {
+            "source": "entrypoint/SKILL.md",
+            "output": "SKILL.md",
+            "kind": "entrypoint",
+            "sha256": "6257ce72622fb8dbdd976ace1cc6047507de0009661db9cbb1b0fbb5f573f62b"
+        },
+        {
+            "source": "metadata/openai.yaml",
+            "output": "agents/openai.yaml",
+            "kind": "metadata",
+            "sha256": "020d171f320221b162b46f6255058b5d9080a4b06658582151d102350a20b112"
+        },
+        {
+            "source": "indexes/plugin-development-routing.md",
+            "output": "references/plugin-development-routing.md",
+            "kind": "index",
+            "sha256": "b0a81932ec5660eb45acf88d961cab2241d6bdb051aa438ea75e5ec35c946c0d"
+        },
+        {
+            "source": "indexes/keyword-index.md",
+            "output": "references/keyword-index.md",
+            "kind": "index",
+            "sha256": "31fa831759bc97eb700ee95736bb3a7acc7c6839d9867860e901c2654d701444"
+        },
+        {
+            "source": "concepts/terminology.md",
+            "output": "references/terminology.md",
+            "kind": "concept",
+            "sha256": "c4e3981226d9012acb5a48364ffe4deece9961bb3ebcddc13f8584243f05439a"
+        },
+        {
+            "source": "maintenance/skill-maintenance.md",
+            "output": "maintenance/skill-maintenance.md",
+            "kind": "maintenance",
+            "sha256": "79abc834f30885e081edab4a4c863f8d23b5431a321cfc11e68d5fbff15b7200"
+        },
+        {
+            "source": "api-guardrails/hmr.md",
+            "output": "references/api-host-hmr.md",
+            "kind": "api-guardrail",
+            "sha256": "3aecb166381123225002c912f8f823451526e6b8da665f9882815589dd8d8a51"
+        },
+        {
+            "source": "api-guardrails/client-hmr.md",
+            "output": "references/api-client-hmr.md",
+            "kind": "api-guardrail",
+            "sha256": "e575863700287027f189df03346139ae2b0d394a68cc32d667351b8e4f3f8db4"
+        },
+        {
+            "source": "api-guardrails/remote-api.md",
+            "output": "references/api-remote-api.md",
+            "kind": "api-guardrail",
+            "sha256": "7f4333069ee0dd6b7f348f81be331bb22c0c9ab043b3e475a097f6fc2fa5bb3b"
+        },
+        {
+            "source": "how-to/add-remote-api.md",
+            "output": "references/how-to-add-remote-api.md",
+            "kind": "how-to",
+            "sha256": "456e48b946b651853b454f52004c522deb1ac691db1a99f7802f674f987dee4d"
+        },
+        {
+            "source": "api-guardrails/session-log.md",
+            "output": "references/api-session-log.md",
+            "kind": "api-guardrail",
+            "sha256": "b472b97c39f1af5ca56e5448fb79e21cc4f1ac54bb05c607fb5da4f9f1269090"
+        },
+        {
+            "source": "api-guardrails/session-persistence.md",
+            "output": "references/api-session-persistence.md",
+            "kind": "api-guardrail",
+            "sha256": "eec4c4242bfa068eb123f4dbdba2ddd37be917645e67b05d8264111b6f505eea"
+        },
+        {
+            "source": "how-to/rebuild-plugin-fact-from-session.md",
+            "output": "references/how-to-rebuild-plugin-fact-from-session.md",
+            "kind": "how-to",
+            "sha256": "c7dc83d4eab29a07886b3cf591aa8a236220f0ecf1dd14377e9d298d3acd4465"
+        },
+        {
+            "source": "api-guardrails/client-modules.md",
+            "output": "references/api-client-modules.md",
+            "kind": "api-guardrail",
+            "sha256": "ffc5ed65aae6c2dab0ee82d9bf013313475647a065f5997d0f0a4fa702032a86"
+        },
+        {
+            "source": "how-to/build-and-load-web-client-plugin.md",
+            "output": "references/how-to-build-and-load-web-client-plugin.md",
+            "kind": "how-to",
+            "sha256": "56009562f0ddde459ae573695c27ef879aa1c4790b7a5d8d46c70973c98bc54a"
+        },
+        {
+            "source": "api-guardrails/plugin-manager.md",
+            "output": "references/api-plugin-manager.md",
+            "kind": "api-guardrail",
+            "sha256": "79f77f61f5e952aaf77202ec949e85ce49ce90ac3a59fd94ded7f6ba545452f1"
+        },
+        {
+            "source": "how-to/manage-profile-bundles.md",
+            "output": "references/how-to-manage-profile-bundles.md",
+            "kind": "how-to",
+            "sha256": "32087ba2e486d0b240a9a2f38838366c968cae823e2e6210242fb941fc28ac12"
+        },
+        {
+            "source": "api-guardrails/client-slots.md",
+            "output": "references/api-client-slots.md",
+            "kind": "api-guardrail",
+            "sha256": "f574e8302b63dbce164a5f9b1731b931e2aa1212dc1b8193abba9fafe98dd24e"
+        },
+        {
+            "source": "api-guardrails/client-resources.md",
+            "output": "references/api-client-resources.md",
+            "kind": "api-guardrail",
+            "sha256": "495d2023b25d1a9befc1ebceecb2e8772eb6a65038471762c5d696db08b09596"
+        },
+        {
+            "source": "api-guardrails/credentials.md",
+            "output": "references/api-credentials.md",
+            "kind": "api-guardrail",
+            "sha256": "a038ef0a7f32f2a2686229644dab8d7de5344f6b658c269296b5dd67dc3dc857"
+        },
+        {
+            "source": "api-guardrails/authorization.md",
+            "output": "references/api-authorization.md",
+            "kind": "api-guardrail",
+            "sha256": "1929ca7d8c47eb807717d743e0c73cfdf26f9b1a12dd1eb1a537f29d2543367a"
+        },
+        {
+            "source": "api-guardrails/settings.md",
+            "output": "references/api-settings.md",
+            "kind": "api-guardrail",
+            "sha256": "7becda4fbc1c6127eba936699feab05e5c93e179dfd2156f0d47b7845130e7c7"
+        },
+        {
+            "source": "api-guardrails/permission-presets.md",
+            "output": "references/api-permission-presets.md",
+            "kind": "api-guardrail",
+            "sha256": "e7878eb702c8d0b8c483c21f0c211aee319556e9ee669e52a2d5f49c7022ac34"
+        },
+        {
+            "source": "how-to/register-authorization-flow.md",
+            "output": "references/how-to-register-authorization-flow.md",
+            "kind": "how-to",
+            "sha256": "54dcbc0e7eea348d5f3dcbb288e5213a90e3e34e91ca209fb0fb4bfa30435b14"
+        },
+        {
+            "source": "how-to/configure-plugin-secrets-and-permissions.md",
+            "output": "references/how-to-configure-plugin-secrets-and-permissions.md",
+            "kind": "how-to",
+            "sha256": "142525bbd71f2f76592c2caa5f13b9fa4e832be1ced7b0fae218752606988ea6"
+        },
+        {
+            "source": "api-guardrails/session-query.md",
+            "output": "references/api-session-query.md",
+            "kind": "api-guardrail",
+            "sha256": "8f347ef209b173f73277096b058fbf499f74c452b45b1dbcf4205d164e954b13"
+        },
+        {
+            "source": "how-to/query-session-history.md",
+            "output": "references/how-to-query-session-history.md",
+            "kind": "how-to",
+            "sha256": "c346a395e340faeac78a96c298ebb707b4ac937819214708dc0310ec81b80f13"
+        },
+        {
+            "source": "api-guardrails/subagent-provider.md",
+            "output": "references/api-subagent-provider.md",
+            "kind": "api-guardrail",
+            "sha256": "f60fa22e78f8c9d7270ce3700d4fbba8054743f09fb06b51e2e28cdd1c0b5f92"
+        },
+        {
+            "source": "api-guardrails/subagent-acp.md",
+            "output": "references/api-subagent-acp.md",
+            "kind": "api-guardrail",
+            "sha256": "b9d2ba0cc88e359594b2e7507ca4716a5f6409039abe441a1226b8d66fceb2c2"
+        },
+        {
+            "source": "api-guardrails/subagent-tools.md",
+            "output": "references/api-subagent-tools.md",
+            "kind": "api-guardrail",
+            "sha256": "3c6c5653c089e9b8e4b78515031e88ab69f65e9ba8b7644119a02260c22e2783"
+        },
+        {
+            "source": "how-to/configure-acp-delegation.md",
+            "output": "references/how-to-configure-acp-delegation.md",
+            "kind": "how-to",
+            "sha256": "6096509d97a15fa1fff13eb840e017bd767e7732570529acb7b9627c0a9150e1"
+        },
+        {
+            "source": "api-guardrails/llm-providers.md",
+            "output": "references/api-llm-providers.md",
+            "kind": "api-guardrail",
+            "sha256": "7a1dcc81ed5dec1b5f73b1562e772ff9d776231b83d26d75a614fc33c2f0e593"
+        },
+        {
+            "source": "api-guardrails/llm-model-routing.md",
+            "output": "references/api-llm-model-routing.md",
+            "kind": "api-guardrail",
+            "sha256": "049675c4ad6293c133553bd1cadfb4265fbe9680184546cef958e720b0321a9f"
+        },
+        {
+            "source": "how-to/add-llm-adapter.md",
+            "output": "references/how-to-add-llm-adapter.md",
+            "kind": "how-to",
+            "sha256": "b51f8ee0bcf64a0c5e5dc306e36634d822f097494ed4c8edd0e3a8e0c269036d"
+        },
+        {
+            "source": "how-to/select-model-for-session.md",
+            "output": "references/how-to-select-model-for-session.md",
+            "kind": "how-to",
+            "sha256": "83550b020a5a8e865d35627de7d1579afd9264f82ccf786e004b9f40afe45d06"
+        },
+        {
+            "source": "how-to/enable-host-hmr.md",
+            "output": "references/how-to-enable-host-hmr.md",
+            "kind": "how-to",
+            "sha256": "e7db783aacace17374ca124fd0f1657f66372058f95016da2c3c9522e59a7f86"
+        },
+        {
+            "source": "how-to/observe-client-plugin-reload.md",
+            "output": "references/how-to-observe-client-plugin-reload.md",
+            "kind": "how-to",
+            "sha256": "d191e420e3768e5453c6bb1c2a8df161f40b1aa2779f67c84b1d38bc36b193bd"
+        },
+        {
+            "source": "api-guardrails/session-projection.md",
+            "output": "references/api-session-projection.md",
+            "kind": "api-guardrail",
+            "sha256": "0d0c88f37e33f7b2e1ad6a7c52f1d7561be121d9a1d6aa33bb8e002472044a64"
+        },
+        {
+            "source": "api-guardrails/storage-domain.md",
+            "output": "references/api-storage-domain.md",
+            "kind": "api-guardrail",
+            "sha256": "c51d2ad9fd34a679ea8873e8454f20a0fe337487a4d9149528a81d99d12a3281"
+        },
+        {
+            "source": "how-to/register-session-projection.md",
+            "output": "references/how-to-register-session-projection.md",
+            "kind": "how-to",
+            "sha256": "b288c64778904d21810dfbdf1163018bf30e699426ad602bdbed8fcd855797a9"
+        },
+        {
+            "source": "how-to/persist-domain-records.md",
+            "output": "references/how-to-persist-domain-records.md",
+            "kind": "how-to",
+            "sha256": "e0273fd6b716a92721c5f5d945c7f40df8d2ebe47b3f7a42cda7ac36a95340c3"
+        },
+        {
+            "source": "api-guardrails/web-ingress.md",
+            "output": "references/api-web-ingress.md",
+            "kind": "api-guardrail",
+            "sha256": "3b6eff744de1018abd50003fe2e108f617dc51e762fd82440bdf56fd682617dd"
+        },
+        {
+            "source": "api-guardrails/client-connection.md",
+            "output": "references/api-client-connection.md",
+            "kind": "api-guardrail",
+            "sha256": "89877bd234c98f54220066cfbc6a5fed320d194abb8b8d02139d0ea52bd6e0e5"
+        },
+        {
+            "source": "how-to/register-authenticated-http-route.md",
+            "output": "references/how-to-register-authenticated-http-route.md",
+            "kind": "how-to",
+            "sha256": "9ce69b3313ed2126bdd2ef16246dec61f0a1c31ed5612e773541b5ea8ef28e5b"
+        },
+        {
+            "source": "api-guardrails/jobs.md",
+            "output": "references/api-jobs.md",
+            "kind": "api-guardrail",
+            "sha256": "f9a4a40dba89f69481acc8c9724651a2771d897afd9c0a079152d7075a88edcb"
+        },
+        {
+            "source": "api-guardrails/schedule.md",
+            "output": "references/api-schedule.md",
+            "kind": "api-guardrail",
+            "sha256": "850ee583767f374e0965d9b673e67916ace78e39bf34cc0decf9205afe3118b3"
+        },
+        {
+            "source": "api-guardrails/planning.md",
+            "output": "references/api-planning.md",
+            "kind": "api-guardrail",
+            "sha256": "58596c4e7aca37c7b3d7eb7a6e4a9eaf866131103c74aad2e10a5cc6f7f83126"
+        },
+        {
+            "source": "api-guardrails/sdk-runtime.md",
+            "output": "references/api-sdk-runtime.md",
+            "kind": "api-guardrail",
+            "sha256": "32ac87f514633da3d156f5d7d57386ecaf8ac5cebdd58c9b0111a5c8cc7951f6"
+        },
+        {
+            "source": "how-to/run-sdk-profile.md",
+            "output": "references/how-to-run-sdk-profile.md",
+            "kind": "how-to",
+            "sha256": "cef3b5e3b4bedc5f039db09eb06759ed8d2d2b3269d25cc8343589235b250d3f"
+        },
+        {
+            "source": "api-guardrails/mcp-client.md",
+            "output": "references/api-mcp-client.md",
+            "kind": "api-guardrail",
+            "sha256": "9bc27266bc6279995507f3aa9634dd716a149256ecf44c4fa36df8b43ed0786c"
+        },
+        {
+            "source": "how-to/connect-mcp-server.md",
+            "output": "references/how-to-connect-mcp-server.md",
+            "kind": "how-to",
+            "sha256": "7eccb6a5198abf95693e76ea07662a8fcc0b72ee034f589cc7d3562e3e865426"
+        },
+        {
+            "source": "how-to/run-background-job.md",
+            "output": "references/how-to-run-background-job.md",
+            "kind": "how-to",
+            "sha256": "c1e1f97618951647ef3eb346115342b00ba45a24636549df98f0aa9485d7a9b8"
+        },
+        {
+            "source": "how-to/schedule-session-task.md",
+            "output": "references/how-to-schedule-session-task.md",
+            "kind": "how-to",
+            "sha256": "87c2e2c97115987cfd5389fc628c97c1fbe96757d534e12f8bfbf34b1c33875e"
+        },
+        {
+            "source": "api-guardrails/client-settings-forms.md",
+            "output": "references/api-client-settings-forms.md",
+            "kind": "api-guardrail",
+            "sha256": "9a86c519f334b7b3155811241659eef106ee76873a7a89685e959eefedd073f2"
+        },
+        {
+            "source": "how-to/add-plugin-settings-card.md",
+            "output": "references/how-to-add-plugin-settings-card.md",
+            "kind": "how-to",
+            "sha256": "a9b251cf7fe1e6f00eec96a5d308dace8666b015e430cae45d371a01859d7a28"
+        },
+        {
+            "source": "how-to/compose-permission-preset-ui.md",
+            "output": "references/how-to-compose-permission-preset-ui.md",
+            "kind": "how-to",
+            "sha256": "7a21d570ebc3374e55e4d450facb2c710c3e9a13a6ba085b3912fac2ef13ec74"
+        },
+        {
+            "source": "api-guardrails/filesystem-policy.md",
+            "output": "references/api-filesystem-policy.md",
+            "kind": "api-guardrail",
+            "sha256": "7fd164a0ec97751c075f9bd002a99488bee10639aaebb96acb502bcc255cbed0"
+        },
+        {
+            "source": "api-guardrails/shell-tool.md",
+            "output": "references/api-shell-tool.md",
+            "kind": "api-guardrail",
+            "sha256": "14d2925b4b0d856af5f76e1e95ef501eebe7069f06a7139278adf16a80bf2408"
+        },
+        {
+            "source": "how-to/guard-filesystem-writes.md",
+            "output": "references/how-to-guard-filesystem-writes.md",
+            "kind": "how-to",
+            "sha256": "52dca5305e51b870a7fea64ef7a04da647721579084a3527db5de785f5af8016"
+        },
+        {
+            "source": "how-to/add-shell-tool.md",
+            "output": "references/how-to-add-shell-tool.md",
+            "kind": "how-to",
+            "sha256": "9a9d647a9b0a6581727c2580225bb52db4e7e16c87e1e8f545f060a4cceb4992"
+        },
+        {
+            "source": "api-guardrails/skill-providers.md",
+            "output": "references/api-skill-providers.md",
+            "kind": "api-guardrail",
+            "sha256": "8382ba76b1f8088213214c578249eecb0259b966376cb0a3c122109ae544b041"
+        },
+        {
+            "source": "api-guardrails/system-prompt-context.md",
+            "output": "references/api-system-prompt-context.md",
+            "kind": "api-guardrail",
+            "sha256": "972012940530a01ddb64ddf29917d5a7091ac8c3408d2e28f9cb71c646406084"
+        },
+        {
+            "source": "how-to/how-to-register-skill-provider.md",
+            "output": "references/how-to-register-skill-provider.md",
+            "kind": "how-to",
+            "sha256": "5ef0e31fd1674cf503c9fede44581b7edc4c30e07c58843bb196321a7203bd04"
+        },
+        {
+            "source": "how-to/how-to-contribute-runtime-context.md",
+            "output": "references/how-to-contribute-runtime-context.md",
+            "kind": "how-to",
+            "sha256": "b42c5c776b5e3eef07df0f8f72cb9b7bbf59de44a7eba74cd4674241a6253a21"
+        },
+        {
+            "source": "api-guardrails/goal.md",
+            "output": "references/api-goal.md",
+            "kind": "api-guardrail",
+            "sha256": "4ad083dde8070bd11ce020074a95f00b60ee4583420da86c53bad627c5e8ca8c"
+        },
+        {
+            "source": "api-guardrails/workflow-agent-loop.md",
+            "output": "references/api-workflow-agent-loop.md",
+            "kind": "api-guardrail",
+            "sha256": "f30d9b150c0271cf5d057729002cd973152b7af7b2b047bc5048e237b2e95ca4"
+        },
+        {
+            "source": "how-to/coordinate-goal.md",
+            "output": "references/how-to-coordinate-goal.md",
+            "kind": "how-to",
+            "sha256": "5482713bb79600e9cf2213396138457816c336ae8519809191bc05d0f3ebde3f"
+        },
+        {
+            "source": "how-to/own-workflow-run.md",
+            "output": "references/how-to-own-workflow-run.md",
+            "kind": "how-to",
+            "sha256": "8a740dd72de84a606f3a0c185cf32119d0a2d69c9c27fc8ec61414df69e70aae"
+        },
+        {
+            "source": "api-guardrails/tool-policy-hooks.md",
+            "output": "references/api-tool-policy-hooks.md",
+            "kind": "api-guardrail",
+            "sha256": "2c45c367384c18b68e186c3fc939ee60ffbd9e758006025e3e9b29ae6ae52a5d"
+        },
+        {
+            "source": "how-to/how-to-add-tool-execution-policy.md",
+            "output": "references/how-to-add-tool-execution-policy.md",
+            "kind": "how-to",
+            "sha256": "af22555f7cfc9933a89009f9de6e7ffad802dca0d74e41aadd6d04539f95a60b"
+        },
+        {
+            "source": "how-to/show-session-header-resource.md",
+            "output": "references/how-to-show-session-header-resource.md",
+            "kind": "how-to",
+            "sha256": "eb398ff14c076c59bee1ceadf7bfe749f2c75f2bdd185580eae9c2e08e1685da"
+        },
+        {
+            "source": "api-guardrails/conversation-nodes.md",
+            "output": "references/api-conversation-nodes.md",
+            "kind": "api-guardrail",
+            "sha256": "98bc4065a53007836e26efd3feef962abdf249a27caf036f3eb0a3fc48ce6562"
+        },
+        {
+            "source": "how-to/add-conversation-node.md",
+            "output": "references/how-to-add-conversation-node.md",
+            "kind": "how-to",
+            "sha256": "ef81293531d097f4bcb8a74c05957e5fb74cdee9e7284f7bf462ff6665eba194"
+        },
+        {
+            "source": "api-guardrails/browser-computer-use.md",
+            "output": "references/api-browser-computer-use.md",
+            "kind": "api-guardrail",
+            "sha256": "e427dddada75ecee52aaa300905d5dc72332781da67d55b0eb91ae1beacf01a0"
+        },
+        {
+            "source": "how-to/how-to-add-browser-mcp-provider.md",
+            "output": "references/how-to-add-browser-mcp-provider.md",
+            "kind": "how-to",
+            "sha256": "304742c3c9f24eacd4c19a0cd2e0c80b9e89236e4074af827ac45ca6d91c0e8d"
+        },
+        {
+            "source": "how-to/how-to-compose-computer-use-driver.md",
+            "output": "references/how-to-compose-computer-use-driver.md",
+            "kind": "how-to",
+            "sha256": "c32a7c727c607306ff47ec76ae7f397007c2a79f8cdcc33b07a4168ceb869b06"
+        },
+        {
+            "source": "api-guardrails/attachment-store.md",
+            "output": "references/api-attachment-store.md",
+            "kind": "api-guardrail",
+            "sha256": "0dc4d9f3e265c02016a402a96313c5adbbd79f2d34dcae073b50380e4831cacc"
+        },
+        {
+            "source": "how-to/how-to-use-attachment-store.md",
+            "output": "references/how-to-use-attachment-store.md",
+            "kind": "how-to",
+            "sha256": "823358c1848e391ab32f514d523c95ee4ac65c3212e5ef73fbaea2747ee15ebc"
+        },
+        {
+            "source": "api-guardrails/user-feedback.md",
+            "output": "references/api-user-feedback.md",
+            "kind": "api-guardrail",
+            "sha256": "22c93a98e4086a73703c791bfa0df966d317e16c6c9d837a9c05bec25a6d1171"
+        },
+        {
+            "source": "how-to/how-to-record-user-feedback.md",
+            "output": "references/how-to-record-user-feedback.md",
+            "kind": "how-to",
+            "sha256": "c2d769c92b32c48c975e150723c9f791eeaf161a22473b40d2eaa3ceb8f7a1f3"
+        },
+        {
+            "source": "api-guardrails/workspace.md",
+            "output": "references/api-workspace.md",
+            "kind": "api-guardrail",
+            "sha256": "586da8bb562bcaeb97f85b36c03986a965f01dc2df63562ec5398809e881f034"
+        },
+        {
+            "source": "how-to/how-to-contribute-workspace-activity.md",
+            "output": "references/how-to-contribute-workspace-activity.md",
+            "kind": "how-to",
+            "sha256": "79a66d3daa5187e88dd6c94325b651f0d33ad80cbf7717511211817a430de05b"
+        },
+        {
+            "source": "api-guardrails/lsp.md",
+            "output": "references/api-lsp.md",
+            "kind": "api-guardrail",
+            "sha256": "e8cdb689cbe9c0f4b8199de0e09f2b9552ce70e81296bfceb38858300b67eb58"
+        },
+        {
+            "source": "how-to/how-to-register-lsp-provider.md",
+            "output": "references/how-to-register-lsp-provider.md",
+            "kind": "how-to",
+            "sha256": "c37aff9d3e79720dc85e427d305c6019b32511bb17fbd63162bd8e9284407868"
+        },
+        {
+            "source": "api-guardrails/host-platform.md",
+            "output": "references/api-host-platform.md",
+            "kind": "api-guardrail",
+            "sha256": "c884b99b866935d262becef65209c43cda127ffd3edc7b72623e4b676fb6e06e"
+        },
+        {
+            "source": "how-to/how-to-use-directory-picker.md",
+            "output": "references/how-to-use-directory-picker.md",
+            "kind": "how-to",
+            "sha256": "9358a7d31d041ac56fcd200614e010f32a050150a1766f602beeea3486532292"
+        },
+        {
+            "source": "api-guardrails/terminal.md",
+            "output": "references/api-terminal.md",
+            "kind": "api-guardrail",
+            "sha256": "bab3437444986b1f72dffa5e7c6f049c8044a87b0f4fbba037843846f90dbc37"
+        },
+        {
+            "source": "api-guardrails/web-provider.md",
+            "output": "references/api-web-provider.md",
+            "kind": "api-guardrail",
+            "sha256": "7d334d1633cdc4b8764f6fe9efadd442bd198cb8ccb712b77a45b7bdb8169af6"
+        },
+        {
+            "source": "how-to/add-web-provider.md",
+            "output": "references/how-to-add-web-provider.md",
+            "kind": "how-to",
+            "sha256": "380927669b0851654a933e011d943ab9966af6e60ea1c28b5ee41bdc7e4ef643"
+        },
+        {
+            "source": "api-guardrails/runtime-diagnostics-telemetry.md",
+            "output": "references/api-runtime-diagnostics-telemetry.md",
+            "kind": "api-guardrail",
+            "sha256": "3ecc536866051a80acdb4849b7c52794a22139d461a157cbfb414649a8eeee62"
+        },
+        {
+            "source": "how-to/how-to-add-runtime-diagnostics.md",
+            "output": "references/how-to-add-runtime-diagnostics.md",
+            "kind": "how-to",
+            "sha256": "a19666801db0416a0db014d2cf82121e63ad84892eceb28e3bec403fc7839608"
+        },
+        {
+            "source": "api-guardrails/deepseek-request-extensions.md",
+            "output": "references/api-deepseek-request-extensions.md",
+            "kind": "api-guardrail",
+            "sha256": "9587ecc4404b9688a9b60b2fa5580e634bf2a0724e46b24b40af10dcb94132b7"
+        },
+        {
+            "source": "how-to/how-to-add-deepseek-request-field.md",
+            "output": "references/how-to-add-deepseek-request-field.md",
+            "kind": "how-to",
+            "sha256": "285c327615bdd7439f46a6d4136b378305cf63899b4b08d51d3beecf12791e30"
+        },
+        {
+            "source": "api-guardrails/compaction-context-recovery.md",
+            "output": "references/api-compaction-context-recovery.md",
+            "kind": "api-guardrail",
+            "sha256": "9d2fac643361e65179630f7c99d2abcc9eb07234f4048830e039cc44ed79b4b2"
+        },
+        {
+            "source": "how-to/how-to-compose-compaction-recovery.md",
+            "output": "references/how-to-compose-compaction-recovery.md",
+            "kind": "how-to",
+            "sha256": "7e0b97108fb2ff221228f1ce3ade8ae7e8aed680d2d348147516326be8a59bec"
+        },
+        {
+            "source": "api-guardrails/client-shortcuts.md",
+            "output": "references/api-client-shortcuts.md",
+            "kind": "api-guardrail",
+            "sha256": "930659f8d4b123c862ec387be1179d0f8c9f726ca302c37c8d6acfa0a134a21b"
+        },
+        {
+            "source": "how-to/add-client-shortcut.md",
+            "output": "references/how-to-add-client-shortcut.md",
+            "kind": "how-to",
+            "sha256": "4148691a8940b8b38bd37f4992ed552d9008632996bf76beb2fde7c12fb83e3a"
+        },
+        {
+            "source": "api-guardrails/spill.md",
+            "output": "references/api-spill.md",
+            "kind": "api-guardrail",
+            "sha256": "115c2ce9865342699df7f645fc7f400e13ee2740269bd3f97c357e1c2b9914a7"
+        },
+        {
+            "source": "how-to/how-to-save-large-report.md",
+            "output": "references/how-to-save-large-report.md",
+            "kind": "how-to",
+            "sha256": "966c6bf513d30e9b1a05d93f5bbad84df29be0f91b9740d308959c0b6039095e"
+        },
+        {
+            "source": "api-guardrails/human-commands-questions.md",
+            "output": "references/api-human-commands-questions.md",
+            "kind": "api-guardrail",
+            "sha256": "dea00a45cfde79d42bfca0c4947c6ae30507cb226e1c54896aaa7d3439d8624c"
+        },
+        {
+            "source": "how-to/how-to-add-confirmation-command.md",
+            "output": "references/how-to-add-confirmation-command.md",
+            "kind": "how-to",
+            "sha256": "bd67f1bb08de23cf20c8cfede4be4da689a1de90a3bcc791136c60fcd1980e69"
+        },
+        {
+            "source": "api-guardrails/subprocess.md",
+            "output": "references/api-subprocess.md",
+            "kind": "api-guardrail",
+            "sha256": "1cf508100f045d9f80ecbf1bf9d44bb4d7e41deaeab3d495ca3f3790af834247"
+        },
+        {
+            "source": "how-to/how-to-run-managed-command.md",
+            "output": "references/how-to-run-managed-command.md",
+            "kind": "how-to",
+            "sha256": "ae7439bba676ac03bff0e311799de745eab6dc729e13528beff9b861c6b0aaf7"
+        },
+        {
+            "source": "api-guardrails/sidebar-right-tabs.md",
+            "output": "references/api-sidebar-right-tabs.md",
+            "kind": "api-guardrail",
+            "sha256": "8a0110072849c9c24a8a0915a1e0648d59bb8ec81dfff94a4a40b874460961c2"
+        },
+        {
+            "source": "how-to/add-sidebar-right-tab.md",
+            "output": "references/how-to-add-sidebar-right-tab.md",
+            "kind": "how-to",
+            "sha256": "28907710b0849a0e066d75894e9d3f5aa047ee71d48390d0988a1b92bdea96e7"
+        },
+        {
+            "source": "api-guardrails/webhook-rules.md",
+            "output": "references/api-webhook-rules.md",
+            "kind": "api-guardrail",
+            "sha256": "e5bc0cbf4ab6db5e8fe8c89c6a67a0c1abac248de4c15548015ee2f5652b396d"
+        },
+        {
+            "source": "how-to/how-to-create-session-from-github-webhook.md",
+            "output": "references/how-to-create-session-from-github-webhook.md",
+            "kind": "how-to",
+            "sha256": "7587db4b4748b63db0914623e205e8374a15c7c817cfc002a6cf6082ce7383e6"
+        },
+        {
+            "source": "api-guardrails/ptc-runtime.md",
+            "output": "references/api-ptc-runtime.md",
+            "kind": "api-guardrail",
+            "sha256": "e0b2203d4233d4071f7b7c2ef2777015ed3af6924dfb2e27ec0c1760a6f20527"
+        },
+        {
+            "source": "how-to/how-to-run-program-with-host-binding.md",
+            "output": "references/how-to-run-program-with-host-binding.md",
+            "kind": "how-to",
+            "sha256": "b3b51eb80a521af786e11e7f64c0918b2d0d7925f99d5ef68da9ce825d645036"
+        },
+        {
+            "source": "api-guardrails/session-title.md",
+            "output": "references/api-session-title.md",
+            "kind": "api-guardrail",
+            "sha256": "fac945db6b02732af9a4b12c94bdaebcb7ec382fe5df9586a68517c2cf71fa0f"
+        },
+        {
+            "source": "how-to/how-to-register-session-title-provider.md",
+            "output": "references/how-to-register-session-title-provider.md",
+            "kind": "how-to",
+            "sha256": "8429ffd9bbd7cf7596536a4375471edda1174d041228d096cba49a1ae3c94e91"
+        },
+        {
+            "source": "api-guardrails/client-main-panels.md",
+            "output": "references/api-client-main-panels.md",
+            "kind": "api-guardrail",
+            "sha256": "bda6c400df7015e84e5d98a209397e628e78d6b13bc28fee8d7cbc3d1376aebe"
+        },
+        {
+            "source": "how-to/add-main-panel.md",
+            "output": "references/how-to-add-main-panel.md",
+            "kind": "how-to",
+            "sha256": "9d389fae8b4156f85f9b48f0ef9a01c9d88885cbcae41b8d9a0220e8a17bac0b"
+        },
+        {
+            "source": "api-guardrails/testing-support.md",
+            "output": "references/api-testing-support.md",
+            "kind": "api-guardrail",
+            "sha256": "9bad7b1cf056353f3b9e3a85688f7955a75481418350afd062698a151d313968"
+        },
+        {
+            "source": "how-to/test-client-remote-call.md",
+            "output": "references/how-to-test-client-remote-call.md",
+            "kind": "how-to",
+            "sha256": "67d42f48e79d61c40b78de2ff882a618fc4672c8c63bf093dd2f458f8ff0fb94"
+        },
+        {
+            "source": "api-guardrails/client-theme.md",
+            "output": "references/api-client-theme.md",
+            "kind": "api-guardrail",
+            "sha256": "b79db9354f206509504ee86977e9440d0ca83489011539b9aafbcee3d8c9fc3e"
+        },
+        {
+            "source": "how-to/add-theme-layer.md",
+            "output": "references/how-to-add-theme-layer.md",
+            "kind": "how-to",
+            "sha256": "e943b42d45eb5f0546b1ace29dc31153fb43fc104335dcfe720583fbf2b1cfc4"
+        },
+        {
+            "source": "api-guardrails/client-input-trigger.md",
+            "output": "references/api-client-input-trigger.md",
+            "kind": "api-guardrail",
+            "sha256": "6e2164f79345c70a074eb2c9198f18e9804261aba05e0c21e0cf91023ca19e7a"
+        },
+        {
+            "source": "how-to/add-input-trigger.md",
+            "output": "references/how-to-add-input-trigger.md",
+            "kind": "how-to",
+            "sha256": "7e57293f00873aa79b2b034253c7b0d592147634908af85060d0fe815b978551"
+        },
+        {
+            "source": "api-guardrails/deepseek-account-auth.md",
+            "output": "references/api-deepseek-account-auth.md",
+            "kind": "api-guardrail",
+            "sha256": "18a6494090b68d1cc52a57d708ae8465b4e6c7d8528f86aa2467aced6811f595"
+        },
+        {
+            "source": "how-to/how-to-configure-deepseek-account-model.md",
+            "output": "references/how-to-configure-deepseek-account-model.md",
+            "kind": "how-to",
+            "sha256": "babfdf171628e8c9cd9986a83bf435be01b943b533d4b400550515212248c0fa"
+        },
+        {
+            "source": "api-guardrails/hook-bridges-guards.md",
+            "output": "references/api-hook-bridges-guards.md",
+            "kind": "api-guardrail",
+            "sha256": "c422394504cdbddda0cba1c0695baaaae77c965ad812ca42daa5435fc6f56bd5"
+        },
+        {
+            "source": "how-to/how-to-configure-codex-pretool-hook.md",
+            "output": "references/how-to-configure-codex-pretool-hook.md",
+            "kind": "how-to",
+            "sha256": "f4486fd1b44c50d1f89ffe99cd81aa708556e5cfbc20e2f2bbb247eb39700cee"
+        },
+        {
+            "source": "how-to/how-to-configure-claude-pretool-approval-hook.md",
+            "output": "references/how-to-configure-claude-pretool-approval-hook.md",
+            "kind": "how-to",
+            "sha256": "57c5cf04b8018f7d6b541ee6b094d069ab76cfa2b13099776b936241c4155cfb"
+        },
+        {
+            "source": "how-to/how-to-configure-repeat-tool-reminder.md",
+            "output": "references/how-to-configure-repeat-tool-reminder.md",
+            "kind": "how-to",
+            "sha256": "3f4e724f4ade210ebdb2d78c2f0f5f327aa95508b587272668fbf5a3050f7168"
+        },
+        {
+            "source": "how-to/how-to-enable-tool-timeout-policy.md",
+            "output": "references/how-to-enable-tool-timeout-policy.md",
+            "kind": "how-to",
+            "sha256": "08e413a2d2dfd6f3ccab5ad5276cc9e9268bc3fe4d3fc89cb9fb6f0e4d2ce715"
+        },
+        {
+            "source": "api-guardrails/session-format-storage-backend.md",
+            "output": "references/api-session-format-storage-backend.md",
+            "kind": "api-guardrail",
+            "sha256": "26ece1428d90b67ffb59a9d99b0adfa729a2abbe75b563997d42a75a87ea8a5d"
+        },
+        {
+            "source": "how-to/mount-storage-backend.md",
+            "output": "references/how-to-mount-storage-backend.md",
+            "kind": "how-to",
+            "sha256": "51d9f6ac3c93855e3b098f174eb48395b61d148b503d20dcb9b9e00df0361c86"
+        },
+        {
+            "source": "api-guardrails/agent-presets-persona.md",
+            "output": "references/api-agent-presets-persona.md",
+            "kind": "api-guardrail",
+            "sha256": "94c7a7c316d76d9d16986cfa96cb2aca1c55711d38d6aa4b2b29889fe0aa4d48"
+        },
+        {
+            "source": "how-to/how-to-declare-agent-preset-persona.md",
+            "output": "references/how-to-declare-agent-preset-persona.md",
+            "kind": "how-to",
+            "sha256": "e8bcbc1a5dc39df12db5494424e00944046727b4ebe9c8cd2bd5e423d59ca058"
+        },
+        {
+            "source": "api-guardrails/llm-builtins-retry-meter.md",
+            "output": "references/api-llm-builtins-retry-meter.md",
+            "kind": "api-guardrail",
+            "sha256": "de2497748f540ecb6884ab3d12e78fd082021bfc13d5343ee51df66bd9e53244"
+        },
+        {
+            "source": "how-to/how-to-configure-deepseek-api-key-retry.md",
+            "output": "references/how-to-configure-deepseek-api-key-retry.md",
+            "kind": "how-to",
+            "sha256": "598a9acc3d6ab24f7eeab74f338637284d7e8daa13214f37a16a6efb209b22f5"
+        },
+        {
+            "source": "how-to/how-to-read-session-token-pressure.md",
+            "output": "references/how-to-read-session-token-pressure.md",
+            "kind": "how-to",
+            "sha256": "168df3151250c19556b3df70175cf582f20b35fc10c4267e0c5b5e856b6fdd69"
+        },
+        {
+            "source": "how-to/test-agent-loop-inbox.md",
+            "output": "references/how-to-test-agent-loop-inbox.md",
+            "kind": "how-to",
+            "sha256": "a8aebe2e80fa2633e14e171386c5d8206180a286e6aea5b041e5787b4ce8f933"
+        },
+        {
+            "source": "api-guardrails/client-locale.md",
+            "output": "references/api-client-locale.md",
+            "kind": "api-guardrail",
+            "sha256": "c720176af47d5a7aa970a06c5290f029327876a6bf8a5ddcf478e7d2ae4e4be9"
+        },
+        {
+            "source": "how-to/localize-client-panel.md",
+            "output": "references/how-to-localize-client-panel.md",
+            "kind": "how-to",
+            "sha256": "9e5db602b84b11730c39a37b71bb170f87eec809623d3f7da0bc0c6759b74c20"
+        },
+        {
+            "source": "api-guardrails/cmdline.md",
+            "output": "references/api-cmdline.md",
+            "kind": "api-guardrail",
+            "sha256": "a4d3737e82725c71fe6b9b233c7b34788ae4984453e5b68a06115425e8761259"
+        },
+        {
+            "source": "how-to/add-app-command-line-option.md",
+            "output": "references/how-to-add-app-command-line-option.md",
+            "kind": "how-to",
+            "sha256": "4eba5475fd180332c2cf355c0fe95257cf0df47537b93de249cad8b0602e7375"
+        },
+        {
+            "source": "api-guardrails/skill-bundled-consumers.md",
+            "output": "references/api-skill-bundled-consumers.md",
+            "kind": "api-guardrail",
+            "sha256": "f17428e4de97e72f681a6a5efb9eeebd9e76c3d0409d513f75aee0a20f19522b"
+        },
+        {
+            "source": "how-to/how-to-mount-skill-directory.md",
+            "output": "references/how-to-mount-skill-directory.md",
+            "kind": "how-to",
+            "sha256": "4576b3e050f328040cbb2c1b2a6b936cb45a1560f519e721161d19805dfe7df3"
+        },
+        {
+            "source": "api-guardrails/opt-in-context-plugins.md",
+            "output": "references/api-opt-in-context-plugins.md",
+            "kind": "api-guardrail",
+            "sha256": "75312dd9fa75e16002babe97ac05c5a0b28a30bde1e77f0d6ef1e0c7290f2a90"
+        },
+        {
+            "source": "how-to/how-to-enable-opt-in-context.md",
+            "output": "references/how-to-enable-opt-in-context.md",
+            "kind": "how-to",
+            "sha256": "348d271a59a3e64a86f627837b32df112760d44b7b1711b2af626346ba30986f"
+        },
+        {
+            "source": "api-guardrails/shell-env.md",
+            "output": "references/api-shell-env.md",
+            "kind": "api-guardrail",
+            "sha256": "4fa5efa7e58074d77596fef56404ed652648bd9b6844e6476bc01b459084cb88"
+        },
+        {
+            "source": "how-to/contribute-shell-environment.md",
+            "output": "references/how-to-contribute-shell-environment.md",
+            "kind": "how-to",
+            "sha256": "24e18f7865cab2aa03716ff5342c311991d79c3df673b6cebe93b2e0ad5f2de2"
+        },
+        {
+            "source": "how-to/test-llm-adapter-faults.md",
+            "output": "references/how-to-test-llm-adapter-faults.md",
+            "kind": "how-to",
+            "sha256": "92d3a5bdf764b40673c5e58c8d348632c6c72d27272a29b3c35ab91e007249bd"
+        },
+        {
+            "source": "api-guardrails/client-store.md",
+            "output": "references/api-client-store.md",
+            "kind": "api-guardrail",
+            "sha256": "f8087bac9faed763e9c975eeb8dd427aa3e88f716e19825b236586c2764708dc"
+        },
+        {
+            "source": "how-to/add-stateful-client-slot.md",
+            "output": "references/how-to-add-stateful-client-slot.md",
+            "kind": "how-to",
+            "sha256": "7dba073126e0e1f7882f2be00a7bb6f829a1fd09161aaaeb1562690398bf7c84"
+        },
+        {
+            "source": "api-guardrails/client-file-upload.md",
+            "output": "references/api-client-file-upload.md",
+            "kind": "api-guardrail",
+            "sha256": "8f8ac84eafe193b6109873b3fa347e1291f7de98d2e6e80a47f5c7ce1b9e6b2b"
+        },
+        {
+            "source": "how-to/upload-and-submit-file.md",
+            "output": "references/how-to-upload-and-submit-file.md",
+            "kind": "how-to",
+            "sha256": "2c96fede05e6f58a68d57237921494dae212536cd6d2a504c7cab5a0875cb3bd"
+        },
+        {
+            "source": "api-guardrails/speech-provider.md",
+            "output": "references/api-speech-provider.md",
+            "kind": "api-guardrail",
+            "sha256": "f90a8ff4a0c8b562c509eda39de027845a5f4d5c7cc3d060324ec0f23894102a"
+        },
+        {
+            "source": "how-to/how-to-register-silence-speech-provider.md",
+            "output": "references/how-to-register-silence-speech-provider.md",
+            "kind": "how-to",
+            "sha256": "cc523c54256866f74e9ccde37a85deecdd1da859277c0bb8c27a5d1b148f9976"
+        },
+        {
+            "source": "api-guardrails/experimental-inspector.md",
+            "output": "references/api-experimental-inspector.md",
+            "kind": "api-guardrail",
+            "sha256": "9a1b4d4b641682a932f25accbfa8604b9aa12a35764903fe24483b8d3fc13937"
+        },
+        {
+            "source": "how-to/how-to-enable-experimental-inspector.md",
+            "output": "references/how-to-enable-experimental-inspector.md",
+            "kind": "how-to",
+            "sha256": "04fbd767fba50775b84dc7cf5dc3799da6dbed245fb5b38db5545c8c67dd8c7e"
+        },
+        {
+            "source": "api-guardrails/office-to-pdf.md",
+            "output": "references/api-office-to-pdf.md",
+            "kind": "api-guardrail",
+            "sha256": "9da3f9c97bbdb5d32569a35683832ad3cfd7336ae438229c73b23506d9aaea11"
+        },
+        {
+            "source": "how-to/convert-office-document.md",
+            "output": "references/how-to-convert-office-document.md",
+            "kind": "how-to",
+            "sha256": "911a3f6b090b357e8f4361c81e259b9fc7f82e42d04e6624a47f59761ebd2336"
+        },
+        {
+            "source": "api-guardrails/workspace-changes.md",
+            "output": "references/api-workspace-changes.md",
+            "kind": "api-guardrail",
+            "sha256": "7da6a4422095b2cb9b9877037cf19839933fd3e0bbe8e4d9b1af7b7192406076"
+        },
+        {
+            "source": "how-to/read-workspace-changes.md",
+            "output": "references/how-to-read-workspace-changes.md",
+            "kind": "how-to",
+            "sha256": "22d2a78c665f967c84668fc6b2cc86d42ed41075bb0170c21e0e7acd82dabc62"
+        },
+        {
+            "source": "api-guardrails/config-editor.md",
+            "output": "references/api-config-editor.md",
+            "kind": "api-guardrail",
+            "sha256": "8736441a78a26d641bc2b7e25dd8705c5ce70b11cff7196e18a7f3e58706e549"
+        },
+        {
+            "source": "how-to/how-to-edit-owned-plugin-config.md",
+            "output": "references/how-to-edit-owned-plugin-config.md",
+            "kind": "how-to",
+            "sha256": "4a4773062d4f0140dddc77f5ab055a287b29ceaf2fea3ad46265167da9a68279"
+        },
+        {
+            "source": "api-guardrails/host-plugin-inventory.md",
+            "output": "references/api-host-plugin-inventory.md",
+            "kind": "api-guardrail",
+            "sha256": "8f0a36dc6dcf298e3d80c3bd72e7ba171ce197020d125b517d9eef1e1be73b99"
+        },
+        {
+            "source": "how-to/read-host-plugin-inventory.md",
+            "output": "references/how-to-read-host-plugin-inventory.md",
+            "kind": "how-to",
+            "sha256": "a90249115829ebba9a6183fd6043e0c9906da3d095ad67fc3c0b9b5d4bd69ce0"
+        },
+        {
+            "source": "how-to/confine-local-process.md",
+            "output": "references/how-to-confine-local-process.md",
+            "kind": "how-to",
+            "sha256": "d6cb3d1f3a5422e5f5b09c797c336b5e5165aca7b6aa8a5459ef7724442c7a3c"
+        },
+        {
+            "source": "how-to/run-ssh-execution-world.md",
+            "output": "references/how-to-run-ssh-execution-world.md",
+            "kind": "how-to",
+            "sha256": "6e24dc691be68a3af2bd4fa64373aef1c3146ec4d7001429f77a3ccd0e94be7a"
+        },
+        {
+            "source": "api-guardrails/sandbox.md",
+            "output": "references/api-sandbox.md",
+            "kind": "api-guardrail",
+            "sha256": "48575d1f3583856b1e8d9732f843f3066029e1f9d08d31b687bf66ef1624fad9"
+        },
+        {
+            "source": "api-guardrails/ssh.md",
+            "output": "references/api-ssh.md",
+            "kind": "api-guardrail",
+            "sha256": "544cf77e8ab1bc5e65b2cd8a85cb252122d56cc1297717cf13fe6a308f66ae85"
+        },
+        {
+            "source": "api-guardrails/cordis-inspect-provider.md",
+            "output": "references/api-cordis-inspect-provider.md",
+            "kind": "api-guardrail",
+            "sha256": "9c08c3701e377504424ad4028036061df5d777cbc5cdf4ff5fcf5e66c24f00c0"
+        },
+        {
+            "source": "how-to/register-cordis-inspect-provider.md",
+            "output": "references/how-to-register-cordis-inspect-provider.md",
+            "kind": "how-to",
+            "sha256": "790231e3d5720f07ca164aa6f619e2869d42626576fc26f9d8dcba7becd52b3a"
+        },
+        {
+            "source": "api-guardrails/client-command-ui.md",
+            "output": "references/api-client-command-ui.md",
+            "kind": "api-guardrail",
+            "sha256": "f5e2b2b4793e9870ff9c210d7d3e270e42d76366fc80b0b948c07b108ee361f6"
+        },
+        {
+            "source": "how-to/add-client-command.md",
+            "output": "references/how-to-add-client-command.md",
+            "kind": "how-to",
+            "sha256": "8a6a9c52c5366c5d047127b43950f61fd6d20f155d5d8eeaf84a6fb65a2fe2cd"
+        },
+        {
+            "source": "api-guardrails/file-reference.md",
+            "output": "references/api-file-reference.md",
+            "kind": "api-guardrail",
+            "sha256": "aa8d1f2fd1e6f79e4dd30bd6a8f6f9db8dd927f7800f4b36aca27c2209d7450a"
+        },
+        {
+            "source": "how-to/complete-file-reference.md",
+            "output": "references/how-to-complete-file-reference.md",
+            "kind": "how-to",
+            "sha256": "93de962c0338212b4ec8ddb4bba1aa9f9e23846e0fb1f81b007e04240526ff1e"
+        },
+        {
+            "source": "api-guardrails/session-reference.md",
+            "output": "references/api-session-reference.md",
+            "kind": "api-guardrail",
+            "sha256": "a33e698a4d6f5111957f1c93dc89307daef27cfa94eada7160d1a79c9e1355e0"
+        },
+        {
+            "source": "how-to/list-session-references.md",
+            "output": "references/how-to-list-session-references.md",
+            "kind": "how-to",
+            "sha256": "e853425a57b1eea94bcb589cca86b8bf7401c4089081f01e1772e1f132d3eabb"
+        },
+        {
+            "source": "api-guardrails/workspace-dependencies.md",
+            "output": "references/api-workspace-dependencies.md",
+            "kind": "api-guardrail",
+            "sha256": "d9f69346ae867aeee34d6a70ab773fa1c313b8917a11f2b66ae143904f060ed0"
+        },
+        {
+            "source": "how-to/resolve-workspace-dependencies.md",
+            "output": "references/how-to-resolve-workspace-dependencies.md",
+            "kind": "how-to",
+            "sha256": "61abb84ea7e63e009558dc20a0a2b4cb31edcfb25d4f7353af3508cf5b508367"
+        },
+        {
+            "source": "api-guardrails/agent-instructions.md",
+            "output": "references/api-agent-instructions.md",
+            "kind": "api-guardrail",
+            "sha256": "e4c84aa4fb93e3c12d73e01824f38709e0eb418282d73fc27f93c871e8f3167c"
+        },
+        {
+            "source": "how-to/load-agent-instructions.md",
+            "output": "references/how-to-load-agent-instructions.md",
+            "kind": "how-to",
+            "sha256": "c933aea35ffcc72e2ee9293166071ce092b4e10a2b586eead443259d9b4cea09"
+        },
+        {
+            "source": "how-to/register-custom-deepseek-route.md",
+            "output": "references/how-to-register-custom-deepseek-route.md",
+            "kind": "how-to",
+            "sha256": "5604a635e102b1cd8f17997dc76386d46e576f64b0c51bd8caf037b7ba24f44f"
+        },
+        {
+            "source": "how-to/run-persistent-terminal.md",
+            "output": "references/how-to-run-persistent-terminal.md",
+            "kind": "how-to",
+            "sha256": "ec55eb728b999d69c1470316d13a22d1af5570bc5db37de003f53bc8e9fb432a"
+        },
+        {
+            "source": "api-guardrails/experimental-agent-team.md",
+            "output": "references/api-experimental-agent-team.md",
+            "kind": "api-guardrail",
+            "sha256": "dba513883420d8da3ebcce1ed90666b5b9c1f46329e41080ab2c48f49f656f75"
+        },
+        {
+            "source": "how-to/use-experimental-agent-team.md",
+            "output": "references/how-to-use-experimental-agent-team.md",
+            "kind": "how-to",
+            "sha256": "4e50404395ec2bd99b9468f6106fa3ffd36750e2d586c056fde9b6d19ea2e3e6"
+        },
+        {
+            "source": "how-to/configure-pi-ai-and-inventory.md",
+            "output": "references/how-to-configure-pi-ai-and-inventory.md",
+            "kind": "how-to",
+            "sha256": "1c4f1e27a0a65fc674663ebc486d86f113a2eb9184c2f4e30a58e3ae69f78207"
+        },
+        {
+            "source": "api-guardrails/client-ui-primitives.md",
+            "output": "references/api-client-ui-primitives.md",
+            "kind": "api-guardrail",
+            "sha256": "f949466d6c29db448ee6319cfd3d4ffe0d329f2ecd0b8a0ab0831b607982a409"
+        },
+        {
+            "source": "how-to/render-markdown-slot.md",
+            "output": "references/how-to-render-markdown-slot.md",
+            "kind": "how-to",
+            "sha256": "96a580a9e46dec0b4f561fa94a6284013b4f263fe51b64c397fa48ffbf710b4f"
+        },
+        {
+            "source": "api-guardrails/output-retention.md",
+            "output": "references/api-output-retention.md",
+            "kind": "api-guardrail",
+            "sha256": "b553e44909c2576d209649c69d3db42f9ac6b9bd050f4634036ac707c8311bfd"
+        },
+        {
+            "source": "how-to/bound-tool-output.md",
+            "output": "references/how-to-bound-tool-output.md",
+            "kind": "how-to",
+            "sha256": "3ba4d608a835e71747ad769c374c228ddee804cc60cbd1bebcc57b063da89bb0"
+        },
+        {
+            "source": "api-guardrails/http-proxy.md",
+            "output": "references/api-http-proxy.md",
+            "kind": "api-guardrail",
+            "sha256": "c00e1d4dc5f708f0620ee9b12122a60473bc3e5dc372b2fc71c812c91a7c81dc"
+        },
+        {
+            "source": "how-to/use-outbound-http-proxy.md",
+            "output": "references/how-to-use-outbound-http-proxy.md",
+            "kind": "how-to",
+            "sha256": "40281ddd306769452f61ef713d77bfbe1ba543862cff4b24d6263230b1359f24"
+        },
+        {
+            "source": "api-guardrails/scope-registry.md",
+            "output": "references/api-scope-registry.md",
+            "kind": "api-guardrail",
+            "sha256": "a92997d7599dc3d07663512fc5a7e719ee5e9be08ba54369c264b4116e267aeb"
+        },
+        {
+            "source": "how-to/build-scoped-registry.md",
+            "output": "references/how-to-build-scoped-registry.md",
+            "kind": "how-to",
+            "sha256": "f71c6b9fd69075a509bcd9df202b1826c3dc3f4dfbb3eaab80f0f326753f0621"
+        },
+        {
+            "source": "api-guardrails/loader-smoke-profile.md",
+            "output": "references/api-loader-smoke-profile.md",
+            "kind": "api-guardrail",
+            "sha256": "fd6d5193283afeae12aca627e22d70a704cce88775152911d153991df751a8c6"
+        },
+        {
+            "source": "how-to/smoke-real-loader-profile.md",
+            "output": "references/how-to-smoke-loader-profile.md",
+            "kind": "how-to",
+            "sha256": "066ee292a3dc3e2d11f792c6cd472a5a681364a778bf8ea6e458fc7dd74c1d83"
+        }
+    ],
+    "claimsSha256": "fd4eb7fc7adc37143447feefbf310add78f721fde030e035dc0dae4113286311",
+    "coverageSha256": "0c801c71f0c829fe6beb64f8d21d29f724cd65a24e09951bc4164d059dd7cbc0",
+    "capabilityCandidatesSha256": "d763d1078b311612d47d68101319453e114caf6551779b88c79db2feceb75345",
+    "apiEntriesSha256": "60f6d787f6f6d7fd8ca1c4ab8965af7c0c14043d0d4f31dc3ef45c8da09fb169",
+    "apiSymbolsSha256": "313e94a533a92ac24cb940626a330535ef201836c1825f15a00ff54ef5f99cb7",
+    "taskCandidatesSha256": "3ccdfe27876e078923c68a33cbb31417fda699ebbe98c42f2019c69a5bc87057",
+    "apiSurfaceSha256": "b75d84913f196277dd777486d6c5e4a8f121f8aba2faab02c5b86495c0f9d747"
+}
