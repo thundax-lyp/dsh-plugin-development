@@ -3,3 +3,6 @@
 /.dsh-skill-build/repository/
 /.dsh-skill-build/targets/*/checkout/
 /.dsh-skill-build/targets/*/upstream-docs/
+/.dsh-skill-build/targets/*/evidence/tests/
+/.dsh-skill-build/targets/*/previous-generated-before-format/
+/.dsh-skill-build/targets/*/preserved-formal-before-replacement/
