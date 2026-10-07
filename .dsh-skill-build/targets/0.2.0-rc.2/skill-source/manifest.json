@@ -69,7 +69,7 @@
             "source": "how-to/client-web.md",
             "output": "references/how-to-client-web.md",
             "kind": "how-to",
-            "sha256": "d0a59f44255c8b86061e166f163747d600f2f7e4558f2131b6dc1e260c7eb513"
+            "sha256": "b5e4b45c381c60ad125943f3f349ac4b6eda11c173ccde7e1bf61d791f70ac1b"
         },
         {
             "source": "how-to/infra-runtime.md",

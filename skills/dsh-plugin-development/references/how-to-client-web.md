@@ -67,7 +67,7 @@ export function apply(ctx: Context, config: Config): void {
 }
 ```
 
-`Agent` 是 lookup 参数，不由 Client 发送实体；Gateway 从 wire identity 解析。`AbortSignal` 在最后。更改该签名或 error code 后运行目标仓库 Typert 生成/build，得到 `./typert` Host 描述和 `./remote` Client contribution，再把 contribution 加入应用 Remote assembly。Client 源码必须导入生成包的 `./remote` 类型增强；示例为保持独立编译而展开的 `declare module` 只能由生成器产出，不能手写进真实包。目标 `api-remotes` 是显式 assembly，不会自动发现此 namespace。
+`Agent` 是 lookup 参数，不由 Client 发送实体；Gateway 从 wire identity 解析。`AbortSignal` 在最后。更改该签名或 error code 后运行目标仓库 Typert 生成/build，得到 `./typert` Host 描述和 `./remote` Client contribution。下方 Client assembly 以运行时值导入并挂载该 contribution；同一个导入也带入生成的类型增强。目标 `api-remotes` 是显式 assembly，不会自动发现此 namespace。
 
 ## Client 入口与 slot
 
@@ -78,24 +78,11 @@ import type {} from '@deepseek-ai/dsh-api-remotes/client'
 import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
 import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
 import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
+import reviewRemote from '@acme/dsh-review/remote'
 import { useEffect, useState } from 'react'
 
-// The real Client entry imports this augmentation from the generator-owned
-// `@acme/dsh-review/remote` export. It is expanded here only so this standalone
-// source contract remains independently compilable.
-declare module '@deepseek-ai/dsh-typert-protocol' {
-  interface TypertRemoteNamespace$726576696577 {
-    label: (signal?: AbortSignal) => Promise<RemoteResult<string>>
-  }
-
-  interface TypertRemoteNamespaceMap {
-    review: TypertRemoteNamespace$726576696577
-  }
-}
-
 type Props = PropsRuntime<'conversation.session.header.actions'> & {
-  loadLabel: () => Promise<string>
+  loadLabel: (signal?: AbortSignal) => Promise<string>
 }
 
 function ReviewAction({ loadLabel }: Props) {
@@ -104,35 +91,53 @@ function ReviewAction({ loadLabel }: Props) {
 
   useEffect(() => {
     const abort = new AbortController()
-    void loadLabel().then(setLabel, (error: unknown) => {
-      if (!abort.signal.aborted) setFailure(error instanceof Error ? error.message : String(error))
-    })
+    void loadLabel(abort.signal).then(
+      value => { if (!abort.signal.aborted) setLabel(value) },
+      (error: unknown) => {
+        if (!abort.signal.aborted) setFailure(error instanceof Error ? error.message : String(error))
+      },
+    )
     return () => { abort.abort() }
   }, [loadLabel])
 
   return <button type="button" disabled={failure !== undefined}>{failure ?? label}</button>
 }
 
-export const inject = ['slots', 'remote', 'remote.review']
+export const inject = ['slots', 'remote']
 
-export function apply(ctx: Context): void {
-  ctx.effect(() => ctx.slots.inject('conversation.session.header.actions', () =>
-    ctx.slots.register({
-      name: 'conversation.session.header.actions',
-      id: 'review',
-      order: 100,
-      inject: () => ({
-        loadLabel: async () => {
-          const result = await ctx.remote.review.label()
-          if (!result.ok) throw result.error
-          return result.value
-        },
-      }),
-    }, ReviewAction)), 'review client slot')
+function registerUi(ctx: Context): void {
+  ctx.slots.inject('conversation.session.header.actions', () => ctx.slots.register({
+    name: 'conversation.session.header.actions',
+    id: 'review',
+    order: 100,
+    inject: () => ({
+      loadLabel: async (signal?: AbortSignal) => {
+        const result = await ctx.remote.review.label(signal)
+        if (!result.ok) throw result.error
+        return result.value
+      },
+    }),
+  }, ReviewAction))
+}
+
+export async function apply(ctx: Context): Promise<() => Promise<void>> {
+  const disposeRemote = await ctx.remote.$mount(reviewRemote)
+  const ui = ctx.inject(['remote.review', 'slots'], registerUi)
+  try {
+    await ui
+  } catch (error) {
+    await ui.dispose()
+    await disposeRemote()
+    throw error
+  }
+  return async () => {
+    await ui.dispose()
+    await disposeRemote()
+  }
 }
 ```
 
-这里用 `slots.inject` 等待 slot owner，而不是用 feature service 猜激活顺序。Component 不接收 `ctx`；Remote 调用在 registration inject closure 内投影为普通 callback。此例没有需要跨 entry 或跨 remount 保留的可变视图状态，因此不声明 store。若状态需要共享，使用 `defineStore` handle 并通过 registration 的 `store` 提供，Component 只用 `useStore` 和 `actions`。
+外层 Client assembly 只声明它启动前已有的 `remote` 与 `slots`；它先挂载生成 contribution，再用内层 `ctx.inject` 等待新出现的 `remote.review`，避免把自己将要提供的 namespace 写成启动前依赖。`slots.inject` 继续等待 slot owner。Component 不接收 `ctx`；Remote 调用在 registration inject closure 内投影为普通 callback，并把 effect 的 signal 传入传输层。卸载先停止 UI fiber，再撤回 Remote contribution，因此卸载后的成功或失败都不会更新组件。此例没有需要跨 entry 或跨 remount 保留的可变视图状态，因此不声明 store。若状态需要共享，使用 `defineStore` handle 并通过 registration 的 `store` 提供，Component 只用 `useStore` 和 `actions`。
 
 真实产品字符串还必须注册 typed locale namespace 并通过 `locale`/`t` 提供；示例中的英文 fallback 仅为最小契约演示，不符合产品发布的本地化门禁。
 
@@ -155,7 +160,7 @@ export function apply(ctx: Context): void {
       "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-api-remotes"]
     }
   },
-  "files": ["lib/index.js", "lib/client.js", "lib/typert.host.js", "lib/typert.remote-client.js", "lib/types/**/*.d.ts"],
+  "files": ["lib/index.js", "lib/client.js", "lib/typert.host.js", "lib/typert.host.d.ts", "lib/typert.remote-client.js", "lib/typert.remote-client.d.ts", "lib/types/**/*.d.ts"],
   "peerDependencies": {
     "@deepseek-ai/cordis": "4.0.4",
     "@deepseek-ai/dsh-typert-protocol": "0.2.0-rc.2"
