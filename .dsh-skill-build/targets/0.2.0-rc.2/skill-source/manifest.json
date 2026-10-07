@@ -1,0 +1,118 @@
+{
+    "schemaVersion": 3,
+    "version": "0.2.0-rc.2",
+    "tag": "dsh-v0.2.0-rc.2",
+    "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+    "remote": "https://github.com/deepseek-ai/deepseek-harness",
+    "status": "frozen",
+    "topics": [
+        "host-core",
+        "client-web",
+        "infra-runtime"
+    ],
+    "files": [
+        {
+            "source": "entrypoint/SKILL.md",
+            "output": "SKILL.md",
+            "kind": "entrypoint",
+            "sha256": "ee8d9cf2b62e5f663aae589f5d8d3f27da9a7471897001a492743dc51b01b610"
+        },
+        {
+            "source": "metadata/openai.yaml",
+            "output": "agents/openai.yaml",
+            "kind": "metadata",
+            "sha256": "91ffca6ae6fd05c1417dcfa1284a83df5d1bc91a77753af707de0b3ff492090b"
+        },
+        {
+            "source": "api-guardrails/host-core.md",
+            "output": "references/api-host-core.md",
+            "kind": "api-guardrail",
+            "sha256": "776aeecc83fe7fce715ce8cf9cfcf95eba46da3ce9eb7669ffefe428380b4f08"
+        },
+        {
+            "source": "api-guardrails/host-core-surface.md",
+            "output": "references/api-host-core-surface.md",
+            "kind": "api-guardrail",
+            "sha256": "cb9e98e76e758ca8f29afa8a7afd032905a4ebc05cb96929bc6abb8eb83e17b1"
+        },
+        {
+            "source": "api-guardrails/client-web.md",
+            "output": "references/api-client-web.md",
+            "kind": "api-guardrail",
+            "sha256": "18f7f005b73ec6f7900c1ee2f1dd649f24729c13021c9a494fe8722dace6ddd7"
+        },
+        {
+            "source": "api-guardrails/client-web-surface.md",
+            "output": "references/api-client-web-surface.md",
+            "kind": "api-guardrail",
+            "sha256": "99558b5e5221219a62631950463dcd04c9a9b412eab8db347895ef244e26dd3d"
+        },
+        {
+            "source": "api-guardrails/infra-runtime.md",
+            "output": "references/api-infra-runtime.md",
+            "kind": "api-guardrail",
+            "sha256": "e31a06693ba2a1149ad245c85182917aae7faeeedb77e963dca42299f04485de"
+        },
+        {
+            "source": "api-guardrails/infra-runtime-surface.md",
+            "output": "references/api-infra-runtime-surface.md",
+            "kind": "api-guardrail",
+            "sha256": "d5f5fbe657bcf1c7a8793a91515a0ab70da997ed1eae31376a51f4b36a963d22"
+        },
+        {
+            "source": "how-to/host-core.md",
+            "output": "references/how-to-host-core.md",
+            "kind": "how-to",
+            "sha256": "2694fbc216793faf6a9855fd282065cfdc35a5f60d16ebb6c5af106fabb2fb2c"
+        },
+        {
+            "source": "how-to/client-web.md",
+            "output": "references/how-to-client-web.md",
+            "kind": "how-to",
+            "sha256": "d0a59f44255c8b86061e166f163747d600f2f7e4558f2131b6dc1e260c7eb513"
+        },
+        {
+            "source": "how-to/infra-runtime.md",
+            "output": "references/how-to-infra-runtime.md",
+            "kind": "how-to",
+            "sha256": "e891a09347991e413943ff06207a67a2d2c84c5acf9417bac003e30e2b100688"
+        },
+        {
+            "source": "indexes/plugin-development-routing.md",
+            "output": "references/plugin-development-routing.md",
+            "kind": "index",
+            "sha256": "07fa0a0e3a734533ad880097257dafb47786e056593ca6fb599af9cf1371a59c"
+        },
+        {
+            "source": "indexes/keyword-index.md",
+            "output": "references/keyword-index.md",
+            "kind": "index",
+            "sha256": "4f0b54fa9c006981fa2081a335a99d5c538ff410c9972a415f8377c3a1e6288d"
+        },
+        {
+            "source": "concepts/terminology.md",
+            "output": "references/terminology.md",
+            "kind": "index",
+            "sha256": "cfc3a52ef5fe3cbfd28bf43d7e8d591e8c70472aaf622dc14c8b1aa4bfe768f4"
+        },
+        {
+            "source": "maintenance/source-map.md",
+            "output": "maintenance/source-map.md",
+            "kind": "maintenance",
+            "sha256": "b64ef100c8d7ccb2c115383bf3ddbea9bcfd46e27f5321489d6929205891b174"
+        },
+        {
+            "source": "maintenance/skill-maintenance.md",
+            "output": "maintenance/skill-maintenance.md",
+            "kind": "maintenance",
+            "sha256": "ec1689d24d93a58849d99e0a002801356f224563308d539d2c942f218e543b52"
+        }
+    ],
+    "claimsSha256": "7b0770497a1775f4674e12a8f8ae3209a4b6a6a747b6277bb96fd0a0a639f1ac",
+    "coverageSha256": "2afefc467b3e748c7bc1cc75bf21f5e5974b1f00635932a9d04e0f069c8ca85f",
+    "capabilityCandidatesSha256": "08a6a4f025f041f78b670d475874f2a263f712f0d72c4d5f434201e313f133e9",
+    "apiEntriesSha256": "4cde68b87ce104d29d3653d81bfda7bcc34b477fd9662809b8765c17b8a729bf",
+    "apiSymbolsSha256": "b0ac6b3e1331e1ab4a9d3f934a112f8e863ba71e39f58504d9aee6fe5334e5ca",
+    "taskCandidatesSha256": "13a96c784d6289ae90e1b1dc55224c89f52613e39d19d6ca9b858a22a2f9a598",
+    "apiSurfaceSha256": "a77c0fb48908d444347e70a588bb78cf53738eb88a398db75a384f3a57c4e982"
+}
