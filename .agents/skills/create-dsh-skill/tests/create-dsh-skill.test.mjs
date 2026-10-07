@@ -916,6 +916,19 @@ test("backup cleanup failure is reported after a committed replacement", (t) => 
     );
 });
 
+test("replacement creates a missing formal Skill parent", (t) => {
+    const root = mkdtempSync(join(tmpdir(), "create-dsh-first-replace-test-"));
+    t.after(() => rmSync(root, { recursive: true, force: true }));
+    const generated = join(root, "generated-skill");
+    const formal = join(root, "skills", "dsh-plugin-development");
+    write(join(generated, "value.txt"), "new\n");
+
+    const result = installGeneratedSkill(generated, formal, { files: 1 });
+
+    assert.equal(result.replaced, true);
+    assert.equal(readFileSync(join(formal, "value.txt"), "utf8"), "new\n");
+});
+
 test("replacement leaves a preexisting PID-style staging path untouched", (t) => {
     const root = mkdtempSync(join(tmpdir(), "create-dsh-collision-test-"));
     t.after(() => rmSync(root, { recursive: true, force: true }));

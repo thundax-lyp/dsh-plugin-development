@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, mkdtempSync, renameSync, rmSync } from "node:fs";
+import {
+    cpSync,
+    existsSync,
+    mkdirSync,
+    mkdtempSync,
+    renameSync,
+    rmSync,
+} from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { directoryDigest, listFiles } from "./skill-build-contract.mjs";
@@ -20,6 +27,7 @@ export function installGeneratedSkill(
     const remove = options.remove ?? rmSync;
     const parentPath = dirname(formalPath);
     const formalName = basename(formalPath);
+    mkdirSync(parentPath, { recursive: true });
     const transactionPath = mkdtempSync(
         join(parentPath, `.${formalName}-replace-`),
     );
