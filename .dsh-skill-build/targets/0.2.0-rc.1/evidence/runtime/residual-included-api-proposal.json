@@ -1,0 +1,3950 @@
+{
+  "schemaVersion": 1,
+  "tag": "dsh-v0.2.0-rc.1",
+  "rows": [
+    {
+      "id": "export:@deepseek-ai/dsh-browser-use:.:default",
+      "entry": "export:@deepseek-ai/dsh-browser-use:.",
+      "package": "@deepseek-ai/dsh-browser-use",
+      "source": "packages/browser-use/browser-use/src/index.ts",
+      "signature": "BrowserUseRegistry",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Browser/Computer Use provider 登记和 Session 资源所有权；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "providerName",
+          "signature": "any",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "register",
+          "signature": "(name: Branded<\"BrowserUseProviderName\">) => () => Promise<void>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-browser-use:./brand:BrowserUseProviderName",
+      "entry": "export:@deepseek-ai/dsh-browser-use:./brand",
+      "package": "@deepseek-ai/dsh-browser-use",
+      "source": "packages/browser-use/browser-use/src/brand.ts",
+      "signature": "Branded<\"BrowserUseProviderName\">",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Browser/Computer Use provider 登记和 Session 资源所有权；见目标源码和独立核查记录。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:.:ApiKeyRecord",
+      "entry": "export:@deepseek-ai/dsh-credentials:.",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "ApiKeyRecord",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "env",
+          "signature": "Readonly<Record<string, string>> | undefined",
+          "recommendation": "include"
+        },
+        {
+          "name": "key",
+          "signature": "string | undefined",
+          "recommendation": "include"
+        },
+        {
+          "name": "kind",
+          "signature": "\"api-key\"",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:.:default",
+      "entry": "export:@deepseek-ai/dsh-credentials:.",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/index.ts",
+      "signature": "CredentialProvider",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "deleteRecord",
+          "signature": "(key: Branded<\"CredentialKey\">) => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "describe",
+          "signature": "(ref: Branded<\"CredentialRef\">) => Promise<CredentialInfo>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "describeRecord",
+          "signature": "(key: Branded<\"CredentialKey\">) => Promise<CredentialRecordInfo>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "listRecords",
+          "signature": "() => Promise<readonly CredentialRecordEntry[]>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "modifyRecord",
+          "signature": "(key: Branded<\"CredentialKey\">, mutate: (current: CredentialRecord | undefined) => Promise<CredentialRecord | undefined>) => Promise<CredentialRecord | undefined>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "readRecord",
+          "signature": "(key: Branded<\"CredentialKey\">) => Promise<CredentialRecord | undefined>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "resolve",
+          "signature": "(ref: Branded<\"CredentialRef\">) => Promise<ResolvedCredential | undefined>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "set",
+          "signature": "(ref: Branded<\"CredentialRef\">, value: string) => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "unset",
+          "signature": "(ref: Branded<\"CredentialRef\">) => Promise<void>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:.:GrantRecord",
+      "entry": "export:@deepseek-ai/dsh-credentials:.",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "GrantRecord",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"grant\"",
+          "recommendation": "include"
+        },
+        {
+          "name": "payload",
+          "signature": "unknown",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./invariant:apply",
+      "entry": "export:@deepseek-ai/dsh-credentials:./invariant",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./invariant:inject",
+      "entry": "export:@deepseek-ai/dsh-credentials:./invariant",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./invariant:name",
+      "entry": "export:@deepseek-ai/dsh-credentials:./invariant",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./types:ApiKeyRecord",
+      "entry": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "ApiKeyRecord",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "env",
+          "signature": "Readonly<Record<string, string>> | undefined",
+          "recommendation": "include"
+        },
+        {
+          "name": "key",
+          "signature": "string | undefined",
+          "recommendation": "include"
+        },
+        {
+          "name": "kind",
+          "signature": "\"api-key\"",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialInfo",
+      "entry": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "CredentialInfo",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "configured",
+          "signature": "boolean",
+          "recommendation": "include"
+        },
+        {
+          "name": "source",
+          "signature": "string | undefined",
+          "recommendation": "include"
+        },
+        {
+          "name": "writable",
+          "signature": "boolean",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialKey",
+      "entry": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "Branded<\"CredentialKey\">",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialRecord",
+      "entry": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "CredentialRecord",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"api-key\" | \"grant\"",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialRef",
+      "entry": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "Branded<\"CredentialRef\">",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-credentials:./types:GrantRecord",
+      "entry": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "source": "packages/credentials/credentials/src/types.ts",
+      "signature": "GrantRecord",
+      "recommendation": "include",
+      "owner": "references/api-credentials.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Credential refs and owner-scoped records with explicit Provider operations.",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"grant\"",
+          "recommendation": "include"
+        },
+        {
+          "name": "payload",
+          "signature": "unknown",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:DeepSeekLlmApiExtensionProvider",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionProvider<T>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "prepare",
+          "signature": "(request: DeepSeekLlmApiExtensionRequest) => PreparedDeepSeekLlmApiExtension<T> | Promise<PreparedDeepSeekLlmApiExtension<T> | undefined> | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:DeepSeekLlmApiExtensionRequest",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionRequest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "body",
+          "signature": "Readonly<Record<string, DeepSeekLlmApiJson>>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "purpose",
+          "signature": "\"compaction\" | \"session-title\" | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "sessionId",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "signal",
+          "signature": "AbortSignal",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:DeepSeekLlmApiJson",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiJson",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:default",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/index.ts",
+      "signature": "DeepSeekLlmApiExtensionRegistry",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "prepare",
+          "signature": "(request: DeepSeekLlmApiExtensionRequest) => Promise<PreparedDeepSeekLlmApiExtensions>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "register",
+          "signature": "<K extends keyof DeepSeekLlmApiExtensionMap>(field: K, provider: DeepSeekLlmApiExtensionProvider<DeepSeekLlmApiExtensionMap[K]>) => () => Promise<...>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:PreparedDeepSeekLlmApiExtension",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtension<T>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "(() => void | Promise<void>) | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "value",
+          "signature": "T",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:PreparedDeepSeekLlmApiExtensions",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtensions",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "() => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "fields",
+          "signature": "Readonly<Partial<DeepSeekLlmApiExtensionMap>>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiExtensionMap",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionMap",
+      "recommendation": "include",
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "目标与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiExtensionProvider",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionProvider<T>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "prepare",
+          "signature": "(request: DeepSeekLlmApiExtensionRequest) => PreparedDeepSeekLlmApiExtension<T> | Promise<PreparedDeepSeekLlmApiExtension<T> | undefined> | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiExtensionRequest",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionRequest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "body",
+          "signature": "Readonly<Record<string, DeepSeekLlmApiJson>>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "purpose",
+          "signature": "\"compaction\" | \"session-title\" | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "sessionId",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "signal",
+          "signature": "AbortSignal",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiJson",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiJson",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:PreparedDeepSeekLlmApiExtension",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtension<T>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "(() => void | Promise<void>) | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "value",
+          "signature": "T",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:PreparedDeepSeekLlmApiExtensions",
+      "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtensions",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；为官方 DeepSeek Adapter 添加请求字段；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "() => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "fields",
+          "signature": "Readonly<Partial<DeepSeekLlmApiExtensionMap>>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:apply",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeConnection",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeConnection",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "state",
+          "signature": "\"connected\" | \"disconnected\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeContext",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeContext",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "children",
+          "signature": "readonly CordisRuntimeNode[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "kind",
+          "signature": "\"context\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeFiber",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeFiber",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "children",
+          "signature": "readonly [CordisRuntimeContext]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "kind",
+          "signature": "\"fiber\"",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "uid",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeNode",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeNode",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "children",
+          "signature": "readonly CordisRuntimeNode[] | readonly [CordisRuntimeContext]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "kind",
+          "signature": "\"fiber\" | \"context\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeRealm",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeRealm",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "connection",
+          "signature": "CordisRuntimeConnection",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "revision",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "root",
+          "signature": "CordisRuntimeContext",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "source",
+          "signature": "CordisRuntimeSource",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeSource",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeSource",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "CordisRuntimeSourceKind",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "label",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "sourceId",
+          "signature": "Branded<Role>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeTree",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeTree",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "clients",
+          "signature": "readonly CordisRuntimeRealm[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "host",
+          "signature": "CordisRuntimeRealm | null",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "schemaVersion",
+          "signature": "0",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeTreeReader",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/reader.ts",
+      "signature": "CordisRuntimeTreeReader",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": [
+        {
+          "name": "getTree",
+          "signature": "() => Promise<CordisRuntimeTree>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:inject",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:InspectorService",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "InspectorService",
+      "recommendation": "include",
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:name",
+      "entry": "export:@deepseek-ai/dsh-experimental-inspector:./client",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；启用实验 Inspector；仅限正文描述的实验能力和实际验证边界。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-claude-code:.:apply",
+      "entry": "export:@deepseek-ai/dsh-hooks-claude-code:.",
+      "package": "@deepseek-ai/dsh-hooks-claude-code",
+      "source": "packages/hooks/hooks-claude-code/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置 Claude Code PreToolUse 审批 Hook；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-claude-code:.:inject",
+      "entry": "export:@deepseek-ai/dsh-hooks-claude-code:.",
+      "package": "@deepseek-ai/dsh-hooks-claude-code",
+      "source": "packages/hooks/hooks-claude-code/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置 Claude Code PreToolUse 审批 Hook；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-claude-code:.:name",
+      "entry": "export:@deepseek-ai/dsh-hooks-claude-code:.",
+      "package": "@deepseek-ai/dsh-hooks-claude-code",
+      "source": "packages/hooks/hooks-claude-code/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置 Claude Code PreToolUse 审批 Hook；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-codex:.:apply",
+      "entry": "export:@deepseek-ai/dsh-hooks-codex:.",
+      "package": "@deepseek-ai/dsh-hooks-codex",
+      "source": "packages/hooks/hooks-codex/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置 Codex PreToolUse 命令 Hook；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-codex:.:inject",
+      "entry": "export:@deepseek-ai/dsh-hooks-codex:.",
+      "package": "@deepseek-ai/dsh-hooks-codex",
+      "source": "packages/hooks/hooks-codex/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置 Codex PreToolUse 命令 Hook；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-codex:.:name",
+      "entry": "export:@deepseek-ai/dsh-hooks-codex:.",
+      "package": "@deepseek-ai/dsh-hooks-codex",
+      "source": "packages/hooks/hooks-codex/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置 Codex PreToolUse 命令 Hook；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:default",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPicker",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "capability",
+          "signature": "() => DirectoryPickerCapability",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryEntry",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/types.ts",
+      "signature": "DirectoryEntry",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "hidden",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerBrowseCapability",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerBrowseCapability",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "createDirectory",
+          "signature": "(path: string, name: string) => Promise<string>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "kind",
+          "signature": "\"browse\"",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "list",
+          "signature": "(path?: string | undefined, signal?: AbortSignal | undefined) => Promise<DirectoryListing>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerCapability",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerCapability",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"native\" | \"browse\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerError",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerError",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "code",
+          "signature": "DirectoryPickerErrorCode",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerErrorCode",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerErrorCode",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerNativeCapability",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerNativeCapability",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"native\"",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "pick",
+          "signature": "(signal: AbortSignal) => Promise<string | null>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:./types:DirectoryEntry",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:./types",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/types.ts",
+      "signature": "DirectoryEntry",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "hidden",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:./types:DirectoryListing",
+      "entry": "export:@deepseek-ai/dsh-host-directory-picker:./types",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/types.ts",
+      "signature": "DirectoryListing",
+      "recommendation": "include",
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Host 目录选择与固定打开应用入口；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "crumbs",
+          "signature": "DirectoryEntry[]",
+          "recommendation": "include"
+        },
+        {
+          "name": "entries",
+          "signature": "DirectoryEntry[]",
+          "recommendation": "include"
+        },
+        {
+          "name": "home",
+          "signature": "string",
+          "recommendation": "include"
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "recommendation": "include"
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:Config",
+      "entry": "export:@deepseek-ai/dsh-invariants:.",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "Config",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中注册运行时不变量和按需 Session Telemetry；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "package_allowlist",
+          "signature": "string[] | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "package_blocklist",
+          "signature": "string[] | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:default",
+      "entry": "export:@deepseek-ai/dsh-invariants:.",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "InvariantRegistry",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中注册运行时不变量和按需 Session Telemetry；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "register",
+          "signature": "(packageName: string, installer: InvariantInstaller) => () => void",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:InvariantFailure",
+      "entry": "export:@deepseek-ai/dsh-invariants:.",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "InvariantFailure",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中注册运行时不变量和按需 Session Telemetry；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:InvariantInstaller",
+      "entry": "export:@deepseek-ai/dsh-invariants:.",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "InvariantInstaller",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中注册运行时不变量和按需 Session Telemetry；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "inject",
+          "signature": "any",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:default",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/index.ts",
+      "signature": "Lsp",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "query",
+          "signature": "(request: LspQueryRequest, signal?: AbortSignal | undefined) => Promise<LspQueryResult>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "registerProvider",
+          "signature": "(provider: LspProvider) => () => void",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspHover",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspHover",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "contents",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "range",
+          "signature": "LspRange | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspLocation",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspLocation",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "range",
+          "signature": "LspRange",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "uri",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspOperation",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspOperation",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspPosition",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspPosition",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "character",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "line",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspProvider",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspProvider",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "extensionToLanguage",
+          "signature": "Readonly<Record<string, string>>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "id",
+          "signature": "Branded<\"LspProviderId\">",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "query",
+          "signature": "(request: LspProviderQuery, signal?: AbortSignal | undefined) => Promise<LspQueryResult>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspProviderQuery",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspProviderQuery",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "filePath",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "languageId",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "operation",
+          "signature": "LspOperation",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "position",
+          "signature": "LspPosition",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "workspaceRoot",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspQueryRequest",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspQueryRequest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "filePath",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "operation",
+          "signature": "LspOperation",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "position",
+          "signature": "LspPosition",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "workspaceRoot",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspQueryResult",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspQueryResult",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"hover\" | \"locations\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspRange",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspRange",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "end",
+          "signature": "LspPosition",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "start",
+          "signature": "LspPosition",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspService",
+      "entry": "export:@deepseek-ai/dsh-lsp:.",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspService",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；LSP provider 注册与查询；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "query",
+          "signature": "(request: LspQueryRequest, signal?: AbortSignal | undefined) => Promise<LspQueryResult>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "registerProvider",
+          "signature": "(provider: LspProvider) => () => void",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:apply",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:createMcpToolDefinition",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/tools.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:inject",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:McpResult",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/tools.ts",
+      "signature": "McpResult<Structured>",
+      "recommendation": "include",
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Host MCP client bridge for a named external server.",
+      "members": [
+        {
+          "name": "content",
+          "signature": "JsonValue[]",
+          "recommendation": "include"
+        },
+        {
+          "name": "structuredContent",
+          "signature": "Structured | undefined",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:McpToolDefinitionOptions",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/tools.ts",
+      "signature": "McpToolDefinitionOptions",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": [
+        {
+          "name": "call",
+          "signature": "(args: Record<string, unknown>, execution: ToolExecution) => Promise<unknown>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "description",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "inputSchema",
+          "signature": "Record<string, unknown>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "outputSchema",
+          "signature": "unknown",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "rawName",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "taskRequired",
+          "signature": "boolean | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:name",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:ReconnectConfig",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/connection.ts",
+      "signature": "ReconnectConfig",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "initialDelayMs",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "maxAttempts",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "maxDelayMs",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:ResolvedReconnectPolicy",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/connection.ts",
+      "signature": "Readonly<Required<ReconnectConfig>>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "initialDelayMs",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "maxAttempts",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "maxDelayMs",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:StdioConfig",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "StdioConfig",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": [
+        {
+          "name": "args",
+          "signature": "string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "command",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "cwd",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "env",
+          "signature": "Record<string, string>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "failOnStartupError",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "maxInstructionBytes",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "reconnect",
+          "signature": "ReconnectConfig | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "serverName",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "toolCallTimeoutMs",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "transport",
+          "signature": "\"stdio\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:StreamableHttpConfig",
+      "entry": "export:@deepseek-ai/dsh-mcp-client:.",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "StreamableHttpConfig",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Host MCP client bridge for a named external server.",
+      "members": [
+        {
+          "name": "failOnStartupError",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "headers",
+          "signature": "Record<string, string>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "maxInstructionBytes",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "reconnect",
+          "signature": "ReconnectConfig | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "serverName",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "toolCallTimeoutMs",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "transport",
+          "signature": "\"streamable-http\"",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "url",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:DshEnginesManifest",
+      "entry": "export:@deepseek-ai/dsh-package-manifest:.",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "DshEnginesManifest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；公开的 package.json.dsh bundle 与 Profile 类型。",
+      "members": [
+        {
+          "name": "dsh",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "node",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "npm",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:DshManifest",
+      "entry": "export:@deepseek-ai/dsh-package-manifest:.",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "DshManifest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；公开的 package.json.dsh bundle 与 Profile 类型。",
+      "members": [
+        {
+          "name": "bundle",
+          "signature": "DshBundleManifest | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "client",
+          "signature": "DshClientManifest | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "manifestVersion",
+          "signature": "1 | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "profile",
+          "signature": "DshProfileManifest | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:DshPackageManifest",
+      "entry": "export:@deepseek-ai/dsh-package-manifest:.",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "DshPackageManifest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；公开的 package.json.dsh bundle 与 Profile 类型。",
+      "members": [
+        {
+          "name": "dependencies",
+          "signature": "Record<string, string> | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "description",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "dsh",
+          "signature": "DshManifest | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "engines",
+          "signature": "DshEnginesManifest | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "icon",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "peerDependencies",
+          "signature": "Record<string, string> | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "private",
+          "signature": "boolean | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "version",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:LocalizedText",
+      "entry": "export:@deepseek-ai/dsh-package-manifest:.",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "LocalizedText",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；公开的 package.json.dsh bundle 与 Profile 类型。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:PluginLocalizedMeta",
+      "entry": "export:@deepseek-ai/dsh-package-manifest:.",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "PluginLocalizedMeta",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；公开的 package.json.dsh bundle 与 Profile 类型。",
+      "members": [
+        {
+          "name": "description",
+          "signature": "LocalizedText | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "error",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "icon",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "title",
+          "signature": "LocalizedText | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:AUTO_PRESET",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:Config",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "Config",
+      "recommendation": "include",
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "defaultPreset",
+          "signature": "Volatile<string | undefined>",
+          "recommendation": "include"
+        },
+        {
+          "name": "presets",
+          "signature": "Record<string, PresetSpec>",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:CUSTOM_PRESET",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:default",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "PermissionPresetService",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "catalog",
+          "signature": "() => PermissionCatalog",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "current",
+          "signature": "(session: Session) => string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "defaultPreset",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "names",
+          "signature": "readonly string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "optionOf",
+          "signature": "(name: string) => PresetOption",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "registerAuto",
+          "signature": "(admit: () => void) => () => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "resolve",
+          "signature": "(name: string) => PresetSpec",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "set",
+          "signature": "(session: Session, name: string) => void",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:KnobState",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "KnobState",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "approval",
+          "signature": "any",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "preset",
+          "signature": "string | null",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "sandbox",
+          "signature": "any",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:PermissionSettings",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "PermissionSettings",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "defaultPreset",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:./invariant:apply",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:./invariant",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:./invariant:inject",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:./invariant",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:./invariant:name",
+      "entry": "export:@deepseek-ai/dsh-permission-presets:./invariant",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；选择并记录执行权限预设，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+      "signature": "PtcRuntime",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "executionInstructions",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "isolation",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "language",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "resolve",
+          "signature": "(request: PtcRunRequest) => PtcRunSpec",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "run",
+          "signature": "(spec: PtcRunSpec) => Promise<PtcRunResult>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "sandboxMode",
+          "signature": "any",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "timeout",
+          "signature": "{ defaultMs: number; maxMs: number; } | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:DUNDER_MEMBER",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PORTABLE_RESERVED_WORDS",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcBindingErrorClass",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+      "signature": "PtcBindingErrorClass",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "memberNameProperty",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcBindingFunction",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+      "signature": "PtcBindingFunction",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcJsonValue",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+      "signature": "PtcJsonValue",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunFailure",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+      "signature": "PtcRunFailure",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"protocol\" | \"timeout\" | \"abort\" | \"invalid-output\" | \"exception\" | \"worker-exit\" | \"output-limit\" | \"sandbox-unavailable\"",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "message",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+      "signature": "PtcRunSandbox",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "denied",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "enforcement",
+          "signature": "any",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "mode",
+          "signature": "SandboxMode",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:RESERVED_BINDING_GLOBALS",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-ptc-runtime:.:RESERVED_ERROR_MEMBERS",
+      "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "package": "@deepseek-ai/dsh-ptc-runtime",
+      "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；运行带 Host binding 的隔离程序；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-repeat-tool-reminder:.:apply",
+      "entry": "export:@deepseek-ai/dsh-repeat-tool-reminder:.",
+      "package": "@deepseek-ai/dsh-repeat-tool-reminder",
+      "source": "packages/guard/repeat-tool-reminder/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置重复工具调用提醒；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-repeat-tool-reminder:.:name",
+      "entry": "export:@deepseek-ai/dsh-repeat-tool-reminder:.",
+      "package": "@deepseek-ai/dsh-repeat-tool-reminder",
+      "source": "packages/guard/repeat-tool-reminder/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；配置重复工具调用提醒；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:default",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "SessionProjectionRegistry",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": [
+        {
+          "name": "cachedSnapshot",
+          "signature": "(session: Session, keys?: readonly never[] | undefined) => ProjectionSnapshot | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "checkpoint",
+          "signature": "(session: Session) => ProjectionCheckpoint",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "hydrate",
+          "signature": "(session: Session, checkpoint: ProjectionCheckpoint, events: readonly SessionEvent[], baseSeq: SessionLogOffset) => ProjectionSnapshot",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "onChanged",
+          "signature": "(listener: ProjectionChangeListener) => () => void",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "register",
+          "signature": "{ <K extends keyof SessionProjectionMap, S extends SessionProjectionStateMap[K]>(definition: Omit<ProjectionDefinition<K, S>, \"wire\"> & { wire: (K extends never ? { ...; } : never) & {}; }): () => void; <K extends Exclude<keyof SessionProjectionStateMap, keyof SessionProjectionMap>, S extends SessionProjectionStateM...",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "restore",
+          "signature": "(checkpoint: ProjectionCheckpoint, events: readonly SessionEvent[], baseSeq: SessionLogOffset, header: SessionHeader, inheritedEventCount: SessionLogOffset) => { snapshot: ProjectionSnapshot; checkpoint: ProjectionCheckpoint; }",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "restoreFloor",
+          "signature": "(checkpoint: ProjectionCheckpoint) => any",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "snapshot",
+          "signature": "(session: Session, keys?: readonly never[] | undefined) => ProjectionSnapshot",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "stateOf",
+          "signature": "<K extends keyof SessionProjectionStateMap>(session: Session, key: K) => SessionProjectionStateMap[K] | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "viewCheckpoint",
+          "signature": "(checkpoint: ProjectionCheckpoint, keys?: readonly never[] | undefined) => Partial<SessionProjectionMap>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionChangeListener",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionChangeListener",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionCheckpoint",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionCheckpoint",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionCheckpointRow",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionCheckpointRow",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": [
+        {
+          "name": "seq",
+          "signature": "SessionSeqCursor",
+          "recommendation": "include"
+        },
+        {
+          "name": "val",
+          "signature": "unknown",
+          "recommendation": "include"
+        },
+        {
+          "name": "ver",
+          "signature": "number",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionSnapshot",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionSnapshot",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "契约与运行语义",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": [
+        {
+          "name": "asOfSeq",
+          "signature": "SessionSeqCursor",
+          "recommendation": "include"
+        },
+        {
+          "name": "values",
+          "signature": "Partial<SessionProjectionMap>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:SessionProjectionMap",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionMap",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:SessionProjectionStateMap",
+      "entry": "export:@deepseek-ai/dsh-session-projection:.",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionStateMap",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:./types:SessionProjectionMap",
+      "entry": "export:@deepseek-ai/dsh-session-projection:./types",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionMap",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:./types:SessionProjectionStateMap",
+      "entry": "export:@deepseek-ai/dsh-session-projection:./types",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionStateMap",
+      "recommendation": "include",
+      "owner": "references/api-session-projection.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Session projection registry and typed fold/view contract for Host plugin authors.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:.:default",
+      "entry": "export:@deepseek-ai/dsh-settings:.",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/index.ts",
+      "signature": "SettingsForms",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "configure",
+          "signature": "(presentation: { auto?: boolean | undefined; }, owner?: Fiber) => () => void",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "describe",
+          "signature": "(options?: SettingsDescribeOptions | undefined) => SettingsDescriptor[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "documentPath",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "mutate",
+          "signature": "(ns: string, ops: readonly SettingsPathOp[], expectedRevision?: number | undefined) => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "prepareDocument",
+          "signature": "() => Promise<string>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "replace",
+          "signature": "(ns: string, section: object, expectedRevision?: number | undefined) => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "update",
+          "signature": "(ns: string, patch: object, expectedRevision?: number | undefined) => Promise<void>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "writable",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:.:RedactedSecret",
+      "entry": "export:@deepseek-ai/dsh-settings:.",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/redact.ts",
+      "signature": "RedactedSecret",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "path",
+          "signature": "string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "set",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:.:RedactedValue",
+      "entry": "export:@deepseek-ai/dsh-settings:.",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/redact.ts",
+      "signature": "RedactedValue",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "secrets",
+          "signature": "RedactedSecret[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "value",
+          "signature": "unknown",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:.:SettingsDescribeOptions",
+      "entry": "export:@deepseek-ai/dsh-settings:.",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/index.ts",
+      "signature": "SettingsDescribeOptions",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "redactSecrets",
+          "signature": "boolean | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:.:SettingsNamespace",
+      "entry": "export:@deepseek-ai/dsh-settings:.",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/types.ts",
+      "signature": "Branded<\"SettingsNamespace\">",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:./types:SettingsDescribeValue",
+      "entry": "export:@deepseek-ai/dsh-settings:./types",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/types.ts",
+      "signature": "SettingsDescribeValue",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "hasDocument",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "namespaces",
+          "signature": "SettingsNamespaceView[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "writable",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:./types:SettingsNamespace",
+      "entry": "export:@deepseek-ai/dsh-settings:./types",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/types.ts",
+      "signature": "Branded<\"SettingsNamespace\">",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:./types:SettingsPathOpView",
+      "entry": "export:@deepseek-ai/dsh-settings:./types",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/types.ts",
+      "signature": "SettingsPathOpView",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "op",
+          "signature": "\"set\" | \"unset\"",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "path",
+          "signature": "string[]",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-settings:./types:SettingsSecretView",
+      "entry": "export:@deepseek-ai/dsh-settings:./types",
+      "package": "@deepseek-ai/dsh-settings",
+      "source": "packages/settings/settings/src/types.ts",
+      "signature": "SettingsSecretView",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；给插件注册可编辑设置表单，以服务和目标 Session/Client 组合为准。",
+      "members": [
+        {
+          "name": "path",
+          "signature": "string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "set",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-spill:.:default",
+      "entry": "export:@deepseek-ai/dsh-spill:.",
+      "package": "@deepseek-ai/dsh-spill",
+      "source": "packages/spill/spill/src/index.ts",
+      "signature": "SpillStore",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；保存插件的大文本结果并返回持久引用；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "saveText",
+          "signature": "(input: SaveTextSpill) => Promise<SpillRef>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:BackendRegistry",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/registry.ts",
+      "signature": "BackendRegistry",
+      "recommendation": "include",
+      "owner": "references/api-storage-domain.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "get",
+          "signature": "(name: string) => StorageBackend",
+          "recommendation": "include"
+        },
+        {
+          "name": "names",
+          "signature": "() => string[]",
+          "recommendation": "include"
+        },
+        {
+          "name": "register",
+          "signature": "(name: string, backend: StorageBackend) => () => void",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:default",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/index.ts",
+      "signature": "Storage",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "backend",
+          "signature": "BackendRegistry",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "domain",
+          "signature": "never",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "form",
+          "signature": "<K extends keyof StorageForms>(form: K) => StorageForms[K]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "mount",
+          "signature": "<K extends keyof StorageForms>(form: K, facility: StorageForms[K]) => () => void",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:KvFacet",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/backend.ts",
+      "signature": "KvFacet",
+      "recommendation": "include",
+      "owner": "references/api-storage-domain.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "open",
+          "signature": "(descriptor: KvUnitDescriptor) => Promise<KvUnit>",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/backend.ts",
+      "signature": "KvUnit",
+      "recommendation": "include",
+      "owner": "references/api-storage-domain.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "backupRecord",
+          "signature": "((table: string, key: string) => Promise<string>) | undefined",
+          "recommendation": "include"
+        },
+        {
+          "name": "close",
+          "signature": "() => Promise<void>",
+          "recommendation": "include"
+        },
+        {
+          "name": "deleteRecord",
+          "signature": "(table: string, key: string) => Promise<void>",
+          "recommendation": "include"
+        },
+        {
+          "name": "loadAll",
+          "signature": "() => Promise<{ tables: Record<string, Record<string, unknown>>; global: unknown; }>",
+          "recommendation": "include"
+        },
+        {
+          "name": "putRecord",
+          "signature": "(table: string, key: string, value: unknown) => Promise<void>",
+          "recommendation": "include"
+        },
+        {
+          "name": "setGlobal",
+          "signature": "(value: unknown) => Promise<void>",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/backend.ts",
+      "signature": "KvUnitDescriptor",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "compatibleVersions",
+          "signature": "readonly number[] | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "hasGlobal",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "layout",
+          "signature": "\"single\" | \"per-record\" | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "tables",
+          "signature": "readonly string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "version",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:StorageBackend",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/backend.ts",
+      "signature": "StorageBackend",
+      "recommendation": "include",
+      "owner": "references/api-storage-domain.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "close",
+          "signature": "() => Promise<void>",
+          "recommendation": "include"
+        },
+        {
+          "name": "kv",
+          "signature": "KvFacet | undefined",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:storageBackendServiceKey",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Storage hub and named Backend selection for Host plugins.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:StorageError",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/error.ts",
+      "signature": "StorageError",
+      "recommendation": "include",
+      "owner": "references/api-storage-domain.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Storage hub and named Backend selection for Host plugins.",
+      "members": [
+        {
+          "name": "code",
+          "signature": "StorageErrorCode",
+          "recommendation": "include"
+        },
+        {
+          "name": "name",
+          "signature": "\"StorageError\"",
+          "recommendation": "include"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:StorageErrorCode",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/error.ts",
+      "signature": "StorageErrorCode",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Storage hub and named Backend selection for Host plugins.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:StorageForms",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/index.ts",
+      "signature": "StorageForms",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Storage hub and named Backend selection for Host plugins.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-storage:.:UNIT_NAME_RE",
+      "entry": "export:@deepseek-ai/dsh-storage:.",
+      "package": "@deepseek-ai/dsh-storage",
+      "source": "packages/storage/storage/src/backend.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Storage hub and named Backend selection for Host plugins.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:ContextBreakdownProjection",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./client",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/projection.ts",
+      "signature": "ContextBreakdownProjection",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": [
+        {
+          "name": "messageTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "systemTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "toolsTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:ContextPressureProjection",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./client",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/projection.ts",
+      "signature": "ContextPressureProjection",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": [
+        {
+          "name": "contextWindow",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "pressureTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "projectedTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:deriveTurnTokenUsage",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./client",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/turn-usage.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:TokenUsageProjection",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./client",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/projection.ts",
+      "signature": "TokenUsageProjection",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": [
+        {
+          "name": "cacheReadTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "cacheWriteTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "outputTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "uncachedInputTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:TurnTokenUsage",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./client",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/turn-usage.ts",
+      "signature": "TurnTokenUsage",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": [
+        {
+          "name": "cacheReadTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "cacheWriteTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "outputTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "reasoningTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "routes",
+          "signature": "readonly TurnTokenUsageRoute[] | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "totalTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "uncachedInputTokens",
+          "signature": "number",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:TurnTokenUsageRoute",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./client",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/turn-usage.ts",
+      "signature": "TurnTokenUsageRoute",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": [
+        {
+          "name": "model",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "provider",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateContent",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./estimate",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateMessage",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./estimate",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateStructuralBlock",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./estimate",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateSystemMessage",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./estimate",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateToolsTokens",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./estimate",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:ROLE_OVERHEAD",
+      "entry": "export:@deepseek-ai/dsh-token-meter:./estimate",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；在插件中读取 Session Token 压力；入口与边界见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.:apply",
+      "entry": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.",
+      "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "source": "packages/guard/timeout-policy/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；启用工具协作式超时策略；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.:inject",
+      "entry": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.",
+      "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "source": "packages/guard/timeout-policy/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；启用工具协作式超时策略；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.:name",
+      "entry": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.",
+      "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "source": "packages/guard/timeout-policy/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "两个桥接器",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；启用工具协作式超时策略；精确配置/运行限制见权威正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./invariant:apply",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./invariant",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./invariant:inject",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./invariant",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./invariant:name",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./invariant",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:Config",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "Config",
+      "recommendation": "include",
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": [
+        {
+          "name": "allowedModels",
+          "signature": "Volatile<AllowedModelRoute[]>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "enabled",
+          "signature": "Volatile<boolean>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:default",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "SubagentModelSelectionConfig",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": [
+        {
+          "name": "current",
+          "signature": "() => SubagentModelSelectionSettings",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:name",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:SubagentModelSelectionConfig",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "SubagentModelSelectionConfig",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": [
+        {
+          "name": "current",
+          "signature": "() => SubagentModelSelectionSettings",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:SubagentModelSelectionSettings",
+      "entry": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "SubagentModelSelectionSettings",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Model-facing adapter binding a Provider to a tool with depth and background modes.",
+      "members": [
+        {
+          "name": "allowedModels",
+          "signature": "AllowedModelRoute[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "enabled",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:apply",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:.",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-planning.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Todo snapshot model tool and projection.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:Config",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:.",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "Config",
+      "recommendation": "include",
+      "owner": "references/api-planning.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Todo snapshot model tool and projection.",
+      "members": [
+        {
+          "name": "allowParallelInProgress",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:inject",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:.",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Todo snapshot model tool and projection.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:name",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:.",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Todo snapshot model tool and projection.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./client:TodoItem",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:./client",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/types.ts",
+      "signature": "TodoItem",
+      "recommendation": "include",
+      "owner": "references/api-planning.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Todo snapshot model tool and projection.",
+      "members": [
+        {
+          "name": "content",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "status",
+          "signature": "\"pending\" | \"completed\" | \"in_progress\"",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./invariant:apply",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:./invariant",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-planning.md",
+      "section": "适用范围与入口",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；Todo snapshot model tool and projection.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./invariant:inject",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:./invariant",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Todo snapshot model tool and projection.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./invariant:name",
+      "entry": "export:@deepseek-ai/dsh-tool-todo:./invariant",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Todo snapshot model tool and projection.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:default",
+      "entry": "export:@deepseek-ai/dsh-web:.",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/index.ts",
+      "signature": "WebRuntime",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Web search/fetch provider 注册、选择和工具结果；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "fetch",
+          "signature": "(request: WebFetchRequest, signal?: AbortSignal | undefined) => Promise<WebFetchResult>",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "registerFetchProvider",
+          "signature": "(provider: WebFetchProvider) => () => void",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "registerSearchProvider",
+          "signature": "(provider: WebSearchProvider) => () => void",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "search",
+          "signature": "(request: WebSearchRequest, signal?: AbortSignal | undefined) => Promise<WebSearchResult>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebFetchRequest",
+      "entry": "export:@deepseek-ai/dsh-web:.",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebFetchRequest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Web search/fetch provider 注册、选择和工具结果；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "url",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebFetchResult",
+      "entry": "export:@deepseek-ai/dsh-web:.",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebFetchResult",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Web search/fetch provider 注册、选择和工具结果；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "body",
+          "signature": "WebFetchBody",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "statusCode",
+          "signature": "number",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "url",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebSearchRequest",
+      "entry": "export:@deepseek-ai/dsh-web:.",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebSearchRequest",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Web search/fetch provider 注册、选择和工具结果；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "maxResults",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "query",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebSearchResult",
+      "entry": "export:@deepseek-ai/dsh-web:.",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebSearchResult",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；Web search/fetch provider 注册、选择和工具结果；见目标源码和独立核查记录。",
+      "members": [
+        {
+          "name": "content",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "sources",
+          "signature": "readonly WebSearchSource[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:default",
+      "entry": "export:@deepseek-ai/dsh-webhook:.",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/index.ts",
+      "signature": "WebhookRuntime",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "dispatch",
+          "signature": "<K extends string>(delivery: VerifiedWebhookDelivery<K>) => void",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "register",
+          "signature": "<K extends string>(rule: WebhookRule<K>) => () => Promise<void>",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookDeliveryId",
+      "entry": "export:@deepseek-ai/dsh-webhook:.",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/brand.ts",
+      "signature": "Branded<\"WebhookDeliveryId\">",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookEventOf",
+      "entry": "export:@deepseek-ai/dsh-webhook:.",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookEventOf<K>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookModelSelection",
+      "entry": "export:@deepseek-ai/dsh-webhook:.",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookModelSelection",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "maxTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "model",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "provider",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookSourceId",
+      "entry": "export:@deepseek-ai/dsh-webhook:.",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/brand.ts",
+      "signature": "Branded<\"WebhookSourceId\">",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./invariant:apply",
+      "entry": "export:@deepseek-ai/dsh-webhook:./invariant",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./invariant:inject",
+      "entry": "export:@deepseek-ai/dsh-webhook:./invariant",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./invariant:name",
+      "entry": "export:@deepseek-ai/dsh-webhook:./invariant",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/invariant.ts",
+      "signature": "any",
+      "recommendation": "include",
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "reason": "对象在目标源码与该插件任务的权威正文均有具体归属；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./types:WebhookEventOf",
+      "entry": "export:@deepseek-ai/dsh-webhook:./types",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookEventOf<K>",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./types:WebhookModelSelection",
+      "entry": "export:@deepseek-ai/dsh-webhook:./types",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookModelSelection",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；从已验证 GitHub Webhook 事件请求创建 Session；具体契约及验证边界见正文。",
+      "members": [
+        {
+          "name": "maxTokens",
+          "signature": "number | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "model",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "provider",
+          "signature": "string",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:homePatchPath",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:initializeProfileFromDefault",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:INSTALL_ANCHOR",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:prepareProfile",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:PROFILE_ROOT_FILENAME",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:ResolvedProfileRuntime",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "ResolvedProfileRuntime",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": [
+        {
+          "name": "installAnchor",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "profile",
+          "signature": "Profile",
+          "recommendation": "exclude"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:runProfile",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:RunProfileOptions",
+      "entry": "export:@deepseek-ai/dsh:./profile-boot",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "RunProfileOptions",
+      "recommendation": "exclude",
+      "owner": null,
+      "section": null,
+      "reason": "未用于此包已验证的插件任务；发布的 dsh CLI 提供 Profile 启动、插件包操作和组合检查。",
+      "members": [
+        {
+          "name": "args",
+          "signature": "readonly string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "environment",
+          "signature": "LaunchEnvironmentSnapshot",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "fromDefaultProfile",
+          "signature": "string | undefined",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "packageManager",
+          "signature": "any",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "patchFiles",
+          "signature": "readonly string[]",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "profile",
+          "signature": "string",
+          "recommendation": "exclude"
+        },
+        {
+          "name": "resolvedProfile",
+          "signature": "ResolvedProfileRuntime | undefined",
+          "recommendation": "exclude"
+        }
+      ]
+    }
+  ]
+}

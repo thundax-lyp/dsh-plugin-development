@@ -1,5 +1,5 @@
 {
-    "name": "dsh-plugin-development-skill",
+    "name": "create-dsh-plugin-development-skill",
     "private": true,
     "packageManager": "pnpm@11.24.0",
     "scripts": {
@@ -7,9 +7,10 @@
         "format:check": "prettier --check .",
         "verify:skill": "python3 scripts/validate_skill.py",
         "verify:examples": "node scripts/check_examples.cjs",
-        "test:validation": "python3 -B -m unittest discover -s scripts -p \"test_*.py\""
+        "test:validation": "python3 -B -m unittest discover -s scripts -p \"test_*.py\" && node --test .agents/skills/create-dsh-skill/tests/*.test.mjs"
     },
     "devDependencies": {
-        "prettier": "3.9.6"
+        "prettier": "3.9.6",
+        "typescript": "6.0.3"
     }
 }

@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "target": {
+    "tag": "dsh-v0.2.0-rc.1",
+    "commit": "4878cdabd87d4041bdaff61d04c966883b9fd07a"
+  },
+  "scope": "All pending members of included InputTriggerController and SlotRegistry objects; independent recommendation, shared api-surface unchanged",
+  "rows": [
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "adjudicate",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Conversation submit pipeline owns whole-line command/trigger adjudication and its SubmitEnvelope.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "arbitrate",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Conversation editor keymap owns keyboard arbitration and IME state; source plugins register candidates instead.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "dismiss",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "A custom menu view can close and remember the current hit after an explicit dismiss gesture.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "dispose",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Session scope service owns controller disposal; callers must release their own registrations, not destroy the shared controller.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "headers",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Per-source crumb SnapshotStore for a custom menu header.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "hover",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "A custom menu view can sync pointer hover with the controller highlight.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "launcher",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Programmatic launcher source SnapshotStore; a custom input chrome can reflect expanded state.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "menu",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Session menu SnapshotStore; a custom menu view can subscribe without duplicating authority.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "onSpace",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Conversation input facade owns leading-token Space adjudication and submit state.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "pickCrumb",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "A custom menu view can route a crumb through the same drill/pick pipeline.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "refreshOpenMenu",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Root service refreshes live controllers after provider invalidation; sources have their own registration/invalidation path.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "serializeReference",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Conversation submission pipeline serializes structured references with the attempt signal.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "sourceAdded",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Root InputTriggerService calls this when its source roster changes; direct calls desynchronize roster and controller.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "sourceRemoved",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Root InputTriggerService calls this during source withdrawal; direct calls desynchronize roster and controller.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "toggleSource",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "A custom launcher can open one registered source with a current synthetic TriggerHit and draft revision.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerController",
+      "object": "InputTriggerController",
+      "member": "track",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Conversation input facade owns draft/caret/revision tracking; a source plugin has no independent draft authority.",
+      "source": "packages/client/ui-input-trigger/src/client/controller.ts",
+      "owner": "references/api-client-input-trigger.md",
+      "section": "公开对象与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "bindStoreScope",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Session/scope infrastructure binds Context generation and releases store instances; direct calls can invalidate another owner.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "entries",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Read-only registered-entry inspection, including shadowed entries.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "entriesOfSlot",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Read-only winning entry per cell; useful for diagnostics, with fresh array per call.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "getVersion",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Version counter pairs with subscribe for a stable external-store observer.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "inject",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Declaration-lifetime contribution registration; waits for owner and disposes with the caller fiber.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "install",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Shell boot installs the one renderer; a content plugin must not replace the root renderer.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "installLocale",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Locale integration owns the single locale face; reinstallation conflicts with the composed Client.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "installScope",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Scope adapter owner installs strict scope bindings; ordinary entries consume the supplied scope.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "onEntryError",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Error supervision observer for entry and Factory occurrence failure; caller owns unsubscribe.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "provideRoot",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Domain plugin can contribute root standard sources with disposer, as resources does.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "register",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Ordinary plugin content registration; effect-owned disposer and unload cascade are the primary slot task.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "registerFactory",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Reusable Factory component definition is a public plugin registration point.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "renderSlot",
+      "currentDecision": "pending",
+      "decision": "excluded",
+      "reason": "Only shell root rendering is permitted at service level; child slots render through component props.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "snapshot",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "JSON-safe declaration-tree inspection for plugin diagnostics.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "spec",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Read-only declared SlotMap spec inspection for adaptive composition.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    },
+    {
+      "objectId": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+      "object": "SlotRegistry",
+      "member": "subscribe",
+      "currentDecision": "pending",
+      "decision": "included",
+      "reason": "Key-scoped registration-change subscription; caller owns returned unsubscribe.",
+      "source": "packages/client/ui-renderer/src/client/registry.ts",
+      "owner": "references/api-client-slots.md",
+      "section": "对象类型与成员"
+    }
+  ]
+}

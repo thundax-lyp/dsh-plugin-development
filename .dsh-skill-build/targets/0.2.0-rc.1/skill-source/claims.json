@@ -1,0 +1,3578 @@
+[
+  {
+    "id": "tool-registration-and-result",
+    "kind": "implemented-behavior",
+    "topic": "tools",
+    "decision": "accepted",
+    "owner": "references/api-tools.md",
+    "summary": "ToolRuntime registers scoped tools; defineTool validates arguments and canonical output, and pure render projects the value for model content.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/schema.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/core/tools/tests/tools.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "tool-profile-composition",
+    "kind": "implemented-behavior",
+    "topic": "tools",
+    "decision": "accepted",
+    "owner": "references/how-to-register-model-tool.md",
+    "summary": "A dsh.bundle patch can mount an installable tool plugin in a named Profile through the dsh plugin CLI.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "apps/cli/src/profile-boot.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/plugin-manager/src/operations.ts"
+      },
+      {
+        "category": "documentation",
+        "path": "docs/user/develop/basic/publish.md"
+      }
+    ]
+  },
+  {
+    "id": "profile-bundle-layers",
+    "kind": "implemented-behavior",
+    "topic": "profile-bundle",
+    "decision": "accepted",
+    "owner": "references/api-profile-bundle.md",
+    "summary": "Bundle patch paths and named Profile bundle selection compose an ordered plugin tree through the published dsh CLI.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/package-manifest/src/types.ts"
+      },
+      {
+        "category": "exports",
+        "path": "apps/cli/package.json"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/profile.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "apps/cli/src/profile-boot.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/app-boot/tests/profile.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "cordis-plugin-service-fiber-contract",
+    "kind": "implemented-behavior",
+    "topic": "cordis-core",
+    "decision": "accepted",
+    "owner": "references/api-cordis-core.md",
+    "summary": "Cordis Context plugins declare injected services, provide fiber-owned services and effects, and expose awaitable fiber startup and disposal.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "vendor/cordis/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "vendor/cordis/src/registry.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "vendor/cordis/src/context.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/cordis/src/reflect.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/cordis/src/fiber.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/cordis/src/service.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/cordis/src/events.ts"
+      }
+    ]
+  },
+  {
+    "id": "cordis-fiber-owned-timer",
+    "kind": "implemented-behavior",
+    "topic": "timer",
+    "decision": "accepted",
+    "owner": "references/api-timer.md",
+    "summary": "TimerService mixes fiber-owned timeout, interval, throttle and debounce into Context; legacy setTimeout/setInterval are deprecated.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "vendor/timer/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "vendor/timer/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/timer/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/base/cordis.patch.yml"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/sdk-minimal/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "loader-entry-patch-and-group-composition",
+    "kind": "implemented-behavior",
+    "topic": "loader-composition",
+    "decision": "accepted",
+    "owner": "references/api-loader-composition.md",
+    "summary": "Loader imports configured plugin rows, Include applies ordered detached patches and file-backed trees, and Group nests child rows under DSH Host builtins.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "vendor/loader/package.json"
+      },
+      {
+        "category": "exports",
+        "path": "vendor/include/package.json"
+      },
+      {
+        "category": "exports",
+        "path": "vendor/group/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "vendor/loader/src/config/entry.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "vendor/include/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/loader/src/config/group.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/loader/src/config/tree.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/app-boot/tests/config-dump.spec.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/app-boot/tests/config-reload.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "group-overlay-task-path",
+    "kind": "derived-guidance",
+    "topic": "loader-composition",
+    "decision": "accepted",
+    "owner": "references/how-to-nest-plugin-under-group.md",
+    "summary": "A later Profile patch can disable an existing plugin row and insert a cordis:group carrying the same installed plugin as a nested row.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "vendor/loader/src/config/entry.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/loader/src/config/group.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/include/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "plugin-author-terminology",
+    "kind": "derived-guidance",
+    "topic": "cordis-core",
+    "decision": "accepted",
+    "owner": "references/terminology.md",
+    "summary": "The glossary distinguishes Host plugin fibers, services, bundles, Profiles, Loader entries and canonical tool results using target-source ownership boundaries.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "vendor/cordis/src/registry.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/cordis/src/fiber.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/util/package-manifest/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/profile.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "host-hmr-profile-and-module-reload",
+    "kind": "implemented-behavior",
+    "topic": "host-hmr",
+    "decision": "accepted",
+    "owner": "references/api-host-hmr.md",
+    "summary": "DSH base Profile owns an HMR service with config-only default; enabled module roots and profile patch watches enter one serialized queue.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/boot/hmr/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/boot/hmr/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/hmr/src/watch-config.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/base/cordis.patch.yml"
+      },
+      {
+        "category": "tests",
+        "path": "apps/cli/tests/profile-hmr.spec.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/hmr/tests/watch-config.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-hmr-graph-and-rebuilt-transport",
+    "kind": "implemented-behavior",
+    "topic": "client-hmr",
+    "decision": "accepted",
+    "owner": "references/api-client-hmr.md",
+    "summary": "Web Client HMR has a Host stat-poll and SSE transport plus browser entry reconciliation through Client Modules.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/client/hmr/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/hmr/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/hmr/src/client/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/hmr/src/events.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/web-app/cordis.patch.yml"
+      },
+      {
+        "category": "tests",
+        "path": "packages/client/hmr/tests/node-half.client.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "remote-api-typed-cross-side-contract",
+    "kind": "implemented-behavior",
+    "topic": "remote-api",
+    "decision": "accepted",
+    "owner": "references/api-remote-api.md",
+    "summary": "Host Typert Remote declarations require generated descriptors and explicit Client assembly selection; Gateway dispatches through Connection with typed RemoteResult failures.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/typert/protocol/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/typert/protocol/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/typert/protocol/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/gateway/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/gateway/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/remotes/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/typert/generator/src/workspace.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/api/gateway/tests/gateway.host.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-event-and-model-surface",
+    "kind": "implemented-behavior",
+    "topic": "session-log",
+    "decision": "accepted",
+    "owner": "references/api-session-log.md",
+    "summary": "Session append accepts lossless event facts while only supported surface events and registered message projections contribute model-visible history.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/core/session/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/core/session/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/session/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/session/src/surface.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-persistence-handle-and-flush",
+    "kind": "implemented-behavior",
+    "topic": "session-persistence",
+    "decision": "accepted",
+    "owner": "references/api-session-persistence.md",
+    "summary": "Persistence service and handle separate append visibility, writer ownership and flush durability; read handles are independent of the writer lease.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/session/session-persistence/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/session/session-persistence/src/handle.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/session/session-persistence/tests/contract.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/session/session-persistence-jsonl/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "agent-loop-session-writer-ownership",
+    "kind": "implemented-behavior",
+    "topic": "session-persistence",
+    "decision": "accepted",
+    "owner": "references/api-session-persistence.md",
+    "summary": "Agent loop owns persistent write handles for Agent sessions and closes interrupted turns on resume after obtaining write ownership.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/core/agent-loop/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/core/agent/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/session/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "plugin-fact-event-folding-guidance",
+    "kind": "derived-guidance",
+    "topic": "session-log",
+    "decision": "accepted",
+    "owner": "references/how-to-rebuild-plugin-fact-from-session.md",
+    "summary": "Plugin event facts can be folded by event type and sequence; crash durability requires the owner persistence flush and restoration of the same interpreter.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/session/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/session/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/session/session-persistence/src/handle.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-module-web-bundle-contract",
+    "kind": "implemented-behavior",
+    "topic": "client-modules",
+    "decision": "accepted",
+    "owner": "references/api-client-modules.md",
+    "summary": "A web Client half attaches to a bare package Loader row with dsh.client.platform web and an exported built ./client registration factory; its graph and browser fiber are distinct from Host installation.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/package-manifest/src/types.ts"
+      },
+      {
+        "category": "exports",
+        "path": "packages/client/modules/package.json"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/modules/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/modules/src/client/system.ts"
+      },
+      {
+        "category": "tests",
+        "path": "apps/web/tests/client-plugin-live.e2e.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-module-bundle-format-guidance",
+    "kind": "derived-guidance",
+    "topic": "client-modules",
+    "decision": "accepted",
+    "owner": "references/how-to-build-and-load-web-client-plugin.md",
+    "summary": "Independent Client plugin packages must publish a lazy factory script satisfying the public registration protocol; the repository-local clientBundle build preset is not a published package API.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/modules/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/tsdown.client.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/modules/src/client/entries.ts"
+      }
+    ]
+  },
+  {
+    "id": "plugin-manager-profile-change-contract",
+    "kind": "implemented-behavior",
+    "topic": "plugin-manager",
+    "decision": "accepted",
+    "owner": "references/api-plugin-manager.md",
+    "summary": "PluginManager reads and changes current Profile rows and bundle selections, returning persisted-change and runtime-application outcomes separately; cancellation and failed operations can leave partial state requiring readback.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/boot/plugin-manager/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/boot/plugin-manager/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/boot/plugin-manager/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/plugin-manager/src/operations.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/plugin-manager/tests/manager.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "plugin-manager-tool-escalation",
+    "kind": "implemented-behavior",
+    "topic": "plugin-manager",
+    "decision": "accepted",
+    "owner": "references/api-plugin-manager.md",
+    "summary": "The plugin_manager model tool checks permission escalation for each action, while build-script and exact-version compatibility approvals are separate decisions.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/boot/plugin-manager/src/tools.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/plugin-compatibility.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/plugin-manager/tests/tools.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "remote-api-assembly-guidance",
+    "kind": "derived-guidance",
+    "topic": "remote-api",
+    "decision": "accepted",
+    "owner": "references/how-to-add-remote-api.md",
+    "summary": "A custom Remote task composes Host Remote service declaration, generated Typert descriptors, explicit Client contribution assembly, Host gateway and Client call; the draft task still requires independent generated declaration and browser verification.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/typert/protocol/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/typert/generator/src/workspace.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/gateway/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/remotes/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "profile-bundle-management-guidance",
+    "kind": "derived-guidance",
+    "topic": "plugin-manager",
+    "decision": "accepted",
+    "owner": "references/how-to-manage-profile-bundles.md",
+    "summary": "Installing and changing a bundle requires a published patch, Profile package operation, readback of saved selection and Loader rows, and an actual runtime observation after restart when required.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/boot/plugin-manager/src/operations.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/profile.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "apps/cli/src/plugin.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-plugin-assembly-guidance",
+    "kind": "derived-guidance",
+    "topic": "client-modules",
+    "decision": "accepted",
+    "owner": "references/how-to-build-and-load-web-client-plugin.md",
+    "summary": "A minimal independent Client package publishes a Host entry, Web manifest, bare-name patch row and registration factory; a Web Profile and browser observation are required to confirm activation and cleanup.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/package-manifest/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/modules/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "apps/web/tests/client-plugin-live.e2e.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-slot-scoped-registration",
+    "kind": "implemented-behavior",
+    "topic": "client-slots",
+    "decision": "accepted",
+    "owner": "references/api-client-slots.md",
+    "summary": "Client slot declarations define cardinality and scope; SlotRegistry registration and inject contributions are owned by caller fiber and disposed with parent declarations.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/client/ui-slots/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-slots/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-renderer/src/client/registry.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/client/ui-renderer/tests/registry.client.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-resource-provider-lifetime",
+    "kind": "implemented-behavior",
+    "topic": "client-resources",
+    "decision": "accepted",
+    "owner": "references/api-client-resources.md",
+    "summary": "Client resources route address protocols to a single provider, hold one stream while subscribers or pins exist, and abort it when the last holder leaves.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/client/resources/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/resources/src/client/contract.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/resources/src/client/resources.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/client/resources/tests/resources.client.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "credentials-reference-and-record-separation",
+    "kind": "implemented-behavior",
+    "topic": "credentials",
+    "decision": "accepted",
+    "owner": "references/api-credentials.md",
+    "summary": "Credential refs resolve layered env-name values while owner-scoped record keys use explicit record operations; local provider validates file permissions and commits before update events.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/credentials/credentials/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/credentials/credentials/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/credentials/credentials-local/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "authorization-flow-commit-and-cancellation",
+    "kind": "implemented-behavior",
+    "topic": "authorization",
+    "decision": "accepted",
+    "owner": "references/api-authorization.md",
+    "summary": "Authorization flows have unique owner keys, one attempt per key, cancellation and prompt outcomes, and only report authorized after observing a credential record commit.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/credentials/authorization/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/credentials/authorization/tests/authorization.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "authorization-consumer-assembly-guidance",
+    "kind": "derived-guidance",
+    "topic": "authorization",
+    "decision": "accepted",
+    "owner": "references/how-to-register-authorization-flow.md",
+    "summary": "A Host bundle can register a scoped authorization flow, prompt for a secret and commit a record, then verify saved state and cleanup in a real Profile.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/credentials/authorization/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/credentials/credentials-local/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/base/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "settings-volatile-config-and-revision",
+    "kind": "implemented-behavior",
+    "topic": "settings",
+    "decision": "accepted",
+    "owner": "references/api-settings.md",
+    "summary": "SettingsForms edits volatile Config fields through validated JSON and revision checks; Client wire reads are redacted while Host describe can be unredacted.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/settings/settings/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/settings/settings/src/redact.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/settings/settings/src/schema.ts"
+      }
+    ]
+  },
+  {
+    "id": "permission-preset-session-intent",
+    "kind": "implemented-behavior",
+    "topic": "permission-presets",
+    "decision": "accepted",
+    "owner": "references/api-permission-presets.md",
+    "summary": "Permission preset selection records intent in Session and applies sandbox and approval knobs through their owning setters; custom is derived and auto requires a fixed live integration.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/interaction/permission-presets/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/interaction/permission-presets/src/types.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/interaction/permission-presets/tests/permission-presets.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "plugin-secrets-permissions-composition-guidance",
+    "kind": "derived-guidance",
+    "topic": "credentials",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-plugin-secrets-and-permissions.md",
+    "summary": "A plugin should separate secret references or record ownership, editable settings and execution permission selection when those capabilities are needed; the combined task is a draft pending independent consumer validation.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/credentials/credentials/src/types.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/settings/settings/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/interaction/permission-presets/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-query-derived-index-and-auth-boundary",
+    "kind": "implemented-behavior",
+    "topic": "session-query",
+    "decision": "accepted",
+    "owner": "references/api-session-query.md",
+    "summary": "SessionQueryEngine offers trusted exact reads and optional SQLite search; search index is derived, openAt never disables search, and direct service calls do not authorize callers.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/session-query/session-query/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/session-query/session-query-sqlite/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/base/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "session-query-model-tool-configuration-guidance",
+    "kind": "derived-guidance",
+    "topic": "session-query",
+    "decision": "accepted",
+    "owner": "references/how-to-query-session-history.md",
+    "summary": "To give Agent history search, explicitly enable a SQLite FTS index and mount the optional session query model tool; confirm exact cwd authorization and real Profile behavior.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/session-query/tool-session-query/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/session-query/tool-session-query/src/workspace-access.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/session-query/session-query-sqlite/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "subagent-provider-publication-ownership",
+    "kind": "implemented-behavior",
+    "topic": "subagent-provider",
+    "decision": "accepted",
+    "owner": "references/api-subagent-provider.md",
+    "summary": "SubagentRuntime registers named Providers and separates prepublication cleanup from caller-owned runs, while continuable children require distinct durable identity and inbox handling.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/subagent/subagent/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/subagent/subagent/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/subagent/subagent/src/continuation.ts"
+      }
+    ]
+  },
+  {
+    "id": "acp-subagent-one-shot-capability",
+    "kind": "implemented-behavior",
+    "topic": "subagent-acp",
+    "decision": "accepted",
+    "owner": "references/api-subagent-acp.md",
+    "summary": "ACP subprocess Provider advertises no optional one-shot capabilities, has no continuable creation, and owns child process startup and teardown for each run.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/subagent/subagent-acp/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/subagent/subagent-acp/src/run.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/subagent/subagent-acp/tests/subagent-acp.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "subagent-model-tool-adapter",
+    "kind": "implemented-behavior",
+    "topic": "subagent-tools",
+    "decision": "accepted",
+    "owner": "references/api-subagent-tools.md",
+    "summary": "Tool adapter mounts model-visible delegation only while its selected Provider exists, validates capability and depth settings, and releases foreground one-shot runs after result.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/subagent/tool-subagent/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/subagent/tool-subagent/tests/tool-subagent.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "acp-profile-delegation-configuration-guidance",
+    "kind": "derived-guidance",
+    "topic": "subagent-acp",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-acp-delegation.md",
+    "summary": "A Profile can combine the subprocess ACP Provider with a model tool using provider-managed depth and a separately configured child ACP server, subject to real handshake verification.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/subagent/subagent-acp/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/subagent/tool-subagent/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/acp-app/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "llm-adapter-registration-and-stream-contract",
+    "kind": "implemented-behavior",
+    "topic": "llm-providers",
+    "decision": "accepted",
+    "owner": "references/api-llm-providers.md",
+    "summary": "LlmRuntime binds provider routes atomically to adapters, keeps catalog and prepared call generation separate, and consumes ordered streaming chunks and explicit failure reasons.",
+    "evidence": [
+      {
+        "category": "exports",
+        "path": "packages/llm/llm/package.json"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm/src/types.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/llm/llm/tests/topology.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "llm-adapter-consumer-guidance",
+    "kind": "derived-guidance",
+    "topic": "llm-providers",
+    "decision": "accepted",
+    "owner": "references/how-to-add-llm-adapter.md",
+    "summary": "An independent Host bundle can register a route and model catalog, emit canonical chunks and clean up its registration; the fixed-text fixture refuses real Agent requests.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/base/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "agent-model-selection-session-fact",
+    "kind": "implemented-behavior",
+    "topic": "llm-model-routing",
+    "decision": "accepted",
+    "owner": "references/api-llm-model-routing.md",
+    "summary": "Agent model selection snapshots a route for prompt assembly and request headers, while Session Controller validates catalog membership and records selection intent in Session events.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/agent/src/model-selection.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/agent-default-model/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/session-controller/src/model-selection-projection.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/session-controller/src/commands.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-model-selection-guidance",
+    "kind": "derived-guidance",
+    "topic": "llm-model-routing",
+    "decision": "accepted",
+    "owner": "references/how-to-select-model-for-session.md",
+    "summary": "A selectable adapter needs a current model catalog and Session Controller call, followed by actual Agent request and replay checks; the fixed-text fixture is insufficient for that end-to-end test.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/api/session-controller/src/catalog.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/api/session-controller/src/commands.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/core/agent/src/model-selection.ts"
+      }
+    ]
+  },
+  {
+    "id": "host-hmr-profile-task-guidance",
+    "kind": "derived-guidance",
+    "topic": "host-hmr",
+    "decision": "accepted",
+    "owner": "references/how-to-enable-host-hmr.md",
+    "summary": "Inspect the final Profile hmr row, apply owned patch and module changes, and check old fiber disposal and new behavior; module replacement remains unverified in this run.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/boot/hmr/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/hmr/src/watch-config.ts"
+      }
+    ]
+  },
+  {
+    "id": "client-hmr-reload-task-guidance",
+    "kind": "derived-guidance",
+    "topic": "client-hmr",
+    "decision": "accepted",
+    "owner": "references/how-to-observe-client-plugin-reload.md",
+    "summary": "Rebuild an installed Client bundle, observe rebuilt graph delivery and browser fiber replacement, then verify disposal; real rebuild replacement remains unverified in this run.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/hmr/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/hmr/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-projection-registry",
+    "kind": "implemented-behavior",
+    "topic": "session-projection",
+    "decision": "accepted",
+    "owner": "references/api-session-projection.md",
+    "summary": "Session projection folds committed Session events into registered state and optional wire views; cache is derived and version-bound.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/session/session-projection/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/session/session-projection/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/session/session-projection-cache/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-projection-task",
+    "kind": "derived-guidance",
+    "topic": "session-projection",
+    "decision": "accepted",
+    "owner": "references/how-to-register-session-projection.md",
+    "summary": "A Host plugin can register a pure projection and validate append/snapshot behavior; cache cold restore and Profile unload are still unverified.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/session/session-projection/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/session/session-projection-cache/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "storage-domain-kv",
+    "kind": "implemented-behavior",
+    "topic": "storage-domain",
+    "decision": "accepted",
+    "owner": "references/api-storage-domain.md",
+    "summary": "Storage hub selects a Backend; domain KV serializes durable writes before memory update and emits post-commit domain/changed.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/storage/storage/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/storage/storage-domain/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/storage/storage-json/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "storage-domain-task",
+    "kind": "derived-guidance",
+    "topic": "storage-domain",
+    "decision": "accepted",
+    "owner": "references/how-to-persist-domain-records.md",
+    "summary": "A Host plugin can mount JSON Backend and typed domain KV, then verify close/reopen, update, delete, and event order; SQLite remains separately unverified.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/storage/storage-domain/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/storage/storage-json/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "webserver-route-contract",
+    "kind": "implemented-behavior",
+    "topic": "web-ingress",
+    "decision": "accepted",
+    "owner": "references/api-web-ingress.md",
+    "summary": "WebServer owns first exact and then prefix HTTP/upgrade routes, a single fallback seat, index taps, and fiber scoped registration; raw handlers own method/body/response.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/host/webserver/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/host/webserver/src/injections.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/host/webserver/tests/webserver.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "connection-admission-contract",
+    "kind": "implemented-behavior",
+    "topic": "client-connection",
+    "decision": "accepted",
+    "owner": "references/api-client-connection.md",
+    "summary": "Host Connection supplies admitted /api request waterfall and Fetch/RPC seats; Client service owns generation and recovery observations.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/connection/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/connection/src/rpc.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/connection/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/connection/src/browser-auth.ts"
+      }
+    ]
+  },
+  {
+    "id": "authenticated-route-task",
+    "kind": "derived-guidance",
+    "topic": "web-ingress",
+    "decision": "accepted",
+    "owner": "references/how-to-register-authenticated-http-route.md",
+    "summary": "A Web Profile plugin can register a route and call Connection admission before responding; isolated published-package smoke covered auth, request rejection, and fiber unload.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/host/webserver/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/connection/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/web-app/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "jobs-service-contract",
+    "kind": "implemented-behavior",
+    "topic": "jobs",
+    "decision": "accepted",
+    "owner": "references/api-jobs.md",
+    "summary": "Jobs service defines owner scoped producer registration and output, while jobs-local implements process-local execution and tool-jobs exposes model controls.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/jobs/jobs/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/jobs/jobs-local/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/jobs/tool-jobs/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "schedule-service-contract",
+    "kind": "implemented-behavior",
+    "topic": "schedule",
+    "decision": "accepted",
+    "owner": "references/api-schedule.md",
+    "summary": "Schedule service persists exact-Session tasks, delivers due work to Agent and flushes Session before task advancement; enqueue and task write are not atomic.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/schedule/schedule/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/schedule/schedule/src/runtime.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/schedule/schedule/src/storage.ts"
+      }
+    ]
+  },
+  {
+    "id": "plan-todo-contract",
+    "kind": "implemented-behavior",
+    "topic": "planning",
+    "decision": "accepted",
+    "owner": "references/api-planning.md",
+    "summary": "Plan mode records immediate or next-step transitions; Todo tool writes complete list snapshots and projection clears at the next turn start.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/plan/plan-mode/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/todo/tool-todo/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "sdk-client-process-contract",
+    "kind": "implemented-behavior",
+    "topic": "sdk-runtime",
+    "decision": "accepted",
+    "owner": "references/api-sdk-runtime.md",
+    "summary": "External SDK client owns a same-version CLI child process and JSON-RPC session lifecycle; server and protocol packages are composition dependencies.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/sdk/client/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/sdk/client/src/client.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/sdk/server/src/server.ts"
+      }
+    ]
+  },
+  {
+    "id": "sdk-profile-task",
+    "kind": "derived-guidance",
+    "topic": "sdk-runtime",
+    "decision": "accepted",
+    "owner": "references/how-to-run-sdk-profile.md",
+    "summary": "An independent TypeScript caller can initialize, run and close an SDK session; isolated fake peer smoke covered handshake and event flow, not model/Profile behavior.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/sdk/client/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/sdk/client/src/launch.ts"
+      }
+    ]
+  },
+  {
+    "id": "mcp-client-bridge-contract",
+    "kind": "implemented-behavior",
+    "topic": "mcp-client",
+    "decision": "accepted",
+    "owner": "references/api-mcp-client.md",
+    "summary": "MCP client instances own one server namespace, scoped discovered tools and optional resources; fiber disposal removes registrations.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/mcp/mcp-client/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/mcp/mcp-client/src/connection.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/mcp/mcp-resources/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "mcp-server-connect-task",
+    "kind": "derived-guidance",
+    "topic": "mcp-client",
+    "decision": "accepted",
+    "owner": "references/how-to-connect-mcp-server.md",
+    "summary": "A Host Profile can mount a named MCP server and inspect tool/resource registrations and cleanup; isolated stdio discovery passed while HTTP and reconnect remain unverified.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/mcp/mcp-client/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/mcp/mcp-client/src/transport.ts"
+      }
+    ]
+  },
+  {
+    "id": "background-job-task",
+    "kind": "derived-guidance",
+    "topic": "jobs",
+    "decision": "accepted",
+    "owner": "references/how-to-run-background-job.md",
+    "summary": "A Session-owned producer can return a Job id, expose output to model tools and cancel; isolated runtime completed and killed jobs, while Profile model turn remains untested.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/jobs/jobs/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/jobs/jobs-local/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/jobs/tool-jobs/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "schedule-session-task",
+    "kind": "derived-guidance",
+    "topic": "schedule",
+    "decision": "accepted",
+    "owner": "references/how-to-schedule-session-task.md",
+    "summary": "A Host Profile can add Schedule, create a future exact-Session task and delete it; isolated Cordis runtime and Profile boot passed, due delivery/restart remain untested.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/schedule/schedule/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/schedule/schedule/src/runtime.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/bundle/web-app/cordis.patch.yml"
+      }
+    ]
+  },
+  {
+    "id": "client-config-form-contract",
+    "kind": "implemented-behavior",
+    "topic": "client-settings-forms",
+    "decision": "accepted",
+    "owner": "references/api-client-settings-forms.md",
+    "summary": "Client ConfigForms mirrors Host Settings describe and stages revision-fenced writes; form save can partially succeed across config and secret writes.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-settings/src/client/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-settings/src/client/config-form.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-primitives/src/settings-form/form-model.ts"
+      }
+    ]
+  },
+  {
+    "id": "plugin-settings-card-task",
+    "kind": "derived-guidance",
+    "topic": "client-settings-forms",
+    "decision": "accepted",
+    "owner": "references/how-to-add-plugin-settings-card.md",
+    "summary": "An external Client bundle can expose a Host volatile Config through a keyed plugins.row.config card with a lazy CJS factory; independent Host/Client compile and bundle registration passed.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-plugin-manager/src/client/slot-contract.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/modules/src/client/manifest.ts"
+      }
+    ]
+  },
+  {
+    "id": "permission-preset-ui-task",
+    "kind": "derived-guidance",
+    "topic": "permission-presets",
+    "decision": "accepted",
+    "owner": "references/how-to-compose-permission-preset-ui.md",
+    "summary": "Built-in Web UI separates future-Session default permission preset from current-Session /permission choice; Profile/browser persistence remains unverified.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/interaction/permission-presets/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-permission-presets/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "filesystem-policy-contract",
+    "kind": "implemented-behavior",
+    "topic": "filesystem-policy",
+    "decision": "accepted",
+    "owner": "references/api-filesystem-policy.md",
+    "summary": "FileSystem seam owns opaque targets, observations and write/edit intents; an ordered observation policy enforces first-intent decisions.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/fs/fs/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/fs/fs-observation-policy/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/fs/fs-local/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "filesystem-guard-task",
+    "kind": "derived-guidance",
+    "topic": "filesystem-policy",
+    "decision": "accepted",
+    "owner": "references/how-to-guard-filesystem-writes.md",
+    "summary": "A Host listener placed before default observation policy can deny write/edit intent for an owned readonly tree; isolated published-package smoke observed FS_PERMISSION_DENIED.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/fs/fs/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/fs/fs-observation-policy/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "shell-tool-contract",
+    "kind": "implemented-behavior",
+    "topic": "shell-tool",
+    "decision": "accepted",
+    "owner": "references/api-shell-tool.md",
+    "summary": "Shell service resolves and executes through a selected Provider; bash-local is a local subprocess executor and does not itself add sandbox confinement.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/shell/shell/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/shell/bash-local/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/shell/tool-bash/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "shell-tool-task",
+    "kind": "derived-guidance",
+    "topic": "shell-tool",
+    "decision": "accepted",
+    "owner": "references/how-to-add-shell-tool.md",
+    "summary": "A Host plugin can register a fixed command tool against ctx.shell; isolated published-package smoke observed exit 0 and scoped removal, not ToolRuntime permission dispatch.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/shell/shell/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/shell/bash-local/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "skill-provider-contract",
+    "kind": "implemented-behavior",
+    "topic": "skill-providers",
+    "decision": "accepted",
+    "owner": "references/api-skill-providers.md",
+    "summary": "SkillRegistry registers scoped providers and definitions, with asynchronous list/get, invalidate and fiber-owned cleanup.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/skill/skill/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/skill/skill/tests/skill.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "register-skill-provider-task",
+    "kind": "derived-guidance",
+    "topic": "skill-providers",
+    "decision": "accepted",
+    "owner": "references/how-to-register-skill-provider.md",
+    "summary": "A Host plugin can register an owned provider and verify list/get and disposal; isolated Cordis service smoke passed, Agent Skill invocation was not run.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/skill/skill/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "system-prompt-context-contract",
+    "kind": "implemented-behavior",
+    "topic": "system-prompt-context",
+    "decision": "accepted",
+    "owner": "references/api-system-prompt-context.md",
+    "summary": "SystemPrompt owns ordered sections, runtime context, variables and assembly hooks; direct render does not persist a Session snapshot.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/system-prompt/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/agent-loop/src/agent.ts"
+      }
+    ]
+  },
+  {
+    "id": "contribute-runtime-context-task",
+    "kind": "derived-guidance",
+    "topic": "system-prompt-context",
+    "decision": "accepted",
+    "owner": "references/how-to-contribute-runtime-context.md",
+    "summary": "A Host plugin can register section and context contributions with fiber cleanup; isolated service render passed while AgentLoop Session persistence remains unverified.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/system-prompt/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/agent-loop/src/runtime-context.ts"
+      }
+    ]
+  },
+  {
+    "id": "goal-service-contract",
+    "kind": "implemented-behavior",
+    "topic": "goal",
+    "decision": "accepted",
+    "owner": "references/api-goal.md",
+    "summary": "GoalService binds exact live Agent goals to committed goal/change events and revision CAS; round driver and model tools have separate authority.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/goal/goal/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/goal/goal/src/domain.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/goal/goal/src/fold.ts"
+      }
+    ]
+  },
+  {
+    "id": "goal-coordination-task",
+    "kind": "derived-guidance",
+    "topic": "goal",
+    "decision": "accepted",
+    "owner": "references/how-to-coordinate-goal.md",
+    "summary": "A trusted Host caller can create/pause a Goal with revision CAS; isolated real Goal service observed two committed events, not Agent continuation.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/goal/goal/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "workflow-agent-loop-contract",
+    "kind": "implemented-behavior",
+    "topic": "workflow-agent-loop",
+    "decision": "accepted",
+    "owner": "references/api-workflow-agent-loop.md",
+    "summary": "WorkflowEngine returns a holder-owned run with nonrejecting result and explicit disposal; Agent loop factory create/resume is a separate composition boundary.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/workflow/workflow/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/core/agent-loop/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/workflow/workflow-ptc/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "workflow-run-task",
+    "kind": "derived-guidance",
+    "topic": "workflow-agent-loop",
+    "decision": "accepted",
+    "owner": "references/how-to-own-workflow-run.md",
+    "summary": "A trusted Host caller can await and release a WorkflowRun; isolated fixture used a stub engine and did not execute PTC.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/workflow/workflow/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/workflow/workflow-ptc/src/runtime.ts"
+      }
+    ]
+  },
+  {
+    "id": "tool-policy-pipeline-contract",
+    "kind": "implemented-behavior",
+    "topic": "tool-policy-hooks",
+    "decision": "accepted",
+    "owner": "references/api-tool-policy-hooks.md",
+    "summary": "ToolRuntime runs pre, guard, around, post and result hooks with scoped disposers; guard denial is monotonic and result observation is readonly.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/core/tools/tests/tools.spec.ts"
+      }
+    ]
+  },
+  {
+    "id": "approval-service-contract",
+    "kind": "implemented-behavior",
+    "topic": "tool-policy-hooks",
+    "decision": "accepted",
+    "owner": "references/api-tool-policy-hooks.md",
+    "summary": "ApprovalService requires an open Agent turn, records asked/decided outcomes and fails closed on missing or aborted answerer.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/interaction/user-approval/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/interaction/user-approval/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "tool-policy-task",
+    "kind": "derived-guidance",
+    "topic": "tool-policy-hooks",
+    "decision": "accepted",
+    "owner": "references/how-to-add-tool-execution-policy.md",
+    "summary": "A Host plugin can combine pre-execute ask, guard denial and result observation; isolated service smoke covered short calls, guard and missing-Agent denial, not an allowed-once answer.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/interaction/user-approval/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "session-header-resource-task",
+    "kind": "derived-guidance",
+    "topic": "client-slots",
+    "decision": "accepted",
+    "owner": "references/how-to-show-session-header-resource.md",
+    "summary": "An independent Client bundle can show a resource first frame in a Session header slot; real Web Profile and Chrome observed abort/reopen and online unload cleanup.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-slots/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/resources/src/client/resources.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-renderer/src/client/registry.ts"
+      }
+    ]
+  },
+  {
+    "id": "conversation-node-contract",
+    "kind": "implemented-behavior",
+    "topic": "conversation-nodes",
+    "decision": "accepted",
+    "owner": "references/api-conversation-nodes.md",
+    "summary": "Conversation Node definitions project Session events to view nodes; Chat routes kind to keyed renderer slots with fiber scoped registration.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-conversation/src/client/contract/conversation.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-chat/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-chat/src/client/chat/ChatNodeSeat.tsx"
+      }
+    ]
+  },
+  {
+    "id": "add-conversation-node-task",
+    "kind": "derived-guidance",
+    "topic": "conversation-nodes",
+    "decision": "accepted",
+    "owner": "references/how-to-add-conversation-node.md",
+    "summary": "An independent Client bundle can project turn/start to a keyed Chat node; real Web Profile and Chrome observed visible text after disclosure expansion and online removal cleanup.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-conversation/src/client/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-chat/src/client/apply.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-browser-computer-use",
+    "kind": "implemented-behavior",
+    "topic": "browser-computer-use",
+    "decision": "accepted",
+    "owner": "references/api-browser-computer-use.md",
+    "summary": "Browser/Computer Use provider 登记和 Session 资源所有权；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/browser-use/browser-use/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/computer-use/computer-use/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/experimental/browser-use-runtime/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-attachment-store",
+    "kind": "implemented-behavior",
+    "topic": "attachment-store",
+    "decision": "accepted",
+    "owner": "references/api-attachment-store.md",
+    "summary": "附件保存、读取与引用完整性；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/attachment/attachment/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/attachment/attachment-local/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-user-feedback",
+    "kind": "implemented-behavior",
+    "topic": "user-feedback",
+    "decision": "accepted",
+    "owner": "references/api-user-feedback.md",
+    "summary": "Session 级记录和消息级反馈 CAS；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/feedback/command-feedback/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/feedback/message-feedback/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-workspace",
+    "kind": "implemented-behavior",
+    "topic": "workspace",
+    "decision": "accepted",
+    "owner": "references/api-workspace.md",
+    "summary": "Workspace 注册表与 Session 活动；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/workspace/workspace/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/workspace/workspace/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-lsp",
+    "kind": "implemented-behavior",
+    "topic": "lsp",
+    "decision": "accepted",
+    "owner": "references/api-lsp.md",
+    "summary": "LSP provider 注册与查询；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/lsp/lsp/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/lsp/lsp/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-host-platform",
+    "kind": "implemented-behavior",
+    "topic": "host-platform",
+    "decision": "accepted",
+    "owner": "references/api-host-platform.md",
+    "summary": "Host 目录选择与固定打开应用入口；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/host/directory-picker/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/host/open-in-app/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-terminal",
+    "kind": "implemented-behavior",
+    "topic": "terminal",
+    "decision": "accepted",
+    "owner": "references/api-terminal.md",
+    "summary": "Terminal backend 与 owner 作用域；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/terminal/terminal/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/terminal/terminal/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-web-provider",
+    "kind": "implemented-behavior",
+    "topic": "web-provider",
+    "decision": "accepted",
+    "owner": "references/api-web-provider.md",
+    "summary": "Web search/fetch provider 注册、选择和工具结果；运行验证范围与限制在 reference 和 evidence 中明确。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/web/web/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/web/web/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/web/tool-web/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-add-browser-mcp-provider",
+    "kind": "derived-guidance",
+    "topic": "browser-computer-use",
+    "decision": "accepted",
+    "owner": "references/how-to-add-browser-mcp-provider.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/browser-use/browser-use/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/computer-use/computer-use/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/experimental/browser-use-runtime/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-compose-computer-use-driver",
+    "kind": "derived-guidance",
+    "topic": "browser-computer-use",
+    "decision": "accepted",
+    "owner": "references/how-to-compose-computer-use-driver.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/browser-use/browser-use/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/computer-use/computer-use/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/experimental/browser-use-runtime/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-use-attachment-store",
+    "kind": "derived-guidance",
+    "topic": "attachment-store",
+    "decision": "accepted",
+    "owner": "references/how-to-use-attachment-store.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/attachment/attachment/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/attachment/attachment-local/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-record-user-feedback",
+    "kind": "derived-guidance",
+    "topic": "user-feedback",
+    "decision": "accepted",
+    "owner": "references/how-to-record-user-feedback.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/feedback/command-feedback/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/feedback/message-feedback/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-contribute-workspace-activity",
+    "kind": "derived-guidance",
+    "topic": "workspace",
+    "decision": "accepted",
+    "owner": "references/how-to-contribute-workspace-activity.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/workspace/workspace/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/workspace/workspace/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-register-lsp-provider",
+    "kind": "derived-guidance",
+    "topic": "lsp",
+    "decision": "accepted",
+    "owner": "references/how-to-register-lsp-provider.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/lsp/lsp/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/lsp/lsp/src/types.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-use-directory-picker",
+    "kind": "derived-guidance",
+    "topic": "host-platform",
+    "decision": "accepted",
+    "owner": "references/how-to-use-directory-picker.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/host/directory-picker/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/host/open-in-app/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-add-web-provider",
+    "kind": "derived-guidance",
+    "topic": "web-provider",
+    "decision": "accepted",
+    "owner": "references/how-to-add-web-provider.md",
+    "summary": "完整任务组合、安装、失败、取消与卸载步骤；独立验证范围以关联证据为准。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/web/web/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/web/web/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/web/tool-web/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-runtime-diagnostics-telemetry",
+    "kind": "implemented-behavior",
+    "topic": "runtime-diagnostics-telemetry",
+    "decision": "accepted",
+    "owner": "references/api-runtime-diagnostics-telemetry.md",
+    "summary": "在插件中注册运行时不变量和按需 Session Telemetry；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/runtime-diagnostics/invariants/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-runtime-diagnostics-telemetry",
+    "kind": "derived-guidance",
+    "topic": "runtime-diagnostics-telemetry",
+    "decision": "accepted",
+    "owner": "references/how-to-add-runtime-diagnostics.md",
+    "summary": "在插件中注册运行时不变量和按需 Session Telemetry；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/runtime-diagnostics/invariants/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-deepseek-request-extensions",
+    "kind": "implemented-behavior",
+    "topic": "deepseek-request-extensions",
+    "decision": "accepted",
+    "owner": "references/api-deepseek-request-extensions.md",
+    "summary": "为官方 DeepSeek Adapter 添加请求字段；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/deepseek-llm-api-extensions/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-deepseek-request-extensions",
+    "kind": "derived-guidance",
+    "topic": "deepseek-request-extensions",
+    "decision": "accepted",
+    "owner": "references/how-to-add-deepseek-request-field.md",
+    "summary": "为官方 DeepSeek Adapter 添加请求字段；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/deepseek-llm-api-extensions/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-compaction-context-recovery",
+    "kind": "implemented-behavior",
+    "topic": "compaction-context-recovery",
+    "decision": "accepted",
+    "owner": "references/api-compaction-context-recovery.md",
+    "summary": "组合 Session compaction 与上下文恢复策略；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/compaction/compaction/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-compaction-context-recovery",
+    "kind": "derived-guidance",
+    "topic": "compaction-context-recovery",
+    "decision": "accepted",
+    "owner": "references/how-to-compose-compaction-recovery.md",
+    "summary": "组合 Session compaction 与上下文恢复策略；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/compaction/compaction/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-shortcuts",
+    "kind": "implemented-behavior",
+    "topic": "client-shortcuts",
+    "decision": "accepted",
+    "owner": "references/api-client-shortcuts.md",
+    "summary": "给 Web Client 注册快捷命令并在线卸载；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/shortcuts/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-shortcuts",
+    "kind": "derived-guidance",
+    "topic": "client-shortcuts",
+    "decision": "accepted",
+    "owner": "references/how-to-add-client-shortcut.md",
+    "summary": "给 Web Client 注册快捷命令并在线卸载；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/shortcuts/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-spill",
+    "kind": "implemented-behavior",
+    "topic": "spill",
+    "decision": "accepted",
+    "owner": "references/api-spill.md",
+    "summary": "保存插件的大文本结果并返回持久引用；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/spill/spill/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-spill",
+    "kind": "derived-guidance",
+    "topic": "spill",
+    "decision": "accepted",
+    "owner": "references/how-to-save-large-report.md",
+    "summary": "保存插件的大文本结果并返回持久引用；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/spill/spill/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-human-commands-questions",
+    "kind": "implemented-behavior",
+    "topic": "human-commands-questions",
+    "decision": "accepted",
+    "owner": "references/api-human-commands-questions.md",
+    "summary": "Host command registration, human question answerer, feedback event ownership and independent smoke boundary.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/interaction/commands/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/interaction/user-questions/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-human-commands-questions",
+    "kind": "derived-guidance",
+    "topic": "human-commands-questions",
+    "decision": "accepted",
+    "owner": "references/how-to-add-confirmation-command.md",
+    "summary": "Host command registration, human question answerer, feedback event ownership and independent smoke boundary.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/interaction/commands/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/interaction/user-questions/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-subprocess",
+    "kind": "implemented-behavior",
+    "topic": "subprocess",
+    "decision": "accepted",
+    "owner": "references/api-subprocess.md",
+    "summary": "在 Host 插件中运行受管命令；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/subprocess/subprocess/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-subprocess",
+    "kind": "derived-guidance",
+    "topic": "subprocess",
+    "decision": "accepted",
+    "owner": "references/how-to-run-managed-command.md",
+    "summary": "在 Host 插件中运行受管命令；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/subprocess/subprocess/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-sidebar-right-tabs",
+    "kind": "implemented-behavior",
+    "topic": "sidebar-right-tabs",
+    "decision": "accepted",
+    "owner": "references/api-sidebar-right-tabs.md",
+    "summary": "给 Web Client 增加右侧栏 tab；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-sidebar-right/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-sidebar-right-tabs",
+    "kind": "derived-guidance",
+    "topic": "sidebar-right-tabs",
+    "decision": "accepted",
+    "owner": "references/how-to-add-sidebar-right-tab.md",
+    "summary": "给 Web Client 增加右侧栏 tab；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-sidebar-right/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-webhook-rules",
+    "kind": "implemented-behavior",
+    "topic": "webhook-rules",
+    "decision": "accepted",
+    "owner": "references/api-webhook-rules.md",
+    "summary": "从已验证 GitHub Webhook 事件请求创建 Session；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/webhook/webhook/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-webhook-rules",
+    "kind": "derived-guidance",
+    "topic": "webhook-rules",
+    "decision": "accepted",
+    "owner": "references/how-to-create-session-from-github-webhook.md",
+    "summary": "从已验证 GitHub Webhook 事件请求创建 Session；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/webhook/webhook/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-ptc-runtime",
+    "kind": "implemented-behavior",
+    "topic": "ptc-runtime",
+    "decision": "accepted",
+    "owner": "references/api-ptc-runtime.md",
+    "summary": "运行带 Host binding 的隔离程序；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/ptc-runtime/ptc-runtime/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-ptc-runtime",
+    "kind": "derived-guidance",
+    "topic": "ptc-runtime",
+    "decision": "accepted",
+    "owner": "references/how-to-run-program-with-host-binding.md",
+    "summary": "运行带 Host binding 的隔离程序；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/ptc-runtime/ptc-runtime/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-session-title",
+    "kind": "implemented-behavior",
+    "topic": "session-title",
+    "decision": "accepted",
+    "owner": "references/api-session-title.md",
+    "summary": "注册 Session 标题 provider 并记录标题来源；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/session/session-title/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-session-title",
+    "kind": "derived-guidance",
+    "topic": "session-title",
+    "decision": "accepted",
+    "owner": "references/how-to-register-session-title-provider.md",
+    "summary": "注册 Session 标题 provider 并记录标题来源；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/session/session-title/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-main-panels",
+    "kind": "implemented-behavior",
+    "topic": "client-main-panels",
+    "decision": "accepted",
+    "owner": "references/api-client-main-panels.md",
+    "summary": "给 Web Client 增加全局主面板与侧栏入口；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-layout/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-main-panels",
+    "kind": "derived-guidance",
+    "topic": "client-main-panels",
+    "decision": "accepted",
+    "owner": "references/how-to-add-main-panel.md",
+    "summary": "给 Web Client 增加全局主面板与侧栏入口；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-layout/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-testing-support",
+    "kind": "implemented-behavior",
+    "topic": "testing-support",
+    "decision": "accepted",
+    "owner": "references/api-testing-support.md",
+    "summary": "测试 Client Remote 调用；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/test-support/remote-mock/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-testing-support",
+    "kind": "derived-guidance",
+    "topic": "testing-support",
+    "decision": "accepted",
+    "owner": "references/how-to-test-client-remote-call.md",
+    "summary": "测试 Client Remote 调用；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/test-support/remote-mock/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-theme",
+    "kind": "implemented-behavior",
+    "topic": "client-theme",
+    "decision": "accepted",
+    "owner": "references/api-client-theme.md",
+    "summary": "给 Web Client 增加主题 token 覆盖层；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-theme/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-theme",
+    "kind": "derived-guidance",
+    "topic": "client-theme",
+    "decision": "accepted",
+    "owner": "references/how-to-add-theme-layer.md",
+    "summary": "给 Web Client 增加主题 token 覆盖层；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-theme/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-input-trigger",
+    "kind": "implemented-behavior",
+    "topic": "client-input-trigger",
+    "decision": "accepted",
+    "owner": "references/api-client-input-trigger.md",
+    "summary": "给 Client 输入框增加候选触发源；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-input-trigger/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-input-trigger",
+    "kind": "derived-guidance",
+    "topic": "client-input-trigger",
+    "decision": "accepted",
+    "owner": "references/how-to-add-input-trigger.md",
+    "summary": "给 Client 输入框增加候选触发源；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-input-trigger/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-deepseek-account-auth",
+    "kind": "implemented-behavior",
+    "topic": "deepseek-account-auth",
+    "decision": "accepted",
+    "owner": "references/api-deepseek-account-auth.md",
+    "summary": "配置 DeepSeek Account 模型路由；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/credentials/deepseek-account/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-deepseek-account-auth",
+    "kind": "derived-guidance",
+    "topic": "deepseek-account-auth",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-deepseek-account-model.md",
+    "summary": "配置 DeepSeek Account 模型路由；目标源码和隔离消费测试记录覆盖范围与限制。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/credentials/deepseek-account/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-hook-bridges-guards",
+    "kind": "implemented-behavior",
+    "topic": "hook-bridges-guards",
+    "decision": "accepted",
+    "owner": "references/api-hook-bridges-guards.md",
+    "summary": "已发布 Codex/Claude command Hook 桥接器及两个内置 Guard 的接入、限制和生命周期。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/hooks/hooks-codex/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/guard/timeout-policy/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-dsh-hooks-codex",
+    "kind": "derived-guidance",
+    "topic": "hook-bridges-guards",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-codex-pretool-hook.md",
+    "summary": "配置 Codex PreToolUse 命令 Hook；Host 配置、取消与卸载边界见完整任务步骤。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/hooks/hooks-codex/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-dsh-hooks-claude-code",
+    "kind": "derived-guidance",
+    "topic": "hook-bridges-guards",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-claude-pretool-approval-hook.md",
+    "summary": "配置 Claude Code PreToolUse 审批 Hook；Host 配置、取消与卸载边界见完整任务步骤。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/hooks/hooks-claude-code/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-dsh-repeat-tool-reminder",
+    "kind": "derived-guidance",
+    "topic": "hook-bridges-guards",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-repeat-tool-reminder.md",
+    "summary": "配置重复工具调用提醒；Host 配置、取消与卸载边界见完整任务步骤。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/guard/repeat-tool-reminder/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-dsh-tool-call-timeout-policy",
+    "kind": "derived-guidance",
+    "topic": "hook-bridges-guards",
+    "decision": "accepted",
+    "owner": "references/how-to-enable-tool-timeout-policy.md",
+    "summary": "启用工具协作式超时策略；Host 配置、取消与卸载边界见完整任务步骤。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/guard/timeout-policy/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-mount-storage-backend",
+    "kind": "derived-guidance",
+    "topic": "storage-backend",
+    "decision": "accepted",
+    "owner": "references/how-to-mount-storage-backend.md",
+    "summary": "挂载自定义名称的 SQLite Backend；完整步骤、生命周期及验证边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/storage/storage/src/backend.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-declare-agent-preset-persona",
+    "kind": "derived-guidance",
+    "topic": "agent-presets-persona",
+    "decision": "accepted",
+    "owner": "references/how-to-declare-agent-preset-persona.md",
+    "summary": "声明带 Persona 的 Agent Preset；完整步骤、生命周期及验证边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/preset/agent-preset-registry/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-configure-deepseek-api-key-retry",
+    "kind": "derived-guidance",
+    "topic": "llm-builtins-retry-meter",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-deepseek-api-key-retry.md",
+    "summary": "配置官方 DeepSeek API-key 与重试；完整步骤、生命周期及验证边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm-retry/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-read-session-token-pressure",
+    "kind": "derived-guidance",
+    "topic": "llm-builtins-retry-meter",
+    "decision": "accepted",
+    "owner": "references/how-to-read-session-token-pressure.md",
+    "summary": "在插件中读取 Session Token 压力；完整步骤、生命周期及验证边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm-retry/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-test-agent-loop-inbox",
+    "kind": "derived-guidance",
+    "topic": "testing-support",
+    "decision": "accepted",
+    "owner": "references/how-to-test-agent-loop-inbox.md",
+    "summary": "测试 Agent/Inbox/Session 回路；编译或运行状态见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/test-support/agent-loop-testkit/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-locale",
+    "kind": "derived-guidance",
+    "topic": "client-locale",
+    "decision": "accepted",
+    "owner": "references/how-to-localize-client-panel.md",
+    "summary": "本地化自有 Client 面板，实际 Web Profile 切换中英文并在线卸载。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/locale/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-session-format-storage-backend",
+    "kind": "implemented-behavior",
+    "topic": "storage-backend",
+    "decision": "accepted",
+    "owner": "references/api-session-format-storage-backend.md",
+    "summary": "目标版本公开入口和运行语义，见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/storage/storage/src/backend.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-agent-presets-persona",
+    "kind": "implemented-behavior",
+    "topic": "agent-presets-persona",
+    "decision": "accepted",
+    "owner": "references/api-agent-presets-persona.md",
+    "summary": "目标版本公开入口和运行语义，见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/preset/agent-preset-registry/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-llm-builtins-retry-meter",
+    "kind": "implemented-behavior",
+    "topic": "llm-builtins-retry-meter",
+    "decision": "accepted",
+    "owner": "references/api-llm-builtins-retry-meter.md",
+    "summary": "目标版本公开入口和运行语义，见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm-retry/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-locale",
+    "kind": "implemented-behavior",
+    "topic": "client-locale",
+    "decision": "accepted",
+    "owner": "references/api-client-locale.md",
+    "summary": "目标版本公开入口和运行语义，见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/locale/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-cmdline",
+    "kind": "implemented-behavior",
+    "topic": "cmdline",
+    "decision": "accepted",
+    "owner": "references/api-cmdline.md",
+    "summary": "精确版本应用命令行服务与退出路径。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/boot/cmdline/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-cmdline",
+    "kind": "derived-guidance",
+    "topic": "cmdline",
+    "decision": "accepted",
+    "owner": "references/how-to-add-app-command-line-option.md",
+    "summary": "独立 Cordis 消费者解析 flag 并随 fiber 清理服务。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/boot/cmdline/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-skill-bundled-consumers",
+    "kind": "implemented-behavior",
+    "topic": "skill-bundled-consumers",
+    "decision": "accepted",
+    "owner": "references/api-skill-bundled-consumers.md",
+    "summary": "目标版本入口、生命周期与验证边界见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/skill/skill-filesystem/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-mount-skill-directory",
+    "kind": "derived-guidance",
+    "topic": "skill-bundled-consumers",
+    "decision": "accepted",
+    "owner": "references/how-to-mount-skill-directory.md",
+    "summary": "装载自有 Skill 目录；验证结果和未覆盖边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/skill/skill-filesystem/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-opt-in-context-plugins",
+    "kind": "implemented-behavior",
+    "topic": "opt-in-context-plugins",
+    "decision": "accepted",
+    "owner": "references/api-opt-in-context-plugins.md",
+    "summary": "目标版本入口、生命周期与验证边界见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/time-context/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-how-to-enable-opt-in-context",
+    "kind": "derived-guidance",
+    "topic": "opt-in-context-plugins",
+    "decision": "accepted",
+    "owner": "references/how-to-enable-opt-in-context.md",
+    "summary": "启用时间与 tmux 上下文；验证结果和未覆盖边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/time-context/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-shell-env",
+    "kind": "implemented-behavior",
+    "topic": "shell-env",
+    "decision": "accepted",
+    "owner": "references/api-shell-env.md",
+    "summary": "目标版本入口、生命周期与验证边界见权威正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/shell/shell-env/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-contribute-shell-environment",
+    "kind": "derived-guidance",
+    "topic": "shell-env",
+    "decision": "accepted",
+    "owner": "references/how-to-contribute-shell-environment.md",
+    "summary": "提供模型 Shell 环境事实；验证结果和未覆盖边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/shell/shell-env/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-test-llm-adapter-faults",
+    "kind": "derived-guidance",
+    "topic": "testing-support",
+    "decision": "accepted",
+    "owner": "references/how-to-test-llm-adapter-faults.md",
+    "summary": "测试 LLM 适配器故障；独立 mock wire 测试结果见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/test-support/llm-mock-server/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-store",
+    "kind": "implemented-behavior",
+    "topic": "client-store",
+    "decision": "accepted",
+    "owner": "references/api-client-store.md",
+    "summary": "给 Session header 增加局部状态；目标版入口与失败边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/store/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-store",
+    "kind": "derived-guidance",
+    "topic": "client-store",
+    "decision": "accepted",
+    "owner": "references/how-to-add-stateful-client-slot.md",
+    "summary": "给 Session header 增加局部状态；编译与浏览器证据按实际结果限定。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/store/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-file-upload",
+    "kind": "implemented-behavior",
+    "topic": "client-file-upload",
+    "decision": "accepted",
+    "owner": "references/api-client-file-upload.md",
+    "summary": "从 Client 上传并提交文件；目标版入口与失败边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/file-upload/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-file-upload",
+    "kind": "derived-guidance",
+    "topic": "client-file-upload",
+    "decision": "accepted",
+    "owner": "references/how-to-upload-and-submit-file.md",
+    "summary": "从 Client 上传并提交文件；编译与浏览器证据按实际结果限定。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/file-upload/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-speech-provider",
+    "kind": "implemented-behavior",
+    "topic": "speech-provider",
+    "decision": "accepted",
+    "owner": "references/api-speech-provider.md",
+    "summary": "注册静音 WAV Provider；实验入口和访问边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/experimental/speech-to-text/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-speech-provider",
+    "kind": "derived-guidance",
+    "topic": "speech-provider",
+    "decision": "accepted",
+    "owner": "references/how-to-register-silence-speech-provider.md",
+    "summary": "注册静音 WAV Provider；隔离 smoke 结果和未覆盖项见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/experimental/speech-to-text/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-experimental-inspector",
+    "kind": "implemented-behavior",
+    "topic": "experimental-inspector",
+    "decision": "accepted",
+    "owner": "references/api-experimental-inspector.md",
+    "summary": "启用实验 Inspector；实验入口和访问边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/experimental/inspector/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-experimental-inspector",
+    "kind": "derived-guidance",
+    "topic": "experimental-inspector",
+    "decision": "accepted",
+    "owner": "references/how-to-enable-experimental-inspector.md",
+    "summary": "启用实验 Inspector；隔离 smoke 结果和未覆盖项见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/experimental/inspector/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-office-to-pdf",
+    "kind": "implemented-behavior",
+    "topic": "office-to-pdf",
+    "decision": "accepted",
+    "owner": "references/api-office-to-pdf.md",
+    "summary": "转换已授权的 Office 文件；公开服务和失败边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/document/office-to-pdf/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-office-to-pdf",
+    "kind": "derived-guidance",
+    "topic": "office-to-pdf",
+    "decision": "accepted",
+    "owner": "references/how-to-convert-office-document.md",
+    "summary": "转换已授权的 Office 文件；目标版声明编译，运行时限制见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/document/office-to-pdf/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-workspace-changes",
+    "kind": "implemented-behavior",
+    "topic": "workspace-changes",
+    "decision": "accepted",
+    "owner": "references/api-workspace-changes.md",
+    "summary": "读取当前 Session 的工作区变化；公开服务和失败边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/deliverables/workspace-changes/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-workspace-changes",
+    "kind": "derived-guidance",
+    "topic": "workspace-changes",
+    "decision": "accepted",
+    "owner": "references/how-to-read-workspace-changes.md",
+    "summary": "读取当前 Session 的工作区变化；目标版声明编译，运行时限制见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/deliverables/workspace-changes/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-config-editor",
+    "kind": "implemented-behavior",
+    "topic": "config-editor",
+    "decision": "accepted",
+    "owner": "references/api-config-editor.md",
+    "summary": "编辑自有 Profile 插件原始配置；公开服务与失败边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/boot/config-editor/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-config-editor",
+    "kind": "derived-guidance",
+    "topic": "config-editor",
+    "decision": "accepted",
+    "owner": "references/how-to-edit-owned-plugin-config.md",
+    "summary": "编辑自有 Profile 插件原始配置；目标版声明编译和运行验证范围见正文及 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/boot/config-editor/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-host-plugin-inventory",
+    "kind": "implemented-behavior",
+    "topic": "host-plugin-inventory",
+    "decision": "accepted",
+    "owner": "references/api-host-plugin-inventory.md",
+    "summary": "读取 Host 当前插件清单快照；公开服务与失败边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/host/plugin-inventory/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-host-plugin-inventory",
+    "kind": "derived-guidance",
+    "topic": "host-plugin-inventory",
+    "decision": "accepted",
+    "owner": "references/how-to-read-host-plugin-inventory.md",
+    "summary": "读取 Host 当前插件清单快照；目标版声明编译和运行验证范围见正文及 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/host/plugin-inventory/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-confine-local-process",
+    "kind": "derived-guidance",
+    "topic": "sandbox",
+    "decision": "accepted",
+    "owner": "references/how-to-confine-local-process.md",
+    "summary": "用本机 Sandbox 限制进程；本机与远端验证范围分别见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/sandbox/sandbox/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-run-ssh-execution-world",
+    "kind": "derived-guidance",
+    "topic": "ssh",
+    "decision": "accepted",
+    "owner": "references/how-to-run-ssh-execution-world.md",
+    "summary": "组合并验证 SSH 远端执行世界；本机与远端验证范围分别见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/ssh/ssh/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-sandbox",
+    "kind": "implemented-behavior",
+    "topic": "sandbox",
+    "decision": "accepted",
+    "owner": "references/api-sandbox.md",
+    "summary": "目标版本公开服务、组合与生命周期边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/sandbox/sandbox/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-ssh",
+    "kind": "implemented-behavior",
+    "topic": "ssh",
+    "decision": "accepted",
+    "owner": "references/api-ssh.md",
+    "summary": "目标版本公开服务、组合与生命周期边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/ssh/ssh/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-cordis-inspect-provider",
+    "kind": "implemented-behavior",
+    "topic": "cordis-inspect-provider",
+    "decision": "accepted",
+    "owner": "references/api-cordis-inspect-provider.md",
+    "summary": "Host Inspect provider 的注册、schema、查询和注销契约。",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/extensions/cordis-host-runner/src/inspect-registry.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-cordis-inspect-provider",
+    "kind": "derived-guidance",
+    "topic": "cordis-inspect-provider",
+    "decision": "accepted",
+    "owner": "references/how-to-register-cordis-inspect-provider.md",
+    "summary": "独立消费者的注册、重复 ID 拒绝和卸载示例。",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/extensions/cordis-host-runner/src/inspect-registry.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-command-ui",
+    "kind": "implemented-behavior",
+    "topic": "client-command-ui",
+    "decision": "accepted",
+    "owner": "references/api-client-command-ui.md",
+    "summary": "Client slash command register/decorate/dismiss 注册与生命周期。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-commands/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-command-ui",
+    "kind": "derived-guidance",
+    "topic": "client-command-ui",
+    "decision": "accepted",
+    "owner": "references/how-to-add-client-command.md",
+    "summary": "独立 Client 包的 slash command 贡献示例，目标发布声明编译。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-commands/src/client/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-file-reference",
+    "kind": "implemented-behavior",
+    "topic": "file-reference",
+    "decision": "accepted",
+    "owner": "references/api-file-reference.md",
+    "summary": "完成工作区文件引用；公开对象与边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/file-reference/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-file-reference",
+    "kind": "derived-guidance",
+    "topic": "file-reference",
+    "decision": "accepted",
+    "owner": "references/how-to-complete-file-reference.md",
+    "summary": "完成工作区文件引用；目标声明编译与隔离 smoke 见 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/file-reference/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-session-reference",
+    "kind": "implemented-behavior",
+    "topic": "session-reference",
+    "decision": "accepted",
+    "owner": "references/api-session-reference.md",
+    "summary": "解析跨 Session 引用；公开对象与边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/session-reference/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-session-reference",
+    "kind": "derived-guidance",
+    "topic": "session-reference",
+    "decision": "accepted",
+    "owner": "references/how-to-list-session-references.md",
+    "summary": "解析跨 Session 引用；目标声明编译与隔离 smoke 见 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/session-reference/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-workspace-dependencies",
+    "kind": "implemented-behavior",
+    "topic": "workspace-dependencies",
+    "decision": "accepted",
+    "owner": "references/api-workspace-dependencies.md",
+    "summary": "解析打包工作区运行时路径；公开对象与边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/skill/tool-workspace-dependencies/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-workspace-dependencies",
+    "kind": "derived-guidance",
+    "topic": "workspace-dependencies",
+    "decision": "accepted",
+    "owner": "references/how-to-resolve-workspace-dependencies.md",
+    "summary": "解析打包工作区运行时路径；目标声明编译与隔离 smoke 见 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/skill/tool-workspace-dependencies/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-agent-instructions",
+    "kind": "implemented-behavior",
+    "topic": "agent-instructions",
+    "decision": "accepted",
+    "owner": "references/api-agent-instructions.md",
+    "summary": "装载 Agent 指令文件；公开对象与边界见正文。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/agent-instructions/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-agent-instructions",
+    "kind": "derived-guidance",
+    "topic": "agent-instructions",
+    "decision": "accepted",
+    "owner": "references/how-to-load-agent-instructions.md",
+    "summary": "装载 Agent 指令文件；目标声明编译与隔离 smoke 见 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/context/agent-instructions/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-deepseek-custom-route",
+    "kind": "derived-guidance",
+    "topic": "llm-providers",
+    "decision": "accepted",
+    "owner": "references/how-to-register-custom-deepseek-route.md",
+    "summary": "注册自有 DeepSeek Messages route；隔离 Profile 已验证目录、取消、缺凭证和卸载。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm-deepseek/src/host.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-persistent-terminal",
+    "kind": "derived-guidance",
+    "topic": "terminal",
+    "decision": "accepted",
+    "owner": "references/how-to-run-persistent-terminal.md",
+    "summary": "目标版持久 PTY/owner scope 使用示例；独立 macOS PTY smoke，完整 Profile 未运行。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/terminal/terminal/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-experimental-agent-team",
+    "kind": "implemented-behavior",
+    "topic": "experimental-agent-team",
+    "decision": "accepted",
+    "owner": "references/api-experimental-agent-team.md",
+    "summary": "实验 TeamService 的成员、任务和 Session 所有权契约。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/experimental/agent-team/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-experimental-agent-team",
+    "kind": "derived-guidance",
+    "topic": "experimental-agent-team",
+    "decision": "accepted",
+    "owner": "references/how-to-use-experimental-agent-team.md",
+    "summary": "Team Profile 的装载与 Host 调用骨架；完整 Team 运行未验证。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/experimental/agent-team/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-pi-ai-inventory",
+    "kind": "derived-guidance",
+    "topic": "llm-builtins-retry-meter",
+    "decision": "accepted",
+    "owner": "references/how-to-configure-pi-ai-and-inventory.md",
+    "summary": "配置 pi-ai route 与官方包清单请求扩展；独立 Cordis smoke 检查目录、缺凭证与卸载。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm-pi-ai/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-client-ui-primitives",
+    "kind": "implemented-behavior",
+    "topic": "client-ui-primitives",
+    "decision": "accepted",
+    "owner": "references/api-client-ui-primitives.md",
+    "summary": "共享 Client UI primitive 的可复用组件与渲染边界。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-primitives/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-client-ui-primitives",
+    "kind": "derived-guidance",
+    "topic": "client-ui-primitives",
+    "decision": "accepted",
+    "owner": "references/how-to-render-markdown-slot.md",
+    "summary": "自有 slot 中使用 Button/MarkdownText 的目标版可编译示例。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-primitives/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-output-retention",
+    "kind": "implemented-behavior",
+    "topic": "output-retention",
+    "decision": "accepted",
+    "owner": "references/api-output-retention.md",
+    "summary": "为工具生成有界输出和省略说明；这是直接导入的库函数而非 Cordis service。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/output-retention/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-output-retention",
+    "kind": "derived-guidance",
+    "topic": "output-retention",
+    "decision": "accepted",
+    "owner": "references/how-to-bound-tool-output.md",
+    "summary": "为工具生成有界输出和省略说明；隔离 npm 编译与无外部网络 smoke 见 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/output-retention/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-http-proxy",
+    "kind": "implemented-behavior",
+    "topic": "http-proxy",
+    "decision": "accepted",
+    "owner": "references/api-http-proxy.md",
+    "summary": "为自有出站请求沿用进程代理策略；这是直接导入的库函数而非 Cordis service。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/http-proxy/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-http-proxy",
+    "kind": "derived-guidance",
+    "topic": "http-proxy",
+    "decision": "accepted",
+    "owner": "references/how-to-use-outbound-http-proxy.md",
+    "summary": "为自有出站请求沿用进程代理策略；隔离 npm 编译与无外部网络 smoke 见 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/util/http-proxy/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-scope-registry",
+    "kind": "implemented-behavior",
+    "topic": "scope-registry",
+    "decision": "accepted",
+    "owner": "references/api-scope-registry.md",
+    "summary": "建立带覆盖关系的 Scope 标签注册表；公开库契约与生命周期边界由精确目标源码核查。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/scope/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/scope/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-scope-registry",
+    "kind": "derived-guidance",
+    "topic": "scope-registry",
+    "decision": "accepted",
+    "owner": "references/how-to-build-scoped-registry.md",
+    "summary": "建立带覆盖关系的 Scope 标签注册表；独立发布包编译、运行与打包验证记录在 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/core/scope/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "contract-loader-smoke-profile",
+    "kind": "implemented-behavior",
+    "topic": "loader-smoke-profile",
+    "decision": "accepted",
+    "owner": "references/api-loader-smoke-profile.md",
+    "summary": "运行独立 Loader Profile 启动 smoke；公开库契约与生命周期边界由精确目标源码核查。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/test-support/loader-smoke/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/test-support/loader-smoke/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "assembly-loader-smoke-profile",
+    "kind": "derived-guidance",
+    "topic": "loader-smoke-profile",
+    "decision": "accepted",
+    "owner": "references/how-to-smoke-loader-profile.md",
+    "summary": "运行独立 Loader Profile 启动 smoke；独立发布包编译、运行与打包验证记录在 evidence。",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/test-support/loader-smoke/src/index.ts"
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+# Client Modules / Web Client 插件装载裁决
+
+目标：`dsh-v0.2.0-rc.1`，`4878cdabd87d4041bdaff61d04c966883b9fd07a`。仅检视本 target 的 checkout。此文件是 `skill-source/api-guardrails/client-modules.md` 与 `skill-source/how-to/build-and-load-web-client-plugin.md` 的裁决依据，不是已执行浏览器验证的声明。
+
+## 公开入口和运行链
+
+1. `packages/util/package-manifest/src/types.ts` 公开 `DshClientManifest` 的 `platform`, `inject?`, `immediately?`, `external?`。`packages/util/package-manifest/src/index.ts` 重导出；其包的 `exports["."]` 是公开类型入口。
+2. `packages/client/modules/package.json` 公开根、`./client`、`./invariant`。根 `src/index.ts` 给 Cordis Context 声明合并 `clientModules: ClientModuleRegistry`，默认导出同一 service class；`./client` 的 `src/client/index.ts` 给 Client Context 声明 `modules: ClientModuleLoader` 并公开其装载协议类型。
+3. `src/client/manifest.ts` 的 `parseDshClient` 校验字段的形状，`exactPackageSpecifier` 只接受裸包名。Host `src/index.ts` 的 `ClientModuleRegistry` 监听 `internal/plugin`，从 Loader 行位置解析所属 package manifest；只有 `platform === 'web'` 且有 `./client` 导出形成 row。首次扫描 malformed 或缺失 bundle 聚合失败，运行中脏行失败记警告。`graph()`、`clientPath()`、`fetchBundle()`、`rebuilt()`、`onRebuilt()`、`onGraphChanged()` 是公开方法；其余 class 成员为私有实现或 route 实现。
+4. Host graph/URL 来自 `src/index.ts` 的 `graphRow`、`orderByModuleGraph`、`bootInjections`、bundle route。Client `src/client/system.ts` 和 `entries.ts` 负责延迟登记、materialization、刷新和清理；`src/client/entry-lifecycle.ts` 在 fiber 释放后移除包拥有的样式。`packages/client/web/src/platform.ts` 提供实际基线模块表。
+5. `apps/web/tests/fixtures/plugins/fixture-live-client/` 的包用裸包名行、`dsh.client.platform: web`、Host `apply` 与手写 Client factory；`apps/web/tests/client-plugin-live.e2e.ts` 验证两页同步、DOM 结果、effect cleanup、样式移除、重新启用、断线重连。测试源码是行为证据，本次未实际运行该浏览器测试。
+6. `docs/cookbook/adding-a-settings-card.md` 与 `packages/client/modules/README.md` 说明外部包仍要自己生成 lazy-CJS factory；仓库内 `packages/client/tsdown.client.ts` 的 `clientBundle` 未在公开 npm 包中作为构建 API 发布。其 `banner`/`footer` 明确调用 `window.__ModuleLoader__.load`，`clientExternals` 与 build purity gate 绑定基线和 package manifest。该仓库预设不可直接写入独立包的依赖或 import。
+
+## 建议交给共享账本的 API 裁决
+
+以下列出具体 `api-surface.json` 候选；主代理负责写共享账本和检查所有成员状态。
+
+- `export:@deepseek-ai/dsh-package-manifest:.` 已纳入；对象 `DshClientManifest` 及 `platform`, `inject`, `immediately`, `external` 纳入 `references/api-client-modules.md#对象类型与成员`。包的其它 manifest 对象维持各自专题。
+- `export:@deepseek-ai/dsh-client-modules:.` 纳入 Host 模块表服务。对象 `ClientModuleRegistry` 纳入，其 `graph`, `clientPath`, `artifactBaseline`, `fetchBundle`, `rebuilt`, `onRebuilt`, `onGraphChanged` 为面向 Host 集成/HMR 的可用公开成员；`batchResponses`, `bundleResource`, `captureArtifactBaseline`, `chunkRequest`, `chunkResponse`, `compose`, `composed`, `dirty`, `flush`, `flushQueued`, `graphListeners`, `initialBundleSnapshot`, `locatePkgJson`, `nearestPackage`, `notifyGraphChanged`, `pkgMeta`, `previousBatchResponses`, `processOne`, `readSourceMap`, `rebuildListeners`, `reconcilePackage`, `resolveMeta`, `resolveSource`, `responses`, `serveBundle`, `sourceKey`, `sources`, `table` 是 private 或内部 route/缓存实现，不写常规 API 指南。`default` 是同一个 class 的重复导出，合并到该对象；其成员同判。
+- 根对象 `ClientArtifactBaseline` 四成员 `path`, `mtimeMs`, `ctimeMs`, `size`、`WebBootEntry` 六成员 `id`, `url`, `rev`, `inject`, `immediately`, `external`、`WebBootBatch` 四成员 `phase`, `url`, `rev`, `entries`、`WebBootGraph` 三成员 `rev`, `entries`, `batches`、`WebBootBatchPhase` 均纳入 Host graph wire 契约；前四者正文已展开。`BootManifest`, `BootModuleRow`, `BootPluginRow` 是浏览器解析后的内部投影，排除常规插件任务。`bootInjections`, `orderByModuleGraph`, `stripClientSuffix` 是公开导出但用于 shell/Host 内部组合；对制作普通插件不需调用，排除常规路由并记录理由。
+- `export:@deepseek-ai/dsh-client-modules:./client` 纳入 Client bundle 登记协议。`ClientBundleRegistration` 的 `id`, `chunk`, `factory`、`ClientModuleLoaderTarget.load`、`DshWindow.__ModuleLoader__` 可用于构建/登记；`DshWindow.__DSH_BOOT__` 是 Host 写入的只读 wire，纳入概念但插件不写。`ClientBundleRequire` 是 `ClientBundleRegistration.factory` 的参数类型，自动对象候选中缺失，正文已解释 `(specifier)` 与 `async(specifier)`。`WebBootEntry`/`WebBootGraph` 与根导出为同一类型，合并。`ClientModuleLoader` 的 `import`, `prefetch`, `invalidate`, `lastError` 等属 Loader/HMR 适配，不是业务插件直接调用；`ClientModuleSystem`、`ClientEntries`、`ClientEntryState`、`ClientModuleSystemOptions`、`ClientModuleCreateOptions`、`ClientModuleRecord`、`ClientBootstrapModule`、`BootManifest`、`BootModuleRow`、`BootPluginRow`、`ClientModuleLoaderTarget.mode/pendingQueue/create`、`createClientModuleSystem`、`parseBootManifest`、`parseDshClient`、`exactPackageSpecifier`、`stripClientSuffix`、`tearDownEntryFiber`、`apply`、`inject` 均为 shell/bootstrap 或组件内部使用，排除普通插件任务（若其它专题承担 Host shell 集成，则可改为 merged）。
+- `export:@deepseek-ai/dsh-client-modules:./invariant` 是 package-owned invariant companion；Web Client 业务插件不直接安装或调用，建议排除常规插件入口。`name`, `inject`, `apply` 均由 invariant registry 组合使用，专项维护主题若纳入可另裁决。
+
+`ClientModuleRegistry` 有些成员虽在自动列表中出现，却在源码声明为 `private`；候选生成没有把 private 过滤成不可用。不要因它们进入 `api-surface.json` 就在 Skill 中描述为可调用 API。`DshClientManifest.inject` 与 Cordis 插件导出 `inject` 名同而语义不同；前者是 Client 包行依赖，后者是 service 等待条件。
+
+## 建议的 coverage、任务和 claim
+
+- 从 `review-public-package-packages-client` 拆出 `package:@deepseek-ai/dsh-client-modules` 为 included，topic `client-modules`，owner `references/api-client-modules.md`；同组其它 client 包仍待各专题裁决。`review-subsystem-subsystems-client-modules` 可 merged 到该主候选，关系为 subsystem 文档仅解释同一服务和 wire。`package:@deepseek-ai/dsh-package-manifest` 已归于 `profile-bundle`，该 reference 的 `DshClientManifest` 子契约应在本专题展开，避免同一对象散落多篇。
+- 任务路径 `build-and-load-web-client-plugin` 为 included：`apiObjects` 至少含 `export:@deepseek-ai/dsh-package-manifest:.:DshClientManifest`、`export:@deepseek-ai/dsh-client-modules:./client:ClientBundleRegistration`、`export:@deepseek-ai/dsh-client-modules:.:ClientModuleRegistry`，再结合 `profile-bundle` 的 manifest/Loader 行；组成顺序为声明 package → 构建 Host/Client 输出 → patch 插入裸包名行 → Web Profile 安装 → Host graph → 浏览器 factory/apply → 卸载 cleanup。owner `references/how-to-build-and-load-web-client-plugin.md`，从 Client 插件任务路由可达。
+- `task:packages/client/modules/README.zh.md:48` 是候选清单中的 Client 插件装载操作线索，可并到该 taskPath；`docs/cookbook/adding-a-settings-card.md` 5 节及英文 `packages/client/modules/README.md` 的操作文字可人工补入任务 evidence。其它 Client UI 任务标题应留给 slot、Web 页面或专项组件，不批量纳入模块装载。
+- 建议 claims：manifest 的 `platform/web`、`inject`/`external` 区别；仅裸包名 Loader 行附着半侧；`./client` 必需且构建结果是 lazy-CJS factory；Host 首扫失败与运行中警告；Client 资源由 fiber effect/disposer 释放；Host graph 与 bundle route；默认共享表精确成员；仓库内 `clientBundle` 非已发布 build API。每条 claim 的 code owner分别是 `packages/util/package-manifest/src/types.ts`、`packages/client/modules/src/client/manifest.ts`、`packages/client/modules/src/index.ts`、`packages/client/modules/src/client/system.ts`、`packages/client/modules/src/client/entry-lifecycle.ts`、`packages/client/web/src/platform.ts`、`packages/client/tsdown.client.ts`。
+
+## 本次实际验证
+
+从 HOW-TO 的五个代码块生成 `evidence/tests/client-presence-consumer/`。在该目录运行 `npm run build`、三个 `node --check`、`npm pack --dry-run --json` 均成功；dry-run pack 列出 `cordis.patch.yml`, `lib/client.js`, `lib/index.js`, `package.json`。用 Node `vm.runInNewContext` 注入最小 `window.__ModuleLoader__` 与 DOM stub 执行构建后的 `lib/client.js`，观察 id 匹配、factory 产出插件、`apply` 创建文本节点、disposer 删除文本节点。该 vm 检查不是 Cordis/浏览器装载证明；没有运行目标仓库的 Playwright E2E、独立 Profile 安装、真实浏览器页面或断线重连。因此 HOW-TO 明确保持这些路径未验证。
