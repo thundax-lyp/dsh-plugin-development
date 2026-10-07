@@ -1,0 +1,4035 @@
+{
+  "schemaVersion": 1,
+  "tag": "dsh-v0.2.0-rc.1",
+  "proposalSha256": "b0b9488979ca4483dfc14e8a02928fb8290fd683b396d72fcd44ca2b1ce8b146",
+  "currentSurfaceSha256": "ede30271aa5268653152553570e06b48c29b9b02f326a39b9536f65dc3ffcf61",
+  "counts": {
+    "@deepseek-ai/dsh": {
+      "include": 0,
+      "merge": 0,
+      "exclude": 8
+    },
+    "@deepseek-ai/dsh-browser-use": {
+      "include": 1,
+      "merge": 1,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-deepseek-llm-api-extensions": {
+      "include": 4,
+      "merge": 8,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-experimental-inspector": {
+      "include": 1,
+      "merge": 11,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-hooks-claude-code": {
+      "include": 0,
+      "merge": 3,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-hooks-codex": {
+      "include": 0,
+      "merge": 3,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-host-directory-picker": {
+      "include": 7,
+      "merge": 2,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-invariants": {
+      "include": 3,
+      "merge": 1,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-lsp": {
+      "include": 10,
+      "merge": 1,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-mcp-client": {
+      "include": 7,
+      "merge": 3,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-package-manifest": {
+      "include": 4,
+      "merge": 1,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-permission-presets": {
+      "include": 2,
+      "merge": 7,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-repeat-tool-reminder": {
+      "include": 0,
+      "merge": 2,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-session-projection": {
+      "include": 6,
+      "merge": 3,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-spill": {
+      "include": 0,
+      "merge": 1,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-token-meter": {
+      "include": 0,
+      "merge": 12,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-tool-call-timeout-policy": {
+      "include": 0,
+      "merge": 3,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-tool-subagent": {
+      "include": 3,
+      "merge": 5,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-tool-todo": {
+      "include": 2,
+      "merge": 6,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-web": {
+      "include": 4,
+      "merge": 1,
+      "exclude": 0
+    },
+    "@deepseek-ai/dsh-webhook": {
+      "include": 4,
+      "merge": 6,
+      "exclude": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "export:@deepseek-ai/dsh-browser-use:.:default",
+      "package": "@deepseek-ai/dsh-browser-use",
+      "source": "packages/browser-use/browser-use/src/index.ts",
+      "signature": "BrowserUseRegistry",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-browser-computer-use.md",
+      "section": "两个独占能力槽",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 BrowserUseRegistry 具名 Service 别名，不能重复计任务。",
+      "members": [
+        {
+          "name": "providerName",
+          "signature": "any",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "register",
+          "signature": "(name: Branded<\"BrowserUseProviderName\">) => () => Promise<void>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-browser-use:./brand:BrowserUseProviderName",
+      "package": "@deepseek-ai/dsh-browser-use",
+      "source": "packages/browser-use/browser-use/src/brand.ts",
+      "signature": "Branded<\"BrowserUseProviderName\">",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-browser-computer-use.md",
+      "section": "两个独占能力槽",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "BrowserUseRegistry.register/providerName 与 BrowserUseProviderName 是公开独占 provider 入口；根 Service 和 brand 源码均实际使用。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:DeepSeekLlmApiExtensionProvider",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionProvider<T>",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "Registry.register、Provider.prepare/request、Prepared.accept 是自有 DeepSeek 请求字段的真实扩展与交付时序。",
+      "members": [
+        {
+          "name": "prepare",
+          "signature": "(request: DeepSeekLlmApiExtensionRequest) => PreparedDeepSeekLlmApiExtension<T> | Promise<PreparedDeepSeekLlmApiExtension<T> | undefined> | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:DeepSeekLlmApiExtensionRequest",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionRequest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Registry.register、Provider.prepare/request、Prepared.accept 是自有 DeepSeek 请求字段的真实扩展与交付时序。",
+      "members": [
+        {
+          "name": "body",
+          "signature": "Readonly<Record<string, DeepSeekLlmApiJson>>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "purpose",
+          "signature": "\"compaction\" | \"session-title\" | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "sessionId",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "signal",
+          "signature": "AbortSignal",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:DeepSeekLlmApiJson",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiJson",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "扩展值的 JSON 类型边界，不能作为独立 provider 注册。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:default",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/index.ts",
+      "signature": "DeepSeekLlmApiExtensionRegistry",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 DeepSeekLlmApiExtensionRegistry 具名 Service 别名。",
+      "members": [
+        {
+          "name": "prepare",
+          "signature": "(request: DeepSeekLlmApiExtensionRequest) => Promise<PreparedDeepSeekLlmApiExtensions>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "register",
+          "signature": "<K extends keyof DeepSeekLlmApiExtensionMap>(field: K, provider: DeepSeekLlmApiExtensionProvider<DeepSeekLlmApiExtensionMap[K]>) => () => Promise<...>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:PreparedDeepSeekLlmApiExtension",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtension<T>",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Registry.register、Provider.prepare/request、Prepared.accept 是自有 DeepSeek 请求字段的真实扩展与交付时序。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "(() => void | Promise<void>) | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "value",
+          "signature": "T",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.:PreparedDeepSeekLlmApiExtensions",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtensions",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Registry.register、Provider.prepare/request、Prepared.accept 是自有 DeepSeek 请求字段的真实扩展与交付时序。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "() => Promise<void>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "fields",
+          "signature": "Readonly<Partial<DeepSeekLlmApiExtensionMap>>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiExtensionMap",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionMap",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "./types 与根入口同名的声明再导出，按根契约使用。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiExtensionProvider",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionProvider<T>",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "./types 与根入口同名的声明再导出，按根契约使用。",
+      "members": [
+        {
+          "name": "prepare",
+          "signature": "(request: DeepSeekLlmApiExtensionRequest) => PreparedDeepSeekLlmApiExtension<T> | Promise<PreparedDeepSeekLlmApiExtension<T> | undefined> | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiExtensionRequest",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiExtensionRequest",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "./types 与根入口同名的声明再导出，按根契约使用。",
+      "members": [
+        {
+          "name": "body",
+          "signature": "Readonly<Record<string, DeepSeekLlmApiJson>>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "purpose",
+          "signature": "\"compaction\" | \"session-title\" | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "sessionId",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "signal",
+          "signature": "AbortSignal",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:DeepSeekLlmApiJson",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "DeepSeekLlmApiJson",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "./types 与根入口同名的声明再导出，按根契约使用。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:PreparedDeepSeekLlmApiExtension",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtension<T>",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "./types 与根入口同名的声明再导出，按根契约使用。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "(() => void | Promise<void>) | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "value",
+          "signature": "T",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:./types:PreparedDeepSeekLlmApiExtensions",
+      "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "source": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "signature": "PreparedDeepSeekLlmApiExtensions",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-deepseek-request-extensions.md",
+      "section": "字段所有权与准备",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "./types 与根入口同名的声明再导出，按根契约使用。",
+      "members": [
+        {
+          "name": "accept",
+          "signature": "() => Promise<void>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "fields",
+          "signature": "Readonly<Partial<DeepSeekLlmApiExtensionMap>>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:apply",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "Client 固定 assembly 的装载元数据，不是诊断记录 SPI。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeConnection",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeConnection",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "state",
+          "signature": "\"connected\" | \"disconnected\"",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeContext",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeContext",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "children",
+          "signature": "readonly CordisRuntimeNode[]",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "kind",
+          "signature": "\"context\"",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeFiber",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeFiber",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "children",
+          "signature": "readonly [CordisRuntimeContext]",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "kind",
+          "signature": "\"fiber\"",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "uid",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeNode",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeNode",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "children",
+          "signature": "readonly CordisRuntimeNode[] | readonly [CordisRuntimeContext]",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "kind",
+          "signature": "\"fiber\" | \"context\"",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeRealm",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeRealm",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "connection",
+          "signature": "CordisRuntimeConnection",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "revision",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "root",
+          "signature": "CordisRuntimeContext",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "source",
+          "signature": "CordisRuntimeSource",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeSource",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeSource",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "CordisRuntimeSourceKind",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "label",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "sourceId",
+          "signature": "Branded<Role>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeTree",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/model.ts",
+      "signature": "CordisRuntimeTree",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "clients",
+          "signature": "readonly CordisRuntimeRealm[]",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "host",
+          "signature": "CordisRuntimeRealm | null",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "schemaVersion",
+          "signature": "0",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:CordisRuntimeTreeReader",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/shared/cordis/reader.ts",
+      "signature": "CordisRuntimeTreeReader",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "Cordis runtime tree 是 Inspector 的只读诊断投影形状，非第三方可注册节点协议。",
+      "members": [
+        {
+          "name": "getTree",
+          "signature": "() => Promise<CordisRuntimeTree>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:inject",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "Client 固定 assembly 的装载元数据，不是诊断记录 SPI。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:InspectorService",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "InspectorService",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Inspector Client/Host 诊断服务的公开读取与发布面，需已装载实验 Profile。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-experimental-inspector:./client:name",
+      "package": "@deepseek-ai/dsh-experimental-inspector",
+      "source": "packages/experimental/inspector/src/client/plugin.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-experimental-inspector.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "Client 固定 assembly 的装载元数据，不是诊断记录 SPI。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-claude-code:.:apply",
+      "package": "@deepseek-ai/dsh-hooks-claude-code",
+      "source": "packages/hooks/hooks-claude-code/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-claude-code:.:inject",
+      "package": "@deepseek-ai/dsh-hooks-claude-code",
+      "source": "packages/hooks/hooks-claude-code/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-claude-code:.:name",
+      "package": "@deepseek-ai/dsh-hooks-claude-code",
+      "source": "packages/hooks/hooks-claude-code/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-codex:.:apply",
+      "package": "@deepseek-ai/dsh-hooks-codex",
+      "source": "packages/hooks/hooks-codex/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-codex:.:inject",
+      "package": "@deepseek-ai/dsh-hooks-codex",
+      "source": "packages/hooks/hooks-codex/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-hooks-codex:.:name",
+      "package": "@deepseek-ai/dsh-hooks-codex",
+      "source": "packages/hooks/hooks-codex/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:default",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPicker",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 DirectoryPicker 具名抽象 Service 别名。",
+      "members": [
+        {
+          "name": "capability",
+          "signature": "() => DirectoryPickerCapability",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryEntry",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/types.ts",
+      "signature": "DirectoryEntry",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": [
+        {
+          "name": "hidden",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerBrowseCapability",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerBrowseCapability",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": [
+        {
+          "name": "createDirectory",
+          "signature": "(path: string, name: string) => Promise<string>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "kind",
+          "signature": "\"browse\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "list",
+          "signature": "(path?: string | undefined, signal?: AbortSignal | undefined) => Promise<DirectoryListing>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerCapability",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerCapability",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"native\" | \"browse\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerError",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerError",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": [
+        {
+          "name": "code",
+          "signature": "DirectoryPickerErrorCode",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerErrorCode",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerErrorCode",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerNativeCapability",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/index.ts",
+      "signature": "DirectoryPickerNativeCapability",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"native\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "pick",
+          "signature": "(signal: AbortSignal) => Promise<string | null>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:./types:DirectoryEntry",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/types.ts",
+      "signature": "DirectoryEntry",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "与根入口同名类型再导出。",
+      "members": [
+        {
+          "name": "hidden",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-host-directory-picker:./types:DirectoryListing",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "source": "packages/host/directory-picker/src/types.ts",
+      "signature": "DirectoryListing",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-host-platform.md",
+      "section": "能力和错误",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DirectoryPicker.capability 与 native/browse union、listing/error 是自有 backend 和 Host 消费的公开契约。",
+      "members": [
+        {
+          "name": "crumbs",
+          "signature": "DirectoryEntry[]",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "entries",
+          "signature": "DirectoryEntry[]",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "home",
+          "signature": "string",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "path",
+          "signature": "string",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:Config",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "Config",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-runtime-diagnostics-telemetry.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "InvariantRegistry.register、Config、installer/failure 类型是自有运行时诊断检查的公开扩展点。",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "package_allowlist",
+          "signature": "string[] | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "package_blocklist",
+          "signature": "string[] | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:default",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "InvariantRegistry",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-runtime-diagnostics-telemetry.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 InvariantRegistry 具名 Service 别名。",
+      "members": [
+        {
+          "name": "register",
+          "signature": "(packageName: string, installer: InvariantInstaller) => () => void",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:InvariantFailure",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "InvariantFailure",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-runtime-diagnostics-telemetry.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "InvariantRegistry.register、Config、installer/failure 类型是自有运行时诊断检查的公开扩展点。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-invariants:.:InvariantInstaller",
+      "package": "@deepseek-ai/dsh-invariants",
+      "source": "packages/runtime-diagnostics/invariants/src/index.ts",
+      "signature": "InvariantInstaller",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-runtime-diagnostics-telemetry.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "InvariantRegistry.register、Config、installer/failure 类型是自有运行时诊断检查的公开扩展点。",
+      "members": [
+        {
+          "name": "inject",
+          "signature": "any",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:default",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/index.ts",
+      "signature": "Lsp",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 Lsp 具名 Service 别名。",
+      "members": [
+        {
+          "name": "query",
+          "signature": "(request: LspQueryRequest, signal?: AbortSignal | undefined) => Promise<LspQueryResult>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "registerProvider",
+          "signature": "(provider: LspProvider) => () => void",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspHover",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspHover",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "contents",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "range",
+          "signature": "LspRange | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspLocation",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspLocation",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "range",
+          "signature": "LspRange",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "uri",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspOperation",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspOperation",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspPosition",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspPosition",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "character",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "line",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspProvider",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspProvider",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "extensionToLanguage",
+          "signature": "Readonly<Record<string, string>>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "id",
+          "signature": "Branded<\"LspProviderId\">",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "query",
+          "signature": "(request: LspProviderQuery, signal?: AbortSignal | undefined) => Promise<LspQueryResult>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspProviderQuery",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspProviderQuery",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "filePath",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "languageId",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "operation",
+          "signature": "LspOperation",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "position",
+          "signature": "LspPosition",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "workspaceRoot",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspQueryRequest",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspQueryRequest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "filePath",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "operation",
+          "signature": "LspOperation",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "position",
+          "signature": "LspPosition",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "workspaceRoot",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspQueryResult",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspQueryResult",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"hover\" | \"locations\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspRange",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspRange",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "end",
+          "signature": "LspPosition",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "start",
+          "signature": "LspPosition",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-lsp:.:LspService",
+      "package": "@deepseek-ai/dsh-lsp",
+      "source": "packages/lsp/lsp/src/types.ts",
+      "signature": "LspService",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-lsp.md",
+      "section": "契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Lsp.registerProvider/query 与 provider/query/result/位置类型共同构成可运行的第三方 LSP provider 任务。",
+      "members": [
+        {
+          "name": "query",
+          "signature": "(request: LspQueryRequest, signal?: AbortSignal | undefined) => Promise<LspQueryResult>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "registerProvider",
+          "signature": "(provider: LspProvider) => () => void",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:apply",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "桥接器插件装载元数据，不是独立 MCP 工具。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:createMcpToolDefinition",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/tools.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:inject",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "桥接器插件装载元数据，不是独立 MCP 工具。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:McpResult",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/tools.ts",
+      "signature": "McpResult<Structured>",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": [
+        {
+          "name": "content",
+          "signature": "JsonValue[]",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "structuredContent",
+          "signature": "Structured | undefined",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:McpToolDefinitionOptions",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/tools.ts",
+      "signature": "McpToolDefinitionOptions",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": [
+        {
+          "name": "call",
+          "signature": "(args: Record<string, unknown>, execution: ToolExecution) => Promise<unknown>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "description",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "inputSchema",
+          "signature": "Record<string, unknown>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "outputSchema",
+          "signature": "unknown",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "rawName",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "taskRequired",
+          "signature": "boolean | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:name",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "桥接器插件装载元数据，不是独立 MCP 工具。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:ReconnectConfig",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/connection.ts",
+      "signature": "ReconnectConfig",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "initialDelayMs",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "maxAttempts",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "maxDelayMs",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:ResolvedReconnectPolicy",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/connection.ts",
+      "signature": "Readonly<Required<ReconnectConfig>>",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "initialDelayMs",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "maxAttempts",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "maxDelayMs",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:StdioConfig",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "StdioConfig",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": [
+        {
+          "name": "args",
+          "signature": "string[]",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "command",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "cwd",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "env",
+          "signature": "Record<string, string>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "failOnStartupError",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "maxInstructionBytes",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "reconnect",
+          "signature": "ReconnectConfig | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "serverName",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "toolCallTimeoutMs",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "transport",
+          "signature": "\"stdio\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-mcp-client:.:StreamableHttpConfig",
+      "package": "@deepseek-ai/dsh-mcp-client",
+      "source": "packages/mcp/mcp-client/src/index.ts",
+      "signature": "StreamableHttpConfig",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-mcp-client.md",
+      "section": "配置与公开成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "createMcpToolDefinition/Options、McpResult 与 stdio/HTTP/reconnect 配置均是公开桥接或自有工具定义契约。",
+      "members": [
+        {
+          "name": "failOnStartupError",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "headers",
+          "signature": "Record<string, string>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "maxInstructionBytes",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "reconnect",
+          "signature": "ReconnectConfig | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "serverName",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "toolCallTimeoutMs",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "transport",
+          "signature": "\"streamable-http\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "url",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:DshEnginesManifest",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "DshEnginesManifest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-loader-composition.md",
+      "section": "配置行与 patch 语义",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DshPackageManifest/engine/本地化元数据是第三方包发布清单的公开类型，须按 Loader 解析规则填写。",
+      "members": [
+        {
+          "name": "dsh",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "node",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "npm",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:DshManifest",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "DshManifest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-loader-composition.md",
+      "section": "配置行与 patch 语义",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DshPackageManifest/engine/本地化元数据是第三方包发布清单的公开类型，须按 Loader 解析规则填写。",
+      "members": [
+        {
+          "name": "bundle",
+          "signature": "DshBundleManifest | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "client",
+          "signature": "DshClientManifest | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "manifestVersion",
+          "signature": "1 | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "profile",
+          "signature": "DshProfileManifest | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:DshPackageManifest",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "DshPackageManifest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-loader-composition.md",
+      "section": "配置行与 patch 语义",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DshPackageManifest/engine/本地化元数据是第三方包发布清单的公开类型，须按 Loader 解析规则填写。",
+      "members": [
+        {
+          "name": "dependencies",
+          "signature": "Record<string, string> | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "description",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "dsh",
+          "signature": "DshManifest | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "engines",
+          "signature": "DshEnginesManifest | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "icon",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "peerDependencies",
+          "signature": "Record<string, string> | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "private",
+          "signature": "boolean | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "version",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:LocalizedText",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "LocalizedText",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-loader-composition.md",
+      "section": "配置行与 patch 语义",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "DshPackageManifest/engine/本地化元数据是第三方包发布清单的公开类型，须按 Loader 解析规则填写。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-package-manifest:.:PluginLocalizedMeta",
+      "package": "@deepseek-ai/dsh-package-manifest",
+      "source": "packages/util/package-manifest/src/types.ts",
+      "signature": "PluginLocalizedMeta",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-loader-composition.md",
+      "section": "配置行与 patch 语义",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Loader 解析后的展示/诊断结果，不是作者直接填写的 package.json.dsh 字段。",
+      "members": [
+        {
+          "name": "description",
+          "signature": "LocalizedText | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "error",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "icon",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "title",
+          "signature": "LocalizedText | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:AUTO_PRESET",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "内建 auto/custom 标记与派生 knob/setting 状态归已有预设 Service，非新预设注册 SPI。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:Config",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "Config",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Profile 可配置的 presets/defaultPreset 公开契约。",
+      "members": [
+        {
+          "name": "defaultPreset",
+          "signature": "Volatile<string | undefined>",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "presets",
+          "signature": "Record<string, PresetSpec>",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:CUSTOM_PRESET",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "内建 auto/custom 标记与派生 knob/setting 状态归已有预设 Service，非新预设注册 SPI。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:default",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "PermissionPresetService",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认 PermissionPresetService 的 set/current/catalog 等是 Host 插件真实消费入口。",
+      "members": [
+        {
+          "name": "catalog",
+          "signature": "() => PermissionCatalog",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "current",
+          "signature": "(session: Session) => string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "defaultPreset",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "names",
+          "signature": "readonly string[]",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "optionOf",
+          "signature": "(name: string) => PresetOption",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "registerAuto",
+          "signature": "(admit: () => void) => () => Promise<void>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "resolve",
+          "signature": "(name: string) => PresetSpec",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "set",
+          "signature": "(session: Session, name: string) => void",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:KnobState",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "KnobState",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "内建 auto/custom 标记与派生 knob/setting 状态归已有预设 Service，非新预设注册 SPI。",
+      "members": [
+        {
+          "name": "approval",
+          "signature": "any",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "preset",
+          "signature": "string | null",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "sandbox",
+          "signature": "any",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:.:PermissionSettings",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/index.ts",
+      "signature": "PermissionSettings",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "内建 auto/custom 标记与派生 knob/setting 状态归已有预设 Service，非新预设注册 SPI。",
+      "members": [
+        {
+          "name": "defaultPreset",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:./invariant:apply",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "可选 invariant 插件装载元数据。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:./invariant:inject",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "可选 invariant 插件装载元数据。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-permission-presets:./invariant:name",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "source": "packages/interaction/permission-presets/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-permission-presets.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "可选 invariant 插件装载元数据。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-repeat-tool-reminder:.:apply",
+      "package": "@deepseek-ai/dsh-repeat-tool-reminder",
+      "source": "packages/guard/repeat-tool-reminder/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-repeat-tool-reminder:.:name",
+      "package": "@deepseek-ai/dsh-repeat-tool-reminder",
+      "source": "packages/guard/repeat-tool-reminder/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:default",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "SessionProjectionRegistry",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 SessionProjectionRegistry 具名 Service 别名。",
+      "members": [
+        {
+          "name": "cachedSnapshot",
+          "signature": "(session: Session, keys?: readonly never[] | undefined) => ProjectionSnapshot | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "checkpoint",
+          "signature": "(session: Session) => ProjectionCheckpoint",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "hydrate",
+          "signature": "(session: Session, checkpoint: ProjectionCheckpoint, events: readonly SessionEvent[], baseSeq: SessionLogOffset) => ProjectionSnapshot",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "onChanged",
+          "signature": "(listener: ProjectionChangeListener) => () => void",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "register",
+          "signature": "{ <K extends keyof SessionProjectionMap, S extends SessionProjectionStateMap[K]>(definition: Omit<ProjectionDefinition<K, S>, \"wire\"> & { wire: (K extends never ? { ...; } : never) & {}; }): () => void; <K extends Exclude<keyof SessionProjectionStateMap, keyof SessionProjectionMap>, S extends SessionProjectionStateM...",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "restore",
+          "signature": "(checkpoint: ProjectionCheckpoint, events: readonly SessionEvent[], baseSeq: SessionLogOffset, header: SessionHeader, inheritedEventCount: SessionLogOffset) => { snapshot: ProjectionSnapshot; checkpoint: ProjectionCheckpoint; }",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "restoreFloor",
+          "signature": "(checkpoint: ProjectionCheckpoint) => any",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "snapshot",
+          "signature": "(session: Session, keys?: readonly never[] | undefined) => ProjectionSnapshot",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "stateOf",
+          "signature": "<K extends keyof SessionProjectionStateMap>(session: Session, key: K) => SessionProjectionStateMap[K] | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "viewCheckpoint",
+          "signature": "(checkpoint: ProjectionCheckpoint, keys?: readonly never[] | undefined) => Partial<SessionProjectionMap>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionChangeListener",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionChangeListener",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "checkpoint/snapshot/订阅与声明合并是日志投影作者的公开读写形状。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionCheckpoint",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionCheckpoint",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "checkpoint/snapshot/订阅与声明合并是日志投影作者的公开读写形状。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionCheckpointRow",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionCheckpointRow",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "checkpoint/snapshot/订阅与声明合并是日志投影作者的公开读写形状。",
+      "members": [
+        {
+          "name": "seq",
+          "signature": "SessionSeqCursor",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "val",
+          "signature": "unknown",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "ver",
+          "signature": "number",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionSnapshot",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/index.ts",
+      "signature": "ProjectionSnapshot",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "checkpoint/snapshot/订阅与声明合并是日志投影作者的公开读写形状。",
+      "members": [
+        {
+          "name": "asOfSeq",
+          "signature": "SessionSeqCursor",
+          "proposal": "include",
+          "review": "include",
+          "changed": false
+        },
+        {
+          "name": "values",
+          "signature": "Partial<SessionProjectionMap>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:SessionProjectionMap",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionMap",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "checkpoint/snapshot/订阅与声明合并是日志投影作者的公开读写形状。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:.:SessionProjectionStateMap",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionStateMap",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-session-projection.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "checkpoint/snapshot/订阅与声明合并是日志投影作者的公开读写形状。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:./types:SessionProjectionMap",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionMap",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-session-projection.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "./types 重导出同名 ProjectionMap/StateMap，不生成第二份事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-session-projection:./types:SessionProjectionStateMap",
+      "package": "@deepseek-ai/dsh-session-projection",
+      "source": "packages/session/session-projection/src/types.ts",
+      "signature": "SessionProjectionStateMap",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-session-projection.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "./types 重导出同名 ProjectionMap/StateMap，不生成第二份事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-spill:.:default",
+      "package": "@deepseek-ai/dsh-spill",
+      "source": "packages/spill/spill/src/index.ts",
+      "signature": "SpillStore",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-spill.md",
+      "section": "保存契约与所有权",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 SpillStore 具名抽象 Service 别名，saveText 契约已有唯一 owner。",
+      "members": [
+        {
+          "name": "saveText",
+          "signature": "(input: SaveTextSpill) => Promise<SpillRef>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:ContextBreakdownProjection",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/projection.ts",
+      "signature": "ContextBreakdownProjection",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": [
+        {
+          "name": "messageTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "systemTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "toolsTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:ContextPressureProjection",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/projection.ts",
+      "signature": "ContextPressureProjection",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": [
+        {
+          "name": "contextWindow",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "pressureTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "projectedTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:deriveTurnTokenUsage",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/turn-usage.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:TokenUsageProjection",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/projection.ts",
+      "signature": "TokenUsageProjection",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": [
+        {
+          "name": "cacheReadTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "cacheWriteTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "outputTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "uncachedInputTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:TurnTokenUsage",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/turn-usage.ts",
+      "signature": "TurnTokenUsage",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": [
+        {
+          "name": "cacheReadTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "cacheWriteTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "outputTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "reasoningTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "routes",
+          "signature": "readonly TurnTokenUsageRoute[] | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "totalTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "uncachedInputTokens",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./client:TurnTokenUsageRoute",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/turn-usage.ts",
+      "signature": "TurnTokenUsageRoute",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": [
+        {
+          "name": "model",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "provider",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateContent",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateMessage",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateStructuralBlock",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateSystemMessage",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:estimateToolsTokens",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-token-meter:./estimate:ROLE_OVERHEAD",
+      "package": "@deepseek-ai/dsh-token-meter",
+      "source": "packages/llm/token-meter/src/estimate.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-llm-builtins-retry-meter.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "用量/压力投影与估算 helper 归 TokenMeter.measure 的派生读数，不独立写 Session。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.:apply",
+      "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "source": "packages/guard/timeout-policy/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.:inject",
+      "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "source": "packages/guard/timeout-policy/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-call-timeout-policy:.:name",
+      "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "source": "packages/guard/timeout-policy/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-hook-bridges-guards.md",
+      "section": "入口与归属",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "apply/inject/name 是具体 Hook/Guard 插件 Profile 装载元数据，不应逐个作为独立扩展 API。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./invariant:apply",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/invariant.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "invariant 插件 apply/inject/name 为可选诊断装载元数据。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./invariant:inject",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/invariant.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "invariant 插件 apply/inject/name 为可选诊断装载元数据。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./invariant:name",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/invariant.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "invariant 插件 apply/inject/name 为可选诊断装载元数据。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:Config",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "Config",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-subagent-tools.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "model-selection-settings Config/Service/current 状态是 tool-subagent 模型选择的真实可装载扩展。",
+      "members": [
+        {
+          "name": "allowedModels",
+          "signature": "Volatile<AllowedModelRoute[]>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "enabled",
+          "signature": "Volatile<boolean>",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:default",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "SubagentModelSelectionConfig",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是同子路径的 SubagentModelSelectionConfig 具名 Service 别名。",
+      "members": [
+        {
+          "name": "current",
+          "signature": "() => SubagentModelSelectionSettings",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:name",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "适用范围与入口",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "模型选择设置插件诊断名，不是模型工具名。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:SubagentModelSelectionConfig",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "SubagentModelSelectionConfig",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "model-selection-settings Config/Service/current 状态是 tool-subagent 模型选择的真实可装载扩展。",
+      "members": [
+        {
+          "name": "current",
+          "signature": "() => SubagentModelSelectionSettings",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-subagent:./model-selection-settings:SubagentModelSelectionSettings",
+      "package": "@deepseek-ai/dsh-tool-subagent",
+      "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
+      "signature": "SubagentModelSelectionSettings",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-subagent-tools.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "model-selection-settings Config/Service/current 状态是 tool-subagent 模型选择的真实可装载扩展。",
+      "members": [
+        {
+          "name": "allowedModels",
+          "signature": "AllowedModelRoute[]",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "enabled",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:apply",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "todo 或 invariant 插件的装载元数据，真实模型工具由 apply 注册且以 Session 日志为事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:Config",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "Config",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Config 和 TodoItem 是 todo_write 完整清单的公开配置与值类型。",
+      "members": [
+        {
+          "name": "allowParallelInProgress",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:inject",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "todo 或 invariant 插件的装载元数据，真实模型工具由 apply 注册且以 Session 日志为事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:.:name",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/index.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "todo 或 invariant 插件的装载元数据，真实模型工具由 apply 注册且以 Session 日志为事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./client:TodoItem",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/types.ts",
+      "signature": "TodoItem",
+      "proposal": "include",
+      "review": "include",
+      "changed": false,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "Config 和 TodoItem 是 todo_write 完整清单的公开配置与值类型。",
+      "members": [
+        {
+          "name": "content",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "status",
+          "signature": "\"pending\" | \"completed\" | \"in_progress\"",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./invariant:apply",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/invariant.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "todo 或 invariant 插件的装载元数据，真实模型工具由 apply 注册且以 Session 日志为事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./invariant:inject",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "todo 或 invariant 插件的装载元数据，真实模型工具由 apply 注册且以 Session 日志为事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-tool-todo:./invariant:name",
+      "package": "@deepseek-ai/dsh-tool-todo",
+      "source": "packages/todo/tool-todo/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-planning.md",
+      "section": "Todo 契约",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "todo 或 invariant 插件的装载元数据，真实模型工具由 apply 注册且以 Session 日志为事实。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:default",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/index.ts",
+      "signature": "WebRuntime",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-web-provider.md",
+      "section": "公开类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 WebRuntime 具名 Service 别名。",
+      "members": [
+        {
+          "name": "fetch",
+          "signature": "(request: WebFetchRequest, signal?: AbortSignal | undefined) => Promise<WebFetchResult>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "registerFetchProvider",
+          "signature": "(provider: WebFetchProvider) => () => void",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "registerSearchProvider",
+          "signature": "(provider: WebSearchProvider) => () => void",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "search",
+          "signature": "(request: WebSearchRequest, signal?: AbortSignal | undefined) => Promise<WebSearchResult>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebFetchRequest",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebFetchRequest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-web-provider.md",
+      "section": "公开类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "WebRuntime.registerSearch/registerFetch 与请求/结果类型构成第三方搜索/抓取 provider 可运行路径。",
+      "members": [
+        {
+          "name": "url",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebFetchResult",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebFetchResult",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-web-provider.md",
+      "section": "公开类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "WebRuntime.registerSearch/registerFetch 与请求/结果类型构成第三方搜索/抓取 provider 可运行路径。",
+      "members": [
+        {
+          "name": "body",
+          "signature": "WebFetchBody",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "statusCode",
+          "signature": "number",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "url",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebSearchRequest",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebSearchRequest",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-web-provider.md",
+      "section": "公开类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "WebRuntime.registerSearch/registerFetch 与请求/结果类型构成第三方搜索/抓取 provider 可运行路径。",
+      "members": [
+        {
+          "name": "maxResults",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "query",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-web:.:WebSearchResult",
+      "package": "@deepseek-ai/dsh-web",
+      "source": "packages/web/web/src/types.ts",
+      "signature": "WebSearchResult",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-web-provider.md",
+      "section": "公开类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "WebRuntime.registerSearch/registerFetch 与请求/结果类型构成第三方搜索/抓取 provider 可运行路径。",
+      "members": [
+        {
+          "name": "content",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "sources",
+          "signature": "readonly WebSearchSource[]",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "truncated",
+          "signature": "boolean",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:default",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/index.ts",
+      "signature": "WebhookRuntime",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": true,
+      "reason": "默认导出是已纳入的 WebhookRuntime 具名 Service 别名。",
+      "members": [
+        {
+          "name": "dispatch",
+          "signature": "<K extends string>(delivery: VerifiedWebhookDelivery<K>) => void",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "register",
+          "signature": "<K extends string>(rule: WebhookRule<K>) => () => Promise<void>",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookDeliveryId",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/brand.ts",
+      "signature": "Branded<\"WebhookDeliveryId\">",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "WebhookRuntime.register、投递/来源品牌与模型选择是已验证投递规则的公开契约。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookEventOf",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookEventOf<K>",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "WebhookRuntime.register、投递/来源品牌与模型选择是已验证投递规则的公开契约。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookModelSelection",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookModelSelection",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "WebhookRuntime.register、投递/来源品牌与模型选择是已验证投递规则的公开契约。",
+      "members": [
+        {
+          "name": "maxTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "model",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        },
+        {
+          "name": "provider",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "include",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:.:WebhookSourceId",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/brand.ts",
+      "signature": "Branded<\"WebhookSourceId\">",
+      "proposal": "exclude",
+      "review": "include",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "WebhookRuntime.register、投递/来源品牌与模型选择是已验证投递规则的公开契约。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./invariant:apply",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "可选 webhook invariant 插件装载元数据，非投递鉴权/规则注册。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./invariant:inject",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/invariant.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": false,
+      "ownerSectionContainsSignature": false,
+      "reason": "可选 webhook invariant 插件装载元数据，非投递鉴权/规则注册。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./invariant:name",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/invariant.ts",
+      "signature": "any",
+      "proposal": "include",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": false,
+      "reason": "可选 webhook invariant 插件装载元数据，非投递鉴权/规则注册。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./types:WebhookEventOf",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookEventOf<K>",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "与根入口同名类型再导出。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-webhook:./types:WebhookModelSelection",
+      "package": "@deepseek-ai/dsh-webhook",
+      "source": "packages/webhook/webhook/src/types.ts",
+      "signature": "WebhookModelSelection",
+      "proposal": "exclude",
+      "review": "merge",
+      "changed": true,
+      "owner": "references/api-webhook-rules.md",
+      "section": "对象类型与成员",
+      "ownerSectionContainsSymbol": true,
+      "ownerSectionContainsSignature": true,
+      "reason": "与根入口同名类型再导出。",
+      "members": [
+        {
+          "name": "maxTokens",
+          "signature": "number | undefined",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "model",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        },
+        {
+          "name": "provider",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "merge",
+          "changed": true
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:homePatchPath",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:initializeProfileFromDefault",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:INSTALL_ANCHOR",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:prepareProfile",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:PROFILE_ROOT_FILENAME",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:ResolvedProfileRuntime",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "ResolvedProfileRuntime",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": [
+        {
+          "name": "installAnchor",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "profile",
+          "signature": "Profile",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:runProfile",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "any",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh:./profile-boot:RunProfileOptions",
+      "package": "@deepseek-ai/dsh",
+      "source": "apps/cli/src/profile-boot.ts",
+      "signature": "RunProfileOptions",
+      "proposal": "exclude",
+      "review": "exclude",
+      "changed": false,
+      "owner": null,
+      "section": null,
+      "ownerSectionContainsSymbol": null,
+      "ownerSectionContainsSignature": null,
+      "reason": "应用 CLI/启动 Profile 函数及部署常量，非第三方 Cordis 插件运行入口。",
+      "members": [
+        {
+          "name": "args",
+          "signature": "readonly string[]",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "environment",
+          "signature": "LaunchEnvironmentSnapshot",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "fromDefaultProfile",
+          "signature": "string | undefined",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "packageManager",
+          "signature": "any",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "patchFiles",
+          "signature": "readonly string[]",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "profile",
+          "signature": "string",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        },
+        {
+          "name": "resolvedProfile",
+          "signature": "ResolvedProfileRuntime | undefined",
+          "proposal": "exclude",
+          "review": "exclude",
+          "changed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "package": "@deepseek-ai/dsh-agent",
+    "version": "0.2.0-rc.1",
+    "tag": "dsh-v0.2.0-rc.1",
+    "commit": "4878cdabd87d4041bdaff61d04c966883b9fd07a",
+    "remote": "https://github.com/deepseek-ai/deepseek-harness"
+}

@@ -1,0 +1,3545 @@
+{
+    "target": {
+        "tag": "dsh-v0.2.0-rc.1",
+        "commit": "4878cdabd87d4041bdaff61d04c966883b9fd07a"
+    },
+    "scope": [
+        "dsh-typert-registry",
+        "dsh-attachment-local",
+        "dsh-sdk-protocol",
+        "dsh-command-feedback",
+        "dsh-credentials",
+        "dsh-ptc-runtime",
+        "dsh-storage",
+        "dsh-settings"
+    ],
+    "policy": "仅对 api-surface.json 中尚 pending 的 entry/object/member 给候选决定；included 仍须正文含精确符号后由共享账本 owner 合入。",
+    "entries": [
+        {
+            "candidate": "export:@deepseek-ai/dsh-typert-registry:.",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-typert-registry:./client",
+            "decision": "included",
+            "reason": "公开 Client 装配入口；Client assembly 调用 apply 安装反射 Registry，卸载由 Cordis fiber 管理。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-typert-registry:./types",
+            "decision": "included",
+            "reason": "公开类型入口供 Client/Host 共享 Typert 贡献与反射类型；对象与根入口同形，按单一权威对象合并。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-sdk-protocol:.",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-command-feedback:./remote",
+            "decision": "included",
+            "reason": "构建生成的 Remote/Host Typert 贡献入口，分别由 Client assembly 和 Host Loader 装配；生成文件本身不手写。",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员"
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-command-feedback:./typert",
+            "decision": "included",
+            "reason": "构建生成的 Remote/Host Typert 贡献入口，分别由 Client assembly 和 Host Loader 装配；生成文件本身不手写。",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员"
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-command-feedback:./types",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        }
+    ],
+    "objects": [
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "默认导出与同包命名 Service 类同一实体；合并到命名类，避免重复覆盖。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertContribution",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocTag",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocumentation",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:typertEndpoint",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertFace",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:typertKey",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertMemberModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageFilter",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:typertPackageKey",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageModel",
+            "decision": "included",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "TypertContribution.model 的必填公开反射形状，生成贡献注册契约必须可描述。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageRecord",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaFactory",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaFilter",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaRecord",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:.:TypertTypeModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./client:apply",
+            "decision": "included",
+            "source": "packages/typert/registry/src/client/index.ts",
+            "reason": "Client Cordis 组合时调用公开 apply 安装 TypertRegistry 反射服务。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./client:inject",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/client/index.ts",
+            "reason": "生成或组合层入口；此处没有独立第三方插件注册任务，归属 Remote/Client assembly，不重复纳入。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertContribution",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocTag",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocumentation",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertFace",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertMemberModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageFilter",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageRecord",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaFactory",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaFilter",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaRecord",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-typert-registry:./types:TypertTypeModel",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:canPassThroughNormalization",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:commitPreparedImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "默认导出与同包命名 Service 类同一实体；合并到命名类，避免重复覆盖。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_IMAGE_COMPRESSION_CONCURRENCY",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_MAX_IMAGE_BYTES",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_MAX_IMAGE_DIMENSION",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_MAX_IMAGE_PIXELS",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_MAX_IMAGES_PER_MESSAGE",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_MAX_MESSAGE_IMAGE_BYTES",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_NORMALIZED_IMAGE_MAX_BYTES",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_NORMALIZED_IMAGE_MAX_DIMENSION",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:DEFAULT_NORMALIZED_IMAGE_MAX_PIXELS",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:MAX_IMAGE_COMPRESSION_CONCURRENCY",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:NormalizationPolicy",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:NormalizedImage",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:normalizeImage",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:PreparedImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:prepareImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:readImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:readRequestImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/request-image.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:requestImageVariantId",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/request-image.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:saveImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-attachment-local:.:validateImageFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkNotificationMap",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkRequestMap",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeParams",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeResult",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcResponseError",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcTransportPeer",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SdkEncodedImageBlock",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SdkPromptContentBlock",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SdkRunStatus",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionEventNotification",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionPromptParams",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionPromptResult",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionStatusNotification",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentStartedNotification",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:apply",
+            "decision": "included",
+            "source": "packages/feedback/command-feedback/src/index.ts",
+            "reason": "Host 插件装载入口，注册 SessionFeedbackService 与 /feedback 命令；Profile 组合实际调用。",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:FeedbackCategory",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:FeedbackRecord",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:inject",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/index.ts",
+            "reason": "Loader 包标识/注入元数据或与权威根入口重复的类型；不构成独立调用契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:name",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/index.ts",
+            "reason": "Loader 包标识/注入元数据或与权威根入口重复的类型；不构成独立调用契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordRequest",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordResult",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordValue",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackSessionNotFound",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:./types:FeedbackCategory",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:./types:FeedbackRecord",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordRequest",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordResult",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordValue",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackSessionNotFound",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:.:ApiKeyRecord",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:.:default",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "默认导出与同包命名 Service 类同一实体；合并到命名类，避免重复覆盖。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:.:GrantRecord",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./invariant:apply",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/invariant.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./invariant:inject",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/invariant.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./invariant:name",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/invariant.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./types:ApiKeyRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialInfo",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialKey",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./types:CredentialRef",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-credentials:./types:GrantRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "默认导出与同包命名 Service 类同一实体；合并到命名类，避免重复覆盖。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:DUNDER_MEMBER",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PORTABLE_RESERVED_WORDS",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcBindingErrorClass",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcBindingFunction",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcJsonValue",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunFailure",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:RESERVED_BINDING_GLOBALS",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-ptc-runtime:.:RESERVED_ERROR_MEMBERS",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:BackendRegistry",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/registry.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:default",
+            "decision": "excluded",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "默认导出与同包命名 Service 类同一实体；合并到命名类，避免重复覆盖。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:KvFacet",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:StorageBackend",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:storageBackendServiceKey",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:StorageError",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/error.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:StorageErrorCode",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/error.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:StorageForms",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-storage:.:UNIT_NAME_RE",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:.:default",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "默认导出与同包命名 Service 类同一实体；合并到命名类，避免重复覆盖。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:.:RedactedSecret",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/redact.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:.:RedactedValue",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/redact.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:.:SettingsDescribeOptions",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:.:SettingsNamespace",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:./types:SettingsDescribeValue",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:./types:SettingsNamespace",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:./types:SettingsPathOpView",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "id": "export:@deepseek-ai/dsh-settings:./types:SettingsSecretView",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        }
+    ],
+    "members": [
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "contexts",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "get",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "getPackage",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "list",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "listPackages",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "local",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "lookups",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "register",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "remotes",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "resolve",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:default",
+            "name": "toJSONSchema",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertContribution",
+            "name": "face",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertContribution",
+            "name": "invocations",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertContribution",
+            "name": "model",
+            "decision": "included",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "register 的 TypertContribution 必填 model 字段；生成器提供该反射模型。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertContribution",
+            "name": "package",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertContribution",
+            "name": "schemas",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocTag",
+            "name": "argument",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocTag",
+            "name": "comment",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocTag",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocTag",
+            "name": "text",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocumentation",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocumentation",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocumentation",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertDocumentation",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "mode",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "signature",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertEventModel",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertMemberModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertMemberModel",
+            "name": "kind",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertMemberModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertMemberModel",
+            "name": "signature",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertMemberModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "exportName",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "members",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertObjectModel",
+            "name": "types",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageFilter",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageFilter",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageModel",
+            "name": "events",
+            "decision": "included",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "TypertContribution.model 的公开字段；生成器提供，插件作者不手写元数据。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageModel",
+            "name": "objects",
+            "decision": "included",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "TypertContribution.model 的公开字段；生成器提供，插件作者不手写元数据。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageModel",
+            "name": "services",
+            "decision": "included",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "TypertContribution.model 的公开字段；生成器提供，插件作者不手写元数据。",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageRecord",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageRecord",
+            "name": "key",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageRecord",
+            "name": "model",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertPackageRecord",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "contexts",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "get",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "getPackage",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "反射/包级元数据查询，不在 Remote 注册与调用最小任务路径内。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "list",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "listPackages",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "反射/包级元数据查询，不在 Remote 注册与调用最小任务路径内。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "local",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "lookups",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "register",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "remotes",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "resolve",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertRegistry",
+            "name": "toJSONSchema",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/service.ts",
+            "reason": "反射/包级元数据查询，不在 Remote 注册与调用最小任务路径内。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaFactory",
+            "name": "create",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaFactory",
+            "name": "name",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaFilter",
+            "name": "face",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaFilter",
+            "name": "package",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaRecord",
+            "name": "face",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaRecord",
+            "name": "key",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaRecord",
+            "name": "name",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaRecord",
+            "name": "package",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertSchemaRecord",
+            "name": "schema",
+            "decision": "included",
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "Host Remote 描述符注册、查询或 lookup/context 配置所需的公开契约；注册 disposer 随插件 fiber 清理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "exportName",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "key",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "members",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertServiceModel",
+            "name": "types",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertTypeModel",
+            "name": "declaration",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:.:TypertTypeModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "仅描述生成的 Typert 反射模型或包级元数据；Remote 注册任务不要求插件手写或读取此对象。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertContribution",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertContribution",
+            "name": "invocations",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertContribution",
+            "name": "model",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertContribution",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertContribution",
+            "name": "schemas",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocTag",
+            "name": "argument",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocTag",
+            "name": "comment",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocTag",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocTag",
+            "name": "text",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocumentation",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocumentation",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocumentation",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertDocumentation",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "mode",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "signature",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertEventModel",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertMemberModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertMemberModel",
+            "name": "kind",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertMemberModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertMemberModel",
+            "name": "signature",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertMemberModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "exportName",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "members",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertObjectModel",
+            "name": "types",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageFilter",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageFilter",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageModel",
+            "name": "events",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageModel",
+            "name": "objects",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageModel",
+            "name": "services",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageRecord",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageRecord",
+            "name": "key",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageRecord",
+            "name": "model",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertPackageRecord",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaFactory",
+            "name": "create",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaFactory",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaFilter",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaFilter",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaRecord",
+            "name": "face",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaRecord",
+            "name": "key",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaRecord",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaRecord",
+            "name": "package",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertSchemaRecord",
+            "name": "schema",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "description",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "exportName",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "jsDoc",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "key",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "members",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "summary",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "tags",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertServiceModel",
+            "name": "types",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertTypeModel",
+            "name": "declaration",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-typert-registry:./types:TypertTypeModel",
+            "name": "name",
+            "decision": "excluded",
+            "source": "packages/typert/registry/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "dshHome",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "imageCompressionConcurrency",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "maxImageBytes",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "maxImageDimension",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "maxImagePixels",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "maxImagesPerMessage",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "maxMessageImageBytes",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "normalizedImageMaxBytes",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "normalizedImageMaxDimension",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:Config",
+            "name": "normalizedImageMaxPixels",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "fileHostPath",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "imageCompressionConcurrency",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "imageHostPath",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "imageLimits",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "normalizationPolicy",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "readFileStream",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "readImage",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "readImageRequest",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "root",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "saveFile",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "saveFileStream",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "saveImage",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "saveImages",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:default",
+            "name": "validateImage",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:LocalAttachmentStore",
+            "name": "imageCompressionConcurrency",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:LocalAttachmentStore",
+            "name": "normalizationPolicy",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/index.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizationPolicy",
+            "name": "maxBytes",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizationPolicy",
+            "name": "maxDimension",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizationPolicy",
+            "name": "maxPixels",
+            "decision": "included",
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "本地附件后端的可装载配置或已解析规范化策略；公开构造/消费路径。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizedImage",
+            "name": "data",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizedImage",
+            "name": "height",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizedImage",
+            "name": "mediaType",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:NormalizedImage",
+            "name": "width",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/normalization.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:PreparedImageFile",
+            "name": "data",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-attachment-local:.:PreparedImageFile",
+            "name": "ref",
+            "decision": "excluded",
+            "source": "packages/attachment/attachment-local/src/store.ts",
+            "reason": "虽然根入口导出，此符号属于本地后端图像文件/规范化实现辅助层或默认参数；普通插件通过 LocalAttachmentStore service 消费，不作为独立任务契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkNotificationMap",
+            "name": "session.event",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkNotificationMap",
+            "name": "session.status",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkNotificationMap",
+            "name": "subagent.finished",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkNotificationMap",
+            "name": "subagent.started",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkRequestMap",
+            "name": "initialize",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkRequestMap",
+            "name": "session/prompt",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:HarnessSdkRequestMap",
+            "name": "shutdown",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeParams",
+            "name": "cwd",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeParams",
+            "name": "maxTokens",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeParams",
+            "name": "model",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeParams",
+            "name": "provider",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeParams",
+            "name": "reasoningEffort",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:InitializeResult",
+            "name": "serverInfo",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "close",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "flush",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "notify",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "onNotification",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "onRequest",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "request",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcLineTransport",
+            "name": "start",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcResponseError",
+            "name": "code",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcResponseError",
+            "name": "data",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcTransportPeer",
+            "name": "notify",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:JsonRpcTransportPeer",
+            "name": "request",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/transport.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SdkEncodedImageBlock",
+            "name": "data",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SdkEncodedImageBlock",
+            "name": "mimeType",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SdkEncodedImageBlock",
+            "name": "type",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionEventNotification",
+            "name": "event",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionEventNotification",
+            "name": "sessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionPromptParams",
+            "name": "contentBlocks",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionPromptParams",
+            "name": "sessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionPromptResult",
+            "name": "messageId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionStatusNotification",
+            "name": "sessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SessionStatusNotification",
+            "name": "status",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "agentId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "childSessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "lastAssistantMessage",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "parentSessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "provider",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "status",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentFinishedNotification",
+            "name": "stopReason",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentStartedNotification",
+            "name": "childSessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-sdk-protocol:.:SubagentStartedNotification",
+            "name": "parentSessionId",
+            "decision": "included",
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "source": "packages/sdk/protocol/src/types.ts",
+            "reason": "SDK Profile 的公开 JSON-RPC 请求、通知、传输或错误契约；外部 SDK 调用方可使用。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:FeedbackRecord",
+            "name": "category",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:FeedbackRecord",
+            "name": "text",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordRequest",
+            "name": "category",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordRequest",
+            "name": "sessionId",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordRequest",
+            "name": "text",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordResult",
+            "name": "ok",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackRecordValue",
+            "name": "recorded",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackSessionNotFound",
+            "name": "code",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:.:SessionFeedbackSessionNotFound",
+            "name": "sessionId",
+            "decision": "included",
+            "owner": "references/api-user-feedback.md",
+            "section": "对象类型与成员",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "Session 反馈记录或 Host Remote 请求/结果的公开类型；与已纳入的 recordFeedback/service 组成完整调用面。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:FeedbackRecord",
+            "name": "category",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:FeedbackRecord",
+            "name": "text",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordRequest",
+            "name": "category",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordRequest",
+            "name": "sessionId",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordRequest",
+            "name": "text",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordResult",
+            "name": "ok",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackRecordValue",
+            "name": "recorded",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackSessionNotFound",
+            "name": "code",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-command-feedback:./types:SessionFeedbackSessionNotFound",
+            "name": "sessionId",
+            "decision": "excluded",
+            "source": "packages/feedback/command-feedback/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:ApiKeyRecord",
+            "name": "env",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:ApiKeyRecord",
+            "name": "key",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:ApiKeyRecord",
+            "name": "kind",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "deleteRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "describe",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "describeRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "listRecords",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "modifyRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "readRecord",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "resolve",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "set",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:default",
+            "name": "unset",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/index.ts",
+            "reason": "invariant 为运行时内部检查入口，types 为根类型的重复导出；不单列插件任务。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:GrantRecord",
+            "name": "kind",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:.:GrantRecord",
+            "name": "payload",
+            "decision": "included",
+            "owner": "references/api-credentials.md",
+            "section": "对象类型与成员",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "CredentialRecord 的公开判别分支，插件读写记录需要处理其字段。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:ApiKeyRecord",
+            "name": "env",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:ApiKeyRecord",
+            "name": "key",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:ApiKeyRecord",
+            "name": "kind",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:CredentialInfo",
+            "name": "configured",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:CredentialInfo",
+            "name": "source",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:CredentialInfo",
+            "name": "writable",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:CredentialRecord",
+            "name": "kind",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:GrantRecord",
+            "name": "kind",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-credentials:./types:GrantRecord",
+            "name": "payload",
+            "decision": "excluded",
+            "source": "packages/credentials/credentials/src/types.ts",
+            "reason": "根入口或独立 Client 安全类型入口已有同一形状；此对象是重复导出，合并到权威契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "executionInstructions",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "isolation",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "language",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "resolve",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "run",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "sandboxMode",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:default",
+            "name": "timeout",
+            "decision": "excluded",
+            "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+            "reason": "运行时验证用保留字常量；插件以 PtcRuntime.resolve 与返回错误处理，不直接依赖此内部表。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcBindingErrorClass",
+            "name": "memberNameProperty",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcBindingErrorClass",
+            "name": "name",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunFailure",
+            "name": "kind",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunFailure",
+            "name": "message",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
+            "name": "denied",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
+            "name": "enforcement",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
+            "name": "mode",
+            "decision": "included",
+            "owner": "references/api-ptc-runtime.md",
+            "section": "请求、解析与结果",
+            "source": "packages/ptc-runtime/ptc-runtime/src/types.ts",
+            "reason": "PTC binding 与运行结果的公开类型，Host 调用方需构造或分支处理。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:BackendRegistry",
+            "name": "get",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/registry.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:BackendRegistry",
+            "name": "names",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/registry.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:BackendRegistry",
+            "name": "register",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/registry.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:default",
+            "name": "backend",
+            "decision": "excluded",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "未形成独立普通插件调用面；合并到已纳入的服务或类型契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:default",
+            "name": "domain",
+            "decision": "excluded",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "未形成独立普通插件调用面；合并到已纳入的服务或类型契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:default",
+            "name": "form",
+            "decision": "excluded",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "未形成独立普通插件调用面；合并到已纳入的服务或类型契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:default",
+            "name": "mount",
+            "decision": "excluded",
+            "source": "packages/storage/storage/src/index.ts",
+            "reason": "未形成独立普通插件调用面；合并到已纳入的服务或类型契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvFacet",
+            "name": "open",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "name": "backupRecord",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "name": "close",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "name": "deleteRecord",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "name": "loadAll",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "name": "putRecord",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnit",
+            "name": "setGlobal",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "name": "compatibleVersions",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "name": "hasGlobal",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "name": "layout",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "name": "name",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "name": "tables",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
+            "name": "version",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:StorageBackend",
+            "name": "close",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:StorageBackend",
+            "name": "kv",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/backend.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:StorageError",
+            "name": "code",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/error.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-storage:.:StorageError",
+            "name": "name",
+            "decision": "included",
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "source": "packages/storage/storage/src/error.ts",
+            "reason": "自定义 Backend 或 data form 注册所需的公开 SPI/错误契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "configure",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "describe",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "documentPath",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "mutate",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "prepareDocument",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "replace",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "update",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:default",
+            "name": "writable",
+            "decision": "excluded",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "与命名 SettingsForms 相同的默认导出或无独立操作面的标识类型；合并至主契约。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:RedactedSecret",
+            "name": "path",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/redact.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:RedactedSecret",
+            "name": "set",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/redact.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:RedactedValue",
+            "name": "secrets",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/redact.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:RedactedValue",
+            "name": "value",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/redact.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:.:SettingsDescribeOptions",
+            "name": "redactSecrets",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/index.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsDescribeValue",
+            "name": "hasDocument",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsDescribeValue",
+            "name": "namespaces",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsDescribeValue",
+            "name": "writable",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsPathOpView",
+            "name": "op",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsPathOpView",
+            "name": "path",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsSecretView",
+            "name": "path",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        },
+        {
+            "object": "export:@deepseek-ai/dsh-settings:./types:SettingsSecretView",
+            "name": "set",
+            "decision": "included",
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "source": "packages/settings/settings/src/types.ts",
+            "reason": "Host describe 的选项/遮蔽结果或 Client 安全设置表单 wire 类型。"
+        }
+    ],
+    "documentationReconciliation": [
+        {
+            "owner": "references/api-remote-api.md",
+            "section": "Host 声明与公开对象",
+            "needed": "补 TypertRegistry.register/get/resolve/list、key helpers、TypertContribution 必填 model 与 /client.apply 的精确调用/装配边界；现有段落仅提 contexts/lookups 和 Loader 自动注册。",
+            "status": "resolved in authoritative section"
+        },
+        {
+            "owner": "references/api-sdk-runtime.md",
+            "section": "公开契约",
+            "needed": "若纳入 JsonRpcLineTransport/JsonRpcTransportPeer，补 caller-owned streams、start/close/flush 与 request/notify/handler 的明示低层路径；现有段落只列协议方法。",
+            "status": "resolved in authoritative section"
+        },
+        {
+            "owner": "references/api-attachment-store.md",
+            "section": "公开成员",
+            "needed": "补 LocalAttachmentStore.Config 字段和 NormalizationPolicy 三字段；目前仅描述 resolved instance 属性。",
+            "status": "resolved in authoritative section"
+        },
+        {
+            "owner": "references/api-settings.md",
+            "section": "对象类型与成员",
+            "needed": "补 SettingsDescribeValue/SettingsPathOpView/SettingsSecretView 与 redactSecrets 结果字段，避免仅列 SettingsNamespaceView。",
+            "status": "resolved in authoritative section"
+        },
+        {
+            "owner": "references/api-storage-domain.md",
+            "section": "对象类型与成员",
+            "needed": "补 KvUnitDescriptor、StorageForms、StorageErrorCode 和 UNIT_NAME_RE 的精确符号与字段。",
+            "status": "resolved in authoritative section"
+        }
+    ]
+}

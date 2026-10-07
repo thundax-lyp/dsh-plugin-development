@@ -1,0 +1,3885 @@
+{
+    "schemaVersion": 1,
+    "version": "0.2.0-rc.1",
+    "tag": "dsh-v0.2.0-rc.1",
+    "commit": "4878cdabd87d4041bdaff61d04c966883b9fd07a",
+    "remote": "https://github.com/deepseek-ai/deepseek-harness",
+    "candidates": [
+        {
+            "id": "task:.github/issue-management/README.zh.md:53",
+            "path": ".github/issue-management/README.zh.md",
+            "line": 53,
+            "title": "配置与限制"
+        },
+        {
+            "id": "task:.github/issue-management/README.zh.md:91",
+            "path": ".github/issue-management/README.zh.md",
+            "line": 91,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:.github/preview-sizing/README.zh.md:33",
+            "path": ".github/preview-sizing/README.zh.md",
+            "line": 33,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:README.zh.md:11",
+            "path": "README.zh.md",
+            "line": 11,
+            "title": "开发者预览"
+        },
+        {
+            "id": "task:README.zh.md:74",
+            "path": "README.zh.md",
+            "line": 74,
+            "title": "开发"
+        },
+        {
+            "id": "task:apps/cli/README.zh.md:56",
+            "path": "apps/cli/README.zh.md",
+            "line": 56,
+            "title": "开发"
+        },
+        {
+            "id": "task:apps/cli/reference/README.zh.md:56",
+            "path": "apps/cli/reference/README.zh.md",
+            "line": 56,
+            "title": "配置 schema dump"
+        },
+        {
+            "id": "task:apps/desktop/README.zh.md:123",
+            "path": "apps/desktop/README.zh.md",
+            "line": 123,
+            "title": "开发"
+        },
+        {
+            "id": "task:apps/desktop/README.zh.md:438",
+            "path": "apps/desktop/README.zh.md",
+            "line": 438,
+            "title": "底层开发覆盖项"
+        },
+        {
+            "id": "task:apps/desktop/README.zh.md:465",
+            "path": "apps/desktop/README.zh.md",
+            "line": 465,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:apps/desktop/tests/installed-update/README.zh.md:130",
+            "path": "apps/desktop/tests/installed-update/README.zh.md",
+            "line": 130,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:apps/desktop/tests/installed-update/network/README.zh.md:56",
+            "path": "apps/desktop/tests/installed-update/network/README.zh.md",
+            "line": 56,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:apps/desktop/tests/installed-update/publication/README.zh.md:68",
+            "path": "apps/desktop/tests/installed-update/publication/README.zh.md",
+            "line": 68,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:benchmarks/agent-continuation/README.zh.md:29",
+            "path": "benchmarks/agent-continuation/README.zh.md",
+            "line": 29,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/api-gateway.zh.md:133",
+            "path": "docs/api-gateway.zh.md",
+            "line": 133,
+            "title": "SRC 开发回退"
+        },
+        {
+            "id": "task:docs/api-gateway.zh.md:141",
+            "path": "docs/api-gateway.zh.md",
+            "line": 141,
+            "title": "开发模式"
+        },
+        {
+            "id": "task:docs/config-catalog.zh.md:4",
+            "path": "docs/config-catalog.zh.md",
+            "line": 4,
+            "title": "插件配置目录"
+        },
+        {
+            "id": "task:docs/config-catalog.zh.md:4306",
+            "path": "docs/config-catalog.zh.md",
+            "line": 4306,
+            "title": "无配置的可加载插件"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-package.md:1",
+            "path": "docs/cookbook/adding-a-package.md",
+            "line": 1,
+            "title": "Cookbook: adding a workspace package"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-package.zh.md:31",
+            "path": "docs/cookbook/adding-a-package.zh.md",
+            "line": 31,
+            "title": "2. 在根配置中注册"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-package.zh.md:76",
+            "path": "docs/cookbook/adding-a-package.zh.md",
+            "line": 76,
+            "title": "4. 编写包 README"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-remote-api.md:1",
+            "path": "docs/cookbook/adding-a-remote-api.md",
+            "line": 1,
+            "title": "Cookbook: adding a Remote API"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-session-format-version.md:1",
+            "path": "docs/cookbook/adding-a-session-format-version.md",
+            "line": 1,
+            "title": "Cookbook: adding a Session log format version"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-session-format-version.zh.md:120",
+            "path": "docs/cookbook/adding-a-session-format-version.zh.md",
+            "line": 120,
+            "title": "开发者 V4 日志集试迁移"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-session-format-version.zh.md:149",
+            "path": "docs/cookbook/adding-a-session-format-version.zh.md",
+            "line": 149,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-settings-card.zh.md:1",
+            "path": "docs/cookbook/adding-a-settings-card.zh.md",
+            "line": 1,
+            "title": "实践指南：即时配置表单"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-tool.zh.md:1",
+            "path": "docs/cookbook/adding-a-tool.zh.md",
+            "line": 1,
+            "title": "工具编写参考"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-vendored-package.md:1",
+            "path": "docs/cookbook/adding-a-vendored-package.md",
+            "line": 1,
+            "title": "Cookbook: adding a vendored package"
+        },
+        {
+            "id": "task:docs/cookbook/adding-a-vendored-package.zh.md:36",
+            "path": "docs/cookbook/adding-a-vendored-package.zh.md",
+            "line": 36,
+            "title": "2. 在根配置中注册"
+        },
+        {
+            "id": "task:docs/cookbook/adding-an-llm-adapter.md:1",
+            "path": "docs/cookbook/adding-an-llm-adapter.md",
+            "line": 1,
+            "title": "Cookbook: adding an LLM adapter"
+        },
+        {
+            "id": "task:docs/cookbook/maintaining-dsh-code-review.zh.md:19",
+            "path": "docs/cookbook/maintaining-dsh-code-review.zh.md",
+            "line": 19,
+            "title": "操作员如何处理候选 diff"
+        },
+        {
+            "id": "task:docs/cookbook/reviewing-persistence-type-changes.zh.md:113",
+            "path": "docs/cookbook/reviewing-persistence-type-changes.zh.md",
+            "line": 113,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/cordis-primer.zh.md:43",
+            "path": "docs/cordis-primer.zh.md",
+            "line": 43,
+            "title": "Loader 配置"
+        },
+        {
+            "id": "task:docs/cordis-tutorial/01-first-plugin.zh.md:1",
+            "path": "docs/cordis-tutorial/01-first-plugin.zh.md",
+            "line": 1,
+            "title": "1. 编写第一个插件"
+        },
+        {
+            "id": "task:docs/cordis-tutorial/01-first-plugin.zh.md:7",
+            "path": "docs/cordis-tutorial/01-first-plugin.zh.md",
+            "line": 7,
+            "title": "编写插件"
+        },
+        {
+            "id": "task:docs/cordis-tutorial/05-config.zh.md:1",
+            "path": "docs/cordis-tutorial/05-config.zh.md",
+            "line": 1,
+            "title": "5. 配置"
+        },
+        {
+            "id": "task:docs/cordis-tutorial/05-config.zh.md:7",
+            "path": "docs/cordis-tutorial/05-config.zh.md",
+            "line": 7,
+            "title": "可配置插件"
+        },
+        {
+            "id": "task:docs/cordis-tutorial/05-config.zh.md:97",
+            "path": "docs/cordis-tutorial/05-config.zh.md",
+            "line": 97,
+            "title": "计算得到的配置值"
+        },
+        {
+            "id": "task:docs/cordis-tutorial/06-composition-and-hmr.zh.md:7",
+            "path": "docs/cordis-tutorial/06-composition-and-hmr.zh.md",
+            "line": 7,
+            "title": "Cordis 配置项不只有名称"
+        },
+        {
+            "id": "task:docs/development.zh.md:1",
+            "path": "docs/development.zh.md",
+            "line": 1,
+            "title": "开发指南"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-11-initial.zh.md:278",
+            "path": "docs/persistence-changes/2026-09-11-initial.zh.md",
+            "line": 278,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-12-auto-review-error-metadata.zh.md:50",
+            "path": "docs/persistence-changes/2026-09-12-auto-review-error-metadata.zh.md",
+            "line": 50,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-14-image-offload.zh.md:94",
+            "path": "docs/persistence-changes/2026-09-14-image-offload.zh.md",
+            "line": 94,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-14-workspace-changes-event.zh.md:46",
+            "path": "docs/persistence-changes/2026-09-14-workspace-changes-event.zh.md",
+            "line": 46,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-16-session-format-v4.zh.md:118",
+            "path": "docs/persistence-changes/2026-09-16-session-format-v4.zh.md",
+            "line": 118,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-18-schedule-optional-title.zh.md:46",
+            "path": "docs/persistence-changes/2026-09-18-schedule-optional-title.zh.md",
+            "line": 46,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/2026-09-20-unknown-child-catalog.zh.md:46",
+            "path": "docs/persistence-changes/2026-09-20-unknown-child-catalog.zh.md",
+            "line": 46,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/README.zh.md:81",
+            "path": "docs/persistence-changes/README.zh.md",
+            "line": 81,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/historical-formats/README.zh.md:73",
+            "path": "docs/persistence-changes/historical-formats/README.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/historical-formats/v0.zh.md:5103",
+            "path": "docs/persistence-changes/historical-formats/v0.zh.md",
+            "line": 5103,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/historical-formats/v1.zh.md:5105",
+            "path": "docs/persistence-changes/historical-formats/v1.zh.md",
+            "line": 5105,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/historical-formats/v2.zh.md:5360",
+            "path": "docs/persistence-changes/historical-formats/v2.zh.md",
+            "line": 5360,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/historical-formats/v3.zh.md:5632",
+            "path": "docs/persistence-changes/historical-formats/v3.zh.md",
+            "line": 5632,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/README.zh.md:96",
+            "path": "docs/persistence-changes/releases/README.zh.md",
+            "line": 96,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.0.1-rc.1.zh.md:199",
+            "path": "docs/persistence-changes/releases/dsh-v0.0.1-rc.1.zh.md",
+            "line": 199,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.0.1-rc.2.zh.md:259",
+            "path": "docs/persistence-changes/releases/dsh-v0.0.1-rc.2.zh.md",
+            "line": 259,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.0.1-rc.3.zh.md:124",
+            "path": "docs/persistence-changes/releases/dsh-v0.0.1-rc.3.zh.md",
+            "line": 124,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.0.1-rc.4.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.0.1-rc.4.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.0.1-rc.5.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.0.1-rc.5.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.1.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.1.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.2.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.2.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.3.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.3.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.5.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.5.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.6.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.6.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.7.zh.md:80",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.7.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.0-rc.8.zh.md:108",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.0-rc.8.zh.md",
+            "line": 108,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.1-rc.1.zh.md:80",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.1-rc.1.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.1-rc.2.zh.md:117",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.1-rc.2.zh.md",
+            "line": 117,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.2-alpha.1.zh.md:293",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.2-alpha.1.zh.md",
+            "line": 293,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.2-alpha.2.zh.md:284",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.2-alpha.2.zh.md",
+            "line": 284,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.2-alpha.3.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.2-alpha.3.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.2-alpha.4.zh.md:93",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.2-alpha.4.zh.md",
+            "line": 93,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.2-alpha.5.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.2-alpha.5.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.2-rc.1.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.2-rc.1.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.3-alpha.1.zh.md:152",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.3-alpha.1.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.3-alpha.2.zh.md:84",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.3-alpha.2.zh.md",
+            "line": 84,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.5-alpha.1.zh.md:137",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.5-alpha.1.zh.md",
+            "line": 137,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.5-alpha.2.zh.md:93",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.5-alpha.2.zh.md",
+            "line": 93,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.5-rc.1.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.5-rc.1.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/persistence-changes/releases/dsh-v0.1.5-rc.2.zh.md:73",
+            "path": "docs/persistence-changes/releases/dsh-v0.1.5-rc.2.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/session-format-status.zh.md:61",
+            "path": "docs/session-format-status.zh.md",
+            "line": 61,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:docs/subsystems/mcp.zh.md:22",
+            "path": "docs/subsystems/mcp.zh.md",
+            "line": 22,
+            "title": "配置"
+        },
+        {
+            "id": "task:docs/subsystems/persistence.zh.md:187",
+            "path": "docs/subsystems/persistence.zh.md",
+            "line": 187,
+            "title": "格式拒绝：本构建无法可靠读取的日志"
+        },
+        {
+            "id": "task:docs/subsystems/plan.zh.md:19",
+            "path": "docs/subsystems/plan.zh.md",
+            "line": 19,
+            "title": "配置"
+        },
+        {
+            "id": "task:docs/subsystems/session.zh.md:319",
+            "path": "docs/subsystems/session.zh.md",
+            "line": 319,
+            "title": "`SurfaceOp`：事件如何进入 surface"
+        },
+        {
+            "id": "task:docs/subsystems/settings.zh.md:1",
+            "path": "docs/subsystems/settings.zh.md",
+            "line": 1,
+            "title": "插件配置表单"
+        },
+        {
+            "id": "task:docs/subsystems/skills.zh.md:188",
+            "path": "docs/subsystems/skills.zh.md",
+            "line": 188,
+            "title": "查找与配置"
+        },
+        {
+            "id": "task:docs/subsystems/slots.zh.md:99",
+            "path": "docs/subsystems/slots.zh.md",
+            "line": 99,
+            "title": "开发者提供的 injection"
+        },
+        {
+            "id": "task:docs/subsystems/web-server.zh.md:29",
+            "path": "docs/subsystems/web-server.zh.md",
+            "line": 29,
+            "title": "配置"
+        },
+        {
+            "id": "task:docs/testing.zh.md:19",
+            "path": "docs/testing.zh.md",
+            "line": 19,
+            "title": "spec 如何被执行"
+        },
+        {
+            "id": "task:docs/user/develop/basic/config.zh.md:1",
+            "path": "docs/user/develop/basic/config.zh.md",
+            "line": 1,
+            "title": "插件配置"
+        },
+        {
+            "id": "task:docs/user/develop/basic/config.zh.md:94",
+            "path": "docs/user/develop/basic/config.zh.md",
+            "line": 94,
+            "title": "配置错误要响亮"
+        },
+        {
+            "id": "task:docs/user/develop/basic/publish.zh.md:159",
+            "path": "docs/user/develop/basic/publish.zh.md",
+            "line": 159,
+            "title": "从 GitHub 安装：构建脚本这道坎"
+        },
+        {
+            "id": "task:docs/user/develop/basic/tool.zh.md:1",
+            "path": "docs/user/develop/basic/tool.zh.md",
+            "line": 1,
+            "title": "开发一个工具"
+        },
+        {
+            "id": "task:docs/user/develop/practice/dynamic-cordis.zh.md:1",
+            "path": "docs/user/develop/practice/dynamic-cordis.zh.md",
+            "line": 1,
+            "title": "通过提示词配置持久化插件"
+        },
+        {
+            "id": "task:docs/user/develop/practice/index.zh.md:58",
+            "path": "docs/user/develop/practice/index.zh.md",
+            "line": 58,
+            "title": "教程：开发三种角色的能力"
+        },
+        {
+            "id": "task:docs/user/develop/practice/index.zh.md:60",
+            "path": "docs/user/develop/practice/index.zh.md",
+            "line": 60,
+            "title": "第一步：编写 Service Definition"
+        },
+        {
+            "id": "task:docs/user/develop/practice/index.zh.md:90",
+            "path": "docs/user/develop/practice/index.zh.md",
+            "line": 90,
+            "title": "第二步：编写 Service Provider"
+        },
+        {
+            "id": "task:docs/user/develop/practice/index.zh.md:111",
+            "path": "docs/user/develop/practice/index.zh.md",
+            "line": 111,
+            "title": "第三步：编写消费方"
+        },
+        {
+            "id": "task:docs/user/guide/index.zh.md:7",
+            "path": "docs/user/guide/index.zh.md",
+            "line": 7,
+            "title": "配置模型"
+        },
+        {
+            "id": "task:docs/user/guide/mcp-memory.zh.md:84",
+            "path": "docs/user/guide/mcp-memory.zh.md",
+            "line": 84,
+            "title": "接入其他 MCP 服务器"
+        },
+        {
+            "id": "task:docs/user/guide/providers.zh.md:1",
+            "path": "docs/user/guide/providers.zh.md",
+            "line": 1,
+            "title": "配置模型"
+        },
+        {
+            "id": "task:docs/user/guide/providers.zh.md:7",
+            "path": "docs/user/guide/providers.zh.md",
+            "line": 7,
+            "title": "配置 DeepSeek"
+        },
+        {
+            "id": "task:docs/user/guide/providers.zh.md:41",
+            "path": "docs/user/guide/providers.zh.md",
+            "line": 41,
+            "title": "进阶配置"
+        },
+        {
+            "id": "task:docs/user/guide/schedule.zh.md:75",
+            "path": "docs/user/guide/schedule.zh.md",
+            "line": 75,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/README.zh.md:113",
+            "path": "packages/README.zh.md",
+            "line": 113,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/acp/README.zh.md:39",
+            "path": "packages/acp/README.zh.md",
+            "line": 39,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/acp/acp/README.zh.md:34",
+            "path": "packages/acp/acp/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/acp/acp/README.zh.md:175",
+            "path": "packages/acp/acp/README.zh.md",
+            "line": 175,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/README.zh.md:52",
+            "path": "packages/api/README.zh.md",
+            "line": 52,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/account-controller/README.zh.md:57",
+            "path": "packages/api/account-controller/README.zh.md",
+            "line": 57,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/gateway/README.zh.md:92",
+            "path": "packages/api/gateway/README.zh.md",
+            "line": 92,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/job-controller/README.zh.md:31",
+            "path": "packages/api/job-controller/README.zh.md",
+            "line": 31,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/api/job-controller/README.zh.md:60",
+            "path": "packages/api/job-controller/README.zh.md",
+            "line": 60,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/remotes/README.zh.md:52",
+            "path": "packages/api/remotes/README.zh.md",
+            "line": 52,
+            "title": "构建边界"
+        },
+        {
+            "id": "task:packages/api/remotes/README.zh.md:81",
+            "path": "packages/api/remotes/README.zh.md",
+            "line": 81,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/session-controller/README.zh.md:90",
+            "path": "packages/api/session-controller/README.zh.md",
+            "line": 90,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/api/session-controller/README.zh.md:122",
+            "path": "packages/api/session-controller/README.zh.md",
+            "line": 122,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/settings-controller/README.zh.md:37",
+            "path": "packages/api/settings-controller/README.zh.md",
+            "line": 37,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/api/settings-controller/README.zh.md:62",
+            "path": "packages/api/settings-controller/README.zh.md",
+            "line": 62,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/terminal-controller/README.zh.md:95",
+            "path": "packages/api/terminal-controller/README.zh.md",
+            "line": 95,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/workspace-controller/README.zh.md:65",
+            "path": "packages/api/workspace-controller/README.zh.md",
+            "line": 65,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/api/workspace-files/README.zh.md:60",
+            "path": "packages/api/workspace-files/README.zh.md",
+            "line": 60,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/api/workspace-files/README.zh.md:152",
+            "path": "packages/api/workspace-files/README.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/attachment/README.zh.md:44",
+            "path": "packages/attachment/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/attachment/attachment-local/README.zh.md:30",
+            "path": "packages/attachment/attachment-local/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/attachment/attachment-local/README.zh.md:142",
+            "path": "packages/attachment/attachment-local/README.zh.md",
+            "line": 142,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/attachment/attachment/README.zh.md:124",
+            "path": "packages/attachment/attachment/README.zh.md",
+            "line": 124,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/boot/README.zh.md:42",
+            "path": "packages/boot/README.zh.md",
+            "line": 42,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/boot/app-boot/README.zh.md:71",
+            "path": "packages/boot/app-boot/README.zh.md",
+            "line": 71,
+            "title": "预览生效配置"
+        },
+        {
+            "id": "task:packages/boot/app-boot/README.zh.md:75",
+            "path": "packages/boot/app-boot/README.zh.md",
+            "line": 75,
+            "title": "检查插件配置 schema"
+        },
+        {
+            "id": "task:packages/boot/app-boot/README.zh.md:208",
+            "path": "packages/boot/app-boot/README.zh.md",
+            "line": 208,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/boot/app-boot/README.zh.md:215",
+            "path": "packages/boot/app-boot/README.zh.md",
+            "line": 215,
+            "title": "待定：YAML 配置 dump 稳定性"
+        },
+        {
+            "id": "task:packages/boot/cmdline/README.zh.md:64",
+            "path": "packages/boot/cmdline/README.zh.md",
+            "line": 64,
+            "title": "flag 如何胜过配置值"
+        },
+        {
+            "id": "task:packages/boot/cmdline/README.zh.md:138",
+            "path": "packages/boot/cmdline/README.zh.md",
+            "line": 138,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/boot/config-editor/README.zh.md:74",
+            "path": "packages/boot/config-editor/README.zh.md",
+            "line": 74,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/boot/hmr/README.zh.md:38",
+            "path": "packages/boot/hmr/README.zh.md",
+            "line": 38,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/boot/hmr/README.zh.md:91",
+            "path": "packages/boot/hmr/README.zh.md",
+            "line": 91,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/boot/plugin-manager/README.zh.md:71",
+            "path": "packages/boot/plugin-manager/README.zh.md",
+            "line": 71,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/boot/plugin-manager/README.zh.md:153",
+            "path": "packages/boot/plugin-manager/README.zh.md",
+            "line": 153,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/browser-use/README.zh.md:38",
+            "path": "packages/browser-use/README.zh.md",
+            "line": 38,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/browser-use/browser-use/README.zh.md:83",
+            "path": "packages/browser-use/browser-use/README.zh.md",
+            "line": 83,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/README.zh.md:43",
+            "path": "packages/bundle/README.zh.md",
+            "line": 43,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/acp-app/README.zh.md:67",
+            "path": "packages/bundle/acp-app/README.zh.md",
+            "line": 67,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/base/README.zh.md:142",
+            "path": "packages/bundle/base/README.zh.md",
+            "line": 142,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/headless/README.zh.md:149",
+            "path": "packages/bundle/headless/README.zh.md",
+            "line": 149,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/sdk-app/README.zh.md:67",
+            "path": "packages/bundle/sdk-app/README.zh.md",
+            "line": 67,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/sdk-minimal/README.zh.md:100",
+            "path": "packages/bundle/sdk-minimal/README.zh.md",
+            "line": 100,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/bundle/web-app/README.zh.md:47",
+            "path": "packages/bundle/web-app/README.zh.md",
+            "line": 47,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/bundle/web-app/README.zh.md:161",
+            "path": "packages/bundle/web-app/README.zh.md",
+            "line": 161,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/README.zh.md:104",
+            "path": "packages/client/README.zh.md",
+            "line": 104,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/connection/README.zh.md:80",
+            "path": "packages/client/connection/README.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/file-upload/README.zh.md:94",
+            "path": "packages/client/file-upload/README.zh.md",
+            "line": 94,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/hmr/README.zh.md:38",
+            "path": "packages/client/hmr/README.zh.md",
+            "line": 38,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/client/hmr/README.zh.md:121",
+            "path": "packages/client/hmr/README.zh.md",
+            "line": 121,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/locale/README.zh.md:141",
+            "path": "packages/client/locale/README.zh.md",
+            "line": 141,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/modules/README.zh.md:48",
+            "path": "packages/client/modules/README.zh.md",
+            "line": 48,
+            "title": "构建要求"
+        },
+        {
+            "id": "task:packages/client/modules/README.zh.md:137",
+            "path": "packages/client/modules/README.zh.md",
+            "line": 137,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/product-analytics/README.zh.md:65",
+            "path": "packages/client/product-analytics/README.zh.md",
+            "line": 65,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/resources/README.zh.md:98",
+            "path": "packages/client/resources/README.zh.md",
+            "line": 98,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/shortcuts/README.zh.md:85",
+            "path": "packages/client/shortcuts/README.zh.md",
+            "line": 85,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/store/README.zh.md:39",
+            "path": "packages/client/store/README.zh.md",
+            "line": 39,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-agent-preset/README.zh.md:67",
+            "path": "packages/client/ui-agent-preset/README.zh.md",
+            "line": 67,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-approval/README.zh.md:40",
+            "path": "packages/client/ui-approval/README.zh.md",
+            "line": 40,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-attachment/README.zh.md:99",
+            "path": "packages/client/ui-attachment/README.zh.md",
+            "line": 99,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-brand-official/README.zh.md:83",
+            "path": "packages/client/ui-brand-official/README.zh.md",
+            "line": 83,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-chat/README.zh.md:170",
+            "path": "packages/client/ui-chat/README.zh.md",
+            "line": 170,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-chat/src/client/conversation-nodes/README.zh.md:23",
+            "path": "packages/client/ui-chat/src/client/conversation-nodes/README.zh.md",
+            "line": 23,
+            "title": "先理解一轮对话怎样显示"
+        },
+        {
+            "id": "task:packages/client/ui-chat/src/client/conversation-nodes/README.zh.md:121",
+            "path": "packages/client/ui-chat/src/client/conversation-nodes/README.zh.md",
+            "line": 121,
+            "title": "默认值与配置保存"
+        },
+        {
+            "id": "task:packages/client/ui-commands/README.zh.md:90",
+            "path": "packages/client/ui-commands/README.zh.md",
+            "line": 90,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-conversation/README.zh.md:163",
+            "path": "packages/client/ui-conversation/README.zh.md",
+            "line": 163,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-deliverables/README.zh.md:123",
+            "path": "packages/client/ui-deliverables/README.zh.md",
+            "line": 123,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-directory-picker-browse/README.md:30",
+            "path": "packages/client/ui-directory-picker-browse/README.md",
+            "line": 30,
+            "title": "Navigating and creating"
+        },
+        {
+            "id": "task:packages/client/ui-directory-picker-browse/README.zh.md:80",
+            "path": "packages/client/ui-directory-picker-browse/README.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-directory-picker-native/README.zh.md:83",
+            "path": "packages/client/ui-directory-picker-native/README.zh.md",
+            "line": 83,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-dockkit/README.zh.md:45",
+            "path": "packages/client/ui-dockkit/README.zh.md",
+            "line": 45,
+            "title": "如何嵌入"
+        },
+        {
+            "id": "task:packages/client/ui-dockkit/README.zh.md:81",
+            "path": "packages/client/ui-dockkit/README.zh.md",
+            "line": 81,
+            "title": "构建形态"
+        },
+        {
+            "id": "task:packages/client/ui-dockkit/README.zh.md:104",
+            "path": "packages/client/ui-dockkit/README.zh.md",
+            "line": 104,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-goal/README.zh.md:84",
+            "path": "packages/client/ui-goal/README.zh.md",
+            "line": 84,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-input-trigger/README.zh.md:84",
+            "path": "packages/client/ui-input-trigger/README.zh.md",
+            "line": 84,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-jobs/README.zh.md:87",
+            "path": "packages/client/ui-jobs/README.zh.md",
+            "line": 87,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-layout/README.zh.md:98",
+            "path": "packages/client/ui-layout/README.zh.md",
+            "line": 98,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-message-feedback/README.zh.md:84",
+            "path": "packages/client/ui-message-feedback/README.zh.md",
+            "line": 84,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-model-selection/README.zh.md:100",
+            "path": "packages/client/ui-model-selection/README.zh.md",
+            "line": 100,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-open-in-app/README.zh.md:88",
+            "path": "packages/client/ui-open-in-app/README.zh.md",
+            "line": 88,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-permission-presets/README.zh.md:87",
+            "path": "packages/client/ui-permission-presets/README.zh.md",
+            "line": 87,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-plan/README.zh.md:95",
+            "path": "packages/client/ui-plan/README.zh.md",
+            "line": 95,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-plugin-manager/README.zh.md:58",
+            "path": "packages/client/ui-plugin-manager/README.zh.md",
+            "line": 58,
+            "title": "配置页"
+        },
+        {
+            "id": "task:packages/client/ui-plugin-manager/README.zh.md:106",
+            "path": "packages/client/ui-plugin-manager/README.zh.md",
+            "line": 106,
+            "title": "配置 slot"
+        },
+        {
+            "id": "task:packages/client/ui-plugin-manager/README.zh.md:157",
+            "path": "packages/client/ui-plugin-manager/README.zh.md",
+            "line": 157,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-primitives/README.zh.md:199",
+            "path": "packages/client/ui-primitives/README.zh.md",
+            "line": 199,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-reference/README.zh.md:99",
+            "path": "packages/client/ui-reference/README.zh.md",
+            "line": 99,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-renderer/README.zh.md:98",
+            "path": "packages/client/ui-renderer/README.zh.md",
+            "line": 98,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-schedule/README.zh.md:99",
+            "path": "packages/client/ui-schedule/README.zh.md",
+            "line": 99,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-session/README.zh.md:40",
+            "path": "packages/client/ui-session/README.zh.md",
+            "line": 40,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-account/README.zh.md:107",
+            "path": "packages/client/ui-settings-account/README.zh.md",
+            "line": 107,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-agent-loop/README.zh.md:71",
+            "path": "packages/client/ui-settings-agent-loop/README.zh.md",
+            "line": 71,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-general/README.zh.md:48",
+            "path": "packages/client/ui-settings-general/README.zh.md",
+            "line": 48,
+            "title": "打开配置文件"
+        },
+        {
+            "id": "task:packages/client/ui-settings-general/README.zh.md:121",
+            "path": "packages/client/ui-settings-general/README.zh.md",
+            "line": 121,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-models/README.md:54",
+            "path": "packages/client/ui-settings-models/README.md",
+            "line": 54,
+            "title": "Adding and deleting providers"
+        },
+        {
+            "id": "task:packages/client/ui-settings-models/README.zh.md:133",
+            "path": "packages/client/ui-settings-models/README.zh.md",
+            "line": 133,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-plugin-inventory/README.zh.md:102",
+            "path": "packages/client/ui-settings-plugin-inventory/README.zh.md",
+            "line": 102,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-plugins/README.zh.md:73",
+            "path": "packages/client/ui-settings-plugins/README.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-session-log/README.zh.md:68",
+            "path": "packages/client/ui-settings-session-log/README.zh.md",
+            "line": 68,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-shell/README.zh.md:71",
+            "path": "packages/client/ui-settings-shell/README.zh.md",
+            "line": 71,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-subagent/README.zh.md:75",
+            "path": "packages/client/ui-settings-subagent/README.zh.md",
+            "line": 75,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings-web-search/README.zh.md:72",
+            "path": "packages/client/ui-settings-web-search/README.zh.md",
+            "line": 72,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-settings/README.zh.md:30",
+            "path": "packages/client/ui-settings/README.zh.md",
+            "line": 30,
+            "title": "配置表单"
+        },
+        {
+            "id": "task:packages/client/ui-settings/README.zh.md:109",
+            "path": "packages/client/ui-settings/README.zh.md",
+            "line": 109,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-shortcuts/README.zh.md:80",
+            "path": "packages/client/ui-shortcuts/README.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-browser/README.zh.md:34",
+            "path": "packages/client/ui-sidebar-browser/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-browser/README.zh.md:113",
+            "path": "packages/client/ui-sidebar-browser/README.zh.md",
+            "line": 113,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-documentpreview/README.zh.md:47",
+            "path": "packages/client/ui-sidebar-documentpreview/README.zh.md",
+            "line": 47,
+            "title": "怎么读"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-documentpreview/README.zh.md:148",
+            "path": "packages/client/ui-sidebar-documentpreview/README.zh.md",
+            "line": 148,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-files/README.zh.md:68",
+            "path": "packages/client/ui-sidebar-files/README.zh.md",
+            "line": 68,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-right/README.zh.md:150",
+            "path": "packages/client/ui-sidebar-right/README.zh.md",
+            "line": 150,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar-terminal/README.zh.md:81",
+            "path": "packages/client/ui-sidebar-terminal/README.zh.md",
+            "line": 81,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-sidebar/README.zh.md:110",
+            "path": "packages/client/ui-sidebar/README.zh.md",
+            "line": 110,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-skill/README.zh.md:107",
+            "path": "packages/client/ui-skill/README.zh.md",
+            "line": 107,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-slots/README.zh.md:102",
+            "path": "packages/client/ui-slots/README.zh.md",
+            "line": 102,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-subagent/README.zh.md:119",
+            "path": "packages/client/ui-subagent/README.zh.md",
+            "line": 119,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-theme/README.zh.md:127",
+            "path": "packages/client/ui-theme/README.zh.md",
+            "line": 127,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-tool/README.zh.md:127",
+            "path": "packages/client/ui-tool/README.zh.md",
+            "line": 127,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-trajectory/README.zh.md:107",
+            "path": "packages/client/ui-trajectory/README.zh.md",
+            "line": 107,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-user-questions/README.zh.md:98",
+            "path": "packages/client/ui-user-questions/README.zh.md",
+            "line": 98,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-workflow-run/README.zh.md:93",
+            "path": "packages/client/ui-workflow-run/README.zh.md",
+            "line": 93,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/ui-workspace/README.zh.md:219",
+            "path": "packages/client/ui-workspace/README.zh.md",
+            "line": 219,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/client/web/README.zh.md:34",
+            "path": "packages/client/web/README.zh.md",
+            "line": 34,
+            "title": "启动过程是怎样的"
+        },
+        {
+            "id": "task:packages/client/web/README.zh.md:46",
+            "path": "packages/client/web/README.zh.md",
+            "line": 46,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/client/web/README.zh.md:126",
+            "path": "packages/client/web/README.zh.md",
+            "line": 126,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/compaction/README.zh.md:48",
+            "path": "packages/compaction/README.zh.md",
+            "line": 48,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/compaction/command-compact/README.zh.md:146",
+            "path": "packages/compaction/command-compact/README.zh.md",
+            "line": 146,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/compaction/compaction-basic/README.zh.md:127",
+            "path": "packages/compaction/compaction-basic/README.zh.md",
+            "line": 127,
+            "title": "配置解析"
+        },
+        {
+            "id": "task:packages/compaction/compaction-basic/README.zh.md:250",
+            "path": "packages/compaction/compaction-basic/README.zh.md",
+            "line": 250,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/compaction/compaction-image-offload/README.zh.md:99",
+            "path": "packages/compaction/compaction-image-offload/README.zh.md",
+            "line": 99,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/compaction/compaction-tool-result-pruner/README.zh.md:139",
+            "path": "packages/compaction/compaction-tool-result-pruner/README.zh.md",
+            "line": 139,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/compaction/compaction/README.md:49",
+            "path": "packages/compaction/compaction/README.md",
+            "line": 49,
+            "title": "Implementing a backend"
+        },
+        {
+            "id": "task:packages/compaction/compaction/README.zh.md:165",
+            "path": "packages/compaction/compaction/README.zh.md",
+            "line": 165,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/computer-use/README.zh.md:38",
+            "path": "packages/computer-use/README.zh.md",
+            "line": 38,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/computer-use/computer-use/README.zh.md:82",
+            "path": "packages/computer-use/computer-use/README.zh.md",
+            "line": 82,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/README.zh.md:46",
+            "path": "packages/context/README.zh.md",
+            "line": 46,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/agent-instructions/README.zh.md:34",
+            "path": "packages/context/agent-instructions/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/context/agent-instructions/README.zh.md:222",
+            "path": "packages/context/agent-instructions/README.zh.md",
+            "line": 222,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/file-reference-local/README.zh.md:44",
+            "path": "packages/context/file-reference-local/README.zh.md",
+            "line": 44,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/context/file-reference-local/README.zh.md:132",
+            "path": "packages/context/file-reference-local/README.zh.md",
+            "line": 132,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/file-reference/README.zh.md:105",
+            "path": "packages/context/file-reference/README.zh.md",
+            "line": 105,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/session-reference/README.zh.md:44",
+            "path": "packages/context/session-reference/README.zh.md",
+            "line": 44,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/context/session-reference/README.zh.md:141",
+            "path": "packages/context/session-reference/README.zh.md",
+            "line": 141,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/time-context/README.zh.md:34",
+            "path": "packages/context/time-context/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/context/time-context/README.zh.md:144",
+            "path": "packages/context/time-context/README.zh.md",
+            "line": 144,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/context/tmux-context/README.zh.md:34",
+            "path": "packages/context/tmux-context/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/context/tmux-context/README.zh.md:134",
+            "path": "packages/context/tmux-context/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/README.zh.md:55",
+            "path": "packages/core/README.zh.md",
+            "line": 55,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/agent-default-model/README.zh.md:30",
+            "path": "packages/core/agent-default-model/README.zh.md",
+            "line": 30,
+            "title": "配置默认值"
+        },
+        {
+            "id": "task:packages/core/agent-default-model/README.zh.md:120",
+            "path": "packages/core/agent-default-model/README.zh.md",
+            "line": 120,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/agent-loop/README.zh.md:30",
+            "path": "packages/core/agent-loop/README.zh.md",
+            "line": 30,
+            "title": "配置声明式 agent"
+        },
+        {
+            "id": "task:packages/core/agent-loop/README.zh.md:222",
+            "path": "packages/core/agent-loop/README.zh.md",
+            "line": 222,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/agent-tool-presentation/README.zh.md:113",
+            "path": "packages/core/agent-tool-presentation/README.zh.md",
+            "line": 113,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/agent/README.zh.md:182",
+            "path": "packages/core/agent/README.zh.md",
+            "line": 182,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/scope/README.zh.md:44",
+            "path": "packages/core/scope/README.zh.md",
+            "line": 44,
+            "title": "构建带作用域的注册表层"
+        },
+        {
+            "id": "task:packages/core/scope/README.zh.md:106",
+            "path": "packages/core/scope/README.zh.md",
+            "line": 106,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/session/README.zh.md:197",
+            "path": "packages/core/session/README.zh.md",
+            "line": 197,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/system-prompt/README.zh.md:31",
+            "path": "packages/core/system-prompt/README.zh.md",
+            "line": 31,
+            "title": "配置提示词"
+        },
+        {
+            "id": "task:packages/core/system-prompt/README.zh.md:180",
+            "path": "packages/core/system-prompt/README.zh.md",
+            "line": 180,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/core/tools/README.zh.md:62",
+            "path": "packages/core/tools/README.zh.md",
+            "line": 62,
+            "title": "配置呈现模式"
+        },
+        {
+            "id": "task:packages/core/tools/README.zh.md:240",
+            "path": "packages/core/tools/README.zh.md",
+            "line": 240,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/credentials/README.zh.md:45",
+            "path": "packages/credentials/README.zh.md",
+            "line": 45,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/credentials/authorization/README.zh.md:154",
+            "path": "packages/credentials/authorization/README.zh.md",
+            "line": 154,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/credentials/credentials-local/README.zh.md:205",
+            "path": "packages/credentials/credentials-local/README.zh.md",
+            "line": 205,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/credentials/credentials/README.md:34",
+            "path": "packages/credentials/credentials/README.md",
+            "line": 34,
+            "title": "Adding it to your composition"
+        },
+        {
+            "id": "task:packages/credentials/credentials/README.zh.md:83",
+            "path": "packages/credentials/credentials/README.zh.md",
+            "line": 83,
+            "title": "在配置中使用密钥"
+        },
+        {
+            "id": "task:packages/credentials/credentials/README.zh.md:182",
+            "path": "packages/credentials/credentials/README.zh.md",
+            "line": 182,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/credentials/deepseek-account-platform/README.zh.md:96",
+            "path": "packages/credentials/deepseek-account-platform/README.zh.md",
+            "line": 96,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/credentials/deepseek-account/README.zh.md:71",
+            "path": "packages/credentials/deepseek-account/README.zh.md",
+            "line": 71,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/deliverables/README.zh.md:43",
+            "path": "packages/deliverables/README.zh.md",
+            "line": 43,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/deliverables/tool-present/README.zh.md:95",
+            "path": "packages/deliverables/tool-present/README.zh.md",
+            "line": 95,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/deliverables/workspace-changes/README.zh.md:101",
+            "path": "packages/deliverables/workspace-changes/README.zh.md",
+            "line": 101,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/document/README.zh.md:43",
+            "path": "packages/document/README.zh.md",
+            "line": 43,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/document/office-to-pdf/README.zh.md:98",
+            "path": "packages/document/office-to-pdf/README.zh.md",
+            "line": 98,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/README.zh.md:63",
+            "path": "packages/experimental/README.zh.md",
+            "line": 63,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/agent-team-profile/README.zh.md:112",
+            "path": "packages/experimental/agent-team-profile/README.zh.md",
+            "line": 112,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/agent-team/README.zh.md:34",
+            "path": "packages/experimental/agent-team/README.zh.md",
+            "line": 34,
+            "title": "最小工作配置"
+        },
+        {
+            "id": "task:packages/experimental/agent-team/README.zh.md:213",
+            "path": "packages/experimental/agent-team/README.zh.md",
+            "line": 213,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/api-speech-to-text/README.zh.md:73",
+            "path": "packages/experimental/api-speech-to-text/README.zh.md",
+            "line": 73,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/auto-review/README.zh.md:122",
+            "path": "packages/experimental/auto-review/README.zh.md",
+            "line": 122,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/browser-use-chrome-devtools-mcp/README.zh.md:109",
+            "path": "packages/experimental/browser-use-chrome-devtools-mcp/README.zh.md",
+            "line": 109,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/browser-use-playwright-mcp/README.zh.md:108",
+            "path": "packages/experimental/browser-use-playwright-mcp/README.zh.md",
+            "line": 108,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/browser-use-runtime/README.zh.md:91",
+            "path": "packages/experimental/browser-use-runtime/README.zh.md",
+            "line": 91,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/browser-use-stagehand-native/README.zh.md:30",
+            "path": "packages/experimental/browser-use-stagehand-native/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/experimental/browser-use-stagehand-native/README.zh.md:164",
+            "path": "packages/experimental/browser-use-stagehand-native/README.zh.md",
+            "line": 164,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/client-ui-agent-team/README.zh.md:95",
+            "path": "packages/experimental/client-ui-agent-team/README.zh.md",
+            "line": 95,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/client-ui-voice-input/README.zh.md:71",
+            "path": "packages/experimental/client-ui-voice-input/README.zh.md",
+            "line": 71,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/computer-use-cua-driver-mcp/README.zh.md:30",
+            "path": "packages/experimental/computer-use-cua-driver-mcp/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/experimental/computer-use-cua-driver-mcp/README.zh.md:121",
+            "path": "packages/experimental/computer-use-cua-driver-mcp/README.zh.md",
+            "line": 121,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/computer-use-cua-driver-native/README.zh.md:30",
+            "path": "packages/experimental/computer-use-cua-driver-native/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/experimental/computer-use-cua-driver-native/README.zh.md:138",
+            "path": "packages/experimental/computer-use-cua-driver-native/README.zh.md",
+            "line": 138,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/inspector/README.zh.md:44",
+            "path": "packages/experimental/inspector/README.zh.md",
+            "line": 44,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/experimental/inspector/README.zh.md:147",
+            "path": "packages/experimental/inspector/README.zh.md",
+            "line": 147,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/ptc-runtime-python/README.zh.md:134",
+            "path": "packages/experimental/ptc-runtime-python/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/schedule-bundle/README.zh.md:88",
+            "path": "packages/experimental/schedule-bundle/README.zh.md",
+            "line": 88,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/speech-to-text-sensevoice/README.zh.md:79",
+            "path": "packages/experimental/speech-to-text-sensevoice/README.zh.md",
+            "line": 79,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/speech-to-text/README.zh.md:75",
+            "path": "packages/experimental/speech-to-text/README.zh.md",
+            "line": 75,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/tool-agent-team/README.zh.md:152",
+            "path": "packages/experimental/tool-agent-team/README.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/voice-input-bundle/README.zh.md:70",
+            "path": "packages/experimental/voice-input-bundle/README.zh.md",
+            "line": 70,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/webworker-packer/README.zh.md:66",
+            "path": "packages/experimental/webworker-packer/README.zh.md",
+            "line": 66,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/experimental/webworker-runtime/README.zh.md:69",
+            "path": "packages/experimental/webworker-runtime/README.zh.md",
+            "line": 69,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/extensions/README.zh.md:46",
+            "path": "packages/extensions/README.zh.md",
+            "line": 46,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/extensions/cordis-client-runner/README.zh.md:73",
+            "path": "packages/extensions/cordis-client-runner/README.zh.md",
+            "line": 73,
+            "title": "一次 run 如何执行"
+        },
+        {
+            "id": "task:packages/extensions/cordis-client-runner/README.zh.md:138",
+            "path": "packages/extensions/cordis-client-runner/README.zh.md",
+            "line": 138,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/extensions/cordis-host-runner/README.zh.md:30",
+            "path": "packages/extensions/cordis-host-runner/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/extensions/cordis-host-runner/README.zh.md:137",
+            "path": "packages/extensions/cordis-host-runner/README.zh.md",
+            "line": 137,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/extensions/tool-cordis/README.zh.md:75",
+            "path": "packages/extensions/tool-cordis/README.zh.md",
+            "line": 75,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/extensions/ui-cordis/README.zh.md:73",
+            "path": "packages/extensions/ui-cordis/README.zh.md",
+            "line": 73,
+            "title": "面板如何保持最新"
+        },
+        {
+            "id": "task:packages/extensions/ui-cordis/README.zh.md:119",
+            "path": "packages/extensions/ui-cordis/README.zh.md",
+            "line": 119,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/feedback/README.zh.md:40",
+            "path": "packages/feedback/README.zh.md",
+            "line": 40,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/feedback/command-feedback/README.zh.md:85",
+            "path": "packages/feedback/command-feedback/README.zh.md",
+            "line": 85,
+            "title": "评价如何被记录"
+        },
+        {
+            "id": "task:packages/feedback/command-feedback/README.zh.md:147",
+            "path": "packages/feedback/command-feedback/README.zh.md",
+            "line": 147,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/feedback/message-feedback/README.zh.md:27",
+            "path": "packages/feedback/message-feedback/README.zh.md",
+            "line": 27,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/feedback/message-feedback/README.zh.md:101",
+            "path": "packages/feedback/message-feedback/README.zh.md",
+            "line": 101,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/README.zh.md:51",
+            "path": "packages/fs/README.zh.md",
+            "line": 51,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/fs-local/README.zh.md:34",
+            "path": "packages/fs/fs-local/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/fs/fs-local/README.zh.md:142",
+            "path": "packages/fs/fs-local/README.zh.md",
+            "line": 142,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/fs-observation-policy/README.zh.md:132",
+            "path": "packages/fs/fs-observation-policy/README.zh.md",
+            "line": 132,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/fs-sandbox/README.zh.md:73",
+            "path": "packages/fs/fs-sandbox/README.zh.md",
+            "line": 73,
+            "title": "变更如何被围栏"
+        },
+        {
+            "id": "task:packages/fs/fs-sandbox/README.zh.md:128",
+            "path": "packages/fs/fs-sandbox/README.zh.md",
+            "line": 128,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/fs/README.zh.md:120",
+            "path": "packages/fs/fs/README.zh.md",
+            "line": 120,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/tool-fs-search/README.zh.md:53",
+            "path": "packages/fs/tool-fs-search/README.zh.md",
+            "line": 53,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/fs/tool-fs-search/README.zh.md:104",
+            "path": "packages/fs/tool-fs-search/README.zh.md",
+            "line": 104,
+            "title": "搜索如何运行"
+        },
+        {
+            "id": "task:packages/fs/tool-fs-search/README.zh.md:214",
+            "path": "packages/fs/tool-fs-search/README.zh.md",
+            "line": 214,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/tool-fs/README.zh.md:53",
+            "path": "packages/fs/tool-fs/README.zh.md",
+            "line": 53,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/fs/tool-fs/README.zh.md:250",
+            "path": "packages/fs/tool-fs/README.zh.md",
+            "line": 250,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/fs/tool-str-replace-editor/README.zh.md:40",
+            "path": "packages/fs/tool-str-replace-editor/README.zh.md",
+            "line": 40,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/fs/tool-str-replace-editor/README.zh.md:75",
+            "path": "packages/fs/tool-str-replace-editor/README.zh.md",
+            "line": 75,
+            "title": "各命令如何运行"
+        },
+        {
+            "id": "task:packages/fs/tool-str-replace-editor/README.zh.md:140",
+            "path": "packages/fs/tool-str-replace-editor/README.zh.md",
+            "line": 140,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/goal/README.zh.md:45",
+            "path": "packages/goal/README.zh.md",
+            "line": 45,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/goal/command-goal/README.zh.md:134",
+            "path": "packages/goal/command-goal/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/goal/goal-round-driver/README.zh.md:133",
+            "path": "packages/goal/goal-round-driver/README.zh.md",
+            "line": 133,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/goal/goal/README.zh.md:34",
+            "path": "packages/goal/goal/README.zh.md",
+            "line": 34,
+            "title": "配置服务"
+        },
+        {
+            "id": "task:packages/goal/goal/README.zh.md:165",
+            "path": "packages/goal/goal/README.zh.md",
+            "line": 165,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/goal/tool-goal/README.zh.md:42",
+            "path": "packages/goal/tool-goal/README.zh.md",
+            "line": 42,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/goal/tool-goal/README.zh.md:156",
+            "path": "packages/goal/tool-goal/README.zh.md",
+            "line": 156,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/guard/README.zh.md:44",
+            "path": "packages/guard/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/guard/repeat-tool-reminder/README.zh.md:177",
+            "path": "packages/guard/repeat-tool-reminder/README.zh.md",
+            "line": 177,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/guard/timeout-policy/README.zh.md:67",
+            "path": "packages/guard/timeout-policy/README.zh.md",
+            "line": 67,
+            "title": "截止时间如何设置与映射"
+        },
+        {
+            "id": "task:packages/guard/timeout-policy/README.zh.md:126",
+            "path": "packages/guard/timeout-policy/README.zh.md",
+            "line": 126,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/hooks/README.zh.md:43",
+            "path": "packages/hooks/README.zh.md",
+            "line": 43,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/hooks/hook-protocol/README.zh.md:132",
+            "path": "packages/hooks/hook-protocol/README.zh.md",
+            "line": 132,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/hooks/hooks-claude-code/README.zh.md:34",
+            "path": "packages/hooks/hooks-claude-code/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/hooks/hooks-claude-code/README.zh.md:66",
+            "path": "packages/hooks/hooks-claude-code/README.zh.md",
+            "line": 66,
+            "title": "钩子如何运行与失败"
+        },
+        {
+            "id": "task:packages/hooks/hooks-claude-code/README.zh.md:185",
+            "path": "packages/hooks/hooks-claude-code/README.zh.md",
+            "line": 185,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/hooks/hooks-codex/README.zh.md:34",
+            "path": "packages/hooks/hooks-codex/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/hooks/hooks-codex/README.zh.md:62",
+            "path": "packages/hooks/hooks-codex/README.zh.md",
+            "line": 62,
+            "title": "钩子如何运行与失败"
+        },
+        {
+            "id": "task:packages/hooks/hooks-codex/README.zh.md:180",
+            "path": "packages/hooks/hooks-codex/README.zh.md",
+            "line": 180,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/README.zh.md:52",
+            "path": "packages/host/README.zh.md",
+            "line": 52,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/directory-picker-auto/README.zh.md:30",
+            "path": "packages/host/directory-picker-auto/README.zh.md",
+            "line": 30,
+            "title": "选择是如何作出的"
+        },
+        {
+            "id": "task:packages/host/directory-picker-auto/README.zh.md:113",
+            "path": "packages/host/directory-picker-auto/README.zh.md",
+            "line": 113,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/directory-picker-browse/README.md:34",
+            "path": "packages/host/directory-picker-browse/README.md",
+            "line": 34,
+            "title": "Creating a directory"
+        },
+        {
+            "id": "task:packages/host/directory-picker-browse/README.zh.md:42",
+            "path": "packages/host/directory-picker-browse/README.zh.md",
+            "line": 42,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/host/directory-picker-browse/README.zh.md:115",
+            "path": "packages/host/directory-picker-browse/README.zh.md",
+            "line": 115,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/directory-picker-native/README.zh.md:104",
+            "path": "packages/host/directory-picker-native/README.zh.md",
+            "line": 104,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/directory-picker/README.zh.md:104",
+            "path": "packages/host/directory-picker/README.zh.md",
+            "line": 104,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/frontend-static/README.zh.md:30",
+            "path": "packages/host/frontend-static/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/host/frontend-static/README.zh.md:110",
+            "path": "packages/host/frontend-static/README.zh.md",
+            "line": 110,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/open-in-app/README.zh.md:34",
+            "path": "packages/host/open-in-app/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/host/open-in-app/README.zh.md:118",
+            "path": "packages/host/open-in-app/README.zh.md",
+            "line": 118,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/plugin-inventory/README.zh.md:108",
+            "path": "packages/host/plugin-inventory/README.zh.md",
+            "line": 108,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/product-telemetry-otel/README.zh.md:107",
+            "path": "packages/host/product-telemetry-otel/README.zh.md",
+            "line": 107,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/host/webserver/README.zh.md:30",
+            "path": "packages/host/webserver/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/host/webserver/README.zh.md:117",
+            "path": "packages/host/webserver/README.zh.md",
+            "line": 117,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/identity/README.zh.md:35",
+            "path": "packages/identity/README.zh.md",
+            "line": 35,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/identity/anonymous-user-id/README.zh.md:128",
+            "path": "packages/identity/anonymous-user-id/README.zh.md",
+            "line": 128,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/interaction/README.zh.md:49",
+            "path": "packages/interaction/README.zh.md",
+            "line": 49,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/interaction/commands/README.zh.md:143",
+            "path": "packages/interaction/commands/README.zh.md",
+            "line": 143,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/interaction/permission-presets/README.zh.md:30",
+            "path": "packages/interaction/permission-presets/README.zh.md",
+            "line": 30,
+            "title": "配置预设"
+        },
+        {
+            "id": "task:packages/interaction/permission-presets/README.zh.md:141",
+            "path": "packages/interaction/permission-presets/README.zh.md",
+            "line": 141,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/interaction/tool-ask-user/README.zh.md:146",
+            "path": "packages/interaction/tool-ask-user/README.zh.md",
+            "line": 146,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/interaction/user-approval/README.zh.md:160",
+            "path": "packages/interaction/user-approval/README.zh.md",
+            "line": 160,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/interaction/user-questions/README.zh.md:70",
+            "path": "packages/interaction/user-questions/README.zh.md",
+            "line": 70,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/jobs/README.zh.md:43",
+            "path": "packages/jobs/README.zh.md",
+            "line": 43,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/jobs/jobs-local/README.zh.md:34",
+            "path": "packages/jobs/jobs-local/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/jobs/jobs-local/README.zh.md:142",
+            "path": "packages/jobs/jobs-local/README.zh.md",
+            "line": 142,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/jobs/jobs/README.zh.md:132",
+            "path": "packages/jobs/jobs/README.zh.md",
+            "line": 132,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/jobs/tool-jobs/README.zh.md:44",
+            "path": "packages/jobs/tool-jobs/README.zh.md",
+            "line": 44,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/jobs/tool-jobs/README.zh.md:181",
+            "path": "packages/jobs/tool-jobs/README.zh.md",
+            "line": 181,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/README.zh.md:48",
+            "path": "packages/llm/README.zh.md",
+            "line": 48,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/deepseek-llm-api-extensions/README.zh.md:52",
+            "path": "packages/llm/deepseek-llm-api-extensions/README.zh.md",
+            "line": 52,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/llm-deepseek-account/README.zh.md:77",
+            "path": "packages/llm/llm-deepseek-account/README.zh.md",
+            "line": 77,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/llm-deepseek-api-key/README.zh.md:76",
+            "path": "packages/llm/llm-deepseek-api-key/README.zh.md",
+            "line": 76,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/llm-deepseek/README.zh.md:38",
+            "path": "packages/llm/llm-deepseek/README.zh.md",
+            "line": 38,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/llm/llm-deepseek/README.zh.md:104",
+            "path": "packages/llm/llm-deepseek/README.zh.md",
+            "line": 104,
+            "title": "动态配置"
+        },
+        {
+            "id": "task:packages/llm/llm-deepseek/README.zh.md:213",
+            "path": "packages/llm/llm-deepseek/README.zh.md",
+            "line": 213,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/llm-pi-ai/README.zh.md:36",
+            "path": "packages/llm/llm-pi-ai/README.zh.md",
+            "line": 36,
+            "title": "配置提供方路由"
+        },
+        {
+            "id": "task:packages/llm/llm-pi-ai/README.zh.md:107",
+            "path": "packages/llm/llm-pi-ai/README.zh.md",
+            "line": 107,
+            "title": "运行时更改配置"
+        },
+        {
+            "id": "task:packages/llm/llm-pi-ai/README.zh.md:235",
+            "path": "packages/llm/llm-pi-ai/README.zh.md",
+            "line": 235,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/llm-retry/README.zh.md:34",
+            "path": "packages/llm/llm-retry/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/llm/llm-retry/README.zh.md:139",
+            "path": "packages/llm/llm-retry/README.zh.md",
+            "line": 139,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/llm/README.zh.md:165",
+            "path": "packages/llm/llm/README.zh.md",
+            "line": 165,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/plugin-package-inventory-deepseek/README.zh.md:25",
+            "path": "packages/llm/plugin-package-inventory-deepseek/README.zh.md",
+            "line": 25,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/llm/plugin-package-inventory-deepseek/README.zh.md:71",
+            "path": "packages/llm/plugin-package-inventory-deepseek/README.zh.md",
+            "line": 71,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/llm/token-meter/README.zh.md:147",
+            "path": "packages/llm/token-meter/README.zh.md",
+            "line": 147,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/lsp/README.zh.md:44",
+            "path": "packages/lsp/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/lsp/lsp-stdio/README.zh.md:30",
+            "path": "packages/lsp/lsp-stdio/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/lsp/lsp-stdio/README.zh.md:153",
+            "path": "packages/lsp/lsp-stdio/README.zh.md",
+            "line": 153,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/lsp/lsp/README.zh.md:133",
+            "path": "packages/lsp/lsp/README.zh.md",
+            "line": 133,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/lsp/tool-lsp/README.zh.md:38",
+            "path": "packages/lsp/tool-lsp/README.zh.md",
+            "line": 38,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/lsp/tool-lsp/README.zh.md:172",
+            "path": "packages/lsp/tool-lsp/README.zh.md",
+            "line": 172,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/mcp/README.zh.md:45",
+            "path": "packages/mcp/README.zh.md",
+            "line": 45,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/mcp/mcp-client/README.zh.md:30",
+            "path": "packages/mcp/mcp-client/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/mcp/mcp-client/README.zh.md:217",
+            "path": "packages/mcp/mcp-client/README.zh.md",
+            "line": 217,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/mcp/mcp-resources/README.zh.md:30",
+            "path": "packages/mcp/mcp-resources/README.zh.md",
+            "line": 30,
+            "title": "服务器配置"
+        },
+        {
+            "id": "task:packages/mcp/mcp-resources/README.zh.md:129",
+            "path": "packages/mcp/mcp-resources/README.zh.md",
+            "line": 129,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/plan/README.zh.md:42",
+            "path": "packages/plan/README.zh.md",
+            "line": 42,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/plan/plan-mode/README.zh.md:34",
+            "path": "packages/plan/plan-mode/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/plan/plan-mode/README.zh.md:136",
+            "path": "packages/plan/plan-mode/README.zh.md",
+            "line": 136,
+            "title": "配置示例"
+        },
+        {
+            "id": "task:packages/plan/plan-mode/README.zh.md:192",
+            "path": "packages/plan/plan-mode/README.zh.md",
+            "line": 192,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/preset/README.zh.md:37",
+            "path": "packages/preset/README.zh.md",
+            "line": 37,
+            "title": "开发笔记"
+        },
+        {
+            "id": "task:packages/preset/agent-preset-registry/README.zh.md:28",
+            "path": "packages/preset/agent-preset-registry/README.zh.md",
+            "line": 28,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/preset/agent-preset-registry/README.zh.md:98",
+            "path": "packages/preset/agent-preset-registry/README.zh.md",
+            "line": 98,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/preset/agent-preset/README.zh.md:88",
+            "path": "packages/preset/agent-preset/README.zh.md",
+            "line": 88,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/preset/persona/README.zh.md:30",
+            "path": "packages/preset/persona/README.zh.md",
+            "line": 30,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/preset/persona/README.zh.md:63",
+            "path": "packages/preset/persona/README.zh.md",
+            "line": 63,
+            "title": "本行如何注册"
+        },
+        {
+            "id": "task:packages/preset/persona/README.zh.md:121",
+            "path": "packages/preset/persona/README.zh.md",
+            "line": 121,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ptc-runtime/README.zh.md:45",
+            "path": "packages/ptc-runtime/README.zh.md",
+            "line": 45,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ptc-runtime/ptc-runtime-node/README.zh.md:30",
+            "path": "packages/ptc-runtime/ptc-runtime-node/README.zh.md",
+            "line": 30,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/ptc-runtime/ptc-runtime-node/README.zh.md:92",
+            "path": "packages/ptc-runtime/ptc-runtime-node/README.zh.md",
+            "line": 92,
+            "title": "源代码与构建后 bootstrap"
+        },
+        {
+            "id": "task:packages/ptc-runtime/ptc-runtime-node/README.zh.md:148",
+            "path": "packages/ptc-runtime/ptc-runtime-node/README.zh.md",
+            "line": 148,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ptc-runtime/ptc-runtime/README.zh.md:134",
+            "path": "packages/ptc-runtime/ptc-runtime/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/runtime-diagnostics/README.zh.md:41",
+            "path": "packages/runtime-diagnostics/README.zh.md",
+            "line": 41,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/runtime-diagnostics/invariants/README.md:73",
+            "path": "packages/runtime-diagnostics/invariants/README.md",
+            "line": 73,
+            "title": "Adding a companion to a custom composition"
+        },
+        {
+            "id": "task:packages/runtime-diagnostics/invariants/README.zh.md:158",
+            "path": "packages/runtime-diagnostics/invariants/README.zh.md",
+            "line": 158,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sandbox/README.zh.md:47",
+            "path": "packages/sandbox/README.zh.md",
+            "line": 47,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sandbox/sandbox-local/README.zh.md:34",
+            "path": "packages/sandbox/sandbox-local/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/sandbox/sandbox-local/README.zh.md:139",
+            "path": "packages/sandbox/sandbox-local/README.zh.md",
+            "line": 139,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sandbox/sandbox-policy/README.zh.md:34",
+            "path": "packages/sandbox/sandbox-policy/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/sandbox/sandbox-policy/README.zh.md:152",
+            "path": "packages/sandbox/sandbox-policy/README.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sandbox/sandbox-windows-acl/README.zh.md:197",
+            "path": "packages/sandbox/sandbox-windows-acl/README.zh.md",
+            "line": 197,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sandbox/sandbox/README.zh.md:174",
+            "path": "packages/sandbox/sandbox/README.zh.md",
+            "line": 174,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/schedule/README.zh.md:44",
+            "path": "packages/schedule/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/schedule/schedule/README.zh.md:164",
+            "path": "packages/schedule/schedule/README.zh.md",
+            "line": 164,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sdk/README.zh.md:47",
+            "path": "packages/sdk/README.zh.md",
+            "line": 47,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sdk/client/README.zh.md:128",
+            "path": "packages/sdk/client/README.zh.md",
+            "line": 128,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sdk/protocol/README.zh.md:118",
+            "path": "packages/sdk/protocol/README.zh.md",
+            "line": 118,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/sdk/server/README.zh.md:34",
+            "path": "packages/sdk/server/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/sdk/server/README.zh.md:131",
+            "path": "packages/sdk/server/README.zh.md",
+            "line": 131,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session-query/README.zh.md:46",
+            "path": "packages/session-query/README.zh.md",
+            "line": 46,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session-query/session-log-export/README.zh.md:45",
+            "path": "packages/session-query/session-log-export/README.zh.md",
+            "line": 45,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session-query/session-log-export/README.zh.md:134",
+            "path": "packages/session-query/session-log-export/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session-query/session-query-sqlite/README.zh.md:34",
+            "path": "packages/session-query/session-query-sqlite/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/session-query/session-query-sqlite/README.zh.md:150",
+            "path": "packages/session-query/session-query-sqlite/README.zh.md",
+            "line": 150,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session-query/session-query/README.zh.md:53",
+            "path": "packages/session-query/session-query/README.zh.md",
+            "line": 53,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session-query/session-query/README.zh.md:156",
+            "path": "packages/session-query/session-query/README.zh.md",
+            "line": 156,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session-query/tool-session-query/README.zh.md:34",
+            "path": "packages/session-query/tool-session-query/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session-query/tool-session-query/README.zh.md:175",
+            "path": "packages/session-query/tool-session-query/README.zh.md",
+            "line": 175,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/README.zh.md:81",
+            "path": "packages/session/README.zh.md",
+            "line": 81,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-checkpoint-policy/README.zh.md:34",
+            "path": "packages/session/session-checkpoint-policy/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/session/session-checkpoint-policy/README.zh.md:120",
+            "path": "packages/session/session-checkpoint-policy/README.zh.md",
+            "line": 120,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-format-catalog/README.zh.md:103",
+            "path": "packages/session/session-format-catalog/README.zh.md",
+            "line": 103,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-format-v0-to-v1/README.zh.md:106",
+            "path": "packages/session/session-format-v0-to-v1/README.zh.md",
+            "line": 106,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-format-v1-to-v2/README.zh.md:111",
+            "path": "packages/session/session-format-v1-to-v2/README.zh.md",
+            "line": 111,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-format-v2-to-v3/README.zh.md:200",
+            "path": "packages/session/session-format-v2-to-v3/README.zh.md",
+            "line": 200,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-format-v3-to-v4/README.zh.md:343",
+            "path": "packages/session/session-format-v3-to-v4/README.zh.md",
+            "line": 343,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-format/README.zh.md:105",
+            "path": "packages/session/session-format/README.zh.md",
+            "line": 105,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-log-deepseek/README.zh.md:26",
+            "path": "packages/session/session-log-deepseek/README.zh.md",
+            "line": 26,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session/session-log-deepseek/README.zh.md:80",
+            "path": "packages/session/session-log-deepseek/README.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-persistence-jsonl/README.zh.md:34",
+            "path": "packages/session/session-persistence-jsonl/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/session/session-persistence-jsonl/README.zh.md:169",
+            "path": "packages/session/session-persistence-jsonl/README.zh.md",
+            "line": 169,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-persistence/README.zh.md:157",
+            "path": "packages/session/session-persistence/README.zh.md",
+            "line": 157,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-projection-cache/README.zh.md:34",
+            "path": "packages/session/session-projection-cache/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/session/session-projection-cache/README.zh.md:55",
+            "path": "packages/session/session-projection-cache/README.zh.md",
+            "line": 55,
+            "title": "检查点如何写入"
+        },
+        {
+            "id": "task:packages/session/session-projection-cache/README.zh.md:134",
+            "path": "packages/session/session-projection-cache/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-projection/README.zh.md:137",
+            "path": "packages/session/session-projection/README.zh.md",
+            "line": 137,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-stats/README.zh.md:125",
+            "path": "packages/session/session-stats/README.zh.md",
+            "line": 125,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-telemetry-otel/README.zh.md:41",
+            "path": "packages/session/session-telemetry-otel/README.zh.md",
+            "line": 41,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/session/session-telemetry-otel/README.zh.md:147",
+            "path": "packages/session/session-telemetry-otel/README.zh.md",
+            "line": 147,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-telemetry/README.zh.md:122",
+            "path": "packages/session/session-telemetry/README.zh.md",
+            "line": 122,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-title-all-prompts-llm/README.zh.md:34",
+            "path": "packages/session/session-title-all-prompts-llm/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session/session-title-all-prompts-llm/README.zh.md:110",
+            "path": "packages/session/session-title-all-prompts-llm/README.zh.md",
+            "line": 110,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-title-first-prompt-llm/README.zh.md:34",
+            "path": "packages/session/session-title-first-prompt-llm/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session/session-title-first-prompt-llm/README.zh.md:110",
+            "path": "packages/session/session-title-first-prompt-llm/README.zh.md",
+            "line": 110,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-title-llm/README.zh.md:38",
+            "path": "packages/session/session-title-llm/README.zh.md",
+            "line": 38,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/session/session-title-llm/README.zh.md:122",
+            "path": "packages/session/session-title-llm/README.zh.md",
+            "line": 122,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-title/README.md:55",
+            "path": "packages/session/session-title/README.md",
+            "line": 55,
+            "title": "Adding a provider"
+        },
+        {
+            "id": "task:packages/session/session-title/README.zh.md:34",
+            "path": "packages/session/session-title/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/session/session-title/README.zh.md:142",
+            "path": "packages/session/session-title/README.zh.md",
+            "line": 142,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/session/session-turn-outline/README.zh.md:119",
+            "path": "packages/session/session-turn-outline/README.zh.md",
+            "line": 119,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/settings/README.zh.md:6",
+            "path": "packages/settings/README.zh.md",
+            "line": 6,
+            "title": "settings/——插件配置表单"
+        },
+        {
+            "id": "task:packages/settings/README.zh.md:37",
+            "path": "packages/settings/README.zh.md",
+            "line": 37,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/settings/settings/README.zh.md:77",
+            "path": "packages/settings/settings/README.zh.md",
+            "line": 77,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/README.zh.md:49",
+            "path": "packages/shell/README.zh.md",
+            "line": 49,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/bash-local/README.zh.md:30",
+            "path": "packages/shell/bash-local/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/bash-local/README.zh.md:146",
+            "path": "packages/shell/bash-local/README.zh.md",
+            "line": 146,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/bash-sandbox/README.zh.md:42",
+            "path": "packages/shell/bash-sandbox/README.zh.md",
+            "line": 42,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/bash-sandbox/README.zh.md:177",
+            "path": "packages/shell/bash-sandbox/README.zh.md",
+            "line": 177,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/pwsh-local/README.zh.md:34",
+            "path": "packages/shell/pwsh-local/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/pwsh-local/README.zh.md:155",
+            "path": "packages/shell/pwsh-local/README.zh.md",
+            "line": 155,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/pwsh-sandbox/README.zh.md:42",
+            "path": "packages/shell/pwsh-sandbox/README.zh.md",
+            "line": 42,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/pwsh-sandbox/README.zh.md:146",
+            "path": "packages/shell/pwsh-sandbox/README.zh.md",
+            "line": 146,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/shell-env/README.md:34",
+            "path": "packages/shell/shell-env/README.md",
+            "line": 34,
+            "title": "Adding your own environment facts"
+        },
+        {
+            "id": "task:packages/shell/shell-env/README.zh.md:133",
+            "path": "packages/shell/shell-env/README.zh.md",
+            "line": 133,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/shell/README.zh.md:140",
+            "path": "packages/shell/shell/README.zh.md",
+            "line": 140,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/tool-bash-persistent/README.zh.md:34",
+            "path": "packages/shell/tool-bash-persistent/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/tool-bash-persistent/README.zh.md:152",
+            "path": "packages/shell/tool-bash-persistent/README.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/tool-bash/README.zh.md:30",
+            "path": "packages/shell/tool-bash/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/tool-bash/README.zh.md:219",
+            "path": "packages/shell/tool-bash/README.zh.md",
+            "line": 219,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/tool-pwsh-persistent/README.zh.md:34",
+            "path": "packages/shell/tool-pwsh-persistent/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/tool-pwsh-persistent/README.zh.md:158",
+            "path": "packages/shell/tool-pwsh-persistent/README.zh.md",
+            "line": 158,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/shell/tool-pwsh/README.zh.md:34",
+            "path": "packages/shell/tool-pwsh/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/shell/tool-pwsh/README.zh.md:211",
+            "path": "packages/shell/tool-pwsh/README.zh.md",
+            "line": 211,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/README.zh.md:47",
+            "path": "packages/skill/README.zh.md",
+            "line": 47,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/skill-badge/README.zh.md:110",
+            "path": "packages/skill/skill-badge/README.zh.md",
+            "line": 110,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/skill-filesystem/README.zh.md:58",
+            "path": "packages/skill/skill-filesystem/README.zh.md",
+            "line": 58,
+            "title": "挂载与配置"
+        },
+        {
+            "id": "task:packages/skill/skill-filesystem/README.zh.md:155",
+            "path": "packages/skill/skill-filesystem/README.zh.md",
+            "line": 155,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/skill-office/README.zh.md:30",
+            "path": "packages/skill/skill-office/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/skill/skill-office/README.zh.md:99",
+            "path": "packages/skill/skill-office/README.zh.md",
+            "line": 99,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/skill/README.zh.md:34",
+            "path": "packages/skill/skill/README.zh.md",
+            "line": 34,
+            "title": "挂载与配置"
+        },
+        {
+            "id": "task:packages/skill/skill/README.zh.md:144",
+            "path": "packages/skill/skill/README.zh.md",
+            "line": 144,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/tool-skill/README.zh.md:34",
+            "path": "packages/skill/tool-skill/README.zh.md",
+            "line": 34,
+            "title": "挂载与配置"
+        },
+        {
+            "id": "task:packages/skill/tool-skill/README.zh.md:251",
+            "path": "packages/skill/tool-skill/README.zh.md",
+            "line": 251,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/skill/tool-workspace-dependencies/README.zh.md:30",
+            "path": "packages/skill/tool-workspace-dependencies/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/skill/tool-workspace-dependencies/README.zh.md:49",
+            "path": "packages/skill/tool-workspace-dependencies/README.zh.md",
+            "line": 49,
+            "title": "构建载体 payload"
+        },
+        {
+            "id": "task:packages/skill/tool-workspace-dependencies/README.zh.md:121",
+            "path": "packages/skill/tool-workspace-dependencies/README.zh.md",
+            "line": 121,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/spill/README.zh.md:44",
+            "path": "packages/spill/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/spill/spill-local/README.zh.md:30",
+            "path": "packages/spill/spill-local/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/spill/spill-local/README.zh.md:131",
+            "path": "packages/spill/spill-local/README.zh.md",
+            "line": 131,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/spill/spill-policy/README.zh.md:30",
+            "path": "packages/spill/spill-policy/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/spill/spill-policy/README.zh.md:152",
+            "path": "packages/spill/spill-policy/README.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/spill/spill-policy/README.zh.md:159",
+            "path": "packages/spill/spill-policy/README.zh.md",
+            "line": 159,
+            "title": "未来：逐工具配置"
+        },
+        {
+            "id": "task:packages/spill/spill/README.zh.md:140",
+            "path": "packages/spill/spill/README.zh.md",
+            "line": 140,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ssh/README.zh.md:37",
+            "path": "packages/ssh/README.zh.md",
+            "line": 37,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ssh/fs-ssh/README.zh.md:74",
+            "path": "packages/ssh/fs-ssh/README.zh.md",
+            "line": 74,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ssh/sandbox-ssh/README.zh.md:71",
+            "path": "packages/ssh/sandbox-ssh/README.zh.md",
+            "line": 71,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ssh/ssh/README.zh.md:99",
+            "path": "packages/ssh/ssh/README.zh.md",
+            "line": 99,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/ssh/subprocess-ssh/README.zh.md:80",
+            "path": "packages/ssh/subprocess-ssh/README.zh.md",
+            "line": 80,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/storage/README.zh.md:44",
+            "path": "packages/storage/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/storage/storage-domain/README.zh.md:156",
+            "path": "packages/storage/storage-domain/README.zh.md",
+            "line": 156,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/storage/storage-json/README.zh.md:34",
+            "path": "packages/storage/storage-json/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/storage/storage-json/README.zh.md:146",
+            "path": "packages/storage/storage-json/README.zh.md",
+            "line": 146,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/storage/storage-sqlite/README.zh.md:34",
+            "path": "packages/storage/storage-sqlite/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/storage/storage-sqlite/README.zh.md:135",
+            "path": "packages/storage/storage-sqlite/README.zh.md",
+            "line": 135,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/storage/storage/README.zh.md:135",
+            "path": "packages/storage/storage/README.zh.md",
+            "line": 135,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/README.zh.md:49",
+            "path": "packages/subagent/README.zh.md",
+            "line": 49,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-acp/README.zh.md:34",
+            "path": "packages/subagent/subagent-acp/README.zh.md",
+            "line": 34,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/subagent/subagent-acp/README.zh.md:166",
+            "path": "packages/subagent/subagent-acp/README.zh.md",
+            "line": 166,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-claude-code/README.zh.md:42",
+            "path": "packages/subagent/subagent-claude-code/README.zh.md",
+            "line": 42,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/subagent/subagent-claude-code/README.zh.md:185",
+            "path": "packages/subagent/subagent-claude-code/README.zh.md",
+            "line": 185,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-codex/README.zh.md:42",
+            "path": "packages/subagent/subagent-codex/README.zh.md",
+            "line": 42,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/subagent/subagent-codex/README.zh.md:183",
+            "path": "packages/subagent/subagent-codex/README.zh.md",
+            "line": 183,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-dsh-sdk/README.zh.md:36",
+            "path": "packages/subagent/subagent-dsh-sdk/README.zh.md",
+            "line": 36,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/subagent/subagent-dsh-sdk/README.zh.md:178",
+            "path": "packages/subagent/subagent-dsh-sdk/README.zh.md",
+            "line": 178,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-fork-in-process/README.zh.md:38",
+            "path": "packages/subagent/subagent-fork-in-process/README.zh.md",
+            "line": 38,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/subagent/subagent-fork-in-process/README.zh.md:150",
+            "path": "packages/subagent/subagent-fork-in-process/README.zh.md",
+            "line": 150,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-in-process-driver/README.zh.md:170",
+            "path": "packages/subagent/subagent-in-process-driver/README.zh.md",
+            "line": 170,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent-spawn-in-process/README.zh.md:34",
+            "path": "packages/subagent/subagent-spawn-in-process/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/subagent/subagent-spawn-in-process/README.zh.md:143",
+            "path": "packages/subagent/subagent-spawn-in-process/README.zh.md",
+            "line": 143,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/subagent/README.zh.md:199",
+            "path": "packages/subagent/subagent/README.zh.md",
+            "line": 199,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/tool-subagent-control/README.zh.md:30",
+            "path": "packages/subagent/tool-subagent-control/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/subagent/tool-subagent-control/README.zh.md:176",
+            "path": "packages/subagent/tool-subagent-control/README.zh.md",
+            "line": 176,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subagent/tool-subagent/README.zh.md:30",
+            "path": "packages/subagent/tool-subagent/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/subagent/tool-subagent/README.zh.md:217",
+            "path": "packages/subagent/tool-subagent/README.zh.md",
+            "line": 217,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subprocess/README.zh.md:44",
+            "path": "packages/subprocess/README.zh.md",
+            "line": 44,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subprocess/subprocess-local/README.zh.md:161",
+            "path": "packages/subprocess/subprocess-local/README.zh.md",
+            "line": 161,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subprocess/subprocess/README.zh.md:155",
+            "path": "packages/subprocess/subprocess/README.zh.md",
+            "line": 155,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/subprocess/win32-process/README.zh.md:82",
+            "path": "packages/subprocess/win32-process/README.zh.md",
+            "line": 82,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/telemetry/README.zh.md:33",
+            "path": "packages/telemetry/README.zh.md",
+            "line": 33,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/telemetry/otel/README.zh.md:68",
+            "path": "packages/telemetry/otel/README.zh.md",
+            "line": 68,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/terminal/README.zh.md:45",
+            "path": "packages/terminal/README.zh.md",
+            "line": 45,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/terminal/terminal-bash/README.zh.md:49",
+            "path": "packages/terminal/terminal-bash/README.zh.md",
+            "line": 49,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/terminal/terminal-bash/README.zh.md:174",
+            "path": "packages/terminal/terminal-bash/README.zh.md",
+            "line": 174,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/terminal/terminal/README.zh.md:140",
+            "path": "packages/terminal/terminal/README.zh.md",
+            "line": 140,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/terminal/tool-terminal/README.zh.md:51",
+            "path": "packages/terminal/tool-terminal/README.zh.md",
+            "line": 51,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/terminal/tool-terminal/README.zh.md:177",
+            "path": "packages/terminal/tool-terminal/README.zh.md",
+            "line": 177,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/README.zh.md:47",
+            "path": "packages/test-support/README.zh.md",
+            "line": 47,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/agent-loop-testkit/README.zh.md:129",
+            "path": "packages/test-support/agent-loop-testkit/README.zh.md",
+            "line": 129,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/client-runtime/README.zh.md:184",
+            "path": "packages/test-support/client-runtime/README.zh.md",
+            "line": 184,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/llm-mock-server/README.zh.md:163",
+            "path": "packages/test-support/llm-mock-server/README.zh.md",
+            "line": 163,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/llm-replay/README.zh.md:152",
+            "path": "packages/test-support/llm-replay/README.zh.md",
+            "line": 152,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/loader-smoke/README.zh.md:54",
+            "path": "packages/test-support/loader-smoke/README.zh.md",
+            "line": 54,
+            "title": "源模式或构建模式"
+        },
+        {
+            "id": "task:packages/test-support/loader-smoke/README.zh.md:124",
+            "path": "packages/test-support/loader-smoke/README.zh.md",
+            "line": 124,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/remote-mock/README.zh.md:141",
+            "path": "packages/test-support/remote-mock/README.zh.md",
+            "line": 141,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/test-support/session-snapshot/README.zh.md:30",
+            "path": "packages/test-support/session-snapshot/README.zh.md",
+            "line": 30,
+            "title": "编写快照套件"
+        },
+        {
+            "id": "task:packages/test-support/session-snapshot/README.zh.md:170",
+            "path": "packages/test-support/session-snapshot/README.zh.md",
+            "line": 170,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/todo/README.zh.md:42",
+            "path": "packages/todo/README.zh.md",
+            "line": 42,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/todo/tool-todo/README.zh.md:34",
+            "path": "packages/todo/tool-todo/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/todo/tool-todo/README.zh.md:165",
+            "path": "packages/todo/tool-todo/README.zh.md",
+            "line": 165,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/typert/README.zh.md:45",
+            "path": "packages/typert/README.zh.md",
+            "line": 45,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/typert/generator/README.zh.md:50",
+            "path": "packages/typert/generator/README.zh.md",
+            "line": 50,
+            "title": "在 tsdown 构建中运行生成"
+        },
+        {
+            "id": "task:packages/typert/generator/README.zh.md:136",
+            "path": "packages/typert/generator/README.zh.md",
+            "line": 136,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/typert/loader/README.zh.md:30",
+            "path": "packages/typert/loader/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/typert/loader/README.zh.md:119",
+            "path": "packages/typert/loader/README.zh.md",
+            "line": 119,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/typert/protocol/README.zh.md:149",
+            "path": "packages/typert/protocol/README.zh.md",
+            "line": 149,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/typert/registry/README.zh.md:124",
+            "path": "packages/typert/registry/README.zh.md",
+            "line": 124,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/README.zh.md:57",
+            "path": "packages/util/README.zh.md",
+            "line": 57,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/atomic-write/README.zh.md:131",
+            "path": "packages/util/atomic-write/README.zh.md",
+            "line": 131,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/brand/README.zh.md:101",
+            "path": "packages/util/brand/README.zh.md",
+            "line": 101,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/chunked-list/README.zh.md:86",
+            "path": "packages/util/chunked-list/README.zh.md",
+            "line": 86,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/code-language/README.zh.md:41",
+            "path": "packages/util/code-language/README.zh.md",
+            "line": 41,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/crypto/README.zh.md:62",
+            "path": "packages/util/crypto/README.zh.md",
+            "line": 62,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/deque/README.zh.md:97",
+            "path": "packages/util/deque/README.zh.md",
+            "line": 97,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/home-paths/README.zh.md:106",
+            "path": "packages/util/home-paths/README.zh.md",
+            "line": 106,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/http-proxy/README.zh.md:30",
+            "path": "packages/util/http-proxy/README.zh.md",
+            "line": 30,
+            "title": "编写新的出站调用"
+        },
+        {
+            "id": "task:packages/util/http-proxy/README.zh.md:115",
+            "path": "packages/util/http-proxy/README.zh.md",
+            "line": 115,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/launch-environment/README.zh.md:73",
+            "path": "packages/util/launch-environment/README.zh.md",
+            "line": 73,
+            "title": "快照如何保持冻结"
+        },
+        {
+            "id": "task:packages/util/launch-environment/README.zh.md:107",
+            "path": "packages/util/launch-environment/README.zh.md",
+            "line": 107,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/lazy-require/README.zh.md:86",
+            "path": "packages/util/lazy-require/README.zh.md",
+            "line": 86,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/native-command/README.zh.md:116",
+            "path": "packages/util/native-command/README.zh.md",
+            "line": 116,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/output-retention/README.md:58",
+            "path": "packages/util/output-retention/README.md",
+            "line": 58,
+            "title": "Building the omission footer"
+        },
+        {
+            "id": "task:packages/util/output-retention/README.zh.md:58",
+            "path": "packages/util/output-retention/README.zh.md",
+            "line": 58,
+            "title": "构建省略页脚"
+        },
+        {
+            "id": "task:packages/util/output-retention/README.zh.md:85",
+            "path": "packages/util/output-retention/README.zh.md",
+            "line": 85,
+            "title": "当前工具如何使用它"
+        },
+        {
+            "id": "task:packages/util/output-retention/README.zh.md:118",
+            "path": "packages/util/output-retention/README.zh.md",
+            "line": 118,
+            "title": "预算事实如何保持诚实"
+        },
+        {
+            "id": "task:packages/util/output-retention/README.zh.md:161",
+            "path": "packages/util/output-retention/README.zh.md",
+            "line": 161,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/package-manifest/README.zh.md:96",
+            "path": "packages/util/package-manifest/README.zh.md",
+            "line": 96,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/time/README.zh.md:63",
+            "path": "packages/util/time/README.zh.md",
+            "line": 63,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/timeout/README.zh.md:97",
+            "path": "packages/util/timeout/README.zh.md",
+            "line": 97,
+            "title": "deadline 如何融合来源"
+        },
+        {
+            "id": "task:packages/util/timeout/README.zh.md:147",
+            "path": "packages/util/timeout/README.zh.md",
+            "line": 147,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/values/README.zh.md:89",
+            "path": "packages/util/values/README.zh.md",
+            "line": 89,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/util/workspace-path/README.zh.md:42",
+            "path": "packages/util/workspace-path/README.zh.md",
+            "line": 42,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/README.zh.md:47",
+            "path": "packages/web/README.zh.md",
+            "line": 47,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/tool-web/README.zh.md:34",
+            "path": "packages/web/tool-web/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/web/tool-web/README.zh.md:257",
+            "path": "packages/web/tool-web/README.zh.md",
+            "line": 257,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/web-fetch-http/README.zh.md:34",
+            "path": "packages/web/web-fetch-http/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/web/web-fetch-http/README.zh.md:139",
+            "path": "packages/web/web-fetch-http/README.zh.md",
+            "line": 139,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/web-search-deepseek/README.zh.md:34",
+            "path": "packages/web/web-search-deepseek/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/web/web-search-deepseek/README.zh.md:167",
+            "path": "packages/web/web-search-deepseek/README.zh.md",
+            "line": 167,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/web-search-exa/README.zh.md:34",
+            "path": "packages/web/web-search-exa/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/web/web-search-exa/README.zh.md:132",
+            "path": "packages/web/web-search-exa/README.zh.md",
+            "line": 132,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/web-search-perplexity/README.zh.md:34",
+            "path": "packages/web/web-search-perplexity/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/web/web-search-perplexity/README.zh.md:155",
+            "path": "packages/web/web-search-perplexity/README.zh.md",
+            "line": 155,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/web/web/README.zh.md:34",
+            "path": "packages/web/web/README.zh.md",
+            "line": 34,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/web/web/README.zh.md:158",
+            "path": "packages/web/web/README.zh.md",
+            "line": 158,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/webhook/README.zh.md:36",
+            "path": "packages/webhook/README.zh.md",
+            "line": 36,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/webhook/webhook-github/README.zh.md:26",
+            "path": "packages/webhook/webhook-github/README.zh.md",
+            "line": 26,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/webhook/webhook-github/README.zh.md:79",
+            "path": "packages/webhook/webhook-github/README.zh.md",
+            "line": 79,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/webhook/webhook/README.zh.md:53",
+            "path": "packages/webhook/webhook/README.zh.md",
+            "line": 53,
+            "title": "规则编写的初始提示词"
+        },
+        {
+            "id": "task:packages/webhook/webhook/README.zh.md:79",
+            "path": "packages/webhook/webhook/README.zh.md",
+            "line": 79,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workflow/README.zh.md:47",
+            "path": "packages/workflow/README.zh.md",
+            "line": 47,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workflow/tool-ralph/README.zh.md:38",
+            "path": "packages/workflow/tool-ralph/README.zh.md",
+            "line": 38,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/workflow/tool-ralph/README.zh.md:170",
+            "path": "packages/workflow/tool-ralph/README.zh.md",
+            "line": 170,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workflow/tool-workflow/README.zh.md:44",
+            "path": "packages/workflow/tool-workflow/README.zh.md",
+            "line": 44,
+            "title": "配置"
+        },
+        {
+            "id": "task:packages/workflow/tool-workflow/README.zh.md:178",
+            "path": "packages/workflow/tool-workflow/README.zh.md",
+            "line": 178,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workflow/workflow-ptc/README.zh.md:30",
+            "path": "packages/workflow/workflow-ptc/README.zh.md",
+            "line": 30,
+            "title": "最小配置"
+        },
+        {
+            "id": "task:packages/workflow/workflow-ptc/README.zh.md:163",
+            "path": "packages/workflow/workflow-ptc/README.zh.md",
+            "line": 163,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workflow/workflow/README.zh.md:134",
+            "path": "packages/workflow/workflow/README.zh.md",
+            "line": 134,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workspace/README.zh.md:42",
+            "path": "packages/workspace/README.zh.md",
+            "line": 42,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:packages/workspace/workspace/README.md:51",
+            "path": "packages/workspace/workspace/README.md",
+            "line": 51,
+            "title": "Creating and ordering projects"
+        },
+        {
+            "id": "task:packages/workspace/workspace/README.zh.md:180",
+            "path": "packages/workspace/workspace/README.zh.md",
+            "line": 180,
+            "title": "开发备注"
+        },
+        {
+            "id": "task:python/sdk-runtime/README.zh.md:49",
+            "path": "python/sdk-runtime/README.zh.md",
+            "line": 49,
+            "title": "构建与分发"
+        }
+    ]
+}
