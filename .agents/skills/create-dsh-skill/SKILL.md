@@ -107,7 +107,7 @@ API 事实按 **代码 → 注释 → 文档** 裁决。代码包括包导出、
 
 再独立盘点目标 tag 的包 README、DOCS、website 中的“如何……”及等价操作问题，结合 cookbook、教程、公开调用方和真实 Profile 组合，形成插件开发任务候选及来源。自动发现的标题逐项写入 `coverage.json.taskDiscoveries`，纳入者关联一条 `taskPaths`，排除者给具体理由；正文中漏检的任务人工补入 `taskPaths`。按可观察的业务结果裁决每条任务，把共同完成它的 API 对象、配置、跨侧装配、顺序和验证串成使用路径；API 事实仍遵守代码、注释、文档的优先级。新准备目标的 `taskPaths.apiObjects` 关联已纳入的 API 对象，多对象任务还写 `compositionSteps`，由 HOW-TO 给出端到端步骤并链接各自的 API reference；单对象任务可由完整 example 承接；纯配置路径要有配置、挂载和观察步骤。每条已覆盖路径要能从任务路由到达实现步骤、验证与完成判据。没有公开入口或目标版本尚不能完成的任务，以 `excluded` 任务和具体理由记录，不凭旧产物补齐。冻结器检查候选处置、对象映射、HOW-TO 链接和路由；步骤语义仍由维护者审阅。
 
-从已覆盖任务中选出少量常见且能经目标版本公开入口完成的首屏任务。在其 `taskPaths` 项写 `entry`，指向一个已列入 `destinations` 的 HOW-TO 文档、标题和 Markdown anchor；生成的 `SKILL.md` 从用户意图直接链接该 anchor。其他任务保留在任务路由中，不因未进入首屏而失去入口。首屏选择和 HOW-TO 的操作语义由维护者裁决，冻结器只核对精确链接与目标小节，不能证明代码和装载行为已运行。
+从已覆盖任务中选出少量常见且能经目标版本公开入口完成的首屏任务。在其 `taskPaths` 项写 `userIntents` 和 `entry`，指向一个已列入 `destinations` 的 HOW-TO 文档、标题和 Markdown anchor。新准备目标在 manifest 设 `taskNavigation: "generated"`，于入口和任务路由各放一对生成区标记，运行 `sync-task-navigation.mjs <target>`；它从任务账本生成首屏直达链接和完整任务路由，不手抄导航表。每条已覆盖任务须有独占的非空目的小节；共用通用“完成判据”小节时先拆分具体任务正文。首屏选择及步骤语义仍由维护者裁决。既有未启用此模式的冻结素材保持原格式，不能把它们的静态链接检查称为自动生成或运行验证。字段和命令见 [Skill Source 契约](references/skill-source-contract.md#任务导航与场景验证)。
 
 ## 裁决 Skill 构建素材
 
@@ -168,10 +168,10 @@ python3 scripts/validate_skill.py --skill <target>/generated-skill --dsh <target
 node scripts/check_examples.cjs --dsh <target>/checkout --skill <target>/generated-skill
 ```
 
-构建器每次先清空纯产物目录 `generated-skill/`，再从冻结素材新建。生成目录的结构和示例验证通过后运行整目录替换；替换脚本先拒绝正式 Skill 中未保存的工作区修改，再移除整个旧目录并放入新目录，不做覆盖合并。新目录就位前的错误必须恢复旧目录；就位后的备份清理失败作为已完成替换的警告返回：
+构建器先在临时目录生成并验证完整产物，验证成功后才替换 `generated-skill/`；验证失败保留旧产物。生成目录的结构和示例验证通过后运行整目录替换，不做覆盖合并。替换脚本默认保护正式 Skill 中未保存的修改；若它正好是上一次替换的输出，可将上次返回的 `installedDigest` 作为 `--expected-formal-digest` 传入，摘要不一致时仍拒绝。新目录就位前的错误必须恢复旧目录；就位后的备份清理失败作为已完成替换的警告返回：
 
 ```text
-node .agents/skills/create-dsh-skill/scripts/replace-generated-skill.mjs <target>
+node .agents/skills/create-dsh-skill/scripts/replace-generated-skill.mjs <target> [--expected-formal-digest <prior-installedDigest>]
 ```
 
 ## 验证与交付
@@ -179,5 +179,7 @@ node .agents/skills/create-dsh-skill/scripts/replace-generated-skill.mjs <target
 在精确 DSH checkout 准备锁定依赖、Host/Client 与 generated Remote 声明。对 `generated-skill/` 先运行上述独立的结构、元数据、基线、Markdown 链接和锚点、JSON 代码块、离线边界与示例编译验证；不得借正式目录中的文件使检查通过。整体替换后，再在本维护仓库运行默认指向正式目录的 `verify:skill --dsh`、`verify:examples --dsh`、验证器回归、格式和 diff 检查。检查示例编译器是否仍兼容目标版本的上游 checker；若不兼容，修复维护工具或报告受阻，不以删除示例、忽略诊断或仅运行静态检查代替通过。TypeScript Host 与 Client 分开报告。
 
 对产物声称可独立制作并挂载的代表性任务，在隔离消费项目验证包解析、构建输出、实际 Profile 装载、一次可观察行为及卸载；Client 与 Remote 任务还须到达对应侧的真实组合。选择任务以当次目标 tag 纳入的入口为准，不要求不存在的能力。没有条件运行的路径标为 `Not Covered`，说明其影响；示例编译和静态链接检查不能替代这项验证。可重复的关键任务再用真实 Agent 执行，检查是否正确触发 Skill、选中 reference、遵守版本边界并交付可验证结果；有无 Skill 的对照只用于评估指导效果，不作为产品事实来源。
+
+启用生成导航的目标还须在 `evidence/task-scenarios.json` 为每个首屏任务配置可重复的 `.mjs` 场景，并在冻结后运行 `verify-task-scenarios.mjs <target>`。场景脚本应在目标 checkout 和临时 `DSH_HOME` 中实际执行它声明的装载、调用、清理等检查，再输出一份 JSON 结果；维护者审查脚本的执行与断言，不能把自报的布尔值当作独立证据。脚本和清单的哈希随冻结锁定，改动后须重新冻结。运行器未提供网络沙箱，场景必须只使用本地依赖或脚本化 provider，不能调用外部服务。
 
 交付前审阅完整任务差异，说明目标版本和 commit、能力候选总数及 included/merged/excluded 数量、已覆盖的契约、实际运行的命令与结果、未覆盖的行为及影响。差异只用于确认本仓库交付范围，不得据此决定目标知识或能力清单。区分资料已更新、行为已实现和验证已完成；未运行的测试不能写成通过。

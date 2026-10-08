@@ -28,7 +28,10 @@ import {
 } from "../scripts/replace-generated-skill.mjs";
 import { resolvePublishedVersion } from "../scripts/resolve-dsh-agent-version.mjs";
 import { loadTarget } from "../scripts/skill-build-contract.mjs";
+import { syncTaskNavigation } from "../scripts/sync-task-navigation.mjs";
+import { renderTaskNavigation } from "../scripts/task-navigation.mjs";
 import { validateSkillSource } from "../scripts/validate-skill-source.mjs";
+import { verifyTaskScenarios } from "../scripts/verify-task-scenarios.mjs";
 
 function write(path, content) {
     mkdirSync(dirname(path), { recursive: true });
@@ -133,6 +136,7 @@ function createFixture(t, options = {}) {
             output: "references/plugin-development-routing.md",
             kind: "index",
             content:
+                options.routing ??
                 "# Routing\n\n[Tool contract](api-tools.md)\n[How-to](how-to.md)\n",
         },
         {
@@ -185,6 +189,9 @@ function createFixture(t, options = {}) {
                 schemaVersion: options.schemaVersion ?? 1,
                 ...identity,
                 status: "draft",
+                ...(options.taskNavigation
+                    ? { taskNavigation: options.taskNavigation }
+                    : {}),
                 topics: ["tools"],
                 files: sourceFiles.map(({ source, output, kind }) => ({
                     source,
@@ -603,7 +610,17 @@ test("featured task entry must link directly to its exact recipe", (t) => {
     writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 4)}\n`);
     assert.throws(
         () => validateSkillSource(fixture.targetPath, { freeze: true }),
-        /entry anchor is missing/,
+        /entry anchor does not identify its non-empty section/,
+    );
+    write(
+        join(fixture.skillSourcePath, "how-to/example.md"),
+        "# How-to\n\n## Complete task\n\nBuild and load the plugin.\n\n## Another task\n\nThis is a different task.\n",
+    );
+    coverage.taskPaths[0].entry.anchor = "another-task";
+    writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 4)}\n`);
+    assert.throws(
+        () => validateSkillSource(fixture.targetPath, { freeze: true }),
+        /entry anchor does not identify its non-empty section/,
     );
     coverage.taskPaths[0].entry.anchor = "complete-task";
     writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 4)}\n`);
@@ -1039,6 +1056,198 @@ test("prepared deletion is replaceable but remaining files are protected", (t) =
     write(join(formal, "ignored.txt"), "keep\n");
     assert.throws(
         () => assertReplaceableFormalSkill(root, formal),
+        /preserve them/,
+    );
+});
+
+test("generated navigation routes a featured task to its own exact section", (t) => {
+    const task = {
+        id: "register-tool",
+        outcome: "Plugin tool can be called",
+        userIntents: ["Register a callable tool"],
+        decision: "covered",
+        candidates: ["package:fixture"],
+        apiObjects: ["fixture"],
+        destinations: [
+            { output: "references/how-to.md", section: "Complete task" },
+        ],
+        entry: {
+            output: "references/how-to.md",
+            section: "Complete task",
+            anchor: "complete-task",
+        },
+    };
+    const fixture = createFixture(t, {
+        schemaVersion: 3,
+        taskNavigation: "generated",
+        taskPaths: [task],
+        taskDiscoveries: [
+            {
+                candidate: "task:docs/how-to.md:1",
+                decision: "included",
+                taskId: "register-tool",
+            },
+        ],
+        entrypoint:
+            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n",
+        routing:
+            "# Routing\n\n[Tool contract](api-tools.md)\n[How-to](how-to.md)\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n",
+    });
+    const scenarioPath = join(
+        fixture.targetPath,
+        "evidence/task-scenarios.json",
+    );
+    const scriptPath = join(
+        fixture.targetPath,
+        "evidence/scenarios/register-tool.mjs",
+    );
+    write(
+        scenarioPath,
+        `${JSON.stringify({
+            schemaVersion: 1,
+            scenarios: [
+                {
+                    taskId: "register-tool",
+                    script: "scenarios/register-tool.mjs",
+                    checks: ["profile-load", "tool-call"],
+                },
+            ],
+        })}\n`,
+    );
+    write(
+        scriptPath,
+        'console.log(JSON.stringify({taskId:"register-tool",checks:{"profile-load":true,"tool-call":true}}));\n',
+    );
+    syncTaskNavigation(fixture.targetPath);
+    const entrypoint = readFileSync(
+        join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
+        "utf8",
+    );
+    assert.match(
+        entrypoint,
+        /Register a callable tool.*references\/how-to\.md#complete-task/,
+    );
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    buildSkill(fixture.targetPath);
+    assert.equal(verifyTaskScenarios(fixture.targetPath).passed.length, 1);
+    write(
+        scriptPath,
+        'console.log(JSON.stringify({taskId:"register-tool",checks:{"profile-load":true,"tool-call":false}}));\n',
+    );
+    assert.throws(
+        () => verifyTaskScenarios(fixture.targetPath),
+        /hash mismatch/,
+    );
+    const manifestPath = join(fixture.skillSourcePath, "manifest.json");
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+    manifest.status = "draft";
+    write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    assert.throws(
+        () => verifyTaskScenarios(fixture.targetPath),
+        /did not pass tool-call/,
+    );
+});
+
+test("generated navigation rejects a generic section shared by two tasks", (t) => {
+    const fixture = createFixture(t);
+    const destination = {
+        output: "references/how-to.md",
+        section: "Complete task",
+    };
+    assert.throws(
+        () =>
+            renderTaskNavigation(
+                {
+                    taskPaths: [
+                        {
+                            id: "one",
+                            decision: "covered",
+                            outcome: "First outcome",
+                            destinations: [destination],
+                            entry: { ...destination, anchor: "complete-task" },
+                            userIntents: ["First intent"],
+                        },
+                        {
+                            id: "two",
+                            decision: "covered",
+                            outcome: "Second outcome",
+                            destinations: [destination],
+                        },
+                    ],
+                },
+                [
+                    {
+                        source: "how-to/example.md",
+                        output: "references/how-to.md",
+                    },
+                ],
+                fixture.skillSourcePath,
+                {
+                    entrypoint:
+                        "<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->",
+                    routing:
+                        "<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->",
+                },
+            ),
+        /shares the same destination section/,
+    );
+});
+
+test("failed rebuild preserves previously generated output", (t) => {
+    const fixture = createFixture(t);
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    buildSkill(fixture.targetPath);
+    const generatedEntry = join(fixture.targetPath, "generated-skill/SKILL.md");
+    const previous = readFileSync(generatedEntry, "utf8");
+    const sourceEntry = join(fixture.skillSourcePath, "entrypoint/SKILL.md");
+    write(sourceEntry, `${previous}\nhttps://example.invalid\n`);
+    const manifestPath = join(fixture.skillSourcePath, "manifest.json");
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+    manifest.status = "draft";
+    write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    assert.throws(
+        () => buildSkill(fixture.targetPath),
+        /offline or local-path boundary violation/,
+    );
+    assert.equal(readFileSync(generatedEntry, "utf8"), previous);
+});
+
+test("replacement digest permits repeat only while the prior output is intact", (t) => {
+    const root = mkdtempSync(join(tmpdir(), "create-dsh-repeat-test-"));
+    t.after(() => rmSync(root, { recursive: true, force: true }));
+    const formal = join(root, "skills/dsh-plugin-development");
+    const generated = join(root, "generated-skill");
+    write(formal + "/SKILL.md", "old\n");
+    write(generated + "/SKILL.md", "new\n");
+    execFileSync("git", ["init", "-q"], { cwd: root });
+    execFileSync("git", ["add", "."], { cwd: root });
+    execFileSync(
+        "git",
+        [
+            "-c",
+            "user.name=Skill Test",
+            "-c",
+            "user.email=skill-test@example.invalid",
+            "commit",
+            "-qm",
+            "fixture",
+        ],
+        { cwd: root },
+    );
+    const result = installGeneratedSkill(generated, formal, { files: 1 });
+    assert.throws(
+        () => assertReplaceableFormalSkill(root, formal),
+        /preserve them/,
+    );
+    assert.doesNotThrow(() =>
+        assertReplaceableFormalSkill(root, formal, result.installedDigest),
+    );
+    write(formal + "/SKILL.md", "user edit\n");
+    assert.throws(
+        () =>
+            assertReplaceableFormalSkill(root, formal, result.installedDigest),
         /preserve them/,
     );
 });

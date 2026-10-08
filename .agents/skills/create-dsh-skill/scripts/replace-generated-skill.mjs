@@ -88,11 +88,16 @@ export function installGeneratedSkill(
     return {
         ...result,
         replaced: true,
+        installedDigest: directoryDigest(formalPath),
         ...(cleanupWarning ? { cleanupWarning, backupPath } : {}),
     };
 }
 
-export function assertReplaceableFormalSkill(rootPath, formalPath) {
+export function assertReplaceableFormalSkill(
+    rootPath,
+    formalPath,
+    expectedDigest,
+) {
     const relativeSkillPath = relative(rootPath, formalPath);
     const repositoryStatus = execFileSync(
         "git",
@@ -112,28 +117,45 @@ export function assertReplaceableFormalSkill(rootPath, formalPath) {
         statuses.length > 0 &&
         statuses.every((entry) => ["D ", " D"].includes(entry.slice(0, 2))) &&
         (!existsSync(formalPath) || listFiles(formalPath).length === 0);
-    if (statuses.length > 0 && !preparedDeletion) {
+    const verifiedPriorOutput =
+        typeof expectedDigest === "string" &&
+        /^[0-9a-f]{64}$/.test(expectedDigest) &&
+        existsSync(formalPath) &&
+        directoryDigest(formalPath) === expectedDigest;
+    if (statuses.length > 0 && !preparedDeletion && !verifiedPriorOutput) {
         throw new Error(
             "Formal Skill has changes other than an empty directory with deleted tracked files; preserve them before whole-directory replacement.",
         );
     }
 }
 
-export function replaceGeneratedSkill(targetArgument) {
+export function replaceGeneratedSkill(targetArgument, options = {}) {
     const result = verifyGeneratedSkill(targetArgument);
     const targetPath = resolve(targetArgument);
     const generatedSkillPath = join(targetPath, "generated-skill");
-    assertReplaceableFormalSkill(workspaceRoot, formalSkillPath);
+    assertReplaceableFormalSkill(
+        workspaceRoot,
+        formalSkillPath,
+        options.expectedFormalDigest,
+    );
     return installGeneratedSkill(generatedSkillPath, formalSkillPath, result);
 }
 
 function main() {
-    if (process.argv.length !== 3) {
+    if (
+        process.argv.length !== 3 &&
+        !(
+            process.argv.length === 5 &&
+            process.argv[3] === "--expected-formal-digest"
+        )
+    ) {
         throw new Error(
-            "Usage: replace-generated-skill.mjs <prepared-target-path>",
+            "Usage: replace-generated-skill.mjs <prepared-target-path> [--expected-formal-digest <sha256>]",
         );
     }
-    const result = replaceGeneratedSkill(process.argv[2]);
+    const result = replaceGeneratedSkill(process.argv[2], {
+        expectedFormalDigest: process.argv[4],
+    });
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
 }
 

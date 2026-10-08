@@ -13,7 +13,9 @@ import {
     sha256File,
     writeJsonAtomic,
 } from "./skill-build-contract.mjs";
-import { markdownAnchors, withoutFencedCode } from "./markdown-structure.mjs";
+import { markdownSection, withoutFencedCode } from "./markdown-structure.mjs";
+import { renderTaskNavigation } from "./task-navigation.mjs";
+import { loadTaskScenarios } from "./task-scenarios.mjs";
 
 const allowedKinds = new Set([
     "entrypoint",
@@ -81,6 +83,15 @@ export function validateSkillSource(targetArgument, options = {}) {
     if (![1, 2, 3].includes(manifest.schemaVersion)) {
         throw new Error(
             "skill-source manifest.schemaVersion must be 1, 2 or 3.",
+        );
+    }
+    if (
+        manifest.taskNavigation !== undefined &&
+        (manifest.schemaVersion !== 3 ||
+            manifest.taskNavigation !== "generated")
+    ) {
+        throw new Error(
+            "taskNavigation requires schema v3 and value generated.",
         );
     }
     if (!Array.isArray(manifest.topics) || manifest.topics.length === 0) {
@@ -169,6 +180,10 @@ export function validateSkillSource(targetArgument, options = {}) {
             "skill-source/coverage.json must match the manifest schema with dispositions.",
         );
     }
+    const taskScenarios =
+        manifest.taskNavigation === "generated"
+            ? loadTaskScenarios(target, coverage)
+            : undefined;
     const controlHashes = {
         claimsSha256: sha256File(claimsPath),
         coverageSha256: sha256File(coveragePath),
@@ -181,6 +196,7 @@ export function validateSkillSource(targetArgument, options = {}) {
                   apiSurfaceSha256: sha256File(apiSurfacePath),
               }
             : {}),
+        ...taskScenarios?.hashes,
     };
     if (manifest.status === "frozen") {
         for (const [key, value] of Object.entries(controlHashes)) {
@@ -963,9 +979,14 @@ export function validateSkillSource(targetArgument, options = {}) {
                     ),
                     "utf8",
                 );
-                if (!markdownAnchors(entryBody).has(task.entry.anchor)) {
+                const linkedSection = markdownSection(
+                    entryBody,
+                    task.entry.section,
+                    task.entry.anchor,
+                );
+                if (!linkedSection || !linkedSection.content) {
                     throw new Error(
-                        `${label}.entry anchor is missing: ${task.entry.output}#${task.entry.anchor}`,
+                        `${label}.entry anchor does not identify its non-empty section: ${task.entry.output}#${task.entry.anchor}`,
                     );
                 }
                 const link = `${task.entry.output}#${task.entry.anchor}`;
@@ -1016,22 +1037,13 @@ export function validateSkillSource(targetArgument, options = {}) {
                     ),
                     "utf8",
                 );
-                const headings = [
-                    ...body.matchAll(/^#{2,6}\s+(.+?)\s*#*\s*$/gm),
-                ];
-                const headingIndex = headings.findIndex(
-                    (match) => match[1] === destination.section,
-                );
-                if (headingIndex < 0) {
+                const section = markdownSection(body, destination.section);
+                if (!section) {
                     throw new Error(
-                        `${destinationLabel}.section has no matching heading in ${destination.output}.`,
+                        `${destinationLabel}.section needs one matching heading in ${destination.output}.`,
                     );
                 }
-                const start =
-                    headings[headingIndex].index +
-                    headings[headingIndex][0].length;
-                const end = headings[headingIndex + 1]?.index ?? body.length;
-                if (!body.slice(start, end).trim()) {
+                if (!section.content) {
                     throw new Error(
                         `${destinationLabel}.section is empty in ${destination.output}.`,
                     );
@@ -1073,6 +1085,24 @@ export function validateSkillSource(targetArgument, options = {}) {
                         );
                     }
                 }
+            }
+        }
+        if (manifest.taskNavigation === "generated") {
+            const rendered = renderTaskNavigation(
+                coverage,
+                files,
+                target.skillSourcePath,
+                { entrypoint: entrypointBody, routing: routingBody },
+            );
+            if (entrypointBody !== rendered.entrypoint) {
+                throw new Error(
+                    "SKILL.md task navigation differs from taskPaths; run sync-task-navigation.mjs.",
+                );
+            }
+            if (routingBody !== rendered.routing) {
+                throw new Error(
+                    "Task routing differs from taskPaths; run sync-task-navigation.mjs.",
+                );
             }
         }
         if (manifest.schemaVersion === 3) {

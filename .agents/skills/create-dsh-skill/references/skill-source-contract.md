@@ -14,6 +14,49 @@
 
 需要在 `SKILL.md` 首屏直达的高价值任务，可在对应 `coverage.taskPaths` 项添加 `entry: { "output": "references/how-to-*.md", "section": "标题原文", "anchor": "markdown-anchor" }`。`entry` 必须与该任务的一项 `destinations` 完全对应，目标必须是 HOW-TO，且 `SKILL.md` 必须直接包含该文档和 anchor 的链接。生成目录的 Markdown 校验继续确认 anchor 真正存在；冻结器检查任务与入口的关联。`entry` 只是路由元数据，不复制 API 契约或 HOW-TO 正文。未设 `entry` 的任务仍须从任务路由到达。
 
+## 任务导航与场景验证
+
+新准备的 schema v3 目标在 manifest 中设置 `"taskNavigation": "generated"`。此模式要求每条 `covered` 任务的 `destinations` 指向该任务独占、标题和正文非空的小节；不得让不同任务共用一个泛化小节。首屏任务还需提供至少一个非空 `userIntents` 和精确的 `entry`：其 `section` 与 `anchor` 必须标识同一个 HOW-TO 标题。维护者审阅小节的操作步骤、装载和完成判据；结构门禁只核验位置与内容非空。
+
+在入口素材与 `indexes/routing.md` 对应的路由素材中，各放一对标记：
+
+```text
+<!-- BEGIN GENERATED TASK NAVIGATION -->
+<!-- END GENERATED TASK NAVIGATION -->
+```
+
+每次修改 `coverage.taskPaths` 或相关标题后，于 `draft` 状态运行：
+
+```text
+node .agents/skills/create-dsh-skill/scripts/sync-task-navigation.mjs <target>
+```
+
+该命令生成 `SKILL.md` 的首屏任务表及路由文档的全部已覆盖任务表。冻结器会重新渲染并逐字比较生成区；手动改表或遗漏同步会失败。生成模式须有至少一个首屏任务。未启用该模式的旧冻结素材继续使用原链接契约。
+
+`evidence/task-scenarios.json` 为每个首屏任务至少指定一个可运行场景。脚本是维护证据，须审查其是否真正执行包解析、构建、Profile 装载、可观察调用、卸载等所声明的检查；场景输出中的 `true` 不自动证明脚本执行了这些行为。清单示例：
+
+```json
+{
+    "schemaVersion": 1,
+    "scenarios": [
+        {
+            "taskId": "register-tool",
+            "script": "scenarios/register-tool.mjs",
+            "checks": ["profile-load", "tool-call", "unload"],
+            "timeoutMs": 120000
+        }
+    ]
+}
+```
+
+`script` 必须是 `evidence/` 内的普通 `.mjs` 文件，`timeoutMs` 可省略（默认 120 秒，最大 300 秒）。冻结会锁定清单及脚本哈希。冻结后运行：
+
+```text
+node .agents/skills/create-dsh-skill/scripts/verify-task-scenarios.mjs <target>
+```
+
+运行器以目标 checkout 为工作目录，为每个场景提供独立临时 `DSH_HOME`、`DSH_TARGET_CHECKOUT` 和 `DSH_TASK_VERIFICATION_OFFLINE=1`，并清除常见令牌环境变量。每个脚本向 stdout 输出一份 JSON：`{"taskId":"register-tool","checks":{"profile-load":true,"tool-call":true,"unload":true}}`。所有声明检查都必须为 `true`；失败、超时或哈希漂移均阻断此验证。运行器本身不建立网络沙箱；脚本只能使用本地依赖或脚本化 provider，不能联系外部服务。记录真实执行的断言、未覆盖侧和结果，不能将其等同于真实 Agent 的使用效果。
+
 ## Manifest
 
 `manifest.json` 使用以下形状：

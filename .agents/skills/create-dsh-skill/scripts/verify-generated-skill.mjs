@@ -181,32 +181,27 @@ function validateMarkdown(root, path, errors) {
     }
 }
 
-export function verifyGeneratedSkill(targetArgument) {
+export function verifyGeneratedSkill(targetArgument, generatedSkillPath) {
     const target = validateSkillSource(targetArgument);
     if (target.manifest.status !== "frozen") {
         throw new Error(
             "Build verification requires a frozen skill-source manifest.",
         );
     }
-    if (!existsSync(target.generatedSkillPath)) {
-        throw new Error(
-            `Missing generated Skill: ${target.generatedSkillPath}`,
-        );
+    const outputPath = generatedSkillPath ?? target.generatedSkillPath;
+    if (!existsSync(outputPath)) {
+        throw new Error(`Missing generated Skill: ${outputPath}`);
     }
     const expected = new Map(
         target.manifest.files.map((entry) => [entry.output, entry]),
     );
-    const actual = listFiles(target.generatedSkillPath);
+    const actual = listFiles(outputPath);
     for (const output of actual) {
         if (!expected.has(output))
             throw new Error(`Unexpected generated file: ${output}`);
     }
     for (const [output, entry] of expected) {
-        const generated = resolveInside(
-            target.generatedSkillPath,
-            output,
-            "generated output",
-        );
+        const generated = resolveInside(outputPath, output, "generated output");
         if (!existsSync(generated))
             throw new Error(`Missing generated file: ${output}`);
         if (sha256File(generated) !== entry.sha256) {
@@ -218,11 +213,7 @@ export function verifyGeneratedSkill(targetArgument) {
 
     const errors = [];
     for (const output of actual) {
-        const path = resolveInside(
-            target.generatedSkillPath,
-            output,
-            "generated output",
-        );
+        const path = resolveInside(outputPath, output, "generated output");
         const text = readUtf8Text(path);
         if (text === null) continue;
         const offlineBoundaryText =
@@ -238,20 +229,16 @@ export function verifyGeneratedSkill(targetArgument) {
         }
         if (/[\t ]+$/m.test(text))
             errors.push(`${output}: trailing whitespace`);
-        if (extname(path) === ".md")
-            validateMarkdown(target.generatedSkillPath, path, errors);
+        if (extname(path) === ".md") validateMarkdown(outputPath, path, errors);
     }
 
-    const entrypoint = readFileSync(
-        join(target.generatedSkillPath, "SKILL.md"),
-        "utf8",
-    );
+    const entrypoint = readFileSync(join(outputPath, "SKILL.md"), "utf8");
     validateEntrypoint(entrypoint, errors);
     if (!entrypoint.includes(target.provenance.tag)) {
         errors.push(`SKILL.md: missing target tag ${target.provenance.tag}`);
     }
     const sourceMap = readFileSync(
-        join(target.generatedSkillPath, "maintenance", "source-map.md"),
+        join(outputPath, "maintenance", "source-map.md"),
         "utf8",
     );
     for (const value of [target.provenance.tag, target.provenance.commit]) {
@@ -259,7 +246,7 @@ export function verifyGeneratedSkill(targetArgument) {
             errors.push(`source-map.md: missing ${value}`);
     }
     const metadata = readFileSync(
-        join(target.generatedSkillPath, "agents", "openai.yaml"),
+        join(outputPath, "agents", "openai.yaml"),
         "utf8",
     );
     validateMetadata(metadata, errors);
