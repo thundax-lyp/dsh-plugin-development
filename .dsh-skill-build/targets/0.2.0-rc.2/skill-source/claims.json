@@ -54,6 +54,10 @@
       {
         "category": "tests",
         "path": "packages/core/tools/tests/tools.spec.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "apps/cli/package.json"
       }
     ]
   },

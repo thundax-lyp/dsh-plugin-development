@@ -4,9 +4,9 @@ These paths compose the contracts in [Host/Core API guardrails](api-host-core.md
 
 ## register-host-tool
 
-Use this ordered path for a local Host Tool in the exact DSH checkout. It follows the target tag's first-plugin and first-tool tutorials. A separately distributed package additionally needs the package manifest, build output, and Profile installation path in the [infrastructure HOW-TO](how-to-infra-runtime.md); a checkout-local TypeScript file is not a published package.
+Use this ordered path for a local Host Tool in the exact DSH checkout. It builds on the target tag's first-plugin and first-tool tutorials, with the local directory adjusted for package resolution. A separately distributed package additionally needs the package manifest, build output, and Profile installation path in the [infrastructure HOW-TO](how-to-infra-runtime.md); a checkout-local TypeScript file is not a published package.
 
-1. From the target checkout root, complete `pnpm install --frozen-lockfile` and `pnpm run build` once, run `mkdir -p scratch-plugin/src`, then create `scratch-plugin/src/my-plugin.ts`. The Web Profile must mount `system-prompt` and `tools`; this plugin declares `inject = ['tools']` so a missing registry leaves its row PENDING.
+1. From the target checkout root, complete `pnpm install --frozen-lockfile` and `pnpm run build` once, run `mkdir -p apps/cli/scratch-plugin/src`, then create `apps/cli/scratch-plugin/src/my-plugin.ts`. This location resolves the public `@deepseek-ai/dsh-tools` import through `apps/cli`'s declared workspace dependencies; a root-level `scratch-plugin/` has no such installed dependency link in this checkout. The Web Profile must mount `system-prompt` and `tools`; this plugin declares `inject = ['tools']` so a missing registry leaves its row PENDING.
 2. Use this complete Host file. `execute` returns one canonical string, the pure renderer creates model-facing content, and the optional wait makes abort observable. The manual name and wait checks cover constraints beyond the parameter DSL. The [Tool contract](api-host-core.md#tool-runtime-and-definition) owns the API semantics.
 
 ```ts
@@ -45,16 +45,16 @@ export function apply(ctx: Context) {
 3. Create the overlay from the checkout root. The absolute path matters: a patch does not change the Loader's module-resolution directory.
 
 ```sh
-cat > scratch-plugin/cordis.yml <<EOF
+cat > apps/cli/scratch-plugin/cordis.yml <<EOF
 - insert:
     - id: greet-tool
-      name: '$(pwd)/scratch-plugin/src/my-plugin.ts'
+      name: '$(pwd)/apps/cli/scratch-plugin/src/my-plugin.ts'
 EOF
-pnpm dsh web --patch ./scratch-plugin/cordis.yml
+pnpm dsh web --patch ./apps/cli/scratch-plugin/cordis.yml
 ```
 
 4. Open the Web UI on its displayed local address and ask the configured Agent to call `greet` with `name: "Ada"` and `waitMs: 0`. Expect `Hello, Ada!` in the tool result and paired `tool/call` and `tool/result` Session events. If the tool is absent, inspect the plugin fiber: PENDING means a required service is missing; confirm the Profile mounts `tools`, the overlay path resolves, and the tool schema appears in `ctx.tools.schemas()` before debugging the model prompt.
-5. Save the following as `scratch-plugin/verify.mjs` and run `node --import tsx scratch-plugin/verify.mjs` from the checkout root. It exercises the same plugin without an LLM, so failure, cancellation, and fiber disposal have deterministic assertions. It does not replace the real Profile and Agent call in step 4.
+5. Save the following as `apps/cli/scratch-plugin/verify.mjs` and run `node --import tsx apps/cli/scratch-plugin/verify.mjs` from the checkout root. It exercises the same plugin without an LLM, so failure, cancellation, and fiber disposal have deterministic assertions. It does not replace the real Profile and Agent call in step 4.
 
 ```js
 import assert from 'node:assert/strict'

@@ -63,7 +63,7 @@
             "source": "how-to/host-core.md",
             "output": "references/how-to-host-core.md",
             "kind": "how-to",
-            "sha256": "59b9d7bcd983c899dd78f045971118f629e33ef88ec778721d4faa10bf403237"
+            "sha256": "ab9f9ce99e892b27acc313aaa64a29b7e0318571c77debb932d2f3159427b740"
         },
         {
             "source": "how-to/client-web.md",
@@ -99,7 +99,7 @@
             "source": "maintenance/source-map.md",
             "output": "maintenance/source-map.md",
             "kind": "maintenance",
-            "sha256": "faa2a745322746ee1dcbf35dbf3ac8b8a71283b60b15696d43f74b8a03fe15d0"
+            "sha256": "3fbe3302dbdd2fd602ffa4f04992a44a3af3a46b934bc4a0d52873cbffb9b786"
         },
         {
             "source": "maintenance/skill-maintenance.md",
@@ -108,7 +108,7 @@
             "sha256": "ec1689d24d93a58849d99e0a002801356f224563308d539d2c942f218e543b52"
         }
     ],
-    "claimsSha256": "6635e144c966d33431b2f80026a2dfbf1fb4beb3fd4ed919a4a3195ddc38abe9",
+    "claimsSha256": "fba18a88b7d476b5ff06fcabd39f3b90e8a36ccb3dca4ad0c35187f24020e3d1",
     "coverageSha256": "ec4b3d883c84129b660fbb4e8b3fea67b4c8c309649fa79f990347fa663360db",
     "capabilityCandidatesSha256": "08a6a4f025f041f78b670d475874f2a263f712f0d72c4d5f434201e313f133e9",
     "apiEntriesSha256": "4cde68b87ce104d29d3653d81bfda7bcc34b477fd9662809b8765c17b8a729bf",

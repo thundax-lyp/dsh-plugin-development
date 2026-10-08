@@ -4,6 +4,7 @@ Target `dsh-v0.2.0-rc.2`, commit `639ed015397290b3745d163aafe02ffee4aa3f84`.
 
 ## Evidence owners
 
+- `apps/cli/package.json`
 - `README.md`
 - `docs/cookbook/adding-a-remote-api.md`
 - `docs/cookbook/adding-a-tool.md`
