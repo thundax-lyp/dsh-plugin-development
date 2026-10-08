@@ -11,7 +11,9 @@ description: 仅在用户显式调用 $create-dsh-skill 时，按最新已发布
 
 **以可用性决定篇幅，不设 reference 字数、文件数或示例数上限。** `SKILL.md` 与路由保持索引职责；承担契约的 reference 和 HOW-TO 必须展开到读者无需猜测公开签名、装载路径、状态归属、失败与清理、验证判据就能完成任务。仅压缩重复叙述、与插件任务无关的产品内部细节和可由相对链接到达的同一事实；不得为了缩短产物把不同入口合成一段能力简介、把完整 example 改成伪代码，或把未写出的步骤推给读者自行查源码。具体保留准则见[reference 模板](references/reference-template.md#有限压缩与完整性)。
 
-Skill 创建以目标 tag 为唯一事实输入。生成阶段将现有 `skills/dsh-plugin-development/**` 视为不存在：不读取、不比较、不修补，也不从旧 source-map、旧 Skill 或 DOCS diff 生成目标知识。新 Skill 在隔离目录完整生成并通过验证后才整体替换正式目录。交付前仍须审阅 Git diff；该检查只确认本次仓库改动范围，不是升级事实的来源。
+Skill 创建以目标 tag 为唯一事实输入。创建工作区用 commit 锁定 checkout 和取证；面向 npm 安装用户的生成 Skill 以已发布的 `@deepseek-ai/dsh-agent` 版本号标明适用范围，不把 Git commit 当成安装版本，也不在任何分发文件中写入目标 commit。生成阶段将现有 `skills/dsh-plugin-development/**` 视为不存在：不读取、不比较、不修补，也不从旧 source-map、旧 Skill 或 DOCS diff 生成目标知识。新 Skill 在隔离目录完整生成并通过验证后才整体替换正式目录。交付前仍须审阅 Git diff；该检查只确认本次仓库改动范围，不是升级事实的来源。
+
+正式 Skill 面向插件作者，只写目标版本的可用契约、具体限制、操作步骤和读者应执行的验证。候选的 `included/merged/excluded`、任务的 `covered`、本次检查的 `Not Covered`、未运行状态及创建账本文件名只留在 `evidence/`、`skill-source/` 的非分发 JSON、验证报告和 PR 中，不写进分发正文。目标版本确实缺少公开入口或独立构建路径时，在相关 how-to 直接说明可观察的产品限制与替代操作；不要把维护者尚未运行的检查误写成产品限制。正式 reference 可以告诉读者“运行浏览器 smoke 并验证重连”，不写“本次未覆盖浏览器 smoke”。
 
 ## 一次性准备目标
 
@@ -143,16 +145,16 @@ node .agents/skills/create-dsh-skill/scripts/validate-skill-source.mjs <target> 
 
 从冻结素材在 `generated-skill/` 新建完整的 `dsh-plugin-development/`。构建过程不得读取正式目录；以下职责全部由新素材决定：
 
-- `SKILL.md`：适用场景、本次创建所用的精确版本、任务路由、跨主题不变量和完成边界；
+- `SKILL.md`：适用场景、对应的精确 npm 包版本、任务路由、跨主题不变量和完成边界；
 - `references/plugin-development-routing.md`：按开发任务路由到最小参考集；
 - `references/` 中的 API reference：公开契约、可用性、限制及 API 围挡；
 - `references/keyword-index.md`：关键词到唯一权威 reference 的索引，不复制契约正文；
 - `references/` 中的 how-to：端到端任务、资源所有权、失败、取消、清理和验证，并链接相关 API 围挡；
 - `references/terminology.md`：概念定义及易混淆边界；
-- `maintenance/source-map.md`：正式 reference 事实到目标 tag 类型、导出、实现、门禁、测试和 DOCS 的证据映射；
+- `maintenance/source-map.md`：正式 reference 事实到目标版本类型、导出、实现、门禁、测试和 DOCS 的相对路径映射；commit 只留在创建工作区的 provenance 和裁决账本；
 - `maintenance/skill-maintenance.md`：重建、生成、验证和发布流程。
 
-`source-map.md` 是本次新建内容的证据账本，不是下一次创建的生成输入。每项事实只有一个 reference 归属；路由、关键词索引、how-to 和 source-map 通过相对链接引用它。新目录完整通过验证后，以它整体替换 `skills/dsh-plugin-development/`；不得从旧目录挑选文件保留。项目 README 和 CI 始终说明创建流程，不固定某次产物的版本；生成产物自己的入口、元数据和 source-map 才记录本次精确版本，并保持离线边界。
+`source-map.md` 是本次新建内容的证据账本，不是下一次创建的生成输入。每项事实只有一个 reference 归属；路由、关键词索引、how-to 和 source-map 通过相对链接引用它。新目录完整通过验证后，以它整体替换 `skills/dsh-plugin-development/`；不得从旧目录挑选文件保留。项目 README 和 CI 始终说明创建流程，不固定某次产物的版本；生成产物自己的入口、元数据和 source-map 只记录本次精确 npm 版本，并保持离线边界。验证时从外部目标 checkout 的 tag 解析 commit，不要求读者在 Skill 中看到 Git SHA。
 
 按[输出契约](references/output-contract.md)构建并独立验证：
 

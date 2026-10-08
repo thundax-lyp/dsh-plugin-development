@@ -1,6 +1,6 @@
 # Infrastructure task API
 
-本页锁定 `dsh-v0.2.0-rc.2` 的任务所需公开对象和直接成员；运行语义、生命周期与失败边界见 [对应 guardrail](api-infra-runtime.md)。未列入的公开符号仍在 `api-surface.json` 中逐项裁决，但不进入常规插件指导。
+本页锁定 `dsh-v0.2.0-rc.2` 的任务所需公开对象和直接成员；运行语义、生命周期与失败边界见 [对应 guardrail](api-infra-runtime.md)。本页只列出这些插件任务直接使用的公开成员。
 
 ## Infrastructure task API
 
@@ -14,14 +14,14 @@
 - Signature: `AgentPresetRegistry`
 - Source: `packages/preset/agent-preset-registry/src/index.ts`
 
-| Member     | Signature                                                          | Task use                                           |
-| ---------- | ------------------------------------------------------------------ | -------------------------------------------------- |
+| Member     | Signature                                                          | Task use                                                                                           |
+| ---------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
 | `config`   | `Config`                                                           | Resolved default and volatile selection Config; do not mutate a live revision through this object. |
-| `list`     | `() => Promise<AgentPreset[]>`                                     | Return every definition with current broken diagnostics; await settled Loader audit. |
-| `mount`    | `(ctx: Context, id?: string \| undefined) => Promise<AgentPreset>` | Mount the selected revision in a Cordis context; a failed tree rejects. |
-| `register` | `(definition: PresetDefinition) => Promise<() => Promise<void>>`   | Own one definition and its async unregister disposer. |
-| `resolve`  | `(id?: string \| undefined) => Promise<AgentPreset>`               | Read current preset metadata without starting an Agent. |
-| `select`   | `(agent: Agent, agentPreset: string) => Promise<string>`           | Persist one Agent selection and return the selected preset id. |
+| `list`     | `() => Promise<AgentPreset[]>`                                     | Return every definition with current broken diagnostics; await settled Loader audit.               |
+| `mount`    | `(ctx: Context, id?: string \| undefined) => Promise<AgentPreset>` | Mount the selected revision in a Cordis context; a failed tree rejects.                            |
+| `register` | `(definition: PresetDefinition) => Promise<() => Promise<void>>`   | Own one definition and its async unregister disposer.                                              |
+| `resolve`  | `(id?: string \| undefined) => Promise<AgentPreset>`               | Read current preset metadata without starting an Agent.                                            |
+| `select`   | `(agent: Agent, agentPreset: string) => Promise<string>`           | Persist one Agent selection and return the selected preset id.                                     |
 
 **`AttachmentStore`**
 
@@ -29,7 +29,19 @@
 - Signature: `AttachmentStore`
 - Source: `packages/attachment/attachment/src/index.ts`
 
-`saveImage`, `saveImages`, `readImage` and file save/read methods form the task surface; the exact selected signatures and ownership are in [Infrastructure provider call shapes](#infrastructure-provider-call-shapes). A provider implements every abstract member, including limits and media reads.
+| Member             | Signature                                                                                                        | Task use                                                               |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `imageLimits`      | `ImageAttachmentLimits`                                                                                          | Publish the deployment's image limits.                                 |
+| `validateImage`    | `(input: SaveImageAttachment) => Promise<void>`                                                                  | Decode and validate before a batch starts writing.                     |
+| `saveImages`       | `(inputs: readonly SaveImageAttachment[]) => Promise<readonly ImageAttachmentRef[]>`                             | Validate the ordered batch, then publish refs after all saves succeed. |
+| `saveImage`        | `(input: SaveImageAttachment) => Promise<ImageAttachmentRef>`                                                    | Persist one normalized image.                                          |
+| `readImage`        | `(ref: ImageAttachmentRef, signal?: AbortSignal) => Promise<StoredImageAttachment>`                              | Return verified media; forward cancellation.                           |
+| `saveFile`         | `(input: SaveFileAttachment) => Promise<FileAttachmentRef>`                                                      | Override the base rejection for a file-capable provider.               |
+| `saveFileStream`   | `(input: SaveFileStreamAttachment) => Promise<FileAttachmentRef>`                                                | Override the base rejection and apply bounded backpressure.            |
+| `readFileStream`   | `(ref: FileAttachmentRef, signal?: AbortSignal) => AsyncIterable<Uint8Array>`                                    | Override the base rejection; verify chunks during iteration.           |
+| `readImageRequest` | `(ref: ImageAttachmentRef, target: ImageRequestTarget, signal?: AbortSignal) => Promise<RequestImageAttachment>` | Override the base rejection when model-request projection is required. |
+
+The base class also supplies `admitPromptContent`, `admitEncodedFile`, `isAttachmentError`, `imageHostPath` and `fileHostPath`; host-path methods may return `undefined`. A provider must implement all four abstract members (`imageLimits`, `validateImage`, `saveImage`, `readImage`) and override the default-rejecting methods needed by its advertised capabilities.
 
 **`AuthorizationService`**
 
@@ -37,10 +49,10 @@
 - Signature: `AuthorizationService`
 - Source: `packages/credentials/authorization/src/index.ts`
 
-| Member   | Signature                             | Task use                                           |
-| -------- | ------------------------------------- | -------------------------------------------------- |
+| Member   | Signature                             | Task use                                             |
+| -------- | ------------------------------------- | ---------------------------------------------------- |
 | `cancel` | `(key: CredentialKey) => void`        | Abort the in-flight attempt for this credential key. |
-| `list`   | `() => readonly AuthorizationEntry[]` | Read the currently registered flow metadata. |
+| `list`   | `() => readonly AuthorizationEntry[]` | Read the currently registered flow metadata.         |
 
 **`CredentialProvider`**
 
@@ -48,10 +60,10 @@
 - Signature: `CredentialProvider`
 - Source: `packages/credentials/credentials/src/index.ts`
 
-| Member    | Signature                                                                     | Task use                                           |
-| --------- | ----------------------------------------------------------------------------- | -------------------------------------------------- |
+| Member    | Signature                                                                     | Task use                                                 |
+| --------- | ----------------------------------------------------------------------------- | -------------------------------------------------------- |
 | `resolve` | `(ref: Branded<"CredentialRef">) => Promise<ResolvedCredential \| undefined>` | Look up a secret reference; undefined means unavailable. |
-| `set`     | `(ref: Branded<"CredentialRef">, value: string) => Promise<void>`             | Persist a secret value behind its reference. |
+| `set`     | `(ref: Branded<"CredentialRef">, value: string) => Promise<void>`             | Persist a secret value behind its reference.             |
 
 **`FileSystem`**
 
@@ -59,12 +71,12 @@
 - Signature: `FileSystem`
 - Source: `packages/fs/fs/src/index.ts`
 
-| Member        | Signature                                                                                                                    | Task use                                           |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| `readBytes`   | `(target: FsTarget, signal: AbortSignal \| undefined, maxBytes: number) => Promise<Uint8Array<ArrayBufferLike>>`             | Require a caller byte cap; reject rather than return an unbounded read. |
-| `resolve`     | `(path: string, opts?: { cwd?: string \| undefined; signal?: AbortSignal \| undefined; } \| undefined) => Promise<FsTarget>` | Resolve caller path into provider-stable FsTarget identity. |
-| `sandboxMode` | `SandboxMode \| undefined`                                                                                                                        | Report enforcement mode of this provider, if any. |
-| `stat`        | `(target: FsTarget, signal?: AbortSignal \| undefined) => Promise<FsInfo \| undefined>`                                      | Read metadata; undefined means the target is absent. |
+| Member        | Signature                                                                                                                    | Task use                                                                   |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `readBytes`   | `(target: FsTarget, signal: AbortSignal \| undefined, maxBytes: number) => Promise<Uint8Array<ArrayBufferLike>>`             | Require a caller byte cap; reject rather than return an unbounded read.    |
+| `resolve`     | `(path: string, opts?: { cwd?: string \| undefined; signal?: AbortSignal \| undefined; } \| undefined) => Promise<FsTarget>` | Resolve caller path into provider-stable FsTarget identity.                |
+| `sandboxMode` | `SandboxMode \| undefined`                                                                                                   | Report enforcement mode of this provider, if any.                          |
+| `stat`        | `(target: FsTarget, signal?: AbortSignal \| undefined) => Promise<FsInfo \| undefined>`                                      | Read metadata; undefined means the target is absent.                       |
 | `watch`       | `(target: FsTarget, changed: (error?: Error \| undefined) => void, signal: AbortSignal) => Promise<() => Promise<void>>`     | Wait for observation readiness; await returned close function on teardown. |
 
 **`WebServer`**
@@ -73,10 +85,10 @@
 - Signature: `WebServer`
 - Source: `packages/host/webserver/src/index.ts`
 
-| Member     | Signature                         | Task use                                           |
-| ---------- | --------------------------------- | -------------------------------------------------- |
-| `host`     | `"127.0.0.1" \| "0.0.0.0"`        | Configured loopback or all-interface bind address. |
-| `port`     | `number`                          | Actual bound port, including an OS-assigned port when configured as zero. |
+| Member     | Signature                         | Task use                                                                       |
+| ---------- | --------------------------------- | ------------------------------------------------------------------------------ |
+| `host`     | `"127.0.0.1" \| "0.0.0.0"`        | Configured loopback or all-interface bind address.                             |
+| `port`     | `number`                          | Actual bound port, including an OS-assigned port when configured as zero.      |
 | `register` | `(route: WebRoute) => () => void` | Reserve exact/prefix route; duplicate kind and path throws; dispose to remove. |
 
 **`LspService`**
@@ -85,7 +97,12 @@
 - Signature: `LspService`
 - Source: `packages/lsp/lsp/src/types.ts`
 
-`registerProvider(provider: LspProvider): () => void` and `query(request: LspQueryRequest, signal?: AbortSignal): Promise<LspQueryResult>` are declared on this interface. Registration reserves the provider ID and extension map; the query result is a closed `locations | hover` union.
+| Member             | Signature                                                                     | Task use                                                    |
+| ------------------ | ----------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `registerProvider` | `(provider: LspProvider) => () => void`                                       | Reserve provider ID and extension map; retain the disposer. |
+| `query`            | `(request: LspQueryRequest, signal?: AbortSignal) => Promise<LspQueryResult>` | Select by extension and return the closed `locations        | hover` union. |
+
+`LspProvider` has `id: LspProviderId`, `extensionToLanguage: Readonly<Record<string, string>>` and `query(request: LspProviderQuery, signal?: AbortSignal): Promise<LspQueryResult>`. The seam adds the mapped `languageId` before calling the provider. Positions and ranges are zero-based UTF-16.
 
 **`McpResourceRuntime`**
 
@@ -93,8 +110,8 @@
 - Signature: `McpResourceRuntime`
 - Source: `packages/mcp/mcp-resources/src/index.ts`
 
-| Member     | Signature                                                       | Task use                                           |
-| ---------- | --------------------------------------------------------------- | -------------------------------------------------- |
+| Member     | Signature                                                       | Task use                                                                                         |
+| ---------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | `register` | `(server: string, provider: McpResourceProvider) => () => void` | Register a server in the caller scope and expose shared resource tools; dispose with connection. |
 
 **`DshBundleManifest`**
@@ -103,8 +120,8 @@
 - Signature: `DshBundleManifest`
 - Source: `packages/util/package-manifest/src/types.ts`
 
-| Member  | Signature            | Task use                                           |
-| ------- | -------------------- | -------------------------------------------------- |
+| Member  | Signature            | Task use                                                             |
+| ------- | -------------------- | -------------------------------------------------------------------- |
 | `patch` | `string \| string[]` | One package-root-relative patch file or ordered list of patch files. |
 
 **`DshClientManifest`**
@@ -113,10 +130,10 @@
 - Signature: `DshClientManifest`
 - Source: `packages/util/package-manifest/src/types.ts`
 
-| Member     | Signature               | Task use                                           |
-| ---------- | ----------------------- | -------------------------------------------------- |
+| Member     | Signature               | Task use                                                                                       |
+| ---------- | ----------------------- | ---------------------------------------------------------------------------------------------- |
 | `external` | `string[] \| undefined` | Exact additional Client module-table requests, including subpaths; absent keeps baseline only. |
-| `inject`   | `string[] \| undefined` | Informational package-name dependencies; not Cordis service injection. |
+| `inject`   | `string[] \| undefined` | Informational package-name dependencies; not Cordis service injection.                         |
 
 **`DshManifest`**
 
@@ -124,11 +141,11 @@
 - Signature: `DshManifest`
 - Source: `packages/util/package-manifest/src/types.ts`
 
-| Member            | Signature                        | Task use                                           |
-| ----------------- | -------------------------------- | -------------------------------------------------- |
+| Member            | Signature                        | Task use                                                              |
+| ----------------- | -------------------------------- | --------------------------------------------------------------------- |
 | `bundle`          | `DshBundleManifest \| undefined` | Declares an installable bundle layer consumed by Profile composition. |
-| `client`          | `DshClientManifest \| undefined` | Declares a Client module for the selected platform/build. |
-| `manifestVersion` | `1 \| undefined`                 | Optional literal 1; independent of package and Session versions. |
+| `client`          | `DshClientManifest \| undefined` | Declares a Client module for the selected platform/build.             |
+| `manifestVersion` | `1 \| undefined`                 | Optional literal 1; independent of package and Session versions.      |
 
 **`DshPackageManifest`**
 
@@ -136,13 +153,13 @@
 - Signature: `DshPackageManifest`
 - Source: `packages/util/package-manifest/src/types.ts`
 
-| Member         | Signature                             | Task use                                           |
-| -------------- | ------------------------------------- | -------------------------------------------------- |
-| `dependencies` | `Record<string, string> \| undefined` | npm packages installed alongside this package. |
-| `dsh`          | `DshManifest \| undefined`            | DSH bundle/Profile/Client declarations. |
+| Member         | Signature                             | Task use                                                       |
+| -------------- | ------------------------------------- | -------------------------------------------------------------- |
+| `dependencies` | `Record<string, string> \| undefined` | npm packages installed alongside this package.                 |
+| `dsh`          | `DshManifest \| undefined`            | DSH bundle/Profile/Client declarations.                        |
 | `engines`      | `DshEnginesManifest \| undefined`     | Declarative runtime compatibility; readers decide enforcement. |
-| `name`         | `string`                              | Published npm package identity. |
-| `version`      | `string`                              | Published package version. |
+| `name`         | `string`                              | Published npm package identity.                                |
+| `version`      | `string`                              | Published package version.                                     |
 
 **`DshProfileManifest`**
 
@@ -158,12 +175,12 @@
 - Signature: `PtcRuntime`
 - Source: `packages/ptc-runtime/ptc-runtime/src/index.ts`
 
-| Member        | Signature                                     | Task use                                           |
-| ------------- | --------------------------------------------- | -------------------------------------------------- |
-| `isolation`   | `string`                                      | Provider-reported execution isolation identity. |
+| Member        | Signature                                     | Task use                                             |
+| ------------- | --------------------------------------------- | ---------------------------------------------------- |
+| `isolation`   | `string`                                      | Provider-reported execution isolation identity.      |
 | `resolve`     | `(request: PtcRunRequest) => PtcRunSpec`      | Convert public request to provider-private run spec. |
-| `run`         | `(spec: PtcRunSpec) => Promise<PtcRunResult>` | Execute resolved spec and return one result. |
-| `sandboxMode` | `SandboxMode \| undefined`                                         | Provider default sandbox mode when supported. |
+| `run`         | `(spec: PtcRunSpec) => Promise<PtcRunResult>` | Execute resolved spec and return one result.         |
+| `sandboxMode` | `SandboxMode \| undefined`                    | Provider default sandbox mode when supported.        |
 
 **`SandboxPolicyService`**
 
@@ -171,8 +188,8 @@
 - Signature: `SandboxPolicyService`
 - Source: `packages/sandbox/sandbox-policy/src/index.ts`
 
-| Member    | Signature                                                    | Task use                                           |
-| --------- | ------------------------------------------------------------ | -------------------------------------------------- |
+| Member    | Signature                                                    | Task use                                              |
+| --------- | ------------------------------------------------------------ | ----------------------------------------------------- |
 | `resolve` | `(request?: SandboxPolicyRequest) => SandboxExecutionPolicy` | Resolve per-request sandbox mode and workspace roots. |
 
 **`SandboxProvider`**
@@ -189,11 +206,11 @@
 - Signature: `ShellExecutor`
 - Source: `packages/shell/shell/src/index.ts`
 
-| Member        | Signature                                          | Task use                                           |
-| ------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Member        | Signature                                          | Task use                                                                 |
+| ------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
 | `execute`     | `(spec: ShellExecSpec) => Promise<ShellExecution>` | Prepare and spawn a resolved spec; may reject before handle publication. |
-| `resolve`     | `(request: ShellExecRequest) => ShellExecSpec`     | Apply provider defaults and caps before execution. |
-| `sandboxMode` | `SandboxMode \| undefined`                                              | Executor default mode or undefined when it does not sandbox. |
+| `resolve`     | `(request: ShellExecRequest) => ShellExecSpec`     | Apply provider defaults and caps before execution.                       |
+| `sandboxMode` | `SandboxMode \| undefined`                         | Executor default mode or undefined when it does not sandbox.             |
 
 **`SpillStore`**
 
@@ -201,7 +218,11 @@
 - Signature: `SpillStore`
 - Source: `packages/spill/spill/src/index.ts`
 
-`saveText(input: SaveTextSpill): Promise<SpillRef>` publishes a durable locator; the backend path stays private.
+| Member     | Signature                                     | Task use                                                                                                 |
+| ---------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `saveText` | `(input: SaveTextSpill) => Promise<SpillRef>` | Persist full text before returning a session-scoped locator and retrieval hint; reject storage failures. |
+
+`SpillStore` supplies no retrieval method. The backend path stays private.
 
 **`Domain`**
 
@@ -209,11 +230,11 @@
 - Signature: `Domain<S>`
 - Source: `packages/storage/storage-domain/src/domain.ts`
 
-| Member  | Signature                                                                                          | Task use                                           |
-| ------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| Member  | Signature                                                                                          | Task use                                                                  |
+| ------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `close` | `() => Promise<void>`                                                                              | Reject new writes, drain queued writes, release backend unit; idempotent. |
-| `name`  | `string`                                                                                           | Domain identity from its spec. |
-| `table` | `<N extends keyof S["tables"] & string>(name: N) => KvTable<TableKeyOf<S, N>, TableValueOf<S, N>>` | Return the stable typed handle for one declared table. |
+| `name`  | `string`                                                                                           | Domain identity from its spec.                                            |
+| `table` | `<N extends keyof S["tables"] & string>(name: N) => KvTable<TableKeyOf<S, N>, TableValueOf<S, N>>` | Return the stable typed handle for one declared table.                    |
 
 **`Storage`**
 
@@ -221,11 +242,11 @@
 - Signature: `Storage`
 - Source: `packages/storage/storage/src/index.ts`
 
-| Member   | Signature                                                                          | Task use                                           |
-| -------- | ---------------------------------------------------------------------------------- | -------------------------------------------------- |
-| `domain` | `DomainFacility after @deepseek-ai/dsh-storage-domain declaration merging`                                                                            | Domain facility only after the domain plugin has mounted its form. |
-| `form`   | `<K extends keyof StorageForms>(form: K) => StorageForms[K]`                       | Return named mounted form or throw form-not-mounted. |
-| `mount`  | `<K extends keyof StorageForms>(form: K, facility: StorageForms[K]) => () => void` | Reserve one named form and return an effect-owned unmount disposer. |
+| Member   | Signature                                                                          | Task use                                                                                                           |
+| -------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `domain` | `StorageForms extends { domain: infer D } ? D : never`                             | Declaration merging supplies `DomainFacility`; reading it before the domain form mounts throws `form-not-mounted`. |
+| `form`   | `<K extends keyof StorageForms>(form: K) => StorageForms[K]`                       | Return named mounted form or throw form-not-mounted.                                                               |
+| `mount`  | `<K extends keyof StorageForms>(form: K, facility: StorageForms[K]) => () => void` | Reserve one named form and return an effect-owned unmount disposer.                                                |
 
 **`SubprocessRuntime`**
 
@@ -233,7 +254,14 @@
 - Signature: `SubprocessRuntime`
 - Source: `packages/subprocess/subprocess/src/index.ts`
 
-`resolveExecutable`, `terminalEnvironment`, `spawn`, and `spawnTerminal` are distinct abstract operations. `spawn` may throw before publishing a live handle; a published handle must be terminated and awaited.
+| Member                | Signature                                                                                            | Task use                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `resolveExecutable`   | `(command: string, env?: Readonly<Record<string, string>>, signal?: AbortSignal) => Promise<string>` | Verify a path in the provider's execution world.                                              |
+| `terminalEnvironment` | `(signal?: AbortSignal) => Promise<SubprocessTerminalEnvironment>`                                   | Inspect platform and preferred shell before terminal allocation.                              |
+| `spawn`               | `(spec: SubprocessSpawnSpec) => SubprocessHandle`                                                    | Publish a managed process handle synchronously; invalid or pre-aborted specs can throw first. |
+| `spawnTerminal`       | `(spec: SubprocessTerminalSpawnSpec) => Promise<SubprocessTerminalHandle>`                           | Allocate a terminal session and return its owned handle.                                      |
+
+A published `SubprocessHandle` exposes `done`, `terminate()` and `waitForExit(signal?)`. A `SubprocessTerminalHandle` exposes `done`, terminal I/O and inspection methods, and `terminate(): Promise<void>` for whole-session quiescence. See [process handles](#backend-storage-and-process-handles) before writing cleanup.
 
 **`TypertRemoteService`**
 
@@ -249,10 +277,10 @@ The Host class binds a Cordis service key to a wire namespace; expose only `@Rem
 - Signature: `WebhookRuntime`
 - Source: `packages/webhook/webhook/src/index.ts`
 
-| Member     | Signature                                                          | Task use                                           |
-| ---------- | ------------------------------------------------------------------ | -------------------------------------------------- |
+| Member     | Signature                                                          | Task use                                                                                     |
+| ---------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
 | `dispatch` | `<K extends string>(delivery: VerifiedWebhookDelivery<K>) => void` | Validate and snapshot trusted delivery, start matching callbacks, return before they settle. |
-| `register` | `<K extends string>(rule: WebhookRule<K>) => () => Promise<void>`  | Register unique rule and return async disposer that aborts and drains active callbacks. |
+| `register` | `<K extends string>(rule: WebhookRule<K>) => () => Promise<void>`  | Register unique rule and return async disposer that aborts and drains active callbacks.      |
 
 ## Members and task boundaries omitted by the direct-member discovery
 
@@ -285,7 +313,7 @@ These selected signatures supply the member contract that the task uses; provide
 
 `AttachmentStore` additionally exposes `saveFile(input: SaveFileAttachment): Promise<FileAttachmentRef>`, `saveFileStream(input: SaveFileStreamAttachment): Promise<FileAttachmentRef>`, and `readFileStream(ref: FileAttachmentRef, signal?: AbortSignal): AsyncIterable<Uint8Array>`. The base class rejects these with `ATTACHMENT_FILES_UNSUPPORTED`; a file-capable provider overrides them. Streaming writes apply backpressure without buffering the entire file, and streamed reads verify integrity while observing cancellation. `saveImages` validates the complete batch before saving individual images; failure publishes no partial list of refs. Source: `packages/attachment/attachment/src/index.ts:145-228`.
 
-The complete `CredentialProvider` abstract contract also includes `describe(ref: CredentialRef): Promise<CredentialInfo>`, `readRecord(key: CredentialKey): Promise<CredentialRecord | undefined>`, `describeRecord(key: CredentialKey): Promise<CredentialRecordInfo>`, `listRecords(): Promise<readonly CredentialRecordEntry[]>`, `modifyRecord(key: CredentialKey, mutate: (current: CredentialRecord | undefined) => Promise<CredentialRecord | undefined>): Promise<CredentialRecord | undefined>`, and `deleteRecord(key: CredentialKey): Promise<void>`. `modifyRecord` serializes read, mutation and write; a mutation returning `undefined` leaves the entry unchanged. Record descriptions and listings omit secret values. A provider emits update notifications only after commit. Source: `packages/credentials/credentials/src/index.ts:170-282`.
+The complete `CredentialProvider` abstract contract also includes `describe(ref: CredentialRef): Promise<CredentialInfo>`, `readRecord(key: CredentialKey): Promise<CredentialRecord | undefined>`, `describeRecord(key: CredentialKey): Promise<CredentialRecordInfo>`, `listRecords(): Promise<readonly CredentialRecordEntry[]>`, `modifyRecord(key: CredentialKey, mutate: (current: CredentialRecord | undefined) => Promise<CredentialRecord | undefined>): Promise<CredentialRecord | undefined>`, and `deleteRecord(key: CredentialKey): Promise<void>`. Its `unset(ref: CredentialRef): Promise<void>` removes a reference value. `modifyRecord` serializes read, mutation and write; a mutation returning `undefined` leaves the entry unchanged. Record descriptions and listings omit secret values. A provider emits update notifications only after commit. Source: `packages/credentials/credentials/src/index.ts:170-282`.
 
 `AuthorizationFlow` is `{ key: CredentialKey; label: string; methods: readonly [AuthorizationMethod, ...AuthorizationMethod[]]; run(session: AuthorizationSession): Promise<void> }`. The session supplies `method`, `signal`, `commit(record: CredentialRecord): Promise<void>`, `notify(notice: AuthorizationNotice): void`, and `prompt(prompt: AuthorizationPrompt): Promise<string>`. `AuthorizationRequest` supplies `key`, optional `method` and `signal`, and `interaction: AuthorizationInteraction` with `notify` and `prompt`; `begin` uses that supplied interaction. `commit` resolves after persistence. A human decline throws `AuthorizationDeclinedError` and settles as cancelled; withdrawal of a single prompt through its own signal is a distinct branch. Source: `packages/credentials/authorization/src/index.ts:73-180` and `src/types.ts:11-76`.
 
@@ -311,7 +339,7 @@ These public shapes are inputs or results of the included methods. They form par
 - `DomainSpec` in `packages/storage/storage-domain/src/spec.ts`: required `name`, nonnegative `version`, and `tables`; optional `layout`, `compatibleVersions`, `invalidRecords`, and `global`. `defineDomain<S extends DomainSpec>(spec: S): S` validates the declaration; `domainTable<K,V>(schema)` declares a typed table. `DomainFacility.open<S extends DomainSpec>(spec: S): Promise<Domain<S>>` is the only opening operation. `Domain<S>.table(name)` returns `KvTable<K,V>` with synchronous `get`/snapshot iterators and durable async `put`, `delete`, `update`; `close()` is awaited. A backend route and `kv` facet must exist before `open` succeeds.
 - `WebRoute` in `packages/host/webserver/src/index.ts`: `{ kind: 'exact' | 'prefix'; path: string; handler: (req: IncomingMessage, res: ServerResponse) => void | Promise<void> }`. `path` is absolute with no trailing slash; the handler owns the full response. `WebServer.register` rejects a duplicate `(kind, path)` and returns a synchronous disposer.
 - `WebhookRule<K>` in `packages/webhook/webhook/src/types.ts`: required unique `id: WebhookRuleId`, `kind: K`, and `run(delivery: Readonly<VerifiedWebhookDelivery<K>>, signal: AbortSignal): WebhookSessionRequest | null | Promise<...>`. `VerifiedWebhookDelivery` carries `kind`, `source`, `deliveryId`, normalized JSON `event` and `receivedAt` epoch milliseconds. `WebhookSessionRequest` requires `workspacePath`, `title`, nonempty `prompt`, `agentPreset`, and `permissionPreset`; optional `model` selects a route. Authentication is an adapter obligation before calling `dispatch`; the runtime only snapshots/validates the already trusted delivery and starts matching rules.
-- `DshClientManifest.platform` is required and `DshProfileManifest.bundles` is the ordered Profile list (`packages/util/package-manifest/src/types.ts`). Both are declarative fields used by the Client loader and Profile composer, respectively. Treating them as unused because code does not *call* them misclassifies public configuration contracts.
+- `DshClientManifest.platform` is required and `DshProfileManifest.bundles` is the ordered Profile list (`packages/util/package-manifest/src/types.ts`). Both are declarative fields used by the Client loader and Profile composer, respectively. Treating them as unused because code does not _call_ them misclassifies public configuration contracts.
 
 ## Cordis lifecycle public API
 
@@ -319,17 +347,17 @@ The public Cordis package re-exports `Context`, `Service`, `Plugin`, `Inject`, `
 
 `@deepseek-ai/schemastery` publishes the default `Schema` builder used by a plugin's exported `Config`. `Schema.object({ field: Schema.string().default(value) })` supplies validation and defaults before `apply`; `.volatile()` marks a field whose live value is read through `Volatile<T>.get()`. The selected package example uses `object`, `string`, `default` and `volatile`; the other builder metadata and presentation methods are optional, not proof of an activation effect. A plain object named `Config` is not a Standard Schema.
 
-| Author path | Target declaration and effect |
-| --- | --- |
-| Function plugin | `Plugin.Function<T>` is `(ctx: Context, config: T) => any`, with optional `name`, `Config`, `inject` and `provide` metadata. |
-| Object plugin | `Plugin.Object<T>` has `apply(ctx: Context, config: T): any` and the same optional metadata. A class plugin is constructed as `new (ctx: Context, config: T)`. |
-| Dependency declaration | `Inject<M> = (keyof M)[] \| { [K in keyof M]?: M[K] }`. `ctx.inject(deps: Inject, callback: Plugin.Function<void>): Fiber & PromiseLike<Fiber>` starts the callback when all required services exist, and unloads/restarts it when those services change. |
-| Child mount | `ctx.plugin<P extends Plugin>(plugin: P, ...args): Fiber & PromiseLike<Fiber>` starts one child under the current fiber. Await it for startup completion; it rejects on config validation/startup failure. The parent disposes its child. |
-| Owned resource | `ctx.effect(execute: () => SyncEffect, label?: string)` and its async-effect overload return a disposer; `Effect` accepts one disposer, a promise of one, or an iterable/async iterable of disposers. The effect body runs immediately. Its disposers run in reverse registration order for that effect and are awaited on unload. |
-| Service implementation | `new Service(ctx: Context, name: string)` registers the instance on that context through `ctx.reflect.provide`. A subclass calls `super(ctx, 'serviceKey')`; the owning fiber removes the service on unload. Extend Cordis `Context` through declaration merging to type `ctx.serviceKey`. |
-| Volatile config | `Volatile<T>` marks a live config value; the consumer reads its current value with `get()` rather than retaining an earlier snapshot. Use the owning Config schema's `.volatile()` declaration. |
-| Fiber observation | `fiber.state: FiberState` (`PENDING`, `LOADING`, `ACTIVE`, `FAILED`, `UNLOADING`, `DISPOSED`) and `fiber.dispose(): Promise<void>`. `PENDING` means an injection is missing and can activate later; `FAILED` records config/startup failure. `dispose()` settles after cleanup. |
-| Loader row | `EntryOptions` has required `id: string`, `name: string`, optional `config`, `group`, `disabled`, `inject`. An entry's stable `id` lets Loader patch/reload the same row. |
-| Include patch | `PatchOptions` has optional `insert?: EntryOptions[]` for adding rows or `id` for modifying an existing row. A bare top-level `EntryOptions` is not an insertion: `applyEntryPatches` warns `patch: id is required for non-insert patches` or `entry not found`. |
+| Author path            | Target declaration and effect                                                                                                                                                                                                                                                                                                      |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Function plugin        | `Plugin.Function<T>` is `(ctx: Context, config: T) => any`, with optional `name`, `Config`, `inject` and `provide` metadata.                                                                                                                                                                                                       |
+| Object plugin          | `Plugin.Object<T>` has `apply(ctx: Context, config: T): any` and the same optional metadata. A class plugin is constructed as `new (ctx: Context, config: T)`.                                                                                                                                                                     |
+| Dependency declaration | `Inject<M> = (keyof M)[] \| { [K in keyof M]?: M[K] }`. `ctx.inject(deps: Inject, callback: Plugin.Function<void>): Fiber & PromiseLike<Fiber>` starts the callback when all required services exist, and unloads/restarts it when those services change.                                                                          |
+| Child mount            | `ctx.plugin<P extends Plugin>(plugin: P, ...args): Fiber & PromiseLike<Fiber>` starts one child under the current fiber. Await it for startup completion; it rejects on config validation/startup failure. The parent disposes its child.                                                                                          |
+| Owned resource         | `ctx.effect(execute: () => SyncEffect, label?: string)` and its async-effect overload return a disposer; `Effect` accepts one disposer, a promise of one, or an iterable/async iterable of disposers. The effect body runs immediately. Its disposers run in reverse registration order for that effect and are awaited on unload. |
+| Service implementation | `new Service(ctx: Context, name: string)` registers the instance on that context through `ctx.reflect.provide`. A subclass calls `super(ctx, 'serviceKey')`; the owning fiber removes the service on unload. Extend Cordis `Context` through declaration merging to type `ctx.serviceKey`.                                         |
+| Volatile config        | `Volatile<T>` marks a live config value; the consumer reads its current value with `get()` rather than retaining an earlier snapshot. Use the owning Config schema's `.volatile()` declaration.                                                                                                                                    |
+| Fiber observation      | `fiber.state: FiberState` (`PENDING`, `LOADING`, `ACTIVE`, `FAILED`, `UNLOADING`, `DISPOSED`) and `fiber.dispose(): Promise<void>`. `PENDING` means an injection is missing and can activate later; `FAILED` records config/startup failure. `dispose()` settles after cleanup.                                                    |
+| Loader row             | `EntryOptions` has required `id: string`, `name: string`, optional `config`, `group`, `disabled`, `inject`. An entry's stable `id` lets Loader patch/reload the same row.                                                                                                                                                          |
+| Include patch          | `PatchOptions` has optional `insert?: EntryOptions[]` for adding rows or `id` for modifying an existing row. A bare top-level `EntryOptions` is not an insertion: `applyEntryPatches` warns `patch: id is required for non-insert patches` or `entry not found`.                                                                   |
 
 `Config` is a Standard Schema value, not a plain object; Cordis validates it before plugin activation and throws `ValidationError` on issues. `ctx.effect` throws `CordisError('INACTIVE_EFFECT')` when called on a disposed/unloading fiber. Inspect `fiber.state` or await the fiber rather than interpreting lack of a plugin log as success.

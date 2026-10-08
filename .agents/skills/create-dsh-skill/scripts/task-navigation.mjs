@@ -22,7 +22,7 @@ function replaceBlock(body, rows, label) {
     }
     return (
         body.slice(0, start) +
-        `${navigationStart}\n${rows}\n${navigationEnd}` +
+        `${navigationStart}\n<!-- prettier-ignore -->\n${rows}\n\n${navigationEnd}` +
         body.slice(end + navigationEnd.length)
     );
 }

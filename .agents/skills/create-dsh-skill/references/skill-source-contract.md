@@ -2,7 +2,7 @@
 
 `skill-source/` 是新 Skill 的唯一构建输入。它不得复制或引用现有 `skills/dsh-plugin-development/**`，也不得把旧 Skill 的文件名或主题当作必须保留的范围。
 
-下方版本字段只是单次创建的格式示例；创建流程应填入当次解析的精确版本、tag 和 commit，本仓库不预设这些值。
+下方 manifest 版本字段只是单次创建的格式示例；创建工作区应填入当次解析的精确 npm 版本、tag 和 commit，本仓库不预设这些值。manifest、provenance、coverage 等维护账本不属于分发 Skill；映射到产物的正文、元数据和附件用 npm 包版本说明兼容范围，不写目标 commit。source-map 仍列出相对于目标源码的证据路径；验证器从外部 checkout 的 tag 核实这些路径。
 
 除 manifest 和正文外，素材必须包含：
 

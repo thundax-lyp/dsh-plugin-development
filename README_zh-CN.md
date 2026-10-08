@@ -6,7 +6,7 @@
 
 ## 版本选择
 
-显式调用 `$create-dsh-skill [version]`。省略版本时，创建流程按数值版本顺序选择最新已发布的 `@deepseek-ai/dsh-agent` RC（`X.Y.Z-rc.N`）；传入版本时，要求与已发布版本精确匹配。每次创建记录一个 DSH tag 和 commit，产品事实只取自该 checkout。**本仓库不固定 DSH 版本基线。**
+显式调用 `$create-dsh-skill [version]`。省略版本时，创建流程按数值版本顺序选择最新已发布的 `@deepseek-ai/dsh-agent` RC（`X.Y.Z-rc.N`）；传入版本时，要求与已发布版本精确匹配。每次创建在构建工作区记录一个 DSH tag 和 commit，产品事实只取自该 checkout。分发 Skill 以已发布的 npm 包版本标明适用范围，不展示源码 commit。**本仓库不固定 DSH 版本基线。**
 
 ## 创建流程
 

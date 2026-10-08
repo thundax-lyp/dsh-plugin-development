@@ -121,7 +121,7 @@ function createFixture(t, options = {}) {
             kind: "entrypoint",
             content:
                 options.entrypoint ??
-                "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n[Section](#section)\n\n## Section\n",
+                "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n[Section](#section)\n\n## Section\n",
         },
         {
             source: "metadata/openai.yaml",
@@ -169,7 +169,7 @@ function createFixture(t, options = {}) {
             source: "maintenance/source-map.md",
             output: "maintenance/source-map.md",
             kind: "maintenance",
-            content: `# Source map\n\ndsh-v9.9.9-rc.9 ${commit}\n`,
+            content: "# Source map\n\n@deepseek-ai/dsh-agent@9.9.9-rc.9\n",
         },
         {
             source: "maintenance/skill-maintenance.md",
@@ -598,7 +598,7 @@ test("featured task entry must link directly to its exact recipe", (t) => {
     );
     write(
         join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
-        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n`[Register a tool](references/how-to.md#complete-task)`\n",
+        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n`[Register a tool](references/how-to.md#complete-task)`\n",
     );
     assert.throws(
         () => validateSkillSource(fixture.targetPath, { freeze: true }),
@@ -626,7 +626,7 @@ test("featured task entry must link directly to its exact recipe", (t) => {
     writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 4)}\n`);
     write(
         join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
-        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n```md\n[Register a tool](references/how-to.md#complete-task)\n```\n",
+        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n```md\n[Register a tool](references/how-to.md#complete-task)\n```\n",
     );
     assert.throws(
         () => validateSkillSource(fixture.targetPath, { freeze: true }),
@@ -634,7 +634,7 @@ test("featured task entry must link directly to its exact recipe", (t) => {
     );
     write(
         join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
-        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n[Register a tool](references/how-to.md#complete-task)\n",
+        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n[Register a tool](references/how-to.md#complete-task)\n",
     );
     assert.doesNotThrow(() =>
         validateSkillSource(fixture.targetPath, { freeze: true }),
@@ -914,6 +914,35 @@ test("generated Skill accepts valid same-document anchors", (t) => {
     assert.doesNotThrow(() => buildSkill(fixture.targetPath));
 });
 
+test("generated Skill rejects the target commit in distributed text", (t) => {
+    const fixture = createFixture(t);
+    const provenance = JSON.parse(
+        readFileSync(join(fixture.targetPath, "provenance.json"), "utf8"),
+    );
+    write(
+        join(fixture.skillSourcePath, "maintenance/source-map.md"),
+        `# Source map\n\n@deepseek-ai/dsh-agent@9.9.9-rc.9, commit ${provenance.commit}\n`,
+    );
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    assert.throws(
+        () => buildSkill(fixture.targetPath),
+        /target commit must stay in build evidence/,
+    );
+});
+
+test("generated Skill keeps coverage status and private ledgers out of prose", (t) => {
+    const fixture = createFixture(t);
+    write(
+        join(fixture.skillSourcePath, "maintenance/source-map.md"),
+        "# Source map\n\n@deepseek-ai/dsh-agent@9.9.9-rc.9\n\n本次创建的浏览器检查为 Not Covered；见 `coverage.json`。\n",
+    );
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    assert.throws(
+        () => buildSkill(fixture.targetPath),
+        /creation or validation status belongs in build evidence/,
+    );
+});
+
 test("all UTF-8 text assets receive offline-boundary checks", (t) => {
     const fixture = createFixture(t, {
         extraFiles: [
@@ -935,7 +964,7 @@ test("all UTF-8 text assets receive offline-boundary checks", (t) => {
 test("Markdown example endpoints remain offline reference data", (t) => {
     const fixture = createFixture(t, {
         entrypoint:
-            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n[Section](#section)\n\n## Section\n`https://example.invalid`\n```ts\nconst endpoint = 'http://127.0.0.1:9'\n```\n",
+            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n[Section](#section)\n\n## Section\n`https://example.invalid`\n```ts\nconst endpoint = 'http://127.0.0.1:9'\n```\n",
     });
     validateSkillSource(fixture.targetPath, { freeze: true });
     assert.doesNotThrow(() => buildSkill(fixture.targetPath));
@@ -945,7 +974,7 @@ test("generated Skill requires structured frontmatter and metadata", async (t) =
     await t.test("frontmatter description is required", (child) => {
         const fixture = createFixture(child, {
             entrypoint:
-                "---\nname: dsh-plugin-development\n---\n# dsh-v9.9.9-rc.9\n",
+                "---\nname: dsh-plugin-development\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n",
         });
         validateSkillSource(fixture.targetPath, { freeze: true });
         assert.throws(() => buildSkill(fixture.targetPath), /description/);
@@ -1089,7 +1118,7 @@ test("generated navigation routes a featured task to its own exact section", (t)
             },
         ],
         entrypoint:
-            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n",
+            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n",
         routing:
             "# Routing\n\n[Tool contract](api-tools.md)\n[How-to](how-to.md)\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n",
     });

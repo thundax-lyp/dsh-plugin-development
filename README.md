@@ -6,7 +6,7 @@ This repository contains `$create-dsh-skill`, a workflow for creating a version-
 
 ## Version selection
 
-Invoke `$create-dsh-skill [version]` explicitly. Without a version, the creator resolves the newest published `@deepseek-ai/dsh-agent` release candidate (`X.Y.Z-rc.N`) by numeric version order. With a version, it requires an exact published match. Each creation run records one DSH tag and commit and uses only that checkout for product facts. **This repository has no fixed DSH version baseline.**
+Invoke `$create-dsh-skill [version]` explicitly. Without a version, the creator resolves the newest published `@deepseek-ai/dsh-agent` release candidate (`X.Y.Z-rc.N`) by numeric version order. With a version, it requires an exact published match. Each creation run records one DSH tag and commit in the build workspace and uses only that checkout for product facts. The distributed Skill identifies the published npm package version; it does not expose the source commit. **This repository has no fixed DSH version baseline.**
 
 ## Creation workflow
 

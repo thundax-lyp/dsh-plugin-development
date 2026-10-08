@@ -1,9 +1,11 @@
 # Plugin development routing
 
 <!-- BEGIN GENERATED TASK NAVIGATION -->
+<!-- prettier-ignore -->
 | 用户任务 | 起点 |
 | --- | --- |
 | 添加供 Agent 调用的 Host Tool | [register-host-tool](how-to-host-core.md#register-host-tool) |
+| One Host plugin provides a Cordis service and another consumes it after injection, with activation and unload verified | [provide-and-consume-cordis-service](how-to-host-core.md#provide-and-consume-cordis-service) |
 | Add scoped prompt sections, variables, context, or tool schema providers. | [extend-system-prompt](how-to-host-core.md#extend-system-prompt) |
 | Register an LLM adapter and optional model directory. | [add-llm-adapter](how-to-host-core.md#add-llm-adapter) |
 | Define a pure Session projection and optional checkpoint cache. | [persist-derived-session-state](how-to-host-core.md#persist-derived-session-state) |
@@ -28,8 +30,10 @@
 | authenticated external event starts plugin work without callbacks surviving unload | [Register a web route and webhook rule](how-to-infra-runtime.md#register-a-web-route-and-webhook-rule) |
 | Host API reaches Client through generated Remote binding | [Compose a preset and a Host to Client Remote](how-to-infra-runtime.md#compose-a-preset-and-a-host-to-client-remote) |
 | one explicitly selected provider contributes tools for the intended environment | [Select an experimental browser or computer provider](how-to-infra-runtime.md#select-an-experimental-browser-or-computer-provider) |
+| Client activity inserts an asynchronous result without overwriting later draft edits and offers guidance after explicit bundle activation | [输入框异步插入与显式启用引导](how-to-client-web.md#输入框异步插入与显式启用引导) |
+
 <!-- END GENERATED TASK NAVIGATION -->
 
-具体契约见 [Host/Core](api-host-core.md)、[Client/Web](api-client-web.md) 和[基础设施](api-infra-runtime.md) 的 API reference。
+先按任务表进入 HOW-TO；需要核查具体类型和生命周期时，再读 [Host/Core](api-host-core.md)、[Client/Web](api-client-web.md) 或[基础设施](api-infra-runtime.md) 契约。按符号查入口可用[关键词索引](keyword-index.md)，区分包、Bundle、Profile 和 Remote 可用[术语](terminology.md)。
 
 每条路径都以真实 Profile 装载和卸载为完成边界；静态导出或声明存在只用于定位。

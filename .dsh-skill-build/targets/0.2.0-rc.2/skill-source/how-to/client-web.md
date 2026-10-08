@@ -257,7 +257,104 @@ export async function saveLabel(form: ConfigForm<{ label: string }>, draftLabel:
 5. 浏览器中确认按钮出现；空 label 显示结构化失败；更新 Config 后下一次读取采用新值。
 6. 禁用/删除 row，确认 slot contribution 消失、Remote namespace 不能再调用、事件和订阅不残留；重新启用后由 Host Config/Remote snapshot 恢复，而不是依赖旧 React state。
 
-报告真实 Web Profile、浏览器、重连和 Remote round trip 的结果时，应逐项附上观察；未执行的运行面列为 Not Covered。
+分别观察 Web Profile 装载、浏览器交互、重连和 Remote round trip，确认各侧运行行为。
+
+## 输入框异步插入与显式启用引导
+
+若任务要在输入框旁增加语音转写、搜索建议等异步动作，先导入 `@deepseek-ai/dsh-client-ui-conversation/client` 的 slot 声明，并向 session-scoped `conversation.input.activity` 注册组件。`PropsRuntime<'conversation.input.activity'>` 提供 `inputActions`、`locked` 和 `onActiveChange`；组件不能从 Host 路径或 React 私有输入框状态构造插入位置。下面的 `produceText` 是插件自己实现的可取消异步操作，通过 registration `inject` 传入，组件不持有 Cordis `ctx`：
+
+```tsx
+import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
+import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type { Context } from '@deepseek-ai/cordis'
+import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+import { useEffect, useRef, useState } from 'react'
+
+type InputActionProps = PropsRuntime<'conversation.input.activity'> & {
+  produceText: (signal: AbortSignal) => Promise<string>
+}
+
+function InputAction({ inputActions, locked, onActiveChange, produceText }: InputActionProps) {
+  const [busy, setBusy] = useState(false)
+  const [pending, setPending] = useState<string>()
+  const [failure, setFailure] = useState<string>()
+  const operation = useRef<AbortController>()
+
+  useEffect(() => {
+    onActiveChange(busy || pending !== undefined || failure !== undefined)
+    return () => { onActiveChange(false) }
+  }, [busy, pending, failure, onActiveChange])
+  useEffect(() => () => { operation.current?.abort() }, [])
+
+  async function start(): Promise<void> {
+    if (locked || operation.current) return
+    const span = inputActions.captureInsertion() // 捕获必须早于异步等待
+    const abort = new AbortController()
+    operation.current = abort
+    setBusy(true)
+    setFailure(undefined)
+    try {
+      const text = await produceText(abort.signal)
+      if (abort.signal.aborted) return
+      if (!inputActions.insertText(text, span)) setPending(text)
+    } catch (error) {
+      if (!abort.signal.aborted) setFailure(error instanceof Error ? error.message : String(error))
+    } finally {
+      if (operation.current === abort) operation.current = undefined
+      if (!abort.signal.aborted) setBusy(false)
+    }
+  }
+
+  return <div>
+    <button type="button" disabled={locked || busy} onClick={() => { void start() }}>Insert result</button>
+    {pending !== undefined && <button type="button" disabled={locked} onClick={() => {
+      if (inputActions.insertText(pending, inputActions.captureInsertion())) setPending(undefined)
+    }}>Insert retained text</button>}
+    {failure !== undefined && <span role="alert">{failure}</span>}
+  </div>
+}
+
+export const inject = ['slots']
+export function apply(ctx: Context): void {
+  ctx.slots.inject('conversation.input.activity', () => ctx.slots.register({
+    name: 'conversation.input.activity',
+    inject: () => ({ produceText: async (signal: AbortSignal) => {
+      // 在插件自身实现中调用真实服务；必须转发 signal 并处理业务失败。
+      signal.throwIfAborted()
+      return 'example result'
+    } }),
+  }, InputAction))
+}
+```
+
+`insertText(text, span)` 返回 `false` 时保留结果，用户明确点击重试时才重新 `captureInsertion()`；不能悄悄覆盖后续编辑。卸载、切换 Session 或用户取消时应中止操作并丢弃迟到结果。上例只示范输入契约，生产组件仍须为按钮和失败消息提供 locale 文案，并把真实操作的取消、失败和资源释放接入自身生命周期。
+
+如果启用 bundle 后还需提示下载模型等准备步骤，另向 `plugins.bundle.activation` 注册 root-scoped keyed entry，`key` 用确切 npm 包名；导入 `@deepseek-ai/dsh-client-ui-plugin-manager/client` 的类型声明，等待该 slot owner，再在组件中用 `PropsRuntime<'plugins.bundle.activation'>` 的 `onDismiss()` 或 `onOpenDetails()` 结束引导。该 slot 只在用户显式启用后由插件管理页渲染；插件列表的普通卡片只显示 bundle 描述和开关。此入口不是自动安装或下载 API。参考目标版本 `packages/experimental/client-ui-voice-input/src/client/mount.ts:48-50` 和 `packages/client/ui-plugin-manager/src/client/slot-contract.ts:66-79`。
+
+```tsx
+import type { Context } from '@deepseek-ai/cordis'
+import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
+import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+
+function SetupPrompt({ packageName, onDismiss, onOpenDetails }: PropsRuntime<'plugins.bundle.activation'>) {
+  if (packageName !== '@acme/dsh-input-bundle') return null
+  return <div>
+    <p>Additional setup is needed.</p>
+    <button type="button" onClick={onOpenDetails}>Open bundle details</button>
+    <button type="button" onClick={onDismiss}>Later</button>
+  </div>
+}
+
+export function apply(ctx: Context) {
+  ctx.slots.inject('plugins.bundle.activation', () => ctx.slots.register({
+    name: 'plugins.bundle.activation', key: '@acme/dsh-input-bundle',
+  }, SetupPrompt))
+}
+```
+
+这里的 `ctx` 是 Client 插件 `apply`/`registerUi` 收到的 Context；把注册语句放在该函数内，并将详情引导与真正的资源准备状态关联。上例文案只演示 slot 契约，发布时需接入 locale。
+
+验证时在隔离 Web Profile 装载实际 bundle：开始异步操作后更改草稿，确认旧 span 被拒绝且文字仍可手动插入；锁定输入或切换 Session 时不写入旧草稿；展开活动控件后卸载，确认 `onActiveChange(false)` 释放布局；显式启用缺资源 bundle 时仅显示准备引导，关闭与打开详情分别调用 owner callback。
 
 ## Web provider
 
@@ -318,4 +415,4 @@ Host 组合 terminal owner、`TerminalController` 及其 `subprocess`、`sandbox
 
 普通 Client 页面若只需要 Workspace 列表与命令，注入 `workspaces`，通过公开 `IWorkspaces.list.getSnapshot()` 读 Host 权威快照、`list.subscribe(listener)` 监听替换并在卸载时调用返回的 unsubscribe。`create({ path })` 注册现有路径；`initializeDefault(signal?)` 可能返回 `undefined`；`rename(workspaceId, title)`、`delete(workspaceId)`、`insertBefore(workspaceId, beforeWorkspaceId?)` 改变 Workspace 登记，`delete` 不删除 Session 或磁盘文件。Session 分组还提供 `archiveSession(sessionId, { stopActivity? })`、`unarchiveSession`、`pinSession`、`unpinSession` 与 `insertSessionBefore`。归档运行中的 Session 可抛 `WorkspaceArchiveError`，其 `rpcError.code` 为 `workspace/session-active`。这些签名在 `packages/api/workspace-controller/src/client/service.ts`。
 
-读取 Workspace 文件是另一条路径：目标 Client 的 `@deepseek-ai/dsh-api-workspace-files/client` 注入 `resources`、`remote`、`remote.workspaceFiles`，通过 `ctx.resources.register(provider)` 安装 `file` provider，卸载时先撤销注册，再等待 change feed stream 关闭；见 `packages/api/workspace-files/src/client/index.ts`。不要从 Workspace 列表拼接 Host 文件路径或绕过 provider 的访问策略。第三方 scoped file 插件还需完成构建与 Profile 装载，并分别验证分页、大小、符号链接、取消、重连与 owner 卸载；未运行的阶段列为 Not Covered。
+读取 Workspace 文件是另一条路径：目标 Client 的 `@deepseek-ai/dsh-api-workspace-files/client` 注入 `resources`、`remote`、`remote.workspaceFiles`，通过 `ctx.resources.register(provider)` 安装 `file` provider，卸载时先撤销注册，再等待 change feed stream 关闭；见 `packages/api/workspace-files/src/client/index.ts`。不要从 Workspace 列表拼接 Host 文件路径或绕过 provider 的访问策略。第三方 scoped file 插件还需完成构建与 Profile 装载，并分别验证分页、大小、符号链接、取消、重连与 owner 卸载。

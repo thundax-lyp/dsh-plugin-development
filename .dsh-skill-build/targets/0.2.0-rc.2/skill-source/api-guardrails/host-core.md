@@ -1,6 +1,6 @@
 # Host/Core and agent-execution API guardrails
 
-This reference is pinned to `@deepseek-ai/dsh-agent@0.2.0-rc.2` (`dsh-v0.2.0-rc.2`, commit `639ed015397290b3745d163aafe02ffee4aa3f84`). It covers Host-side plugin seams. Client and Typert Remote entry points are separate runtime sides: do not import Host services into a browser bundle, and do not infer a working remote round trip from a `./client`, `./remote`, or `./typert` export alone.
+This reference is pinned to `@deepseek-ai/dsh-agent@0.2.0-rc.2` (`dsh-v0.2.0-rc.2`). It covers Host-side plugin seams. Client and Typert Remote entry points are separate runtime sides: do not import Host services into a browser bundle, and do not infer a working remote round trip from a `./client`, `./remote`, or `./typert` export alone.
 
 ## Agent, Session, and scope
 
@@ -73,7 +73,7 @@ The pre-execute policy returns `PreToolDecision`: `allow` runs the call; `deny` 
 
 ## LLM provider and adapter
 
-`LlmRuntime` owns provider adapters and model-directory entries. Register an adapter for one or more provider routes and retain the registration handle; duplicate ownership fails and multi-route registration is atomic. An adapter implements request preparation/model resolution and an async stream, honors the request `AbortSignal`, emits usage before finish, emits nothing after finish, and preserves raw JSON strings for incremental tool arguments. Unsupported options fail with a stable `LlmError` instead of being silently ignored.
+`LlmRuntime` owns provider adapters and model-directory entries. Register an adapter with `ctx.llm.registerAdapter(providers, adapter)` for one or more provider routes and retain the registration handle; duplicate ownership fails and multi-route registration is atomic. `LlmAdapter.stream(options)` is the only abstract method; default `resolveModel` and `prepareCall` implementations serve static routes. Override preparation when changing settings must be bound to one dispatch generation. The stream honors the request `AbortSignal`, emits usage before finish, emits nothing after finish, and preserves raw JSON strings for incremental tool arguments. Unsupported options fail with a stable `LlmError` instead of being silently ignored.
 
 Provider-native replay state is admissible only when the same adapter instance owns historical and target routes and the adapter validates it. Never infer replay compatibility from provider/model strings. Secrets belong in schema/config with environment fallbacks, not ad-hoc files. DeepSeek, DeepSeek-account, DeepSeek-api-key, and pi-ai packages are mountable first-party implementations; `deepseek-llm-api-extensions` is a scoped provider registry for request-body fields. `llm-retry` wraps failures according to explicit retry policy and must preserve cancellation.
 
@@ -91,7 +91,7 @@ Session title, stats, turn-outline, token-meter, telemetry, and log-export packa
 
 ## Commands, approval, and questions
 
-`CommandRuntime.register(definition)` registers a scoped `CommandDefinition` with `name`, `description`, optional `input: { hint, attachments? }`, and `handler(invocation: CommandInvocation): CommandResult | Promise<CommandResult>`. The invocation contains `commandId`, the receiving `agent`, exact `rawInput`, admitted `attachments`, and `signal`; `CommandExecution` is the *settled return* of `CommandRuntime.execute`, not the handler argument. Names match `/^[a-z][a-z0-9_-]*$/`. An ordinary command result is `{ kind: 'success', text? }` or `{ kind: 'error', text }`; cancellation must propagate. Attachment receipt resolution is a separate registration and must validate ownership. See `packages/interaction/commands/src/index.ts` and `src/types.ts`.
+`CommandRuntime.register(definition)` registers a scoped `CommandDefinition` with `name`, `description`, optional `input: { hint, attachments? }`, and `handler(invocation: CommandInvocation): CommandResult | Promise<CommandResult>`. The invocation contains `commandId`, the receiving `agent`, exact `rawInput`, admitted `attachments`, and `signal`; `CommandExecution` is the _settled return_ of `CommandRuntime.execute`, not the handler argument. Names match `/^[a-z][a-z0-9_-]*$/`. An ordinary command result is `{ kind: 'success', text? }` or `{ kind: 'error', text }`; cancellation must propagate. Attachment receipt resolution is a separate registration and must validate ownership. See `packages/interaction/commands/src/index.ts` and `src/types.ts`.
 
 `ApprovalService.request(request)` returns `allowed-once`, `rejected`, `cancelled`, or `unavailable`. Policy `never` rejects without prompting; policy `ask` still fails closed when no answerer exists. Pass the tool/command cancellation signal and keep approval audit events attributable. Permission presets are a user-facing policy catalog/state layer, not authority to widen an operation by themselves.
 
@@ -105,7 +105,7 @@ Session title, stats, turn-outline, token-meter, telemetry, and log-export packa
 
 ## Jobs
 
-`JobRegistry.start(spec: JobSpec): JobId` requires `kind`, `label`, and synchronous `run(job: JobHandle): JobHooks`; `owner?: SessionId` is optional but required for a Session-owned job. The producer receives `JobHandle` *inside* `run` and returns synchronous, idempotent `cancel(reason?)` plus a `done: Promise<JobOutcome>` that settles after cleanup. `start` returns the issued id, not the handle. Omitted owner creates an unowned job visible to any caller until service disposal. Output may be pushed through `job.append()` or pumped from owned sources. `read` consumes its cursor and returns a one-time result after settlement; `readAt` leaves that cursor alone and reports gaps. `wait` observes settlement without cancelling, `kill` requests cancellation, and `remove` is for no-longer-needed retained output. Mount concrete `@deepseek-ai/dsh-jobs-local`; the abstract `JobRegistry` rejects direct construction. `tool-jobs` exposes wait/read/kill behavior to the model with bounded wake loops. Once a background job id is published, task-owned cancellation replaces the originating tool-call signal as lifetime owner. See `packages/jobs/jobs/src/{index,types}.ts` and `packages/jobs/jobs-local/src/index.ts`.
+`JobRegistry.start(spec: JobSpec): JobId` requires `kind`, `label`, and synchronous `run(job: JobHandle): JobHooks`; `owner?: SessionId` is optional but required for a Session-owned job. The producer receives `JobHandle` _inside_ `run` and returns synchronous, idempotent `cancel(reason?)` plus a `done: Promise<JobOutcome>` that settles after cleanup. `start` returns the issued id, not the handle. Omitted owner creates an unowned job visible to any caller until service disposal. Output may be pushed through `job.append()` or pumped from owned sources. `read` consumes its cursor and returns a one-time result after settlement; `readAt` leaves that cursor alone and reports gaps. `wait` observes settlement without cancelling, `kill` requests cancellation, and `remove` is for no-longer-needed retained output. Mount concrete `@deepseek-ai/dsh-jobs-local`; the abstract `JobRegistry` rejects direct construction. `tool-jobs` exposes wait/read/kill behavior to the model with bounded wake loops. Once a background job id is published, task-owned cancellation replaces the originating tool-call signal as lifetime owner. See `packages/jobs/jobs/src/{index,types}.ts` and `packages/jobs/jobs-local/src/index.ts`.
 
 For `JobSpec.output`, each `JobOutputSource.read(fromByte)` returns an incremental, nonconsuming `{ text, nextOffset, lossy, spillPath? }`; the registry pumps sources and makes one final drain before settlement. A `JobEvents` observer subscribes with `{ owner }` (that Session plus unowned jobs), `{ owners: 'scope' }` (composed owners), or `{ owners: 'all' }`. It receives lifecycle events with a fresh `JobView`; `settled` also reports `cause` (`producer`, `kill`, or `teardown`) and whether a waiter already received the completion. An `output` event carries only id, optional owner, and new byte total, so observers call `readAt` from their own cursor rather than assuming the event contains text. Keep the subscription disposer in the observing scope.
 
@@ -145,27 +145,44 @@ Progress observers may receive `workflow/start`, `workflow/phase`, `workflow/log
 
 These published packages are concrete choices behind the preceding services. Mount them only when the task uses their role; each row has a distinct configuration, failure or disposal condition.
 
-| Choice | Required role and boundary |
-| --- | --- |
-| `dsh-agent-default-model` | Mountable selection service; `currentSelection()` reads provider/model/reasoning effort and `saveSelection()` persists through config editor. Selection is separate from credential or LLM route availability. |
-| `dsh-agent-instructions` | Projects configured instruction files into the prompt with root and byte-budget limits; refresh and file watchers belong to the row and must stop on unload. |
-| `dsh-agent-tool-presentation` | `mode: native | ptc | both` registers scoped `tools.presentAs`; `ptc` and `both` require `ptcRuntime` before activation. Presentation does not grant execution authority. |
-| `dsh-llm-deepseek` | Exposes `DeepSeekAdapter` and `registerDeepSeekProvider` as adapter/transport base, not a complete credential Profile. |
-| `dsh-llm-deepseek-account` | Registers `deepseek-account` through `deepseekAccount.resolveToken`; missing login and invalid 401 token need account-specific recovery. |
-| `dsh-llm-deepseek-api-key` | Registers `deepseek-official`, resolving credential service before startup environment; missing both fails with `MISSING_CREDENTIAL`. |
-| `dsh-llm-pi-ai` | Registers configurable providers, discovery and routes; a config change must replace one generation of registrations and retire the old one. |
-| `dsh-llm-retry` | Registers the `llmRetry` Session projection with explicit retry budget and cancellation, not an implicit adapter default. |
-| `dsh-session-persistence` | Abstract durable service with `create`, `open`, `stat`, `list` and `flush`; `SessionHandle` owns ordered `read`, `append`, `flush` and `close`. Resolved append is locally visible, resolved flush is the crash-durability barrier. |
-| `dsh-session-persistence-jsonl` | Concrete single-writer backend; drains accepted events on close, rejects unsupported newer formats and corrupt committed prefixes. |
-| `dsh-session-projection-cache` | Depends on storage domain, sessions and projections; checkpoint/restore accelerates reads, while full log replay remains authoritative. |
-| `dsh-subagent-spawn-in-process` | Registers `spawn`, begins a fresh child, supports in-process start overrides and `prepareContinuable`; continuation manager owns later turns. |
-| `dsh-subagent-fork-in-process` | Registers `fork`, seeds completed parent turns and supports `prepareContinuable`; unfinished parent work is not inherited. |
-| `dsh-subagent-acp` | Requires subprocess, supports none of the optional start capabilities and remains one-shot; await external process cleanup. |
-| `dsh-subagent-claude-code` / `dsh-subagent-codex` | Distinct external CLI/config providers; both reject optional start capabilities and must clean up their subprocesses. |
-| `dsh-subagent-dsh-sdk` | Uses an independent child runtime; check its declared model route, schema, depth, filter and persona capabilities instead of assuming in-process inheritance. |
+### Agent defaults and presentation
+
+| Choice                        | Required role and boundary                                                                                                                                                                                     |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dsh-agent-default-model`     | Mountable selection service; `currentSelection()` reads provider/model/reasoning effort and `saveSelection()` persists through config editor. Selection is separate from credential or LLM route availability. |
+| `dsh-agent-instructions`      | Projects configured instruction files into the prompt with root and byte-budget limits; refresh and file watchers belong to the row and must stop on unload.                                                   |
+| `dsh-agent-tool-presentation` | `mode: native                                                                                                                                                                                                  | ptc | both`registers scoped`tools.presentAs`; `ptc`and`both`require`ptcRuntime` before activation. Presentation does not grant execution authority. |
+
+### LLM adapter packages
+
+| Choice                     | Required role and boundary                                                                                                                   |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dsh-llm-deepseek`         | Exposes `DeepSeekAdapter` and `registerDeepSeekProvider` as adapter/transport base, not a complete credential Profile.                       |
+| `dsh-llm-deepseek-account` | Registers `deepseek-account` through `deepseekAccount.resolveToken`; missing login and invalid 401 token need account-specific recovery.     |
+| `dsh-llm-deepseek-api-key` | Registers `deepseek-official`, resolving credential service before startup environment; missing both fails with `MISSING_CREDENTIAL`.        |
+| `dsh-llm-pi-ai`            | Registers configurable providers, discovery and routes; a config change must replace one generation of registrations and retire the old one. |
+| `dsh-llm-retry`            | Registers the `llmRetry` Session projection with explicit retry budget and cancellation, not an implicit adapter default.                    |
+
+### Session persistence packages
+
+| Choice                          | Required role and boundary                                                                                                                                                                                                          |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dsh-session-persistence`       | Abstract durable service with `create`, `open`, `stat`, `list` and `flush`; `SessionHandle` owns ordered `read`, `append`, `flush` and `close`. Resolved append is locally visible, resolved flush is the crash-durability barrier. |
+| `dsh-session-persistence-jsonl` | Concrete single-writer backend; drains accepted events on close, rejects unsupported newer formats and corrupt committed prefixes.                                                                                                  |
+| `dsh-session-projection-cache`  | Depends on storage domain, sessions and projections; checkpoint/restore accelerates reads, while full log replay remains authoritative.                                                                                             |
+
+### Subagent provider packages
+
+| Choice                                            | Required role and boundary                                                                                                                                    |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dsh-subagent-spawn-in-process`                   | Registers `spawn`, begins a fresh child, supports in-process start overrides and `prepareContinuable`; continuation manager owns later turns.                 |
+| `dsh-subagent-fork-in-process`                    | Registers `fork`, seeds completed parent turns and supports `prepareContinuable`; unfinished parent work is not inherited.                                    |
+| `dsh-subagent-acp`                                | Requires subprocess, supports none of the optional start capabilities and remains one-shot; await external process cleanup.                                   |
+| `dsh-subagent-claude-code` / `dsh-subagent-codex` | Distinct external CLI/config providers; both reject optional start capabilities and must clean up their subprocesses.                                         |
+| `dsh-subagent-dsh-sdk`                            | Uses an independent child runtime; check its declared model route, schema, depth, filter and persona capabilities instead of assuming in-process inheritance. |
 
 The source owners are the matching `packages/core/agent-*`, `packages/context/agent-instructions`, `packages/llm/*`, `packages/session/*`, and `packages/subagent/*` package `src/index.ts` files in this target. Network, external CLI and persistence restart behavior require separate real-environment checks.
 
 ## Validation boundary
 
-For every plugin task, verify: package resolution from the target tag, Host compilation, real Profile mounting, one observable request/result, cancellation or failure, and unload cleanup. For `./client`, Remote/Typert, subprocess, persistence restart, and network LLM paths, static declarations and unit tests are insufficient; run the corresponding side or report it as not covered.
+For every plugin task, verify: package resolution from the target tag, Host compilation, real Profile mounting, one observable request/result, cancellation or failure, and unload cleanup. For `./client`, Remote/Typert, subprocess, persistence restart, and network LLM paths, static declarations and unit tests are insufficient; run the corresponding side before claiming that behavior.

@@ -430,7 +430,7 @@
       "summary": "Default-model selection service reads and persists provider/model/effort separately from LLM route availability.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Agent defaults and presentation"
       },
       "mergedInto": "package:@deepseek-ai/dsh-agent",
       "relationship": "Default-model selection service reads and persists provider/model/effort separately from LLM route availability."
@@ -450,7 +450,7 @@
       "summary": "Agent instruction projection reads configured files with root and byte-budget limits and owns refresh/watchers.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Agent defaults and presentation"
       },
       "mergedInto": "package:@deepseek-ai/dsh-system-prompt",
       "relationship": "Agent instruction projection reads configured files with root and byte-budget limits and owns refresh/watchers."
@@ -532,7 +532,7 @@
       "summary": "Tool presentation uses native/ptc/both mode; ptc modes require PTC runtime and only affect scoped presentation.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Agent defaults and presentation"
       },
       "mergedInto": "package:@deepseek-ai/dsh-tools",
       "relationship": "Tool presentation uses native/ptc/both mode; ptc modes require PTC runtime and only affect scoped presentation."
@@ -686,7 +686,7 @@
       "summary": "Local durable attachment backend with integrity checks and persistent objects.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "File, credential and language providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-attachment",
       "relationship": "Local durable attachment backend with integrity checks and persistent objects."
@@ -732,7 +732,7 @@
       "summary": "Local Bash executor starts fresh unconfined bash processes with output/time budgets.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Local Bash executor starts fresh unconfined bash processes with output/time budgets."
@@ -752,7 +752,7 @@
       "summary": "Sandbox Bash executor requires sandbox and sandboxPolicy and refuses unavailable confinement.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Sandbox Bash executor requires sandbox and sandboxPolicy and refuses unavailable confinement."
@@ -1083,11 +1083,23 @@
     },
     {
       "id": "cap-100",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-plugin-manager"
       ],
-      "reason": "dsh-client-ui-plugin-manager is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "The plugin manager publishes a keyed activation slot that a third-party Client package can contribute to.",
+      "pluginTask": "A Client input extension guides the user after explicit bundle activation and withdraws on unload",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Client/Web task API"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-client-ui-renderer",
+      "relationship": "The plugin manager owns the slot; the third-party package registers its contribution through the shared SlotRegistry."
     },
     {
       "id": "cap-101",
@@ -1562,7 +1574,7 @@
       "summary": "Local credential backend with private record path and source precedence.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "File, credential and language providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-credentials",
       "relationship": "Local credential backend with private record path and source precedence."
@@ -1876,7 +1888,7 @@
       "summary": "Local filesystem provider; cwd is resolution base, not confinement.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "File, credential and language providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "Local filesystem provider; cwd is resolution base, not confinement."
@@ -1896,7 +1908,7 @@
       "summary": "Observation policy guards writes and edits against Session read state and stale versions; it is not a filesystem backend.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "File, credential and language providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "Observation policy guards writes and edits against Session read state and stale versions; it is not a filesystem backend."
@@ -1916,7 +1928,7 @@
       "summary": "Policy-aware filesystem writes; reads are local and write denial is explicit.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "File, credential and language providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "Policy-aware filesystem writes; reads are local and write denial is explicit."
@@ -1936,7 +1948,7 @@
       "summary": "SSH filesystem provider with remote path authority and ambiguous transport-loss writes.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "SSH provider composition"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "SSH filesystem provider with remote path authority and ambiguous transport-loss writes."
@@ -2210,7 +2222,7 @@
       "summary": "DeepSeek adapter transport and registration base; not a complete credential Profile.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "LLM adapter packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "DeepSeek adapter transport and registration base; not a complete credential Profile."
@@ -2230,7 +2242,7 @@
       "summary": "DeepSeek account route resolves account token and has login/401 recovery.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "LLM adapter packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "DeepSeek account route resolves account token and has login/401 recovery."
@@ -2250,7 +2262,7 @@
       "summary": "DeepSeek official route resolves credential service or environment and fails on missing key.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "LLM adapter packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "DeepSeek official route resolves credential service or environment and fails on missing key."
@@ -2278,7 +2290,7 @@
       "summary": "Pi-ai provides configurable routes and discovery with generation-bound registration cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "LLM adapter packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "Pi-ai provides configurable routes and discovery with generation-bound registration cleanup."
@@ -2306,7 +2318,7 @@
       "summary": "LLM retry is an explicit Session projection and bounded retry policy, not an adapter default.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "LLM adapter packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "LLM retry is an explicit Session projection and bounded retry policy, not an adapter default."
@@ -2352,7 +2364,7 @@
       "summary": "Stdio LSP provider with executable resolution and pooled workspace processes.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "File, credential and language providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-lsp",
       "relationship": "Stdio LSP provider with executable resolution and pooled workspace processes."
@@ -2514,7 +2526,7 @@
       "summary": "Fresh-process Node PTC backend with required sandbox and resource limits.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-ptc-runtime",
       "relationship": "Fresh-process Node PTC backend with required sandbox and resource limits."
@@ -2534,7 +2546,7 @@
       "summary": "Local PowerShell executor starts fresh unconfined pwsh processes with UTF-8 output.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Local PowerShell executor starts fresh unconfined pwsh processes with UTF-8 output."
@@ -2554,7 +2566,7 @@
       "summary": "Sandbox PowerShell executor requires sandbox and sandboxPolicy and refuses unavailable confinement.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Sandbox PowerShell executor requires sandbox and sandboxPolicy and refuses unavailable confinement."
@@ -2608,7 +2620,7 @@
       "summary": "Local platform sandbox selector that fails when required enforcement is unavailable.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-sandbox",
       "relationship": "Local platform sandbox selector that fails when required enforcement is unavailable."
@@ -2646,7 +2658,7 @@
       "summary": "SSH sandbox provider that confines commands on the remote host.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "SSH provider composition"
       },
       "mergedInto": "package:@deepseek-ai/dsh-sandbox",
       "relationship": "SSH sandbox provider that confines commands on the remote host."
@@ -3128,7 +3140,7 @@
       "summary": "Local Session-scoped spill backend with best-effort startup sweep.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Storage and spill providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-spill",
       "relationship": "Local Session-scoped spill backend with best-effort startup sweep."
@@ -3210,7 +3222,7 @@
       "summary": "JSON storage form that requires a root and supports domain routing.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Storage and spill providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-storage",
       "relationship": "JSON storage form that requires a root and supports domain routing."
@@ -3230,7 +3242,7 @@
       "summary": "SQLite storage form with configured database and version checks.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Storage and spill providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-storage",
       "relationship": "SQLite storage form with configured database and version checks."
@@ -3268,7 +3280,7 @@
       "summary": "ACP provider is external one-shot with no optional start capabilities and subprocess cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Subagent provider packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "ACP provider is external one-shot with no optional start capabilities and subprocess cleanup."
@@ -3288,7 +3300,7 @@
       "summary": "Claude Code CLI provider has its own command/config and external subprocess cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Subagent provider packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Claude Code CLI provider has its own command/config and external subprocess cleanup."
@@ -3308,7 +3320,7 @@
       "summary": "Codex CLI provider has its own command/config and external subprocess cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Subagent provider packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Codex CLI provider has its own command/config and external subprocess cleanup."
@@ -3328,7 +3340,7 @@
       "summary": "DSH SDK provider runs an independent child runtime with distinct option capabilities.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Subagent provider packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "DSH SDK provider runs an independent child runtime with distinct option capabilities."
@@ -3348,7 +3360,7 @@
       "summary": "Fork in-process provider seeds completed parent turns and supports continuable preparation.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Subagent provider packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Fork in-process provider seeds completed parent turns and supports continuable preparation."
@@ -3376,7 +3388,7 @@
       "summary": "Spawn in-process provider starts fresh and supports in-process start overrides and continuable preparation.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Optional first-party mount choices"
+        "references/api-host-core.md": "Subagent provider packages"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Spawn in-process provider starts fresh and supports in-process start overrides and continuable preparation."
@@ -3414,7 +3426,7 @@
       "summary": "Host-local subprocess backend with managed process disposal.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "Process and confinement providers"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subprocess",
       "relationship": "Host-local subprocess backend with managed process disposal."
@@ -3434,7 +3446,7 @@
       "summary": "SSH subprocess backend whose uncertain remote launch is not automatically replayed.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+        "references/how-to-infra-runtime.md": "SSH provider composition"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subprocess",
       "relationship": "SSH subprocess backend whose uncertain remote launch is not automatically replayed."
@@ -4673,6 +4685,28 @@
       }
     },
     {
+      "id": "provide-and-consume-cordis-service",
+      "outcome": "One Host plugin provides a Cordis service and another consumes it after injection, with activation and unload verified",
+      "decision": "covered",
+      "candidates": [
+        "package:@deepseek-ai/cordis"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/cordis:.:Service"
+      ],
+      "compositionSteps": [
+        "declare the public Context service key and implement a Service provider",
+        "load provider and injecting consumer as separate Profile rows",
+        "observe consumer activation, missing-provider PENDING state, and disposal"
+      ],
+      "destinations": [
+        {
+          "output": "references/how-to-host-core.md",
+          "section": "provide-and-consume-cordis-service"
+        }
+      ]
+    },
+    {
       "id": "extend-system-prompt",
       "outcome": "Add scoped prompt sections, variables, context, or tool schema providers.",
       "decision": "covered",
@@ -5368,6 +5402,31 @@
         {
           "output": "references/how-to-infra-runtime.md",
           "section": "Select an experimental browser or computer provider"
+        }
+      ]
+    },
+    {
+      "id": "client-input-activity-and-activation",
+      "outcome": "Client activity inserts an asynchronous result without overwriting later draft edits and offers guidance after explicit bundle activation",
+      "decision": "covered",
+      "candidates": [
+        "package:@deepseek-ai/dsh-client-ui-conversation",
+        "package:@deepseek-ai/dsh-client-ui-plugin-manager"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-client-ui-conversation:./client:InputActions",
+        "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginActivationOwnerProps",
+        "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry"
+      ],
+      "compositionSteps": [
+        "load a browser Client package and wait for the conversation and plugin manager slot owners",
+        "capture the input revision before asynchronous work and insert only while that revision is current",
+        "register keyed activation guidance, observe user actions, and withdraw both contributions on unload"
+      ],
+      "destinations": [
+        {
+          "output": "references/how-to-client-web.md",
+          "section": "输入框异步插入与显式启用引导"
         }
       ]
     }
