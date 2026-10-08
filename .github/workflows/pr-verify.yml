@@ -153,18 +153,6 @@ jobs:
                     grep -Fq "$package_version" "$skill"
                   fi
 
-            - name: Verify offline Skill boundary
-              shell: bash
-              run: |
-                  set -euo pipefail
-
-                  if test -d skills/dsh-plugin-development; then
-                    if grep -RInE 'https?://' skills/dsh-plugin-development; then
-                      echo 'HTTP(S) URL found inside the offline Skill directory.' >&2
-                      exit 1
-                    fi
-                  fi
-
             - name: Set up Python
               uses: actions/setup-python@v5
               with:
@@ -173,7 +161,7 @@ jobs:
             - name: Verify repository Markdown links, anchors and JSON fences
               run: python3 scripts/validate_skill.py
 
-            - name: Verify generated Skill when present
+            - name: Verify generated Skill links, JSON and offline boundary when present
               shell: bash
               run: |
                   set -euo pipefail
