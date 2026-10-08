@@ -82,4 +82,4 @@ Host `Config` 中需要在线编辑的字段声明为 `Volatile<T>`，schema 节
 
 所有 `register`、`inject`、Remote mount、事件订阅和 form watch 都由创建它们的 Cordis fiber 回收；显式 disposer 仍应进入 `ctx.effect`。卸载验证至少确认 slot entry 消失、store subscriber 停止、Remote contribution 不能继续调用、重连能从 owner snapshot 恢复，而不是只确认 React DOM 被移除。
 
-静态编译只证明签名和两侧依赖面；module verifier 只证明 artifact graph 可 materialize；Profile smoke 才证明 Loader row、Client factory、Cordis service 和 slot owner 同时存在；浏览器观察才证明用户可见结果。当前证据未运行独立消费项目、真实 Profile 或浏览器 smoke，这些保持 Not Covered。
+静态编译只证明签名和两侧依赖面；module verifier 只证明 artifact graph 可 materialize；Profile smoke 才证明 Loader row、Client factory、Cordis service 和 slot owner 同时存在；浏览器观察才证明用户可见结果。交付时分别报告独立消费项目、真实 Profile 与浏览器 smoke 的实际结果；未运行的阶段列为 Not Covered。

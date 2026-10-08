@@ -21,9 +21,6 @@ export function buildSkill(targetArgument) {
             "Skill construction requires a frozen skill-source manifest.",
         );
     }
-    if (existsSync(target.generatedSkillPath)) {
-        rmSync(target.generatedSkillPath, { recursive: true, force: true });
-    }
     const temporary = mkdtempSync(join(target.targetPath, ".generated-skill-"));
     try {
         for (const entry of target.manifest.files) {
@@ -43,8 +40,46 @@ export function buildSkill(targetArgument) {
                 preserveTimestamps: true,
             });
         }
-        renameSync(temporary, target.generatedSkillPath);
-        return verifyGeneratedSkill(target.targetPath);
+        const result = verifyGeneratedSkill(target.targetPath, temporary);
+        const backupRoot = mkdtempSync(
+            join(target.targetPath, ".generated-skill-backup-"),
+        );
+        const oldPath = join(backupRoot, "old");
+        let oldMoved = false;
+        let rollbackFailed = false;
+        let cleanupWarning;
+        try {
+            if (existsSync(target.generatedSkillPath)) {
+                renameSync(target.generatedSkillPath, oldPath);
+                oldMoved = true;
+            }
+            renameSync(temporary, target.generatedSkillPath);
+        } catch (error) {
+            if (oldMoved && !existsSync(target.generatedSkillPath)) {
+                try {
+                    renameSync(oldPath, target.generatedSkillPath);
+                    oldMoved = false;
+                } catch (rollbackError) {
+                    rollbackFailed = true;
+                    throw new AggregateError(
+                        [error, rollbackError],
+                        `Build replacement and rollback failed; old output remains at ${oldPath}.`,
+                    );
+                }
+            }
+            throw error;
+        } finally {
+            if (!rollbackFailed) {
+                try {
+                    rmSync(backupRoot, { recursive: true, force: true });
+                } catch (error) {
+                    cleanupWarning =
+                        `Build committed, but old output cleanup failed at ${backupRoot}: ` +
+                        `${error instanceof Error ? error.message : String(error)}`;
+                }
+            }
+        }
+        return { ...result, ...(cleanupWarning ? { cleanupWarning } : {}) };
     } finally {
         if (existsSync(temporary))
             rmSync(temporary, { recursive: true, force: true });

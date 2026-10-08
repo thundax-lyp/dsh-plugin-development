@@ -13,6 +13,9 @@ import {
     sha256File,
     writeJsonAtomic,
 } from "./skill-build-contract.mjs";
+import { markdownSection, withoutFencedCode } from "./markdown-structure.mjs";
+import { renderTaskNavigation } from "./task-navigation.mjs";
+import { loadTaskScenarios } from "./task-scenarios.mjs";
 
 const allowedKinds = new Set([
     "entrypoint",
@@ -80,6 +83,15 @@ export function validateSkillSource(targetArgument, options = {}) {
     if (![1, 2, 3].includes(manifest.schemaVersion)) {
         throw new Error(
             "skill-source manifest.schemaVersion must be 1, 2 or 3.",
+        );
+    }
+    if (
+        manifest.taskNavigation !== undefined &&
+        (manifest.schemaVersion !== 3 ||
+            manifest.taskNavigation !== "generated")
+    ) {
+        throw new Error(
+            "taskNavigation requires schema v3 and value generated.",
         );
     }
     if (!Array.isArray(manifest.topics) || manifest.topics.length === 0) {
@@ -168,6 +180,10 @@ export function validateSkillSource(targetArgument, options = {}) {
             "skill-source/coverage.json must match the manifest schema with dispositions.",
         );
     }
+    const taskScenarios =
+        manifest.taskNavigation === "generated"
+            ? loadTaskScenarios(target, coverage)
+            : undefined;
     const controlHashes = {
         claimsSha256: sha256File(claimsPath),
         coverageSha256: sha256File(coveragePath),
@@ -180,6 +196,7 @@ export function validateSkillSource(targetArgument, options = {}) {
                   apiSurfaceSha256: sha256File(apiSurfacePath),
               }
             : {}),
+        ...taskScenarios?.hashes,
     };
     if (manifest.status === "frozen") {
         for (const [key, value] of Object.entries(controlHashes)) {
@@ -831,6 +848,22 @@ export function validateSkillSource(targetArgument, options = {}) {
             ),
             "utf8",
         );
+        const entrypointFile = files.find((file) => file.output === "SKILL.md");
+        const entrypointBody = readFileSync(
+            resolveInside(
+                target.skillSourcePath,
+                entrypointFile.source,
+                "Skill entrypoint",
+            ),
+            "utf8",
+        );
+        const entrypointLinks = new Set(
+            [
+                ...withoutFencedCode(entrypointBody)
+                    .replace(/`[^`\n]*`/g, "")
+                    .matchAll(/\]\(([^)]+)\)/g),
+            ].map((match) => decodeURIComponent(match[1])),
+        );
         for (const [index, task] of coverage.taskPaths.entries()) {
             const label = `coverage.taskPaths[${index}]`;
             requireString(task?.id, `${label}.id`);
@@ -910,6 +943,59 @@ export function validateSkillSource(targetArgument, options = {}) {
             ) {
                 throw new Error(`${label}.destinations must not be empty.`);
             }
+            if (task.entry !== undefined) {
+                if (
+                    task.entry === null ||
+                    typeof task.entry !== "object" ||
+                    Array.isArray(task.entry)
+                ) {
+                    throw new Error(`${label}.entry must be an object.`);
+                }
+                requireString(task.entry.output, `${label}.entry.output`);
+                requireString(task.entry.section, `${label}.entry.section`);
+                requireString(task.entry.anchor, `${label}.entry.anchor`);
+                if (
+                    !task.destinations.some(
+                        (destination) =>
+                            destination.output === task.entry.output &&
+                            destination.section === task.entry.section,
+                    )
+                ) {
+                    throw new Error(
+                        `${label}.entry must match one task destination.`,
+                    );
+                }
+                const entryFile = files.find(
+                    (file) => file.output === task.entry.output,
+                );
+                if (entryFile?.kind !== "how-to") {
+                    throw new Error(`${label}.entry must point to a HOW-TO.`);
+                }
+                const entryBody = readFileSync(
+                    resolveInside(
+                        target.skillSourcePath,
+                        entryFile.source,
+                        `${label}.entry`,
+                    ),
+                    "utf8",
+                );
+                const linkedSection = markdownSection(
+                    entryBody,
+                    task.entry.section,
+                    task.entry.anchor,
+                );
+                if (!linkedSection || !linkedSection.content) {
+                    throw new Error(
+                        `${label}.entry anchor does not identify its non-empty section: ${task.entry.output}#${task.entry.anchor}`,
+                    );
+                }
+                const link = `${task.entry.output}#${task.entry.anchor}`;
+                if (!entrypointLinks.has(link)) {
+                    throw new Error(
+                        `${label}.entry is not linked directly from SKILL.md: ${link}`,
+                    );
+                }
+            }
             for (const [
                 destinationIndex,
                 destination,
@@ -951,22 +1037,13 @@ export function validateSkillSource(targetArgument, options = {}) {
                     ),
                     "utf8",
                 );
-                const headings = [
-                    ...body.matchAll(/^#{2,6}\s+(.+?)\s*#*\s*$/gm),
-                ];
-                const headingIndex = headings.findIndex(
-                    (match) => match[1] === destination.section,
-                );
-                if (headingIndex < 0) {
+                const section = markdownSection(body, destination.section);
+                if (!section) {
                     throw new Error(
-                        `${destinationLabel}.section has no matching heading in ${destination.output}.`,
+                        `${destinationLabel}.section needs one matching heading in ${destination.output}.`,
                     );
                 }
-                const start =
-                    headings[headingIndex].index +
-                    headings[headingIndex][0].length;
-                const end = headings[headingIndex + 1]?.index ?? body.length;
-                if (!body.slice(start, end).trim()) {
+                if (!section.content) {
                     throw new Error(
                         `${destinationLabel}.section is empty in ${destination.output}.`,
                     );
@@ -1008,6 +1085,24 @@ export function validateSkillSource(targetArgument, options = {}) {
                         );
                     }
                 }
+            }
+        }
+        if (manifest.taskNavigation === "generated") {
+            const rendered = renderTaskNavigation(
+                coverage,
+                files,
+                target.skillSourcePath,
+                { entrypoint: entrypointBody, routing: routingBody },
+            );
+            if (entrypointBody !== rendered.entrypoint) {
+                throw new Error(
+                    "SKILL.md task navigation differs from taskPaths; run sync-task-navigation.mjs.",
+                );
+            }
+            if (routingBody !== rendered.routing) {
+                throw new Error(
+                    "Task routing differs from taskPaths; run sync-task-navigation.mjs.",
+                );
             }
         }
         if (manifest.schemaVersion === 3) {

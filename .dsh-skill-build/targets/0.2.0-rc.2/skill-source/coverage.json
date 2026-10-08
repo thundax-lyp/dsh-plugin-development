@@ -7,7 +7,7 @@
       "candidates": [
         "composition:packages/bundle/acp-app/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/acp-app/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-002",
@@ -15,7 +15,7 @@
       "candidates": [
         "composition:packages/bundle/base/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/base/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-003",
@@ -23,7 +23,7 @@
       "candidates": [
         "composition:packages/bundle/headless/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/headless/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-004",
@@ -31,7 +31,7 @@
       "candidates": [
         "composition:packages/bundle/sdk-app/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/sdk-app/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-005",
@@ -39,7 +39,7 @@
       "candidates": [
         "composition:packages/bundle/sdk-minimal/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/sdk-minimal/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-006",
@@ -47,7 +47,7 @@
       "candidates": [
         "composition:packages/bundle/web-app/cordis.patch.yml"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/web-app/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-007",
@@ -55,7 +55,7 @@
       "candidates": [
         "composition:packages/bundle/web-app/presets/cordis.patch.yml"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/bundle/web-app/presets/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-008",
@@ -63,7 +63,7 @@
       "candidates": [
         "composition:packages/experimental/agent-team-profile/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/experimental/agent-team-profile/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-009",
@@ -71,7 +71,7 @@
       "candidates": [
         "composition:packages/experimental/auto-review/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/experimental/auto-review/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-010",
@@ -79,7 +79,7 @@
       "candidates": [
         "composition:packages/experimental/inspector/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/experimental/inspector/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-011",
@@ -87,7 +87,7 @@
       "candidates": [
         "composition:packages/experimental/inspector/cordis.source.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/experimental/inspector/cordis.source.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-012",
@@ -95,7 +95,7 @@
       "candidates": [
         "composition:packages/experimental/schedule-bundle/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/experimental/schedule-bundle/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-013",
@@ -103,7 +103,7 @@
       "candidates": [
         "composition:packages/experimental/voice-input-bundle/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/experimental/voice-input-bundle/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-014",
@@ -111,7 +111,7 @@
       "candidates": [
         "composition:packages/preset/agent-preset/skills/cordis-plugin-development/templates/decoration/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/preset/agent-preset/skills/cordis-plugin-development/templates/decoration/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-015",
@@ -119,7 +119,7 @@
       "candidates": [
         "composition:packages/preset/agent-preset/skills/cordis-plugin-development/templates/mcp/cordis.patch.yml"
       ],
-      "reason": "Composition evidence is combined into the package/Profile task; shipped product manifests are examples, not author APIs. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "This tracked patch is a concrete composition example (packages/preset/agent-preset/skills/cordis-plugin-development/templates/mcp/cordis.patch.yml), not a public plugin entry; its insert/override semantics belong to Cordis Include/Loader and the package/Profile task."
     },
     {
       "id": "cap-016",
@@ -127,7 +127,7 @@
       "candidates": [
         "composition:packages/subagent/subagent-claude-code/cordis.patch.yml"
       ],
-      "reason": "The manifest is composition evidence for the provider package, not a separately callable API. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Claude Code provider patch is a composition manifest, not a callable registration API; use it only to verify that provider Profile wiring is possible."
     },
     {
       "id": "cap-017",
@@ -135,7 +135,7 @@
       "candidates": [
         "composition:packages/subagent/subagent-codex/cordis.patch.yml"
       ],
-      "reason": "The manifest is composition evidence for the provider package, not a separately callable API. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Codex provider patch is a composition manifest, not a callable registration API; use it only to verify that provider Profile wiring is possible."
     },
     {
       "id": "cap-018",
@@ -179,7 +179,7 @@
       "candidates": [
         "cookbook:adding-a-session-format-version"
       ],
-      "reason": "This is repository maintenance, release history, review workflow, or vendoring work rather than an external plugin extension contract."
+      "reason": "This cookbook changes repository historical session-format migrations; the selected plugin task writes current Session events through a backend."
     },
     {
       "id": "cap-021",
@@ -277,11 +277,21 @@
     },
     {
       "id": "cap-029",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/cordis"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/api-infra-runtime-surface.md"
+      ],
+      "summary": "Cordis Context, Service, Plugin, Fiber and effect lifecycle used to create and mount a plugin.",
+      "pluginTask": "Create a Cordis plugin with scoped resources and verify activation and unload",
+      "ownerSections": {
+        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+      }
     },
     {
       "id": "cap-030",
@@ -289,7 +299,7 @@
       "candidates": [
         "package:@deepseek-ai/cordis-plugin-group"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "cordis-plugin-group adds optional grouped/isolate composition; the selected package task uses Loader EntryOptions and Include insert patches without creating a separate group plugin row. Group remains target-version composition evidence."
     },
     {
       "id": "cap-031",
@@ -297,23 +307,47 @@
       "candidates": [
         "package:@deepseek-ai/cordis-plugin-hmr"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "cordis-plugin-hmr owns development-time reload; the selected independent package task installs, restarts and removes a Profile bundle, and does not rely on live HMR to establish activation or disposal."
     },
     {
       "id": "cap-032",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/cordis-plugin-include"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/api-infra-runtime-surface.md"
+      ],
+      "summary": "Include parses insert patches and forwards rows into the Cordis Loader.",
+      "pluginTask": "Compose and mount a Cordis package in a Profile",
+      "ownerSections": {
+        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+      },
+      "mergedInto": "package:@deepseek-ai/cordis",
+      "relationship": "Include parses insert patches and forwards rows into the Cordis Loader."
     },
     {
       "id": "cap-033",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/cordis-plugin-loader"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/api-infra-runtime-surface.md"
+      ],
+      "summary": "Loader resolves plugin rows and owns Fiber activation, PENDING state and disposal.",
+      "pluginTask": "Compose and mount a Cordis package in a Profile",
+      "ownerSections": {
+        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+      },
+      "mergedInto": "package:@deepseek-ai/cordis",
+      "relationship": "Loader resolves plugin rows and owns Fiber activation, PENDING state and disposal."
     },
     {
       "id": "cap-034",
@@ -321,7 +355,7 @@
       "candidates": [
         "package:@deepseek-ai/cordis-plugin-logger-console"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional console logging exporter for diagnostics; the selected plugin lifecycle task does not require this specific logger provider."
     },
     {
       "id": "cap-035",
@@ -329,7 +363,7 @@
       "candidates": [
         "package:@deepseek-ai/cordis-plugin-timer"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional timer service provider used by some compositions; plugin-owned timers use ctx.effect and do not require this package."
     },
     {
       "id": "cap-036",
@@ -337,7 +371,7 @@
       "candidates": [
         "package:@deepseek-ai/cosmokit"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "General utility package, not a Cordis plugin entry or DSH capability; no selected authoring task imports its helpers."
     },
     {
       "id": "cap-037",
@@ -353,7 +387,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-acp"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "ACP app transport/adapter for a launched surface; the selected Cordis package task does not implement ACP protocol."
     },
     {
       "id": "cap-039",
@@ -383,19 +417,43 @@
     },
     {
       "id": "cap-041",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-agent-default-model"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Default-model selection service reads and persists provider/model/effort separately from LLM route availability.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-agent",
+      "relationship": "Default-model selection service reads and persists provider/model/effort separately from LLM route availability."
     },
     {
       "id": "cap-042",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-agent-instructions"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Agent instruction projection reads configured files with root and byte-budget limits and owns refresh/watchers.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-system-prompt",
+      "relationship": "Agent instruction projection reads configured files with root and byte-budget limits and owns refresh/watchers."
     },
     {
       "id": "cap-043",
@@ -421,7 +479,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-agent-loop-testkit"
       ],
-      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Agent loop testkit is a repository test fixture, not a consumer Profile service or public Agent creation seam."
     },
     {
       "id": "cap-045",
@@ -461,11 +519,23 @@
     },
     {
       "id": "cap-047",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-agent-tool-presentation"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Tool presentation uses native/ptc/both mode; ptc modes require PTC runtime and only affect scoped presentation.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-tools",
+      "relationship": "Tool presentation uses native/ptc/both mode; ptc modes require PTC runtime and only affect scoped presentation."
     },
     {
       "id": "cap-048",
@@ -535,11 +605,21 @@
     },
     {
       "id": "cap-055",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-api-terminal-controller"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "Terminal Host controller and Client stream facade have distinct create, retain, follow and disposal paths.",
+      "pluginTask": "Client consumes terminal stream and disposes it",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Client/Web task API"
+      }
     },
     {
       "id": "cap-056",
@@ -563,7 +643,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-app-boot"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Launcher-owned Profile initialization/resolution functions; external plugin authors declare dsh.bundle and install with dsh plugin rather than calling boot internals."
     },
     {
       "id": "cap-059",
@@ -593,11 +673,23 @@
     },
     {
       "id": "cap-061",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-attachment-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local durable attachment backend with integrity checks and persistent objects.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-attachment",
+      "relationship": "Local durable attachment backend with integrity checks and persistent objects."
     },
     {
       "id": "cap-062",
@@ -627,19 +719,43 @@
     },
     {
       "id": "cap-064",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-bash-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local Bash executor starts fresh unconfined bash processes with output/time budgets.",
+      "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-shell",
+      "relationship": "Local Bash executor starts fresh unconfined bash processes with output/time budgets."
     },
     {
       "id": "cap-065",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-bash-sandbox"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Sandbox Bash executor requires sandbox and sandboxPolicy and refuses unavailable confinement.",
+      "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-shell",
+      "relationship": "Sandbox Bash executor requires sandbox and sandboxPolicy and refuses unavailable confinement."
     },
     {
       "id": "cap-066",
@@ -681,7 +797,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-connection"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Client connection transport is boot infrastructure; the selected Remote contribution uses ctx.remote rather than owning this connection service."
     },
     {
       "id": "cap-070",
@@ -689,7 +805,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-file-upload"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Built-in file-upload service belongs to the conversation attachment flow; selected task contributes a header action, not an uploader."
     },
     {
       "id": "cap-071",
@@ -697,7 +813,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-hmr"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "HMR refresh is shell runtime infrastructure; selected plugin task documents reload as a verification boundary, not an extension API."
     },
     {
       "id": "cap-072",
@@ -709,11 +825,21 @@
     },
     {
       "id": "cap-073",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-client-modules"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web.md"
+      ],
+      "summary": "Client modules load only declared artifacts with matching package and module metadata.",
+      "pluginTask": "Host exposes a generated typed Remote with structured failure/cancellation",
+      "ownerSections": {
+        "references/api-client-web.md": "Client 包与装载契约"
+      }
     },
     {
       "id": "cap-074",
@@ -721,7 +847,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-product-analytics"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Built-in analytics Remote/UI instrumentation is outside the selected slot, Web provider, and Remote authoring tasks."
     },
     {
       "id": "cap-075",
@@ -737,7 +863,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-shortcuts"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Shortcut registry is used by built-in terminal/sidebar UI, while selected third-party contribution is a slot action, not a shortcut command."
     },
     {
       "id": "cap-077",
@@ -763,7 +889,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-test-runtime"
       ],
-      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Test runtime is repository verification support, not a consumer plugin runtime service."
     },
     {
       "id": "cap-079",
@@ -771,7 +897,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-agent-preset"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-agent-preset is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-080",
@@ -779,7 +905,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-approval"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-approval is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-081",
@@ -787,7 +913,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-attachment"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-attachment is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-082",
@@ -795,7 +921,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-brand-official"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-brand-official is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-083",
@@ -803,7 +929,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-chat"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-chat is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-084",
@@ -811,15 +937,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-commands"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-commands is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-085",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-conversation"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "Conversation publishes the header-actions slot used by the selected Client contribution.",
+      "pluginTask": "Client half loads, contributes through a typed slot, and withdraws on unload",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Slot authoring symbols"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-client-ui-renderer",
+      "relationship": "Conversation publishes the header-actions slot used by the selected Client contribution."
     },
     {
       "id": "cap-086",
@@ -827,15 +965,25 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-cordis"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-cordis is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-087",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-deliverables"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "Deliverables publishes the file actions slot used by the selected Client contribution.",
+      "pluginTask": "Client presents persisted deliverable/document facts",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Slot authoring symbols"
+      }
     },
     {
       "id": "cap-088",
@@ -843,7 +991,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-directory-picker-browse"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-directory-picker-browse is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-089",
@@ -851,7 +999,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-directory-picker-native"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-directory-picker-native is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-090",
@@ -859,7 +1007,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-dockkit"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-dockkit is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-091",
@@ -867,7 +1015,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-goal"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-goal is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-092",
@@ -875,7 +1023,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-input-trigger"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-input-trigger is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-093",
@@ -883,7 +1031,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-jobs"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-jobs is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-094",
@@ -891,7 +1039,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-layout"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-layout is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-095",
@@ -899,7 +1047,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-message-feedback"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-message-feedback is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-096",
@@ -907,7 +1055,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-model-selection"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-model-selection is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-097",
@@ -915,7 +1063,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-open-in-app"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-open-in-app is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-098",
@@ -923,7 +1071,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-permission-presets"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-permission-presets is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-099",
@@ -931,7 +1079,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-plan"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-plan is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-100",
@@ -939,7 +1087,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-plugin-manager"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-plugin-manager is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-101",
@@ -947,7 +1095,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-primitives"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-primitives is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-102",
@@ -955,15 +1103,25 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-reference"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-reference is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-103",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-renderer"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "Client UI renderer installs the public SlotRegistry facade with calling-fiber ownership.",
+      "pluginTask": "Client half loads, contributes through a typed slot, and withdraws on unload",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Slot authoring symbols"
+      }
     },
     {
       "id": "cap-104",
@@ -971,7 +1129,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-schedule"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-schedule is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-105",
@@ -979,15 +1137,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-session"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-session is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-106",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web.md"
+      ],
+      "summary": "Client UI settings supplies the ConfigForms facade for a live settings contribution.",
+      "pluginTask": "Config uses revision-fenced live writes and unset restores inheritance",
+      "ownerSections": {
+        "references/api-client-web.md": "Settings 对象与成员"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-settings",
+      "relationship": "Client UI settings supplies the ConfigForms facade for a live settings contribution."
     },
     {
       "id": "cap-107",
@@ -995,7 +1165,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-account"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-account implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-108",
@@ -1003,7 +1173,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-agent-loop"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-agent-loop implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-109",
@@ -1011,7 +1181,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-general"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-general implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-110",
@@ -1019,7 +1189,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-models"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-models implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-111",
@@ -1027,7 +1197,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-plugin-inventory"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-plugin-inventory implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-112",
@@ -1035,7 +1205,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-plugins"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-plugins implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-113",
@@ -1043,7 +1213,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-session-log"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-session-log implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-114",
@@ -1051,7 +1221,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-shell"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-shell implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-115",
@@ -1059,7 +1229,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-subagent"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-subagent implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-116",
@@ -1067,7 +1237,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-settings-web-search"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-settings-web-search implements one built-in Settings section; selected task extends ConfigForm through dsh-client-ui-settings/client."
     },
     {
       "id": "cap-117",
@@ -1075,7 +1245,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-shortcuts"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-shortcuts is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-118",
@@ -1083,7 +1253,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-sidebar"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-sidebar owns built-in sidebar presentation; selected third-party task calls the Terminal/Workspace service rather than registering this UI shell."
     },
     {
       "id": "cap-119",
@@ -1091,7 +1261,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-sidebar-browser"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-sidebar-browser owns built-in sidebar presentation; selected third-party task calls the Terminal/Workspace service rather than registering this UI shell."
     },
     {
       "id": "cap-120",
@@ -1099,7 +1269,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-sidebar-documentpreview"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-sidebar-documentpreview owns built-in sidebar presentation; selected third-party task calls the Terminal/Workspace service rather than registering this UI shell."
     },
     {
       "id": "cap-121",
@@ -1107,7 +1277,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-sidebar-files"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-sidebar-files owns built-in sidebar presentation; selected third-party task calls the Terminal/Workspace service rather than registering this UI shell."
     },
     {
       "id": "cap-122",
@@ -1115,7 +1285,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-sidebar-right"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-sidebar-right owns built-in sidebar presentation; selected third-party task calls the Terminal/Workspace service rather than registering this UI shell."
     },
     {
       "id": "cap-123",
@@ -1131,7 +1301,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-skill"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-skill is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-125",
@@ -1157,7 +1327,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-subagent"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-subagent is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-127",
@@ -1165,7 +1335,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-theme"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-theme is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-128",
@@ -1173,7 +1343,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-tool"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-tool is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-129",
@@ -1181,7 +1351,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-trajectory"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-trajectory is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-130",
@@ -1189,7 +1359,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-user-questions"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-user-questions is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-131",
@@ -1197,7 +1367,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-workflow-run"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-workflow-run is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-132",
@@ -1205,7 +1375,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-workspace"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-client-ui-workspace is a built-in UI composition package; selected extension uses the specified conversation/deliverable slot owner and SlotRegistry instead."
     },
     {
       "id": "cap-133",
@@ -1213,7 +1383,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-client-web"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Web boot and module seed shell composes plugins; third-party package authors provide dsh.client and lib/client.js artifacts."
     },
     {
       "id": "cap-134",
@@ -1229,7 +1399,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-command-compact"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "command-compact is a built-in command consumer; selected add-command task defines its own CommandDefinition."
     },
     {
       "id": "cap-136",
@@ -1335,11 +1505,21 @@
     },
     {
       "id": "cap-145",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-cordis-client-runner"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "Dynamic Cordis Client runner owns process-local approved client halves and unloading.",
+      "pluginTask": "Approved Host/Client halves run and report load/render failures",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Client/Web task API"
+      }
     },
     {
       "id": "cap-146",
@@ -1369,11 +1549,23 @@
     },
     {
       "id": "cap-148",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-credentials-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local credential backend with private record path and source precedence.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-credentials",
+      "relationship": "Local credential backend with private record path and source precedence."
     },
     {
       "id": "cap-149",
@@ -1413,7 +1605,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-agent-team"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party Agent Teams orchestration implementation; the selected general Cordis/Infra task does not create or operate teammate Sessions. Its extension semantics require a separate Agent Teams task."
     },
     {
       "id": "cap-154",
@@ -1421,7 +1613,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-agent-team-profile"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional Agent Teams product bundle that composes collaboration tools and Web UI; its patch is a mount example, not an independent plugin authoring API."
     },
     {
       "id": "cap-155",
@@ -1437,23 +1629,47 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-auto-review"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional Web Auto review policy/picker integration; not a general authorization-flow or sandbox-provider API. Requires its own policy task if selected."
     },
     {
       "id": "cap-157",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp"
       ],
-      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Chrome DevTools MCP is an explicitly selected browser implementation behind BrowserUseRegistry.",
+      "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-browser-use",
+      "relationship": "Chrome DevTools MCP is an explicitly selected browser implementation behind BrowserUseRegistry."
     },
     {
       "id": "cap-158",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp"
       ],
-      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Playwright MCP is an explicitly selected browser implementation behind BrowserUseRegistry.",
+      "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-browser-use",
+      "relationship": "Playwright MCP is an explicitly selected browser implementation behind BrowserUseRegistry."
     },
     {
       "id": "cap-159",
@@ -1461,15 +1677,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-browser-use-runtime"
       ],
-      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Shared browser-provider runtime library used by concrete experimental providers; not a standalone browser-use provider row. Its ./mcp helper remains pending API-entry review for provider authors."
     },
     {
       "id": "cap-160",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-browser-use-stagehand-native"
       ],
-      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Stagehand native is an experimental browser implementation behind BrowserUseRegistry with separate native prerequisites.",
+      "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-browser-use",
+      "relationship": "Stagehand native is an experimental browser implementation behind BrowserUseRegistry with separate native prerequisites."
     },
     {
       "id": "cap-161",
@@ -1477,7 +1705,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-client-ui-agent-team"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional Agent Teams Web header/action package; no selected Client UI task adds Agent Teams controls."
     },
     {
       "id": "cap-162",
@@ -1485,23 +1713,47 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-client-ui-voice-input"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional voice-input Client microphone UI; no selected Client task implements browser recording or speech recognition."
     },
     {
       "id": "cap-163",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp"
       ],
-      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Cua Driver MCP is an explicitly selected computer implementation behind ComputerUseRegistry and needs an external driver.",
+      "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-computer-use",
+      "relationship": "Cua Driver MCP is an explicitly selected computer implementation behind ComputerUseRegistry and needs an external driver."
     },
     {
       "id": "cap-164",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-native"
       ],
-      "reason": "Usable public provider, but explicitly experimental and selected through the stable singleton registry. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Cua Driver native is an experimental computer implementation behind ComputerUseRegistry and needs platform permissions.",
+      "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-computer-use",
+      "relationship": "Cua Driver native is an experimental computer implementation behind ComputerUseRegistry and needs platform permissions."
     },
     {
       "id": "cap-165",
@@ -1509,7 +1761,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-inspector"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Development inspector/Chrome DevTools integration for a running Host and Clients; not a reusable plugin lifecycle or provider contract."
     },
     {
       "id": "cap-166",
@@ -1517,7 +1769,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-ptc-runtime-python"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Experimental Python PTC runtime rejects sandbox policies and explicit timeout overrides; the selected provider task teaches the Node PTC backend with confinement checks, so this distinct experimental runtime is not a mount choice for that path."
     },
     {
       "id": "cap-167",
@@ -1525,7 +1777,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-schedule-bundle"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional Schedule composition bundle inserting time-context, schedule and UI rows; its patch is product composition evidence, not an authoring entry point."
     },
     {
       "id": "cap-168",
@@ -1549,7 +1801,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-tool-agent-team"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Model-facing Agent Teams tool implementation; no selected task authors teammate coordination tools."
     },
     {
       "id": "cap-171",
@@ -1557,7 +1809,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-voice-input-bundle"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional voice-input bundle composing speech service, local provider, Remote and browser microphone; the bundle patch is product composition, not a public generic authoring seam."
     },
     {
       "id": "cap-172",
@@ -1565,7 +1817,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-webworker-packer"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "VFS image packer for experimental browser-worker deployment artifacts; no selected plugin task builds such an image."
     },
     {
       "id": "cap-173",
@@ -1573,7 +1825,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-experimental-webworker-runtime"
       ],
-      "reason": "Public but feature-specific experimental implementation; no general plugin-author task in this artifact, and stable cross-owner contracts cover extension. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Experimental browser-worker harness host/runtime, not a Cordis plugin provider selected by the current Profile task."
     },
     {
       "id": "cap-174",
@@ -1611,35 +1863,83 @@
     },
     {
       "id": "cap-177",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-fs-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local filesystem provider; cwd is resolution base, not confinement.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-fs",
+      "relationship": "Local filesystem provider; cwd is resolution base, not confinement."
     },
     {
       "id": "cap-178",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-fs-observation-policy"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Observation policy guards writes and edits against Session read state and stale versions; it is not a filesystem backend.",
+      "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-fs",
+      "relationship": "Observation policy guards writes and edits against Session read state and stale versions; it is not a filesystem backend."
     },
     {
       "id": "cap-179",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-fs-sandbox"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Policy-aware filesystem writes; reads are local and write denial is explicit.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-fs",
+      "relationship": "Policy-aware filesystem writes; reads are local and write denial is explicit."
     },
     {
       "id": "cap-180",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-fs-ssh"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "SSH filesystem provider with remote path authority and ambiguous transport-loss writes.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-fs",
+      "relationship": "SSH filesystem provider with remote path authority and ambiguous transport-loss writes."
     },
     {
       "id": "cap-181",
@@ -1763,7 +2063,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-host-frontend-static"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Static Web frontend serving plugin, not the WebServer route registration contract."
     },
     {
       "id": "cap-194",
@@ -1771,7 +2071,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-host-open-in-app"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Host app-opening integration, not a generic Web route or webhook requirement."
     },
     {
       "id": "cap-195",
@@ -1779,7 +2079,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-host-plugin-inventory"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Product inventory Remote/controller, not the package manifest declaration or bundle loader."
     },
     {
       "id": "cap-196",
@@ -1787,7 +2087,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-host-product-telemetry-otel"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Optional OTel exporter, not required to implement a plugin capability."
     },
     {
       "id": "cap-197",
@@ -1843,11 +2143,23 @@
     },
     {
       "id": "cap-201",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-jobs-local"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/how-to-host-core.md"
+      ],
+      "summary": "jobs-local implements the abstract JobRegistry mounted by the background-job task.",
+      "pluginTask": "Start a bounded Host job and expose wait/read/kill through tool-jobs.",
+      "ownerSections": {
+        "references/how-to-host-core.md": "run-background-job"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-jobs",
+      "relationship": "jobs-local implements the abstract JobRegistry mounted by the background-job task."
     },
     {
       "id": "cap-202",
@@ -1885,27 +2197,63 @@
     },
     {
       "id": "cap-205",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-llm-deepseek"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "DeepSeek adapter transport and registration base; not a complete credential Profile.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-llm",
+      "relationship": "DeepSeek adapter transport and registration base; not a complete credential Profile."
     },
     {
       "id": "cap-206",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-llm-deepseek-account"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "DeepSeek account route resolves account token and has login/401 recovery.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-llm",
+      "relationship": "DeepSeek account route resolves account token and has login/401 recovery."
     },
     {
       "id": "cap-207",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-llm-deepseek-api-key"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "DeepSeek official route resolves credential service or environment and fails on missing key.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-llm",
+      "relationship": "DeepSeek official route resolves credential service or environment and fails on missing key."
     },
     {
       "id": "cap-208",
@@ -1913,15 +2261,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-llm-mock-server"
       ],
-      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Mock Messages HTTP/SSE server scripts failures for tests; it does not register a production LlmAdapter."
     },
     {
       "id": "cap-209",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-llm-pi-ai"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Pi-ai provides configurable routes and discovery with generation-bound registration cleanup.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-llm",
+      "relationship": "Pi-ai provides configurable routes and discovery with generation-bound registration cleanup."
     },
     {
       "id": "cap-210",
@@ -1929,15 +2289,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-llm-replay"
       ],
-      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Replay adapter derives scripts from test snapshots; it cannot prove a real provider transport and is not a production default."
     },
     {
       "id": "cap-211",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-llm-retry"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "LLM retry is an explicit Session projection and bounded retry policy, not an adapter default.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-llm",
+      "relationship": "LLM retry is an explicit Session projection and bounded retry policy, not an adapter default."
     },
     {
       "id": "cap-212",
@@ -1967,11 +2339,23 @@
     },
     {
       "id": "cap-214",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-lsp-stdio"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Stdio LSP provider with executable resolution and pooled workspace processes.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-lsp",
+      "relationship": "Stdio LSP provider with executable resolution and pooled workspace processes."
     },
     {
       "id": "cap-215",
@@ -1979,7 +2363,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-mcp-client"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "dsh-mcp-client is the separately mounted stdio or Streamable HTTP connector that discovers external MCP tools and owns reconnect. The selected infrastructure-provider task implements McpResourceRuntime resources and does not install or configure an external MCP server; no connector behavior is claimed here."
     },
     {
       "id": "cap-216",
@@ -2079,7 +2463,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-plan-mode"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "plan-mode is a separate UI/model planning state; selected manage-goal task uses GoalService durable state."
     },
     {
       "id": "cap-226",
@@ -2087,7 +2471,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-plugin-manager"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Product management service and tools for installed bundles; CLI dsh plugin already owns the external install task."
     },
     {
       "id": "cap-227",
@@ -2095,7 +2479,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party package inventory provider, not a required external plugin authoring contract."
     },
     {
       "id": "cap-228",
@@ -2117,27 +2501,63 @@
     },
     {
       "id": "cap-229",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-ptc-runtime-node"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Fresh-process Node PTC backend with required sandbox and resource limits.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-ptc-runtime",
+      "relationship": "Fresh-process Node PTC backend with required sandbox and resource limits."
     },
     {
       "id": "cap-230",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-pwsh-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local PowerShell executor starts fresh unconfined pwsh processes with UTF-8 output.",
+      "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-shell",
+      "relationship": "Local PowerShell executor starts fresh unconfined pwsh processes with UTF-8 output."
     },
     {
       "id": "cap-231",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-pwsh-sandbox"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Sandbox PowerShell executor requires sandbox and sandboxPolicy and refuses unavailable confinement.",
+      "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-shell",
+      "relationship": "Sandbox PowerShell executor requires sandbox and sandboxPolicy and refuses unavailable confinement."
     },
     {
       "id": "cap-232",
@@ -2153,7 +2573,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-repeat-tool-reminder"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "repeat-tool-reminder is a prompt hygiene policy, not a hard Tool guard or custom tool registration requirement."
     },
     {
       "id": "cap-234",
@@ -2175,11 +2595,23 @@
     },
     {
       "id": "cap-235",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-sandbox-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local platform sandbox selector that fails when required enforcement is unavailable.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-sandbox",
+      "relationship": "Local platform sandbox selector that fails when required enforcement is unavailable."
     },
     {
       "id": "cap-236",
@@ -2201,11 +2633,23 @@
     },
     {
       "id": "cap-237",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-sandbox-ssh"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "SSH sandbox provider that confines commands on the remote host.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-sandbox",
+      "relationship": "SSH sandbox provider that confines commands on the remote host."
     },
     {
       "id": "cap-238",
@@ -2213,7 +2657,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-sandbox-windows-acl"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "AclSandbox is a public direct Windows process-confinement API selected internally by dsh-sandbox-local, not a separately mountable Cordis SandboxProvider; the selected task mounts the local provider rather than implementing a custom Windows runner."
     },
     {
       "id": "cap-239",
@@ -2329,7 +2773,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-format-v0-to-v1"
       ],
-      "reason": "Published historical session migration implementation. It is selected by the format catalog during restore, not a normal extension point or dependency for a new plugin. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Historical v0-to-v1 migration selected by format catalog during restore; a new plugin writes the current format."
     },
     {
       "id": "cap-251",
@@ -2337,7 +2781,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-format-v1-to-v2"
       ],
-      "reason": "Published historical session migration implementation. It is selected by the format catalog during restore, not a normal extension point or dependency for a new plugin. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Historical v1-to-v2 migration selected by format catalog during restore; a new plugin writes the current format."
     },
     {
       "id": "cap-252",
@@ -2345,7 +2789,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-format-v2-to-v3"
       ],
-      "reason": "Published historical session migration implementation. It is selected by the format catalog during restore, not a normal extension point or dependency for a new plugin. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Historical v2-to-v3 migration selected by format catalog during restore; a new plugin writes the current format."
     },
     {
       "id": "cap-253",
@@ -2353,7 +2797,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-format-v3-to-v4"
       ],
-      "reason": "Published historical session migration implementation. It is selected by the format catalog during restore, not a normal extension point or dependency for a new plugin. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Historical v3-to-v4 migration selected by format catalog during restore; a new plugin writes the current format."
     },
     {
       "id": "cap-254",
@@ -2361,7 +2805,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-log-deepseek"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-log-deepseek is a provider-specific log integration; selected projection task folds canonical Session events."
     },
     {
       "id": "cap-255",
@@ -2369,23 +2813,45 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-log-export"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-log-export is a Client export feature; selected Host persistence task validates backend restart, not UI export."
     },
     {
       "id": "cap-256",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-session-persistence"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Session persistence defines the write handle and durability contract required for restart validation.",
+      "pluginTask": "Persist and reconstruct Session-derived state from the durable event log",
+      "ownerSections": {
+        "references/api-host-core.md": "Session extension and persistence"
+      }
     },
     {
       "id": "cap-257",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-session-persistence-jsonl"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "The JSONL backend implements SessionPersistence with single-writer ownership and flush/drain; mount exactly one backend.",
+      "pluginTask": "Persist and reconstruct Session-derived state from the durable event log",
+      "ownerSections": {
+        "references/api-host-core.md": "Session extension and persistence"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-session-persistence",
+      "relationship": "The JSONL backend implements SessionPersistence with single-writer ownership and flush/drain; mount exactly one backend."
     },
     {
       "id": "cap-258",
@@ -2407,11 +2873,23 @@
     },
     {
       "id": "cap-259",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-session-projection-cache"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Projection cache is an optional checkpoint accelerator; the Session event log remains authoritative and full replay must agree.",
+      "pluginTask": "Persist and reconstruct Session-derived state from the durable event log",
+      "ownerSections": {
+        "references/api-host-core.md": "Session extension and persistence"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-session-projection",
+      "relationship": "Projection cache is an optional checkpoint accelerator; the Session event log remains authoritative and full replay must agree."
     },
     {
       "id": "cap-260",
@@ -2453,7 +2931,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-snapshot"
       ],
-      "reason": "Repository/test harness support package, not a runtime plugin extension point for consumers. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Session snapshot package serves repository/test snapshots, not the canonical Session append/persistence contract."
     },
     {
       "id": "cap-264",
@@ -2461,7 +2939,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-stats"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-stats is a concrete projection; selected task teaches authoring a new pure fold instead of mounting this domain unit."
     },
     {
       "id": "cap-265",
@@ -2469,7 +2947,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-telemetry"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-telemetry is a telemetry provider with external sharing boundary; selected projection task does not enable egress."
     },
     {
       "id": "cap-266",
@@ -2477,7 +2955,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-telemetry-otel"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-telemetry-otel is an OpenTelemetry exporter; selected projection task does not enable external exporter."
     },
     {
       "id": "cap-267",
@@ -2485,7 +2963,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-title"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-title is a concrete title projection; selected task authors an independent projection key."
     },
     {
       "id": "cap-268",
@@ -2493,7 +2971,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-title-all-prompts-llm"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-title-all-prompts-llm is a title-generation provider, not required for a generic Session fold."
     },
     {
       "id": "cap-269",
@@ -2501,7 +2979,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-title-first-prompt-llm"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-title-first-prompt-llm is a title-generation provider, not required for a generic Session fold."
     },
     {
       "id": "cap-270",
@@ -2509,7 +2987,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-title-llm"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-title-llm is a title-generation service, not required for a generic Session fold."
     },
     {
       "id": "cap-271",
@@ -2517,7 +2995,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-session-turn-outline"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "session-turn-outline is a concrete UI turn-outline projection; selected task authors a separate host-only fold."
     },
     {
       "id": "cap-272",
@@ -2561,7 +3039,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-shell-env"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Environment filtering/selection helper for shell execution, not the ShellExecutor service itself."
     },
     {
       "id": "cap-275",
@@ -2587,15 +3065,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-skill-badge"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "skill-badge projects UI skill indicators; selected provide-skills task uses SkillRegistry, not badge UI."
     },
     {
       "id": "cap-277",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-skill-filesystem"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/how-to-host-core.md"
+      ],
+      "summary": "skill-filesystem provides root discovery and watcher invalidation through the SkillRegistry provider seam.",
+      "pluginTask": "Register runtime skills or a filesystem Skill provider.",
+      "ownerSections": {
+        "references/how-to-host-core.md": "provide-skills"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-skill",
+      "relationship": "skill-filesystem provides root discovery and watcher invalidation through the SkillRegistry provider seam."
     },
     {
       "id": "cap-278",
@@ -2603,7 +3093,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-skill-office"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "skill-office provides office-specific skill catalog content; selected generic provider task does not mount that bundle."
     },
     {
       "id": "cap-279",
@@ -2625,11 +3115,23 @@
     },
     {
       "id": "cap-280",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-spill-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Local Session-scoped spill backend with best-effort startup sweep.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-spill",
+      "relationship": "Local Session-scoped spill backend with best-effort startup sweep."
     },
     {
       "id": "cap-281",
@@ -2637,15 +3139,25 @@
       "candidates": [
         "package:@deepseek-ai/dsh-spill-policy"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Tool-result retention wrapper that can call SpillStore; it is not a spill storage backend."
     },
     {
       "id": "cap-282",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-ssh"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/api-infra-runtime-surface.md"
+      ],
+      "summary": "SSH connection service composes remote filesystem, sandbox and subprocess providers with verified helper and cleanup.",
+      "pluginTask": "Package and mount a validated Cordis plugin with optional remote provider composition",
+      "ownerSections": {
+        "references/api-infra-runtime-surface.md": "Infrastructure task API"
+      }
     },
     {
       "id": "cap-283",
@@ -2685,19 +3197,43 @@
     },
     {
       "id": "cap-285",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-storage-json"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "JSON storage form that requires a root and supports domain routing.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-storage",
+      "relationship": "JSON storage form that requires a root and supports domain routing."
     },
     {
       "id": "cap-286",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-storage-sqlite"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "SQLite storage form with configured database and version checks.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-storage",
+      "relationship": "SQLite storage form with configured database and version checks."
     },
     {
       "id": "cap-287",
@@ -2719,43 +3255,103 @@
     },
     {
       "id": "cap-288",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-acp"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "ACP provider is external one-shot with no optional start capabilities and subprocess cleanup.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subagent",
+      "relationship": "ACP provider is external one-shot with no optional start capabilities and subprocess cleanup."
     },
     {
       "id": "cap-289",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-claude-code"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Claude Code CLI provider has its own command/config and external subprocess cleanup.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subagent",
+      "relationship": "Claude Code CLI provider has its own command/config and external subprocess cleanup."
     },
     {
       "id": "cap-290",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-codex"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Codex CLI provider has its own command/config and external subprocess cleanup.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subagent",
+      "relationship": "Codex CLI provider has its own command/config and external subprocess cleanup."
     },
     {
       "id": "cap-291",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-dsh-sdk"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "DSH SDK provider runs an independent child runtime with distinct option capabilities.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subagent",
+      "relationship": "DSH SDK provider runs an independent child runtime with distinct option capabilities."
     },
     {
       "id": "cap-292",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-fork-in-process"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Fork in-process provider seeds completed parent turns and supports continuable preparation.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subagent",
+      "relationship": "Fork in-process provider seeds completed parent turns and supports continuable preparation."
     },
     {
       "id": "cap-293",
@@ -2763,15 +3359,27 @@
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-in-process-driver"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Shared one-shot in-process driver is a library dependency of spawn/fork providers; no Cordis apply row is exported."
     },
     {
       "id": "cap-294",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent-spawn-in-process"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/api-host-core.md"
+      ],
+      "summary": "Spawn in-process provider starts fresh and supports in-process start overrides and continuable preparation.",
+      "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
+      "ownerSections": {
+        "references/api-host-core.md": "Optional first-party mount choices"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subagent",
+      "relationship": "Spawn in-process provider starts fresh and supports in-process start overrides and continuable preparation."
     },
     {
       "id": "cap-295",
@@ -2793,19 +3401,43 @@
     },
     {
       "id": "cap-296",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subprocess-local"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "Host-local subprocess backend with managed process disposal.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subprocess",
+      "relationship": "Host-local subprocess backend with managed process disposal."
     },
     {
       "id": "cap-297",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-subprocess-ssh"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "SSH subprocess backend whose uncertain remote launch is not automatically replayed.",
+      "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Implement or consume an infrastructure provider"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-subprocess",
+      "relationship": "SSH subprocess backend whose uncertain remote launch is not automatically replayed."
     },
     {
       "id": "cap-298",
@@ -2887,7 +3519,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-bash"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party Bash model tool; custom Host tool task registers through dsh-tools and does not mount this implementation."
     },
     {
       "id": "cap-307",
@@ -2895,7 +3527,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-bash-persistent"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party persistent Bash model tool; custom Host tool task does not own its shell process lifecycle."
     },
     {
       "id": "cap-308",
@@ -2911,7 +3543,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-cordis"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-cordis manages composition through a model surface; selected Host tool task only registers a custom tool."
     },
     {
       "id": "cap-310",
@@ -2919,7 +3551,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-fs"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party filesystem model tool; custom Host tool task does not mount its file operation implementation."
     },
     {
       "id": "cap-311",
@@ -2927,7 +3559,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-fs-search"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party filesystem search model tool; custom Host tool task does not mount its search implementation."
     },
     {
       "id": "cap-312",
@@ -2951,7 +3583,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-lsp"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party LSP model tool; custom Host tool task does not mount its language-server implementation."
     },
     {
       "id": "cap-315",
@@ -2959,7 +3591,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-present"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-present is a first-party presentation consumer, not required to define canonical Tool output."
     },
     {
       "id": "cap-316",
@@ -2967,7 +3599,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-pwsh"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party PowerShell model tool; custom Host tool task does not mount its process implementation."
     },
     {
       "id": "cap-317",
@@ -2975,7 +3607,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-pwsh-persistent"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party persistent PowerShell model tool; custom Host tool task does not mount its process implementation."
     },
     {
       "id": "cap-318",
@@ -2983,7 +3615,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-ralph"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-ralph is a bounded product workflow loop; selected run-workflow task calls WorkflowEngine directly."
     },
     {
       "id": "cap-319",
@@ -2991,7 +3623,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-session-query"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-session-query is the model query surface; selected projection/persistence task does not invoke model search."
     },
     {
       "id": "cap-320",
@@ -3007,7 +3639,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-str-replace-editor"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "First-party string-replace editor model tool; custom Host tool task does not mount its editor implementation."
     },
     {
       "id": "cap-322",
@@ -3031,7 +3663,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-terminal"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-terminal is a product terminal model surface; selected Host task does not implement terminal sessions."
     },
     {
       "id": "cap-325",
@@ -3039,7 +3671,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-todo"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-todo is a model task-state feature; selected GoalService task uses durable goal state instead."
     },
     {
       "id": "cap-326",
@@ -3047,7 +3679,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-web"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-web is a product web model surface; selected Host task does not implement web fetching."
     },
     {
       "id": "cap-327",
@@ -3063,7 +3695,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-tool-workspace-dependencies"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "tool-workspace-dependencies reports bundled runtime paths; selected provide-skills task registers skills, not runtime discovery."
     },
     {
       "id": "cap-329",
@@ -3085,19 +3717,41 @@
     },
     {
       "id": "cap-330",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-typert-generator"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "Published WorkspaceTypertGenerator creates the Host and Remote artifacts required by the task.",
+      "pluginTask": "Host exposes a generated typed Remote with structured failure/cancellation",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Build-time Remote generation"
+      }
     },
     {
       "id": "cap-331",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-typert-loader"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/how-to-client-web.md"
+      ],
+      "summary": "Typert loader discovers generated ./typert Host artifacts from Loader entries and registers them with the Typert registry; explicit nested packages use its packages option.",
+      "pluginTask": "Mount generated Remote reflection and observe registration/disposal",
+      "ownerSections": {
+        "references/how-to-client-web.md": "Host 入口与 Remote"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-typert-registry",
+      "relationship": "Typert loader discovers generated ./typert Host artifacts from Loader entries and registers them with the Typert registry; explicit nested packages use its packages option."
     },
     {
       "id": "cap-332",
@@ -3213,11 +3867,21 @@
     },
     {
       "id": "cap-341",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/dsh-web"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "client-web"
+      ],
+      "owners": [
+        "references/api-client-web-surface.md"
+      ],
+      "summary": "WebRuntime owns provider registration, selection and typed request/result behavior.",
+      "pluginTask": "Web provider runs with validated config and redirect boundary",
+      "ownerSections": {
+        "references/api-client-web-surface.md": "Web provider request and result symbols"
+      }
     },
     {
       "id": "cap-342",
@@ -3225,7 +3889,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-web-app"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Web application Host composition starts the shell; the selected Web provider extension uses ctx.web."
     },
     {
       "id": "cap-343",
@@ -3233,7 +3897,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-web-fetch-http"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "HTTP fetch provider is a concrete ctx.web registration example; the reusable contract is WebFetchProvider."
     },
     {
       "id": "cap-344",
@@ -3241,7 +3905,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-web-frontend"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Frontend shell is a served product bundle, not a provider registration surface."
     },
     {
       "id": "cap-345",
@@ -3249,7 +3913,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-web-search-deepseek"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "DeepSeek search provider is a concrete ctx.web registration with its own credentials; selected task owns the WebSearchProvider contract."
     },
     {
       "id": "cap-346",
@@ -3257,7 +3921,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-web-search-exa"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Exa search provider is a concrete ctx.web registration with its own credentials; selected task owns the WebSearchProvider contract."
     },
     {
       "id": "cap-347",
@@ -3265,7 +3929,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-web-search-perplexity"
       ],
-      "reason": "domain/product capability consolidated under reusable service, Remote, slot, type, or composition owner It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Perplexity search provider is a concrete ctx.web registration with its own credentials; selected task owns the WebSearchProvider contract."
     },
     {
       "id": "cap-348",
@@ -3287,11 +3951,23 @@
     },
     {
       "id": "cap-349",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-webhook-github"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/how-to-infra-runtime.md"
+      ],
+      "summary": "The GitHub adapter verifies signed raw requests before handing normalized delivery to WebhookRuntime.",
+      "pluginTask": "authenticated external event starts plugin work without callbacks surviving unload",
+      "ownerSections": {
+        "references/how-to-infra-runtime.md": "Register a web route and webhook rule"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-webhook",
+      "relationship": "The GitHub adapter verifies signed raw requests before handing normalized delivery to WebhookRuntime."
     },
     {
       "id": "cap-350",
@@ -3299,7 +3975,7 @@
       "candidates": [
         "package:@deepseek-ai/dsh-win32-process"
       ],
-      "reason": "Provider, adapter, tool, operational integration, or management implementation is documented through its stable seam and composition path. It is retained as target-version evidence, not a separate plugin-author contract."
+      "reason": "Windows process helper supports local subprocess/sandbox implementations; the selected package task mounts those providers and does not call Win32 process primitives directly."
     },
     {
       "id": "cap-351",
@@ -3321,11 +3997,23 @@
     },
     {
       "id": "cap-352",
-      "decision": "excluded",
+      "decision": "merged",
       "candidates": [
         "package:@deepseek-ai/dsh-workflow-ptc"
       ],
-      "reason": "Public first-party provider, policy, projection, command, or tool package. Covered as a concrete mount/configuration option under its canonical subsystem contract rather than as a duplicate top-level topic. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "host-core"
+      ],
+      "owners": [
+        "references/how-to-host-core.md"
+      ],
+      "summary": "workflow-ptc supplies the concrete engine required by the workflow task.",
+      "pluginTask": "Expose a bounded multi-agent workflow through tool-workflow.",
+      "ownerSections": {
+        "references/how-to-host-core.md": "run-workflow"
+      },
+      "mergedInto": "package:@deepseek-ai/dsh-workflow",
+      "relationship": "workflow-ptc supplies the concrete engine required by the workflow task."
     },
     {
       "id": "cap-353",
@@ -3385,11 +4073,21 @@
     },
     {
       "id": "cap-360",
-      "decision": "excluded",
+      "decision": "included",
       "candidates": [
         "package:@deepseek-ai/schemastery"
       ],
-      "reason": "Public Cordis framework surface belongs to the Cordis lifecycle owner; this group uses it only for composition and cleanup. It is retained as target-version evidence, not a separate plugin-author contract."
+      "topics": [
+        "infra-runtime"
+      ],
+      "owners": [
+        "references/api-infra-runtime-surface.md"
+      ],
+      "summary": "Schemastery builds the exported Standard Schema Config validated by Cordis before plugin apply.",
+      "pluginTask": "Package and mount a validated Cordis plugin with optional remote provider composition",
+      "ownerSections": {
+        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+      }
     },
     {
       "id": "cap-361",
@@ -3421,7 +4119,7 @@
       "candidates": [
         "subsystems:attachment"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page attachment is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-365",
@@ -3429,7 +4127,7 @@
       "candidates": [
         "subsystems:boot"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page boot is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-366",
@@ -3437,7 +4135,7 @@
       "candidates": [
         "subsystems:browser-use"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page browser-use is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-367",
@@ -3487,7 +4185,7 @@
       "candidates": [
         "subsystems:computer-use"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page computer-use is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-372",
@@ -3511,7 +4209,7 @@
       "candidates": [
         "subsystems:credentials"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page credentials is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-375",
@@ -3543,7 +4241,7 @@
       "candidates": [
         "subsystems:filesystem"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page filesystem is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-379",
@@ -3559,7 +4257,7 @@
       "candidates": [
         "subsystems:invariants"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page invariants is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-381",
@@ -3583,7 +4281,7 @@
       "candidates": [
         "subsystems:lsp"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page lsp is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-384",
@@ -3591,7 +4289,7 @@
       "candidates": [
         "subsystems:mcp"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page mcp is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-385",
@@ -3607,7 +4305,7 @@
       "candidates": [
         "subsystems:otel"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page otel is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-387",
@@ -3647,7 +4345,7 @@
       "candidates": [
         "subsystems:ptc-runtime"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page ptc-runtime is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-392",
@@ -3663,7 +4361,7 @@
       "candidates": [
         "subsystems:sandbox"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page sandbox is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-394",
@@ -3743,7 +4441,7 @@
       "candidates": [
         "subsystems:shell"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page shell is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-404",
@@ -3775,7 +4473,7 @@
       "candidates": [
         "subsystems:spill"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page spill is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-408",
@@ -3783,7 +4481,7 @@
       "candidates": [
         "subsystems:ssh"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page ssh is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-409",
@@ -3791,7 +4489,7 @@
       "candidates": [
         "subsystems:storage"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page storage is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-410",
@@ -3807,7 +4505,7 @@
       "candidates": [
         "subsystems:subprocess"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page subprocess is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-412",
@@ -3855,7 +4553,7 @@
       "candidates": [
         "subsystems:typert"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page typert is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-418",
@@ -3913,7 +4611,7 @@
       "candidates": [
         "subsystems:webhook"
       ],
-      "reason": "This subsystem page is documentation evidence for an included public package seam; it is not a second independently callable plugin capability."
+      "reason": "The target subsystem page webhook is documentation evidence for the corresponding public package, not a separately installable API; verify its claims against that package's declarations."
     },
     {
       "id": "cap-424",
@@ -3942,7 +4640,9 @@
         "package:@deepseek-ai/dsh-agent",
         "package:@deepseek-ai/dsh-agent-loop",
         "package:@deepseek-ai/dsh-scope",
-        "package:@deepseek-ai/dsh-session"
+        "package:@deepseek-ai/dsh-session",
+        "package:@deepseek-ai/dsh-agent-default-model",
+        "package:@deepseek-ai/dsh-agent-tool-presentation"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-system-prompt:.:SystemPrompt",
@@ -3961,14 +4661,24 @@
           "output": "references/how-to-host-core.md",
           "section": "register-host-tool"
         }
-      ]
+      ],
+      "userIntents": [
+        "添加供 Agent 调用的 Host Tool",
+        "为插件注册可取消的工具"
+      ],
+      "entry": {
+        "output": "references/how-to-host-core.md",
+        "section": "register-host-tool",
+        "anchor": "register-host-tool"
+      }
     },
     {
       "id": "extend-system-prompt",
       "outcome": "Add scoped prompt sections, variables, context, or tool schema providers.",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-system-prompt"
+        "package:@deepseek-ai/dsh-system-prompt",
+        "package:@deepseek-ai/dsh-agent-instructions"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-system-prompt:.:SystemPrompt"
@@ -3992,7 +4702,12 @@
       "decision": "covered",
       "candidates": [
         "cookbook:adding-an-llm-adapter",
-        "package:@deepseek-ai/dsh-llm"
+        "package:@deepseek-ai/dsh-llm",
+        "package:@deepseek-ai/dsh-llm-deepseek",
+        "package:@deepseek-ai/dsh-llm-deepseek-account",
+        "package:@deepseek-ai/dsh-llm-deepseek-api-key",
+        "package:@deepseek-ai/dsh-llm-pi-ai",
+        "package:@deepseek-ai/dsh-llm-retry"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-llm:.:LlmRuntime",
@@ -4017,7 +4732,10 @@
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-session-projection",
-        "package:@deepseek-ai/dsh-session-query"
+        "package:@deepseek-ai/dsh-session-query",
+        "package:@deepseek-ai/dsh-session-persistence",
+        "package:@deepseek-ai/dsh-session-persistence-jsonl",
+        "package:@deepseek-ai/dsh-session-projection-cache"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-session:.:Session",
@@ -4092,7 +4810,8 @@
       "outcome": "Start a bounded Host job and expose wait/read/kill through tool-jobs.",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-jobs"
+        "package:@deepseek-ai/dsh-jobs",
+        "package:@deepseek-ai/dsh-jobs-local"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-jobs:.:JobRegistry",
@@ -4116,7 +4835,8 @@
       "outcome": "Register runtime skills or a filesystem Skill provider.",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-skill"
+        "package:@deepseek-ai/dsh-skill",
+        "package:@deepseek-ai/dsh-skill-filesystem"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-skill:.:SkillRegistry",
@@ -4140,7 +4860,13 @@
       "outcome": "Add one-shot or continuable subagent delegation.",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-subagent"
+        "package:@deepseek-ai/dsh-subagent",
+        "package:@deepseek-ai/dsh-subagent-acp",
+        "package:@deepseek-ai/dsh-subagent-claude-code",
+        "package:@deepseek-ai/dsh-subagent-codex",
+        "package:@deepseek-ai/dsh-subagent-dsh-sdk",
+        "package:@deepseek-ai/dsh-subagent-fork-in-process",
+        "package:@deepseek-ai/dsh-subagent-spawn-in-process"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
@@ -4164,7 +4890,8 @@
       "outcome": "Expose a bounded multi-agent workflow through tool-workflow.",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-workflow"
+        "package:@deepseek-ai/dsh-workflow",
+        "package:@deepseek-ai/dsh-workflow-ptc"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-workflow:.:WorkflowEngine",
@@ -4234,11 +4961,18 @@
       "outcome": "Host exposes a generated typed Remote with structured failure/cancellation",
       "decision": "covered",
       "candidates": [
-        "cookbook:adding-a-remote-api"
+        "cookbook:adding-a-remote-api",
+        "package:@deepseek-ai/dsh-client-modules",
+        "package:@deepseek-ai/dsh-typert-generator",
+        "package:@deepseek-ai/dsh-typert-loader"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-api-gateway:.:TypertGatewayService",
-        "export:@deepseek-ai/dsh-api-gateway:./client:ClientRemote"
+        "export:@deepseek-ai/dsh-api-gateway:./client:ClientRemote",
+        "export:@deepseek-ai/dsh-typert-generator:.:WorkspaceTypertGenerator",
+        "export:@deepseek-ai/dsh-typert-protocol:.:Remote",
+        "export:@deepseek-ai/dsh-typert-protocol:.:RemoteError",
+        "export:@deepseek-ai/dsh-typert-protocol:.:RemoteResult"
       ],
       "compositionSteps": [
         "declare service and error codes",
@@ -4259,7 +4993,8 @@
       "outcome": "Config uses revision-fenced live writes and unset restores inheritance",
       "decision": "covered",
       "candidates": [
-        "cookbook:adding-a-settings-card"
+        "cookbook:adding-a-settings-card",
+        "package:@deepseek-ai/dsh-client-ui-settings"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-settings:.:SettingsForms",
@@ -4284,11 +5019,15 @@
       "outcome": "Client half loads, contributes through a typed slot, and withdraws on unload",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-client-ui-slots"
+        "package:@deepseek-ai/dsh-client-ui-slots",
+        "package:@deepseek-ai/dsh-client-ui-conversation",
+        "package:@deepseek-ai/dsh-client-ui-renderer"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-client-ui-slots:.:SlotMap",
-        "export:@deepseek-ai/dsh-client-ui-slots:.:SlotCore"
+        "export:@deepseek-ai/dsh-client-ui-slots:.:SlotCore",
+        "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+        "export:@deepseek-ai/dsh-client-ui-slots:.:PropsRuntime"
       ],
       "compositionSteps": [
         "publish root and ./client exports plus dsh.client metadata",
@@ -4308,12 +5047,17 @@
       "outcome": "Web provider runs with validated config and redirect boundary",
       "decision": "covered",
       "candidates": [
-        "subsystems:web-client"
+        "subsystems:web-client",
+        "package:@deepseek-ai/dsh-web"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-web:.:WebRuntime",
         "export:@deepseek-ai/dsh-web:.:WebFetchProvider",
-        "export:@deepseek-ai/dsh-web:.:WebSearchProvider"
+        "export:@deepseek-ai/dsh-web:.:WebSearchProvider",
+        "export:@deepseek-ai/dsh-web:.:WebSearchRequest",
+        "export:@deepseek-ai/dsh-web:.:WebSearchResult",
+        "export:@deepseek-ai/dsh-web:.:WebFetchRequest",
+        "export:@deepseek-ai/dsh-web:.:WebFetchResult"
       ],
       "compositionSteps": [
         "compose provider",
@@ -4334,7 +5078,8 @@
       "outcome": "Client presents persisted deliverable/document facts",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-client-store"
+        "package:@deepseek-ai/dsh-client-store",
+        "package:@deepseek-ai/dsh-client-ui-deliverables"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-office-to-pdf:.:OfficeToPdf",
@@ -4359,7 +5104,8 @@
       "outcome": "Approved Host/Client halves run and report load/render failures",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-api-remotes"
+        "package:@deepseek-ai/dsh-api-remotes",
+        "package:@deepseek-ai/dsh-cordis-client-runner"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-cordis-client-runner:./client:DynamicCordisPackageRunner"
@@ -4383,7 +5129,8 @@
       "outcome": "Client consumes terminal stream and disposes it",
       "decision": "covered",
       "candidates": [
-        "package:@deepseek-ai/dsh-settings"
+        "package:@deepseek-ai/dsh-settings",
+        "package:@deepseek-ai/dsh-api-terminal-controller"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-api-terminal-controller:.:TerminalController",
@@ -4434,16 +5181,25 @@
       "decision": "covered",
       "candidates": [
         "cookbook:adding-a-package",
-        "package:@deepseek-ai/dsh-package-manifest"
+        "package:@deepseek-ai/dsh-package-manifest",
+        "package:@deepseek-ai/cordis",
+        "package:@deepseek-ai/cordis-plugin-include",
+        "package:@deepseek-ai/cordis-plugin-loader",
+        "package:@deepseek-ai/schemastery"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-package-manifest:.:DshPackageManifest",
         "export:@deepseek-ai/dsh-package-manifest:.:DshManifest",
         "export:@deepseek-ai/dsh-package-manifest:.:DshBundleManifest",
         "export:@deepseek-ai/dsh-package-manifest:.:DshProfileManifest",
-        "export:@deepseek-ai/dsh-package-manifest:.:DshClientManifest"
+        "export:@deepseek-ai/dsh-package-manifest:.:DshClientManifest",
+        "export:@deepseek-ai/cordis:.:Context",
+        "export:@deepseek-ai/cordis:.:Service",
+        "export:@deepseek-ai/cordis-plugin-loader:.:EntryOptions",
+        "export:@deepseek-ai/cordis-plugin-include:.:PatchOptions"
       ],
       "compositionSteps": [
+        "Define a Cordis apply(ctx, config) plugin with declared injections and effect-owned cleanup.",
         "compile Host and optional Client surfaces",
         "declare package and bundle patch",
         "install packed package",
@@ -4455,7 +5211,7 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Procedure"
+          "section": "Package and activate a bundle"
         }
       ]
     },
@@ -4477,7 +5233,27 @@
         "package:@deepseek-ai/dsh-spill",
         "package:@deepseek-ai/dsh-storage",
         "package:@deepseek-ai/dsh-storage-domain",
-        "package:@deepseek-ai/dsh-subprocess"
+        "package:@deepseek-ai/dsh-subprocess",
+        "package:@deepseek-ai/dsh-attachment-local",
+        "package:@deepseek-ai/dsh-credentials-local",
+        "package:@deepseek-ai/dsh-fs-local",
+        "package:@deepseek-ai/dsh-fs-sandbox",
+        "package:@deepseek-ai/dsh-fs-ssh",
+        "package:@deepseek-ai/dsh-lsp-stdio",
+        "package:@deepseek-ai/dsh-ptc-runtime-node",
+        "package:@deepseek-ai/dsh-sandbox-local",
+        "package:@deepseek-ai/dsh-sandbox-ssh",
+        "package:@deepseek-ai/dsh-spill-local",
+        "package:@deepseek-ai/dsh-storage-json",
+        "package:@deepseek-ai/dsh-storage-sqlite",
+        "package:@deepseek-ai/dsh-subprocess-local",
+        "package:@deepseek-ai/dsh-subprocess-ssh",
+        "package:@deepseek-ai/dsh-bash-local",
+        "package:@deepseek-ai/dsh-bash-sandbox",
+        "package:@deepseek-ai/dsh-pwsh-local",
+        "package:@deepseek-ai/dsh-pwsh-sandbox",
+        "package:@deepseek-ai/dsh-fs-observation-policy",
+        "package:@deepseek-ai/dsh-ssh"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-attachment:.:AttachmentStore",
@@ -4504,7 +5280,7 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Completion criteria"
+          "section": "Implement or consume an infrastructure provider"
         }
       ]
     },
@@ -4514,7 +5290,8 @@
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-host-webserver",
-        "package:@deepseek-ai/dsh-webhook"
+        "package:@deepseek-ai/dsh-webhook",
+        "package:@deepseek-ai/dsh-webhook-github"
       ],
       "apiObjects": [
         "export:@deepseek-ai/dsh-host-webserver:.:WebServer",
@@ -4530,7 +5307,7 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Completion criteria"
+          "section": "Register a web route and webhook rule"
         }
       ]
     },
@@ -4558,7 +5335,7 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Completion criteria"
+          "section": "Compose a preset and a Host to Client Remote"
         }
       ]
     },
@@ -4568,18 +5345,19 @@
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-browser-use",
-        "package:@deepseek-ai/dsh-computer-use"
+        "package:@deepseek-ai/dsh-computer-use",
+        "package:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp",
+        "package:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp",
+        "package:@deepseek-ai/dsh-experimental-browser-use-stagehand-native",
+        "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp",
+        "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-native"
       ],
       "apiObjects": [
-        "export:@deepseek-ai/dsh-agent-preset-registry:.:AgentPresetRegistry",
-        "export:@deepseek-ai/dsh-attachment:.:AttachmentStore",
-        "export:@deepseek-ai/dsh-authorization:.:AuthorizationService",
-        "export:@deepseek-ai/dsh-credentials:.:CredentialProvider",
-        "export:@deepseek-ai/dsh-fs:.:FileSystem",
-        "export:@deepseek-ai/dsh-host-webserver:.:WebServer"
+        "export:@deepseek-ai/dsh-browser-use:.:BrowserUseRegistry",
+        "export:@deepseek-ai/dsh-computer-use:.:ComputerUseRegistry"
       ],
       "compositionSteps": [
-        "mount stable registry",
+        "mount exactly one stable BrowserUseRegistry or ComputerUseRegistry",
         "mount one experimental provider",
         "create/resume applicable Session",
         "observe provider tools",
@@ -4589,7 +5367,7 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Completion criteria"
+          "section": "Select an experimental browser or computer provider"
         }
       ]
     }
