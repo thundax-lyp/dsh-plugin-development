@@ -220,5 +220,41 @@
         "path": "vendor/include/src/index.ts"
       }
     ]
+  },
+  {
+    "id": "approval-requires-open-turn",
+    "kind": "implemented-behavior",
+    "topic": "host-core",
+    "decision": "accepted",
+    "owner": "references/api-host-core.md",
+    "summary": "ApprovalService.request rejects outside an open Agent turn, while slash command dispatch runs without opening a turn.",
+    "evidence": [
+      {
+        "category": "runtime",
+        "path": "packages/interaction/user-approval/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/interaction/commands/src/index.ts"
+      }
+    ]
+  },
+  {
+    "id": "config-form-staged-revision",
+    "kind": "implemented-behavior",
+    "topic": "client-web",
+    "decision": "accepted",
+    "owner": "references/api-client-web.md",
+    "summary": "A staged editor passes its edit-start revision as expectedRevision so a concurrent Host update cannot be silently overwritten.",
+    "evidence": [
+      {
+        "category": "public-api",
+        "path": "packages/client/ui-settings/src/client/config-form-types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-settings/src/client/config-form.ts"
+      }
+    ]
   }
 ]

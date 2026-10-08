@@ -152,7 +152,7 @@
       "summary": "目标 tag 中用于基础设施 provider、组合或 Remote 插件任务的公开能力：cookbook:adding-a-package。",
       "pluginTask": "把 provider 或基础设施插件打包进目标 Profile，观察调用并验证资源清理。",
       "ownerSections": {
-        "references/api-infra-runtime.md": "Package and bundle declaration"
+        "references/api-infra-runtime.md": "包与 bundle 声明"
       }
     },
     {
@@ -214,7 +214,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：cookbook:adding-a-tool。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Tool runtime and definition"
+        "references/api-host-core.md": "Tool runtime 与定义"
       }
     },
     {
@@ -240,7 +240,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：cookbook:adding-an-llm-adapter。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "LLM provider and adapter"
+        "references/api-host-core.md": "LLM provider 与 adapter"
       }
     },
     {
@@ -290,7 +290,7 @@
       "summary": "Cordis Context, Service, Plugin, Fiber and effect lifecycle used to create and mount a plugin.",
       "pluginTask": "Create a Cordis plugin with scoped resources and verify activation and unload",
       "ownerSections": {
-        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+        "references/api-infra-runtime-surface.md": "Cordis 生命周期公开 API"
       }
     },
     {
@@ -324,7 +324,7 @@
       "summary": "Include parses insert patches and forwards rows into the Cordis Loader.",
       "pluginTask": "Compose and mount a Cordis package in a Profile",
       "ownerSections": {
-        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+        "references/api-infra-runtime-surface.md": "Cordis 生命周期公开 API"
       },
       "mergedInto": "package:@deepseek-ai/cordis",
       "relationship": "Include parses insert patches and forwards rows into the Cordis Loader."
@@ -344,7 +344,7 @@
       "summary": "Loader resolves plugin rows and owns Fiber activation, PENDING state and disposal.",
       "pluginTask": "Compose and mount a Cordis package in a Profile",
       "ownerSections": {
-        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+        "references/api-infra-runtime-surface.md": "Cordis 生命周期公开 API"
       },
       "mergedInto": "package:@deepseek-ai/cordis",
       "relationship": "Loader resolves plugin rows and owns Fiber activation, PENDING state and disposal."
@@ -412,7 +412,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-agent。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Agent, Session, and scope"
+        "references/api-host-core.md": "Agent、Session 与 scope"
       }
     },
     {
@@ -430,7 +430,7 @@
       "summary": "Default-model selection service reads and persists provider/model/effort separately from LLM route availability.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Agent defaults and presentation"
+        "references/api-host-core.md": "Agent 默认设置与呈现"
       },
       "mergedInto": "package:@deepseek-ai/dsh-agent",
       "relationship": "Default-model selection service reads and persists provider/model/effort separately from LLM route availability."
@@ -450,7 +450,7 @@
       "summary": "Agent instruction projection reads configured files with root and byte-budget limits and owns refresh/watchers.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Agent defaults and presentation"
+        "references/api-host-core.md": "Agent 默认设置与呈现"
       },
       "mergedInto": "package:@deepseek-ai/dsh-system-prompt",
       "relationship": "Agent instruction projection reads configured files with root and byte-budget limits and owns refresh/watchers."
@@ -470,7 +470,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-agent-loop。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Agent, Session, and scope"
+        "references/api-host-core.md": "Agent、Session 与 scope"
       }
     },
     {
@@ -532,7 +532,7 @@
       "summary": "Tool presentation uses native/ptc/both mode; ptc modes require PTC runtime and only affect scoped presentation.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Agent defaults and presentation"
+        "references/api-host-core.md": "Agent 默认设置与呈现"
       },
       "mergedInto": "package:@deepseek-ai/dsh-tools",
       "relationship": "Tool presentation uses native/ptc/both mode; ptc modes require PTC runtime and only affect scoped presentation."
@@ -618,7 +618,7 @@
       "summary": "Terminal Host controller and Client stream facade have distinct create, retain, follow and disposal paths.",
       "pluginTask": "Client consumes terminal stream and disposes it",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Client/Web task API"
+        "references/api-client-web-surface.md": "Client/Web 任务所需公开对象"
       }
     },
     {
@@ -686,7 +686,7 @@
       "summary": "Local durable attachment backend with integrity checks and persistent objects.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "File, credential and language providers"
+        "references/how-to-infra-runtime.md": "文件、凭据与语言 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-attachment",
       "relationship": "Local durable attachment backend with integrity checks and persistent objects."
@@ -732,7 +732,7 @@
       "summary": "Local Bash executor starts fresh unconfined bash processes with output/time budgets.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Local Bash executor starts fresh unconfined bash processes with output/time budgets."
@@ -752,7 +752,7 @@
       "summary": "Sandbox Bash executor requires sandbox and sandboxPolicy and refuses unavailable confinement.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Sandbox Bash executor requires sandbox and sandboxPolicy and refuses unavailable confinement."
@@ -954,7 +954,7 @@
       "summary": "Conversation publishes the header-actions slot used by the selected Client contribution.",
       "pluginTask": "Client half loads, contributes through a typed slot, and withdraws on unload",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Slot authoring symbols"
+        "references/api-client-web-surface.md": "Slot 编写所需符号"
       },
       "mergedInto": "package:@deepseek-ai/dsh-client-ui-renderer",
       "relationship": "Conversation publishes the header-actions slot used by the selected Client contribution."
@@ -982,7 +982,7 @@
       "summary": "Deliverables publishes the file actions slot used by the selected Client contribution.",
       "pluginTask": "Client presents persisted deliverable/document facts",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Slot authoring symbols"
+        "references/api-client-web-surface.md": "Slot 编写所需符号"
       }
     },
     {
@@ -1096,7 +1096,7 @@
       "summary": "The plugin manager publishes a keyed activation slot that a third-party Client package can contribute to.",
       "pluginTask": "A Client input extension guides the user after explicit bundle activation and withdraws on unload",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Client/Web task API"
+        "references/api-client-web-surface.md": "Client/Web 任务所需公开对象"
       },
       "mergedInto": "package:@deepseek-ai/dsh-client-ui-renderer",
       "relationship": "The plugin manager owns the slot; the third-party package registers its contribution through the shared SlotRegistry."
@@ -1132,7 +1132,7 @@
       "summary": "Client UI renderer installs the public SlotRegistry facade with calling-fiber ownership.",
       "pluginTask": "Client half loads, contributes through a typed slot, and withdraws on unload",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Slot authoring symbols"
+        "references/api-client-web-surface.md": "Slot 编写所需符号"
       }
     },
     {
@@ -1428,7 +1428,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-command-feedback。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Commands, approval, and questions"
+        "references/api-host-core.md": "命令、审批与提问"
       }
     },
     {
@@ -1454,7 +1454,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-commands。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Commands, approval, and questions"
+        "references/api-host-core.md": "命令、审批与提问"
       }
     },
     {
@@ -1530,7 +1530,7 @@
       "summary": "Dynamic Cordis Client runner owns process-local approved client halves and unloading.",
       "pluginTask": "Approved Host/Client halves run and report load/render failures",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Client/Web task API"
+        "references/api-client-web-surface.md": "Client/Web 任务所需公开对象"
       }
     },
     {
@@ -1574,7 +1574,7 @@
       "summary": "Local credential backend with private record path and source precedence.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "File, credential and language providers"
+        "references/how-to-infra-runtime.md": "文件、凭据与语言 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-credentials",
       "relationship": "Local credential backend with private record path and source precedence."
@@ -1658,7 +1658,7 @@
       "summary": "Chrome DevTools MCP is an explicitly selected browser implementation behind BrowserUseRegistry.",
       "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+        "references/how-to-infra-runtime.md": "选择实验性 browser 或 computer provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-browser-use",
       "relationship": "Chrome DevTools MCP is an explicitly selected browser implementation behind BrowserUseRegistry."
@@ -1678,7 +1678,7 @@
       "summary": "Playwright MCP is an explicitly selected browser implementation behind BrowserUseRegistry.",
       "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+        "references/how-to-infra-runtime.md": "选择实验性 browser 或 computer provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-browser-use",
       "relationship": "Playwright MCP is an explicitly selected browser implementation behind BrowserUseRegistry."
@@ -1706,7 +1706,7 @@
       "summary": "Stagehand native is an experimental browser implementation behind BrowserUseRegistry with separate native prerequisites.",
       "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+        "references/how-to-infra-runtime.md": "选择实验性 browser 或 computer provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-browser-use",
       "relationship": "Stagehand native is an experimental browser implementation behind BrowserUseRegistry with separate native prerequisites."
@@ -1742,7 +1742,7 @@
       "summary": "Cua Driver MCP is an explicitly selected computer implementation behind ComputerUseRegistry and needs an external driver.",
       "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+        "references/how-to-infra-runtime.md": "选择实验性 browser 或 computer provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-computer-use",
       "relationship": "Cua Driver MCP is an explicitly selected computer implementation behind ComputerUseRegistry and needs an external driver."
@@ -1762,7 +1762,7 @@
       "summary": "Cua Driver native is an experimental computer implementation behind ComputerUseRegistry and needs platform permissions.",
       "pluginTask": "one explicitly selected provider contributes tools for the intended environment",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Select an experimental browser or computer provider"
+        "references/how-to-infra-runtime.md": "选择实验性 browser 或 computer provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-computer-use",
       "relationship": "Cua Driver native is an experimental computer implementation behind ComputerUseRegistry and needs platform permissions."
@@ -1888,7 +1888,7 @@
       "summary": "Local filesystem provider; cwd is resolution base, not confinement.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "File, credential and language providers"
+        "references/how-to-infra-runtime.md": "文件、凭据与语言 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "Local filesystem provider; cwd is resolution base, not confinement."
@@ -1908,7 +1908,7 @@
       "summary": "Observation policy guards writes and edits against Session read state and stale versions; it is not a filesystem backend.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "File, credential and language providers"
+        "references/how-to-infra-runtime.md": "文件、凭据与语言 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "Observation policy guards writes and edits against Session read state and stale versions; it is not a filesystem backend."
@@ -1928,7 +1928,7 @@
       "summary": "Policy-aware filesystem writes; reads are local and write denial is explicit.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "File, credential and language providers"
+        "references/how-to-infra-runtime.md": "文件、凭据与语言 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "Policy-aware filesystem writes; reads are local and write denial is explicit."
@@ -1948,7 +1948,7 @@
       "summary": "SSH filesystem provider with remote path authority and ambiguous transport-loss writes.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "SSH provider composition"
+        "references/how-to-infra-runtime.md": "SSH provider 组合"
       },
       "mergedInto": "package:@deepseek-ai/dsh-fs",
       "relationship": "SSH filesystem provider with remote path authority and ambiguous transport-loss writes."
@@ -1968,7 +1968,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-goal。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Goal, plan, and todo"
+        "references/api-host-core.md": "Goal、plan 与 todo"
       }
     },
     {
@@ -2018,7 +2018,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-hook-protocol。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "External hooks"
+        "references/api-host-core.md": "外部 hook"
       }
     },
     {
@@ -2150,7 +2150,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-jobs。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Jobs"
+        "references/api-host-core.md": "后台任务（Jobs）"
       }
     },
     {
@@ -2204,7 +2204,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-llm。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "LLM provider and adapter"
+        "references/api-host-core.md": "LLM provider 与 adapter"
       }
     },
     {
@@ -2222,7 +2222,7 @@
       "summary": "DeepSeek adapter transport and registration base; not a complete credential Profile.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "LLM adapter packages"
+        "references/api-host-core.md": "LLM adapter 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "DeepSeek adapter transport and registration base; not a complete credential Profile."
@@ -2242,7 +2242,7 @@
       "summary": "DeepSeek account route resolves account token and has login/401 recovery.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "LLM adapter packages"
+        "references/api-host-core.md": "LLM adapter 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "DeepSeek account route resolves account token and has login/401 recovery."
@@ -2262,7 +2262,7 @@
       "summary": "DeepSeek official route resolves credential service or environment and fails on missing key.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "LLM adapter packages"
+        "references/api-host-core.md": "LLM adapter 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "DeepSeek official route resolves credential service or environment and fails on missing key."
@@ -2290,7 +2290,7 @@
       "summary": "Pi-ai provides configurable routes and discovery with generation-bound registration cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "LLM adapter packages"
+        "references/api-host-core.md": "LLM adapter 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "Pi-ai provides configurable routes and discovery with generation-bound registration cleanup."
@@ -2318,7 +2318,7 @@
       "summary": "LLM retry is an explicit Session projection and bounded retry policy, not an adapter default.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "LLM adapter packages"
+        "references/api-host-core.md": "LLM adapter 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-llm",
       "relationship": "LLM retry is an explicit Session projection and bounded retry policy, not an adapter default."
@@ -2364,7 +2364,7 @@
       "summary": "Stdio LSP provider with executable resolution and pooled workspace processes.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "File, credential and language providers"
+        "references/how-to-infra-runtime.md": "文件、凭据与语言 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-lsp",
       "relationship": "Stdio LSP provider with executable resolution and pooled workspace processes."
@@ -2450,7 +2450,7 @@
       "summary": "目标 tag 中用于基础设施 provider、组合或 Remote 插件任务的公开能力：package:@deepseek-ai/dsh-package-manifest。",
       "pluginTask": "把 provider 或基础设施插件打包进目标 Profile，观察调用并验证资源清理。",
       "ownerSections": {
-        "references/api-infra-runtime.md": "Package and bundle declaration"
+        "references/api-infra-runtime.md": "包与 bundle 声明"
       }
     },
     {
@@ -2526,7 +2526,7 @@
       "summary": "Fresh-process Node PTC backend with required sandbox and resource limits.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-ptc-runtime",
       "relationship": "Fresh-process Node PTC backend with required sandbox and resource limits."
@@ -2546,7 +2546,7 @@
       "summary": "Local PowerShell executor starts fresh unconfined pwsh processes with UTF-8 output.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Local PowerShell executor starts fresh unconfined pwsh processes with UTF-8 output."
@@ -2566,7 +2566,7 @@
       "summary": "Sandbox PowerShell executor requires sandbox and sandboxPolicy and refuses unavailable confinement.",
       "pluginTask": "Choose and mount a concrete infrastructure executor or policy behind its public service",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-shell",
       "relationship": "Sandbox PowerShell executor requires sandbox and sandboxPolicy and refuses unavailable confinement."
@@ -2620,7 +2620,7 @@
       "summary": "Local platform sandbox selector that fails when required enforcement is unavailable.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-sandbox",
       "relationship": "Local platform sandbox selector that fails when required enforcement is unavailable."
@@ -2658,7 +2658,7 @@
       "summary": "SSH sandbox provider that confines commands on the remote host.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "SSH provider composition"
+        "references/how-to-infra-runtime.md": "SSH provider 组合"
       },
       "mergedInto": "package:@deepseek-ai/dsh-sandbox",
       "relationship": "SSH sandbox provider that confines commands on the remote host."
@@ -2694,7 +2694,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-scope。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "System prompt composition"
+        "references/api-host-core.md": "System prompt 组装"
       }
     },
     {
@@ -2752,7 +2752,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-session。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Session extension and persistence"
+        "references/api-host-core.md": "Session 扩展与持久化"
       }
     },
     {
@@ -2842,7 +2842,7 @@
       "summary": "Session persistence defines the write handle and durability contract required for restart validation.",
       "pluginTask": "Persist and reconstruct Session-derived state from the durable event log",
       "ownerSections": {
-        "references/api-host-core.md": "Session extension and persistence"
+        "references/api-host-core.md": "Session 扩展与持久化"
       }
     },
     {
@@ -2860,7 +2860,7 @@
       "summary": "The JSONL backend implements SessionPersistence with single-writer ownership and flush/drain; mount exactly one backend.",
       "pluginTask": "Persist and reconstruct Session-derived state from the durable event log",
       "ownerSections": {
-        "references/api-host-core.md": "Session extension and persistence"
+        "references/api-host-core.md": "Session 扩展与持久化"
       },
       "mergedInto": "package:@deepseek-ai/dsh-session-persistence",
       "relationship": "The JSONL backend implements SessionPersistence with single-writer ownership and flush/drain; mount exactly one backend."
@@ -2880,7 +2880,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-session-projection。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Session extension and persistence"
+        "references/api-host-core.md": "Session 扩展与持久化"
       }
     },
     {
@@ -2898,7 +2898,7 @@
       "summary": "Projection cache is an optional checkpoint accelerator; the Session event log remains authoritative and full replay must agree.",
       "pluginTask": "Persist and reconstruct Session-derived state from the durable event log",
       "ownerSections": {
-        "references/api-host-core.md": "Session extension and persistence"
+        "references/api-host-core.md": "Session 扩展与持久化"
       },
       "mergedInto": "package:@deepseek-ai/dsh-session-projection",
       "relationship": "Projection cache is an optional checkpoint accelerator; the Session event log remains authoritative and full replay must agree."
@@ -2918,7 +2918,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-session-query。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Session query"
+        "references/api-host-core.md": "Session 查询"
       }
     },
     {
@@ -3068,7 +3068,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-skill。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Skills"
+        "references/api-host-core.md": "Skill"
       }
     },
     {
@@ -3140,7 +3140,7 @@
       "summary": "Local Session-scoped spill backend with best-effort startup sweep.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Storage and spill providers"
+        "references/how-to-infra-runtime.md": "存储与 spill provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-spill",
       "relationship": "Local Session-scoped spill backend with best-effort startup sweep."
@@ -3168,7 +3168,7 @@
       "summary": "SSH connection service composes remote filesystem, sandbox and subprocess providers with verified helper and cleanup.",
       "pluginTask": "Package and mount a validated Cordis plugin with optional remote provider composition",
       "ownerSections": {
-        "references/api-infra-runtime-surface.md": "Infrastructure task API"
+        "references/api-infra-runtime-surface.md": "基础设施任务 API"
       }
     },
     {
@@ -3222,7 +3222,7 @@
       "summary": "JSON storage form that requires a root and supports domain routing.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Storage and spill providers"
+        "references/how-to-infra-runtime.md": "存储与 spill provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-storage",
       "relationship": "JSON storage form that requires a root and supports domain routing."
@@ -3242,7 +3242,7 @@
       "summary": "SQLite storage form with configured database and version checks.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Storage and spill providers"
+        "references/how-to-infra-runtime.md": "存储与 spill provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-storage",
       "relationship": "SQLite storage form with configured database and version checks."
@@ -3262,7 +3262,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-subagent。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Subagents"
+        "references/api-host-core.md": "子 Agent"
       }
     },
     {
@@ -3280,7 +3280,7 @@
       "summary": "ACP provider is external one-shot with no optional start capabilities and subprocess cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Subagent provider packages"
+        "references/api-host-core.md": "子 Agent provider 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "ACP provider is external one-shot with no optional start capabilities and subprocess cleanup."
@@ -3300,7 +3300,7 @@
       "summary": "Claude Code CLI provider has its own command/config and external subprocess cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Subagent provider packages"
+        "references/api-host-core.md": "子 Agent provider 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Claude Code CLI provider has its own command/config and external subprocess cleanup."
@@ -3320,7 +3320,7 @@
       "summary": "Codex CLI provider has its own command/config and external subprocess cleanup.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Subagent provider packages"
+        "references/api-host-core.md": "子 Agent provider 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Codex CLI provider has its own command/config and external subprocess cleanup."
@@ -3340,7 +3340,7 @@
       "summary": "DSH SDK provider runs an independent child runtime with distinct option capabilities.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Subagent provider packages"
+        "references/api-host-core.md": "子 Agent provider 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "DSH SDK provider runs an independent child runtime with distinct option capabilities."
@@ -3360,7 +3360,7 @@
       "summary": "Fork in-process provider seeds completed parent turns and supports continuable preparation.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Subagent provider packages"
+        "references/api-host-core.md": "子 Agent provider 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Fork in-process provider seeds completed parent turns and supports continuable preparation."
@@ -3388,7 +3388,7 @@
       "summary": "Spawn in-process provider starts fresh and supports in-process start overrides and continuable preparation.",
       "pluginTask": "Select and mount a concrete Host implementation for the chosen Agent, prompt, tool, LLM or subagent task",
       "ownerSections": {
-        "references/api-host-core.md": "Subagent provider packages"
+        "references/api-host-core.md": "子 Agent provider 包"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subagent",
       "relationship": "Spawn in-process provider starts fresh and supports in-process start overrides and continuable preparation."
@@ -3426,7 +3426,7 @@
       "summary": "Host-local subprocess backend with managed process disposal.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Process and confinement providers"
+        "references/how-to-infra-runtime.md": "进程与隔离 provider"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subprocess",
       "relationship": "Host-local subprocess backend with managed process disposal."
@@ -3446,7 +3446,7 @@
       "summary": "SSH subprocess backend whose uncertain remote launch is not automatically replayed.",
       "pluginTask": "Select, mount and verify a concrete infrastructure provider behind the public service seam",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "SSH provider composition"
+        "references/how-to-infra-runtime.md": "SSH provider 组合"
       },
       "mergedInto": "package:@deepseek-ai/dsh-subprocess",
       "relationship": "SSH subprocess backend whose uncertain remote launch is not automatically replayed."
@@ -3466,7 +3466,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-system-prompt。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "System prompt composition"
+        "references/api-host-core.md": "System prompt 组装"
       }
     },
     {
@@ -3724,7 +3724,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-tools。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Tool runtime and definition"
+        "references/api-host-core.md": "Tool runtime 与定义"
       }
     },
     {
@@ -3742,7 +3742,7 @@
       "summary": "Published WorkspaceTypertGenerator creates the Host and Remote artifacts required by the task.",
       "pluginTask": "Host exposes a generated typed Remote with structured failure/cancellation",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Build-time Remote generation"
+        "references/api-client-web-surface.md": "构建时生成 Remote"
       }
     },
     {
@@ -3816,7 +3816,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-user-approval。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Commands, approval, and questions"
+        "references/api-host-core.md": "命令、审批与提问"
       }
     },
     {
@@ -3834,7 +3834,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-user-questions。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Commands, approval, and questions"
+        "references/api-host-core.md": "命令、审批与提问"
       }
     },
     {
@@ -3892,7 +3892,7 @@
       "summary": "WebRuntime owns provider registration, selection and typed request/result behavior.",
       "pluginTask": "Web provider runs with validated config and redirect boundary",
       "ownerSections": {
-        "references/api-client-web-surface.md": "Web provider request and result symbols"
+        "references/api-client-web-surface.md": "Web provider 请求与结果符号"
       }
     },
     {
@@ -3976,7 +3976,7 @@
       "summary": "The GitHub adapter verifies signed raw requests before handing normalized delivery to WebhookRuntime.",
       "pluginTask": "authenticated external event starts plugin work without callbacks surviving unload",
       "ownerSections": {
-        "references/how-to-infra-runtime.md": "Register a web route and webhook rule"
+        "references/how-to-infra-runtime.md": "注册 Web 路由与 webhook 规则"
       },
       "mergedInto": "package:@deepseek-ai/dsh-webhook",
       "relationship": "The GitHub adapter verifies signed raw requests before handing normalized delivery to WebhookRuntime."
@@ -4004,7 +4004,7 @@
       "summary": "目标 tag 中用于 Host/Core 插件任务的公开能力：package:@deepseek-ai/dsh-workflow。",
       "pluginTask": "实现、挂载并卸载一个 Host/Core 插件能力，并观察其规范结果或持久事实。",
       "ownerSections": {
-        "references/api-host-core.md": "Workflows"
+        "references/api-host-core.md": "Workflow"
       }
     },
     {
@@ -4098,7 +4098,7 @@
       "summary": "Schemastery builds the exported Standard Schema Config validated by Cordis before plugin apply.",
       "pluginTask": "Package and mount a validated Cordis plugin with optional remote provider composition",
       "ownerSections": {
-        "references/api-infra-runtime-surface.md": "Cordis lifecycle public API"
+        "references/api-infra-runtime-surface.md": "Cordis 生命周期公开 API"
       }
     },
     {
@@ -4645,7 +4645,7 @@
   "taskPaths": [
     {
       "id": "register-host-tool",
-      "outcome": "Register a cancellable tool with one canonical JSON result and pure rendering.",
+      "outcome": "注册可取消的 Tool，返回一份规范 JSON 结果并进行纯函数渲染。",
       "decision": "covered",
       "candidates": [
         "cookbook:adding-a-tool",
@@ -4686,7 +4686,7 @@
     },
     {
       "id": "provide-and-consume-cordis-service",
-      "outcome": "One Host plugin provides a Cordis service and another consumes it after injection, with activation and unload verified",
+      "outcome": "一个 Host 插件提供 Cordis service，另一个在注入后消费，并验证激活和卸载。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/cordis"
@@ -4708,7 +4708,7 @@
     },
     {
       "id": "extend-system-prompt",
-      "outcome": "Add scoped prompt sections, variables, context, or tool schema providers.",
+      "outcome": "添加有作用域的提示词章节、变量、上下文或 Tool schema provider。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-system-prompt",
@@ -4732,7 +4732,7 @@
     },
     {
       "id": "add-llm-adapter",
-      "outcome": "Register an LLM adapter and optional model directory.",
+      "outcome": "注册 LLM 适配器和可选的模型目录。",
       "decision": "covered",
       "candidates": [
         "cookbook:adding-an-llm-adapter",
@@ -4762,7 +4762,7 @@
     },
     {
       "id": "persist-derived-session-state",
-      "outcome": "Define a pure Session projection and optional checkpoint cache.",
+      "outcome": "定义纯函数 Session 投影及可选的 checkpoint 缓存。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-session-projection",
@@ -4790,7 +4790,7 @@
     },
     {
       "id": "add-command-and-approval",
-      "outcome": "Register a human command that requests policy-controlled approval.",
+      "outcome": "注册人工命令，并在打开的 turn 中用审批保护模型 Tool 操作。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-command-feedback",
@@ -4818,7 +4818,7 @@
     },
     {
       "id": "manage-goal",
-      "outcome": "Create and drive a durable session goal from Host code or model tools.",
+      "outcome": "从 Host 代码或模型 Tool 创建并驱动持久 Session goal。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-goal"
@@ -4841,7 +4841,7 @@
     },
     {
       "id": "run-background-job",
-      "outcome": "Start a bounded Host job and expose wait/read/kill through tool-jobs.",
+      "outcome": "启动有边界的 Host job，并通过 tool-jobs 提供等待、读取和终止操作。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-jobs",
@@ -4866,7 +4866,7 @@
     },
     {
       "id": "provide-skills",
-      "outcome": "Register runtime skills or a filesystem Skill provider.",
+      "outcome": "注册运行时 Skill 或文件系统 Skill provider。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-skill",
@@ -4891,7 +4891,7 @@
     },
     {
       "id": "delegate-subagent",
-      "outcome": "Add one-shot or continuable subagent delegation.",
+      "outcome": "添加一次性或可继续的 subagent 委派。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-subagent",
@@ -4921,7 +4921,7 @@
     },
     {
       "id": "run-workflow",
-      "outcome": "Expose a bounded multi-agent workflow through tool-workflow.",
+      "outcome": "通过 tool-workflow 提供有边界的多 Agent workflow。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-workflow",
@@ -4946,7 +4946,7 @@
     },
     {
       "id": "run-external-hook",
-      "outcome": "Adapt Claude Code or Codex hooks through the common hook protocol.",
+      "outcome": "通过通用 hook 协议适配 Claude Code 或 Codex hook。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-hook-protocol"
@@ -4969,7 +4969,7 @@
     },
     {
       "id": "add-context-provider",
-      "outcome": "Contribute time, instruction, file-reference, session-reference, or tmux context.",
+      "outcome": "提供时间、指令、文件引用、Session 引用或 tmux 上下文。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-tools"
@@ -4992,7 +4992,7 @@
     },
     {
       "id": "client-web-add-remote",
-      "outcome": "Host exposes a generated typed Remote with structured failure/cancellation",
+      "outcome": "Host 提供生成的类型化 Remote，并处理结构化失败和取消。",
       "decision": "covered",
       "candidates": [
         "cookbook:adding-a-remote-api",
@@ -5024,7 +5024,7 @@
     },
     {
       "id": "client-web-live-settings",
-      "outcome": "Config uses revision-fenced live writes and unset restores inheritance",
+      "outcome": "Config 使用 revision fence 实时写入，unset 恢复继承值。",
       "decision": "covered",
       "candidates": [
         "cookbook:adding-a-settings-card",
@@ -5050,7 +5050,7 @@
     },
     {
       "id": "client-web-slot",
-      "outcome": "Client half loads, contributes through a typed slot, and withdraws on unload",
+      "outcome": "Client 装载后提供类型化 slot，并在卸载时撤销。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-slots",
@@ -5078,7 +5078,7 @@
     },
     {
       "id": "client-web-web-provider",
-      "outcome": "Web provider runs with validated config and redirect boundary",
+      "outcome": "Web provider 使用验证后的配置并遵守重定向边界。",
       "decision": "covered",
       "candidates": [
         "subsystems:web-client",
@@ -5103,13 +5103,13 @@
       "destinations": [
         {
           "output": "references/how-to-client-web.md",
-          "section": "Web provider"
+          "section": "Web provider 集成"
         }
       ]
     },
     {
       "id": "client-web-deliverable-document",
-      "outcome": "Client presents persisted deliverable/document facts",
+      "outcome": "Client 展示已持久化的 deliverable 和文档事实。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-client-store",
@@ -5129,13 +5129,13 @@
       "destinations": [
         {
           "output": "references/how-to-client-web.md",
-          "section": "Deliverable 与文档界面"
+          "section": "交付物与文档界面"
         }
       ]
     },
     {
       "id": "client-web-dynamic-extension",
-      "outcome": "Approved Host/Client halves run and report load/render failures",
+      "outcome": "获准的 Host/Client 两侧运行并报告装载或渲染失败。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-api-remotes",
@@ -5160,7 +5160,7 @@
     },
     {
       "id": "client-web-terminal",
-      "outcome": "Client consumes terminal stream and disposes it",
+      "outcome": "Client 消费 Terminal stream 并负责释放。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-settings",
@@ -5180,13 +5180,13 @@
       "destinations": [
         {
           "output": "references/how-to-client-web.md",
-          "section": "Terminal Remote"
+          "section": "Terminal Remote 集成"
         }
       ]
     },
     {
       "id": "client-web-workspace",
-      "outcome": "Client consumes scoped workspace/file APIs and recovers after reconnect",
+      "outcome": "Client 消费有作用域的 workspace/file API，并在重连后恢复。",
       "decision": "covered",
       "candidates": [
         "subsystems:client-modules"
@@ -5205,13 +5205,13 @@
       "destinations": [
         {
           "output": "references/how-to-client-web.md",
-          "section": "Workspace Remote"
+          "section": "Workspace Remote 集成"
         }
       ]
     },
     {
       "id": "infra-package-and-compose-infrastructure-plugin",
-      "outcome": "packed plugin installs into an isolated Profile and activates",
+      "outcome": "将打包的插件安装到隔离 Profile 并激活。",
       "decision": "covered",
       "candidates": [
         "cookbook:adding-a-package",
@@ -5245,13 +5245,13 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Package and activate a bundle"
+          "section": "打包并启用 bundle"
         }
       ]
     },
     {
       "id": "infra-resource-seams-and-providers",
-      "outcome": "provider replaces or extends infrastructure without changing consumers",
+      "outcome": "替换或扩展基础设施 provider，同时保持 consumer 不变。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-attachment",
@@ -5314,13 +5314,13 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Implement or consume an infrastructure provider"
+          "section": "实现或使用基础设施 provider"
         }
       ]
     },
     {
       "id": "infra-web-route-and-webhook",
-      "outcome": "authenticated external event starts plugin work without callbacks surviving unload",
+      "outcome": "由已认证的外部事件启动插件工作，卸载后不残留回调。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-host-webserver",
@@ -5341,13 +5341,13 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Register a web route and webhook rule"
+          "section": "注册 Web 路由与 webhook 规则"
         }
       ]
     },
     {
       "id": "infra-remote-and-preset-composition",
-      "outcome": "Host API reaches Client through generated Remote binding",
+      "outcome": "通过生成的 Remote binding 将 Host API 提供给 Client。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-agent-preset",
@@ -5369,13 +5369,13 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Compose a preset and a Host to Client Remote"
+          "section": "组合 preset 与 Host 到 Client 的 Remote"
         }
       ]
     },
     {
       "id": "infra-experimental-browser-computer-provider-selection",
-      "outcome": "one explicitly selected provider contributes tools for the intended environment",
+      "outcome": "显式选择一个 provider，为目标环境提供 Tool。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-browser-use",
@@ -5401,13 +5401,13 @@
       "destinations": [
         {
           "output": "references/how-to-infra-runtime.md",
-          "section": "Select an experimental browser or computer provider"
+          "section": "选择实验性 browser 或 computer provider"
         }
       ]
     },
     {
       "id": "client-input-activity-and-activation",
-      "outcome": "Client activity inserts an asynchronous result without overwriting later draft edits and offers guidance after explicit bundle activation",
+      "outcome": "Client 异步插入结果而不覆盖后续草稿，并在显式启用 bundle 后给出引导。",
       "decision": "covered",
       "candidates": [
         "package:@deepseek-ai/dsh-client-ui-conversation",

@@ -15,25 +15,25 @@
             "source": "entrypoint/SKILL.md",
             "output": "SKILL.md",
             "kind": "entrypoint",
-            "sha256": "995de243539850f03c58950cc8804bd492d44d79bebe0f9c831be29444ed21a2"
+            "sha256": "fcef31000dc19db37e7d20bb673195121aad0ee6c652741f691b3db8a121cc69"
         },
         {
             "source": "metadata/openai.yaml",
             "output": "agents/openai.yaml",
             "kind": "metadata",
-            "sha256": "daaa09ce2b5160c77cccb4f4f4743637c1072cd9d8ea0768c3e89d49ccb9d23e"
+            "sha256": "848ed13518a3b457c8f4124e4a9f3c0f5e3ba87c62c08c65cef73dda08fc420f"
         },
         {
             "source": "api-guardrails/host-core.md",
             "output": "references/api-host-core.md",
             "kind": "api-guardrail",
-            "sha256": "15d490af9df59524d6d2c5c79fce833e5cbac02267a90bac1c35f07d094c56c5"
+            "sha256": "ec1fdb1c391a8aa6a98d71a4f0f822dac98e06d9431de37ad6be47da5f527e45"
         },
         {
             "source": "api-guardrails/host-core-surface.md",
             "output": "references/api-host-core-surface.md",
             "kind": "api-guardrail",
-            "sha256": "dcef19b364e30c37c194d56d7572e171d3fa594a6378343d0c18a08683ca4dbb"
+            "sha256": "459933bb44b7851d7a680dfefa514f816beed3d7e165c1e49945876b893ffa17"
         },
         {
             "source": "api-guardrails/client-web.md",
@@ -45,76 +45,76 @@
             "source": "api-guardrails/client-web-surface.md",
             "output": "references/api-client-web-surface.md",
             "kind": "api-guardrail",
-            "sha256": "f019001ef5fc6add6676510bc451bf4c71cb98dd114a237d43bdfd028a57263a"
+            "sha256": "8de707c4f92db4732596db8316524c8e1e7d71a582b87c85676964b49d670690"
         },
         {
             "source": "api-guardrails/infra-runtime.md",
             "output": "references/api-infra-runtime.md",
             "kind": "api-guardrail",
-            "sha256": "99ca90dd997e0c9cdb01bf2b9bf5cdbfc21dd368a8347ade5fad016768d07a0f"
+            "sha256": "4629e1ceb0ade1918454b6df70a8bfcfbfc7f9fcd116c520514bb3f7a07de0f8"
         },
         {
             "source": "api-guardrails/infra-runtime-surface.md",
             "output": "references/api-infra-runtime-surface.md",
             "kind": "api-guardrail",
-            "sha256": "a35e24643e83fa2adbd1df0c5ce8473e8cff853ffd5a69b88e53dcc740dcbc53"
+            "sha256": "cd285413a2ec0892fd2deb52a39c137571d1076ce0c08854dcfcc335febba197"
         },
         {
             "source": "how-to/host-core.md",
             "output": "references/how-to-host-core.md",
             "kind": "how-to",
-            "sha256": "b1413dce89affd1fae2f4e72bf57d398f170ed6a9e4e45970ecf3df9fc6557f1"
+            "sha256": "53cb569ff7102d6a3e62ad5bd336bb3634fa4271632bd549d15e5b43fdf57d48"
         },
         {
             "source": "how-to/client-web.md",
             "output": "references/how-to-client-web.md",
             "kind": "how-to",
-            "sha256": "810a5bbfe3280dab01b0c94360338b987781206120c09b14fc89762463c25c62"
+            "sha256": "b9479596e50ce295e1e7499aa840dac75994f060b461a3bd7060beea00cf238f"
         },
         {
             "source": "how-to/infra-runtime.md",
             "output": "references/how-to-infra-runtime.md",
             "kind": "how-to",
-            "sha256": "c0aec8d2e1515f0a3561e5f6005cbd89e4eef01364d0a50817c33d992f62ab9e"
+            "sha256": "e73e08700cc842f598a6b034ab62c3b70a1cc36ba09f39bebb2b483df2fecd04"
         },
         {
             "source": "indexes/plugin-development-routing.md",
             "output": "references/plugin-development-routing.md",
             "kind": "index",
-            "sha256": "fbd0e1b66105496e2b70db984ff0e3211def5ccfc40ec52f9616e903c1a7ea73"
+            "sha256": "36a1ed1a08e0aae8198506857fe15c10d65f9ebc0131ced3099e645019edffa1"
         },
         {
             "source": "indexes/keyword-index.md",
             "output": "references/keyword-index.md",
             "kind": "index",
-            "sha256": "cf95f178d4e7338db233cbb4b47a866ccf8787abbdd1c93afd5825aebed5d892"
+            "sha256": "45f0d504f54b6d96f88ccbd6772ee36049af800eade37c32c1d0a89424be9dd5"
         },
         {
             "source": "concepts/terminology.md",
             "output": "references/terminology.md",
             "kind": "index",
-            "sha256": "cfc3a52ef5fe3cbfd28bf43d7e8d591e8c70472aaf622dc14c8b1aa4bfe768f4"
+            "sha256": "776f13ba4ee635b9e612f37dcd51653aa04c359f922dd10b9e2f251807dff892"
         },
         {
             "source": "maintenance/source-map.md",
             "output": "maintenance/source-map.md",
             "kind": "maintenance",
-            "sha256": "ec3f13f77580b504ed2537d5eeadf329c29024027767438e24a0702f8511f8ce"
+            "sha256": "81e3ab4f2c51d5570b3896c902d961bb1a2ed43dd37b504f81eb6f965fc990db"
         },
         {
             "source": "maintenance/skill-maintenance.md",
             "output": "maintenance/skill-maintenance.md",
             "kind": "maintenance",
-            "sha256": "ec1689d24d93a58849d99e0a002801356f224563308d539d2c942f218e543b52"
+            "sha256": "16ce4bfd454380cb390ec0241a3c5b9e87283739caba926f76e7786015f1d515"
         }
     ],
-    "claimsSha256": "fe93720f89f13d75e0218eddb062d5e9c196c3aa7bd7bef221eb75117119eec1",
-    "coverageSha256": "3aedffdee491edaa36bb03a46f7f019242edb534facbb8d3222ca97e8513eaef",
+    "claimsSha256": "89bf3fdf3a9438636c6494fbcc90d20479e1516fb9b35b38f1adcf37083f4700",
+    "coverageSha256": "3a6caa631c75f3da520c8216452078881c79d0985685fb423883f8ce30c68681",
     "capabilityCandidatesSha256": "08a6a4f025f041f78b670d475874f2a263f712f0d72c4d5f434201e313f133e9",
     "apiEntriesSha256": "4cde68b87ce104d29d3653d81bfda7bcc34b477fd9662809b8765c17b8a729bf",
     "apiSymbolsSha256": "b0ac6b3e1331e1ab4a9d3f934a112f8e863ba71e39f58504d9aee6fe5334e5ca",
     "taskCandidatesSha256": "13a96c784d6289ae90e1b1dc55224c89f52613e39d19d6ca9b858a22a2f9a598",
-    "apiSurfaceSha256": "17312ed34586b0d168d7b5738c2917ce61e754dff200f88432984adcaf61ccd2",
+    "apiSurfaceSha256": "98722805663d98419dcf50410a0b015805014b8cb540489780e91e54e6bc9237",
     "taskNavigation": "generated",
     "taskScenariosSha256": "e182b86b48789d2d3eae2e2246e81d33d2c7555afe6656a268d864750c44dc29",
     "taskScenarioScriptsSha256": "66830c56a068737d5c8b33266a590c08a2bfa44c448a78e6da9e00e13451e1fa"
