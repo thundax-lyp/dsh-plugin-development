@@ -11,6 +11,8 @@ description: 仅在用户显式调用 $create-dsh-skill 时，按最新已发布
 
 **以可用性决定篇幅，不设 reference 字数、文件数或示例数上限。** `SKILL.md` 与路由保持索引职责；承担契约的 reference 和 HOW-TO 必须展开到读者无需猜测公开签名、装载路径、状态归属、失败与清理、验证判据就能完成任务。仅压缩重复叙述、与插件任务无关的产品内部细节和可由相对链接到达的同一事实；不得为了缩短产物把不同入口合成一段能力简介、把完整 example 改成伪代码，或把未写出的步骤推给读者自行查源码。具体保留准则见[reference 模板](references/reference-template.md#有限压缩与完整性)。
 
+**分发文档的正文使用中文。** `SKILL.md`、路由、reference 和 maintenance 中面向读者的段落、列表、表格说明、示例讲解及代码注释都用中文；标题可以使用英文。保留公开 API 名称、包名、命令、文件路径、协议字段、代码标识符与必要的检索关键词原文，不翻译会改变契约或破坏可执行性的内容。冻结前逐篇检查正文，不把上游英文文档整段复制为产物说明。
+
 Skill 创建以目标 tag 为唯一事实输入。创建工作区用 commit 锁定 checkout 和取证；面向 npm 安装用户的生成 Skill 以已发布的 `@deepseek-ai/dsh-agent` 版本号标明适用范围，不把 Git commit 当成安装版本，也不在任何分发文件中写入目标 commit。生成阶段将现有 `skills/dsh-plugin-development/**` 视为不存在：不读取、不比较、不修补，也不从旧 source-map、旧 Skill 或 DOCS diff 生成目标知识。新 Skill 在隔离目录完整生成并通过验证后才整体替换正式目录。交付前仍须审阅 Git diff；该检查只确认本次仓库改动范围，不是升级事实的来源。
 
 正式 Skill 面向插件作者，只写目标版本的可用契约、具体限制、操作步骤和读者应执行的验证。候选的 `included/merged/excluded`、任务的 `covered`、本次检查的 `Not Covered`、未运行状态及创建账本文件名只留在 `evidence/`、`skill-source/` 的非分发 JSON、验证报告和 PR 中，不写进分发正文。目标版本确实缺少公开入口或独立构建路径时，在相关 how-to 直接说明可观察的产品限制与替代操作；不要把维护者尚未运行的检查误写成产品限制。正式 reference 可以告诉读者“运行浏览器 smoke 并验证重连”，不写“本次未覆盖浏览器 smoke”。

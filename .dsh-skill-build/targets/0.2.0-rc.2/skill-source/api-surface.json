@@ -3034,7 +3034,7 @@
       "source": "packages/browser-use/browser-use/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "providerName",
@@ -3079,7 +3079,7 @@
       "source": "packages/browser-use/browser-use/src/brand.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": []
     },
     {
@@ -3090,7 +3090,7 @@
       "source": "packages/computer-use/computer-use/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "providerName",
@@ -3135,7 +3135,7 @@
       "source": "packages/computer-use/computer-use/src/brand.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": []
     },
     {
@@ -3197,7 +3197,7 @@
       "source": "packages/preset/agent-preset-registry/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "acquireScope",
@@ -3484,7 +3484,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-agent-preset-registry:.:PresetMount",
@@ -3639,7 +3639,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-agent:.:AgentCancelCause",
@@ -3731,7 +3731,7 @@
       "source": "packages/core/agent/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "agent",
@@ -3788,7 +3788,7 @@
       "source": "packages/core/agent/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "announce",
@@ -4692,7 +4692,7 @@
       "source": "packages/api/gateway/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "hasLiveClient",
@@ -4923,7 +4923,7 @@
       "source": "packages/api/gateway/src/client/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "$host",
@@ -5524,7 +5524,7 @@
       "source": "packages/api/terminal-controller/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "close",
@@ -5614,7 +5614,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-api-terminal-controller:.:TerminalEnvironment",
@@ -5672,7 +5672,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-api-terminal-controller:.:TerminalRetentionFrame",
@@ -5819,7 +5819,7 @@
       "source": "packages/api/terminal-controller/src/client/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "close",
@@ -6030,7 +6030,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-api-terminal-controller:./client:TerminalViewIssue",
@@ -6270,7 +6270,7 @@
       "source": "packages/api/workspace-controller/src/client/service.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "archiveSession",
@@ -6398,7 +6398,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-api-workspace-controller:./client:WorkspaceController",
@@ -6617,7 +6617,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-api-workspace-controller:./client:WorkspaceSource",
@@ -6639,7 +6639,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-api-workspace-controller:./client:WorkspaceStateStream",
@@ -6836,7 +6836,7 @@
       "source": "packages/attachment/attachment/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "admitEncodedFile",
@@ -7593,7 +7593,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Attachment persistence and credential records"
+      "section": "Attachment 持久化与 credential 记录"
     },
     {
       "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationInteraction",
@@ -7615,7 +7615,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Attachment persistence and credential records"
+      "section": "Attachment 持久化与 credential 记录"
     },
     {
       "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationMethod",
@@ -7787,7 +7787,7 @@
       "source": "packages/credentials/authorization/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure provider call shapes",
+      "section": "基础设施 provider 调用结构",
       "members": [
         {
           "name": "begin",
@@ -7852,7 +7852,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Attachment persistence and credential records"
+      "section": "Attachment 持久化与 credential 记录"
     },
     {
       "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationSettlement",
@@ -7953,7 +7953,7 @@
       "source": "packages/client/store/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": []
     },
     {
@@ -7964,7 +7964,7 @@
       "source": "packages/client/store/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": []
     },
     {
@@ -8242,7 +8242,7 @@
       "source": "packages/client/ui-settings/src/client/config-form-types.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "getSnapshot",
@@ -8279,7 +8279,7 @@
       "source": "packages/client/ui-settings/src/client/config-form.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "describe",
@@ -8350,7 +8350,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-settings:./client:inject",
@@ -8940,7 +8940,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Slot authoring symbols"
+      "section": "Slot 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-slots:.:InjectParams",
@@ -9291,7 +9291,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Slot authoring symbols"
+      "section": "Slot 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-slots:.:PropsRenderFactories",
@@ -9342,7 +9342,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Slot authoring symbols"
+      "section": "Slot 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-slots:.:PropsSlotHooks",
@@ -9363,7 +9363,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Slot authoring symbols"
+      "section": "Slot 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-slots:.:RegisterFactory",
@@ -9640,7 +9640,7 @@
       "source": "packages/client/ui-slots/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "declarationEpoch",
@@ -9799,7 +9799,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Slot authoring symbols"
+      "section": "Slot 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotFactoryDef",
@@ -9922,7 +9922,7 @@
       "source": "packages/client/ui-slots/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": []
     },
     {
@@ -10503,7 +10503,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-commands:.:CommandDefinitionId",
@@ -10651,7 +10651,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-commands:.:CommandResult",
@@ -10684,7 +10684,7 @@
       "source": "packages/interaction/commands/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "execute",
@@ -11667,7 +11667,7 @@
       "source": "packages/extensions/cordis-client-runner/src/client/runtime.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "dispose",
@@ -11995,7 +11995,7 @@
       "source": "packages/credentials/credentials/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Attachment persistence and credential records",
+      "section": "Attachment 持久化与 credential 记录",
       "members": [
         {
           "name": "deleteRecord",
@@ -12389,7 +12389,7 @@
       "source": "packages/fs/fs/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "contains",
@@ -13367,7 +13367,7 @@
       "source": "packages/goal/goal/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "block",
@@ -13758,7 +13758,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-hook-protocol:.:HookOutput",
@@ -13877,7 +13877,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-hook-protocol:.:matcherDiagnostic",
@@ -14017,7 +14017,7 @@
       "source": "packages/hooks/hook-protocol/src/runner.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": []
     },
     {
@@ -14065,7 +14065,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-hook-protocol:.:RunHookResult",
@@ -14268,7 +14268,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-host-webserver:.:WebRouteKind",
@@ -14288,7 +14288,7 @@
       "source": "packages/host/webserver/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "applyIndexTaps",
@@ -14480,7 +14480,7 @@
       "source": "packages/jobs/jobs-local/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "attachController",
@@ -14699,7 +14699,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobEventFilter",
@@ -14710,7 +14710,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobEventListener",
@@ -14764,7 +14764,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobHooks",
@@ -14786,7 +14786,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobId",
@@ -14797,7 +14797,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobKind",
@@ -14829,7 +14829,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobOutcome",
@@ -14909,7 +14909,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobRead",
@@ -14954,7 +14954,7 @@
       "source": "packages/jobs/jobs/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "attachController",
@@ -15094,7 +15094,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-jobs:.:JobStatus",
@@ -15318,7 +15318,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-llm:.:AssistantMessage",
@@ -16210,7 +16210,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-llm:.:HarnessError",
@@ -16393,7 +16393,7 @@
       "source": "packages/llm/llm/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "imageRequestPricing",
@@ -16873,7 +16873,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-llm:.:LlmModelInfo",
@@ -17070,7 +17070,7 @@
       "source": "packages/llm/llm/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "discoverModels",
@@ -17919,7 +17919,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-llm:.:RetryPolicyConfig",
@@ -17989,7 +17989,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-llm:.:SystemMessage",
@@ -18229,7 +18229,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-llm:.:ToolHistory",
@@ -18774,7 +18774,7 @@
       "source": "packages/lsp/lsp/src/types.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "query",
@@ -18849,7 +18849,7 @@
       "source": "packages/mcp/mcp-resources/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "register",
@@ -19046,7 +19046,7 @@
       "source": "packages/document/office-to-pdf/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "convert",
@@ -19167,7 +19167,7 @@
       "source": "packages/document/office-to-pdf/src/types.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "cacheKey",
@@ -19226,7 +19226,7 @@
       "source": "packages/util/package-manifest/src/types.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "patch",
@@ -19243,7 +19243,7 @@
       "source": "packages/util/package-manifest/src/types.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "external",
@@ -19306,7 +19306,7 @@
       "source": "packages/util/package-manifest/src/types.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "bundle",
@@ -19339,7 +19339,7 @@
       "source": "packages/util/package-manifest/src/types.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "dependencies",
@@ -19400,7 +19400,7 @@
       "source": "packages/util/package-manifest/src/types.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "bundles",
@@ -19586,7 +19586,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "PTC bindings and confinement evidence"
+      "section": "PTC binding 与隔离证据"
     },
     {
       "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcJsonValue",
@@ -19661,7 +19661,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "PTC bindings and confinement evidence"
+      "section": "PTC binding 与隔离证据"
     },
     {
       "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunResult",
@@ -19693,7 +19693,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "PTC bindings and confinement evidence"
+      "section": "PTC binding 与隔离证据"
     },
     {
       "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
@@ -19779,7 +19779,7 @@
       "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "executionInstructions",
@@ -19940,7 +19940,7 @@
       "source": "packages/sandbox/sandbox-policy/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "defaultMode",
@@ -20037,7 +20037,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "PTC bindings and confinement evidence"
+      "section": "PTC binding 与隔离证据"
     },
     {
       "id": "export:@deepseek-ai/dsh-sandbox:.:ConfinedSandboxMode",
@@ -20234,7 +20234,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "PTC bindings and confinement evidence"
+      "section": "PTC binding 与隔离证据"
     },
     {
       "id": "export:@deepseek-ai/dsh-sandbox:.:SANDBOX_UNAVAILABLE",
@@ -20352,7 +20352,7 @@
       "source": "packages/sandbox/sandbox/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "confine",
@@ -20561,7 +20561,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionSnapshot",
@@ -20604,7 +20604,7 @@
       "source": "packages/session/session-projection/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "cachedSnapshot",
@@ -20673,7 +20673,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-session:.:adoptSessionEvent",
@@ -21130,7 +21130,7 @@
       "source": "packages/core/session/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "append",
@@ -22307,7 +22307,7 @@
       "source": "packages/settings/settings/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "configure",
@@ -22691,7 +22691,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "基础设施任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-shell:.:ShellExecutor",
@@ -22701,7 +22701,7 @@
       "source": "packages/shell/shell/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "execute",
@@ -22781,7 +22781,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Backend storage and process handles"
+      "section": "Backend 存储与进程 handle"
     },
     {
       "id": "export:@deepseek-ai/dsh-shell:.:ShellProcessRead",
@@ -23023,7 +23023,7 @@
       "source": "packages/skill/skill-filesystem/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "dispose",
@@ -23462,7 +23462,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-skill:.:SkillProviderControl",
@@ -23484,7 +23484,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-skill:.:SkillProviderObservation",
@@ -23506,7 +23506,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-skill:.:SkillRegistration",
@@ -23587,7 +23587,7 @@
       "source": "packages/skill/skill/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "get",
@@ -23870,7 +23870,7 @@
       "source": "packages/spill/spill/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "saveText",
@@ -23941,7 +23941,7 @@
       "source": "packages/storage/storage-domain/src/domain.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "close",
@@ -24089,7 +24089,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage-domain:.:DomainGlobal",
@@ -24205,7 +24205,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage-domain:.:domainTable",
@@ -24331,7 +24331,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage-domain:.:name",
@@ -24442,7 +24442,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Backend storage and process handles"
+      "section": "Backend 存储与进程 handle"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage:.:KvUnit",
@@ -24484,7 +24484,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Backend storage and process handles"
+      "section": "Backend 存储与进程 handle"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
@@ -24541,7 +24541,7 @@
       "source": "packages/storage/storage/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "backend",
@@ -24585,7 +24585,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Backend storage and process handles"
+      "section": "Backend 存储与进程 handle"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage:.:storageBackendServiceKey",
@@ -25554,7 +25554,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-subagent:.:SubagentCatalogEntry",
@@ -25952,7 +25952,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-subagent:.:SubagentResult",
@@ -25984,7 +25984,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-subagent:.:SubagentRun",
@@ -26016,7 +26016,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-subagent:.:SubagentRunEndInfo",
@@ -26118,7 +26118,7 @@
       "source": "packages/subagent/subagent/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "drainContinuableChildren",
@@ -26216,7 +26216,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-subagent:.:SubagentSettledMessageSource",
@@ -26308,7 +26308,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-subagent:.:SubagentStopReason",
@@ -26677,7 +26677,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Backend storage and process handles"
+      "section": "Backend 存储与进程 handle"
     },
     {
       "id": "export:@deepseek-ai/dsh-subprocess:.:SubprocessOutcome",
@@ -26762,7 +26762,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Backend storage and process handles"
+      "section": "Backend 存储与进程 handle"
     },
     {
       "id": "export:@deepseek-ai/dsh-subprocess:.:SubprocessRuntime",
@@ -26772,7 +26772,7 @@
       "source": "packages/subprocess/subprocess/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "resolveExecutable",
@@ -27466,7 +27466,7 @@
       "source": "packages/core/system-prompt/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "assemble",
@@ -27574,7 +27574,7 @@
       "source": "packages/subagent/tool-subagent/src/model-selection-settings.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "current",
@@ -27881,7 +27881,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:DefineToolOptions",
@@ -27954,7 +27954,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:DiffCallView",
@@ -28783,7 +28783,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:PreToolDecision",
@@ -28800,7 +28800,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:PtcDispatchEventData",
@@ -29505,7 +29505,7 @@
       "source": "packages/core/tools/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "execute",
@@ -29755,7 +29755,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:ToolExecutionInput",
@@ -29932,7 +29932,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:ToolExecutionToken",
@@ -30185,7 +30185,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-tools:.:ToolRuntime",
@@ -30195,7 +30195,7 @@
       "source": "packages/core/tools/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "execute",
@@ -30805,7 +30805,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteError",
@@ -30832,7 +30832,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteErrorCode",
@@ -30869,7 +30869,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:remoteErrorOf",
@@ -30890,7 +30890,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteInvocation",
@@ -31027,7 +31027,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteScope",
@@ -31048,7 +31048,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteStreamHandle",
@@ -31075,7 +31075,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:TYPERT_OWNED_VALUE",
@@ -31140,7 +31140,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:TypertCodec",
@@ -31680,7 +31680,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols"
+      "section": "Remote 编写所需符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-protocol:.:TypertRemoteEvent",
@@ -31805,7 +31805,7 @@
       "source": "packages/typert/protocol/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "typertRemote",
@@ -31921,7 +31921,7 @@
       "source": "packages/interaction/user-approval/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "config",
@@ -32053,7 +32053,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebFetchBody",
@@ -32075,7 +32075,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebFetchProvider",
@@ -32085,7 +32085,7 @@
       "source": "packages/web/web/src/types.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "available",
@@ -32120,7 +32120,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebFetchResult",
@@ -32152,7 +32152,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebRuntime",
@@ -32162,7 +32162,7 @@
       "source": "packages/web/web/src/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "fetch",
@@ -32208,7 +32208,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebSearchProvider",
@@ -32218,7 +32218,7 @@
       "source": "packages/web/web/src/types.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "available",
@@ -32258,7 +32258,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebSearchResult",
@@ -32285,7 +32285,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-web:.:WebSearchSource",
@@ -32317,7 +32317,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Web provider request and result symbols"
+      "section": "Web provider 请求与结果符号"
     },
     {
       "id": "export:@deepseek-ai/dsh-webhook:.:default",
@@ -32377,7 +32377,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-webhook:.:WebhookDeliveryId",
@@ -32463,7 +32463,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-webhook:.:WebhookRuleId",
@@ -32483,7 +32483,7 @@
       "source": "packages/webhook/webhook/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "dispatch",
@@ -32537,7 +32537,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Task-required structural types"
+      "section": "任务所需的结构类型"
     },
     {
       "id": "export:@deepseek-ai/dsh-webhook:.:WebhookSourceId",
@@ -32708,7 +32708,7 @@
       "source": "packages/workflow/workflow-ptc/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "start",
@@ -32951,7 +32951,7 @@
       "source": "packages/workflow/workflow/src/index.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "start",
@@ -32996,7 +32996,7 @@
       "decision": "included",
       "members": [],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowMeta",
@@ -33098,7 +33098,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowResultInfo",
@@ -33125,7 +33125,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowRun",
@@ -33162,7 +33162,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowRunId",
@@ -33242,7 +33242,7 @@
         }
       ],
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API"
+      "section": "Host/Core 任务 API"
     },
     {
       "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowStopReason",
@@ -33461,7 +33461,7 @@
       "source": "packages/workspace/workspace/src/types.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "attachSession",
@@ -33809,7 +33809,7 @@
       "source": "vendor/cordis/src/context.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "accessor",
@@ -33964,7 +33964,7 @@
       "source": "vendor/cordis/src/fiber.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "code",
@@ -34012,7 +34012,7 @@
       "source": "vendor/cordis/src/fiber.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": []
     },
     {
@@ -34058,7 +34058,7 @@
       "source": "vendor/cordis/src/fiber.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": []
     },
     {
@@ -34298,7 +34298,7 @@
       "source": "vendor/cordis/src/fiber.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "_checkImpl",
@@ -34433,7 +34433,7 @@
       "source": "vendor/cordis/src/fiber.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": []
     },
     {
@@ -34509,7 +34509,7 @@
       "source": "vendor/cordis/src/registry.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": []
     },
     {
@@ -34791,7 +34791,7 @@
       "source": "vendor/cordis/src/registry.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "Config",
@@ -34938,7 +34938,7 @@
       "source": "vendor/cordis/src/service.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "name",
@@ -35004,7 +35004,7 @@
       "source": "vendor/cordis/src/fiber.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "name",
@@ -35022,7 +35022,7 @@
       "source": "vendor/cordis/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": []
     },
     {
@@ -35302,7 +35302,7 @@
       "source": "vendor/loader/src/config/entry.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "config",
@@ -36215,7 +36215,7 @@
       "source": "vendor/include/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "config",
@@ -36334,7 +36334,7 @@
       "source": "packages/api/remotes/src/client/index.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Remote authoring symbols",
+      "section": "Remote 编写所需符号",
       "members": []
     },
     {
@@ -37202,7 +37202,7 @@
       "source": "packages/client/ui-renderer/src/client/registry.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Slot authoring symbols",
+      "section": "Slot 编写所需符号",
       "members": [
         {
           "name": "bindStoreScope",
@@ -40296,7 +40296,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API"
+      "section": "Client/Web 任务所需公开对象"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:InputControlOwnerProps",
@@ -44655,7 +44655,7 @@
         }
       ],
       "owner": "references/api-client-web-surface.md",
-      "section": "Build-time Remote generation"
+      "section": "构建时生成 Remote"
     },
     {
       "id": "export:@deepseek-ai/dsh-typert-generator:.:WorkspaceModel",
@@ -44688,7 +44688,7 @@
       "source": "packages/typert/generator/src/workspace.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Build-time Remote generation",
+      "section": "构建时生成 Remote",
       "members": [
         {
           "name": "discover",
@@ -44711,7 +44711,7 @@
       "source": "packages/ssh/ssh/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "bootstrapHash",
@@ -44825,7 +44825,7 @@
       "source": "packages/ssh/ssh/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "基础设施任务 API",
       "members": [
         {
           "name": "bootstrapPath",
@@ -44867,7 +44867,7 @@
       "source": "vendor/schemastery/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Cordis lifecycle public API",
+      "section": "Cordis 生命周期公开 API",
       "members": [
         {
           "name": "~standard",
@@ -45166,7 +45166,7 @@
       "source": "packages/jobs/jobs/src/view.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": [
         {
           "name": "bash",
@@ -45277,7 +45277,7 @@
       "source": "packages/session/session-projection/src/types.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": []
     },
     {
@@ -45288,7 +45288,7 @@
       "source": "packages/session/session-projection/src/types.ts",
       "decision": "included",
       "owner": "references/api-host-core-surface.md",
-      "section": "Host/Core task API",
+      "section": "Host/Core 任务 API",
       "members": []
     },
     {
@@ -45414,7 +45414,7 @@
       "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
       "decision": "included",
       "owner": "references/api-client-web-surface.md",
-      "section": "Client/Web task API",
+      "section": "Client/Web 任务所需公开对象",
       "members": [
         {
           "name": "onDismiss",

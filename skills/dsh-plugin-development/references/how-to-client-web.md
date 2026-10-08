@@ -232,21 +232,32 @@ export async function apply(ctx: Context): Promise<() => Promise<void>> {
 
 ## 设置页面
 
-仅需要 schema 自动表单时，不必自己写页面：让 Host entry 暴露 `Config`，保持 settings/config-editor 组合，并为插件实例使用唯一 row id。需要自定义 Client 页面时，注入 `configForms`，通过 `get<ConfigValue>('review')` 读取；保存 staged draft 时调用：
+仅需要 schema 自动表单时，不必自己写页面：让 Host entry 暴露 `Config`，保持 settings/config-editor 组合，并为插件实例使用唯一 row id。需要自定义 Client 页面时，注入 `configForms`，通过 `get<ConfigValue>('review')` 读取。staged draft 开始编辑时必须同时捕获字段值和该时刻的 revision；保存时继续使用这一旧 revision，而不是重读最新 snapshot 后把旧草稿当作新编辑提交：
 
 ```ts
 import type { ConfigForm } from '@deepseek-ai/dsh-client-ui-settings/client'
 
-export async function saveLabel(form: ConfigForm<{ label: string }>, draftLabel: string): Promise<boolean> {
+export function beginLabelEdit(form: ConfigForm<{ label: string }>) {
   const snapshot = form.getSnapshot()
+  if (snapshot.status !== 'ready' || !snapshot.writable || !snapshot.value || snapshot.revision === undefined) {
+    return undefined
+  }
+  return { draftLabel: snapshot.value.label, expectedRevision: snapshot.revision }
+}
+
+export async function saveLabel(
+  form: ConfigForm<{ label: string }>,
+  draftLabel: string,
+  expectedRevision: number,
+): Promise<boolean> {
   return form.mutate(
     [{ op: 'set', path: ['label'], value: draftLabel }],
-    snapshot.revision,
+    expectedRevision,
   )
 }
 ```
 
-`accepted === false` 表示拒绝、冲突或不可写，随后读取恢复后的 snapshot；transport fault 会 reject。清除 override 调用 `unset('label')`，不要写死默认值。非 loopback Web 不提供 Host 持久化。
+`saveLabel` 返回 `false` 表示拒绝、冲突或不可写；保留用户草稿，读取恢复后的最新 snapshot，提示用户比较后再决定是否重新编辑，不能静默以新 revision 重试。transport fault 会 reject，同样保留草稿并报告失败。清除 override 调用 `unset('label')`，不要写死默认值。非 loopback Web 不提供 Host 持久化。用两个编辑者交错写入验证：A 捕获 revision，B 先保存新值，A 的旧草稿必须被拒绝且不能覆盖 B。
 
 ## 验证与卸载
 
@@ -356,7 +367,7 @@ export function apply(ctx: Context) {
 
 验证时在隔离 Web Profile 装载实际 bundle：开始异步操作后更改草稿，确认旧 span 被拒绝且文字仍可手动插入；锁定输入或切换 Session 时不写入旧草稿；展开活动控件后卸载，确认 `onActiveChange(false)` 释放布局；显式启用缺资源 bundle 时仅显示准备引导，关闭与打开详情分别调用 owner callback。
 
-## Web provider
+## Web provider 集成
 
 Host Profile 先挂载 `@deepseek-ai/dsh-web`，再挂载依赖 `web` service 的 provider 包。搜索与抓取是两个独立 registry；只实现其中一种时只调用对应的注册方法。`WebSearchProvider` 和 `WebFetchProvider` 均须有唯一的 `id: string`、同步无网络的 `available(): boolean`，以及分别为 `search(request: WebSearchRequest, signal?: AbortSignal): Promise<WebSearchResult>`、`fetch(request: WebFetchRequest, signal?: AbortSignal): Promise<WebFetchResult>` 的方法。`ctx.web.registerSearchProvider(provider)` 与 `registerFetchProvider(provider)` 返回 disposer，且注册本身绑定调用方 fiber；同类重复 id 抛 `WEB_DUPLICATE_PROVIDER`。参考目标源码 `packages/web/web/src/types.ts`、`packages/web/web/src/index.ts` 和 `packages/web/web-search-perplexity/src/index.ts`。
 
@@ -383,7 +394,7 @@ export function apply(ctx: Context): void {
 
 插件安装后，Profile 同时挂载 `@deepseek-ai/dsh-web` 与本插件，然后执行 `ctx.web.search({ query: 'probe', maxResults: 1 })`；结果应有一条可引用 URL。卸载本插件后，若没有其他可用搜索 provider，同一调用应抛 `WEB_PROVIDER_UNAVAILABLE`。多个可用 provider 而未设置 `searchProvider` 时抛 `WEB_PROVIDER_AMBIGUOUS`；指定但未注册的 id 抛 `WEB_PROVIDER_CONFIGURED_MISSING`。选择在每次调用时发生，注册顺序不决定选择。生产网络 provider 还须独立验证取消、重定向、凭证和响应大小边界；上例只验证 registry 与生命周期，不能证明网络安全。`fetch` 的非 2xx HTTP 状态是 `WebFetchResult`，不是自动抛错。
 
-## Deliverable 与文档界面
+## 交付物与文档界面
 
 这里有两条不同路径，不能把它们写成一个自动转换流程：
 
@@ -398,7 +409,7 @@ export function apply(ctx: Context): void {
 
 底层 `DynamicCordisClientHalf` 要求 `pluginId`、`packageId`、`pluginRunId`、`agentId`、`name`、`code`；其 `code` 是返回插件的纯 JavaScript async function body，不能传 JSX、TypeScript 或模块 import。`DynamicCordisPackageRunner.load(half)` 的成功结果也可能带 `waitingFor`，表示 Client fiber 等待声明的 service，未代表 UI 已渲染；失败阶段是 `evaluate | module-import | activate`。页面 `getSnapshot()`/`subscribe()` 只报告该页面当前运行集，`renderFailures` 另报 settle 后的 React 崩溃。精确 run 的 `retract(pluginId, pluginRunId)` 不会误撤新版本；卸载 runner 时 `dispose()` 等待全部 live package 清理。来源为 `packages/extensions/cordis-client-runner/src/client/runtime.ts:49-98,177-330`。受控动态定义 API 只适用于进程内路径；验证时分别执行批准、失败、重连和清理场景。
 
-## Terminal Remote
+## Terminal Remote 集成
 
 Host 组合 terminal owner、`TerminalController` 及其 `subprocess`、`sandboxPolicy`、`typert` 依赖。公开 Remote 是 `environment(agent, signal)`、`shells(agent, signal)`、`list(sessionId)`、`create(agent, request, signal)`、`retain(sessionId, id, signal)`、`follow(agent, id, attachmentId, signal)`、`write(agent, id, attachmentId, data)`、`resize(agent, id, attachmentId, cols, rows)`、`rename(agent, id, title)`、`close(agent, id)`；其中 `retain` 与 `follow` 是 stream。Client 持有生成的 `RemoteStreamHandle` 时必须迭代或显式 `dispose()`，并按 attachment 身份控制写入；`write` 和 `resize` **没有** `AbortSignal` 参数。关闭 tab 时可通过公开 `ClientTerminals.close(sessionId, key, contentId, terminalId?)` 保存清理意图；`view()` 的模型刷新和 `retainTabs()` 的窗口 hold 配合恢复。目标源码为 `packages/api/terminal-controller/src/index.ts` 与 `src/client/index.ts`。第三方 Terminal 插件还需独立构建与真实 Profile 验证；至少观察首帧、增量、取消、重连查询和卸载后 stream 终止，才能报告行为通过。
 
@@ -411,7 +422,7 @@ Host 组合 terminal owner、`TerminalController` 及其 `subprocess`、`sandbox
 
 这些步骤取自 `packages/api/terminal-controller/src/client/index.ts:38-143`、`src/client/model.ts` 和 Host `src/index.ts:150-310`。验证需分别观察 launch 不分配、create 幂等、follow 初始屏幕与增量、stream 取消、失去连接后 list/hold 恢复、关闭失败可见及卸载无存活进程；各项须在独立 Profile 运行后分别报告。
 
-## Workspace Remote
+## Workspace Remote 集成
 
 普通 Client 页面若只需要 Workspace 列表与命令，注入 `workspaces`，通过公开 `IWorkspaces.list.getSnapshot()` 读 Host 权威快照、`list.subscribe(listener)` 监听替换并在卸载时调用返回的 unsubscribe。`create({ path })` 注册现有路径；`initializeDefault(signal?)` 可能返回 `undefined`；`rename(workspaceId, title)`、`delete(workspaceId)`、`insertBefore(workspaceId, beforeWorkspaceId?)` 改变 Workspace 登记，`delete` 不删除 Session 或磁盘文件。Session 分组还提供 `archiveSession(sessionId, { stopActivity? })`、`unarchiveSession`、`pinSession`、`unpinSession` 与 `insertSessionBefore`。归档运行中的 Session 可抛 `WorkspaceArchiveError`，其 `rpcError.code` 为 `workspace/session-active`。这些签名在 `packages/api/workspace-controller/src/client/service.ts`。
 
