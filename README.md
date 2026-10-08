@@ -6,7 +6,7 @@ This repository contains `$create-dsh-skill`, a workflow for creating a version-
 
 ## Version selection
 
-Invoke `$create-dsh-skill [version]` explicitly. Without a version, the creator resolves the newest published `@deepseek-ai/dsh-agent` release candidate (`X.Y.Z-rc.N`) by numeric version order. With a version, it requires an exact published match. Each creation run records one DSH tag and commit and uses only that checkout for product facts. **This repository has no fixed DSH version baseline.**
+Invoke `$create-dsh-skill [version]` explicitly. Without a version, the creator resolves the newest published `@deepseek-ai/dsh-agent` release candidate (`X.Y.Z-rc.N`) by numeric version order. With a version, it requires an exact published match. Each creation run records one DSH tag and commit in the build workspace and uses only that checkout for product facts. The distributed Skill identifies the published npm package version; it does not expose the source commit. **This repository has no fixed DSH version baseline.**
 
 ## Creation workflow
 
@@ -17,6 +17,10 @@ Selected common tasks link from the generated `SKILL.md` directly to their exact
 The entry-point search and evidence rules are in [entrypoint scope](.agents/skills/create-dsh-skill/references/entrypoint-scope.md); the required document structure is in the [reference template](.agents/skills/create-dsh-skill/references/reference-template.md). Candidate coverage and source claims must be resolved before the source can be frozen.
 
 The generated `skills/dsh-plugin-development/` directory is an output, so it may be absent while creation is in progress. Only a completed, validated output should be copied into a consuming project's `.agents/skills/` directory. This repository contains no DSH runtime or product plugin.
+
+## Review a generated Skill
+
+Invoke `$review-dsh-skill` to follow the [review Skill](.agents/skills/review-dsh-skill/SKILL.md). It discovers plugin tasks independently from real needs and the target version, delegates reference groups to subagents, and consolidates P0–P3 findings on coverage, Agent integration results, decision value, and redundancy. The review points proposed changes to the creation sources and validation rules; it does not edit the generated directory.
 
 ## Validate the creator
 
@@ -34,6 +38,7 @@ For a generated output, follow the [creator's verification procedure](.agents/sk
 
 ```text
 .agents/skills/create-dsh-skill/   # creator instructions, references, scripts, tests
+.agents/skills/review-dsh-skill/   # user-focused review of an existing output
 .dsh-skill-build/                 # per-version workspace; output and adjudicated evidence can be tracked
 skills/dsh-plugin-development/    # validated generated output, when present
 scripts/                          # independent output validators

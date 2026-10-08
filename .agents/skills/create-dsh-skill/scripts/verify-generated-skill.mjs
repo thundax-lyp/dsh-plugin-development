@@ -216,6 +216,26 @@ export function verifyGeneratedSkill(targetArgument, generatedSkillPath) {
         const path = resolveInside(outputPath, output, "generated output");
         const text = readUtf8Text(path);
         if (text === null) continue;
+        if (text.includes(target.provenance.commit)) {
+            errors.push(
+                `${output}: target commit must stay in build evidence, not the distributed Skill`,
+            );
+        }
+        if (extname(path) === ".md") {
+            const prose = withoutFencedCode(text);
+            if (
+                /\bnot covered\b|已覆盖|未覆盖|本次创建|当前证据/i.test(prose)
+            ) {
+                errors.push(
+                    `${output}: creation or validation status belongs in build evidence`,
+                );
+            }
+            if (/`(?:coverage|api-surface|claims)\.json`/.test(prose)) {
+                errors.push(
+                    `${output}: undistributed adjudication ledger referenced`,
+                );
+            }
+        }
         const offlineBoundaryText =
             extname(path) === ".md"
                 ? withoutFencedCode(text).replace(/`[^`\n]*`/g, "")
@@ -234,17 +254,20 @@ export function verifyGeneratedSkill(targetArgument, generatedSkillPath) {
 
     const entrypoint = readFileSync(join(outputPath, "SKILL.md"), "utf8");
     validateEntrypoint(entrypoint, errors);
-    if (!entrypoint.includes(target.provenance.tag)) {
-        errors.push(`SKILL.md: missing target tag ${target.provenance.tag}`);
+    const npmPackageVersion = `@deepseek-ai/dsh-agent@${target.provenance.version}`;
+    if (!entrypoint.includes(npmPackageVersion)) {
+        errors.push(
+            `SKILL.md: missing npm package version ${npmPackageVersion}`,
+        );
     }
     const sourceMap = readFileSync(
         join(outputPath, "maintenance", "source-map.md"),
         "utf8",
     );
-    for (const value of [target.provenance.tag, target.provenance.commit]) {
-        if (!sourceMap.includes(value))
-            errors.push(`source-map.md: missing ${value}`);
-    }
+    if (!sourceMap.includes(npmPackageVersion))
+        errors.push(
+            `source-map.md: missing npm package version ${npmPackageVersion}`,
+        );
     const metadata = readFileSync(
         join(outputPath, "agents", "openai.yaml"),
         "utf8",

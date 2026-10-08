@@ -1,4 +1,4 @@
 interface:
     display_name: "DSH Plugin Development 0.2.0-rc.2"
-    short_description: "为固定 DSH tag 创建并验证 Cordis 插件"
-    default_prompt: "使用目标 tag 的公开 API 制作 DSH 插件，并验证装载、行为与卸载。"
+    short_description: "开发、接入和排查 DSH Cordis 插件"
+    default_prompt: "先核对 DSH 版本，再按插件任务查目标版本的操作步骤与公开 API，验证装载、行为和卸载。"

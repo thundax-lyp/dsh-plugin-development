@@ -76,7 +76,7 @@ Host packages execute runtime work. Client packages declare `dsh.client`, export
 
 ## Validation
 
-At minimum, validate package exports and declaration compilation, run `dsh plugin --profile <name> add <package>` in an isolated `DSH_HOME`, inspect `dsh --profile <name> --dump-config`, boot that Profile, assert every intended row becomes active rather than `PENDING`, observe one capability call, remove the bundle with `dsh plugin --profile <name> remove <package>`, and assert routes/providers/watchers/processes/streams are gone after reload or restart. Split Host and Client builds. For native, SSH, browser, desktop, MCP and Remote providers, add an actual environment smoke or mark that lane Not Covered.
+At minimum, validate package exports and declaration compilation, run `dsh plugin --profile <name> add <package>` in an isolated `DSH_HOME`, inspect `dsh --profile <name> --dump-config`, boot that Profile, assert every intended row becomes active rather than `PENDING`, observe one capability call, remove the bundle with `dsh plugin --profile <name> remove <package>`, and assert routes/providers/watchers/processes/streams are gone after reload or restart. Split Host and Client builds. For native, SSH, browser, desktop, MCP and Remote providers, add an actual environment smoke and inspect its actual behavior.
 
 ## Cordis plugin lifecycle and composition
 

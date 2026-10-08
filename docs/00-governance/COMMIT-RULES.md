@@ -18,11 +18,12 @@ Type(<project>[/<module>]): <中文工程判断或阶段性交付结论>
 
 `Type` 可使用 `Feat`、`Fix`、`Docs`、`Test`、`Refactor`、`CI`。摘要说明最终工程判断或能力，避免“调整”“修改”“优化”等含糊表述。可选 module 表示项目内的稳定领域，不能代替 project；不使用未注册项目名或临时别名。
 
-| 项目      | 范围                               | 边界                                   |
-| --------- | ---------------------------------- | -------------------------------------- |
-| `repo`    | 根目录治理、公开文档、CI、共享配置 | 不用于 Skill 内部内容                  |
-| `creator` | `.agents/skills/create-dsh-skill/` | 创建流程、证据与构建契约、脚本及其测试 |
-| `skill`   | `skills/dsh-plugin-development/`   | 经过验证的生成产物及其版本内契约       |
+| 项目       | 范围                               | 边界                                   |
+| ---------- | ---------------------------------- | -------------------------------------- |
+| `repo`     | 根目录治理、公开文档、CI、共享配置 | 不用于 Skill 内部内容                  |
+| `creator`  | `.agents/skills/create-dsh-skill/` | 创建流程、证据与构建契约、脚本及其测试 |
+| `reviewer` | `.agents/skills/review-dsh-skill/` | 已生成 Skill 的审核流程与判定标准      |
+| `skill`    | `skills/dsh-plugin-development/`   | 经过验证的生成产物及其版本内契约       |
 
 确实无法按项目拆分的同一判断使用以下格式；可独立理解、验证和回退的变更不使用 `cross-project`：
 

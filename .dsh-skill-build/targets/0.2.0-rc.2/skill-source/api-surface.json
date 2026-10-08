@@ -244,7 +244,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-api-settings-controller:.",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected Client settings task uses the public ConfigForm Client surface; this Host controller entry supplies the built-in page and is not imported by that plugin path."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-api-settings-controller:./remote",
@@ -281,7 +282,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-api-terminal-controller:./types",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected Terminal task uses the root and ./client declarations already owned in the Client surface; this types subpath is not an additional plugin call."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-api-workspace-controller:.",
@@ -319,7 +321,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-api-workspace-files:./client",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected Workspace file task mounts the built-in Client module through its package row and injected resources service; it does not import a named callable export from this subpath."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-api-workspace-files:./remote",
@@ -469,11 +472,13 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-locale:./client",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected Client example receives locale through Context injection and mounts the package; its named locale internals are not imported by the documented task."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-modules:.",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The module registry is part of the Web loader; the documented third-party Client package publishes a compatible artifact rather than calling this registry directly."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-modules:./client",
@@ -517,7 +522,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-resources:./client",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected Workspace file path uses the injected resources service and a built-in provider module; no named export from this subpath is imported in that task."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-shortcuts:.",
@@ -629,7 +635,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-ui-deliverables:./client",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "This built-in Client owner publishes the deliverable slot through declaration merging; a third-party contribution uses SlotRegistry instead of a named export here."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-ui-directory-picker-browse:.",
@@ -753,8 +760,7 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
-      "decision": "excluded",
-      "reason": "dsh-client-ui-plugin-manager composes a built-in UI feature; the selected task registers through SlotRegistry and only imports its named slot owner declaration."
+      "decision": "included"
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./remote",
@@ -991,7 +997,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-ui-sidebar-terminal:./client",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The built-in sidebar terminal owner publishes its UI contribution; the selected Terminal task consumes ClientTerminals and does not import named symbols here."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-client-ui-sidebar:.",
@@ -1211,11 +1218,13 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-config-editor:.",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "Profile configuration is composed by Loader and the selected examples use package metadata or ConfigForm; they do not call ConfigEditor directly."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-cordis-client-runner:.",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The dynamic Client runner is mounted as a package row by the built-in composition; third-party code does not import its root apply function."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-cordis-client-runner:./client",
@@ -1223,7 +1232,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:.",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected dynamic extension task uses the injected runner and built-in definition flow; it does not import a named root symbol in the documented path."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:./remote",
@@ -1237,7 +1247,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:./types",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "This auxiliary types subpath duplicates shapes used through the injected dynamic runner; it is not a separate plugin-facing call in the selected task."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-credentials-local:.",
@@ -2551,7 +2562,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-terminal:.",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected task extends terminal UI through TerminalController and ClientTerminals; it does not implement the backend Terminal service."
     },
     {
       "candidate": "export:@deepseek-ai/dsh-time-context:.",
@@ -2970,7 +2982,8 @@
     },
     {
       "candidate": "export:@deepseek-ai/dsh-workspace:./types",
-      "decision": "included"
+      "decision": "excluded",
+      "reason": "The selected Workspace task uses the root Workspace declaration already documented; this types subpath is not another callable entry."
     },
     {
       "candidate": "export:@deepseek-ai/dsh:./profile-boot",
@@ -7580,7 +7593,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Attachment persistence and credential records"
     },
     {
       "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationInteraction",
@@ -7602,7 +7615,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Attachment persistence and credential records"
     },
     {
       "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationMethod",
@@ -7774,7 +7787,7 @@
       "source": "packages/credentials/authorization/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "Infrastructure provider call shapes",
       "members": [
         {
           "name": "begin",
@@ -7839,7 +7852,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Attachment persistence and credential records"
     },
     {
       "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationSettlement",
@@ -11982,7 +11995,7 @@
       "source": "packages/credentials/credentials/src/index.ts",
       "decision": "included",
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API",
+      "section": "Attachment persistence and credential records",
       "members": [
         {
           "name": "deleteRecord",
@@ -19573,7 +19586,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "PTC bindings and confinement evidence"
     },
     {
       "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcJsonValue",
@@ -19648,7 +19661,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "PTC bindings and confinement evidence"
     },
     {
       "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunResult",
@@ -19680,7 +19693,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "PTC bindings and confinement evidence"
     },
     {
       "id": "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRunSandbox",
@@ -20024,7 +20037,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "PTC bindings and confinement evidence"
     },
     {
       "id": "export:@deepseek-ai/dsh-sandbox:.:ConfinedSandboxMode",
@@ -20221,7 +20234,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "PTC bindings and confinement evidence"
     },
     {
       "id": "export:@deepseek-ai/dsh-sandbox:.:SANDBOX_UNAVAILABLE",
@@ -22768,7 +22781,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Backend storage and process handles"
     },
     {
       "id": "export:@deepseek-ai/dsh-shell:.:ShellProcessRead",
@@ -24429,7 +24442,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Backend storage and process handles"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage:.:KvUnit",
@@ -24471,7 +24484,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Backend storage and process handles"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage:.:KvUnitDescriptor",
@@ -24572,7 +24585,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Backend storage and process handles"
     },
     {
       "id": "export:@deepseek-ai/dsh-storage:.:storageBackendServiceKey",
@@ -26664,7 +26677,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Backend storage and process handles"
     },
     {
       "id": "export:@deepseek-ai/dsh-subprocess:.:SubprocessOutcome",
@@ -26749,7 +26762,7 @@
         }
       ],
       "owner": "references/api-infra-runtime-surface.md",
-      "section": "Infrastructure task API"
+      "section": "Backend storage and process handles"
     },
     {
       "id": "export:@deepseek-ai/dsh-subprocess:.:SubprocessRuntime",
@@ -40239,8 +40252,7 @@
       "symbol": "InputActions",
       "signature": "InputActions",
       "source": "packages/client/ui-conversation/src/client/contract/input.ts",
-      "decision": "excluded",
-      "reason": "InputActions: The selected header-actions task imports this subpath for SlotMap augmentation; this symbol describes conversation product state outside that slot registration.",
+      "decision": "included",
       "members": [
         {
           "name": "addAttachments",
@@ -40251,14 +40263,12 @@
         {
           "name": "captureInsertion",
           "signature": "() => TokenSpan",
-          "decision": "excluded",
-          "reason": "InputActions.captureInsertion is outside the selected assembly or generation call; the owner section documents the required members."
+          "decision": "included"
         },
         {
           "name": "insertText",
           "signature": "(text: string, span: TokenSpan) => boolean",
-          "decision": "excluded",
-          "reason": "InputActions.insertText is outside the selected assembly or generation call; the owner section documents the required members."
+          "decision": "included"
         },
         {
           "name": "pruneAttachments",
@@ -40284,7 +40294,9 @@
           "decision": "excluded",
           "reason": "InputActions.submit is outside the selected assembly or generation call; the owner section documents the required members."
         }
-      ]
+      ],
+      "owner": "references/api-client-web-surface.md",
+      "section": "Client/Web task API"
     },
     {
       "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:InputControlOwnerProps",
@@ -45278,6 +45290,456 @@
       "owner": "references/api-host-core-surface.md",
       "section": "Host/Core task API",
       "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:apply",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "apply",
+      "signature": "any",
+      "source": "packages/client/ui-plugin-manager/src/client/index.ts",
+      "decision": "excluded",
+      "reason": "apply is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:ConfigLedger",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "ConfigLedger",
+      "signature": "ConfigLedger",
+      "source": "packages/client/ui-plugin-manager/src/client/config-ledger.ts",
+      "decision": "excluded",
+      "reason": "ConfigLedger is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "bundles",
+          "signature": "ReadonlySet<string>",
+          "decision": "excluded",
+          "reason": "ConfigLedger.bundles is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "items",
+          "signature": "readonly OfficialItem[]",
+          "decision": "excluded",
+          "reason": "ConfigLedger.items is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "rows",
+          "signature": "ReadonlySet<string>",
+          "decision": "excluded",
+          "reason": "ConfigLedger.rows is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:ConfigPageForm",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "ConfigPageForm",
+      "signature": "ConfigPageForm",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "excluded",
+      "reason": "ConfigPageForm is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "mutate",
+          "signature": "ConfigForm<Record<string, unknown>>",
+          "decision": "excluded",
+          "reason": "ConfigPageForm.mutate is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "state",
+          "signature": "ConfigFormSnapshot<Record<string, unknown>>",
+          "decision": "excluded",
+          "reason": "ConfigPageForm.state is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:inject",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "inject",
+      "signature": "any",
+      "source": "packages/client/ui-plugin-manager/src/client/index.ts",
+      "decision": "excluded",
+      "reason": "inject is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:NS",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "NS",
+      "signature": "any",
+      "source": "packages/client/ui-plugin-manager/src/client/index.ts",
+      "decision": "excluded",
+      "reason": "NS is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:OfficialItem",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "OfficialItem",
+      "signature": "OfficialItem",
+      "source": "packages/client/ui-plugin-manager/src/client/config-ledger.ts",
+      "decision": "excluded",
+      "reason": "OfficialItem is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "id",
+          "signature": "string",
+          "decision": "excluded",
+          "reason": "OfficialItem.id is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "label",
+          "signature": "string",
+          "decision": "excluded",
+          "reason": "OfficialItem.label is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PANEL_ID",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PANEL_ID",
+      "signature": "any",
+      "source": "packages/client/ui-plugin-manager/src/client/index.ts",
+      "decision": "excluded",
+      "reason": "PANEL_ID is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginActivationOwnerProps",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginActivationOwnerProps",
+      "signature": "PluginActivationOwnerProps",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "included",
+      "owner": "references/api-client-web-surface.md",
+      "section": "Client/Web task API",
+      "members": [
+        {
+          "name": "onDismiss",
+          "signature": "() => void",
+          "decision": "included"
+        },
+        {
+          "name": "onOpenDetails",
+          "signature": "() => void",
+          "decision": "included"
+        },
+        {
+          "name": "packageName",
+          "signature": "string",
+          "decision": "included"
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginConfigViewProps",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginConfigViewProps",
+      "signature": "PluginConfigViewProps",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "excluded",
+      "reason": "PluginConfigViewProps is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "form",
+          "signature": "ConfigPageForm | undefined",
+          "decision": "excluded",
+          "reason": "PluginConfigViewProps.form is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "view",
+          "signature": "\"page\" | \"summary\"",
+          "decision": "excluded",
+          "reason": "PluginConfigViewProps.view is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginDetailProps",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginDetailProps",
+      "signature": "PluginDetailProps",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "excluded",
+      "reason": "PluginDetailProps is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "subject",
+          "signature": "PluginsSubject",
+          "decision": "excluded",
+          "reason": "PluginDetailProps.subject is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginManagerFace",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginManagerFace",
+      "signature": "PluginManagerFace",
+      "source": "packages/client/ui-plugin-manager/src/client/manager-store.ts",
+      "decision": "excluded",
+      "reason": "PluginManagerFace is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "approveBuildsAndRetry",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.approveBuildsAndRetry is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "cancelConfirm",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.cancelConfirm is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "cancelInstall",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.cancelInstall is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "changeRegistry",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.changeRegistry is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "chooseRegistry",
+          "signature": "(choice: RegistryChoice) => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.chooseRegistry is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "clearHighlight",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.clearHighlight is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "closeInstall",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.closeInstall is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "configForm",
+          "signature": "ConfigForms",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.configForm is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "confirm",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.confirm is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "dismissNotice",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.dismissNotice is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "editInstallSpec",
+          "signature": "(text: string) => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.editInstallSpec is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "enableInstalled",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.enableInstalled is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "ensure",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.ensure is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "hooks",
+          "signature": "{ configurations: SettingsDescribeFace; pluginManager: SnapshotStore<PluginManagerState>; configLedger: HostObservable<ConfigLedger>; }",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.hooks is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "openInstall",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.openInstall is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "reconcileInstall",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.reconcileInstall is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "refresh",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.refresh is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "resolveText",
+          "signature": "(text: LocalizedText) => string",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.resolveText is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "runInstall",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.runInstall is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "setEnabled",
+          "signature": "(packageName: string, enabled: boolean) => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.setEnabled is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "setRowEnabled",
+          "signature": "(entryId: PluginEntryId, enabled: boolean) => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.setRowEnabled is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "toggleInstallDetails",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.toggleInstallDetails is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "toggleRegistryOptions",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.toggleRegistryOptions is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "uninstall",
+          "signature": "(packageName: string) => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.uninstall is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "useGithubMirror",
+          "signature": "() => void",
+          "decision": "excluded",
+          "reason": "PluginManagerFace.useGithubMirror is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginManagerLocaleKey",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginManagerLocaleKey",
+      "signature": "\"error\" | \"cancel\" | \"loading\" | \"close\" | \"retry\" | \"refresh\" | \"unavailable\" | \"panel\" | \"title\" | \"intro\" | \"infoLabel\" | \"infoDescription\" | \"refreshError\" | \"empty\" | \"addPlugin\" | ... 173 more ... | \"reasonOperationError\"",
+      "source": "packages/client/ui-plugin-manager/src/client/locales.ts",
+      "decision": "excluded",
+      "reason": "PluginManagerLocaleKey is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginManagerPageProps",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginManagerPageProps",
+      "signature": "any",
+      "source": "packages/client/ui-plugin-manager/src/client/PluginManagerPage.tsx",
+      "decision": "excluded",
+      "reason": "PluginManagerPageProps is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": []
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginPackageRef",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginPackageRef",
+      "signature": "PluginPackageRef",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "excluded",
+      "reason": "PluginPackageRef is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean",
+          "decision": "excluded",
+          "reason": "PluginPackageRef.enabled is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "installed",
+          "signature": "boolean",
+          "decision": "excluded",
+          "reason": "PluginPackageRef.installed is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "name",
+          "signature": "string",
+          "decision": "excluded",
+          "reason": "PluginPackageRef.name is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "rows",
+          "signature": "readonly PluginRowRef[]",
+          "decision": "excluded",
+          "reason": "PluginPackageRef.rows is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "version",
+          "signature": "string | undefined",
+          "decision": "excluded",
+          "reason": "PluginPackageRef.version is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginRowRef",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginRowRef",
+      "signature": "PluginRowRef",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "excluded",
+      "reason": "PluginRowRef is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "enabled",
+          "signature": "boolean",
+          "decision": "excluded",
+          "reason": "PluginRowRef.enabled is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "moduleName",
+          "signature": "string",
+          "decision": "excluded",
+          "reason": "PluginRowRef.moduleName is not called by the selected third-party activation contribution."
+        },
+        {
+          "name": "rowId",
+          "signature": "string",
+          "decision": "excluded",
+          "reason": "PluginRowRef.rowId is not called by the selected third-party activation contribution."
+        }
+      ]
+    },
+    {
+      "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginsSubject",
+      "entry": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "symbol": "PluginsSubject",
+      "signature": "PluginsSubject",
+      "source": "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+      "decision": "excluded",
+      "reason": "PluginsSubject is part of the plugin manager owner or built-in UI; the documented third-party task registers the activation contribution through SlotRegistry and consumes PluginActivationOwnerProps.",
+      "members": [
+        {
+          "name": "kind",
+          "signature": "\"item\" | \"bundle\" | \"row\"",
+          "decision": "excluded",
+          "reason": "PluginsSubject.kind is not called by the selected third-party activation contribution."
+        }
+      ]
     }
   ]
 }

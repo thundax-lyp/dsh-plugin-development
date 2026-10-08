@@ -6,7 +6,7 @@
 
 ## 版本选择
 
-显式调用 `$create-dsh-skill [version]`。省略版本时，创建流程按数值版本顺序选择最新已发布的 `@deepseek-ai/dsh-agent` RC（`X.Y.Z-rc.N`）；传入版本时，要求与已发布版本精确匹配。每次创建记录一个 DSH tag 和 commit，产品事实只取自该 checkout。**本仓库不固定 DSH 版本基线。**
+显式调用 `$create-dsh-skill [version]`。省略版本时，创建流程按数值版本顺序选择最新已发布的 `@deepseek-ai/dsh-agent` RC（`X.Y.Z-rc.N`）；传入版本时，要求与已发布版本精确匹配。每次创建在构建工作区记录一个 DSH tag 和 commit，产品事实只取自该 checkout。分发 Skill 以已发布的 npm 包版本标明适用范围，不展示源码 commit。**本仓库不固定 DSH 版本基线。**
 
 ## 创建流程
 
@@ -17,6 +17,10 @@
 入口搜索与证据规则见[入口范围](.agents/skills/create-dsh-skill/references/entrypoint-scope.md)；文档必需结构见[reference 模板](.agents/skills/create-dsh-skill/references/reference-template.md)。所有能力候选和源码事实须在冻结前完成裁决。
 
 `skills/dsh-plugin-development/` 是生成结果，在创建期间可以不存在。只有完整通过验证的产物才应复制到消费项目的 `.agents/skills/`。本仓库不包含 DSH runtime 或产品插件。
+
+## 审核生成产物
+
+调用 `$review-dsh-skill`，按[审核 Skill](.agents/skills/review-dsh-skill/SKILL.md)先从真实需求和目标版本独立发现插件任务，再由 subagent 分组审核 references、主 Agent 汇总 P0–P3 发现，并检查产物覆盖与真实集成结果。审核结果指向创建素材和验证规则；审核本身不修改生成目录。
 
 ## 验证创建流程
 
@@ -34,6 +38,7 @@ git diff --check
 
 ```text
 .agents/skills/create-dsh-skill/   # 创建说明、参考、脚本和测试
+.agents/skills/review-dsh-skill/   # 现有产物的使用者视角审核
 .dsh-skill-build/                 # 分版本工作区；产物与裁决证据可被跟踪
 skills/dsh-plugin-development/    # 已验证的生成结果，可能暂不存在
 scripts/                          # 独立的产物检查器

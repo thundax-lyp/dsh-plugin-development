@@ -97,14 +97,24 @@ def validate(root, dsh=None, skill=None):
     source_map = source_map_path.read_text() if source_map_path.is_file() else ''
     paths = set(SOURCE_PATHS.findall(source_map))
     if dsh and source_map:
-        tag = re.search(r'`(dsh-v[^`]+)`', source_map)[1]
-        sha = re.search(r'commit `([0-9a-f]{40})`', source_map)[1]
-        for ref in ('HEAD', tag):
-            actual = subprocess.check_output(
-                ['git', 'rev-parse', ref + '^{commit}'], cwd=dsh, text=True,
-            ).strip()
-            if actual != sha:
-                errors.append(f'baseline mismatch: {ref} is {actual}, expected {sha}')
+        version_match = re.search(r'(?:dsh-v|@deepseek-ai/dsh-agent@)(\d+\.\d+\.\d+(?:-[\w.]+)?)', source_map)
+        if not version_match:
+            errors.append('source map missing npm version')
+        else:
+            tag = 'dsh-v' + version_match.group(1)
+            try:
+                head = subprocess.check_output(
+                    ['git', 'rev-parse', 'HEAD^{commit}'], cwd=dsh, text=True,
+                    stderr=subprocess.DEVNULL,
+                ).strip()
+                tagged = subprocess.check_output(
+                    ['git', 'rev-parse', f'refs/tags/{tag}^{{commit}}'], cwd=dsh, text=True,
+                    stderr=subprocess.DEVNULL,
+                ).strip()
+                if head != tagged:
+                    errors.append(f'baseline mismatch: HEAD does not match {tag}')
+            except subprocess.CalledProcessError:
+                errors.append(f'baseline tag unavailable: {tag}')
         for filename in paths:
             if not (dsh / filename).exists():
                 errors.append(f'source map missing {filename}')

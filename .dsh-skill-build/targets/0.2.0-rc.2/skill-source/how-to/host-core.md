@@ -92,7 +92,57 @@ try {
 
 If the Tool is absent in the real Profile, inspect the row and its required `tools` service first. When using HMR to disable the overlay row, verify the running Profile also removes the schema; that live HMR check remains separate from this in-process disposal test.
 
-Completion means the Host file compiles against the target tag, the Profile activates its row, a real Agent call produces the declared result, the failure and cancellation paths settle, and unloading removes the schema. Record any step not actually run as Not Covered; a build or schema listing alone does not establish the full path.
+Completion means the Host file compiles against the target tag, the Profile activates its row, a real Agent call produces the declared result, the failure and cancellation paths settle, and unloading removes the schema. A build or schema listing alone does not establish the full path.
+
+## provide-and-consume-cordis-service
+
+Use a Cordis service when one Host plugin owns a capability and another plugin needs it through `ctx`. Give the service a name distinct from DSH's built-in service keys. Check the [public Cordis service surface](api-infra-runtime-surface.md#cordis-lifecycle-public-api) for the owner and lifecycle contract. For this checkout-local example, place both files in `apps/cli/scratch-plugin/src/`, where the public Cordis import resolves through the CLI workspace dependency. A separately distributed package follows the [package and Profile path](how-to-infra-runtime.md#package-and-activate-a-bundle).
+
+1. In `greeter.ts`, declare the `Context` property and mount a `Service` subclass. `super(ctx, 'exampleGreeter')` provides the instance for the lifetime of the provider fiber; the declaration merge is only the TypeScript side of that contract.
+
+```ts
+import { Service, type Context } from '@deepseek-ai/cordis'
+
+declare module '@deepseek-ai/cordis' {
+  interface Context { exampleGreeter: GreeterService }
+}
+
+export class GreeterService extends Service {
+  constructor(ctx: Context) { super(ctx, 'exampleGreeter') }
+  greet(name: string): string { return `Hello, ${name}!` }
+}
+
+export const name = 'example-greeter-provider'
+export function apply(ctx: Context) { ctx.plugin(GreeterService) }
+```
+
+2. In `consumer.js`, require the service before reading it. The provider's `Context` augmentation is available to a TypeScript consumer by importing `./greeter.js` as a type-only side effect. Keep the provider and consumer as separate Loader rows: `inject` controls activation, so their row order is not a dependency mechanism.
+
+```js
+export const name = 'example-greeter-consumer'
+export const inject = ['exampleGreeter']
+export function apply(ctx) {
+  if (ctx.exampleGreeter.greet('Ada') !== 'Hello, Ada!') throw new Error('service mismatch')
+}
+```
+
+3. From the checkout root, start an isolated Web Profile with both rows. The patch uses absolute paths because Loader resolves modules from the Profile, not from the patch file. For a published package, use the [bundle instructions](how-to-infra-runtime.md#package-and-activate-a-bundle) instead.
+
+```sh
+mkdir -p apps/cli/scratch-plugin/src
+cat > apps/cli/scratch-plugin/service.patch.yml <<EOF
+- insert:
+    - id: example-greeter-provider
+      name: '$(pwd)/apps/cli/scratch-plugin/src/greeter.ts'
+      config: {}
+    - id: example-greeter-consumer
+      name: '$(pwd)/apps/cli/scratch-plugin/src/consumer.js'
+      config: {}
+EOF
+pnpm dsh web --patch ./apps/cli/scratch-plugin/service.patch.yml
+```
+
+4. Compile the provider against the target tag. In the Profile, confirm both fibers become `ACTIVE` and the consumer's assertion passes; stop the Profile, remove the provider row from the patch, restart, and confirm the consumer is `PENDING`. Restore the provider and restart to confirm the consumer activates again. To check dependent unload while live, remove or replace the provider through HMR and observe its consumer's effects unwind. For a provider that owns timers, sockets, or watches, return an awaited `ctx.effect()` disposer and verify those resources close before declaring unload complete. Source: `docs/cordis-tutorial/03-services.md` and `vendor/cordis/src/service.ts` in the pinned checkout.
 
 ## extend-system-prompt
 
@@ -295,7 +345,7 @@ export async function delegateOnce(
 }
 ```
 
-Package the helper in a plugin that injects `subagents` and calls it only from an owned Agent operation. `start` rejects on prepublication setup failure; after publication, `run.result` resolves child-level failure as a `stopReason` and `dispose()` drains remaining work. Pass optional `agentOptions`, `outputSchema`, `maxDepth`, `toolFilter`, or `persona` only after checking the selected provider's `capabilities`; the generic service rejects unsupported requests. The five one-shot flags are `agentOptions`, `outputSchema`, `depthLimit` for `maxDepth`, `toolFilter`, and `persona`; they do not by themselves promise continuable support. `ctx.subagents.list()` lists **provider names**. For durable child catalog queries use `listChildren(parent.session.id, signal)` or `listDescendants(...)`; for a continuable child use its dedicated `prompt`/`interrupt` authority path and drain descendants during parent teardown. An exact live parent Agent may call `ctx.subagents.sendMessage(parent, childId, content, { signal })`; the returned inbox id confirms acceptance, and that signal cancels only preacceptance work. `ctx.subagents.interrupt(childId, { kind: 'ancestor', agent: parent })` signals a current continuable turn without deleting queued messages or disposing the child; a human path uses `{ kind: 'user', parentSessionId }` after its address check. A continuable provider implements `prepareContinuable`, and the continuation manager owns later activations. Verify capacity/depth refusal, startup failure, normal and cancelled settlement, no leaked descendants, and Session lineage for a session-backed provider. ACP is one-shot. Report a real provider or Browser/Client Remote composition only after exercising that exact path; otherwise mark the check Not Covered.
+Package the helper in a plugin that injects `subagents` and calls it only from an owned Agent operation. `start` rejects on prepublication setup failure; after publication, `run.result` resolves child-level failure as a `stopReason` and `dispose()` drains remaining work. Pass optional `agentOptions`, `outputSchema`, `maxDepth`, `toolFilter`, or `persona` only after checking the selected provider's `capabilities`; the generic service rejects unsupported requests. The five one-shot flags are `agentOptions`, `outputSchema`, `depthLimit` for `maxDepth`, `toolFilter`, and `persona`; they do not by themselves promise continuable support. `ctx.subagents.list()` lists **provider names**. For durable child catalog queries use `listChildren(parent.session.id, signal)` or `listDescendants(...)`; for a continuable child use its dedicated `prompt`/`interrupt` authority path and drain descendants during parent teardown. An exact live parent Agent may call `ctx.subagents.sendMessage(parent, childId, content, { signal })`; the returned inbox id confirms acceptance, and that signal cancels only preacceptance work. `ctx.subagents.interrupt(childId, { kind: 'ancestor', agent: parent })` signals a current continuable turn without deleting queued messages or disposing the child; a human path uses `{ kind: 'user', parentSessionId }` after its address check. A continuable provider implements `prepareContinuable`, and the continuation manager owns later activations. Verify capacity/depth refusal, startup failure, normal and cancelled settlement, no leaked descendants, and Session lineage for a session-backed provider. ACP is one-shot. Report a real provider or Browser/Client Remote composition only after exercising that exact path; verify that composition before claiming its behavior.
 
 ## run-workflow
 

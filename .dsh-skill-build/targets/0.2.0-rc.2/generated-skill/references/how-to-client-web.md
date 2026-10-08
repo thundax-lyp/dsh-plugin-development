@@ -6,9 +6,9 @@
 
 目标是让一个 Host 插件保存状态，通过 typed Remote 供浏览器读取，并在 `conversation.session.header.actions` 增加一个按钮；按钮状态可通过插件 Config 在线修改。这个任务组合 Host package、生成 Remote、Client package、slot registration 和 Web Profile 装载。
 
-目标版本没有发布独立第三方 Client bundle builder。下列代码是目标 tag 的完整源契约；消费项目还必须提供能产生 DSH lazy-CJS `lib/client.js` 的兼容构建步骤。若没有该构建器，只能完成 Host/Client 声明编译，不能声称浏览器已装载。
+目标版本发布了 `@deepseek-ai/dsh-typert-generator`，但当前独立 npm 消费项目未能用其发布的声明生成 Remote 工件：生成器未把来自 `node_modules` 的 `@Remote` 识别为方法标记，报 `publishes Remote artifacts but has no Remote methods`。目标版本也未发布独立第三方 Client bundle builder。下列代码是 Host/Client 声明示例，**不是可独立安装的完整包**。消费项目还需要可用的 Typert 生成路径、DSH lazy-CJS `lib/client.js` 构建步骤，以及真实 Profile 验证。
 
-文件：
+下列文件只覆盖源契约和装载声明；Client 构建配置仍是未实现的交付项：
 
 ```text
 package.json
@@ -52,7 +52,8 @@ export class ReviewController extends TypertRemoteService {
   }
 
   @Remote('label')
-  label(_agent: Agent, signal: AbortSignal): string {
+  label(agent: Agent, signal: AbortSignal): string {
+    void agent
     signal.throwIfAborted()
     const label = this.config.label.get().trim()
     if (!label) {
@@ -68,6 +69,42 @@ export function apply(ctx: Context, config: Config): void {
 ```
 
 `Agent` 是 lookup 参数，不由 Client 发送实体；Gateway 从 wire identity 解析。`AbortSignal` 在最后。更改该签名或 error code 后运行目标仓库 Typert 生成/build，得到 `./typert` Host 描述和 `./remote` Client contribution。下方 Client assembly 以运行时值导入并挂载该 contribution；同一个导入也带入生成的类型增强。目标 `api-remotes` 是显式 assembly，不会自动发现此 namespace。
+
+Host Profile 还需在 `@deepseek-ai/dsh-typert-registry` 之后挂载 `@deepseek-ai/dsh-typert-loader`。Loader 默认从当前 Cordis Loader entries 发现每个包的 `./typert`，注册随 entry 卸载撤销；藏在另一 entry 后的包可用 loader 的 `packages: ['@acme/dsh-review']` 显式列出，且该名称必须从配置树可解析。没有 `./typert` 的普通 entry 会跳过；显式列出的包缺失该 export 会报错。新增该 export 后须重启 Host，因为解析裁决按进程缓存。只生成四个文件、却不挂载 registry 与 loader，Remote 不会注册到 Host 运行时。
+
+### 生成 Remote 工件的公开 API 与消费限制
+
+`@deepseek-ai/dsh-typert-generator` 的根导出提供 `WorkspaceTypertGenerator`，`./tsdown` 导出提供 `typertPlugin()`。直接调用生成器时，workspace 根必须有 `tsconfig.host.json`、`tsconfig.client.json` 两个独立聚合工程，插件包必须位于根目录的 `packages/` 下并被 Host 聚合工程直接引用；生成器只从这些 project references 发现包，单独在任意目录运行不会找到它。Host 包清单需预先声明精确的 `./typert` 与 `./remote` exports，并在 `files` 显式列出四个生成的 `.js`/`.d.ts` 文件；声明与产物不匹配会被生成器拒绝。见目标 `packages/typert/generator/src/analyzer.ts:294-336,478-520` 与 `src/workspace.ts:65-125`。
+
+独立 workspace 完成 Host 类型检查后，公开根导出提供以下生成器调用形状。它在本目标版本的独立 npm 消费实验中**未生成文件**，因此只能用于核查 API，不能作为已验证的安装步骤：
+
+```js
+// scripts/generate-review-remote.mjs
+import { mkdir, writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import { WorkspaceTypertGenerator } from '@deepseek-ai/dsh-typert-generator'
+
+const root = process.cwd()
+const artifacts = new WorkspaceTypertGenerator(root).generate(['@acme/dsh-review'], ['host'])
+if (artifacts.length !== 1 || !artifacts[0].remote) {
+  throw new Error('Expected one Host artifact with a Remote contribution')
+}
+const artifact = artifacts[0]
+const output = resolve(root, artifact.packageRoot, 'lib')
+await mkdir(output, { recursive: true })
+await Promise.all([
+  writeFile(resolve(output, 'typert.host.js'), artifact.js),
+  writeFile(resolve(output, 'typert.host.d.ts'), artifact.dts),
+  writeFile(resolve(output, 'typert.remote-client.js'), artifact.remote.js),
+  writeFile(resolve(output, 'typert.remote-client.d.ts'), artifact.remote.dts),
+])
+```
+
+把 `@deepseek-ai/dsh-typert-generator` 固定到 `0.2.0-rc.2` 作为构建依赖。上述脚本的 API 与输出路径由公开声明支持，但发布版生成器在本独立消费实验中先因 `@Remote` 声明不属于登记的 workspace package 而没有发现方法；仅把已发布 protocol 与 session `.d.ts` 复制成 workspace package，接着分别遇到未命名的公开 wire type 与生成器内部 `TypeError`。这不是可复现的四文件构建路径。只有找到并验证公开配置或修复后，才能验收四个文件、两侧声明编译及 Profile 装载。目标 `typertPlugin()` 可以接入 tsdown 构建，然而其 `writeBundle` 以 `lib/` 的最近 package 与 workspace 根作发现，并假定 TypeScript 产物已通过构建；不能只把插件名传给它就绕过聚合工程。
+
+Client bundle 的发布边界仍在：目标 `packages/client/tsdown.client.ts` 中的 `clientBundle()` 不在任何已发布包 exports 中，而且该预设依赖仓库私有的 `scripts/client-build-environment.ts`、`scripts/bundle-input-isolation.ts` 和 Client module 内部实现。`packages/client/modules/README.md` 要求产物以 `window.__ModuleLoader__.load({ id, factory })` 登记 lazy-CJS；外部模块还须与页面 seed table 或 `dsh.client.external` 精确匹配。
+
+简单的 tsdown CJS wrapper 可生成单文件、只外部化 React 的最小工件：`banner` 登记 `window.__ModuleLoader__.load({ id, factory: (require) => {`，`intro` 创建 `module.exports`，`footer` 返回它，再由 `deps.neverBundle` 保留 `require('react')`。目标版本的 Client module system 能装载这种工件并从 seed table 解析 React。这个窄构建方法没有覆盖本例的生成 Remote contribution、全部 externals、CSS、异步 chunk、purity/input gate、source map 与 Profile；制作完整 Client 包必须逐项满足这些契约，并在真实 Web 组合验证。
 
 ## Client 入口与 slot
 
@@ -175,6 +212,7 @@ export async function apply(ctx: Context): Promise<() => Promise<void>> {
     "@deepseek-ai/dsh-client-ui-conversation": "0.2.0-rc.2",
     "@deepseek-ai/dsh-client-ui-renderer": "0.2.0-rc.2",
     "@deepseek-ai/dsh-client-ui-slots": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-typert-generator": "0.2.0-rc.2",
     "@deepseek-ai/dsh-typert-protocol": "0.2.0-rc.2",
     "@types/react": "~18.3.1",
     "react": "^18.2.0"
@@ -219,24 +257,162 @@ export async function saveLabel(form: ConfigForm<{ label: string }>, draftLabel:
 5. 浏览器中确认按钮出现；空 label 显示结构化失败；更新 Config 后下一次读取采用新值。
 6. 禁用/删除 row，确认 slot contribution 消失、Remote namespace 不能再调用、事件和订阅不残留；重新启用后由 Host Config/Remote snapshot 恢复，而不是依赖旧 React state。
 
-本次创建只完成了独立 Host/Client 声明编译与生成 Remote fixture 编译；未执行真实 Web Profile、浏览器、重连或 Remote round trip，因此这些运行面保持 Not Covered。
+分别观察 Web Profile 装载、浏览器交互、重连和 Remote round trip，确认各侧运行行为。
+
+## 输入框异步插入与显式启用引导
+
+若任务要在输入框旁增加语音转写、搜索建议等异步动作，先导入 `@deepseek-ai/dsh-client-ui-conversation/client` 的 slot 声明，并向 session-scoped `conversation.input.activity` 注册组件。`PropsRuntime<'conversation.input.activity'>` 提供 `inputActions`、`locked` 和 `onActiveChange`；组件不能从 Host 路径或 React 私有输入框状态构造插入位置。下面的 `produceText` 是插件自己实现的可取消异步操作，通过 registration `inject` 传入，组件不持有 Cordis `ctx`：
+
+```tsx
+import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
+import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type { Context } from '@deepseek-ai/cordis'
+import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+import { useEffect, useRef, useState } from 'react'
+
+type InputActionProps = PropsRuntime<'conversation.input.activity'> & {
+  produceText: (signal: AbortSignal) => Promise<string>
+}
+
+function InputAction({ inputActions, locked, onActiveChange, produceText }: InputActionProps) {
+  const [busy, setBusy] = useState(false)
+  const [pending, setPending] = useState<string>()
+  const [failure, setFailure] = useState<string>()
+  const operation = useRef<AbortController>()
+
+  useEffect(() => {
+    onActiveChange(busy || pending !== undefined || failure !== undefined)
+    return () => { onActiveChange(false) }
+  }, [busy, pending, failure, onActiveChange])
+  useEffect(() => () => { operation.current?.abort() }, [])
+
+  async function start(): Promise<void> {
+    if (locked || operation.current) return
+    const span = inputActions.captureInsertion() // 捕获必须早于异步等待
+    const abort = new AbortController()
+    operation.current = abort
+    setBusy(true)
+    setFailure(undefined)
+    try {
+      const text = await produceText(abort.signal)
+      if (abort.signal.aborted) return
+      if (!inputActions.insertText(text, span)) setPending(text)
+    } catch (error) {
+      if (!abort.signal.aborted) setFailure(error instanceof Error ? error.message : String(error))
+    } finally {
+      if (operation.current === abort) operation.current = undefined
+      if (!abort.signal.aborted) setBusy(false)
+    }
+  }
+
+  return <div>
+    <button type="button" disabled={locked || busy} onClick={() => { void start() }}>Insert result</button>
+    {pending !== undefined && <button type="button" disabled={locked} onClick={() => {
+      if (inputActions.insertText(pending, inputActions.captureInsertion())) setPending(undefined)
+    }}>Insert retained text</button>}
+    {failure !== undefined && <span role="alert">{failure}</span>}
+  </div>
+}
+
+export const inject = ['slots']
+export function apply(ctx: Context): void {
+  ctx.slots.inject('conversation.input.activity', () => ctx.slots.register({
+    name: 'conversation.input.activity',
+    inject: () => ({ produceText: async (signal: AbortSignal) => {
+      // 在插件自身实现中调用真实服务；必须转发 signal 并处理业务失败。
+      signal.throwIfAborted()
+      return 'example result'
+    } }),
+  }, InputAction))
+}
+```
+
+`insertText(text, span)` 返回 `false` 时保留结果，用户明确点击重试时才重新 `captureInsertion()`；不能悄悄覆盖后续编辑。卸载、切换 Session 或用户取消时应中止操作并丢弃迟到结果。上例只示范输入契约，生产组件仍须为按钮和失败消息提供 locale 文案，并把真实操作的取消、失败和资源释放接入自身生命周期。
+
+如果启用 bundle 后还需提示下载模型等准备步骤，另向 `plugins.bundle.activation` 注册 root-scoped keyed entry，`key` 用确切 npm 包名；导入 `@deepseek-ai/dsh-client-ui-plugin-manager/client` 的类型声明，等待该 slot owner，再在组件中用 `PropsRuntime<'plugins.bundle.activation'>` 的 `onDismiss()` 或 `onOpenDetails()` 结束引导。该 slot 只在用户显式启用后由插件管理页渲染；插件列表的普通卡片只显示 bundle 描述和开关。此入口不是自动安装或下载 API。参考目标版本 `packages/experimental/client-ui-voice-input/src/client/mount.ts:48-50` 和 `packages/client/ui-plugin-manager/src/client/slot-contract.ts:66-79`。
+
+```tsx
+import type { Context } from '@deepseek-ai/cordis'
+import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
+import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+
+function SetupPrompt({ packageName, onDismiss, onOpenDetails }: PropsRuntime<'plugins.bundle.activation'>) {
+  if (packageName !== '@acme/dsh-input-bundle') return null
+  return <div>
+    <p>Additional setup is needed.</p>
+    <button type="button" onClick={onOpenDetails}>Open bundle details</button>
+    <button type="button" onClick={onDismiss}>Later</button>
+  </div>
+}
+
+export function apply(ctx: Context) {
+  ctx.slots.inject('plugins.bundle.activation', () => ctx.slots.register({
+    name: 'plugins.bundle.activation', key: '@acme/dsh-input-bundle',
+  }, SetupPrompt))
+}
+```
+
+这里的 `ctx` 是 Client 插件 `apply`/`registerUi` 收到的 Context；把注册语句放在该函数内，并将详情引导与真正的资源准备状态关联。上例文案只演示 slot 契约，发布时需接入 locale。
+
+验证时在隔离 Web Profile 装载实际 bundle：开始异步操作后更改草稿，确认旧 span 被拒绝且文字仍可手动插入；锁定输入或切换 Session 时不写入旧草稿；展开活动控件后卸载，确认 `onActiveChange(false)` 释放布局；显式启用缺资源 bundle 时仅显示准备引导，关闭与打开详情分别调用 owner callback。
 
 ## Web provider
 
-把 `WebRuntime` 与一个 `WebFetchProvider` 或 `WebSearchProvider` 组合进 Host Profile；provider 独占其名字并返回 disposer，凭证只经目标版本 credential seam 解析。调用 owner 的受限 fetch/search 方法，分别验证正常结果、超时/取消、非成功状态、响应大小上限和 redirect 后凭证不外泄。卸载 provider 后同名调用必须明确失败，不能继续使用旧实例。Web provider 是 Host 能力；只有结果需要显示时才另加 Client slot。
+Host Profile 先挂载 `@deepseek-ai/dsh-web`，再挂载依赖 `web` service 的 provider 包。搜索与抓取是两个独立 registry；只实现其中一种时只调用对应的注册方法。`WebSearchProvider` 和 `WebFetchProvider` 均须有唯一的 `id: string`、同步无网络的 `available(): boolean`，以及分别为 `search(request: WebSearchRequest, signal?: AbortSignal): Promise<WebSearchResult>`、`fetch(request: WebFetchRequest, signal?: AbortSignal): Promise<WebFetchResult>` 的方法。`ctx.web.registerSearchProvider(provider)` 与 `registerFetchProvider(provider)` 返回 disposer，且注册本身绑定调用方 fiber；同类重复 id 抛 `WEB_DUPLICATE_PROVIDER`。参考目标源码 `packages/web/web/src/types.ts`、`packages/web/web/src/index.ts` 和 `packages/web/web-search-perplexity/src/index.ts`。
+
+```ts
+// Host 插件 src/index.ts：本地、无网络的搜索 provider 最小契约。
+import type { Context } from '@deepseek-ai/cordis'
+import type { WebSearchProvider } from '@deepseek-ai/dsh-web'
+import type {} from '@deepseek-ai/dsh-web'
+
+const provider: WebSearchProvider = {
+  id: 'acme-static-search',
+  available: () => true,
+  async search(request, signal) {
+    signal?.throwIfAborted()
+    return { sources: [{ url: 'https://example.com/', title: request.query }], truncated: false }
+  },
+}
+
+export const inject = ['web']
+export function apply(ctx: Context): void {
+  ctx.web.registerSearchProvider(provider)
+}
+```
+
+插件安装后，Profile 同时挂载 `@deepseek-ai/dsh-web` 与本插件，然后执行 `ctx.web.search({ query: 'probe', maxResults: 1 })`；结果应有一条可引用 URL。卸载本插件后，若没有其他可用搜索 provider，同一调用应抛 `WEB_PROVIDER_UNAVAILABLE`。多个可用 provider 而未设置 `searchProvider` 时抛 `WEB_PROVIDER_AMBIGUOUS`；指定但未注册的 id 抛 `WEB_PROVIDER_CONFIGURED_MISSING`。选择在每次调用时发生，注册顺序不决定选择。生产网络 provider 还须独立验证取消、重定向、凭证和响应大小边界；上例只验证 registry 与生命周期，不能证明网络安全。`fetch` 的非 2xx HTTP 状态是 `WebFetchResult`，不是自动抛错。
 
 ## Deliverable 与文档界面
 
-Host 先通过目标 deliverable/office service 生成并持久化规范元数据，Client 再从公开 Remote 或 Session projection 读取该事实并注册 document-preview owner 声明的 slot。转换失败必须保留原 deliverable 和可诊断状态；重连后从持久来源重读，不能把 React state 当作权威。验证至少覆盖成功预览、转换拒绝、页面重连和 slot 卸载。
+这里有两条不同路径，不能把它们写成一个自动转换流程：
+
+1. **声明已有文件为交付物。** 在 Agent scoped Profile 挂载 `@deepseek-ai/dsh-tool-present`，它依赖 `tools`、`fs`、`sessionProjections`。Agent 完成文件写入后调用 `present`，参数是 `files: [{ path, description? }]`。目标实现对每个路径用 Session 的 `ctx.fs` 校验普通文件；只有成功的 `tools/result` 才向同一 Session 追加 `deliverables/presented`，事件保存路径而不复制字节。Client 的 `@deepseek-ai/dsh-client-ui-deliverables` 读取这项 Session 事实、显示卡片并在重连后重读；文件内容随后改变会改变用户打开时看到的内容。Host 来源是 `packages/deliverables/tool-present/src/index.ts`，显示 owner 是 `packages/client/ui-deliverables/src/client/index.ts`。
+2. **扩展文件卡片动作。** `ui-deliverables` 在 `conversation.chat.turnTail` entry 的 `children` 中声明 `deliverables.file.actions`，类型是 `list`、`session`，由 `@deepseek-ai/dsh-client-ui-deliverables/client` 的声明合并公开。插件先注入 `slots`，再用 `ctx.slots.inject('deliverables.file.actions', () => ctx.slots.register({ name: 'deliverables.file.actions', id: 'my-action' }, Component))` 等待 owner；返回 disposer 属于调用方 fiber。`PropsRuntime<'deliverables.file.actions'>` 提供 `actionUrl`、`available`、`pending`、`onAction('open' | 'reveal', application?)`；后者返回 `null | 'openError' | 'revealError'`。Component 根据 `available/pending` 控制按钮，并调用 owner 的 `onAction`，不能自行从 URL 推导 Host 路径。声明及 render props 在 `packages/client/ui-deliverables/src/client/file-actions.ts` 与 `Deliverables.tsx:112-120`。
+
+`@deepseek-ai/dsh-office-to-pdf` 是独立 Host 转换服务；公开 `OfficeToPdf.render(workspaceFileScope, path, priority, signal)` 使用 workspace-files 授权读取并返回 PDF 字节，不会自动调用 `present`、写 Session 交付事件或注册上述动作 slot。若任务还要求 Office 预览，需要另行组合转换服务、对应的 document-preview Client owner 与文件资源通道，并验证取消、转换失败、重连和卸载。这里的路径只说明“声明已有文件”和“扩展卡片动作”；Office 转换不属于这条组合路径。
 
 ## 动态 Host 与 Client 扩展
 
-动态扩展只接受已经过目标授权边界审查的不可变 Host/Client half。先定义精确 package、export 与授权记录，再通过 `cordis-host-runner` 和 `cordis-client-runner` 激活同一次 run；Client 产物仍必须符合 lazy-CJS module contract。记录 import、激活和 render failure，停止时撤销两侧 run 并等待 fiber 清理。动态 runner 不把任意本地源码自动提升为可信插件。
+这是目标内置的**进程内定义**路径，与上面的已安装 `dsh.client` npm 包装载不同。Host Profile 挂载 `@deepseek-ai/dsh-cordis-host-runner`；需要浏览器半边时 Web 组合同时挂载 `@deepseek-ai/dsh-cordis-client-runner`，已有控制界面由 `@deepseek-ai/dsh-client-ui-cordis` 提供。Host `define` 记录 session scoped、进程内、不可变 package 版本，`run` 在有人连接的页面提出批准请求；获准后先执行 Host half，再取 Client 代码并激活浏览器 half，最后回传 run resolution。`stop` 撤销运行 effect 但保留定义，`undefine` 还删除定义。无页面连接时含 Client half 的请求会等待，页面刷新也不会恢复既有定义或自动重新运行。来源为目标 `packages/extensions/cordis-host-runner/README.md` 和 `cordis-client-runner/README.md`，实际行为还须回查 `src/registry.ts`、`src/client/orchestrator.ts`。
+
+底层 `DynamicCordisClientHalf` 要求 `pluginId`、`packageId`、`pluginRunId`、`agentId`、`name`、`code`；其 `code` 是返回插件的纯 JavaScript async function body，不能传 JSX、TypeScript 或模块 import。`DynamicCordisPackageRunner.load(half)` 的成功结果也可能带 `waitingFor`，表示 Client fiber 等待声明的 service，未代表 UI 已渲染；失败阶段是 `evaluate | module-import | activate`。页面 `getSnapshot()`/`subscribe()` 只报告该页面当前运行集，`renderFailures` 另报 settle 后的 React 崩溃。精确 run 的 `retract(pluginId, pluginRunId)` 不会误撤新版本；卸载 runner 时 `dispose()` 等待全部 live package 清理。来源为 `packages/extensions/cordis-client-runner/src/client/runtime.ts:49-98,177-330`。受控动态定义 API 只适用于进程内路径；验证时分别执行批准、失败、重连和清理场景。
 
 ## Terminal Remote
 
-Host 组合 terminal owner 和 controller，Client 导入生成的 Remote 类型并注入对应 namespace。每个 stream 由调用者消费或显式 dispose；把 AbortSignal 传到 open/read/write/resize 的目标版本签名，并限制输出与保留窗口。验证首帧、增量输出、取消、重连后的重新查询和卸载后 stream 终止。
+Host 组合 terminal owner、`TerminalController` 及其 `subprocess`、`sandboxPolicy`、`typert` 依赖。公开 Remote 是 `environment(agent, signal)`、`shells(agent, signal)`、`list(sessionId)`、`create(agent, request, signal)`、`retain(sessionId, id, signal)`、`follow(agent, id, attachmentId, signal)`、`write(agent, id, attachmentId, data)`、`resize(agent, id, attachmentId, cols, rows)`、`rename(agent, id, title)`、`close(agent, id)`；其中 `retain` 与 `follow` 是 stream。Client 持有生成的 `RemoteStreamHandle` 时必须迭代或显式 `dispose()`，并按 attachment 身份控制写入；`write` 和 `resize` **没有** `AbortSignal` 参数。关闭 tab 时可通过公开 `ClientTerminals.close(sessionId, key, contentId, terminalId?)` 保存清理意图；`view()` 的模型刷新和 `retainTabs()` 的窗口 hold 配合恢复。目标源码为 `packages/api/terminal-controller/src/index.ts` 与 `src/client/index.ts`。第三方 Terminal 插件还需独立构建与真实 Profile 验证；至少观察首帧、增量、取消、重连查询和卸载后 stream 终止，才能报告行为通过。
+
+目标内置 Client 路径的顺序是：
+
+1. 组合 Host terminal controller 与其依赖，Client 装载 `@deepseek-ai/dsh-api-terminal-controller/client` 及生成的 `remote.terminal` namespace。调用 `ctx.webTerminals.launchShells(sessionId, signal)` 先发现可用 shell，不因此分配 PTY；其结果给出 `shells` 和 `selectedShell`。
+2. 给一个 Sidebar occurrence 调用 `ctx.webTerminals.view(sessionId, key, contentId, terminalId?, shellPath?)`，取得稳定的 `TerminalView`。新建身份由 Client model 保存；恢复时 `terminalId` 指向已有 Host terminal。底层 Host `create(agent, request, signal)` 以调用者生成的 request id 幂等分配，Host 已提交的终端不会因连接中断而自动关闭。
+3. 窗口保持通过 `retain(sessionId, id, signal)` stream 表示；输出与可写 attachment 由 `follow(agent, id, attachmentId, signal)` stream 表示。每个 Remote stream handle 必须迭代到完成或调用 `dispose()`。`write`/`resize` 校验当前 attachment id，不能向只拿到 retain hold 的窗口发输入。`ctx.webTerminals.retainTabs(tabs)` 同步当前 Sidebar occurrence 集，撤销不再需要的 hold。
+4. 用户关闭 tab 时调用 `ctx.webTerminals.close(sessionId, key, contentId, terminalId?)`。它先保存关闭意图并移除 occurrence，然后在后台请求 Host `close`；失败显示在 `closeFailures` snapshot，可重试且不恢复旧 tab。Session owner 或 terminal service 卸载时 Host 聚合等待终端、分配与清理任务；清理失败可能重试，不能只以 DOM 消失作为成功。
+
+这些步骤取自 `packages/api/terminal-controller/src/client/index.ts:38-143`、`src/client/model.ts` 和 Host `src/index.ts:150-310`。验证需分别观察 launch 不分配、create 幂等、follow 初始屏幕与增量、stream 取消、失去连接后 list/hold 恢复、关闭失败可见及卸载无存活进程；各项须在独立 Profile 运行后分别报告。
 
 ## Workspace Remote
 
-Host 组合 workspace owner、文件访问策略和 controller；Client 只调用公开的 scoped workspace/file API，不拼接 Host 路径或绕过策略。对分页、内容大小、符号链接和取消设置显式边界，重连后重取 snapshot/cursor。验证允许与拒绝路径、失效 cursor、取消，以及 owner 卸载后 namespace 不再可调用。
+普通 Client 页面若只需要 Workspace 列表与命令，注入 `workspaces`，通过公开 `IWorkspaces.list.getSnapshot()` 读 Host 权威快照、`list.subscribe(listener)` 监听替换并在卸载时调用返回的 unsubscribe。`create({ path })` 注册现有路径；`initializeDefault(signal?)` 可能返回 `undefined`；`rename(workspaceId, title)`、`delete(workspaceId)`、`insertBefore(workspaceId, beforeWorkspaceId?)` 改变 Workspace 登记，`delete` 不删除 Session 或磁盘文件。Session 分组还提供 `archiveSession(sessionId, { stopActivity? })`、`unarchiveSession`、`pinSession`、`unpinSession` 与 `insertSessionBefore`。归档运行中的 Session 可抛 `WorkspaceArchiveError`，其 `rpcError.code` 为 `workspace/session-active`。这些签名在 `packages/api/workspace-controller/src/client/service.ts`。
+
+读取 Workspace 文件是另一条路径：目标 Client 的 `@deepseek-ai/dsh-api-workspace-files/client` 注入 `resources`、`remote`、`remote.workspaceFiles`，通过 `ctx.resources.register(provider)` 安装 `file` provider，卸载时先撤销注册，再等待 change feed stream 关闭；见 `packages/api/workspace-files/src/client/index.ts`。不要从 Workspace 列表拼接 Host 文件路径或绕过 provider 的访问策略。第三方 scoped file 插件还需完成构建与 Profile 装载，并分别验证分页、大小、符号链接、取消、重连与 owner 卸载。

@@ -42,12 +42,16 @@ try {
         path.join(refs, "../maintenance/source-map.md"),
         "utf8",
     );
-    const tag = map.match(/`(dsh-v[^`]+)`/)[1];
-    const sha = map.match(/commit `([0-9a-f]{40})`/)[1];
-    for (const ref of ["HEAD", tag]) {
-        if (git("rev-parse", `${ref}^{commit}`) !== sha)
-            throw Error(`Expected ${tag} / ${sha}; ${ref} differs`);
-    }
+    const version = map.match(
+        /(?:dsh-v|@deepseek-ai\/dsh-agent@)(\d+\.\d+\.\d+(?:-[\w.]+)?)/,
+    )?.[1];
+    if (!version) throw Error("Source map is missing the npm version");
+    const tag = `dsh-v${version}`;
+    if (
+        git("rev-parse", "HEAD^{commit}") !==
+        git("rev-parse", `refs/tags/${tag}^{commit}`)
+    )
+        throw Error(`Expected checkout HEAD to match ${tag}`);
     // Modified runtime, gates or manifests would invalidate exact-tag evidence.
     if (git("status", "--porcelain", "--untracked-files=no"))
         throw Error("DSH tracked files are modified");
