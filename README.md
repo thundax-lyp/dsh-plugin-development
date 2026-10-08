@@ -12,6 +12,8 @@ Invoke `$create-dsh-skill [version]` explicitly. Without a version, the creator 
 
 The [creator Skill](.agents/skills/create-dsh-skill/SKILL.md) prepares the exact checkout, inventories code exports and their object members alongside “how to” task headings, adjudicates each public API and task candidate, and writes a frozen `skill-source/`. It then builds a complete Skill in an isolated directory, validates that directory against the same checkout, and replaces `skills/dsh-plugin-development/` as a whole. The previous generated Skill is never an input to the new one.
 
+Selected common tasks link from the generated `SKILL.md` directly to their exact HOW-TO sections. The source validator checks each selected task's entry against its adjudicated task path; other tasks remain available through the task routing reference.
+
 The entry-point search and evidence rules are in [entrypoint scope](.agents/skills/create-dsh-skill/references/entrypoint-scope.md); the required document structure is in the [reference template](.agents/skills/create-dsh-skill/references/reference-template.md). Candidate coverage and source claims must be resolved before the source can be frozen.
 
 The generated `skills/dsh-plugin-development/` directory is an output, so it may be absent while creation is in progress. Only a completed, validated output should be copied into a consuming project's `.agents/skills/` directory. This repository contains no DSH runtime or product plugin.

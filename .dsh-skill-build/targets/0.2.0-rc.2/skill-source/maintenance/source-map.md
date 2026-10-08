@@ -4,13 +4,17 @@ Target `dsh-v0.2.0-rc.2`, commit `639ed015397290b3745d163aafe02ffee4aa3f84`.
 
 ## Evidence owners
 
+- `README.md`
 - `docs/cookbook/adding-a-remote-api.md`
 - `docs/cookbook/adding-a-tool.md`
 - `docs/cordis-tutorial/06-composition-and-hmr.md`
+- `docs/user/develop/basic/index.md`
+- `docs/user/develop/basic/tool.md`
 - `packages/client/store/src/index.ts`
 - `packages/client/ui-slots/src/index.ts`
 - `packages/core/agent/src/index.ts`
 - `packages/core/tools/src/index.ts`
+- `packages/core/tools/tests/tools.spec.ts`
 - `packages/fs/fs/src/index.ts`
 - `packages/util/package-manifest/src/types.ts`
 

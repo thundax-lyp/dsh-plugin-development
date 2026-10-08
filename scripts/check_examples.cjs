@@ -156,16 +156,22 @@ try {
     const fixtures = path.join(path.dirname(root), "evidence", "tests");
     const configEditor = path.join(fixtures, "config-editor-consumer");
     const remoteNotes = path.join(fixtures, "remote-notes-consumer");
-    if (!fs.existsSync(configEditor) || !fs.existsSync(remoteNotes))
-        throw Error("Missing isolated multi-file example consumers");
-    run("npm", ["run", "build"], { cwd: configEditor });
-    run("node_modules/.bin/tsc", ["-b", "tsconfig.host.json"], {
-        cwd: remoteNotes,
-    });
-    run("node", ["generate.mjs"], { cwd: remoteNotes });
-    run("node_modules/.bin/tsc", ["-p", "tsconfig.client.json"], {
-        cwd: remoteNotes,
-    });
+    if (fs.existsSync(path.join(refs, "how-to-edit-owned-plugin-config.md"))) {
+        if (!fs.existsSync(configEditor))
+            throw Error("Missing config-editor multi-file example consumer");
+        run("npm", ["run", "build"], { cwd: configEditor });
+    }
+    if (fs.existsSync(path.join(refs, "how-to-add-remote-api.md"))) {
+        if (!fs.existsSync(remoteNotes))
+            throw Error("Missing remote-notes multi-file example consumer");
+        run("node_modules/.bin/tsc", ["-b", "tsconfig.host.json"], {
+            cwd: remoteNotes,
+        });
+        run("node", ["generate.mjs"], { cwd: remoteNotes });
+        run("node_modules/.bin/tsc", ["-p", "tsconfig.client.json"], {
+            cwd: remoteNotes,
+        });
+    }
     console.log(
         `Skill Host examples: ${hostCount} checked by upstream checker`,
     );

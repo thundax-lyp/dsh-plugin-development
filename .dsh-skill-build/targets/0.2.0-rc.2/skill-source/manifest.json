@@ -15,7 +15,7 @@
             "source": "entrypoint/SKILL.md",
             "output": "SKILL.md",
             "kind": "entrypoint",
-            "sha256": "ee8d9cf2b62e5f663aae589f5d8d3f27da9a7471897001a492743dc51b01b610"
+            "sha256": "e42093ca268fe6472a1ac21449013bf5c9527e55e11f3a066cb4812b98e60f2d"
         },
         {
             "source": "metadata/openai.yaml",
@@ -63,7 +63,7 @@
             "source": "how-to/host-core.md",
             "output": "references/how-to-host-core.md",
             "kind": "how-to",
-            "sha256": "2694fbc216793faf6a9855fd282065cfdc35a5f60d16ebb6c5af106fabb2fb2c"
+            "sha256": "59b9d7bcd983c899dd78f045971118f629e33ef88ec778721d4faa10bf403237"
         },
         {
             "source": "how-to/client-web.md",
@@ -99,7 +99,7 @@
             "source": "maintenance/source-map.md",
             "output": "maintenance/source-map.md",
             "kind": "maintenance",
-            "sha256": "b64ef100c8d7ccb2c115383bf3ddbea9bcfd46e27f5321489d6929205891b174"
+            "sha256": "faa2a745322746ee1dcbf35dbf3ac8b8a71283b60b15696d43f74b8a03fe15d0"
         },
         {
             "source": "maintenance/skill-maintenance.md",
@@ -108,8 +108,8 @@
             "sha256": "ec1689d24d93a58849d99e0a002801356f224563308d539d2c942f218e543b52"
         }
     ],
-    "claimsSha256": "7b0770497a1775f4674e12a8f8ae3209a4b6a6a747b6277bb96fd0a0a639f1ac",
-    "coverageSha256": "2afefc467b3e748c7bc1cc75bf21f5e5974b1f00635932a9d04e0f069c8ca85f",
+    "claimsSha256": "6635e144c966d33431b2f80026a2dfbf1fb4beb3fd4ed919a4a3195ddc38abe9",
+    "coverageSha256": "ec4b3d883c84129b660fbb4e8b3fea67b4c8c309649fa79f990347fa663360db",
     "capabilityCandidatesSha256": "08a6a4f025f041f78b670d475874f2a263f712f0d72c4d5f434201e313f133e9",
     "apiEntriesSha256": "4cde68b87ce104d29d3653d81bfda7bcc34b477fd9662809b8765c17b8a729bf",
     "apiSymbolsSha256": "b0ac6b3e1331e1ab4a9d3f934a112f8e863ba71e39f58504d9aee6fe5334e5ca",

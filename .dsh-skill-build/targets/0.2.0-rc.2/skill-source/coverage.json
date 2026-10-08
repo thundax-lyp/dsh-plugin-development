@@ -3961,7 +3961,12 @@
           "output": "references/how-to-host-core.md",
           "section": "register-host-tool"
         }
-      ]
+      ],
+      "entry": {
+        "output": "references/how-to-host-core.md",
+        "section": "register-host-tool",
+        "anchor": "register-host-tool"
+      }
     },
     {
       "id": "extend-system-prompt",

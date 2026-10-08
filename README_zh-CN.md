@@ -12,6 +12,8 @@
 
 [创建 Skill](.agents/skills/create-dsh-skill/SKILL.md)准备精确 checkout，盘点代码导出及其对象成员和文档中的“如何……”任务标题，逐项裁决公开 API 与任务候选，并冻结 `skill-source/`。随后在隔离目录构建完整 Skill，以同一 checkout 独立验证，再整体替换 `skills/dsh-plugin-development/`。旧的生成结果不参与新一轮内容生成。
 
+生成产物的 `SKILL.md` 将选定的常见任务直接链接到精确的 HOW-TO 小节。素材验证器核对这些入口与已裁决任务路径的一致性；其他任务仍由任务路由 reference 承接。
+
 入口搜索与证据规则见[入口范围](.agents/skills/create-dsh-skill/references/entrypoint-scope.md)；文档必需结构见[reference 模板](.agents/skills/create-dsh-skill/references/reference-template.md)。所有能力候选和源码事实须在冻结前完成裁决。
 
 `skills/dsh-plugin-development/` 是生成结果，在创建期间可以不存在。只有完整通过验证的产物才应复制到消费项目的 `.agents/skills/`。本仓库不包含 DSH runtime 或产品插件。

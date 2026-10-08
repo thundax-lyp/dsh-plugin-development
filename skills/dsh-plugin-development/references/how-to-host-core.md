@@ -4,13 +4,95 @@ These paths compose the contracts in [Host/Core API guardrails](api-host-core.md
 
 ## register-host-tool
 
-1. Add target-version dependencies on `@deepseek-ai/cordis`, `@deepseek-ai/dsh-system-prompt`, and `@deepseek-ai/dsh-tools`.
-2. Mount `system-prompt` before `tools`; use `mode: native` first unless a PTC runtime is also mounted.
-3. Export a Cordis plugin with `inject = ['tools']` and register the complete `defineTool()` example from the guardrail.
-4. Make `execute` return the declared canonical JSON value, forward `exec.signal`, and wait for owned work. Put human/model prose in `output.render`, and keep presentation functions pure.
-5. Exercise invalid args, success, thrown failure, abort, and unload. In a real agent Session, observe paired `tool/call` and `tool/result` events; after unloading, the schema must disappear.
+Use this ordered path for a local Host Tool in the exact DSH checkout. It follows the target tag's first-plugin and first-tool tutorials. A separately distributed package additionally needs the package manifest, build output, and Profile installation path in the [infrastructure HOW-TO](how-to-infra-runtime.md); a checkout-local TypeScript file is not a published package.
 
-Completion means the Host example compiles against the target checkout, a Profile loads it, one agent call returns the declared value/rendering, cancellation settles, and disposal removes it. Static schema inspection alone is not completion.
+1. From the target checkout root, complete `pnpm install --frozen-lockfile` and `pnpm run build` once, run `mkdir -p scratch-plugin/src`, then create `scratch-plugin/src/my-plugin.ts`. The Web Profile must mount `system-prompt` and `tools`; this plugin declares `inject = ['tools']` so a missing registry leaves its row PENDING.
+2. Use this complete Host file. `execute` returns one canonical string, the pure renderer creates model-facing content, and the optional wait makes abort observable. The manual name and wait checks cover constraints beyond the parameter DSL. The [Tool contract](api-host-core.md#tool-runtime-and-definition) owns the API semantics.
+
+```ts
+import { setTimeout as sleep } from 'node:timers/promises'
+import type { Context } from '@deepseek-ai/cordis'
+import { defineTool } from '@deepseek-ai/dsh-tools'
+
+export const name = 'greet-tool'
+export const inject = ['tools']
+
+export function apply(ctx: Context) {
+  ctx.tools.register(defineTool({
+    name: 'greet',
+    description: 'Greet someone by name.',
+    parameters: {
+      name: { type: 'string', required: true, description: 'Name to greet' },
+      waitMs: { type: 'number', description: 'Optional wait before greeting, up to 10000 ms' },
+    },
+    output: {
+      schema: { type: 'string' },
+      render: (_args, value) => [{ type: 'text', text: value }],
+    },
+    async execute(args, exec) {
+      if (!args.name.trim()) throw new Error('name must not be blank')
+      const waitMs = args.waitMs ?? 0
+      if (!Number.isInteger(waitMs) || waitMs < 0 || waitMs > 10000) {
+        throw new Error('waitMs must be an integer from 0 to 10000')
+      }
+      await sleep(waitMs, undefined, { signal: exec.signal })
+      return `Hello, ${args.name}!`
+    },
+  }))
+}
+```
+
+3. Create the overlay from the checkout root. The absolute path matters: a patch does not change the Loader's module-resolution directory.
+
+```sh
+cat > scratch-plugin/cordis.yml <<EOF
+- insert:
+    - id: greet-tool
+      name: '$(pwd)/scratch-plugin/src/my-plugin.ts'
+EOF
+pnpm dsh web --patch ./scratch-plugin/cordis.yml
+```
+
+4. Open the Web UI on its displayed local address and ask the configured Agent to call `greet` with `name: "Ada"` and `waitMs: 0`. Expect `Hello, Ada!` in the tool result and paired `tool/call` and `tool/result` Session events. If the tool is absent, inspect the plugin fiber: PENDING means a required service is missing; confirm the Profile mounts `tools`, the overlay path resolves, and the tool schema appears in `ctx.tools.schemas()` before debugging the model prompt.
+5. Save the following as `scratch-plugin/verify.mjs` and run `node --import tsx scratch-plugin/verify.mjs` from the checkout root. It exercises the same plugin without an LLM, so failure, cancellation, and fiber disposal have deterministic assertions. It does not replace the real Profile and Agent call in step 4.
+
+```js
+import assert from 'node:assert/strict'
+import { Context } from '@deepseek-ai/cordis'
+import { ToolCallId } from '@deepseek-ai/dsh-llm'
+import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
+import ToolRuntime from '@deepseek-ai/dsh-tools'
+import * as plugin from './src/my-plugin.ts'
+
+const ctx = new Context()
+try {
+  await ctx.plugin(SystemPrompt)
+  await ctx.plugin(ToolRuntime)
+  const fiber = await ctx.plugin({ name: plugin.name, inject: plugin.inject, apply: plugin.apply })
+  assert(ctx.tools.schemas().some((schema) => schema.name === 'greet'))
+  const run = (id, args, signal = new AbortController().signal) =>
+    ctx.tools.execute({ signal, callId: ToolCallId(id), name: 'greet', arguments: args })
+  const success = await run('success', { name: 'Ada', waitMs: 0 })
+  assert.equal(success.isError, false)
+  assert.equal(success.value, 'Hello, Ada!')
+  const failure = await run('failure', { name: '', waitMs: 0 })
+  assert.equal(failure.isError, true)
+  const controller = new AbortController()
+  const pending = run('abort', { name: 'Ada', waitMs: 10000 }, controller.signal)
+  setTimeout(() => controller.abort(), 20)
+  assert.equal((await pending).isError, true)
+  await fiber.dispose()
+  assert.equal(ctx.tools.get('greet'), undefined)
+  assert.equal((await run('unloaded', { name: 'Ada' })).isError, true)
+  console.log('Tool success, failure, cancellation, and unload verified')
+} finally {
+  await ctx.fiber.dispose()
+}
+```
+
+If the Tool is absent in the real Profile, inspect the row and its required `tools` service first. When using HMR to disable the overlay row, verify the running Profile also removes the schema; that live HMR check remains separate from this in-process disposal test.
+
+Completion means the Host file compiles against the target tag, the Profile activates its row, a real Agent call produces the declared result, the failure and cancellation paths settle, and unloading removes the schema. Record any step not actually run as Not Covered; a build or schema listing alone does not establish the full path.
 
 ## extend-system-prompt
 

@@ -1,11 +1,20 @@
 ---
 name: dsh-plugin-development
-description: 为 DeepSeek Harness 0.2.0-rc.2 制作、装载并验证 Cordis 包和插件；按 Host、Client/Remote 与基础设施任务路由。
+description: 为 DeepSeek Harness 0.2.0-rc.2 制作、装载并验证 Cordis 包和插件；从插件开发任务直达操作步骤。
 ---
 
 # DSH Plugin Development
 
-本 Skill 只适用于 `dsh-v0.2.0-rc.2`（commit `639ed015397290b3745d163aafe02ffee4aa3f84`）。先按任务读取 [开发路由](references/plugin-development-routing.md)，再读取对应 API guardrail 与 HOW-TO。不要把其他 DSH 版本、产品内部包或旧 Skill 的同名接口混入。
+本 Skill 只适用于 `dsh-v0.2.0-rc.2`（commit `639ed015397290b3745d163aafe02ffee4aa3f84`）。先确认项目所用 DSH 版本；版本不符时停止套用这里的签名和装载步骤，查找匹配版本的 Skill 或为该版本重新创建。不要把其他 DSH 版本、产品内部包或旧 Skill 的同名接口混入。
+
+## 从任务开始
+
+| 用户要做什么                  | 先读                                                                |
+| ----------------------------- | ------------------------------------------------------------------- |
+| 添加供 Agent 调用的 Host Tool | [注册 Host Tool](references/how-to-host-core.md#register-host-tool) |
+| 其他插件开发或排障任务        | [开发任务路由](references/plugin-development-routing.md)            |
+
+先读任务步骤，遇到具体类型、门禁或生命周期问题时，再打开该步骤链接的 API reference。只加载当前任务需要的参考内容。
 
 ## 跨主题不变量
 

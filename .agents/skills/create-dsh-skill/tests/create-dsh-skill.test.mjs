@@ -558,6 +558,73 @@ test("new task coverage rejects unrouted and missing capability paths", (t) => {
     );
 });
 
+test("featured task entry must link directly to its exact recipe", (t) => {
+    const task = {
+        id: "register-tool",
+        outcome: "Plugin tool can be called",
+        decision: "covered",
+        candidates: ["package:fixture"],
+        apiObjects: ["fixture"],
+        destinations: [
+            { output: "references/how-to.md", section: "Complete task" },
+        ],
+        entry: {
+            output: "references/how-to.md",
+            section: "Complete task",
+            anchor: "complete-task",
+        },
+    };
+    const fixture = createFixture(t, {
+        schemaVersion: 3,
+        taskPaths: [task],
+        taskDiscoveries: [
+            {
+                candidate: "task:docs/how-to.md:1",
+                decision: "included",
+                taskId: "register-tool",
+            },
+        ],
+    });
+    assert.throws(
+        () => validateSkillSource(fixture.targetPath, { freeze: true }),
+        /not linked directly from SKILL.md/,
+    );
+    write(
+        join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
+        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n`[Register a tool](references/how-to.md#complete-task)`\n",
+    );
+    assert.throws(
+        () => validateSkillSource(fixture.targetPath, { freeze: true }),
+        /not linked directly from SKILL.md/,
+    );
+    const coveragePath = join(fixture.skillSourcePath, "coverage.json");
+    const coverage = JSON.parse(readFileSync(coveragePath, "utf8"));
+    coverage.taskPaths[0].entry.anchor = "missing-task";
+    writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 4)}\n`);
+    assert.throws(
+        () => validateSkillSource(fixture.targetPath, { freeze: true }),
+        /entry anchor is missing/,
+    );
+    coverage.taskPaths[0].entry.anchor = "complete-task";
+    writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 4)}\n`);
+    write(
+        join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
+        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n```md\n[Register a tool](references/how-to.md#complete-task)\n```\n",
+    );
+    assert.throws(
+        () => validateSkillSource(fixture.targetPath, { freeze: true }),
+        /not linked directly from SKILL.md/,
+    );
+    write(
+        join(fixture.skillSourcePath, "entrypoint/SKILL.md"),
+        "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# dsh-v9.9.9-rc.9\n\n[Register a tool](references/how-to.md#complete-task)\n",
+    );
+    assert.doesNotThrow(() =>
+        validateSkillSource(fixture.targetPath, { freeze: true }),
+    );
+    assert.doesNotThrow(() => buildSkill(fixture.targetPath));
+});
+
 test("schema v3 freezes only with complete API and task candidate dispositions", (t) => {
     const task = {
         id: "register-tool",

@@ -107,6 +107,8 @@ API 事实按 **代码 → 注释 → 文档** 裁决。代码包括包导出、
 
 再独立盘点目标 tag 的包 README、DOCS、website 中的“如何……”及等价操作问题，结合 cookbook、教程、公开调用方和真实 Profile 组合，形成插件开发任务候选及来源。自动发现的标题逐项写入 `coverage.json.taskDiscoveries`，纳入者关联一条 `taskPaths`，排除者给具体理由；正文中漏检的任务人工补入 `taskPaths`。按可观察的业务结果裁决每条任务，把共同完成它的 API 对象、配置、跨侧装配、顺序和验证串成使用路径；API 事实仍遵守代码、注释、文档的优先级。新准备目标的 `taskPaths.apiObjects` 关联已纳入的 API 对象，多对象任务还写 `compositionSteps`，由 HOW-TO 给出端到端步骤并链接各自的 API reference；单对象任务可由完整 example 承接；纯配置路径要有配置、挂载和观察步骤。每条已覆盖路径要能从任务路由到达实现步骤、验证与完成判据。没有公开入口或目标版本尚不能完成的任务，以 `excluded` 任务和具体理由记录，不凭旧产物补齐。冻结器检查候选处置、对象映射、HOW-TO 链接和路由；步骤语义仍由维护者审阅。
 
+从已覆盖任务中选出少量常见且能经目标版本公开入口完成的首屏任务。在其 `taskPaths` 项写 `entry`，指向一个已列入 `destinations` 的 HOW-TO 文档、标题和 Markdown anchor；生成的 `SKILL.md` 从用户意图直接链接该 anchor。其他任务保留在任务路由中，不因未进入首屏而失去入口。首屏选择和 HOW-TO 的操作语义由维护者裁决，冻结器只核对精确链接与目标小节，不能证明代码和装载行为已运行。
+
 ## 裁决 Skill 构建素材
 
 把已核实的证据归一化到 `skill-source/`。这里是生成正式 Skill 的唯一知识输入；`upstream-docs/`、`evidence/`、旧 Skill 和旧 source-map 都不能绕过它直接生成正式内容。

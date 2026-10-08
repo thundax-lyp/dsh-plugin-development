@@ -8,9 +8,9 @@ import {
     resolveInside,
     sha256File,
 } from "./skill-build-contract.mjs";
+import { markdownAnchors, withoutFencedCode } from "./markdown-structure.mjs";
 import { validateSkillSource } from "./validate-skill-source.mjs";
 
-const fencePattern = /^```[^\n]*\n.*?^```\s*$/gms;
 const textDecoder = new TextDecoder("utf-8", { fatal: true });
 
 function readUtf8Text(path) {
@@ -147,26 +147,6 @@ function validateMetadata(metadata, errors) {
     }
 }
 
-function markdownAnchors(text) {
-    const anchors = new Set();
-    const counts = new Map();
-    for (const match of text
-        .replace(fencePattern, "")
-        .matchAll(/^#{1,6}\s+(.+?)\s*#*$/gm)) {
-        const slug = match[1]
-            .replace(/<[^>]*>/g, "")
-            .toLowerCase()
-            .split("")
-            .filter((character) => /[\p{L}\p{N}\p{M} _-]/u.test(character))
-            .join("")
-            .replaceAll(" ", "-");
-        const count = counts.get(slug) ?? 0;
-        counts.set(slug, count + 1);
-        anchors.add(count === 0 ? slug : `${slug}-${count}`);
-    }
-    return anchors;
-}
-
 function validateMarkdown(root, path, errors) {
     const text = readFileSync(path, "utf8");
     for (const match of text.matchAll(/^```json\s*\n(.*?)^```\s*$/gms)) {
@@ -176,9 +156,7 @@ function validateMarkdown(root, path, errors) {
             errors.push(`${path}: invalid JSON fence: ${error.message}`);
         }
     }
-    for (const match of text
-        .replace(fencePattern, "")
-        .matchAll(/\]\(([^)]+)\)/g)) {
+    for (const match of withoutFencedCode(text).matchAll(/\]\(([^)]+)\)/g)) {
         const url = match[1];
         if (/^\w+:/.test(url)) continue;
         const [filename, encodedAnchor] = url.split("#", 2);
@@ -249,9 +227,7 @@ export function verifyGeneratedSkill(targetArgument) {
         if (text === null) continue;
         const offlineBoundaryText =
             extname(path) === ".md"
-                ? text
-                      .replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\s*$/gm, "")
-                      .replace(/`[^`\n]*`/g, "")
+                ? withoutFencedCode(text).replace(/`[^`\n]*`/g, "")
                 : text;
         if (
             /https?:\/\/|\/(?:Users|Volumes)\/|[A-Za-z]:[\\/]Users[\\/]/.test(

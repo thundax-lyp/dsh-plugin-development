@@ -13,6 +13,7 @@ import {
     sha256File,
     writeJsonAtomic,
 } from "./skill-build-contract.mjs";
+import { markdownAnchors, withoutFencedCode } from "./markdown-structure.mjs";
 
 const allowedKinds = new Set([
     "entrypoint",
@@ -831,6 +832,22 @@ export function validateSkillSource(targetArgument, options = {}) {
             ),
             "utf8",
         );
+        const entrypointFile = files.find((file) => file.output === "SKILL.md");
+        const entrypointBody = readFileSync(
+            resolveInside(
+                target.skillSourcePath,
+                entrypointFile.source,
+                "Skill entrypoint",
+            ),
+            "utf8",
+        );
+        const entrypointLinks = new Set(
+            [
+                ...withoutFencedCode(entrypointBody)
+                    .replace(/`[^`\n]*`/g, "")
+                    .matchAll(/\]\(([^)]+)\)/g),
+            ].map((match) => decodeURIComponent(match[1])),
+        );
         for (const [index, task] of coverage.taskPaths.entries()) {
             const label = `coverage.taskPaths[${index}]`;
             requireString(task?.id, `${label}.id`);
@@ -909,6 +926,54 @@ export function validateSkillSource(targetArgument, options = {}) {
                 task.destinations.length === 0
             ) {
                 throw new Error(`${label}.destinations must not be empty.`);
+            }
+            if (task.entry !== undefined) {
+                if (
+                    task.entry === null ||
+                    typeof task.entry !== "object" ||
+                    Array.isArray(task.entry)
+                ) {
+                    throw new Error(`${label}.entry must be an object.`);
+                }
+                requireString(task.entry.output, `${label}.entry.output`);
+                requireString(task.entry.section, `${label}.entry.section`);
+                requireString(task.entry.anchor, `${label}.entry.anchor`);
+                if (
+                    !task.destinations.some(
+                        (destination) =>
+                            destination.output === task.entry.output &&
+                            destination.section === task.entry.section,
+                    )
+                ) {
+                    throw new Error(
+                        `${label}.entry must match one task destination.`,
+                    );
+                }
+                const entryFile = files.find(
+                    (file) => file.output === task.entry.output,
+                );
+                if (entryFile?.kind !== "how-to") {
+                    throw new Error(`${label}.entry must point to a HOW-TO.`);
+                }
+                const entryBody = readFileSync(
+                    resolveInside(
+                        target.skillSourcePath,
+                        entryFile.source,
+                        `${label}.entry`,
+                    ),
+                    "utf8",
+                );
+                if (!markdownAnchors(entryBody).has(task.entry.anchor)) {
+                    throw new Error(
+                        `${label}.entry anchor is missing: ${task.entry.output}#${task.entry.anchor}`,
+                    );
+                }
+                const link = `${task.entry.output}#${task.entry.anchor}`;
+                if (!entrypointLinks.has(link)) {
+                    throw new Error(
+                        `${label}.entry is not linked directly from SKILL.md: ${link}`,
+                    );
+                }
             }
             for (const [
                 destinationIndex,

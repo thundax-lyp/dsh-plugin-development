@@ -38,6 +38,22 @@
       {
         "category": "documentation",
         "path": "docs/cookbook/adding-a-tool.md"
+      },
+      {
+        "category": "documentation",
+        "path": "docs/user/develop/basic/index.md"
+      },
+      {
+        "category": "documentation",
+        "path": "docs/user/develop/basic/tool.md"
+      },
+      {
+        "category": "documentation",
+        "path": "README.md"
+      },
+      {
+        "category": "tests",
+        "path": "packages/core/tools/tests/tools.spec.ts"
       }
     ]
   },

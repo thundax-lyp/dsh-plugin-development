@@ -12,6 +12,8 @@
 
 写正文前按[入口范围与定位流程](entrypoint-scope.md)从包导出和公开声明生成对象、成员候选并完成 `api-surface.json` 裁决，再查 DSH 文档补语义，随后完成归类和插件任务路径反查。`task-candidates.json` 中的操作标题逐项映射到 `coverage.taskDiscoveries`；任务的 `apiObjects` 指向已纳入对象，多对象任务的 `compositionSteps` 记录协作顺序。API reference 与 how-to 使用[reference 模板](reference-template.md)；模板结构不会替代入口语义审查。`coverage.json` 的 `pluginTask` 必须描述可观察的插件结果，相关 `ownerSections` 必须包含完成该任务的契约或步骤，不能仅重复包职责。多个候选共享一个任务时核查合成后的路径，而不是逐包写相同的空泛任务。
 
+需要在 `SKILL.md` 首屏直达的高价值任务，可在对应 `coverage.taskPaths` 项添加 `entry: { "output": "references/how-to-*.md", "section": "标题原文", "anchor": "markdown-anchor" }`。`entry` 必须与该任务的一项 `destinations` 完全对应，目标必须是 HOW-TO，且 `SKILL.md` 必须直接包含该文档和 anchor 的链接。生成目录的 Markdown 校验继续确认 anchor 真正存在；冻结器检查任务与入口的关联。`entry` 只是路由元数据，不复制 API 契约或 HOW-TO 正文。未设 `entry` 的任务仍须从任务路由到达。
+
 ## Manifest
 
 `manifest.json` 使用以下形状：
