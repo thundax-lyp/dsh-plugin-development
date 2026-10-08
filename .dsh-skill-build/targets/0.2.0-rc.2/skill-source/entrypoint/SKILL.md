@@ -9,10 +9,13 @@ description: 为 DeepSeek Harness 0.2.0-rc.2 制作、装载并验证 Cordis 包
 
 ## 从任务开始
 
-| 用户要做什么                  | 先读                                                                |
-| ----------------------------- | ------------------------------------------------------------------- |
-| 添加供 Agent 调用的 Host Tool | [注册 Host Tool](references/how-to-host-core.md#register-host-tool) |
-| 其他插件开发或排障任务        | [开发任务路由](references/plugin-development-routing.md)            |
+<!-- BEGIN GENERATED TASK NAVIGATION -->
+| 用户任务 | 先读 |
+| --- | --- |
+| 添加供 Agent 调用的 Host Tool | [register-host-tool](references/how-to-host-core.md#register-host-tool) |
+<!-- END GENERATED TASK NAVIGATION -->
+
+其他插件开发或排障任务见[开发任务路由](references/plugin-development-routing.md)。
 
 先读任务步骤，遇到具体类型、门禁或生命周期问题时，再打开该步骤链接的 API reference。只加载当前任务需要的参考内容。
 

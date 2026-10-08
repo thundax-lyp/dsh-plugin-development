@@ -4,7 +4,7 @@
     "tag": "dsh-v0.2.0-rc.2",
     "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
     "remote": "https://github.com/deepseek-ai/deepseek-harness",
-    "status": "frozen",
+    "status": "draft",
     "topics": [
         "host-core",
         "client-web",
@@ -114,5 +114,6 @@
     "apiEntriesSha256": "4cde68b87ce104d29d3653d81bfda7bcc34b477fd9662809b8765c17b8a729bf",
     "apiSymbolsSha256": "b0ac6b3e1331e1ab4a9d3f934a112f8e863ba71e39f58504d9aee6fe5334e5ca",
     "taskCandidatesSha256": "13a96c784d6289ae90e1b1dc55224c89f52613e39d19d6ca9b858a22a2f9a598",
-    "apiSurfaceSha256": "a77c0fb48908d444347e70a588bb78cf53738eb88a398db75a384f3a57c4e982"
+    "apiSurfaceSha256": "a77c0fb48908d444347e70a588bb78cf53738eb88a398db75a384f3a57c4e982",
+    "taskNavigation": "generated"
 }

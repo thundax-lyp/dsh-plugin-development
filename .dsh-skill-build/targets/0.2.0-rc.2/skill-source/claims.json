@@ -5,11 +5,19 @@
     "topic": "host-core",
     "decision": "accepted",
     "owner": "references/api-host-core.md",
-    "summary": "Host/Core registrations are scope-owned, cancellation-aware, and Session-visible facts must be reconstructible.",
+    "summary": "ToolRuntime and related Host services expose scoped registration with explicit cancellation and disposal contracts.",
     "evidence": [
       {
         "category": "public-api",
         "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/core/tools/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/core/tools/tests/scoped.spec.ts"
       }
     ]
   },
@@ -19,11 +27,27 @@
     "topic": "host-core",
     "decision": "accepted",
     "owner": "references/api-host-core-surface.md",
-    "summary": "Selected Host/Core public objects and signatures are exported by the target packages.",
+    "summary": "The listed Host objects have target-version public declarations; task-specific runtime semantics are resolved in their owner sections.",
     "evidence": [
       {
         "category": "public-api",
         "path": "packages/core/agent/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/llm/llm/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/jobs/jobs/src/types.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/skill/skill/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/session/session-projection/src/index.ts"
       }
     ]
   },
@@ -33,7 +57,7 @@
     "topic": "host-core",
     "decision": "accepted",
     "owner": "references/how-to-host-core.md",
-    "summary": "The documented Host tasks compose target public services and their verified lifecycle boundaries.",
+    "summary": "The Host task instructions combine target public services and define checks for Profile load, cancellation and cleanup; only checks actually run establish behavior.",
     "evidence": [
       {
         "category": "documentation",
@@ -41,23 +65,15 @@
       },
       {
         "category": "documentation",
-        "path": "docs/user/develop/basic/index.md"
-      },
-      {
-        "category": "documentation",
         "path": "docs/user/develop/basic/tool.md"
       },
       {
-        "category": "documentation",
-        "path": "README.md"
+        "category": "public-api",
+        "path": "packages/core/tools/src/index.ts"
       },
       {
         "category": "tests",
         "path": "packages/core/tools/tests/tools.spec.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "apps/cli/package.json"
       }
     ]
   },
@@ -67,11 +83,19 @@
     "topic": "client-web",
     "decision": "accepted",
     "owner": "references/api-client-web.md",
-    "summary": "Client plugins load through declared client metadata, slots, stores, and generated Remote contributions.",
+    "summary": "Client slots are scoped by their public facade, and Remote methods require a generated Host and Client binding.",
     "evidence": [
       {
         "category": "public-api",
-        "path": "packages/client/ui-slots/src/index.ts"
+        "path": "packages/client/ui-renderer/src/client/registry.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/api/gateway/src/client/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/client/ui-renderer/tests/scoped-slots.client.spec.tsx"
       }
     ]
   },
@@ -81,11 +105,23 @@
     "topic": "client-web",
     "decision": "accepted",
     "owner": "references/api-client-web-surface.md",
-    "summary": "Selected Client/Web public objects and signatures are exported by the target packages.",
+    "summary": "Selected Client, Web and Remote objects have target-version public declarations; their activation and cleanup differ by service.",
     "evidence": [
       {
         "category": "public-api",
         "path": "packages/client/store/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/web/web/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/api/terminal-controller/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/api/terminal-controller/src/client/index.ts"
       }
     ]
   },
@@ -95,11 +131,19 @@
     "topic": "client-web",
     "decision": "accepted",
     "owner": "references/how-to-client-web.md",
-    "summary": "The dual-sided example follows the target Host, Remote, Client slot, and settings contracts.",
+    "summary": "The Client tasks describe target public generator and runtime paths; independent third-party Client bundle assembly remains unverified.",
     "evidence": [
       {
         "category": "documentation",
         "path": "docs/cookbook/adding-a-remote-api.md"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/api/terminal-controller/src/index.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/client/ui-renderer/src/client/registry.ts"
       }
     ]
   },
@@ -109,11 +153,23 @@
     "topic": "infra-runtime",
     "decision": "accepted",
     "owner": "references/api-infra-runtime.md",
-    "summary": "Infrastructure capabilities expose stable seams while providers own cleanup and deployment-specific behavior.",
+    "summary": "Manifest and patch types define the published package, bundle and Profile composition fields.",
     "evidence": [
       {
         "category": "public-api",
         "path": "packages/util/package-manifest/src/types.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "packages/boot/app-boot/src/profile.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/include/src/index.ts"
+      },
+      {
+        "category": "tests",
+        "path": "packages/boot/app-boot/tests/user-patches.spec.ts"
       }
     ]
   },
@@ -123,11 +179,19 @@
     "topic": "infra-runtime",
     "decision": "accepted",
     "owner": "references/api-infra-runtime-surface.md",
-    "summary": "Selected infrastructure public objects and signatures are exported by the target packages.",
+    "summary": "Selected infrastructure services have target-version public declarations, including the optional browser and computer provider registries.",
     "evidence": [
       {
         "category": "public-api",
         "path": "packages/fs/fs/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/browser-use/browser-use/src/index.ts"
+      },
+      {
+        "category": "public-api",
+        "path": "packages/computer-use/computer-use/src/index.ts"
       }
     ]
   },
@@ -137,11 +201,23 @@
     "topic": "infra-runtime",
     "decision": "accepted",
     "owner": "references/how-to-infra-runtime.md",
-    "summary": "A package manifest and bundle patch compose a provider into a target Profile without copying product bundles.",
+    "summary": "The package task uses the target CLI install and remove path and the insert patch shape; other infrastructure examples require their own runtime verification.",
     "evidence": [
       {
         "category": "documentation",
-        "path": "docs/cordis-tutorial/06-composition-and-hmr.md"
+        "path": "docs/cookbook/adding-a-package.md"
+      },
+      {
+        "category": "documentation",
+        "path": "docs/user/develop/basic/publish.md"
+      },
+      {
+        "category": "runtime",
+        "path": "apps/cli/src/plugin.ts"
+      },
+      {
+        "category": "runtime",
+        "path": "vendor/include/src/index.ts"
       }
     ]
   }
