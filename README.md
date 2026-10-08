@@ -18,6 +18,10 @@ The entry-point search and evidence rules are in [entrypoint scope](.agents/skil
 
 The generated `skills/dsh-plugin-development/` directory is an output, so it may be absent while creation is in progress. Only a completed, validated output should be copied into a consuming project's `.agents/skills/` directory. This repository contains no DSH runtime or product plugin.
 
+## Review a generated Skill
+
+Invoke `$review-dsh-skill` to follow the [review Skill](.agents/skills/review-dsh-skill/SKILL.md). It discovers plugin tasks independently from real needs and the target version, delegates reference groups to subagents, and consolidates P0–P3 findings on coverage, Agent integration results, decision value, and redundancy. The review points proposed changes to the creation sources and validation rules; it does not edit the generated directory.
+
 ## Validate the creator
 
 ```sh
@@ -34,6 +38,7 @@ For a generated output, follow the [creator's verification procedure](.agents/sk
 
 ```text
 .agents/skills/create-dsh-skill/   # creator instructions, references, scripts, tests
+.agents/skills/review-dsh-skill/   # user-focused review of an existing output
 .dsh-skill-build/                 # per-version workspace; output and adjudicated evidence can be tracked
 skills/dsh-plugin-development/    # validated generated output, when present
 scripts/                          # independent output validators

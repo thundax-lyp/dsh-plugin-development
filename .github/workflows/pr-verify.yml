@@ -57,6 +57,9 @@ jobs:
                     .agents/skills/create-dsh-skill/references/reference-template.md
                     .agents/skills/create-dsh-skill/references/skill-source-contract.md
                     .agents/skills/create-dsh-skill/references/output-contract.md
+                    .agents/skills/review-dsh-skill/SKILL.md
+                    .agents/skills/review-dsh-skill/agents/openai.yaml
+                    .agents/skills/review-dsh-skill/references/review-method.md
                   )
 
                   for required_file in "${required_files[@]}"; do
@@ -104,6 +107,11 @@ jobs:
                   sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: create-dsh-skill$'
                   sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
 
+                  skill=.agents/skills/review-dsh-skill/SKILL.md
+                  test "$(sed -n '1p' "$skill")" = '---'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: review-dsh-skill$'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
+
                   if test -f skills/dsh-plugin-development/SKILL.md; then
                     skill=skills/dsh-plugin-development/SKILL.md
                     test "$(sed -n '1p' "$skill")" = '---'
@@ -119,6 +127,10 @@ jobs:
                   creator_metadata=.agents/skills/create-dsh-skill/agents/openai.yaml
                   grep -Eq '^policy:$' "$creator_metadata"
                   grep -Eq '^    allow_implicit_invocation: false$' "$creator_metadata"
+
+                  review_metadata=.agents/skills/review-dsh-skill/agents/openai.yaml
+                  grep -Eq '^policy:$' "$review_metadata"
+                  grep -Eq '^    allow_implicit_invocation: false$' "$review_metadata"
 
                   if test -f skills/dsh-plugin-development/SKILL.md; then
                     metadata=skills/dsh-plugin-development/agents/openai.yaml

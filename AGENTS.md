@@ -4,9 +4,9 @@
 
 本仓库维护 `$create-dsh-skill` 创建流程，用于从 DeepSeek Harness（DSH）源码生成面向 Cordis 包和插件开发的离线 `dsh-plugin-development` Agent Skill。本仓库不固定 DSH 版本基线；每次创建在准备阶段解析一个已发布版本，并将该次产物的事实锁定到精确 tag 和 commit，不混用其他版本或变化中的分支。
 
-`.agents/skills/create-dsh-skill/` 是本仓库的创建 Skill；`skills/dsh-plugin-development/` 是完整创建并验证后才放入的产物，创建期间允许不存在。消费项目安装时才把产物复制到其 `.agents/skills/`。
+`.agents/skills/create-dsh-skill/` 是本仓库的创建 Skill；`.agents/skills/review-dsh-skill/` 审核已有产物；`skills/dsh-plugin-development/` 是完整创建并验证后才放入的产物，创建期间允许不存在。消费项目安装时才把产物复制到其 `.agents/skills/`。
 
-仓库只容纳创建 Skill、参考文档、维护设施及通过流程生成的目标 Skill。不添加 DSH runtime、示例产品、生成的能力目录或无关插件实现；不将示例、快照或实验包当作已发布默认组件。有源文件和生成器的产物必须通过所属生成流程更新。
+仓库只容纳创建与审核 Skill、参考文档、维护设施及通过流程生成的目标 Skill。不添加 DSH runtime、示例产品、生成的能力目录或无关插件实现；不将示例、快照或实验包当作已发布默认组件。有源文件和生成器的产物必须通过所属生成流程更新。
 
 ## 文件职责
 
@@ -14,6 +14,7 @@
 | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | `README.md`、`README_zh-CN.md`                                                     | 对外说明创建项目的用途、使用方式与边界                          |
 | [创建 Skill](.agents/skills/create-dsh-skill/SKILL.md)                             | 版本解析、入口发现、证据裁决、冻结、构建、验证与替换流程        |
+| [审核 Skill](.agents/skills/review-dsh-skill/SKILL.md)                             | 独立发现插件任务，评估产物覆盖、Agent 结果与冗余                |
 | [入口范围](.agents/skills/create-dsh-skill/references/entrypoint-scope.md)         | 从插件作者可用入口确定调查范围                                  |
 | [reference 模板](.agents/skills/create-dsh-skill/references/reference-template.md) | 生成文档的必需结构                                              |
 | `.dsh-skill-build/`                                                                | 分版本构建工作区；checkout 与临时文件忽略，产物及裁决证据可跟踪 |
@@ -61,12 +62,13 @@ API 事实冲突按 **代码 → 注释 → 文档** 裁决。代码包括包导
 | ------------------- | ------------------------------------------------------------------------------ |
 | 任意文档或治理变更  | 格式、本地 Markdown 链接及锚点、行尾空白、`git diff --check`、任务差异范围     |
 | 创建 Skill 变更     | 上述检查，加创建流程测试、frontmatter/元数据与创建文档链接检查                 |
+| 审核 Skill 变更     | 上述检查，加 frontmatter、显式调用策略与审核入口检查                           |
 | 生成 Skill 变更     | 上述检查，加产物 frontmatter/元数据、单次版本一致性、JSON 代码块与离线边界检查 |
 | TypeScript 示例变化 | 对照该产物对应版本的声明编译；Host/Client 编译面分开验证                       |
 | source-map 变化     | 在该产物对应的精确 checkout 核查每条路径及专题归属                             |
 | Skill 产物发布      | 完整发布验证，含示例编译、源码映射和必要的生成声明/构建前置                    |
 
-CI 保持两个独立、可见的 job：`Governance` 检查必需文件与格式；`Skill Integrity` 检查创建 Skill 的入口和元数据、Markdown 目标与 JSON 代码块，并在生成产物存在时检查其元数据、单次版本一致性和离线边界。不能将两者隐藏在一个不透明的聚合脚本中。当前 CI **不覆盖** TypeScript 示例编译或独立 DSH checkout 的 source-map 路径检查。
+CI 保持两个独立、可见的 job：`Governance` 检查必需文件与格式；`Skill Integrity` 检查创建与审核 Skill 的入口、创建 Skill 元数据、Markdown 目标与 JSON 代码块，并在生成产物存在时检查其元数据、单次版本一致性和离线边界。不能将两者隐藏在一个不透明的聚合脚本中。当前 CI **不覆盖** TypeScript 示例编译或独立 DSH checkout 的 source-map 路径检查。
 
 只报告实际运行并观察到的结果。缺少 checkout、声明或命令时，记录未运行/失败/受阻的检查、原因与影响。报告分别说明设计就绪、行为实现和验证完成情况；自动检查通过不证明全部生命周期、权限、恢复或用户可见行为正确。PR 中未覆盖的检查放入 `Not Covered`。
 
