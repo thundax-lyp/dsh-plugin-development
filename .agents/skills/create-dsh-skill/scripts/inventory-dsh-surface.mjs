@@ -291,7 +291,13 @@ export function buildTaskCandidates(inventory, checkoutPath) {
     return {
         schemaVersion: 1,
         ...Object.fromEntries(identityKeys.map((key) => [key, inventory[key]])),
-        candidates: candidates.sort((a, b) => a.id.localeCompare(b.id)),
+        candidates: candidates.sort((a, b) =>
+            a.path < b.path
+                ? -1
+                : a.path > b.path
+                  ? 1
+                  : (a.line ?? 0) - (b.line ?? 0),
+        ),
     };
 }
 

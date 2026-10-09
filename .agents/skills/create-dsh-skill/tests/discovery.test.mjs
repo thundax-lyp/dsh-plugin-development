@@ -69,6 +69,7 @@ test("capability discovery is target-only and drops fixture compositions", () =>
 test("API entry and how-to discovery include exports and task headings", (t) => {
     const root = mkdtempSync(join(tmpdir(), "dsh-discovery-test-"));
     t.after(() => rmSync(root, { recursive: true, force: true }));
+    write(join(root, "README.md"), "# How to choose a component\n");
     write(
         join(root, "docs/guide.md"),
         "# How to build a plugin\n\n```md\n## How to ignore this\n```\n\n## API details\n",
@@ -99,7 +100,7 @@ test("API entry and how-to discovery include exports and task headings", (t) => 
             },
         ],
         documentation: [{ path: "docs/guide.md" }],
-        readmes: [],
+        readmes: [{ path: "README.md" }],
         website: [{ path: "website/webui.mdx" }],
     };
     assert.deepEqual(
@@ -114,7 +115,11 @@ test("API entry and how-to discovery include exports and task headings", (t) => 
         buildTaskCandidates(inventory, root).candidates.map(
             (item) => item.title,
         ),
-        ["How to build a plugin", "如何接入 WebUI"],
+        [
+            "How to choose a component",
+            "How to build a plugin",
+            "如何接入 WebUI",
+        ],
     );
 });
 

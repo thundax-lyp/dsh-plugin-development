@@ -136,6 +136,34 @@
             {
                 "category": "public-api",
                 "path": "packages/client/ui-primitives/src/Button.tsx"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/index.ts"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Pill.tsx"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Switch.tsx"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Checkbox.tsx"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Input.tsx"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/SegmentedControl.tsx"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Tooltip.tsx"
             }
         ]
     },
@@ -1788,6 +1816,28 @@
             {
                 "category": "public-api",
                 "path": "packages/webhook/webhook-github/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-131",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-shared-ui.md",
+        "summary": "公开共享 Web UI 控件的选择、包根导出边界和 Client 使用路径。",
+        "evidence": [
+            {
+                "category": "exports",
+                "path": "packages/client/ui-primitives/package.json"
+            },
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/index.ts"
+            },
+            {
+                "category": "documentation",
+                "path": "packages/client/ui-primitives/README.zh.md"
             }
         ]
     }
