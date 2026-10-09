@@ -51,9 +51,15 @@
 
 不要以“内置 Web 功能”“只是 UI 组件”或“已有 Client 总览”为由直接排除公开包。先核查其导出、包 README 的插件使用路径、样式或构建前置及实际调用方；可供插件作者复用的共享组件、主题 token、slot 和渲染契约按各自任务裁决。具体产品页面可作为调用证据而不自动成为通用 API。被纳入的入口即使同属 Web Client，也须保留各自必需的开发步骤；参见[有限压缩与完整性](reference-template.md#有限压缩与完整性)。
 
+### 共享 UI 组件裁决
+
+目标 tag 若公开 `@deepseek-ai/dsh-client-ui-primitives`，把“现成控件是否存在、该选哪一个、如何在插件 Client 中使用”作为独立开发任务。候选清单为此生成 `shared-ui-component-selection` 任务候选；把它映射到 `coverage.taskPaths` 中 `kind: "shared-ui-component-selection"` 的已覆盖 Client HOW-TO 任务，任务的 `apiObjects` 至少包含一个该包已纳入的公开控件。HOW-TO 链接控件契约；产物 `SKILL.md` 的关键词索引用“Web UI 组件／共享控件”等用户查找词直达契约。slot 说明装载和呈现位置，主题说明样式来源，都不能代替控件选型。
+
+逐行审阅目标版本 README 的组件目录并与包入口、声明和调用方核对。对 `Pill`/`Tag`、分段选择、提示、菜单等实际存在的不同用途分别裁决；不因同属 React 或同包就把一个控件算作另一个的替代。纳入的控件按选型差异和必要 props 给出契约，排除的控件逐项说明公开性、可用侧或插件使用路径的具体限制，不能批量写“由同入口已纳入对象承担”。不要求收录包内所有图标、类型或内部组件；用户想要的控件若未公开导出，在选型步骤中明确不存在公开入口，再给出可用的原生语义或本地组件方案。
+
 ## 3. 反查插件任务路径
 
-独立盘点目标 tag 的包 README、`docs/`、`website/` 中标题或正文提出的“如何……”“怎样……”及等价操作问题，尤其是 cookbook、教程和 WebUI 开发说明。`inventory-dsh-surface.mjs` 自动收集操作性标题及来源到 `evidence/task-candidates.json`；正文中的任务、公开调用方、组合测试和 Profile 装载路径仍需人工补查。每个标题候选在 `coverage.taskDiscoveries` 中映射到任务路径或写具体排除理由，去重时保留不同前置或结果。用户功能说明可作业务目标线索，但只有插件作者可通过公开入口实现的路径才能成为插件 HOW-TO；代码和注释仍优先于文档裁决 API 事实。
+独立盘点目标 tag 的包 README、`docs/`、`website/` 中标题或正文提出的“如何……”“怎样……”及等价操作问题，尤其是 cookbook、教程和 WebUI 开发说明。`inventory-dsh-surface.mjs` 自动收集操作性标题及公开共享 UI 包的选型任务候选到 `evidence/task-candidates.json`；正文中的其他任务、公开调用方、组合测试和 Profile 装载路径仍需人工补查。每个候选在 `coverage.taskDiscoveries` 中映射到任务路径或写具体排除理由，去重时保留不同前置或结果。用户功能说明可作业务目标线索，但只有插件作者可通过公开入口实现的路径才能成为插件 HOW-TO；代码和注释仍优先于文档裁决 API 事实。
 
 对每个相关任务先写可观察的业务结果，再列出共同完成结果的 API 对象与成员、配置/manifest、Host/Client/Remote 侧、调用和装载顺序、资源 owner、失败/取消/卸载与适用的验证证据。把对象组合与公开调用方、运行时代码和测试逐项核对；文档给出的步骤若在目标版本不成立，记录限制或排除理由，不照抄。将裁决写入 `coverage.json` 的 `taskPaths`，并反查各能力的 `pluginTask`；一条任务可串起多个对象和候选，一个对象也可参加多条任务。不要把“使用某包”或“接入可选能力”当成足够具体的任务描述。
 

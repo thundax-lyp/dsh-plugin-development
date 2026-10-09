@@ -274,10 +274,24 @@ export function buildTaskCandidates(inventory, checkoutPath) {
             });
         }
     }
+    const sharedUi = inventory.packageManifests.find(
+        (item) =>
+            item.name === "@deepseek-ai/dsh-client-ui-primitives" &&
+            item.private !== true &&
+            item.exports?.["."],
+    );
+    if (sharedUi) {
+        candidates.push({
+            id: "task:package:@deepseek-ai/dsh-client-ui-primitives:component-reuse",
+            path: sharedUi.path,
+            title: "查找、选择并复用公开 Web UI 控件",
+            kind: "shared-ui-component-selection",
+        });
+    }
     return {
         schemaVersion: 1,
         ...Object.fromEntries(identityKeys.map((key) => [key, inventory[key]])),
-        candidates,
+        candidates: candidates.sort((a, b) => a.id.localeCompare(b.id)),
     };
 }
 
