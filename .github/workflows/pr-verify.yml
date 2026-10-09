@@ -63,11 +63,23 @@ jobs:
                     .agents/skills/review-dsh-skill/SKILL.md
                     .agents/skills/review-dsh-skill/agents/openai.yaml
                     .agents/skills/review-dsh-skill/references/review-method.md
+                    .agents/skills/push-pr/SKILL.md
+                    .agents/skills/push-pr/agents/openai.yaml
                   )
 
                   for required_file in "${required_files[@]}"; do
                     test -s "$required_file"
                   done
+
+            - name: Verify PR Skill entrypoint
+              shell: bash
+              run: |
+                  set -euo pipefail
+                  skill=.agents/skills/push-pr/SKILL.md
+                  test "$(sed -n '1p' "$skill")" = '---'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: push-pr$'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
+                  grep -Eq '^    allow_implicit_invocation: false$' .agents/skills/push-pr/agents/openai.yaml
 
             - name: Verify pull request diff formatting
               if: github.event_name == 'pull_request'

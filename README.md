@@ -39,6 +39,7 @@ For a generated output, follow the [creator's verification procedure](.agents/sk
 ```text
 .agents/skills/create-dsh-skill/   # creator instructions, references, scripts, tests
 .agents/skills/review-dsh-skill/   # user-focused review of an existing output
+.agents/skills/push-pr/            # repository PR publication workflow
 .dsh-skill-build/                 # per-version workspace; output and adjudicated evidence can be tracked
 skills/dsh-plugin-development/    # validated generated output, when present
 scripts/                          # independent output validators

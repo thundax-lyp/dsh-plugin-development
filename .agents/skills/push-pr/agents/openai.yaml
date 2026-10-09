@@ -1,0 +1,7 @@
+interface:
+    display_name: "Push PR"
+    short_description: "发布本仓库分支并核对 PR 状态"
+    default_prompt: "Use $push-pr to push this branch and create or update its pull request."
+
+policy:
+    allow_implicit_invocation: false

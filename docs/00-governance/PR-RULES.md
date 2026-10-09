@@ -6,6 +6,8 @@
 
 开发变更通过 `branch -> PR -> review -> merge` 进入 `main`，不直接推送开发中的内容。分支使用简短稳定的英文名，如 `docs/clarify-maintenance`。每个 PR 围绕一个可审查、可验证的目标，可包含多个内聚的提交；跨项目或技术领域时说明不能拆分的原因、跨边界影响并扩大验证。Draft 同样必须说明范围、风险与验证。
 
+发布和收口操作可显式调用 [Push PR Skill](../../.agents/skills/push-pr/SKILL.md)；具体 Git 写入仍按 [AGENTS.md](../../AGENTS.md#授权与-git-安全) 的授权边界执行。
+
 ## PR 内容
 
 使用 [PR 模板](../../.github/pull_request_template.md)，说明交付结果而非只列文件，完整填写：

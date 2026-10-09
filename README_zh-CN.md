@@ -39,6 +39,7 @@ git diff --check
 ```text
 .agents/skills/create-dsh-skill/   # 创建说明、参考、脚本和测试
 .agents/skills/review-dsh-skill/   # 现有产物的使用者视角审核
+.agents/skills/push-pr/            # 仓库 PR 发布流程
 .dsh-skill-build/                 # 分版本工作区；产物与裁决证据可被跟踪
 skills/dsh-plugin-development/    # 已验证的生成结果，可能暂不存在
 scripts/                          # 独立的产物检查器
