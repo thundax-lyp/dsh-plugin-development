@@ -290,6 +290,7 @@ function main() {
         "skill-source/api-guardrails",
         "skill-source/concepts",
         "skill-source/how-to",
+        "skill-source/examples",
         "skill-source/entrypoint",
         "skill-source/metadata",
         "skill-source/indexes",
@@ -300,12 +301,16 @@ function main() {
         mkdirSync(join(targetPath, path), { recursive: true });
     }
 
-    ensureJsonFile(join(targetPath, "provenance.json"), {
+    const provenanceIdentity = {
         package: packageName,
         version,
         tag,
         commit,
         remote: normalizeRemote(remote),
+    };
+    ensureJsonFile(join(targetPath, "provenance.json"), provenanceIdentity, {
+        ...provenanceIdentity,
+        creationContract: "entrypoint",
     });
     const skillSourceIdentity = {
         version,
@@ -320,6 +325,7 @@ function main() {
     );
     ensureJsonFile(skillSourceManifestPath, skillSourceIdentity, {
         schemaVersion: 3,
+        taskNavigation: "entrypoint",
         ...skillSourceIdentity,
         status: "draft",
         topics: [],
