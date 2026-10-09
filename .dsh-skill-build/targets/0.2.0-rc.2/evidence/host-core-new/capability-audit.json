@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 1,
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "scope": "packages/core|llm|session|credentials|interaction|host and selected packages/compaction, shell, jobs, subagent, workflow, goal, session-query public-package candidates",
+  "decisionSemantics": {
+    "included": "本组已有对象与任务正文",
+    "merged": "归指定 owner 的独立任务；本组未声称其正文完成",
+    "excluded": "历史迁移实现，不是目标版本新增插件的任务入口"
+  },
+  "candidates": [
+    {
+      "candidateId": "package:@deepseek-ai/dsh-agent",
+      "path": "packages/core/agent/package.json",
+      "decision": "included",
+      "owner": "references/api-host-agent.md",
+      "taskIds": [
+        "scope-agent-capability"
+      ],
+      "reason": "公开 Agent 句柄与注册表可供插件对实时 Agent 注入作用域能力，创建/恢复经默认 loop 提供工厂。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-agent-default-model",
+      "path": "packages/core/agent-default-model/package.json",
+      "decision": "merged",
+      "owner": "host-agent",
+      "taskIds": [
+        "choose-default-model"
+      ],
+      "reason": "内置新 Agent 默认模型选择器；其配置影响 Agent 创建，但不定义新的 Agent 扩展契约。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-agent-loop",
+      "path": "packages/core/agent-loop/package.json",
+      "decision": "included",
+      "owner": "references/api-host-agent.md",
+      "taskIds": [
+        "scope-agent-capability"
+      ],
+      "reason": "公开默认 Agent factory/driver 是 ctx.agents.create/resume 的实际装载前置，并提供 Profile 中声明式 Agent 配置。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-agent-tool-presentation",
+      "path": "packages/core/agent-tool-presentation/package.json",
+      "decision": "merged",
+      "owner": "host-agent",
+      "taskIds": [
+        "choose-tool-presentation"
+      ],
+      "reason": "内置 Agent 工具呈现模式选择器；属于 Agent 装载配置，具体模型可见形态须按此包核验。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-authorization",
+      "path": "packages/credentials/authorization/package.json",
+      "decision": "included",
+      "owner": "references/api-host-credentials.md",
+      "taskIds": [
+        "register-authorization-flow"
+      ],
+      "reason": "公开的人机授权 flow 注册是插件取得需用户参与的凭据入口；只有提交记录才可报告 authorized。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-commands",
+      "path": "packages/interaction/commands/package.json",
+      "decision": "included",
+      "owner": "references/api-host-commands.md",
+      "taskIds": [
+        "register-host-command"
+      ],
+      "reason": "公开命令注册让插件向交互 UI 提供斜杠命令，handler 由 UI 执行并记录 Session 生命周期，不是模型工具。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-compaction",
+      "path": "packages/compaction/compaction/package.json",
+      "decision": "included",
+      "owner": "references/api-host-compaction.md",
+      "taskIds": [
+        "provide-compaction-backend"
+      ],
+      "reason": "压缩服务公开抽象 backend、触发、日志结果与 checkpoint 标识；用户任务明确要求实现 backend。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-credentials",
+      "path": "packages/credentials/credentials/package.json",
+      "decision": "included",
+      "owner": "references/api-host-credentials.md",
+      "taskIds": [
+        "store-plugin-credential"
+      ],
+      "reason": "抽象凭据 Service 与按名/按记录键空间是公开插件消费入口；具体存储必须由 provider 挂载。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-credentials-local",
+      "path": "packages/credentials/credentials-local/package.json",
+      "decision": "merged",
+      "owner": "host-credentials",
+      "taskIds": [
+        "configure-local-credentials"
+      ],
+      "reason": "文件型 CredentialProvider 具体实现，作为凭据 seam 的部署例子；不能把其文件布局当成所有 provider 的契约。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-deepseek-account",
+      "path": "packages/credentials/deepseek-account/package.json",
+      "decision": "merged",
+      "owner": "provider-authentication",
+      "taskIds": [
+        "use-deepseek-account"
+      ],
+      "reason": "DeepSeek 账号消费服务和登录状态入口；是特定账号集成，不属于通用凭据 Service 定义。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-deepseek-account-platform",
+      "path": "packages/credentials/deepseek-account-platform/package.json",
+      "decision": "merged",
+      "owner": "provider-authentication",
+      "taskIds": [
+        "configure-deepseek-login"
+      ],
+      "reason": "系统浏览器登录与本地凭据存储的具体组合；具体 OAuth 协议归账号集成主题。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-deepseek-llm-api-extensions",
+      "path": "packages/llm/deepseek-llm-api-extensions/package.json",
+      "decision": "merged",
+      "owner": "provider-deepseek",
+      "taskIds": [
+        "extend-deepseek-request"
+      ],
+      "reason": "官方 DeepSeek 请求扩展注册表是独立公开 provider 插件 seam；需独立对象与请求字段裁决，不应仅当内置适配器细节。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-goal",
+      "path": "packages/goal/goal/package.json",
+      "decision": "included",
+      "owner": "references/api-host-goal.md",
+      "taskIds": [
+        "manage-session-goal"
+      ],
+      "reason": "持久目标 Service 公开精确修订状态机供插件调用；轮次驱动是独立具体实现。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-goal-round-driver",
+      "path": "packages/goal/goal-round-driver/package.json",
+      "decision": "excluded",
+      "owner": "host-goal",
+      "taskIds": [
+        "configure-goal-round-driver"
+      ],
+      "reason": "这是只消费 ctx.goals 与 Agent 事件的具体自动续行驱动，无公开 provider 注册或可替换抽象类；作为 Goal 组合选项，不单列第三方扩展 seam。",
+      "coverageStatus": "excluded-from-new-plugin-task"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-directory-picker",
+      "path": "packages/host/directory-picker/package.json",
+      "decision": "included",
+      "owner": "references/api-host-directory-picker.md",
+      "taskIds": [
+        "provide-directory-picker"
+      ],
+      "reason": "公开 Host DirectoryPicker Service Definition 与可扩展能力联合支持第三方 backend，Client 页面流程仍需另行组合。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-directory-picker-auto",
+      "path": "packages/host/directory-picker-auto/package.json",
+      "decision": "merged",
+      "owner": "host-directory-picker",
+      "taskIds": [
+        "configure-directory-picker"
+      ],
+      "reason": "原生与浏览后端的启动时选择器；归目录选择任务的组合变体。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-directory-picker-browse",
+      "path": "packages/host/directory-picker-browse/package.json",
+      "decision": "merged",
+      "owner": "host-directory-picker",
+      "taskIds": [
+        "configure-directory-picker"
+      ],
+      "reason": "目录选择 browse 具体实现，同时装载匹配 Client 流程；现成组合见本组 example。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-directory-picker-native",
+      "path": "packages/host/directory-picker-native/package.json",
+      "decision": "merged",
+      "owner": "host-directory-picker",
+      "taskIds": [
+        "configure-directory-picker"
+      ],
+      "reason": "目录选择 native 具体实现；其 OS 对话框只适用于操作者可接触 Host 屏幕的部署。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-frontend-static",
+      "path": "packages/host/frontend-static/package.json",
+      "decision": "merged",
+      "owner": "host-webserver",
+      "taskIds": [
+        "serve-web-frontend"
+      ],
+      "reason": "SPA dist 的具体现成服务插件，建立在 Host webserver 回退席位上；不是静态资源通用 API owner。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-open-in-app",
+      "path": "packages/host/open-in-app/package.json",
+      "decision": "merged",
+      "owner": "host-webserver",
+      "taskIds": [
+        "register-open-in-app"
+      ],
+      "reason": "编辑器/终端启动器和 Web 路由的产品特定实现；需要独立路由与本机进程安全核验。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-plugin-inventory",
+      "path": "packages/host/plugin-inventory/package.json",
+      "decision": "merged",
+      "owner": "client-remote",
+      "taskIds": [
+        "read-plugin-inventory"
+      ],
+      "reason": "当前 Loader 状态的内置只读 Remote 投影；不把它误写为第三方 Client 插件注册 seam。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+      "path": "packages/host/product-telemetry-otel/package.json",
+      "decision": "merged",
+      "owner": "telemetry",
+      "taskIds": [
+        "configure-product-telemetry"
+      ],
+      "reason": "产品使用事件的 OTEL 后端实现；部署配置与发送边界归遥测主题。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-host-webserver",
+      "path": "packages/host/webserver/package.json",
+      "decision": "merged",
+      "owner": "host-webserver",
+      "taskIds": [
+        "register-host-web-route"
+      ],
+      "reason": "公开具名路由和 upgrade 注册服务是真实 Host 扩展 seam；本组未展开其请求/注销契约，需独立 API owner。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-jobs",
+      "path": "packages/jobs/jobs/package.json",
+      "decision": "included",
+      "owner": "references/api-host-jobs.md",
+      "taskIds": [
+        "register-background-job"
+      ],
+      "reason": "抽象 JobRegistry 与 producer/owner/output 契约公开；local backend 和模型控制器是独立组合。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-llm",
+      "path": "packages/llm/llm/package.json",
+      "decision": "included",
+      "owner": "references/api-host-llm.md",
+      "taskIds": [
+        "register-llm-adapter"
+      ],
+      "reason": "公开 adapter 注册与流式模型契约可供插件提供自定义 provider route；完整 stream 类型与归因头仍需按任务验证。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-llm-deepseek",
+      "path": "packages/llm/llm-deepseek/package.json",
+      "decision": "merged",
+      "owner": "provider-deepseek",
+      "taskIds": [
+        "configure-deepseek-llm"
+      ],
+      "reason": "DeepSeek Messages/推理/图像的具体适配器；通用 LlmAdapter 契约归 dsh-llm。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-llm-deepseek-account",
+      "path": "packages/llm/llm-deepseek-account/package.json",
+      "decision": "merged",
+      "owner": "provider-deepseek",
+      "taskIds": [
+        "configure-deepseek-account-model"
+      ],
+      "reason": "DeepSeek 账号的鉴权和模型发现具体路由；需账号集成主题验证。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-llm-deepseek-api-key",
+      "path": "packages/llm/llm-deepseek-api-key/package.json",
+      "decision": "merged",
+      "owner": "provider-deepseek",
+      "taskIds": [
+        "configure-deepseek-api-key-model"
+      ],
+      "reason": "DeepSeek API key 鉴权和模型发现具体路由；需账号集成主题验证。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-llm-pi-ai",
+      "path": "packages/llm/llm-pi-ai/package.json",
+      "decision": "merged",
+      "owner": "host-llm",
+      "taskIds": [
+        "configure-pi-ai-adapter"
+      ],
+      "reason": "pi-ai 多 provider 具体 LlmAdapter 与模型目录；是通用适配器契约的实现样本。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-llm-retry",
+      "path": "packages/llm/llm-retry/package.json",
+      "decision": "merged",
+      "owner": "host-llm",
+      "taskIds": [
+        "configure-llm-retry"
+      ],
+      "reason": "Agent step 边界的路由化重试执行器；不能由适配器单次 stream 契约推导其恢复语义。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-permission-presets",
+      "path": "packages/interaction/permission-presets/package.json",
+      "decision": "merged",
+      "owner": "host-prompt-policy",
+      "taskIds": [
+        "configure-permission-preset"
+      ],
+      "reason": "部署用沙箱与审批策略组合；具体 preset 不等同单次 ApprovalOutcome。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+      "path": "packages/llm/plugin-package-inventory-deepseek/package.json",
+      "decision": "merged",
+      "owner": "provider-deepseek",
+      "taskIds": [
+        "inspect-deepseek-package-inventory"
+      ],
+      "reason": "向官方 DeepSeek 请求提供活跃 Loader 包元数据的产品特定实现。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-scope",
+      "path": "packages/core/scope/package.json",
+      "decision": "included",
+      "owner": "references/api-host-scope.md",
+      "taskIds": [
+        "register-scoped-contribution"
+      ],
+      "reason": "公共作用域注册原语支持按 Agent/分组隔离注册与事件；并非普通全局 Service。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session",
+      "path": "packages/core/session/package.json",
+      "decision": "included",
+      "owner": "references/api-host-session.md",
+      "taskIds": [
+        "record-host-session-fact"
+      ],
+      "reason": "公开 Session append 与投影是插件持久事实和模型历史重建边界；已废弃同步事件读取方法不纳入常规指导。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-checkpoint-policy",
+      "path": "packages/session/session-checkpoint-policy/package.json",
+      "decision": "merged",
+      "owner": "host-persistence",
+      "taskIds": [
+        "configure-session-checkpoint"
+      ],
+      "reason": "持久 Agent 的语义检查点服务；位于 Agent 调用与 SessionPersistence 之间，需独立恢复任务。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-format",
+      "path": "packages/session/session-format/package.json",
+      "decision": "merged",
+      "owner": "session-format",
+      "taskIds": [
+        "migrate-session-format"
+      ],
+      "reason": "公开纯函数格式规划与编解码分派；属于持久化后端的格式契约，不是 Session 日志写入 API。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-format-catalog",
+      "path": "packages/session/session-format-catalog/package.json",
+      "decision": "merged",
+      "owner": "session-format",
+      "taskIds": [
+        "migrate-session-format"
+      ],
+      "reason": "第一方格式编解码器与相邻迁移目录；为持久化冷读提供版本路径。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-format-v0-to-v1",
+      "path": "packages/session/session-format-v0-to-v1/package.json",
+      "decision": "excluded",
+      "owner": "session-format",
+      "taskIds": [
+        "migrate-session-format"
+      ],
+      "reason": "冻结的已发布历史 v0→v1 迁移实现；插件作者不应按此旧版本定义当前事件。",
+      "coverageStatus": "excluded-from-new-plugin-task"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-format-v1-to-v2",
+      "path": "packages/session/session-format-v1-to-v2/package.json",
+      "decision": "excluded",
+      "owner": "session-format",
+      "taskIds": [
+        "migrate-session-format"
+      ],
+      "reason": "冻结的已发布历史 v1→v2 迁移实现；当前插件应发出目标版本事件。",
+      "coverageStatus": "excluded-from-new-plugin-task"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-format-v2-to-v3",
+      "path": "packages/session/session-format-v2-to-v3/package.json",
+      "decision": "excluded",
+      "owner": "session-format",
+      "taskIds": [
+        "migrate-session-format"
+      ],
+      "reason": "冻结的已发布历史 v2→v3 迁移实现；不作为新增插件的公共任务入口。",
+      "coverageStatus": "excluded-from-new-plugin-task"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-format-v3-to-v4",
+      "path": "packages/session/session-format-v3-to-v4/package.json",
+      "decision": "excluded",
+      "owner": "session-format",
+      "taskIds": [
+        "migrate-session-format"
+      ],
+      "reason": "冻结的已发布历史 v3→v4 迁移实现；不作为新增插件的公共任务入口。",
+      "coverageStatus": "excluded-from-new-plugin-task"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-log-deepseek",
+      "path": "packages/session/session-log-deepseek/package.json",
+      "decision": "merged",
+      "owner": "telemetry",
+      "taskIds": [
+        "configure-deepseek-session-log"
+      ],
+      "reason": "向官方 DeepSeek 端增量上传规范 Session 日志的具体部署实现；需独立外发数据边界核验。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-persistence",
+      "path": "packages/session/session-persistence/package.json",
+      "decision": "included",
+      "owner": "references/api-host-persistence.md",
+      "taskIds": [
+        "implement-session-persistence"
+      ],
+      "reason": "公开抽象后端 Service 与句柄接口允许插件提供新存储机制；只有具体 backend 与 Profile 装载才产生持久能力。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-persistence-jsonl",
+      "path": "packages/session/session-persistence-jsonl/package.json",
+      "decision": "merged",
+      "owner": "host-persistence",
+      "taskIds": [
+        "configure-jsonl-persistence"
+      ],
+      "reason": "产品自带 JSONL 存储后端；是 SessionPersistence 的具体实现，不能替代抽象单写者契约。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-projection",
+      "path": "packages/session/session-projection/package.json",
+      "decision": "included",
+      "owner": "references/api-host-session.md",
+      "taskIds": [
+        "record-host-session-fact"
+      ],
+      "reason": "公开 ProjectionDefinition 和 SessionProjectionRegistry 是插件把 Session 日志折叠成 Host/Client 当前状态的可用扩展点，与直接 append 和模型消息投影职责不同。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-projection-cache",
+      "path": "packages/session/session-projection-cache/package.json",
+      "decision": "merged",
+      "owner": "host-session",
+      "taskIds": [
+        "configure-projection-cache"
+      ],
+      "reason": "投影持久检查点和冷读加速的具体服务；投影定义仍由 dsh-session-projection 持有。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-query",
+      "path": "packages/session-query/session-query/package.json",
+      "decision": "included",
+      "owner": "references/api-host-session-query.md",
+      "taskIds": [
+        "query-session-history"
+      ],
+      "reason": "公开抽象查询 Service 将通用 live/cold 读取与两个全文搜索 backend 方法分离。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-stats",
+      "path": "packages/session/session-stats/package.json",
+      "decision": "merged",
+      "owner": "host-session",
+      "taskIds": [
+        "inspect-session-stats"
+      ],
+      "reason": "基于日志的内置计数/时长投影单元；业务插件可消费，但新投影扩展契约归 dsh-session-projection。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-telemetry",
+      "path": "packages/session/session-telemetry/package.json",
+      "decision": "merged",
+      "owner": "telemetry",
+      "taskIds": [
+        "provide-session-telemetry"
+      ],
+      "reason": "公开 Session 遥测捕获、脱敏与后端注册 seam；应有独立 Host API owner，不能整批排除。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-telemetry-otel",
+      "path": "packages/session/session-telemetry-otel/package.json",
+      "decision": "merged",
+      "owner": "telemetry",
+      "taskIds": [
+        "configure-otel-session-telemetry"
+      ],
+      "reason": "SessionTelemetry 的 OTEL 具体后端，负责导出配置与数据边界。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-title",
+      "path": "packages/session/session-title/package.json",
+      "decision": "included",
+      "owner": "references/api-host-session-title.md",
+      "taskIds": [
+        "register-session-title-provider"
+      ],
+      "reason": "标题服务公开唯一异步 provider 注册、输入/结果与稳定身份；用户任务明确要求新增 provider。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-title-all-prompts-llm",
+      "path": "packages/session/session-title-all-prompts-llm/package.json",
+      "decision": "merged",
+      "owner": "host-session",
+      "taskIds": [
+        "configure-session-title"
+      ],
+      "reason": "基于所有提示词的现成 LLM 标题来源；属于标题策略实现。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-title-first-prompt-llm",
+      "path": "packages/session/session-title-first-prompt-llm/package.json",
+      "decision": "merged",
+      "owner": "host-session",
+      "taskIds": [
+        "configure-session-title"
+      ],
+      "reason": "基于首条提示词的现成 LLM 标题来源；属于标题策略实现。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-title-llm",
+      "path": "packages/session/session-title-llm/package.json",
+      "decision": "merged",
+      "owner": "host-session",
+      "taskIds": [
+        "provide-session-title"
+      ],
+      "reason": "共享 LLM 标题生成策略，可由具体标题来源组合。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-session-turn-outline",
+      "path": "packages/session/session-turn-outline/package.json",
+      "decision": "merged",
+      "owner": "host-session",
+      "taskIds": [
+        "inspect-turn-outline"
+      ],
+      "reason": "供 Client 导航的内置完整轮次大纲投影；自定义投影仍按 dsh-session-projection 契约。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-shell-env",
+      "path": "packages/shell/shell-env/package.json",
+      "decision": "included",
+      "owner": "references/api-host-shell-env.md",
+      "taskIds": [
+        "register-shell-environment-fact"
+      ],
+      "reason": "公开 ShellEnvRegistry 注册 API 和按执行收集的环境贡献者；用户任务明确要求新增环境事实。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-subagent",
+      "path": "packages/subagent/subagent/package.json",
+      "decision": "included",
+      "owner": "references/api-host-subagent.md",
+      "taskIds": [
+        "provide-subagent-backend"
+      ],
+      "reason": "具名 provider 注册支持第三方委派后端；one-shot 与续接生命周期不可混淆。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-system-prompt",
+      "path": "packages/core/system-prompt/package.json",
+      "decision": "included",
+      "owner": "references/api-host-prompt-policy.md",
+      "taskIds": [
+        "register-host-prompt-section"
+      ],
+      "reason": "公开提示词 section/context/variable 是插件贡献模型上下文的入口，作用域与 fiber 清理在实现中确认。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-token-meter",
+      "path": "packages/llm/token-meter/package.json",
+      "decision": "merged",
+      "owner": "host-llm",
+      "taskIds": [
+        "inspect-token-usage"
+      ],
+      "reason": "回放感知 token/上下文压力服务，影响压缩与预算；需独立计量契约核验。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-ask-user",
+      "path": "packages/interaction/tool-ask-user/package.json",
+      "decision": "merged",
+      "owner": "host-user-questions",
+      "taskIds": [
+        "ask-user-from-tool"
+      ],
+      "reason": "基于 user-questions seam 的现成模型工具；通用工具注册归 dsh-tools。",
+      "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tools",
+      "path": "packages/core/tools/package.json",
+      "decision": "included",
+      "owner": "references/api-host-tools.md",
+      "taskIds": [
+        "register-host-tool",
+        "guard-host-tool-execution"
+      ],
+      "reason": "公开包根导出且插件可经 Host Context 使用；已核对声明、实现及目标版本教程。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-user-approval",
+      "path": "packages/interaction/user-approval/package.json",
+      "decision": "included",
+      "owner": "references/api-host-prompt-policy.md",
+      "taskIds": [
+        "guard-host-tool-execution"
+      ],
+      "reason": "公开审批服务提供工具执行时的人工决策；request 限 open turn，只有 allowed-once 授权。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-user-questions",
+      "path": "packages/interaction/user-questions/package.json",
+      "decision": "included",
+      "owner": "references/api-host-user-questions.md",
+      "taskIds": [
+        "ask-user-question"
+      ],
+      "reason": "公开结构化问答 Service 和 waterfall answerer；Agent root 与超时续答是核心边界。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-workflow",
+      "path": "packages/workflow/workflow/package.json",
+      "decision": "included",
+      "owner": "references/api-host-workflow.md",
+      "taskIds": [
+        "run-host-workflow"
+      ],
+      "reason": "抽象 WorkflowEngine 允许实现脚本编排；程序化 start/run 生命周期供插件调用。"
+    }
+  ]
+}

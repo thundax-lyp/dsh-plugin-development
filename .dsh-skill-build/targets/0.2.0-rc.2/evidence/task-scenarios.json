@@ -3,8 +3,13 @@
     "scenarios": [
         {
             "taskId": "register-host-tool",
-            "script": "scenarios/register-host-tool.mjs",
-            "checks": ["package-resolution", "tool-call", "unload"],
+            "script": "host-core-new/scenarios/register-host-tool.mjs",
+            "checks": [
+                "package-resolution",
+                "tool-registration",
+                "tool-call",
+                "unload"
+            ],
             "timeoutMs": 120000
         }
     ]

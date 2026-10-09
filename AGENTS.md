@@ -4,9 +4,9 @@
 
 本仓库维护 `$create-dsh-skill` 创建流程，用于从 DeepSeek Harness（DSH）源码生成面向 Cordis 包和插件开发的离线 `dsh-plugin-development` Agent Skill。本仓库不固定 DSH 版本基线；每次创建在准备阶段解析一个已发布版本，并将该次产物的事实锁定到精确 tag 和 commit，不混用其他版本或变化中的分支。
 
-`.agents/skills/create-dsh-skill/` 是本仓库的创建 Skill；`.agents/skills/review-dsh-skill/` 审核已有产物；`skills/dsh-plugin-development/` 是完整创建并验证后才放入的产物，创建期间允许不存在。消费项目安装时才把产物复制到其 `.agents/skills/`。
+`.agents/skills/create-dsh-skill/` 是本仓库的创建 Skill；`.agents/skills/review-dsh-skill/` 审核已有产物；`.agents/skills/push-pr/` 负责 PR 发布与收口；`skills/dsh-plugin-development/` 是完整创建并验证后才放入的产物，创建期间允许不存在。消费项目安装时才把产物复制到其 `.agents/skills/`。
 
-仓库只容纳创建与审核 Skill、参考文档、维护设施及通过流程生成的目标 Skill。不添加 DSH runtime、示例产品、生成的能力目录或无关插件实现；不将示例、快照或实验包当作已发布默认组件。有源文件和生成器的产物必须通过所属生成流程更新。
+仓库只容纳创建、审核与仓库协作 Skill、参考文档、维护设施及通过流程生成的目标 Skill。不添加 DSH runtime、示例产品、生成的能力目录或无关插件实现；不将示例、快照或实验包当作已发布默认组件。有源文件和生成器的产物必须通过所属生成流程更新。
 
 ## 文件职责
 
@@ -15,6 +15,7 @@
 | `README.md`、`README_zh-CN.md`                                                     | 对外说明创建项目的用途、使用方式与边界                          |
 | [创建 Skill](.agents/skills/create-dsh-skill/SKILL.md)                             | 版本解析、入口发现、证据裁决、冻结、构建、验证与替换流程        |
 | [审核 Skill](.agents/skills/review-dsh-skill/SKILL.md)                             | 独立发现插件任务，评估产物覆盖、Agent 结果与冗余                |
+| [PR 发布 Skill](.agents/skills/push-pr/SKILL.md)                                   | 分支发布、PR 创建或更新及状态收口                               |
 | [入口范围](.agents/skills/create-dsh-skill/references/entrypoint-scope.md)         | 从插件作者可用入口确定调查范围                                  |
 | [reference 模板](.agents/skills/create-dsh-skill/references/reference-template.md) | 生成文档的必需结构                                              |
 | `.dsh-skill-build/`                                                                | 分版本构建工作区；checkout 与临时文件忽略，产物及裁决证据可跟踪 |
@@ -55,6 +56,8 @@ API 事实冲突按 **代码 → 注释 → 文档** 裁决。代码包括包导
 - 模型工具只有一份规范 JSON 结果，渲染保持纯函数。
 
 ## 验证与报告
+
+仓库维护源码和文档由 Prettier 检查；`.dsh-skill-build/` 与正式生成目录 `skills/dsh-plugin-development/` 不交给 Prettier 整目录重排，正式产物由 `verify:skill` 检查结构、链接、JSON 代码块和空白。新创建契约的核心版本账本统一由写入器使用 `JSON.stringify(value, null, 4)` 和一个末尾换行生成，并运行 `pnpm format:ledgers` 检查。命令行打印的 JSON 不属于账本格式。调整缩进或排序时只对当前目标做一次明确迁移、重新冻结哈希并验证生成产物，不批量重排历史版本或改写版本化的 `generated-skill/`。
 
 按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或产物替换变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。完整创建与发布流程以[创建 Skill](.agents/skills/create-dsh-skill/SKILL.md)为准。
 

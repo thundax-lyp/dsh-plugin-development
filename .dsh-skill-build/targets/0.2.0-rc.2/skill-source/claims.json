@@ -1,260 +1,1794 @@
 [
-  {
-    "id": "host-contract",
-    "kind": "implemented-behavior",
-    "topic": "host-core",
-    "decision": "accepted",
-    "owner": "references/api-host-core.md",
-    "summary": "ToolRuntime and related Host services expose scoped registration with explicit cancellation and disposal contracts.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/core/tools/src/index.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "packages/core/tools/src/index.ts"
-      },
-      {
-        "category": "tests",
-        "path": "packages/core/tools/tests/scoped.spec.ts"
-      }
-    ]
-  },
-  {
-    "id": "host-surface",
-    "kind": "implemented-behavior",
-    "topic": "host-core",
-    "decision": "accepted",
-    "owner": "references/api-host-core-surface.md",
-    "summary": "The listed Host objects have target-version public declarations; task-specific runtime semantics are resolved in their owner sections.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/core/agent/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/llm/llm/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/jobs/jobs/src/types.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/skill/skill/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/session/session-projection/src/index.ts"
-      }
-    ]
-  },
-  {
-    "id": "host-how-to",
-    "kind": "derived-guidance",
-    "topic": "host-core",
-    "decision": "accepted",
-    "owner": "references/how-to-host-core.md",
-    "summary": "The Host task instructions combine target public services and define checks for Profile load, cancellation and cleanup; only checks actually run establish behavior.",
-    "evidence": [
-      {
-        "category": "documentation",
-        "path": "docs/cookbook/adding-a-tool.md"
-      },
-      {
-        "category": "documentation",
-        "path": "docs/user/develop/basic/tool.md"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/core/tools/src/index.ts"
-      },
-      {
-        "category": "tests",
-        "path": "packages/core/tools/tests/tools.spec.ts"
-      }
-    ]
-  },
-  {
-    "id": "client-contract",
-    "kind": "implemented-behavior",
-    "topic": "client-web",
-    "decision": "accepted",
-    "owner": "references/api-client-web.md",
-    "summary": "Client slots are scoped by their public facade, and Remote methods require a generated Host and Client binding.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/client/ui-renderer/src/client/registry.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/api/gateway/src/client/index.ts"
-      },
-      {
-        "category": "tests",
-        "path": "packages/client/ui-renderer/tests/scoped-slots.client.spec.tsx"
-      }
-    ]
-  },
-  {
-    "id": "client-surface",
-    "kind": "implemented-behavior",
-    "topic": "client-web",
-    "decision": "accepted",
-    "owner": "references/api-client-web-surface.md",
-    "summary": "Selected Client, Web and Remote objects have target-version public declarations; their activation and cleanup differ by service.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/client/store/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/web/web/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/api/terminal-controller/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/api/terminal-controller/src/client/index.ts"
-      }
-    ]
-  },
-  {
-    "id": "client-how-to",
-    "kind": "derived-guidance",
-    "topic": "client-web",
-    "decision": "accepted",
-    "owner": "references/how-to-client-web.md",
-    "summary": "The Client tasks describe target public generator and runtime paths; independent third-party Client bundle assembly remains unverified.",
-    "evidence": [
-      {
-        "category": "documentation",
-        "path": "docs/cookbook/adding-a-remote-api.md"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/api/terminal-controller/src/index.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "packages/client/ui-renderer/src/client/registry.ts"
-      }
-    ]
-  },
-  {
-    "id": "infra-contract",
-    "kind": "implemented-behavior",
-    "topic": "infra-runtime",
-    "decision": "accepted",
-    "owner": "references/api-infra-runtime.md",
-    "summary": "Manifest and patch types define the published package, bundle and Profile composition fields.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/util/package-manifest/src/types.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "packages/boot/app-boot/src/profile.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "vendor/include/src/index.ts"
-      },
-      {
-        "category": "tests",
-        "path": "packages/boot/app-boot/tests/user-patches.spec.ts"
-      }
-    ]
-  },
-  {
-    "id": "infra-surface",
-    "kind": "implemented-behavior",
-    "topic": "infra-runtime",
-    "decision": "accepted",
-    "owner": "references/api-infra-runtime-surface.md",
-    "summary": "Selected infrastructure services have target-version public declarations, including the optional browser and computer provider registries.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/fs/fs/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/browser-use/browser-use/src/index.ts"
-      },
-      {
-        "category": "public-api",
-        "path": "packages/computer-use/computer-use/src/index.ts"
-      }
-    ]
-  },
-  {
-    "id": "infra-how-to",
-    "kind": "derived-guidance",
-    "topic": "infra-runtime",
-    "decision": "accepted",
-    "owner": "references/how-to-infra-runtime.md",
-    "summary": "The package task uses the target CLI install and remove path and the insert patch shape; other infrastructure examples require their own runtime verification.",
-    "evidence": [
-      {
-        "category": "documentation",
-        "path": "docs/cookbook/adding-a-package.md"
-      },
-      {
-        "category": "documentation",
-        "path": "docs/user/develop/basic/publish.md"
-      },
-      {
-        "category": "runtime",
-        "path": "apps/cli/src/plugin.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "vendor/include/src/index.ts"
-      }
-    ]
-  },
-  {
-    "id": "approval-requires-open-turn",
-    "kind": "implemented-behavior",
-    "topic": "host-core",
-    "decision": "accepted",
-    "owner": "references/api-host-core.md",
-    "summary": "ApprovalService.request rejects outside an open Agent turn, while slash command dispatch runs without opening a turn.",
-    "evidence": [
-      {
-        "category": "runtime",
-        "path": "packages/interaction/user-approval/src/index.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "packages/interaction/commands/src/index.ts"
-      }
-    ]
-  },
-  {
-    "id": "config-form-staged-revision",
-    "kind": "implemented-behavior",
-    "topic": "client-web",
-    "decision": "accepted",
-    "owner": "references/api-client-web.md",
-    "summary": "A staged editor passes its edit-start revision as expectedRevision so a concurrent Host update cannot be silently overwritten.",
-    "evidence": [
-      {
-        "category": "public-api",
-        "path": "packages/client/ui-settings/src/client/config-form-types.ts"
-      },
-      {
-        "category": "runtime",
-        "path": "packages/client/ui-settings/src/client/config-form.ts"
-      }
-    ]
-  }
+    {
+        "id": "claim-003",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-commands.md",
+        "summary": "Client 命令 UI：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-commands/src/client/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-004",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-conversation.md",
+        "summary": "Conversation Node 扩展契约：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-chat/src/client/contract/chat-nodes.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-005",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-interaction.md",
+        "summary": "Tool 结果与输入触发扩展：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-input-trigger/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-006",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-modules.md",
+        "summary": "Client 包与模块装载：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/modules/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-007",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-preview.md",
+        "summary": "右侧栏文档预览扩展：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-sidebar-documentpreview/src/client/document/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-008",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-references.md",
+        "summary": "Client 引用与 Host 发现服务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/context/file-reference-local/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-009",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-remote.md",
+        "summary": "Client Remote 调用与新端点边界：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/api/gateway/src/client/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-010",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-services.md",
+        "summary": "Client 共享服务：资源、语言与快捷键：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/file-upload/src/client/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-011",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-settings.md",
+        "summary": "Client 配置表单与设置页面：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-plugin-manager/src/client/slot-contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-012",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-shared-ui.md",
+        "summary": "共享控件、样式与主题：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Button.tsx"
+            }
+        ]
+    },
+    {
+        "id": "claim-013",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-sidebar.md",
+        "summary": "Client 右侧栏 Tab 与导航：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-layout/src/client/service.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-014",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-slots.md",
+        "summary": "Client slot 与共享界面：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-renderer/src/client/registry.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-015",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-subagent.md",
+        "summary": "子 Agent 的 Client 投影、地址与控制词汇：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/subagent/subagent/src/control-types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-016",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-typert-build.md",
+        "summary": "Typert 构建接入：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/typert/generator/src/tsdown-plugin.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-017",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-web-topic.md",
+        "summary": "Client Web：包、模块与界面扩展关系：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/modules/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-018",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/api/api-client-workspace-data.md",
+        "summary": "Workspace 实体与变更摘要的分侧契约：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/deliverables/workspace-changes/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-019",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-agent.md",
+        "summary": "Host Agent 对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/agent-loop/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-020",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-commands.md",
+        "summary": "Host 命令对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/interaction/commands/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-021",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-compaction.md",
+        "summary": "Host 会话压缩对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/compaction/compaction/src/checkpoint.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-022",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-cordis.md",
+        "summary": "Host Cordis 对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "vendor/cordis/src/context.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-023",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-core-topic.md",
+        "summary": "Host 插件核心：Context、Service 与模型工具：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "vendor/cordis/src/context.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-024",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-credentials.md",
+        "summary": "Host 凭据与授权对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/credentials/authorization/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-025",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-directory-picker.md",
+        "summary": "Host 目录选择对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/host/directory-picker/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-026",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-goal.md",
+        "summary": "Host 持久目标对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/goal/goal/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-027",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-jobs.md",
+        "summary": "Host 后台 Job 对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/jobs/jobs/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-028",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-llm-message.md",
+        "summary": "Host LLM 消息与流记录对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/llm/llm/src/assistant-stream.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-029",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-llm.md",
+        "summary": "Host LLM Adapter 对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/llm/llm/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-030",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-persistence.md",
+        "summary": "Host Session 持久化对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-persistence/src/handle.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-031",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-prompt-policy.md",
+        "summary": "Host 提示词与执行策略对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/system-prompt/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-032",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-scope.md",
+        "summary": "Host 作用域注册对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/scope/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-033",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-session-query.md",
+        "summary": "Host Session 查询对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session-query/session-query/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-034",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-session-surface.md",
+        "summary": "Host Session 模型历史投影对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/session/src/fork.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-035",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-session-title.md",
+        "summary": "Host 会话标题对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-title/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-036",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-session.md",
+        "summary": "Host Session 对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-projection/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-037",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-shell-env.md",
+        "summary": "Host 托管 Shell 环境对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/shell/shell-env/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-038",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-subagent.md",
+        "summary": "Host 子 Agent 委派对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/subagent/subagent/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-039",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-tools.md",
+        "summary": "Host 模型工具对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/tools/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-040",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-user-questions.md",
+        "summary": "Host 用户问答对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/interaction/user-questions/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-041",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/api/api-host-workflow.md",
+        "summary": "Host Workflow 编排对象：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/workflow/workflow/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-042",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-cmdline.md",
+        "summary": "应用自有命令行参数：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/boot/cmdline/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-043",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-integration-topic.md",
+        "summary": "外部事件进入插件组合：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/host/webserver/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-044",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-invariants.md",
+        "summary": "Profile 运行时不变式：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/runtime-diagnostics/invariants/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-045",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-live-config.md",
+        "summary": "运行时配置与设置表单：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/boot/config-editor/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-046",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-package-operations.md",
+        "summary": "嵌入式应用的 Profile 包操作：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/boot/plugin-manager/src/operations.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-047",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-persistence",
+        "owner": "references/infra/api/api-infra-persistence-topic.md",
+        "summary": "插件自有持久数据：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/storage/storage/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-048",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-profile-manifest.md",
+        "summary": "组合包与 Profile manifest：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/util/package-manifest/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-049",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-profile-runtime.md",
+        "summary": "Profile 解析、装载与管理：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/boot/app-boot/src/profile.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-050",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/api/api-infra-profile-topic.md",
+        "summary": "Profile 与组合包：交付可装载的插件组合：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/util/package-manifest/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-051",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-artifacts.md",
+        "summary": "Spill 与附件存储后端：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/attachment/attachment/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-052",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-browser-use.md",
+        "summary": "Browser use 独占 provider 槽：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/browser-use/browser-use/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-053",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-computer-use.md",
+        "summary": "Computer use 独占 provider 槽：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/computer-use/computer-use/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-054",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-execution.md",
+        "summary": "进程与受限命令执行：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/sandbox/sandbox/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-055",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-fs.md",
+        "summary": "FileSystem 执行世界：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/fs/fs/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-056",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-lsp.md",
+        "summary": "LSP 语义查询 provider：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/lsp/lsp/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-057",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-mcp-resources.md",
+        "summary": "MCP 资源 provider：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/mcp/mcp-resources/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-058",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-ptc.md",
+        "summary": "PTC 程序执行后端：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/ptc-runtime/ptc-runtime/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-059",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-skill.md",
+        "summary": "Agent Skill provider：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/skill/skill/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-060",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-speech.md",
+        "summary": "实验性语音转写 provider：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/experimental/speech-to-text/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-061",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-terminal.md",
+        "summary": "持久 PTY 会话后端：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/terminal/terminal/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-062",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-provider-web.md",
+        "summary": "Web 搜索与抓取 provider：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/web/web/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-063",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-persistence",
+        "owner": "references/infra/api/api-infra-storage-domain.md",
+        "summary": "领域数据契约：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/storage/storage-domain/src/domain.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-064",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-persistence",
+        "owner": "references/infra/api/api-infra-storage.md",
+        "summary": "Storage 枢纽与后端：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/storage/storage/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-065",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-webhook.md",
+        "summary": "Webhook 规则契约：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/webhook/webhook-github/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-066",
+        "kind": "implemented-behavior",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/api/api-infra-webserver.md",
+        "summary": "Host HTTP 路由：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/host/webserver/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-067",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-command-ui.md",
+        "summary": "贡献 Client 命令 UI：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-commands/src/client/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-068",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-conversation-node.md",
+        "summary": "为业务事件注册 Conversation Node：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-chat/src/client/contract/chat-nodes.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-069",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-document-preview.md",
+        "summary": "为右侧栏添加文档预览格式：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-sidebar-documentpreview/src/client/document/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-070",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-file-reference-provider.md",
+        "summary": "为 `@file` 提供 Host 发现后端：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/context/file-reference-local/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-071",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-input-trigger.md",
+        "summary": "向 Web 输入框添加候选源：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-input-trigger/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-072",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-locale-shortcuts.md",
+        "summary": "为 Web 插件添加词典和快捷键：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/file-upload/src/client/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-073",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-publish-remote.md",
+        "summary": "发布 Host Remote 供 Client 调用：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/api/gateway/src/client/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-074",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-reference-candidates.md",
+        "summary": "在 Client 读取 `@file` 与 `@session` 候选：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/context/file-reference-local/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-075",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-remote-call.md",
+        "summary": "在 Web 插件调用 Host Remote：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/api/gateway/src/client/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-076",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-resource-provider.md",
+        "summary": "在 Web slot 使用实时资源：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/file-upload/src/client/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-077",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-settings-card.md",
+        "summary": "为 Host 配置贡献设置卡片：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-plugin-manager/src/client/slot-contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-078",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-sidebar-panel.md",
+        "summary": "贡献左栏全局面板：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-layout/src/client/service.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-079",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-sidebar-tab.md",
+        "summary": "贡献右侧栏 Tab：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-layout/src/client/service.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-080",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-slot-contribution.md",
+        "summary": "向 Web 页面贡献 slot：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-renderer/src/client/registry.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-081",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-subagent-navigation.md",
+        "summary": "导航与控制子 Agent 会话：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/subagent/subagent/src/control-types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-082",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-theme-ui.md",
+        "summary": "复用共享控件并扩展主题：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-primitives/src/Button.tsx"
+            }
+        ]
+    },
+    {
+        "id": "claim-083",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-tool-view.md",
+        "summary": "自定义工具调用在 Web 中的展示：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-input-trigger/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-084",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-upload-file.md",
+        "summary": "向指定 Session 上传浏览器文件：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/file-upload/src/client/contract.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-085",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-web-package.md",
+        "summary": "发布并装载 Web 半侧：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/modules/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-086",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-workspace-changes.md",
+        "summary": "消费逐轮 Workspace 变更摘要：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/deliverables/workspace-changes/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-087",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-workspace-navigation.md",
+        "summary": "导航 Workspace 与 Session：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/client/ui-layout/src/client/service.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-088",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "client-web",
+        "owner": "references/client/how-to/how-to-client-workspace-registry.md",
+        "summary": "Host Workspace Registry 操作：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/deliverables/workspace-changes/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-089",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-agent-scope.md",
+        "summary": "Agent 作用域任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/agent-loop/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-090",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-command.md",
+        "summary": "Host 斜杠命令任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/interaction/commands/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-091",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-compaction.md",
+        "summary": "Host 会话压缩任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/compaction/compaction/src/checkpoint.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-092",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-credentials.md",
+        "summary": "Host 凭据与授权任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/credentials/authorization/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-093",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-directory-picker.md",
+        "summary": "Host 工作区目录选择任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/host/directory-picker/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-094",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-goal.md",
+        "summary": "Host 持久目标任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/goal/goal/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-095",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-jobs.md",
+        "summary": "Host 后台 Job 任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/jobs/jobs/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-096",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-llm-adapter.md",
+        "summary": "Host 模型后端任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/llm/llm/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-097",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-llm-message.md",
+        "summary": "Host LLM 消息流任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/llm/llm/src/assistant-stream.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-098",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-persistence.md",
+        "summary": "Host Session 持久化任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-persistence/src/handle.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-099",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-prompt-policy.md",
+        "summary": "Host 提示词与工具策略任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/system-prompt/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-100",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-scope.md",
+        "summary": "Host 作用域任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/scope/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-101",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-service.md",
+        "summary": "Host Service 任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "vendor/cordis/src/context.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-102",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-session-event.md",
+        "summary": "Host Session 事实任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-projection/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-103",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-session-fork.md",
+        "summary": "Host Session Fork 任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-projection/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-104",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-session-query.md",
+        "summary": "Host Session 查询任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session-query/session-query/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-105",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-session-surface.md",
+        "summary": "Host Session 模型历史投影任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/session/src/fork.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-106",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-session-title.md",
+        "summary": "Host 会话标题任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/session/session-title/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-107",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-shell-env.md",
+        "summary": "Host Shell 环境任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/shell/shell-env/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-108",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-subagent.md",
+        "summary": "Host 子 Agent 委派任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/subagent/subagent/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-109",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-tool.md",
+        "summary": "Host 模型工具任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/core/tools/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-110",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-user-questions.md",
+        "summary": "Host 用户问答任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/interaction/user-questions/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-111",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "host-core",
+        "owner": "references/host/how-to/how-to-host-workflow.md",
+        "summary": "Host Workflow 任务：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/workflow/workflow/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-112",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/how-to/how-to-infra-app-args.md",
+        "summary": "自定义 Profile 的应用参数：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/boot/cmdline/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-113",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-http-route.md",
+        "summary": "Host HTTP 扩展：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/host/webserver/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-114",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/how-to/how-to-infra-invariants.md",
+        "summary": "给自定义 Profile 安装运行时自检：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/runtime-diagnostics/invariants/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-115",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/how-to/how-to-infra-live-config.md",
+        "summary": "插件实时配置：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/boot/config-editor/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-116",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-persistence",
+        "owner": "references/infra/how-to/how-to-infra-persistence.md",
+        "summary": "插件持久状态：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/storage/storage/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-117",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-profile",
+        "owner": "references/infra/how-to/how-to-infra-profile-bundle.md",
+        "summary": "Profile 交付与装载：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/util/package-manifest/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-118",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-artifacts.md",
+        "summary": "Host 大文本与附件持久化：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/attachment/attachment/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-119",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-browser-use.md",
+        "summary": "Browser use provider 组合：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/browser-use/browser-use/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-120",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-computer-use.md",
+        "summary": "Computer use provider 组合：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/computer-use/computer-use/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-121",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-execution.md",
+        "summary": "受限命令执行：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/sandbox/sandbox/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-122",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-fs.md",
+        "summary": "在插件中使用 FileSystem：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/fs/fs/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-123",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-lsp.md",
+        "summary": "LSP provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/lsp/lsp/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-124",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-mcp-resources.md",
+        "summary": "MCP 资源 provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/mcp/mcp-resources/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-125",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-ptc.md",
+        "summary": "PTC runtime 调用：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/ptc-runtime/ptc-runtime/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-126",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-skill.md",
+        "summary": "虚拟 Skill provider：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/skill/skill/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-127",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-speech.md",
+        "summary": "实验性语音 provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/experimental/speech-to-text/src/index.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-128",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-terminal.md",
+        "summary": "持久 PTY 操作：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/terminal/terminal/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-129",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-provider-web.md",
+        "summary": "Web provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/web/web/src/types.ts"
+            }
+        ]
+    },
+    {
+        "id": "claim-130",
+        "kind": "derived-guidance",
+        "decision": "accepted",
+        "topic": "infra-integration",
+        "owner": "references/infra/how-to/how-to-infra-webhook.md",
+        "summary": "外部事件驱动的 Agent 会话：依据目标版本公开入口及实现整理插件使用契约。",
+        "evidence": [
+            {
+                "category": "public-api",
+                "path": "packages/webhook/webhook-github/src/index.ts"
+            }
+        ]
+    }
 ]

@@ -1,0 +1,524 @@
+{
+    "schemaVersion": 1,
+    "version": "0.2.0-rc.2",
+    "capabilities": [
+        {
+            "candidate": "composition:packages/experimental/agent-team-profile/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "该 packages/experimental/agent-team-profile/cordis.patch.yml 是实验性产品组合的预置 patch；插件作者应在稳定 Profile/bundle 任务中声明自己包的 Cordis 行，不能把实验预置当作默认装载契约。",
+            "evidence": "packages/experimental/agent-team-profile/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/experimental/auto-review/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "该 packages/experimental/auto-review/cordis.patch.yml 是实验性产品组合的预置 patch；插件作者应在稳定 Profile/bundle 任务中声明自己包的 Cordis 行，不能把实验预置当作默认装载契约。",
+            "evidence": "packages/experimental/auto-review/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/experimental/inspector/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "该 packages/experimental/inspector/cordis.patch.yml 是实验性产品组合的预置 patch；插件作者应在稳定 Profile/bundle 任务中声明自己包的 Cordis 行，不能把实验预置当作默认装载契约。",
+            "evidence": "packages/experimental/inspector/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/experimental/inspector/cordis.source.patch.yml",
+            "decision": "excluded",
+            "reason": "该 packages/experimental/inspector/cordis.source.patch.yml 是实验性产品组合的预置 patch；插件作者应在稳定 Profile/bundle 任务中声明自己包的 Cordis 行，不能把实验预置当作默认装载契约。",
+            "evidence": "packages/experimental/inspector/cordis.source.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/experimental/schedule-bundle/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "该 packages/experimental/schedule-bundle/cordis.patch.yml 是实验性产品组合的预置 patch；插件作者应在稳定 Profile/bundle 任务中声明自己包的 Cordis 行，不能把实验预置当作默认装载契约。",
+            "evidence": "packages/experimental/schedule-bundle/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/experimental/voice-input-bundle/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "该 packages/experimental/voice-input-bundle/cordis.patch.yml 是实验性产品组合的预置 patch；插件作者应在稳定 Profile/bundle 任务中声明自己包的 Cordis 行，不能把实验预置当作默认装载契约。",
+            "evidence": "packages/experimental/voice-input-bundle/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/preset/agent-preset/skills/cordis-plugin-development/templates/decoration/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "packages/preset/agent-preset/skills/cordis-plugin-development/templates/decoration/cordis.patch.yml 是 agent-preset 内的示范模板，不是发布后的默认 Profile 或独立插件入口。",
+            "evidence": "packages/preset/agent-preset/skills/cordis-plugin-development/templates/decoration/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/preset/agent-preset/skills/cordis-plugin-development/templates/mcp/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "packages/preset/agent-preset/skills/cordis-plugin-development/templates/mcp/cordis.patch.yml 是 agent-preset 内的示范模板，不是发布后的默认 Profile 或独立插件入口。",
+            "evidence": "packages/preset/agent-preset/skills/cordis-plugin-development/templates/mcp/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/subagent/subagent-claude-code/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "packages/subagent/subagent-claude-code/cordis.patch.yml 仅预组装特定外部 subagent 后端；第三方插件交付的共用 patch 规则由 Profile/bundle HOW-TO 拥有。",
+            "evidence": "packages/subagent/subagent-claude-code/cordis.patch.yml"
+        },
+        {
+            "candidate": "composition:packages/subagent/subagent-codex/cordis.patch.yml",
+            "decision": "excluded",
+            "reason": "packages/subagent/subagent-codex/cordis.patch.yml 仅预组装特定外部 subagent 后端；第三方插件交付的共用 patch 规则由 Profile/bundle HOW-TO 拥有。",
+            "evidence": "packages/subagent/subagent-codex/cordis.patch.yml"
+        },
+        {
+            "candidate": "cookbook:adding-a-session-format-version",
+            "decision": "excluded",
+            "reason": "维护 DSH 核心 Session 日志格式版本和迁移目录，不是独立插件作者的公开扩展任务。",
+            "evidence": "docs/cookbook/adding-a-session-format-version.md"
+        },
+        {
+            "candidate": "cookbook:adding-a-vendored-package",
+            "decision": "excluded",
+            "reason": "在 DSH 单仓中添加 vendored 源码与根工作区注册，属于上游仓库维护步骤。",
+            "evidence": "docs/cookbook/adding-a-vendored-package.md"
+        },
+        {
+            "candidate": "cookbook:extension-cookbook",
+            "decision": "excluded",
+            "reason": "Cookbook 目录页只聚合其他独立教程，不能当作一个可观察的插件任务。",
+            "evidence": "docs/cookbook/extension-cookbook.md"
+        },
+        {
+            "candidate": "cookbook:maintaining-dsh-code-review",
+            "decision": "excluded",
+            "reason": "DSH 上游代码审查操作流程，不是插件的创建或装载契约。",
+            "evidence": "docs/cookbook/maintaining-dsh-code-review.md"
+        },
+        {
+            "candidate": "cookbook:responding-to-pr-review-on-a-stack",
+            "decision": "excluded",
+            "reason": "上游 stacked PR 审查流程，不定义插件作者可调用的 DSH 对象。",
+            "evidence": "docs/cookbook/responding-to-pr-review-on-a-stack.md"
+        },
+        {
+            "candidate": "cookbook:reviewing-persistence-type-changes",
+            "decision": "excluded",
+            "reason": "核心持久化类型变更的仓库维护流程，不是第三方插件使用路径。",
+            "evidence": "docs/cookbook/reviewing-persistence-type-changes.md"
+        },
+        {
+            "candidate": "subsystems:agent-team",
+            "decision": "excluded",
+            "reason": "实验性 Agent Teams 的协作实现和预置 Profile，不作为稳定的第三方插件基础契约。",
+            "evidence": "docs/subsystems/agent-team.md"
+        },
+        {
+            "candidate": "subsystems:approval",
+            "decision": "included",
+            "taskId": "guard-host-tool-execution",
+            "reason": "approval 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/approval.md"
+        },
+        {
+            "candidate": "subsystems:attachment",
+            "decision": "included",
+            "taskId": "save-host-artifacts",
+            "reason": "attachment 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/attachment.md"
+        },
+        {
+            "candidate": "subsystems:boot",
+            "decision": "included",
+            "taskId": "ship-profile-bundle",
+            "reason": "boot 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/boot.md"
+        },
+        {
+            "candidate": "subsystems:browser-use",
+            "decision": "excluded",
+            "reason": "实验性浏览器执行提供方的内部组合与生命周期，当前发布入口未给通用插件的稳定实现任务。",
+            "evidence": "docs/subsystems/browser-use.md"
+        },
+        {
+            "candidate": "subsystems:client-modules",
+            "decision": "included",
+            "taskId": "client-load-web-half",
+            "reason": "client-modules 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/client-modules.md"
+        },
+        {
+            "candidate": "subsystems:client-resources",
+            "decision": "included",
+            "taskId": "client-resource-provider",
+            "reason": "client-resources 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/client-resources.md"
+        },
+        {
+            "candidate": "subsystems:commands",
+            "decision": "included",
+            "taskId": "register-host-command",
+            "reason": "commands 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/commands.md"
+        },
+        {
+            "candidate": "subsystems:compaction",
+            "decision": "included",
+            "taskId": "provide-compaction-backend",
+            "reason": "compaction 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/compaction.md"
+        },
+        {
+            "candidate": "subsystems:computer-use",
+            "decision": "excluded",
+            "reason": "实验性 computer-use driver 组合；需要额外 native/MCP driver，不能作为通用插件开发入口。",
+            "evidence": "docs/subsystems/computer-use.md"
+        },
+        {
+            "candidate": "subsystems:conversation",
+            "decision": "included",
+            "taskId": "client-conversation-node",
+            "reason": "conversation 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/conversation.md"
+        },
+        {
+            "candidate": "subsystems:core",
+            "decision": "included",
+            "taskId": "provide-host-service",
+            "reason": "core 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/core.md"
+        },
+        {
+            "candidate": "subsystems:credentials",
+            "decision": "included",
+            "taskId": "store-plugin-credential",
+            "reason": "credentials 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/credentials.md"
+        },
+        {
+            "candidate": "subsystems:deliverables",
+            "decision": "excluded",
+            "reason": "内置交付视图对会话文件变化的消费，不提供独立于 Client slot/Conversation Node 的通用注册契约。",
+            "evidence": "docs/subsystems/deliverables.md"
+        },
+        {
+            "candidate": "subsystems:extensions",
+            "decision": "included",
+            "taskId": "ship-profile-bundle",
+            "reason": "extensions 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/extensions.md"
+        },
+        {
+            "candidate": "subsystems:feedback",
+            "decision": "excluded",
+            "reason": "内置消息与命令反馈记录链路，扩展 UI 应通过 Client slot 和 Session 事件契约，而非复制内置反馈后端。",
+            "evidence": "docs/subsystems/feedback.md"
+        },
+        {
+            "candidate": "subsystems:filesystem",
+            "decision": "included",
+            "taskId": "consume-filesystem-service",
+            "reason": "filesystem 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/filesystem.md"
+        },
+        {
+            "candidate": "subsystems:goal",
+            "decision": "included",
+            "taskId": "manage-session-goal",
+            "reason": "goal 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/goal.md"
+        },
+        {
+            "candidate": "subsystems:jobs",
+            "decision": "included",
+            "taskId": "register-background-job",
+            "reason": "jobs 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/jobs.md"
+        },
+        {
+            "candidate": "subsystems:llm-streaming",
+            "decision": "included",
+            "taskId": "register-llm-adapter",
+            "reason": "llm-streaming 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/llm-streaming.md"
+        },
+        {
+            "candidate": "subsystems:lsp",
+            "decision": "included",
+            "taskId": "register-lsp-provider",
+            "reason": "lsp 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/lsp.md"
+        },
+        {
+            "candidate": "subsystems:mcp",
+            "decision": "included",
+            "taskId": "register-mcp-resource-provider",
+            "reason": "mcp 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/mcp.md"
+        },
+        {
+            "candidate": "subsystems:office-to-pdf",
+            "decision": "excluded",
+            "reason": "内置 Office 转 PDF 队列与缓存服务的架构说明，不定义插件作者可安装的新注册点。",
+            "evidence": "docs/subsystems/office-to-pdf.md"
+        },
+        {
+            "candidate": "subsystems:otel",
+            "decision": "excluded",
+            "reason": "内置遥测 exporter 的部署与隐私链路，不属于插件作者需要实现的产品形态。",
+            "evidence": "docs/subsystems/otel.md"
+        },
+        {
+            "candidate": "subsystems:permission-presets",
+            "decision": "excluded",
+            "reason": "内置权限选择器的配置与事件投影，不定义第三方插件提供新 Tool 或审批 service 的通用契约。",
+            "evidence": "docs/subsystems/permission-presets.md"
+        },
+        {
+            "candidate": "subsystems:persistence",
+            "decision": "included",
+            "taskId": "implement-session-persistence",
+            "reason": "persistence 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/persistence.md"
+        },
+        {
+            "candidate": "subsystems:plan",
+            "decision": "excluded",
+            "reason": "Plan mode 的交互和 Session 状态是内置产品功能；自有插件的状态记录由 SessionEvent 契约承担。",
+            "evidence": "docs/subsystems/plan.md"
+        },
+        {
+            "candidate": "subsystems:product-telemetry",
+            "decision": "excluded",
+            "reason": "匿名产品使用事件的内置遥测实现；插件任务不应直接挂载该官方事件出口。",
+            "evidence": "docs/subsystems/product-telemetry.md"
+        },
+        {
+            "candidate": "subsystems:ptc-runtime",
+            "decision": "excluded",
+            "reason": "受沙箱约束的 PTC 执行后端及隔离协议；当前 Skill 不指导替换它的安全边界。",
+            "evidence": "docs/subsystems/ptc-runtime.md"
+        },
+        {
+            "candidate": "subsystems:README",
+            "decision": "excluded",
+            "reason": "子系统目录页仅汇总各专题，不描述一个独立可观察的插件开发任务。",
+            "evidence": "docs/subsystems/README.md"
+        },
+        {
+            "candidate": "subsystems:sandbox",
+            "decision": "included",
+            "taskId": "execute-confined-command",
+            "reason": "sandbox 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/sandbox.md"
+        },
+        {
+            "candidate": "subsystems:schedule",
+            "decision": "excluded",
+            "reason": "内置提醒产品与任务管理，不是插件作者注册自有 Tool、Service、Client UI 或 Remote 的基础入口。",
+            "evidence": "docs/subsystems/schedule.md"
+        },
+        {
+            "candidate": "subsystems:scope",
+            "decision": "included",
+            "taskId": "register-scoped-contribution",
+            "reason": "scope 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/scope.md"
+        },
+        {
+            "candidate": "subsystems:session",
+            "decision": "included",
+            "taskId": "record-host-session-fact",
+            "reason": "session 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/session.md"
+        },
+        {
+            "candidate": "subsystems:session-projection",
+            "decision": "included",
+            "taskId": "record-host-session-fact",
+            "reason": "session-projection 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/session-projection.md"
+        },
+        {
+            "candidate": "subsystems:session-query",
+            "decision": "included",
+            "taskId": "query-session-history",
+            "reason": "session-query 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/session-query.md"
+        },
+        {
+            "candidate": "subsystems:session-reference",
+            "decision": "included",
+            "taskId": "client-reference-candidates",
+            "reason": "session-reference 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/session-reference.md"
+        },
+        {
+            "candidate": "subsystems:session-telemetry",
+            "decision": "excluded",
+            "reason": "会话日志遥测后端和授权上传链路，属于部署治理而非本 Skill 的插件实现任务。",
+            "evidence": "docs/subsystems/session-telemetry.md"
+        },
+        {
+            "candidate": "subsystems:session-title",
+            "decision": "excluded",
+            "reason": "内置标题 provider 及生成策略的专题架构；本次常规插件任务不修改会话标题策略。",
+            "evidence": "docs/subsystems/session-title.md"
+        },
+        {
+            "candidate": "subsystems:settings",
+            "decision": "included",
+            "taskId": "expose-live-config",
+            "reason": "settings 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/settings.md"
+        },
+        {
+            "candidate": "subsystems:shell",
+            "decision": "included",
+            "taskId": "execute-confined-command",
+            "reason": "shell 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/shell.md"
+        },
+        {
+            "candidate": "subsystems:sidebar-right",
+            "decision": "included",
+            "taskId": "client-sidebar-tab",
+            "reason": "sidebar-right 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/sidebar-right.md"
+        },
+        {
+            "candidate": "subsystems:skills",
+            "decision": "included",
+            "taskId": "register-skill-provider",
+            "reason": "skills 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/skills.md"
+        },
+        {
+            "candidate": "subsystems:slots",
+            "decision": "included",
+            "taskId": "client-contribute-slot",
+            "reason": "slots 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/slots.md"
+        },
+        {
+            "candidate": "subsystems:spill",
+            "decision": "included",
+            "taskId": "save-host-artifacts",
+            "reason": "spill 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/spill.md"
+        },
+        {
+            "candidate": "subsystems:ssh",
+            "decision": "excluded",
+            "reason": "共享 SSH transport 的内部架构，由已有 fs/sandbox/subprocess 后端消费；不注册新的 Cordis 插件能力。",
+            "evidence": "docs/subsystems/ssh.md"
+        },
+        {
+            "candidate": "subsystems:storage",
+            "decision": "included",
+            "taskId": "persist-plugin-records",
+            "reason": "storage 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/storage.md"
+        },
+        {
+            "candidate": "subsystems:subagent",
+            "decision": "included",
+            "taskId": "provide-subagent-backend",
+            "reason": "subagent 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/subagent.md"
+        },
+        {
+            "candidate": "subsystems:subprocess",
+            "decision": "included",
+            "taskId": "execute-confined-command",
+            "reason": "subprocess 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/subprocess.md"
+        },
+        {
+            "candidate": "subsystems:system-prompt",
+            "decision": "included",
+            "taskId": "guard-host-tool-execution",
+            "reason": "system-prompt 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/system-prompt.md"
+        },
+        {
+            "candidate": "subsystems:terminal",
+            "decision": "included",
+            "taskId": "use-agent-pty",
+            "reason": "terminal 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/terminal.md"
+        },
+        {
+            "candidate": "subsystems:todo",
+            "decision": "excluded",
+            "reason": "内置 todo 工具的事件与投影说明，不是第三方 Tool/Service 的独立注册入口。",
+            "evidence": "docs/subsystems/todo.md"
+        },
+        {
+            "candidate": "subsystems:token-meter",
+            "decision": "excluded",
+            "reason": "内置请求 token 计量与回放服务，插件作者应使用公开 LlmAdapter/Tool 结果契约，不直接提供计量后端。",
+            "evidence": "docs/subsystems/token-meter.md"
+        },
+        {
+            "candidate": "subsystems:tools",
+            "decision": "included",
+            "taskId": "register-host-tool",
+            "reason": "tools 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/tools.md"
+        },
+        {
+            "candidate": "subsystems:typert",
+            "decision": "included",
+            "taskId": "host-publish-remote",
+            "reason": "typert 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/typert.md"
+        },
+        {
+            "candidate": "subsystems:user-questions",
+            "decision": "included",
+            "taskId": "ask-user-question",
+            "reason": "user-questions 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/user-questions.md"
+        },
+        {
+            "candidate": "subsystems:voice-input",
+            "decision": "excluded",
+            "reason": "实验性语音输入和本地模型组合，不是稳定的通用 Client 扩展点。",
+            "evidence": "docs/subsystems/voice-input.md"
+        },
+        {
+            "candidate": "subsystems:web",
+            "decision": "included",
+            "taskId": "register-web-provider",
+            "reason": "web 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/web.md"
+        },
+        {
+            "candidate": "subsystems:web-client",
+            "decision": "included",
+            "taskId": "client-load-web-half",
+            "reason": "web-client 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/web-client.md"
+        },
+        {
+            "candidate": "subsystems:web-server",
+            "decision": "included",
+            "taskId": "register-http-route",
+            "reason": "web-server 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/web-server.md"
+        },
+        {
+            "candidate": "subsystems:webhook",
+            "decision": "included",
+            "taskId": "respond-to-webhook",
+            "reason": "webhook 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/webhook.md"
+        },
+        {
+            "candidate": "subsystems:workflow",
+            "decision": "included",
+            "taskId": "run-host-workflow",
+            "reason": "workflow 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/workflow.md"
+        },
+        {
+            "candidate": "subsystems:workspace",
+            "decision": "included",
+            "taskId": "host-workspace-registry",
+            "reason": "workspace 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/workspace.md"
+        }
+    ]
+}

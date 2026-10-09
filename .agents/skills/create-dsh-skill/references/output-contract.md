@@ -8,7 +8,7 @@
 node .agents/skills/create-dsh-skill/scripts/build-dsh-plugin-development-skill.mjs <target>
 ```
 
-构建器先完整删除旧的 `generated-skill/`，再逐项校验冻结哈希，将 manifest 中声明的文件复制到临时目录并形成新的 `generated-skill/`。该目录是纯构建产物，不在其中进行人工编辑。
+构建器先核对冻结素材，再把 manifest 声明的文件写入临时目录并验证完整产物。`skill-source/` 中的生成区标记及 `prettier-ignore` 只供同步与格式控制，构建时从分发 Markdown 剥离；示例代码中解释 API 和生命周期的注释保留。验证成功后才整体替换 `generated-skill/`；验证失败时保留旧目录。`generated-skill/` 是构建产物，不在其中人工编辑。
 
 独立验证命令：
 
@@ -18,20 +18,21 @@ node .agents/skills/create-dsh-skill/scripts/verify-generated-skill.mjs <target>
 
 验证器确认：
 
-- 生成目录只包含 manifest 声明的文件，内容与冻结源一致；
+- 生成目录只包含 manifest 声明的文件，Markdown 内容与冻结源剥离维护注释后的结果一致，分发 Markdown 不含 HTML 注释；
+- 新目标的 `SKILL.md` 内含完整任务表和全部纳入 API 对象的名称，`references/object-index.md` 链接到权威小节，且不含单独的开发任务路由、术语或关键词索引文件；API 主题页与子主题页的链接、对象 owner 及小节独占通过冻结校验；
 - Skill frontmatter 与展示元数据是结构合法、字段完整的受支持 YAML；入口和 source-map 包含精确 npm 版本，所有分发文件均不包含目标 commit；
 - 分发正文不含创建进度或验证覆盖状态用语（如 `Not Covered`、`已覆盖`、`未覆盖`、`本次创建`），也不指向未分发的裁决账本；具体产品限制与读者验证步骤保留；
 - 本地 Markdown 链接和锚点、JSON 代码块、行尾空白有效；
-- Skill 内全部 UTF-8 文本产物没有 HTTP(S) URL 或作者机器路径。
+- 非 Markdown 的 UTF-8 文本不得包含 HTTP(S) URL 或作者机器路径；Markdown 的叙述正文也不得包含，围栏代码和行内代码不由此项离线边界检查覆盖。
 
 在替换正式目录之前，继续以生成目录为输入核查目标源码映射并编译示例：
 
 ```text
-python3 scripts/validate_skill.py --skill <target>/generated-skill --dsh <target>/checkout
+node scripts/validate_skill.mjs --skill <target>/generated-skill --dsh <target>/checkout
 node scripts/check_examples.cjs --dsh <target>/checkout --skill <target>/generated-skill
 ```
 
-示例编译只核查所选代码块与精确版本的类型面。对生成 Skill 声称可独立创建、安装和挂载的代表性 HOW-TO，还须在隔离消费项目核查包依赖解析、构建输出、公开安装入口、真实 Profile 装载、可观察行为和卸载；跨 Client 或 Remote 的任务分别验证相应运行面。根据本次纳入的插件任务选择验证对象，并在交付报告中列明实际执行步骤与结果。若目标版本或环境不允许运行某条路径，记录 `Not Covered` 和影响，不把静态校验写成端到端通过。
+示例编译器递归扫描 `references/` 下的 Markdown，并选择其中的 TypeScript 代码块；新目标的完整代码示例放在 `references/<side>/examples/example-*.md`。该检查只能证明被选中代码块与目标版本类型面相容，不能证明多文件包可构建或已装载。对声称可独立创建、安装和挂载的代表性 HOW-TO 及其 example，还须在隔离消费项目检查依赖解析、构建输出、公开安装入口、真实 Profile 装载、可观察行为和卸载；跨 Client 或 Remote 的任务分别验证相应运行面。按本次纳入的插件任务选取验证对象，在交付报告中逐项列出执行步骤和结果。无法运行的路径记录为 `Not Covered` 并说明影响，不把静态检查写成端到端验证。
 
 `--skill` 仅检查指定 Skill 目录；省略时两个脚本保持原有行为，检查正式 `skills/dsh-plugin-development/`。`--dsh` 验证传入 checkout 的 `HEAD` 与该 npm 版本对应 tag 指向同一 commit，并核查 source-map 路径；commit 不从分发 Skill 读取。示例编译依赖目标 checkout 的锁定依赖、Host 构建和 generated Remote 声明。
 

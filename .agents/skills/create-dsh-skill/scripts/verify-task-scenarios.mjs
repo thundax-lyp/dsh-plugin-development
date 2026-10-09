@@ -12,7 +12,7 @@ export function verifyTaskScenarios(targetArgument) {
     const target = validateSkillSource(targetArgument);
     if (
         target.manifest.status !== "frozen" ||
-        target.manifest.taskNavigation !== "generated"
+        !["generated", "entrypoint"].includes(target.manifest.taskNavigation)
     ) {
         throw new Error(
             "Task scenarios require frozen generated-navigation source.",

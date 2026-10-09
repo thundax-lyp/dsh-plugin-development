@@ -1,0 +1,1217 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0-rc.2",
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "scope": "infra-runtime-new",
+  "topics": {
+    "infra-profile": {
+      "topicPage": "api-infra-profile-topic.md",
+      "subjects": [
+        "api-infra-profile-manifest.md",
+        "api-infra-profile-runtime.md",
+        "api-infra-live-config.md",
+        "api-infra-package-operations.md",
+        "api-infra-cmdline.md"
+      ],
+      "howTos": [
+        "how-to-infra-profile-bundle.md",
+        "how-to-infra-live-config.md",
+        "how-to-infra-app-args.md"
+      ],
+      "examples": [
+        "example-infra-profile-bundle.md",
+        "example-infra-app-args.md"
+      ]
+    },
+    "infra-persistence": {
+      "topicPage": "api-infra-persistence-topic.md",
+      "subjects": [
+        "api-infra-storage.md",
+        "api-infra-storage-domain.md"
+      ],
+      "howTos": [
+        "how-to-infra-persistence.md"
+      ],
+      "examples": [
+        "example-infra-persistence.md"
+      ]
+    },
+    "infra-integration": {
+      "topicPage": "api-infra-integration-topic.md",
+      "subjects": [
+        "api-infra-webhook.md",
+        "api-infra-webserver.md"
+      ],
+      "howTos": [
+        "how-to-infra-webhook.md",
+        "how-to-infra-http-route.md"
+      ],
+      "examples": [
+        "example-infra-webhook.md",
+        "example-infra-http-route.md"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-package-manifest:.",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-profile-manifest.md",
+      "evidence": [
+        "packages/util/package-manifest/lib/types/index.d.ts",
+        "packages/util/package-manifest/lib/types/types.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "DshBundleManifest",
+          "signature": "DshBundleManifest",
+          "members": [
+            "patch"
+          ],
+          "source": "packages/util/package-manifest/lib/types/types.d.ts"
+        },
+        {
+          "symbol": "DshProfileManifest",
+          "signature": "DshProfileManifest",
+          "members": [
+            "bundles"
+          ],
+          "source": "packages/util/package-manifest/lib/types/types.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-app-boot:.",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-profile-runtime.md",
+      "evidence": [
+        "packages/boot/app-boot/lib/types/index.d.ts",
+        "packages/boot/app-boot/lib/types/profile.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "Profile",
+          "signature": "Profile",
+          "members": [
+            "dir",
+            "layers",
+            "name",
+            "patches",
+            "patchPath",
+            "skippedBundles"
+          ],
+          "source": "packages/boot/app-boot/lib/types/profile.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:.",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-profile-runtime.md",
+      "evidence": [
+        "packages/boot/plugin-manager/lib/types/index.d.ts",
+        "packages/boot/plugin-manager/lib/types/types.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "PluginManager",
+          "signature": "PluginManager",
+          "members": [
+            "cancelInstall",
+            "inspect",
+            "installBundle",
+            "listBundles",
+            "listPlugins",
+            "listVersionExemptions",
+            "registries",
+            "removeBundle",
+            "setBundleEnabled",
+            "setPluginEnabled",
+            "setVersionExemption",
+            "waitForInstall"
+          ],
+          "source": "packages/boot/plugin-manager/lib/types/index.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-settings:.",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-live-config.md",
+      "evidence": [
+        "packages/settings/settings/lib/types/index.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "SettingsForms",
+          "signature": "SettingsForms",
+          "members": [
+            "configure",
+            "describe",
+            "documentPath",
+            "mutate",
+            "prepareDocument",
+            "replace",
+            "update",
+            "writable"
+          ],
+          "source": "packages/settings/settings/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "SettingsDescriptor",
+          "signature": "SettingsDescriptor",
+          "members": [
+            "applies",
+            "autoGenerate",
+            "base",
+            "ns",
+            "revision",
+            "schema",
+            "secrets",
+            "user",
+            "value"
+          ],
+          "source": "packages/settings/settings/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "SettingsPathOp",
+          "signature": "SettingsPathOp",
+          "members": [
+            "op",
+            "path"
+          ],
+          "source": "packages/settings/settings/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "SettingsConflictError",
+          "signature": "SettingsConflictError",
+          "members": [
+            "actual",
+            "code",
+            "expected"
+          ],
+          "source": "packages/settings/settings/lib/types/index.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-config-editor:.",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-live-config.md",
+      "evidence": [
+        "packages/boot/config-editor/lib/types/index.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "ConfigEditor",
+          "signature": "ConfigEditor",
+          "members": [
+            "configuration",
+            "documentPath",
+            "edit",
+            "entries"
+          ],
+          "source": "packages/boot/config-editor/lib/types/index.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-storage:.",
+      "decision": "included",
+      "topic": "infra-persistence",
+      "owner": "api-infra-storage.md",
+      "evidence": [
+        "packages/storage/storage/lib/types/index.d.ts",
+        "packages/storage/storage/lib/types/backend.d.ts",
+        "packages/storage/storage/lib/types/error.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "Storage",
+          "signature": "Storage",
+          "members": [
+            "backend",
+            "domain",
+            "form",
+            "mount"
+          ],
+          "source": "packages/storage/storage/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "StorageError",
+          "signature": "StorageError",
+          "members": [
+            "code",
+            "name"
+          ],
+          "source": "packages/storage/storage/lib/types/error.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-storage-domain:.",
+      "decision": "included",
+      "topic": "infra-persistence",
+      "owner": "api-infra-storage-domain.md",
+      "evidence": [
+        "packages/storage/storage-domain/lib/types/index.d.ts",
+        "packages/storage/storage-domain/lib/types/spec.d.ts",
+        "packages/storage/storage-domain/lib/types/domain.d.ts",
+        "packages/storage/storage-domain/lib/types/error.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "DomainSpec",
+          "signature": "DomainSpec",
+          "members": [
+            "compatibleVersions",
+            "global",
+            "invalidRecords",
+            "layout",
+            "name",
+            "tables",
+            "version"
+          ],
+          "source": "packages/storage/storage-domain/lib/types/spec.d.ts"
+        },
+        {
+          "symbol": "DomainFacility",
+          "signature": "DomainFacility",
+          "members": [
+            "closeAll",
+            "get",
+            "open"
+          ],
+          "source": "packages/storage/storage-domain/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "Domain",
+          "signature": "Domain<S>",
+          "members": [
+            "close",
+            "global",
+            "name",
+            "table"
+          ],
+          "source": "packages/storage/storage-domain/lib/types/domain.d.ts"
+        },
+        {
+          "symbol": "KvTable",
+          "signature": "KvTable<K, V>",
+          "members": [
+            "delete",
+            "entries",
+            "get",
+            "keys",
+            "put",
+            "size",
+            "update"
+          ],
+          "source": "packages/storage/storage-domain/lib/types/domain.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-webhook:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-webhook.md",
+      "evidence": [
+        "packages/webhook/webhook/lib/types/index.d.ts",
+        "packages/webhook/webhook/lib/types/types.d.ts",
+        "packages/webhook/webhook/lib/types/brand.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "WebhookRuntime",
+          "signature": "WebhookRuntime",
+          "members": [
+            "dispatch",
+            "register"
+          ],
+          "source": "packages/webhook/webhook/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "WebhookRule",
+          "signature": "WebhookRule<K>",
+          "members": [
+            "id",
+            "kind",
+            "run"
+          ],
+          "source": "packages/webhook/webhook/lib/types/types.d.ts"
+        },
+        {
+          "symbol": "VerifiedWebhookDelivery",
+          "signature": "VerifiedWebhookDelivery<K>",
+          "members": [
+            "deliveryId",
+            "event",
+            "kind",
+            "receivedAt",
+            "source"
+          ],
+          "source": "packages/webhook/webhook/lib/types/types.d.ts"
+        },
+        {
+          "symbol": "WebhookSessionRequest",
+          "signature": "WebhookSessionRequest",
+          "members": [
+            "agentPreset",
+            "model",
+            "permissionPreset",
+            "prompt",
+            "title",
+            "workspacePath"
+          ],
+          "source": "packages/webhook/webhook/lib/types/types.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:./operations",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-package-operations.md",
+      "evidence": [
+        "packages/boot/plugin-manager/lib/types/operations.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "runPluginCommand",
+          "signature": "any",
+          "members": [],
+          "source": "packages/boot/plugin-manager/lib/types/operations.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-cmdline:.",
+      "decision": "included",
+      "topic": "infra-profile",
+      "owner": "api-infra-cmdline.md",
+      "evidence": [
+        "packages/boot/cmdline/lib/types/index.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "CmdlineArgs",
+          "signature": "CmdlineArgs",
+          "members": [
+            "get"
+          ],
+          "source": "packages/boot/cmdline/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "parseCmdline",
+          "signature": "any",
+          "members": [],
+          "source": "packages/boot/cmdline/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "AppExit",
+          "signature": "AppExit",
+          "members": [],
+          "source": "packages/boot/cmdline/lib/types/index.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-webserver:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-webserver.md",
+      "evidence": [
+        "packages/host/webserver/lib/types/index.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "WebServer",
+          "signature": "WebServer",
+          "members": [
+            "applyIndexTaps",
+            "collectIndexInjections",
+            "host",
+            "port",
+            "register",
+            "registerFallback",
+            "registerUpgrade",
+            "renderIndex",
+            "tapIndex"
+          ],
+          "source": "packages/host/webserver/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "WebRoute",
+          "signature": "WebRoute",
+          "members": [
+            "handler",
+            "kind",
+            "path"
+          ],
+          "source": "packages/host/webserver/lib/types/index.d.ts"
+        },
+        {
+          "symbol": "WebUpgradeRoute",
+          "signature": "WebUpgradeRoute",
+          "members": [
+            "handler",
+            "path"
+          ],
+          "source": "packages/host/webserver/lib/types/index.d.ts"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-webhook-github:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-webhook.md",
+      "evidence": [
+        "packages/webhook/webhook-github/lib/types/index.d.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "Config",
+          "signature": "Config",
+          "members": [
+            "maxBodyBytes",
+            "path",
+            "secretEnv",
+            "source"
+          ],
+          "source": "packages/webhook/webhook-github/lib/types/index.d.ts"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "candidate": "composition:packages/bundle/acp-app/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/acp-app/cordis.patch.yml"
+    },
+    {
+      "candidate": "composition:packages/bundle/base/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/base/cordis.patch.yml"
+    },
+    {
+      "candidate": "composition:packages/bundle/headless/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/headless/cordis.patch.yml"
+    },
+    {
+      "candidate": "composition:packages/bundle/sdk-app/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/sdk-app/cordis.patch.yml"
+    },
+    {
+      "candidate": "composition:packages/bundle/sdk-minimal/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/sdk-minimal/cordis.patch.yml"
+    },
+    {
+      "candidate": "composition:packages/bundle/web-app/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/web-app/cordis.patch.yml"
+    },
+    {
+      "candidate": "composition:packages/bundle/web-app/presets/cordis.patch.yml",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/bundle/web-app/presets/cordis.patch.yml"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh",
+      "decision": "included",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "apps/cli/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-app-boot",
+      "decision": "included",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/boot/app-boot/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-config-editor",
+      "decision": "merged",
+      "topic": "infra-profile",
+      "task": "expose-live-config",
+      "evidence": "packages/boot/config-editor/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-plugin-manager",
+      "decision": "included",
+      "topic": "infra-profile",
+      "task": "ship-profile-bundle",
+      "evidence": "packages/boot/plugin-manager/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-settings",
+      "decision": "included",
+      "topic": "infra-profile",
+      "task": "expose-live-config",
+      "evidence": "packages/settings/settings/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-storage",
+      "decision": "included",
+      "topic": "infra-persistence",
+      "task": "persist-plugin-records",
+      "evidence": "packages/storage/storage/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-storage-domain",
+      "decision": "included",
+      "topic": "infra-persistence",
+      "task": "persist-plugin-records",
+      "evidence": "packages/storage/storage-domain/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-storage-json",
+      "decision": "merged",
+      "topic": "infra-persistence",
+      "task": "persist-plugin-records",
+      "evidence": "packages/storage/storage-json/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-storage-sqlite",
+      "decision": "merged",
+      "topic": "infra-persistence",
+      "task": "persist-plugin-records",
+      "evidence": "packages/storage/storage-sqlite/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-webhook",
+      "decision": "included",
+      "topic": "infra-integration",
+      "task": "respond-to-webhook",
+      "evidence": "packages/webhook/webhook/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-webhook-github",
+      "decision": "included",
+      "topic": "infra-integration",
+      "task": "respond-to-webhook",
+      "evidence": "packages/webhook/webhook-github/package.json"
+    },
+    {
+      "candidate": "subsystems:storage",
+      "decision": "included",
+      "topic": "infra-persistence",
+      "task": "persist-plugin-records",
+      "evidence": "docs/subsystems/storage.md"
+    },
+    {
+      "candidate": "subsystems:webhook",
+      "decision": "included",
+      "topic": "infra-integration",
+      "task": "respond-to-webhook",
+      "evidence": "docs/subsystems/webhook.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-cmdline",
+      "decision": "included",
+      "topic": "infra-profile",
+      "task": "parse-app-args",
+      "evidence": "packages/boot/cmdline/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-webserver",
+      "decision": "included",
+      "topic": "infra-integration",
+      "task": "register-http-route",
+      "evidence": "packages/host/webserver/package.json"
+    }
+  ],
+  "tasks": [
+    {
+      "candidate": "task:docs/cookbook/adding-a-package.md:1",
+      "task": "ship-profile-bundle",
+      "evidence": "docs/cookbook/adding-a-package.md"
+    },
+    {
+      "candidate": "task:packages/webhook/webhook/README.zh.md:53",
+      "task": "respond-to-webhook",
+      "evidence": "packages/webhook/webhook/README.zh.md"
+    },
+    {
+      "manualId": "ship-profile-bundle",
+      "topic": "infra-profile",
+      "owner": "how-to-infra-profile-bundle.md"
+    },
+    {
+      "manualId": "install-profile-bundle",
+      "topic": "infra-profile",
+      "owner": "how-to-infra-profile-bundle.md"
+    },
+    {
+      "manualId": "expose-live-config",
+      "topic": "infra-profile",
+      "owner": "how-to-infra-live-config.md"
+    },
+    {
+      "manualId": "persist-plugin-records",
+      "topic": "infra-persistence",
+      "owner": "how-to-infra-persistence.md"
+    },
+    {
+      "manualId": "respond-to-webhook",
+      "topic": "infra-integration",
+      "owner": "how-to-infra-webhook.md"
+    },
+    {
+      "manualId": "register-http-route",
+      "topic": "infra-integration",
+      "owner": "how-to-infra-http-route.md"
+    },
+    {
+      "manualId": "parse-app-args",
+      "topic": "infra-profile",
+      "owner": "how-to-infra-app-args.md"
+    }
+  ],
+  "crossOwner": [
+    {
+      "candidate": "package:@deepseek-ai/dsh-api-gateway",
+      "owner": "client-web/remote",
+      "reason": "Gateway /api transport and Typert Remote method contracts should share one owner"
+    }
+  ],
+  "files": [
+    {
+      "source": "api-guardrails/infra-profile-topic.md",
+      "output": "references/api-infra-profile-topic.md",
+      "kind": "api-guardrail",
+      "topic": "infra-profile",
+      "role": "topic"
+    },
+    {
+      "source": "api-guardrails/infra-profile-manifest.md",
+      "output": "references/api-infra-profile-manifest.md",
+      "kind": "api-guardrail",
+      "topic": "infra-profile",
+      "role": "subject",
+      "subject": "profile-manifest"
+    },
+    {
+      "source": "api-guardrails/infra-profile-runtime.md",
+      "output": "references/api-infra-profile-runtime.md",
+      "kind": "api-guardrail",
+      "topic": "infra-profile",
+      "role": "subject",
+      "subject": "profile-runtime"
+    },
+    {
+      "source": "api-guardrails/infra-live-config.md",
+      "output": "references/api-infra-live-config.md",
+      "kind": "api-guardrail",
+      "topic": "infra-profile",
+      "role": "subject",
+      "subject": "live-config"
+    },
+    {
+      "source": "how-to/infra-profile-bundle.md",
+      "output": "references/how-to-infra-profile-bundle.md",
+      "kind": "how-to",
+      "topic": "infra-profile"
+    },
+    {
+      "source": "how-to/infra-live-config.md",
+      "output": "references/how-to-infra-live-config.md",
+      "kind": "how-to",
+      "topic": "infra-profile"
+    },
+    {
+      "source": "examples/example-infra-profile-bundle.md",
+      "output": "references/example-infra-profile-bundle.md",
+      "kind": "example",
+      "topic": "infra-profile"
+    },
+    {
+      "source": "api-guardrails/infra-persistence-topic.md",
+      "output": "references/api-infra-persistence-topic.md",
+      "kind": "api-guardrail",
+      "topic": "infra-persistence",
+      "role": "topic"
+    },
+    {
+      "source": "api-guardrails/infra-storage.md",
+      "output": "references/api-infra-storage.md",
+      "kind": "api-guardrail",
+      "topic": "infra-persistence",
+      "role": "subject",
+      "subject": "storage"
+    },
+    {
+      "source": "api-guardrails/infra-storage-domain.md",
+      "output": "references/api-infra-storage-domain.md",
+      "kind": "api-guardrail",
+      "topic": "infra-persistence",
+      "role": "subject",
+      "subject": "storage-domain"
+    },
+    {
+      "source": "how-to/infra-persistence.md",
+      "output": "references/how-to-infra-persistence.md",
+      "kind": "how-to",
+      "topic": "infra-persistence"
+    },
+    {
+      "source": "examples/example-infra-persistence.md",
+      "output": "references/example-infra-persistence.md",
+      "kind": "example",
+      "topic": "infra-persistence"
+    },
+    {
+      "source": "api-guardrails/infra-integration-topic.md",
+      "output": "references/api-infra-integration-topic.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "topic"
+    },
+    {
+      "source": "api-guardrails/infra-webhook.md",
+      "output": "references/api-infra-webhook.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "webhook"
+    },
+    {
+      "source": "how-to/infra-webhook.md",
+      "output": "references/how-to-infra-webhook.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-webhook.md",
+      "output": "references/example-infra-webhook.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-package-operations.md",
+      "output": "references/api-infra-package-operations.md",
+      "kind": "api-guardrail",
+      "topic": "infra-profile",
+      "role": "subject",
+      "subject": "package-operations"
+    },
+    {
+      "source": "api-guardrails/infra-cmdline.md",
+      "output": "references/api-infra-cmdline.md",
+      "kind": "api-guardrail",
+      "topic": "infra-profile",
+      "role": "subject",
+      "subject": "cmdline"
+    },
+    {
+      "source": "how-to/infra-app-args.md",
+      "output": "references/how-to-infra-app-args.md",
+      "kind": "how-to",
+      "topic": "infra-profile"
+    },
+    {
+      "source": "api-guardrails/infra-webserver.md",
+      "output": "references/api-infra-webserver.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "webserver"
+    },
+    {
+      "source": "how-to/infra-http-route.md",
+      "output": "references/how-to-infra-http-route.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-http-route.md",
+      "output": "references/example-infra-http-route.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-app-args.md",
+      "output": "references/example-infra-app-args.md",
+      "kind": "example",
+      "topic": "infra-profile"
+    }
+  ],
+  "entryDispositions": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-gateway:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/gateway/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-gateway:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/gateway/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-gateway:./stream-protocol",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/gateway/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-gateway:./types",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/gateway/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-settings-controller:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/settings-controller/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-settings-controller:./remote",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/settings-controller/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-settings-controller:./typert",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/settings-controller/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-settings-controller:./types",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/api/settings-controller/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-app-boot:./worker/profile-resolution-bootstrap",
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Worker bootstrap for profile resolution, not a plugin author import or mount path",
+      "evidence": "packages/boot/app-boot/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./remote",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./typert",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-account:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-account/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-account:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-account/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-agent-loop:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-agent-loop/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-agent-loop:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-agent-loop/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-general:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-general/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-general:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-general/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-general:./types",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-general/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-models:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-models/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-models:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-models/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-plugin-inventory:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-plugin-inventory/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-plugin-inventory:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-plugin-inventory/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-plugins:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-plugins/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-plugins:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-plugins/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-session-log:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-session-log/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-session-log:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-session-log/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-shell:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-shell/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-shell:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-shell/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-subagent:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-subagent/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-subagent:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-subagent/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-web-search:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-web-search/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-web-search:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings-web-search/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings:.",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings:./client",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Client UI/Remote transport and generated business API are owned by client-web group; this team does not duplicate their contracts",
+      "evidence": "packages/client/ui-settings/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-schedule-bundle:.",
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Specialized optional experimental product composition, not generic bundle authoring contract; default profile does not select it",
+      "evidence": "packages/experimental/schedule-bundle/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-voice-input-bundle:.",
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Specialized optional experimental product composition, not generic bundle authoring contract; default profile does not select it",
+      "evidence": "packages/experimental/voice-input-bundle/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:./registry",
+      "decision": "merged",
+      "owner": "api-infra-profile-runtime.md",
+      "reason": "Registry URL constants and fallback planning support PluginManager installation; no separate plugin lifecycle",
+      "evidence": "packages/boot/plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:./remote",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Generated Typert Remote client/host artifacts; business method ownership belongs to Client/Remote group",
+      "evidence": "packages/boot/plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:./tools",
+      "decision": "merged",
+      "owner": "api-infra-profile-runtime.md",
+      "reason": "Agent-facing plugin_manager tool registered on Host; same profile actions and approval boundary as PluginManager",
+      "evidence": "packages/boot/plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:./typert",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Generated Typert Remote client/host artifacts; business method ownership belongs to Client/Remote group",
+      "evidence": "packages/boot/plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-manager:./types",
+      "decision": "merged",
+      "owner": "api-infra-profile-runtime.md",
+      "reason": "Types re-export BundleInfo/ChangeResult used by PluginManager; signatures owned in profile runtime subject",
+      "evidence": "packages/boot/plugin-manager/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-settings:./types",
+      "decision": "cross-owner",
+      "owner": "client-web",
+      "reason": "Wire projection types for Client settings pages; Host SettingsForms stays infra owner",
+      "evidence": "packages/settings/settings/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-storage-domain:./invariant",
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Invariant companion for runtime validation, not a direct plugin author task API",
+      "evidence": "packages/storage/storage-domain/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-storage-json:.",
+      "decision": "merged",
+      "owner": "api-infra-storage.md",
+      "reason": "Concrete backend plugin configuration and medium choice documented with Storage composition; no separate domain semantics",
+      "evidence": "packages/storage/storage-json/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-storage-sqlite:.",
+      "decision": "merged",
+      "owner": "api-infra-storage.md",
+      "reason": "Concrete backend plugin configuration and medium choice documented with Storage composition; no separate domain semantics",
+      "evidence": "packages/storage/storage-sqlite/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-webhook-github:./types",
+      "decision": "merged",
+      "owner": "api-infra-webhook.md",
+      "reason": "Type-only re-export of webhook rule or provider event vocabulary already owned by webhook subject",
+      "evidence": "packages/webhook/webhook-github/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-webhook:./invariant",
+      "decision": "excluded",
+      "owner": null,
+      "reason": "Invariant companion for runtime validation, not a direct plugin author task API",
+      "evidence": "packages/webhook/webhook/package.json"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-webhook:./types",
+      "decision": "merged",
+      "owner": "api-infra-webhook.md",
+      "reason": "Type-only re-export of webhook rule or provider event vocabulary already owned by webhook subject",
+      "evidence": "packages/webhook/webhook/package.json"
+    }
+  ]
+}

@@ -5,9 +5,10 @@
     "scripts": {
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "verify:skill": "python3 scripts/validate_skill.py",
+        "format:ledgers": "node scripts/check_build_json_format.mjs",
+        "verify:skill": "node scripts/validate_skill.mjs",
         "verify:examples": "node scripts/check_examples.cjs",
-        "test:validation": "python3 -B -m unittest discover -s scripts -p \"test_*.py\" && node --test .agents/skills/create-dsh-skill/tests/*.test.mjs"
+        "test:validation": "node --test scripts/*.test.mjs .agents/skills/create-dsh-skill/tests/*.test.mjs"
     },
     "devDependencies": {
         "prettier": "3.9.6",

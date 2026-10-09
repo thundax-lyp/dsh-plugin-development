@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "scope": "public-package candidates under packages/fs, sandbox, subprocess, shell, terminal, lsp, web, jobs, skill, mcp, workspace",
+  "decisionSemantics": {
+    "included": "本组已有 API 子主题和具体 HOW-TO/example",
+    "merged": "具体后端或消费者归所列基础能力；基础能力若 needs-owner 仍未完成文档",
+    "excluded": "核实没有独立插件作者注册/调用任务的底层实现",
+    "needs-owner": "目标版本存在真实插件任务或扩展点，本批尚未提供完整文档和验证"
+  },
+  "candidates": [
+    {
+      "candidateId": "package:@deepseek-ai/dsh-bash-local",
+      "path": "packages/shell/bash-local/package.json",
+      "decision": "merged",
+      "owner": "dsh-shell",
+      "reason": "本地 Bash executor 后端；插件接口由 ctx.shell 的抽象 Service 定义。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-bash-sandbox",
+      "path": "packages/shell/bash-sandbox/package.json",
+      "decision": "merged",
+      "owner": "dsh-shell",
+      "reason": "Sandbox 消费型 Bash executor；由 ctx.shell 与 ctx.sandbox 共同约束。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-fs",
+      "path": "packages/fs/fs/package.json",
+      "decision": "included",
+      "reason": "已写 FileSystem 对象契约及已装载后端只读消费任务；第三方后端全部抽象成员的实现测试仍未覆盖。",
+      "owner": "api-infra-provider-fs.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-fs-local",
+      "path": "packages/fs/fs-local/package.json",
+      "decision": "merged",
+      "owner": "dsh-fs",
+      "reason": "本地文件系统实现证明 FileSystem 可装载；第三方实现契约归 dsh-fs。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-fs-observation-policy",
+      "path": "packages/fs/fs-observation-policy/package.json",
+      "decision": "merged",
+      "reason": "目标版本的具体 fs/* 事件政策插件：按 owner/target 记录观察，并把 write/edit 意图转成版本保护；不注册 FileSystem Service，挂载与未挂载语义已在 FS API 子主题说明。",
+      "owner": "api-infra-provider-fs.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-fs-sandbox",
+      "path": "packages/fs/fs-sandbox/package.json",
+      "decision": "merged",
+      "owner": "dsh-fs",
+      "reason": "文件系统变体消费 sandbox policy 并约束写入；与 FileSystem provider 选型共同说明。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-jobs",
+      "path": "packages/jobs/jobs/package.json",
+      "decision": "needs-owner",
+      "reason": "JobRegistry 可子类化；后台任务所有权、输出、取消和可见性需要专门任务文档。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-jobs-local",
+      "path": "packages/jobs/jobs-local/package.json",
+      "decision": "merged",
+      "owner": "dsh-jobs",
+      "reason": "进程本地 JobRegistry 实现，归抽象注册表契约。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-lsp",
+      "path": "packages/lsp/lsp/package.json",
+      "decision": "included",
+      "owner": "api-infra-provider-lsp.md",
+      "reason": "公开 Lsp.registerProvider、query 和规范结果，已写子主题与任务示例。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-lsp-stdio",
+      "path": "packages/lsp/lsp-stdio/package.json",
+      "decision": "merged",
+      "owner": "dsh-lsp",
+      "reason": "可配置的 stdio language-server provider；作为 Lsp 注册与进程/文件组合证据。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-mcp-client",
+      "path": "packages/mcp/mcp-client/package.json",
+      "decision": "needs-owner",
+      "reason": "MCP 客户端桥接插件可配置 stdio 或 Streamable HTTP server 并注册模型工具；不是资源 provider 本身。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-mcp-resources",
+      "path": "packages/mcp/mcp-resources/package.json",
+      "decision": "included",
+      "reason": "已写公开 provider 注册契约、Host 任务和可装载固定数据示例。",
+      "owner": "api-infra-provider-mcp-resources.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-pwsh-local",
+      "path": "packages/shell/pwsh-local/package.json",
+      "decision": "merged",
+      "owner": "dsh-shell",
+      "reason": "本地 PowerShell executor 后端，共用 shell 执行接口。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-pwsh-sandbox",
+      "path": "packages/shell/pwsh-sandbox/package.json",
+      "decision": "merged",
+      "owner": "dsh-shell",
+      "reason": "消费 sandbox 的 PowerShell executor 后端，共用 shell/sandbox 契约。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-sandbox",
+      "path": "packages/sandbox/sandbox/package.json",
+      "decision": "included",
+      "reason": "已写公开对象契约与现成后端消费任务；自定义后端的平台安全/生命周期行为仍标 Not Covered。",
+      "owner": "api-infra-provider-execution.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-sandbox-local",
+      "path": "packages/sandbox/sandbox-local/package.json",
+      "decision": "merged",
+      "owner": "dsh-sandbox",
+      "reason": "本地多平台隔离实现，能力探测和失败关闭属基础 sandbox 契约。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-sandbox-policy",
+      "path": "packages/sandbox/sandbox-policy/package.json",
+      "decision": "needs-owner",
+      "reason": "每次调用的 mode/workspace policy 解析影响 enforcing provider；需独立解释配置及会话边界。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-sandbox-windows-acl",
+      "path": "packages/sandbox/sandbox-windows-acl/package.json",
+      "decision": "merged",
+      "owner": "dsh-sandbox",
+      "reason": "Windows ACL 具体隔离后端，平台机制不能替代通用 provider 契约。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-shell",
+      "path": "packages/shell/shell/package.json",
+      "decision": "included",
+      "reason": "已写公开对象契约与现成后端消费任务；自定义后端的平台安全/生命周期行为仍标 Not Covered。",
+      "owner": "api-infra-provider-execution.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-shell-env",
+      "path": "packages/shell/shell-env/package.json",
+      "decision": "needs-owner",
+      "reason": "管理 DSH_* shell 环境的注册表是插件可参与的能力；需核查注入与跨调用生命周期。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-skill",
+      "path": "packages/skill/skill/package.json",
+      "decision": "included",
+      "reason": "已写公开 provider 注册契约、Host 任务和可装载固定数据示例。",
+      "owner": "api-infra-provider-skill.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-skill-badge",
+      "path": "packages/skill/skill-badge/package.json",
+      "decision": "merged",
+      "owner": "dsh-skill",
+      "reason": "内置 badge skill provider 仅作 registry 实现例，归 Skill provider 主题。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-skill-filesystem",
+      "path": "packages/skill/skill-filesystem/package.json",
+      "decision": "merged",
+      "owner": "dsh-skill",
+      "reason": "本地文件系统 Skill provider；归 Skill provider 装载/发现契约。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-skill-office",
+      "path": "packages/skill/skill-office/package.json",
+      "decision": "merged",
+      "owner": "dsh-skill",
+      "reason": "内置 Office 工作流内容；与 Skill provider 发现/加载任务合并。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-subprocess",
+      "path": "packages/subprocess/subprocess/package.json",
+      "decision": "included",
+      "reason": "已写公开对象契约与现成后端消费任务；自定义后端的平台安全/生命周期行为仍标 Not Covered。",
+      "owner": "api-infra-provider-execution.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-subprocess-local",
+      "path": "packages/subprocess/subprocess-local/package.json",
+      "decision": "merged",
+      "owner": "dsh-subprocess",
+      "reason": "本地 SubprocessRuntime 实现，具体容器/进程树机制归抽象服务。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-terminal",
+      "path": "packages/terminal/terminal/package.json",
+      "decision": "included",
+      "reason": "已写公开对象契约与现成后端消费任务；自定义后端的平台安全/生命周期行为仍标 Not Covered。",
+      "owner": "api-infra-provider-terminal.md"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-terminal-bash",
+      "path": "packages/terminal/terminal-bash/package.json",
+      "decision": "merged",
+      "owner": "dsh-terminal",
+      "reason": "Bash PTY 具体后端，依赖 subprocess terminal primitive。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-bash",
+      "path": "packages/shell/tool-bash/package.json",
+      "decision": "merged",
+      "owner": "dsh-shell",
+      "reason": "模型可见一次性 Bash 工具消费 shell executor；入口文档归 shell 任务。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-bash-persistent",
+      "path": "packages/shell/tool-bash-persistent/package.json",
+      "decision": "merged",
+      "owner": "dsh-terminal",
+      "reason": "模型可见持久 Bash 工具消费 terminal session。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-fs",
+      "path": "packages/fs/tool-fs/package.json",
+      "decision": "merged",
+      "owner": "dsh-fs",
+      "reason": "模型可见读写工具消费 FileSystem；不能把工具当 provider。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-fs-search",
+      "path": "packages/fs/tool-fs-search/package.json",
+      "decision": "merged",
+      "owner": "dsh-fs",
+      "reason": "模型可见 glob/grep 工具消费文件发现能力；与文件 provider 选型组合。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-jobs",
+      "path": "packages/jobs/tool-jobs/package.json",
+      "decision": "merged",
+      "owner": "dsh-jobs",
+      "reason": "模型可见 job 控制工具消费 JobRegistry。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-lsp",
+      "path": "packages/lsp/tool-lsp/package.json",
+      "decision": "merged",
+      "owner": "dsh-lsp",
+      "reason": "模型可见 LSP 工具消费 Lsp provider；已在 LSP 子主题说明观察路径。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-pwsh",
+      "path": "packages/shell/tool-pwsh/package.json",
+      "decision": "merged",
+      "owner": "dsh-shell",
+      "reason": "模型可见 PowerShell 工具消费 shell executor。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-pwsh-persistent",
+      "path": "packages/shell/tool-pwsh-persistent/package.json",
+      "decision": "merged",
+      "owner": "dsh-terminal",
+      "reason": "模型可见持久 PowerShell 工具消费 terminal session。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-skill",
+      "path": "packages/skill/tool-skill/package.json",
+      "decision": "merged",
+      "owner": "dsh-skill",
+      "reason": "模型可见 Skill 加载工具消费 Skill provider registry。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-str-replace-editor",
+      "path": "packages/fs/tool-str-replace-editor/package.json",
+      "decision": "merged",
+      "owner": "dsh-fs",
+      "reason": "模型可见文本编辑工具消费 FileSystem 的版本保护与原子编辑。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-terminal",
+      "path": "packages/terminal/tool-terminal/package.json",
+      "decision": "merged",
+      "owner": "dsh-terminal",
+      "reason": "模型可见 PTY 工具消费 terminal session registry。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-web",
+      "path": "packages/web/tool-web/package.json",
+      "decision": "merged",
+      "owner": "dsh-web",
+      "reason": "模型可见 web_search/web_fetch 工具消费 WebRuntime，provider 任务已说明装载条件。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-tool-workspace-dependencies",
+      "path": "packages/skill/tool-workspace-dependencies/package.json",
+      "decision": "needs-owner",
+      "reason": "模型可见 bundled runtime 路径工具；需确定插件作者是否能安装/声明自有依赖 payload。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-web",
+      "path": "packages/web/web/package.json",
+      "decision": "included",
+      "owner": "api-infra-provider-web.md",
+      "reason": "公开搜索/抓取 provider 注册与选择，已写子主题与任务示例。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-web-fetch-http",
+      "path": "packages/web/web-fetch-http/package.json",
+      "decision": "merged",
+      "owner": "dsh-web",
+      "reason": "HTTP fetch 具体 provider，安全 URL/重定向/大小实现归 Web provider 契约。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-web-search-deepseek",
+      "path": "packages/web/web-search-deepseek/package.json",
+      "decision": "merged",
+      "owner": "dsh-web",
+      "reason": "DeepSeek 搜索 provider，作为 WebRuntime registry 的具体实现。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-web-search-exa",
+      "path": "packages/web/web-search-exa/package.json",
+      "decision": "merged",
+      "owner": "dsh-web",
+      "reason": "Exa 搜索 provider，作为 WebRuntime registry 的具体实现。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-web-search-perplexity",
+      "path": "packages/web/web-search-perplexity/package.json",
+      "decision": "merged",
+      "owner": "dsh-web",
+      "reason": "Perplexity 搜索 provider，作为 WebRuntime registry 的具体实现。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-win32-process",
+      "path": "packages/subprocess/win32-process/package.json",
+      "decision": "excluded",
+      "reason": "低层 Win32 process/Job Object primitive；本包不注册插件 Service，供 subprocess 后端内部使用。"
+    },
+    {
+      "candidateId": "package:@deepseek-ai/dsh-workspace",
+      "path": "packages/workspace/workspace/package.json",
+      "decision": "needs-owner",
+      "reason": "ctx.workspaceRegistry 管理持久 Workspace 与 Session 关联，插件可调用但尚缺独立使用与权限边界文档。"
+    }
+  ]
+}

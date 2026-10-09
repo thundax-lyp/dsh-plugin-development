@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0-rc.2",
+  "target": "packages/client/*",
+  "total": 63,
+  "dispositions": [
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-connection",
+      "decision": "excluded",
+      "reason": "Authenticated RPC transport is owned by Gateway/boot; plugin business calls use ctx.remote, with its generation and cancellation contract, rather than ClientConnectionRpc.",
+      "evidence": [
+        "packages/client/connection/package.json",
+        "packages/client/connection/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-file-upload",
+      "decision": "included",
+      "taskId": "client-upload-file",
+      "owner": "references/how-to-client-upload-file.md",
+      "reason": "ctx.fileUpload.upload is a public Session-addressed browser upload service; retain FileUploadService and FileUploadProgress.",
+      "evidence": [
+        "packages/client/file-upload/package.json",
+        "packages/client/file-upload/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-hmr",
+      "decision": "excluded",
+      "reason": "Client graph rebuild/reload transport for boot; no business contribution registry; normal Web package registration is covered by modules.",
+      "evidence": [
+        "packages/client/hmr/package.json",
+        "packages/client/hmr/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-locale",
+      "decision": "included",
+      "taskId": "client-locale-shortcuts",
+      "owner": "references/how-to-client-locale-shortcuts.md",
+      "reason": "Locale plugin: Host-backed preference, extensible language catalog, browser fallback, and typed built-in dictionaries；已核实公开注册/消费面，归入 client-locale-shortcuts。",
+      "evidence": [
+        "packages/client/locale/package.json",
+        "packages/client/locale/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-modules",
+      "decision": "included",
+      "taskId": "client-load-web-half",
+      "owner": "references/how-to-client-web-package.md",
+      "reason": "Client module system, dual-face: node half composes the __DSH_BOOT__ entry graph (incremental dsh.client scan, bundle route, index tap, webPlugins service); browser half is the lazy-CJS module table the vendored cordis Loader consumes as its internal seam；已核实公开注册/消费面，归入 client-load-web-half。",
+      "evidence": [
+        "packages/client/modules/package.json",
+        "packages/client/modules/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-product-analytics",
+      "decision": "excluded",
+      "reason": "Desktop renderer telemetry sender; browser applications have no collection capability. ProductEvent is a product event vocabulary, not a general plugin extension point.",
+      "evidence": [
+        "packages/client/product-analytics/package.json",
+        "packages/client/product-analytics/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-resources",
+      "decision": "included",
+      "taskId": "client-resource-provider",
+      "owner": "references/how-to-client-resource-provider.md",
+      "reason": "Unified client resource model: protocol-registered providers turn URL addresses into live values, consumed through the useResource global standard hook；已核实公开注册/消费面，归入 client-resource-provider。",
+      "evidence": [
+        "packages/client/resources/package.json",
+        "packages/client/resources/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-shortcuts",
+      "decision": "included",
+      "taskId": "client-locale-shortcuts",
+      "owner": "references/how-to-client-locale-shortcuts.md",
+      "reason": "Application keyboard command registry and physical-key routing；已核实公开注册/消费面，归入 client-locale-shortcuts。",
+      "evidence": [
+        "packages/client/shortcuts/package.json",
+        "packages/client/shortcuts/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-store",
+      "decision": "included",
+      "taskId": "client-contribute-slot",
+      "owner": "references/how-to-client-slot-contribution.md",
+      "reason": "Public createSnapshotStore and defineStore are used by slot state owners; retain as supporting contract.",
+      "evidence": [
+        "packages/client/store/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-agent-preset",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Agent-preset surfaces: the default for later sessions, this session's seat, and the composition editor；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-agent-preset/package.json",
+        "packages/client/ui-agent-preset/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-approval",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Approval composer takeover over the scoped Remote Event waterfall；本包实现特定产品功能，通用贡献入口由 client-conversation-node 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-approval/package.json",
+        "packages/client/ui-approval/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-attachment",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "reason": "Dynamic attachment presentation plugin for conversation input, message-image, and trajectory image slots；本包实现特定产品功能，通用贡献入口由 client-contribute-slot 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-attachment/package.json",
+        "packages/client/ui-attachment/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-brand-official",
+      "decision": "excluded",
+      "reason": "Only built-in occupants of sidebar brand slots; third parties register at sidebar.brand.mark/name through ui-sidebar SlotMap.",
+      "evidence": [
+        "packages/client/ui-brand-official/package.json",
+        "packages/client/ui-brand-official/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-chat",
+      "decision": "included",
+      "taskId": "client-conversation-node",
+      "owner": "references/how-to-client-conversation-node.md",
+      "reason": "Chat Conversation target, node definitions, renderers, and details surface；已核实公开注册/消费面，归入 client-conversation-node。",
+      "evidence": [
+        "packages/client/ui-chat/package.json",
+        "packages/client/ui-chat/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-commands",
+      "decision": "included",
+      "taskId": "client-command-ui",
+      "owner": "references/how-to-client-command-ui.md",
+      "reason": "CommandUiRuntime.register/decorate is the public slash-menu extension seam; new API and task documented.",
+      "evidence": [
+        "packages/client/ui-commands/package.json",
+        "packages/client/ui-commands/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-conversation",
+      "decision": "included",
+      "taskId": "client-conversation-node",
+      "owner": "references/how-to-client-conversation-node.md",
+      "reason": "Target-neutral Conversation assembly, shell, composer, queue, and view navigation；已核实公开注册/消费面，归入 client-conversation-node。",
+      "evidence": [
+        "packages/client/ui-conversation/package.json",
+        "packages/client/ui-conversation/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-deliverables",
+      "decision": "excluded",
+      "reason": "Built-in changed-files and delivery UI; it occupies Conversation/preview seats but exports no new registrable general file-deliverable contract.",
+      "evidence": [
+        "packages/client/ui-deliverables/package.json",
+        "packages/client/ui-deliverables/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-directory-picker-browse",
+      "decision": "excluded",
+      "reason": "Built-in browser picker occupant of ui-workspace directory flow; Host browse backend contract belongs to directory-picker service, not this UI implementation.",
+      "evidence": [
+        "packages/client/ui-directory-picker-browse/package.json",
+        "packages/client/ui-directory-picker-browse/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-directory-picker-native",
+      "decision": "excluded",
+      "reason": "Built-in renderless native picker occupant; a remote browser cannot assume a Host OS dialog. Backend contract belongs to Host directory-picker.",
+      "evidence": [
+        "packages/client/ui-directory-picker-native/package.json",
+        "packages/client/ui-directory-picker-native/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-dockkit",
+      "decision": "merged",
+      "taskId": "client-sidebar-tab",
+      "reason": "Pure docking engine and React kit under right-sidebar owner; tab plugins use sidebarRightTabs and keyed tab slot rather than mutating layout engine directly.",
+      "evidence": [
+        "packages/client/ui-dockkit/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-goal",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Session goal surface: GoalBar docked above the composer, read from the goal session projection；本包实现特定产品功能，通用贡献入口由 client-conversation-node 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-goal/package.json",
+        "packages/client/ui-goal/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-input-trigger",
+      "decision": "included",
+      "taskId": "client-input-trigger",
+      "owner": "references/how-to-client-input-trigger.md",
+      "reason": "Input trigger pipeline: '/' and '@' detection, candidate menu, pick routing to registered sources；已核实公开注册/消费面，归入 client-input-trigger。",
+      "evidence": [
+        "packages/client/ui-input-trigger/package.json",
+        "packages/client/ui-input-trigger/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-jobs",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "reason": "Session-header background-job list with on-demand streaming record panels；本包实现特定产品功能，通用贡献入口由 client-contribute-slot 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-jobs/package.json",
+        "packages/client/ui-jobs/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-layout",
+      "decision": "included",
+      "taskId": "client-sidebar-tab",
+      "owner": "references/how-to-client-sidebar-tab.md",
+      "reason": "ctx.layout exposes selectPanel and beginNavigation for cross-plugin main-panel navigation; rightbar presentation methods remain owner-facing.",
+      "evidence": [
+        "packages/client/ui-layout/package.json",
+        "packages/client/ui-layout/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-message-feedback",
+      "decision": "merged",
+      "taskId": "client-command-ui",
+      "reason": "Concrete feedback UI contribution into assistant-actions and command overlay; its exported dialog props describe this built-in feature, while generic entry is slot/command contract.",
+      "evidence": [
+        "packages/client/ui-message-feedback/package.json",
+        "packages/client/ui-message-feedback/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-model-selection",
+      "decision": "merged",
+      "taskId": "client-command-ui",
+      "reason": "Built-in /model contribution and conversation.input.model seat consume shared command UI and slot contracts; ModelDirectory is feature catalog, not a generic registration service.",
+      "evidence": [
+        "packages/client/ui-model-selection/package.json",
+        "packages/client/ui-model-selection/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-open-in-app",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "reason": "Web \"Open In...\" controls: the Session-header split button opening the workspace directory in an installed application, and the document preview's default-application controls for one file；本包实现特定产品功能，通用贡献入口由 client-contribute-slot 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-open-in-app/package.json",
+        "packages/client/ui-open-in-app/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-permission-presets",
+      "decision": "merged",
+      "taskId": "client-command-ui",
+      "reason": "Permission surfaces: a new-session default in General settings and a current-session /permission popup over the permissions projection；本包实现特定产品功能，通用贡献入口由 client-command-ui 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-permission-presets/package.json",
+        "packages/client/ui-permission-presets/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-plan",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Plan mode controls, persistent transcript plan cards, and sidebar Markdown previews；本包实现特定产品功能，通用贡献入口由 client-conversation-node 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-plan/package.json",
+        "packages/client/ui-plan/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-plugin-manager",
+      "decision": "included",
+      "taskId": "client-settings-card",
+      "owner": "references/how-to-client-settings-card.md",
+      "reason": "Plugin management for the dsh web client: the sidebar Plugins panel installs, enables, disables, retries, and composes installed plugin packages；已核实公开注册/消费面，归入 client-settings-card。",
+      "evidence": [
+        "packages/client/ui-plugin-manager/package.json",
+        "packages/client/ui-plugin-manager/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-primitives",
+      "decision": "included",
+      "taskId": "client-contribute-slot",
+      "owner": "references/how-to-client-slot-contribution.md",
+      "reason": "Pure React atoms for the dsh web UI: controls, icons, markdown, and JSON inspectors (zero cordis)；已核实公开注册/消费面，归入 client-contribute-slot。",
+      "evidence": [
+        "packages/client/ui-primitives/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-reference",
+      "decision": "merged",
+      "taskId": "client-input-trigger",
+      "reason": "Built-in @file/@session source is an implementation of InputTriggerSource; use input-trigger contract to add a new source.",
+      "evidence": [
+        "packages/client/ui-reference/package.json",
+        "packages/client/ui-reference/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-renderer",
+      "decision": "included",
+      "taskId": "client-contribute-slot",
+      "owner": "references/how-to-client-slot-contribution.md",
+      "reason": "Browser UI renderer: React slot bindings, ctx.uiRenderer, and the assembled application root；已核实公开注册/消费面，归入 client-contribute-slot。",
+      "evidence": [
+        "packages/client/ui-renderer/package.json",
+        "packages/client/ui-renderer/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-schedule",
+      "decision": "excluded",
+      "reason": "Built-in scheduled-task management page and reminder catalog; extension through generic Settings/Sidebar/Remote contracts, no general schedule UI registry here.",
+      "evidence": [
+        "packages/client/ui-schedule/package.json",
+        "packages/client/ui-schedule/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-session",
+      "decision": "included",
+      "taskId": "client-conversation-node",
+      "owner": "references/api-client-conversation.md",
+      "reason": "Session selector hooks, status and pending-interaction publisher support session-scoped UI; document further when task calls for a domain pending-interaction flow.",
+      "evidence": [
+        "packages/client/ui-session/package.json",
+        "packages/client/ui-session/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings",
+      "decision": "included",
+      "taskId": "client-settings-card",
+      "owner": "references/how-to-client-settings-card.md",
+      "reason": "Settings domain base plugin: shared configuration forms and the canonical settings slot-type contract；已核实公开注册/消费面，归入 client-settings-card。",
+      "evidence": [
+        "packages/client/ui-settings/package.json",
+        "packages/client/ui-settings/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-account",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Manage DeepSeek login and open Platform billing pages；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-account/package.json",
+        "packages/client/ui-settings-account/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-agent-loop",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Settings page of the agent loop on the dsh web client's Plugins page: the parallel tool-call cap of the agent-loop namespace；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-agent-loop/package.json",
+        "packages/client/ui-settings-agent-loop/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-general",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Settings ownerless-copy and product onboarding plugin: the General section, shell trigger/header chrome content, settings dictionaries, and the versioned welcome notice；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-general/package.json",
+        "packages/client/ui-settings-general/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-models",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Models settings and shared product-onboarding dialogs over existing settings and credential joins；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-models/package.json",
+        "packages/client/ui-settings-models/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-plugin-inventory",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Read-only Cordis Loader inventory tab in Web Plugins settings；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-plugin-inventory/package.json",
+        "packages/client/ui-settings-plugin-inventory/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-plugins",
+      "decision": "included",
+      "taskId": "client-settings-card",
+      "owner": "references/api-client-settings.md",
+      "reason": "Built-in plugins settings section for the dsh web client: the Settings navigation entry and the tab chrome feature-owned tabs register into；已核实公开注册/消费面，归入 client-settings-card。",
+      "evidence": [
+        "packages/client/ui-settings-plugins/package.json",
+        "packages/client/ui-settings-plugins/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-session-log",
+      "decision": "excluded",
+      "reason": "Built-in General-settings Session-log upload switch and DeepSeek API request path; no separate setting-card registry beyond settings slots.",
+      "evidence": [
+        "packages/client/ui-settings-session-log/package.json",
+        "packages/client/ui-settings-session-log/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-shell",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Settings page of the shell executor on the dsh web client's Plugins page: the command timeout and the per-stream output cap of the shell namespace；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-shell/package.json",
+        "packages/client/ui-settings-shell/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-subagent",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Settings page of Subagent delegation on the dsh web client's Plugins page: recursion depth, parallel capacity, and the models agents may choose for subagents；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-subagent/package.json",
+        "packages/client/ui-settings-subagent/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-web-search",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "reason": "Settings page of the DeepSeek web-search provider on the dsh web client's Plugins page: its API key, endpoint, and per-request search budget；本包实现特定产品功能，通用贡献入口由 client-settings-card 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-settings-web-search/package.json",
+        "packages/client/ui-settings-web-search/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-shortcuts",
+      "decision": "merged",
+      "taskId": "client-locale-shortcuts",
+      "reason": "Keyboard shortcut reference, recording, and local preference editing；本包实现特定产品功能，通用贡献入口由 client-locale-shortcuts 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-shortcuts/package.json",
+        "packages/client/ui-shortcuts/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar",
+      "decision": "included",
+      "taskId": "client-sidebar-panel",
+      "owner": "references/how-to-client-sidebar-panel.md",
+      "reason": "ui-sidebar declares sidebar.panellist and brand/footer SlotMap seats; matched main panel key plus sidebar list id is a public third-party global-panel extension path.",
+      "evidence": [
+        "packages/client/ui-sidebar/package.json",
+        "packages/client/ui-sidebar/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-browser",
+      "decision": "merged",
+      "taskId": "client-sidebar-tab",
+      "reason": "Built-in HTTP(S) Browser tab demonstrates right-sidebar registry/slot path, but BrowserControllerState and address types serve that viewer.",
+      "evidence": [
+        "packages/client/ui-sidebar-browser/package.json",
+        "packages/client/ui-sidebar-browser/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
+      "decision": "included",
+      "taskId": "client-document-preview",
+      "owner": "references/how-to-client-document-preview.md",
+      "reason": "Extensible Sidebar previews for Office documents, spreadsheets, Markdown, code, images, PDF, HTML, and plain text；已核实公开注册/消费面，归入 client-document-preview。",
+      "evidence": [
+        "packages/client/ui-sidebar-documentpreview/package.json",
+        "packages/client/ui-sidebar-documentpreview/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-files",
+      "decision": "merged",
+      "taskId": "client-sidebar-tab",
+      "reason": "Built-in workspace file tree tab demonstrates right-sidebar registry/slot path; FilesState and FilesInjected are feature internals.",
+      "evidence": [
+        "packages/client/ui-sidebar-files/package.json",
+        "packages/client/ui-sidebar-files/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-right",
+      "decision": "included",
+      "taskId": "client-sidebar-tab",
+      "owner": "references/how-to-client-sidebar-tab.md",
+      "reason": "sidebarRightTabs register plus keyed body slot and ctx.sidebarRight navigation are public extension contracts.",
+      "evidence": [
+        "packages/client/ui-sidebar-right/package.json",
+        "packages/client/ui-sidebar-right/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-terminal",
+      "decision": "excluded",
+      "reason": "Built-in shell tab type; plugins can add their own right-sidebar type through sidebarRightTabs and keyed slot, without using terminal internals.",
+      "evidence": [
+        "packages/client/ui-sidebar-terminal/package.json",
+        "packages/client/ui-sidebar-terminal/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-skill",
+      "decision": "excluded",
+      "reason": "Built-in Skill reference and dedicated tool row presentation; custom tool rows use ui-tool keyed slot rather than this feature renderer.",
+      "evidence": [
+        "packages/client/ui-skill/package.json",
+        "packages/client/ui-skill/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-slots",
+      "decision": "included",
+      "taskId": "client-contribute-slot",
+      "owner": "references/how-to-client-slot-contribution.md",
+      "reason": "Slot registry pure core: typed ordinary Slots and reusable Component Factories, derived props, Store seats, and renderer installation；已核实公开注册/消费面，归入 client-contribute-slot。",
+      "evidence": [
+        "packages/client/ui-slots/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-subagent",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Subagent conversation catalog, continuation routing UI, and '@' reference source；本包实现特定产品功能，通用贡献入口由 client-conversation-node 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-subagent/package.json",
+        "packages/client/ui-subagent/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-theme",
+      "decision": "included",
+      "taskId": "client-contribute-slot",
+      "owner": "references/how-to-client-slot-contribution.md",
+      "reason": "Theme plugin: Host bootstrap for the pre-plugin palette; DOM-free ThemeRuntime for light/dark/system state; --dsw-* token styles and Appearance settings row；已核实公开注册/消费面，归入 client-contribute-slot。",
+      "evidence": [
+        "packages/client/ui-theme/package.json",
+        "packages/client/ui-theme/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-tool",
+      "decision": "included",
+      "taskId": "client-tool-view",
+      "owner": "references/how-to-client-tool-view.md",
+      "reason": "Client Tool call-tree renderer and keyed per-tool presentation slot；已核实公开注册/消费面，归入 client-tool-view。",
+      "evidence": [
+        "packages/client/ui-tool/package.json",
+        "packages/client/ui-tool/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-trajectory",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Built-in trajectory event ledger contributes a conversation view; public TrajectoryContribution is feature-specific whereas ViewDefinition and slot are generic seams.",
+      "evidence": [
+        "packages/client/ui-trajectory/package.json",
+        "packages/client/ui-trajectory/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-user-questions",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Web ask_user_question composer takeover and plan-review presentation UI；本包实现特定产品功能，通用贡献入口由 client-conversation-node 的公开 owner/slot/service 契约承担；该包的功能数据与 props 仅用于其特定 UI。",
+      "evidence": [
+        "packages/client/ui-user-questions/package.json",
+        "packages/client/ui-user-questions/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-workflow-run",
+      "decision": "excluded",
+      "reason": "Built-in workflow-run Conversation Node/view; custom durable nodes use UiConversation registration instead.",
+      "evidence": [
+        "packages/client/ui-workflow-run/package.json",
+        "packages/client/ui-workflow-run/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-workspace",
+      "decision": "included",
+      "taskId": "client-workspace-navigation",
+      "owner": "references/how-to-client-workspace-navigation.md",
+      "reason": "Workspace picker plugin: one WorkspacePicker registered into the sidebar and empty-state workspace slots；已核实公开注册/消费面，归入 client-workspace-navigation。",
+      "evidence": [
+        "packages/client/ui-workspace/package.json",
+        "packages/client/ui-workspace/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-web",
+      "decision": "excluded",
+      "reason": "Boot kernel constructs static module table, Cordis Loader, and renderer handoff; plugin packages are registered through dsh.client and Profile.",
+      "evidence": [
+        "packages/client/web/package.json"
+      ]
+    }
+  ],
+  "verification": "Target checkout package manifests, public Client entrypoints, and feature registrations were inspected; no runtime/browser verification."
+}

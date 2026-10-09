@@ -5,12 +5,14 @@ import {
     existsSync,
     mkdirSync,
     mkdtempSync,
+    readFileSync,
     renameSync,
     rmSync,
+    writeFileSync,
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { resolveInside } from "./skill-build-contract.mjs";
+import { resolveInside, stripBuildComments } from "./skill-build-contract.mjs";
 import { validateSkillSource } from "./validate-skill-source.mjs";
 import { verifyGeneratedSkill } from "./verify-generated-skill.mjs";
 
@@ -35,10 +37,17 @@ export function buildSkill(targetArgument) {
                 "generated output",
             );
             mkdirSync(dirname(output), { recursive: true });
-            cpSync(source, output, {
-                dereference: false,
-                preserveTimestamps: true,
-            });
+            if (entry.output.endsWith(".md")) {
+                writeFileSync(
+                    output,
+                    stripBuildComments(readFileSync(source, "utf8")),
+                );
+            } else {
+                cpSync(source, output, {
+                    dereference: false,
+                    preserveTimestamps: true,
+                });
+            }
         }
         const result = verifyGeneratedSkill(target.targetPath, temporary);
         const backupRoot = mkdtempSync(

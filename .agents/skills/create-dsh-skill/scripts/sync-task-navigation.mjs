@@ -14,11 +14,9 @@ export function syncTaskNavigation(targetArgument) {
     const manifest = target.manifest;
     if (
         manifest.schemaVersion !== 3 ||
-        manifest.taskNavigation !== "generated"
+        !["generated", "entrypoint"].includes(manifest.taskNavigation)
     ) {
-        throw new Error(
-            "Target must opt into schema v3 generated task navigation.",
-        );
+        throw new Error("Target must opt into schema v3 task navigation.");
     }
     if (manifest.status !== "draft") {
         throw new Error(
@@ -32,29 +30,61 @@ export function syncTaskNavigation(targetArgument) {
     const routing = manifest.files.find(
         (file) => file.output === "references/plugin-development-routing.md",
     );
-    if (!entry || !routing)
-        throw new Error("Missing entrypoint or task routing source.");
+    const objectIndex = manifest.files.find(
+        (file) => file.output === "references/object-index.md",
+    );
+    if (!entry || (manifest.taskNavigation === "generated" && !routing))
+        throw new Error("Missing entrypoint or legacy task routing source.");
+    if (manifest.taskNavigation === "entrypoint" && !objectIndex)
+        throw new Error("Missing object index source.");
     const entryPath = resolveInside(
         target.skillSourcePath,
         entry.source,
         "SKILL.md",
     );
-    const routingPath = resolveInside(
-        target.skillSourcePath,
-        routing.source,
-        "task routing",
-    );
+    const routingPath =
+        routing &&
+        resolveInside(target.skillSourcePath, routing.source, "task routing");
     const rendered = renderTaskNavigation(
         coverage,
         manifest.files,
         target.skillSourcePath,
         {
             entrypoint: readFileSync(entryPath, "utf8"),
-            routing: readFileSync(routingPath, "utf8"),
+            routing: routingPath && readFileSync(routingPath, "utf8"),
+            objectIndex:
+                objectIndex &&
+                readFileSync(
+                    resolveInside(
+                        target.skillSourcePath,
+                        objectIndex.source,
+                        "object index",
+                    ),
+                    "utf8",
+                ),
         },
+        manifest.taskNavigation === "entrypoint"
+            ? readJson(
+                  resolveInside(
+                      target.skillSourcePath,
+                      "api-surface.json",
+                      "API surface",
+                  ),
+              )
+            : undefined,
     );
     writeFileSync(entryPath, rendered.entrypoint);
-    writeFileSync(routingPath, rendered.routing);
+    if (manifest.taskNavigation === "generated")
+        writeFileSync(routingPath, rendered.routing);
+    if (manifest.taskNavigation === "entrypoint")
+        writeFileSync(
+            resolveInside(
+                target.skillSourcePath,
+                objectIndex.source,
+                "object index",
+            ),
+            rendered.objectIndex,
+        );
     return {
         featuredTasks: rendered.featuredIds.length,
         routedTasks: coverage.taskPaths.filter(

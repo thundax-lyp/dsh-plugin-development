@@ -4,5 +4,8 @@
 /.dsh-skill-build/targets/*/checkout/
 /.dsh-skill-build/targets/*/upstream-docs/
 /.dsh-skill-build/targets/*/evidence/tests/
+/.dsh-skill-build/targets/*/evidence/integration-new/api-surface-seed.json
+/.dsh-skill-build/targets/*/evidence/integration-new/pending-*.json
+/.dsh-skill-build/targets/*/evidence/integration-new/capability-audit-conflicts.json
 /.dsh-skill-build/targets/*/previous-generated-before-format/
 /.dsh-skill-build/targets/*/preserved-formal-before-replacement/

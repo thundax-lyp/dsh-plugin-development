@@ -38,6 +38,9 @@ jobs:
             - name: Verify Prettier formatting
               run: pnpm format:check
 
+            - name: Verify versioned build JSON formatting
+              run: pnpm format:ledgers
+
             - name: Verify repository structure
               shell: bash
               run: |
@@ -60,11 +63,23 @@ jobs:
                     .agents/skills/review-dsh-skill/SKILL.md
                     .agents/skills/review-dsh-skill/agents/openai.yaml
                     .agents/skills/review-dsh-skill/references/review-method.md
+                    .agents/skills/push-pr/SKILL.md
+                    .agents/skills/push-pr/agents/openai.yaml
                   )
 
                   for required_file in "${required_files[@]}"; do
                     test -s "$required_file"
                   done
+
+            - name: Verify PR Skill entrypoint
+              shell: bash
+              run: |
+                  set -euo pipefail
+                  skill=.agents/skills/push-pr/SKILL.md
+                  test "$(sed -n '1p' "$skill")" = '---'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^name: push-pr$'
+                  sed -n '2,/^---$/p' "$skill" | grep -Eq '^description: .+'
+                  grep -Eq '^    allow_implicit_invocation: false$' .agents/skills/push-pr/agents/openai.yaml
 
             - name: Verify pull request diff formatting
               if: github.event_name == 'pull_request'
@@ -153,24 +168,19 @@ jobs:
                     grep -Fq "$package_version" "$skill"
                   fi
 
-            - name: Set up Python
-              uses: actions/setup-python@v5
-              with:
-                  python-version: "3.12"
-
             - name: Verify repository Markdown links, anchors and JSON fences
-              run: python3 scripts/validate_skill.py
+              run: node scripts/validate_skill.mjs
 
             - name: Verify generated Skill links, JSON and offline boundary when present
               shell: bash
               run: |
                   set -euo pipefail
                   if test -f skills/dsh-plugin-development/SKILL.md; then
-                    python3 scripts/validate_skill.py --skill skills/dsh-plugin-development
+                    node scripts/validate_skill.mjs --skill skills/dsh-plugin-development
                   fi
 
             - name: Test validation failure cases
-              run: python3 -B -m unittest discover -s scripts -p 'test_*.py'
+              run: node --test scripts/*.test.mjs
 
             - name: Test DSH Skill creation workflow
               run: node --test .agents/skills/create-dsh-skill/tests/*.test.mjs

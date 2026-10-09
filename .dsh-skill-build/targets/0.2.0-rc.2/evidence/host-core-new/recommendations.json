@@ -1,0 +1,2666 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0-rc.2",
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "scope": "独立 Host 核心候选建议；不代表共享账本已裁决",
+  "recommendations": [
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/cordis:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-cordis.md",
+      "reason": "公开包根导出且插件可经 Host Context 使用；已核对声明、实现及目标版本教程。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/cordis:.:Context",
+          "symbol": "Context",
+          "decision": "included",
+          "ownerSection": "references/api-host-cordis.md#context",
+          "retainMembers": [
+            "baseUrl",
+            "events",
+            "logger",
+            "reflect",
+            "registry",
+            "fiber",
+            "get",
+            "provide",
+            "effect",
+            "plugin",
+            "inject",
+            "on",
+            "emit",
+            "extend",
+            "isolate",
+            "intercept",
+            "agents",
+            "commands",
+            "sessions",
+            "llm",
+            "systemPrompt",
+            "approval",
+            "tools",
+            "remote",
+            "slots",
+            "settings",
+            "storage",
+            "clientModules",
+            "sessionProjections",
+            "credentials",
+            "authorization",
+            "sessionPersistence",
+            "directoryPicker",
+            "compaction",
+            "sessionTitle",
+            "shellEnv",
+            "jobs",
+            "subagents",
+            "workflowEngine",
+            "userQuestions",
+            "goals",
+            "sessionQuery"
+          ],
+          "source": "vendor/cordis/lib/types/context.d.ts",
+          "memberOwnership": {
+            "agents": "references/api-host-agent.md#agentregistry",
+            "commands": "references/api-host-commands.md#commandruntime",
+            "sessions": "references/api-host-session.md#sessionstore",
+            "llm": "references/api-host-llm.md#llmruntime",
+            "systemPrompt": "references/api-host-prompt-policy.md#systemprompt",
+            "approval": "references/api-host-prompt-policy.md#approvalservice",
+            "tools": "references/api-host-tools.md#toolruntime",
+            "remote": "Client/Remote 分组裁决",
+            "slots": "Client/Web 分组裁决",
+            "settings": "Client/Web 或配置分组裁决",
+            "storage": "持久化/基础设施分组裁决",
+            "clientModules": "Client/Web 分组裁决",
+            "sessionProjections": "references/api-host-session.md#sessionprojectionregistry",
+            "credentials": "references/api-host-credentials.md#credentialprovider",
+            "authorization": "references/api-host-credentials.md#authorizationservice",
+            "sessionPersistence": "references/api-host-persistence.md#sessionpersistence",
+            "directoryPicker": "references/api-host-directory-picker.md#directorypicker",
+            "compaction": "references/api-host-compaction.md#compactionengine",
+            "sessionTitle": "references/api-host-session-title.md#sessiontitleservice",
+            "shellEnv": "references/api-host-shell-env.md#shellenvregistry",
+            "jobs": "references/api-host-jobs.md#jobregistry",
+            "subagents": "references/api-host-subagent.md#subagentruntime",
+            "workflowEngine": "references/api-host-workflow.md#workflowengine",
+            "userQuestions": "references/api-host-user-questions.md#userquestionservice",
+            "goals": "references/api-host-goal.md#goalservice",
+            "sessionQuery": "references/api-host-session-query.md#sessionqueryengine"
+          }
+        },
+        {
+          "id": "export:@deepseek-ai/cordis:.:Plugin",
+          "symbol": "Plugin",
+          "decision": "included",
+          "ownerSection": "references/api-host-cordis.md#plugin",
+          "retainMembers": [
+            "name",
+            "Config",
+            "inject",
+            "provide",
+            "intercept"
+          ],
+          "source": "vendor/cordis/lib/types/registry.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/cordis:.:Service",
+          "symbol": "Service",
+          "decision": "included",
+          "ownerSection": "references/api-host-cordis.md#service",
+          "retainMembers": [
+            "name"
+          ],
+          "source": "vendor/cordis/lib/types/service.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/cordis:.:Fiber",
+          "symbol": "Fiber",
+          "decision": "included",
+          "ownerSection": "references/api-host-cordis.md#fiber",
+          "retainMembers": [
+            "await",
+            "dispose",
+            "effect",
+            "getEffects",
+            "state"
+          ],
+          "source": "vendor/cordis/lib/types/fiber.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/cordis:.:RegistryService",
+          "symbol": "RegistryService",
+          "decision": "included",
+          "ownerSection": "references/api-host-cordis.md#registryservice",
+          "retainMembers": [
+            "plugin",
+            "inject",
+            "delete",
+            "get",
+            "has"
+          ],
+          "source": "vendor/cordis/lib/types/registry.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "vendor/cordis/package.json",
+        "vendor/cordis/src/index.ts",
+        "vendor/cordis/src/context.ts",
+        "vendor/cordis/src/registry.ts",
+        "vendor/cordis/src/service.ts",
+        "vendor/cordis/src/fiber.ts",
+        "vendor/cordis/src/reflect.ts",
+        "docs/user/develop/framework/service.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/cordis"
+      ],
+      "taskCandidateIds": [
+        "task:docs/user/develop/basic/tool.zh.md:1"
+      ],
+      "proposedTaskIds": [
+        "provide-host-service",
+        "register-host-tool"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-agent-loop:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-agent.md",
+      "reason": "公开默认 Agent factory/driver 是 ctx.agents.create/resume 的实际装载前置，并提供 Profile 中声明式 Agent 配置。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-agent-loop:.:AgentLoop",
+          "symbol": "AgentLoop",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#agentloop",
+          "retainMembers": [
+            "config",
+            "createAgent",
+            "resume"
+          ],
+          "source": "packages/core/agent-loop/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-agent-loop:.:Config",
+          "symbol": "Config",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#agentloopconfig",
+          "retainMembers": [
+            "agents",
+            "maxParallelToolCalls"
+          ],
+          "source": "packages/core/agent-loop/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/agent-loop/package.json",
+        "packages/core/agent-loop/src/index.ts",
+        "packages/core/agent-loop/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-agent-loop"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "scope-agent-capability"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-agent:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-agent.md",
+      "reason": "公开 Agent 句柄与注册表可供插件对实时 Agent 注入作用域能力，创建/恢复经默认 loop 提供工厂。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-agent:.:Agent",
+          "symbol": "Agent",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#agent",
+          "retainMembers": [
+            "id",
+            "ctx",
+            "session",
+            "status",
+            "inbox",
+            "followup",
+            "steer",
+            "inject",
+            "cancel",
+            "whenIdle"
+          ],
+          "source": "packages/core/agent/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-agent:.:AgentRegistry",
+          "symbol": "AgentRegistry",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#agentregistry",
+          "retainMembers": [
+            "create",
+            "resume",
+            "get",
+            "list",
+            "roots",
+            "currentInitiator",
+            "withInitiator",
+            "withoutInitiator"
+          ],
+          "source": "packages/core/agent/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-agent:.:AgentHandle",
+          "symbol": "AgentHandle",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#agenthandle",
+          "retainMembers": [
+            "agent",
+            "dispose"
+          ],
+          "source": "packages/core/agent/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-agent:.:CreateAgentOptions",
+          "symbol": "CreateAgentOptions",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#createagentoptions",
+          "retainMembers": [
+            "sessionId",
+            "parentAgent",
+            "meta",
+            "seed",
+            "inheritedEventCount",
+            "agentOptions",
+            "signal",
+            "setup"
+          ],
+          "source": "packages/core/agent/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-agent:.:ResumeAgentOptions",
+          "symbol": "ResumeAgentOptions",
+          "decision": "included",
+          "ownerSection": "references/api-host-agent.md#resumeagentoptions",
+          "retainMembers": [
+            "resumeSessionId",
+            "parentAgent",
+            "agentOptions",
+            "signal",
+            "setup"
+          ],
+          "source": "packages/core/agent/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/agent/package.json",
+        "packages/core/agent/src/index.ts",
+        "packages/core/agent/src/runtime-types.ts",
+        "packages/core/agent/src/types.ts",
+        "packages/core/agent/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-agent"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "scope-agent-capability"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-authorization:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-credentials.md",
+      "reason": "公开的人机授权 flow 注册是插件取得需用户参与的凭据入口；只有提交记录才可报告 authorized。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationFlow",
+          "symbol": "AuthorizationFlow",
+          "decision": "included",
+          "ownerSection": "references/api-host-credentials.md#authorizationflow",
+          "retainMembers": [
+            "key",
+            "label",
+            "methods",
+            "run"
+          ],
+          "source": "packages/credentials/authorization/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationSession",
+          "symbol": "AuthorizationSession",
+          "decision": "included",
+          "ownerSection": "references/api-host-credentials.md#authorizationsession",
+          "retainMembers": [
+            "method",
+            "signal",
+            "notify",
+            "prompt",
+            "commit"
+          ],
+          "source": "packages/credentials/authorization/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-authorization:.:AuthorizationService",
+          "symbol": "AuthorizationService",
+          "decision": "included",
+          "ownerSection": "references/api-host-credentials.md#authorizationservice",
+          "retainMembers": [
+            "registerFlow",
+            "list",
+            "describe",
+            "begin",
+            "cancel"
+          ],
+          "source": "packages/credentials/authorization/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/credentials/authorization/package.json",
+        "packages/credentials/authorization/src/index.ts",
+        "packages/credentials/authorization/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-authorization"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "register-authorization-flow"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-commands:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-commands.md",
+      "reason": "公开命令注册让插件向交互 UI 提供斜杠命令，handler 由 UI 执行并记录 Session 生命周期，不是模型工具。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-commands:.:CommandDefinition",
+          "symbol": "CommandDefinition",
+          "decision": "included",
+          "ownerSection": "references/api-host-commands.md#commanddefinition",
+          "retainMembers": [
+            "name",
+            "description",
+            "handler",
+            "input",
+            "recordInput",
+            "definitionId"
+          ],
+          "source": "packages/interaction/commands/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-commands:.:CommandInvocation",
+          "symbol": "CommandInvocation",
+          "decision": "included",
+          "ownerSection": "references/api-host-commands.md#commandinvocation",
+          "retainMembers": [
+            "commandId",
+            "agent",
+            "rawInput",
+            "attachments",
+            "signal"
+          ],
+          "source": "packages/interaction/commands/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-commands:.:CommandRuntime",
+          "symbol": "CommandRuntime",
+          "decision": "included",
+          "ownerSection": "references/api-host-commands.md#commandruntime",
+          "retainMembers": [
+            "register",
+            "list",
+            "find",
+            "execute"
+          ],
+          "source": "packages/interaction/commands/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-commands:.:CommandResult",
+          "symbol": "CommandResult",
+          "decision": "included",
+          "ownerSection": "references/api-host-commands.md#commandresult",
+          "retainMembers": [],
+          "source": "packages/interaction/commands/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-commands:.:CommandDescriptor",
+          "symbol": "CommandDescriptor",
+          "decision": "included",
+          "ownerSection": "references/api-host-commands.md#commanddescriptor",
+          "retainMembers": [
+            "name",
+            "description",
+            "input",
+            "definitionId"
+          ],
+          "source": "packages/interaction/commands/lib/types/types.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/interaction/commands/package.json",
+        "packages/interaction/commands/src/index.ts",
+        "packages/interaction/commands/src/types.ts",
+        "packages/interaction/commands/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-commands"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "register-host-command"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-compaction:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-compaction.md",
+      "reason": "压缩服务公开抽象 backend、触发、日志结果与 checkpoint 标识；用户任务明确要求实现 backend。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-compaction:.:CompactionEngine",
+          "symbol": "CompactionEngine",
+          "decision": "included",
+          "ownerSection": "references/api-host-compaction.md#compactionengine",
+          "retainMembers": [
+            "compactIfNeeded",
+            "compactNow",
+            "compactRegion"
+          ],
+          "source": "packages/compaction/compaction/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-compaction:.:CompactionTrigger",
+          "symbol": "CompactionTrigger",
+          "decision": "included",
+          "ownerSection": "references/api-host-compaction.md#compactiontrigger",
+          "retainMembers": [],
+          "source": "packages/compaction/compaction/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+          "symbol": "CompactionResult",
+          "decision": "included",
+          "ownerSection": "references/api-host-compaction.md#compactionresult",
+          "retainMembers": [
+            "compactionId",
+            "endSeq",
+            "shadowedRange",
+            "shadowedSeqs",
+            "shadowedTokenCount",
+            "sourceCommandId",
+            "startSeq",
+            "summary",
+            "summarySeq"
+          ],
+          "source": "packages/compaction/compaction/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-compaction:.:ManualCompactionError",
+          "symbol": "ManualCompactionError",
+          "decision": "included",
+          "ownerSection": "references/api-host-compaction.md#manualcompactionerror",
+          "retainMembers": [
+            "code",
+            "name"
+          ],
+          "source": "packages/compaction/compaction/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-compaction:.:compactCheckpointSource",
+          "symbol": "compactCheckpointSource",
+          "decision": "included",
+          "ownerSection": "references/api-host-compaction.md#compactcheckpointsource",
+          "retainMembers": [],
+          "source": "packages/compaction/compaction/lib/types/checkpoint.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/compaction/compaction/package.json",
+        "packages/compaction/compaction/src/index.ts",
+        "packages/compaction/compaction/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-compaction"
+      ],
+      "taskCandidateIds": [
+        "task:packages/compaction/compaction/README.md:49"
+      ],
+      "proposedTaskIds": [
+        "provide-compaction-backend"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-credentials:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-credentials.md",
+      "reason": "抽象凭据 Service 与按名/按记录键空间是公开插件消费入口；具体存储必须由 provider 挂载。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-credentials:.:CredentialRef",
+          "symbol": "CredentialRef",
+          "decision": "included",
+          "ownerSection": "references/api-host-credentials.md#credentialref",
+          "retainMembers": [],
+          "source": "packages/credentials/credentials/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-credentials:.:CredentialKey",
+          "symbol": "CredentialKey",
+          "decision": "included",
+          "ownerSection": "references/api-host-credentials.md#credentialkey",
+          "retainMembers": [],
+          "source": "packages/credentials/credentials/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-credentials:.:CredentialProvider",
+          "symbol": "CredentialProvider",
+          "decision": "included",
+          "ownerSection": "references/api-host-credentials.md#credentialprovider",
+          "retainMembers": [
+            "resolve",
+            "describe",
+            "set",
+            "unset",
+            "readRecord",
+            "describeRecord",
+            "listRecords",
+            "modifyRecord",
+            "deleteRecord"
+          ],
+          "source": "packages/credentials/credentials/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/credentials/credentials/package.json",
+        "packages/credentials/credentials/src/index.ts",
+        "packages/credentials/credentials/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-credentials"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "store-plugin-credential"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-goal:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-goal.md",
+      "reason": "持久目标 Service 公开精确修订状态机供插件调用；轮次驱动是独立具体实现。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-goal:.:GoalService",
+          "symbol": "GoalService",
+          "decision": "included",
+          "ownerSection": "references/api-host-goal.md#goalservice",
+          "retainMembers": [
+            "block",
+            "clear",
+            "complete",
+            "create",
+            "disarm",
+            "edit",
+            "get",
+            "pause",
+            "remoteExportCreate",
+            "resume"
+          ],
+          "source": "packages/goal/goal/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-goal:.:GoalView",
+          "symbol": "GoalView",
+          "decision": "included",
+          "ownerSection": "references/api-host-goal.md#goalview",
+          "retainMembers": [
+            "activation",
+            "blockedReason",
+            "createdAt",
+            "id",
+            "maxGoalRounds",
+            "objective",
+            "phase",
+            "revision",
+            "roundsStarted",
+            "updatedAt"
+          ],
+          "source": "packages/goal/goal/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-goal:.:GoalRef",
+          "symbol": "GoalRef",
+          "decision": "included",
+          "ownerSection": "references/api-host-goal.md#goalref",
+          "retainMembers": [
+            "id",
+            "revision"
+          ],
+          "source": "packages/goal/goal/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-goal:.:CreateGoalRequest",
+          "symbol": "CreateGoalRequest",
+          "decision": "included",
+          "ownerSection": "references/api-host-goal.md#creategoalrequest",
+          "retainMembers": [
+            "maxGoalRounds",
+            "objective"
+          ],
+          "source": "packages/goal/goal/lib/types/types.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/index.ts",
+        "packages/goal/goal/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-goal"
+      ],
+      "taskCandidateIds": [
+        "task:packages/goal/goal/README.zh.md:34"
+      ],
+      "proposedTaskIds": [
+        "manage-session-goal"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-directory-picker.md",
+      "reason": "公开 Host DirectoryPicker Service Definition 与可扩展能力联合支持第三方 backend，Client 页面流程仍需另行组合。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPicker",
+          "symbol": "DirectoryPicker",
+          "decision": "included",
+          "ownerSection": "references/api-host-directory-picker.md#directorypicker",
+          "retainMembers": [
+            "capability"
+          ],
+          "source": "packages/host/directory-picker/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerCapability",
+          "symbol": "DirectoryPickerCapability",
+          "decision": "included",
+          "ownerSection": "references/api-host-directory-picker.md#directorypickercapability",
+          "retainMembers": [],
+          "source": "packages/host/directory-picker/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerCapabilities",
+          "symbol": "DirectoryPickerCapabilities",
+          "decision": "included",
+          "ownerSection": "references/api-host-directory-picker.md#directorypickercapabilities",
+          "retainMembers": [],
+          "source": "packages/host/directory-picker/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryEntry",
+          "symbol": "DirectoryEntry",
+          "decision": "included",
+          "ownerSection": "references/api-host-directory-picker.md#directoryentry",
+          "retainMembers": [
+            "path",
+            "hidden"
+          ],
+          "source": "packages/host/directory-picker/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryListing",
+          "symbol": "DirectoryListing",
+          "decision": "included",
+          "ownerSection": "references/api-host-directory-picker.md#directorylisting",
+          "retainMembers": [
+            "path",
+            "entries",
+            "crumbs"
+          ],
+          "source": "packages/host/directory-picker/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerError",
+          "symbol": "DirectoryPickerError",
+          "decision": "included",
+          "ownerSection": "references/api-host-directory-picker.md#directorypickererror",
+          "retainMembers": [
+            "code",
+            "path"
+          ],
+          "source": "packages/host/directory-picker/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/host/directory-picker/package.json",
+        "packages/host/directory-picker/src/index.ts",
+        "packages/host/directory-picker/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-host-directory-picker"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "provide-directory-picker"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-jobs:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-jobs.md",
+      "reason": "抽象 JobRegistry 与 producer/owner/output 契约公开；local backend 和模型控制器是独立组合。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-jobs:.:JobRegistry",
+          "symbol": "JobRegistry",
+          "decision": "included",
+          "ownerSection": "references/api-host-jobs.md#jobregistry",
+          "retainMembers": [
+            "attachController",
+            "events",
+            "get",
+            "kill",
+            "list",
+            "read",
+            "readAt",
+            "remove",
+            "start",
+            "wait"
+          ],
+          "source": "packages/jobs/jobs/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-jobs:.:JobSpec",
+          "symbol": "JobSpec",
+          "decision": "included",
+          "ownerSection": "references/api-host-jobs.md#jobspec",
+          "retainMembers": [
+            "kind",
+            "label",
+            "output",
+            "outputLimitBytes",
+            "owner",
+            "run"
+          ],
+          "source": "packages/jobs/jobs/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-jobs:.:JobHandle",
+          "symbol": "JobHandle",
+          "decision": "included",
+          "ownerSection": "references/api-host-jobs.md#jobhandle",
+          "retainMembers": [
+            "append",
+            "id",
+            "updateProgress"
+          ],
+          "source": "packages/jobs/jobs/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-jobs:.:JobHooks",
+          "symbol": "JobHooks",
+          "decision": "included",
+          "ownerSection": "references/api-host-jobs.md#jobhooks",
+          "retainMembers": [
+            "cancel",
+            "done"
+          ],
+          "source": "packages/jobs/jobs/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-jobs:.:JobView",
+          "symbol": "JobView",
+          "decision": "included",
+          "ownerSection": "references/api-host-jobs.md#jobview",
+          "retainMembers": [
+            "detail",
+            "finishedAt",
+            "id",
+            "kind",
+            "label",
+            "output",
+            "outputLimitBytes",
+            "owner",
+            "progress",
+            "startedAt",
+            "status"
+          ],
+          "source": "packages/jobs/jobs/lib/types/view.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/jobs/jobs/package.json",
+        "packages/jobs/jobs/src/index.ts",
+        "packages/jobs/jobs/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-jobs"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "register-background-job"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-llm:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-llm.md",
+      "reason": "公开 adapter 注册与流式模型契约可供插件提供自定义 provider route；完整 stream 类型与归因头仍需按任务验证。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:LlmAdapter",
+          "symbol": "LlmAdapter",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm.md#llmadapter",
+          "retainMembers": [
+            "providerInfo",
+            "providerRetryPolicy",
+            "imageRequestPricing",
+            "listModels",
+            "resolveModel",
+            "prepareCall",
+            "stream"
+          ],
+          "source": "packages/llm/llm/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:LlmRuntime",
+          "symbol": "LlmRuntime",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm.md#llmruntime",
+          "retainMembers": [
+            "registerAdapter",
+            "listProviders",
+            "listModels",
+            "resolveModelInfo",
+            "stream"
+          ],
+          "source": "packages/llm/llm/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:AdapterRegistrationHandle",
+          "symbol": "AdapterRegistrationHandle",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm.md#adapterregistrationhandle",
+          "retainMembers": [
+            "replace"
+          ],
+          "source": "packages/llm/llm/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:AssistantStreamAccumulator",
+          "symbol": "AssistantStreamAccumulator",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm-message.md#assistantstreamaccumulator",
+          "retainMembers": [
+            "push",
+            "snapshot"
+          ],
+          "source": "packages/llm/llm/lib/types/assistant-stream.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:expandAssistantStream",
+          "symbol": "expandAssistantStream",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm-message.md#expandassistantstream",
+          "retainMembers": [],
+          "source": "packages/llm/llm/lib/types/assistant-stream.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:AssistantStreamRecord",
+          "symbol": "AssistantStreamRecord",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm-message.md#assistantstreamrecord",
+          "retainMembers": [
+            "type"
+          ],
+          "source": "packages/llm/llm/lib/types/assistant-stream.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:Message",
+          "symbol": "Message",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm-message.md#message",
+          "retainMembers": [
+            "content",
+            "id",
+            "role",
+            "source"
+          ],
+          "source": "packages/llm/llm/lib/types/message.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-llm:.:createMessage",
+          "symbol": "createMessage",
+          "decision": "included",
+          "ownerSection": "references/api-host-llm-message.md#createmessage",
+          "retainMembers": [],
+          "source": "packages/llm/llm/lib/types/message.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts",
+        "packages/llm/llm/README.zh.md",
+        "docs/cookbook/adding-an-llm-adapter.zh.md",
+        "packages/llm/llm/src/assistant-stream.ts",
+        "packages/llm/llm/src/message.ts"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-llm"
+      ],
+      "taskCandidateIds": [
+        "task:docs/cookbook/adding-an-llm-adapter.md:1"
+      ],
+      "proposedTaskIds": [
+        "register-llm-adapter",
+        "replay-assistant-stream"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-scope:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-scope.md",
+      "reason": "公共作用域注册原语支持按 Agent/分组隔离注册与事件；并非普通全局 Service。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-scope:.:createScope",
+          "symbol": "createScope",
+          "decision": "included",
+          "ownerSection": "references/api-host-scope.md#createscope",
+          "retainMembers": [],
+          "source": "packages/core/scope/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-scope:.:Scope",
+          "symbol": "Scope",
+          "decision": "included",
+          "ownerSection": "references/api-host-scope.md#scope",
+          "retainMembers": [
+            "ctx",
+            "dispose",
+            "rawDispose"
+          ],
+          "source": "packages/core/scope/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-scope:.:bindScopeParent",
+          "symbol": "bindScopeParent",
+          "decision": "included",
+          "ownerSection": "references/api-host-scope.md#bindscopeparent",
+          "retainMembers": [],
+          "source": "packages/core/scope/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-scope:.:scopeTarget",
+          "symbol": "scopeTarget",
+          "decision": "included",
+          "ownerSection": "references/api-host-scope.md#scopetarget",
+          "retainMembers": [],
+          "source": "packages/core/scope/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-scope:.:ScopedLayers",
+          "symbol": "ScopedLayers",
+          "decision": "included",
+          "ownerSection": "references/api-host-scope.md#scopedlayers",
+          "retainMembers": [
+            "chainLayers",
+            "effect",
+            "global",
+            "merge",
+            "peek"
+          ],
+          "source": "packages/core/scope/lib/types/store.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/scope/package.json",
+        "packages/core/scope/src/index.ts",
+        "packages/core/scope/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-scope"
+      ],
+      "taskCandidateIds": [
+        "task:packages/core/scope/README.zh.md:44"
+      ],
+      "proposedTaskIds": [
+        "register-scoped-contribution"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-session-persistence:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-persistence.md",
+      "reason": "公开抽象后端 Service 与句柄接口允许插件提供新存储机制；只有具体 backend 与 Profile 装载才产生持久能力。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-session-persistence:.:SessionPersistence",
+          "symbol": "SessionPersistence",
+          "decision": "included",
+          "ownerSection": "references/api-host-persistence.md#sessionpersistence",
+          "retainMembers": [
+            "create",
+            "open",
+            "flush",
+            "stat",
+            "list"
+          ],
+          "source": "packages/session/session-persistence/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-persistence:.:SessionHandle",
+          "symbol": "SessionHandle",
+          "decision": "included",
+          "ownerSection": "references/api-host-persistence.md#sessionhandle",
+          "retainMembers": [
+            "id",
+            "header",
+            "access",
+            "inheritedEventCount",
+            "read",
+            "append",
+            "flush",
+            "close"
+          ],
+          "source": "packages/session/session-persistence/lib/types/handle.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-persistence:.:SessionPersistenceSnapshot",
+          "symbol": "SessionPersistenceSnapshot",
+          "decision": "included",
+          "ownerSection": "references/api-host-persistence.md#sessionpersistencesnapshot",
+          "retainMembers": [
+            "header",
+            "revision"
+          ],
+          "source": "packages/session/session-persistence/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/session/session-persistence/package.json",
+        "packages/session/session-persistence/src/index.ts",
+        "packages/session/session-persistence/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-session-persistence"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "implement-session-persistence"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-session-projection:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-session.md",
+      "reason": "公开 ProjectionDefinition 和 SessionProjectionRegistry 是插件把 Session 日志折叠成 Host/Client 当前状态的可用扩展点，与直接 append 和模型消息投影职责不同。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-session-projection:.:ProjectionDefinition",
+          "symbol": "ProjectionDefinition",
+          "decision": "included",
+          "ownerSection": "references/api-host-session.md#projectiondefinition",
+          "retainMembers": [
+            "key",
+            "stateVersion",
+            "stateSchema",
+            "init",
+            "apply",
+            "wire"
+          ],
+          "source": "packages/session/session-projection/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-projection:.:SessionProjectionRegistry",
+          "symbol": "SessionProjectionRegistry",
+          "decision": "included",
+          "ownerSection": "references/api-host-session.md#sessionprojectionregistry",
+          "retainMembers": [
+            "register",
+            "stateOf",
+            "snapshot",
+            "onChanged",
+            "checkpoint",
+            "restoreFloor",
+            "restore"
+          ],
+          "source": "packages/session/session-projection/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/session/session-projection/package.json",
+        "packages/session/session-projection/src/index.ts",
+        "packages/session/session-projection/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-session-projection"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "record-host-session-fact"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-session-query:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-session-query.md",
+      "reason": "公开抽象查询 Service 将通用 live/cold 读取与两个全文搜索 backend 方法分离。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+          "symbol": "SessionQueryEngine",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-query.md#sessionqueryengine",
+          "retainMembers": [
+            "filterEvents",
+            "filterSessions",
+            "listEvents",
+            "listSessions",
+            "observeSession",
+            "readEvent",
+            "readSession",
+            "readSurface",
+            "readTitle",
+            "readTitleSnapshot",
+            "readTitleSnapshots",
+            "searchEvents",
+            "searchSessions",
+            "traceEvent",
+            "traceSession"
+          ],
+          "source": "packages/session-query/session-query/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+          "symbol": "SessionObservation",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-query.md#sessionobservation",
+          "retainMembers": [
+            "cursor",
+            "events",
+            "header",
+            "inheritedEventCount",
+            "projections",
+            "retain",
+            "revision",
+            "source"
+          ],
+          "source": "packages/session-query/session-query/lib/types/observation.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-query:.:SessionResultFilter",
+          "symbol": "SessionResultFilter",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-query.md#sessionresultfilter",
+          "retainMembers": [
+            "kind"
+          ],
+          "source": "packages/session-query/session-query/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-query:.:SessionEventResultFilter",
+          "symbol": "SessionEventResultFilter",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-query.md#sessioneventresultfilter",
+          "retainMembers": [
+            "kind"
+          ],
+          "source": "packages/session-query/session-query/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-query:.:SessionQueryError",
+          "symbol": "SessionQueryError",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-query.md#sessionqueryerror",
+          "retainMembers": [
+            "code"
+          ],
+          "source": "packages/session-query/session-query/lib/types/config.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/session-query/session-query/package.json",
+        "packages/session-query/session-query/src/index.ts",
+        "packages/session-query/session-query/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-session-query"
+      ],
+      "taskCandidateIds": [
+        "task:packages/session-query/session-query/README.zh.md:53"
+      ],
+      "proposedTaskIds": [
+        "query-session-history"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-session-title:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-session-title.md",
+      "reason": "标题服务公开唯一异步 provider 注册、输入/结果与稳定身份；用户任务明确要求新增 provider。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-session-title:.:SessionTitleService",
+          "symbol": "SessionTitleService",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-title.md#sessiontitleservice",
+          "retainMembers": [
+            "get",
+            "refresh",
+            "register",
+            "rename"
+          ],
+          "source": "packages/session/session-title/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-title:.:SessionTitleProvider",
+          "symbol": "SessionTitleProvider",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-title.md#sessiontitleprovider",
+          "retainMembers": [
+            "automatic",
+            "generate",
+            "id"
+          ],
+          "source": "packages/session/session-title/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-title:.:SessionTitleProviderRequest",
+          "symbol": "SessionTitleProviderRequest",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-title.md#sessiontitleproviderrequest",
+          "retainMembers": [
+            "messages",
+            "route",
+            "session",
+            "signal"
+          ],
+          "source": "packages/session/session-title/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-title:.:SessionTitleProviderResult",
+          "symbol": "SessionTitleProviderResult",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-title.md#sessiontitleproviderresult",
+          "retainMembers": [
+            "messageSeqs",
+            "model",
+            "title"
+          ],
+          "source": "packages/session/session-title/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-title:.:SessionTitleProviderId",
+          "symbol": "SessionTitleProviderId",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-title.md#sessiontitleproviderid",
+          "retainMembers": [],
+          "source": "packages/session/session-title/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/session/session-title/package.json",
+        "packages/session/session-title/src/index.ts",
+        "packages/session/session-title/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-session-title"
+      ],
+      "taskCandidateIds": [
+        "task:packages/session/session-title/README.md:55"
+      ],
+      "proposedTaskIds": [
+        "register-session-title-provider"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-session:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-session.md",
+      "reason": "公开 Session append 与投影是插件持久事实和模型历史重建边界；已废弃同步事件读取方法不纳入常规指导。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:Session",
+          "symbol": "Session",
+          "decision": "included",
+          "ownerSection": "references/api-host-session.md#session",
+          "retainMembers": [
+            "append",
+            "seq",
+            "deriveMessages",
+            "requestHeader"
+          ],
+          "source": "packages/core/session/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:SessionStore",
+          "symbol": "SessionStore",
+          "decision": "included",
+          "ownerSection": "references/api-host-session.md#sessionstore",
+          "retainMembers": [
+            "create",
+            "get",
+            "list",
+            "fork",
+            "flush",
+            "registerMessageProjection"
+          ],
+          "source": "packages/core/session/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:SessionEvent",
+          "symbol": "SessionEvent",
+          "decision": "included",
+          "ownerSection": "references/api-host-session.md#sessionevent",
+          "retainMembers": [
+            "type",
+            "seq",
+            "time",
+            "data"
+          ],
+          "source": "packages/core/session/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:SessionEventMap",
+          "symbol": "SessionEventMap",
+          "decision": "included",
+          "ownerSection": "references/api-host-session.md#sessioneventmap",
+          "retainMembers": [],
+          "source": "packages/core/session/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:buildForkSeed",
+          "symbol": "buildForkSeed",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-surface.md#buildforkseed",
+          "retainMembers": [],
+          "source": "packages/core/session/lib/types/fork.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:SessionMessageProjection",
+          "symbol": "SessionMessageProjection",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-surface.md#sessionmessageprojection",
+          "retainMembers": [
+            "project",
+            "type"
+          ],
+          "source": "packages/core/session/lib/types/surface.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:SessionMessageProjectionContext",
+          "symbol": "SessionMessageProjectionContext",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-surface.md#sessionmessageprojectioncontext",
+          "retainMembers": [
+            "baseSeq",
+            "events",
+            "messages",
+            "nodes"
+          ],
+          "source": "packages/core/session/lib/types/surface.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:foldSurface",
+          "symbol": "foldSurface",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-surface.md#foldsurface",
+          "retainMembers": [],
+          "source": "packages/core/session/lib/types/surface.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session:.:SurfaceFoldResult",
+          "symbol": "SurfaceFoldResult",
+          "decision": "included",
+          "ownerSection": "references/api-host-session-surface.md#surfacefoldresult",
+          "retainMembers": [
+            "nodes",
+            "projectedMessages",
+            "replacements"
+          ],
+          "source": "packages/core/session/lib/types/surface.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/session/package.json",
+        "packages/core/session/src/index.ts",
+        "packages/core/session/src/types.ts",
+        "packages/core/session/src/surface.ts",
+        "packages/core/session/README.zh.md",
+        "packages/core/session/src/surface.ts"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-session"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "record-host-session-fact",
+        "register-session-message-projection",
+        "fork-host-session"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-shell-env:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-shell-env.md",
+      "reason": "公开 ShellEnvRegistry 注册 API 和按执行收集的环境贡献者；用户任务明确要求新增环境事实。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-shell-env:.:ShellEnvRegistry",
+          "symbol": "ShellEnvRegistry",
+          "decision": "included",
+          "ownerSection": "references/api-host-shell-env.md#shellenvregistry",
+          "retainMembers": [
+            "collect",
+            "list",
+            "register"
+          ],
+          "source": "packages/shell/shell-env/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-shell-env:.:BashEnvContributor",
+          "symbol": "BashEnvContributor",
+          "decision": "included",
+          "ownerSection": "references/api-host-shell-env.md#bashenvcontributor",
+          "retainMembers": [
+            "name",
+            "resolve",
+            "variables"
+          ],
+          "source": "packages/shell/shell-env/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-shell-env:.:BashEnvVariable",
+          "symbol": "BashEnvVariable",
+          "decision": "included",
+          "ownerSection": "references/api-host-shell-env.md#bashenvvariable",
+          "retainMembers": [
+            "description"
+          ],
+          "source": "packages/shell/shell-env/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-shell-env:.:BashEnvVariableInfo",
+          "symbol": "BashEnvVariableInfo",
+          "decision": "included",
+          "ownerSection": "references/api-host-shell-env.md#bashenvvariableinfo",
+          "retainMembers": [
+            "contributor",
+            "description",
+            "key"
+          ],
+          "source": "packages/shell/shell-env/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/shell/shell-env/package.json",
+        "packages/shell/shell-env/src/index.ts",
+        "packages/shell/shell-env/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-shell-env"
+      ],
+      "taskCandidateIds": [
+        "task:packages/shell/shell-env/README.md:34"
+      ],
+      "proposedTaskIds": [
+        "register-shell-environment-fact"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-subagent:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-subagent.md",
+      "reason": "具名 provider 注册支持第三方委派后端；one-shot 与续接生命周期不可混淆。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+          "symbol": "SubagentRuntime",
+          "decision": "included",
+          "ownerSection": "references/api-host-subagent.md#subagentruntime",
+          "retainMembers": [
+            "drainContinuableChildren",
+            "drainContinuableDescendants",
+            "getProvider",
+            "interrupt",
+            "interruptByParent",
+            "list",
+            "listChildren",
+            "listDescendants",
+            "prompt",
+            "registerProvider",
+            "resolveMaxDepth",
+            "sendMessage",
+            "start",
+            "startContinuable"
+          ],
+          "source": "packages/subagent/subagent/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:.:SubagentProvider",
+          "symbol": "SubagentProvider",
+          "decision": "included",
+          "ownerSection": "references/api-host-subagent.md#subagentprovider",
+          "retainMembers": [
+            "agentRouteDefaults",
+            "capabilities",
+            "inheritsParentContext",
+            "name",
+            "prepareContinuable",
+            "start"
+          ],
+          "source": "packages/subagent/subagent/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+          "symbol": "SubagentStartRequest",
+          "decision": "included",
+          "ownerSection": "references/api-host-subagent.md#subagentstartrequest",
+          "retainMembers": [
+            "agentOptions",
+            "label",
+            "maxDepth",
+            "outputSchema",
+            "parent",
+            "persona",
+            "prompt",
+            "signal",
+            "toolFilter"
+          ],
+          "source": "packages/subagent/subagent/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:.:SubagentRun",
+          "symbol": "SubagentRun",
+          "decision": "included",
+          "ownerSection": "references/api-host-subagent.md#subagentrun",
+          "retainMembers": [
+            "dispose",
+            "id",
+            "localAgent",
+            "result"
+          ],
+          "source": "packages/subagent/subagent/lib/types/types.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/subagent/subagent/package.json",
+        "packages/subagent/subagent/src/index.ts",
+        "packages/subagent/subagent/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-subagent"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "provide-subagent-backend"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-system-prompt:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-prompt-policy.md",
+      "reason": "公开提示词 section/context/variable 是插件贡献模型上下文的入口，作用域与 fiber 清理在实现中确认。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-system-prompt:.:SystemPrompt",
+          "symbol": "SystemPrompt",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#systemprompt",
+          "retainMembers": [
+            "section",
+            "context",
+            "variable",
+            "tools",
+            "assemble",
+            "getSectionOrder",
+            "getContextOrder"
+          ],
+          "source": "packages/core/system-prompt/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-system-prompt:.:PromptSection",
+          "symbol": "PromptSection",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#promptsection",
+          "retainMembers": [
+            "name",
+            "order",
+            "text",
+            "interpolate",
+            "complete"
+          ],
+          "source": "packages/core/system-prompt/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-system-prompt:.:PromptContext",
+          "symbol": "PromptContext",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#promptcontext",
+          "retainMembers": [
+            "name",
+            "order",
+            "text"
+          ],
+          "source": "packages/core/system-prompt/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/system-prompt/package.json",
+        "packages/core/system-prompt/src/index.ts",
+        "packages/core/system-prompt/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-system-prompt"
+      ],
+      "taskCandidateIds": [
+        "task:packages/core/system-prompt/README.zh.md:31"
+      ],
+      "proposedTaskIds": [
+        "register-host-prompt-section"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-tools:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-tools.md",
+      "reason": "公开包根导出且插件可经 Host Context 使用；已核对声明、实现及目标版本教程。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:defineTool",
+          "symbol": "defineTool",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#definetool",
+          "retainMembers": [],
+          "source": "packages/core/tools/lib/types/schema.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:DefineToolOptions",
+          "symbol": "DefineToolOptions",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#definetooloptions",
+          "retainMembers": [
+            "name",
+            "description",
+            "parameters",
+            "output",
+            "execute",
+            "timeoutMs",
+            "isConcurrencySafe",
+            "presentCall",
+            "presentResult",
+            "projectContent",
+            "finalizeContent"
+          ],
+          "source": "packages/core/tools/lib/types/schema.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+          "symbol": "ToolDefinition",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#tooldefinition",
+          "retainMembers": [
+            "output",
+            "execute",
+            "timeoutMs",
+            "isConcurrencySafe",
+            "presentCall",
+            "presentResult",
+            "projectContent",
+            "finalizeContent"
+          ],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:ToolRuntime",
+          "symbol": "ToolRuntime",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#toolruntime",
+          "retainMembers": [
+            "register",
+            "get",
+            "schemas",
+            "restrict",
+            "guard",
+            "presentAs",
+            "execute"
+          ],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:ToolExecution",
+          "symbol": "ToolExecution",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#toolexecution",
+          "retainMembers": [
+            "callId",
+            "rootCallId",
+            "name",
+            "arguments",
+            "token",
+            "parent",
+            "signal",
+            "agent"
+          ],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:ToolRunContext",
+          "symbol": "ToolRunContext",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#toolruncontext",
+          "retainMembers": [
+            "signal",
+            "agent",
+            "deferContext",
+            "concludeTurn"
+          ],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:Config",
+          "symbol": "Config",
+          "decision": "included",
+          "ownerSection": "references/api-host-tools.md#config",
+          "retainMembers": [
+            "mode",
+            "maxParallelSubCalls"
+          ],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:ToolGuard",
+          "symbol": "ToolGuard",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#toolguard",
+          "retainMembers": [],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:PreToolDecision",
+          "symbol": "PreToolDecision",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#pretooldecision",
+          "retainMembers": [],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-tools:.:PostToolDecision",
+          "symbol": "PostToolDecision",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#posttooldecision",
+          "retainMembers": [],
+          "source": "packages/core/tools/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/tools/package.json",
+        "packages/core/tools/src/index.ts",
+        "packages/core/tools/src/schema.ts",
+        "packages/core/tools/src/presentation.ts",
+        "packages/core/tools/README.zh.md",
+        "docs/cookbook/adding-a-tool.zh.md",
+        "docs/user/develop/basic/tool.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-tools"
+      ],
+      "taskCandidateIds": [
+        "task:docs/cookbook/adding-a-tool.zh.md:1",
+        "task:docs/user/develop/basic/tool.zh.md:1"
+      ],
+      "proposedTaskIds": [
+        "register-host-tool",
+        "guard-host-tool-execution"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-user-approval:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-prompt-policy.md",
+      "reason": "公开审批服务提供工具执行时的人工决策；request 限 open turn，只有 allowed-once 授权。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-user-approval:.:ApprovalService",
+          "symbol": "ApprovalService",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#approvalservice",
+          "retainMembers": [
+            "request",
+            "setPolicy",
+            "overrideOf"
+          ],
+          "source": "packages/interaction/user-approval/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-user-approval:.:ApprovalRequest",
+          "symbol": "ApprovalRequest",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#approvalrequest",
+          "retainMembers": [
+            "agent",
+            "toolName",
+            "callId",
+            "reason",
+            "signal"
+          ],
+          "source": "packages/interaction/user-approval/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-user-approval:.:ApprovalOutcome",
+          "symbol": "ApprovalOutcome",
+          "decision": "included",
+          "ownerSection": "references/api-host-prompt-policy.md#approvaloutcome",
+          "retainMembers": [],
+          "source": "packages/interaction/user-approval/lib/types/types.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/interaction/user-approval/package.json",
+        "packages/interaction/user-approval/src/index.ts",
+        "packages/interaction/user-approval/src/types.ts",
+        "packages/interaction/user-approval/README.zh.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-user-approval"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "guard-host-tool-execution"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-user-questions:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-user-questions.md",
+      "reason": "公开结构化问答 Service 和 waterfall answerer；Agent root 与超时续答是核心边界。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-user-questions:.:UserQuestionService",
+          "symbol": "UserQuestionService",
+          "decision": "included",
+          "ownerSection": "references/api-host-user-questions.md#userquestionservice",
+          "retainMembers": [
+            "answer",
+            "ask",
+            "askTimed",
+            "attachWait"
+          ],
+          "source": "packages/interaction/user-questions/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-user-questions:.:AskUserQuestionRequest",
+          "symbol": "AskUserQuestionRequest",
+          "decision": "included",
+          "ownerSection": "references/api-host-user-questions.md#askuserquestionrequest",
+          "retainMembers": [],
+          "source": "packages/interaction/user-questions/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-user-questions:.:AskUserQuestionAnswer",
+          "symbol": "AskUserQuestionAnswer",
+          "decision": "included",
+          "ownerSection": "references/api-host-user-questions.md#askuserquestionanswer",
+          "retainMembers": [
+            "answers"
+          ],
+          "source": "packages/interaction/user-questions/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-user-questions:.:TimedUserQuestionResult",
+          "symbol": "TimedUserQuestionResult",
+          "decision": "included",
+          "ownerSection": "references/api-host-user-questions.md#timeduserquestionresult",
+          "retainMembers": [],
+          "source": "packages/interaction/user-questions/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/interaction/user-questions/package.json",
+        "packages/interaction/user-questions/src/index.ts",
+        "packages/interaction/user-questions/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-user-questions"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "ask-user-question"
+      ]
+    },
+    {
+      "apiEntryCandidate": "export:@deepseek-ai/dsh-workflow:.",
+      "decision": "included",
+      "topic": "host-core",
+      "owner": "references/api-host-workflow.md",
+      "reason": "抽象 WorkflowEngine 允许实现脚本编排；程序化 start/run 生命周期供插件调用。",
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowEngine",
+          "symbol": "WorkflowEngine",
+          "decision": "included",
+          "ownerSection": "references/api-host-workflow.md#workflowengine",
+          "retainMembers": [
+            "start"
+          ],
+          "source": "packages/workflow/workflow/lib/types/index.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowStartRequest",
+          "symbol": "WorkflowStartRequest",
+          "decision": "included",
+          "ownerSection": "references/api-host-workflow.md#workflowstartrequest",
+          "retainMembers": [
+            "args",
+            "maxTotalAgents",
+            "meta",
+            "parent",
+            "script",
+            "signal",
+            "subagentProvider"
+          ],
+          "source": "packages/workflow/workflow/lib/types/runtime-types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowRun",
+          "symbol": "WorkflowRun",
+          "decision": "included",
+          "ownerSection": "references/api-host-workflow.md#workflowrun",
+          "retainMembers": [
+            "cancel",
+            "dispose",
+            "id",
+            "meta",
+            "result"
+          ],
+          "source": "packages/workflow/workflow/lib/types/runtime-types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowResult",
+          "symbol": "WorkflowResult",
+          "decision": "included",
+          "ownerSection": "references/api-host-workflow.md#workflowresult",
+          "retainMembers": [
+            "agentsStarted",
+            "error",
+            "stopReason",
+            "value"
+          ],
+          "source": "packages/workflow/workflow/lib/types/types.d.ts"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workflow:.:WorkflowError",
+          "symbol": "WorkflowError",
+          "decision": "included",
+          "ownerSection": "references/api-host-workflow.md#workflowerror",
+          "retainMembers": [
+            "fatal"
+          ],
+          "source": "packages/workflow/workflow/lib/types/index.d.ts"
+        }
+      ],
+      "evidencePaths": [
+        "packages/workflow/workflow/package.json",
+        "packages/workflow/workflow/src/index.ts",
+        "packages/workflow/workflow/README.md"
+      ],
+      "capabilityCandidateIds": [
+        "package:@deepseek-ai/dsh-workflow"
+      ],
+      "taskCandidateIds": [],
+      "proposedTaskIds": [
+        "run-host-workflow"
+      ]
+    }
+  ],
+  "relatedButSeparate": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:.",
+      "decision": "defer-to-infra-runtime",
+      "reason": "动态定义与检查器属于独立 Host/Client 组合，不能与基础 Context 或常规模型工具合并。",
+      "evidencePaths": [
+        "packages/extensions/cordis-host-runner/src/index.ts",
+        "packages/extensions/cordis-host-runner/README.md"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-tool-todo:.",
+      "decision": "example-evidence-only",
+      "reason": "内置工具实现用于核查注册、Session 事实与 Client 配套；其业务功能不归基础工具契约 owner。",
+      "evidencePaths": [
+        "packages/todo/tool-todo/src/index.ts"
+      ]
+    }
+  ],
+  "notYetAudited": [
+    "Host 其他包与子路径逐成员仍待分组核查",
+    "Agent 事件和 LLM StreamChunk 的全量联合分支未在本批展开",
+    "独立消费包与 Web/Remote 行为未运行验证"
+  ],
+  "relatedEntryAudit": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-agent-loop:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/core/agent-loop/package.json",
+        "packages/core/agent-loop/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-agent:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/core/agent/package.json",
+        "packages/core/agent/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-agent:./types",
+      "status": "type-face-pending",
+      "reason": "包根 index.ts 明确重导出 ./types.ts；此子路径供较窄的 type-only/跨侧导入，核心对象事实归包根权威小节，独立 Client 声明编译仍需验证。",
+      "evidencePaths": [
+        "packages/core/agent/package.json",
+        "packages/core/agent/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-agent:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-authorization:./invariant",
+      "status": "separate-owner",
+      "reason": "只导出此包运行时不变式安装器，普通插件注册 AuthorizationFlow 不需导入；由 infra-runtime 不变式主题裁决。",
+      "evidencePaths": [
+        "packages/credentials/authorization/package.json",
+        "packages/credentials/authorization/src/index.ts",
+        "packages/credentials/authorization/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-authorization:./types",
+      "status": "root-reexport",
+      "reason": "包根 index.ts 明确重导出此处授权类型；对象事实由包根小节维护。子路径仅是 type-only 导入面，跨侧编译另行验证。",
+      "evidencePaths": [
+        "packages/credentials/authorization/package.json",
+        "packages/credentials/authorization/src/index.ts",
+        "packages/credentials/authorization/src/types.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-authorization:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-commands:./brand",
+      "status": "identity-type-pending",
+      "reason": "包根 index.ts 明确重导出 ./brand.ts，同一 CommandId/LLM branded identity 可从根入口取得；保留子路径作为按需类型导入的别名，不另写一份业务契约。",
+      "evidencePaths": [
+        "packages/interaction/commands/package.json",
+        "packages/interaction/commands/src/index.ts"
+      ],
+      "assignedTopic": "host-core",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-commands:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-commands:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/interaction/commands/package.json",
+        "packages/interaction/commands/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-commands:./remote",
+      "status": "cross-side-pending",
+      "reason": "Typert Remote 声明面，需要对应 Host/Client 生成与调用验证，不能并入本组同进程用法。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/interaction/commands/package.json",
+        "packages/interaction/commands/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-commands:./typert",
+      "status": "cross-side-pending",
+      "reason": "Typert 生成声明面，需要目标 tag 生成前置和独立消费编译后裁决。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/interaction/commands/package.json",
+        "packages/interaction/commands/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-commands:./types",
+      "status": "type-face-pending",
+      "reason": "包根 index.ts 明确重导出 ./types.ts；此子路径供较窄的 type-only/跨侧导入，核心对象事实归包根权威小节，独立 Client 声明编译仍需验证。",
+      "evidencePaths": [
+        "packages/interaction/commands/package.json",
+        "packages/interaction/commands/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-commands:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-credentials:./invariant",
+      "status": "separate-owner",
+      "reason": "只导出此包运行时不变式安装器，普通插件消费 ctx.credentials 的注册与调用不需导入；由 infra-runtime 不变式主题裁决。",
+      "evidencePaths": [
+        "packages/credentials/credentials/package.json",
+        "packages/credentials/credentials/src/index.ts",
+        "packages/credentials/credentials/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-credentials:./types",
+      "status": "root-reexport",
+      "reason": "包根 index.ts 明确重导出此处所有凭据类型；对象事实由包根小节维护。子路径仅是 type-only 导入面，跨侧编译另行验证。",
+      "evidencePaths": [
+        "packages/credentials/credentials/package.json",
+        "packages/credentials/credentials/src/index.ts",
+        "packages/credentials/credentials/src/types.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-credentials:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./client",
+      "status": "pending-cross-side",
+      "reason": "Goal Client 投影视图与调用侧辅助入口，需独立 UI/Remote 验证。",
+      "evidencePaths": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./invariant",
+      "status": "separate-owner",
+      "reason": "只安装 Goal 日志投影和阶段转换不变式；普通 Goal consumer 不导入，归 infra-runtime。",
+      "evidencePaths": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./remote",
+      "status": "pending-cross-side",
+      "reason": "生成的 Goal Remote Client 入口，方法可见性与权限需 Typert 核查。",
+      "evidencePaths": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./typert",
+      "status": "pending-cross-side",
+      "reason": "生成的 Goal Host Remote 装配入口，需生成前置和 RPC 方法核查。",
+      "evidencePaths": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./types",
+      "status": "root-reexport",
+      "reason": "包根通过 export type * 重导出 GoalView/Ref 等类型；子路径是较窄类型面。",
+      "evidencePaths": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-goal:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker:./types",
+      "status": "root-reexport",
+      "reason": "包根 index.ts 明确重导出 DirectoryEntry 与 DirectoryListing；子路径提供 Client-safe type-only 面，Client 编译需独立核查。",
+      "evidencePaths": [
+        "packages/host/directory-picker/package.json",
+        "packages/host/directory-picker/src/index.ts",
+        "packages/host/directory-picker/src/types.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-host-directory-picker:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:./brand",
+      "status": "root-reexport",
+      "reason": "根入口重导出 JobId；此子路径提供不加载 Agent/Service 的窄导入面，独立跨侧编译仍需核验。",
+      "evidencePaths": [
+        "packages/jobs/jobs/package.json",
+        "packages/jobs/jobs/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-jobs:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:./invariant",
+      "status": "separate-owner",
+      "reason": "只提供 Job 事件时序与输出投影的运行时不变式安装器，普通 producer 不导入；归 infra-runtime。",
+      "evidencePaths": [
+        "packages/jobs/jobs/package.json",
+        "packages/jobs/jobs/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:./view",
+      "status": "pending-cross-side",
+      "reason": "JobView、JobChunk、JobKindMap 的 Client-safe 公开面，需与 Client 观察/输出 UI 独立核验；保留为待审候选。",
+      "evidencePaths": [
+        "packages/jobs/jobs/package.json",
+        "packages/jobs/jobs/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./assistant-stream",
+      "status": "root-reexport",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-llm:.",
+      "reason": "该子路径的全部公开对象都由包根 index.ts 的 export * 重导出；对象事实归 api-host-llm-message.md，窄路径仅是导入选择。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts",
+        "packages/llm/llm/src/assistant-stream.ts"
+      ],
+      "assignedTopic": "host-core",
+      "taskIds": [
+        "replay-assistant-stream"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./brand",
+      "status": "identity-type-pending",
+      "reason": "包根 index.ts 明确重导出 ./brand.ts，同一 CommandId/LLM branded identity 可从根入口取得；保留子路径作为按需类型导入的别名，不另写一份业务契约。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts"
+      ],
+      "assignedTopic": "host-core",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-llm:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./message",
+      "status": "root-reexport",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-llm:.",
+      "reason": "该子路径的全部公开对象都由包根 index.ts 的 export * 重导出；对象事实归 api-host-llm-message.md，窄路径仅是导入选择。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts",
+        "packages/llm/llm/src/message.ts"
+      ],
+      "assignedTopic": "host-core",
+      "taskIds": [
+        "replay-assistant-stream"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./remote",
+      "status": "cross-side-pending",
+      "reason": "Typert Remote 声明面，需要对应 Host/Client 生成与调用验证，不能并入本组同进程用法。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./typert",
+      "status": "cross-side-pending",
+      "reason": "Typert 生成声明面，需要目标 tag 生成前置和独立消费编译后裁决。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-llm:./types",
+      "status": "type-face-pending",
+      "reason": "包根 index.ts 明确重导出 ./types.ts；此子路径供较窄的 type-only/跨侧导入，核心对象事实归包根权威小节，独立 Client 声明编译仍需验证。",
+      "evidencePaths": [
+        "packages/llm/llm/package.json",
+        "packages/llm/llm/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-llm:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-scope:./invariant",
+      "status": "separate-owner",
+      "reason": "仅作用域事件映射运行时不变式伴生入口，普通 createScope/ScopedLayers consumer 不导入；归 infra-runtime。",
+      "evidencePaths": [
+        "packages/core/scope/package.json",
+        "packages/core/scope/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session:./fork",
+      "status": "root-reexport",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-session:.",
+      "reason": "子路径唯一 buildForkSeed 已由包根 index.ts 明确重导出；正常 fork 任务应调用 SessionStore.fork，它验证 live source/边界、设置 inheritedEventCount 并创建 child，低层 helper 仅供已验证前缀的自定义 seed。",
+      "evidencePaths": [
+        "packages/core/session/package.json",
+        "packages/core/session/src/index.ts",
+        "packages/core/session/src/fork.ts"
+      ],
+      "assignedTopic": "host-core",
+      "taskIds": [
+        "fork-host-session"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/core/session/package.json",
+        "packages/core/session/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session:./surface",
+      "status": "root-contract-plus-low-level-helpers",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-session:.",
+      "reason": "插件真正使用的 SessionMessageProjection、foldSurface 等 11 个对象由包根 index.ts 重导出并在 api-host-session-surface.md 归属；本子路径额外导出 3 个 Session 内部增量管理/校验辅助，不是注册插件投影的推荐入口。",
+      "extraSymbolsExcluded": [
+        {
+          "symbol": "SurfaceManager",
+          "reason": "Session 内部持有日志与 generation 的可变增量折叠器，直接实例化需自行管理同步与失效；插件用 SessionStore.registerMessageProjection/foldSurface。"
+        },
+        {
+          "symbol": "validateSessionEventData",
+          "reason": "Session append 内部 payload 校验辅助，不替代 SessionStore/Session 的公共写路径。"
+        },
+        {
+          "symbol": "validateSurfaceMetadata",
+          "reason": "Session append 内部 surface marker 校验辅助，不替代 Session 完整事件契约。"
+        }
+      ],
+      "evidencePaths": [
+        "packages/core/session/package.json",
+        "packages/core/session/src/index.ts",
+        "packages/core/session/src/surface.ts"
+      ],
+      "assignedTopic": "host-core",
+      "taskIds": [
+        "register-session-message-projection"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session:./types",
+      "status": "type-face-pending",
+      "reason": "包根 index.ts 明确重导出 ./types.ts；此子路径供较窄的 type-only/跨侧导入，核心对象事实归包根权威小节，独立 Client 声明编译仍需验证。",
+      "evidencePaths": [
+        "packages/core/session/package.json",
+        "packages/core/session/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-session:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subagent:./client",
+      "status": "client-owned",
+      "decision": "merged",
+      "mergedInto": "client-web topic: references/api-client-subagent.md",
+      "reason": "type-only Client 子路径有独立 Address、catalog/projection、prompt/interrupt 类型，供 ui-workspace、ui-subagent、api-session-controller/client 消费；Client 组已另立权威页，不并入 Host provider。",
+      "evidencePaths": [
+        "packages/subagent/subagent/package.json",
+        "packages/subagent/subagent/src/client.ts",
+        "packages/client/ui-subagent/src/index.ts"
+      ],
+      "assignedTopic": "client-web",
+      "taskIds": [
+        "client-subagent-navigation"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subagent:./internal",
+      "status": "separate-owner",
+      "reason": "显式 internal 入口为 Host 适配器特殊标记与 Queue/Steer 内部控制，不是第三方 provider 注册 API。",
+      "evidencePaths": [
+        "packages/subagent/subagent/package.json",
+        "packages/subagent/subagent/src/index.ts"
+      ],
+      "assignedTopic": "host-core",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subagent:./invariant",
+      "status": "separate-owner",
+      "reason": "只提供委派日志与生命周期的运行时不变式安装器，普通 provider 不导入；归 infra-runtime。",
+      "evidencePaths": [
+        "packages/subagent/subagent/package.json",
+        "packages/subagent/subagent/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subagent:./remote",
+      "status": "pending-cross-side",
+      "reason": "生成的 Remote Client 面必须验证 Typert 声明和方法，不能由 Host root 导出推断。",
+      "evidencePaths": [
+        "packages/subagent/subagent/package.json",
+        "packages/subagent/subagent/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subagent:./typert",
+      "status": "pending-cross-side",
+      "reason": "生成的 Host Typert 装配面，需独立生成前置和 RPC 签名核验。",
+      "evidencePaths": [
+        "packages/subagent/subagent/package.json",
+        "packages/subagent/subagent/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-system-prompt:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/core/system-prompt/package.json",
+        "packages/core/system-prompt/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-tools:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/core/tools/package.json",
+        "packages/core/tools/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-tools:./presentation",
+      "status": "client-ui-pending",
+      "reason": "展示意图类型给消费 UI，需与 Client 卡片注册/回放组合核查。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/core/tools/package.json",
+        "packages/core/tools/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-tools:./types",
+      "status": "type-face-pending",
+      "reason": "公开的 type-only 消费面；需核查其相对包根的导出差集和 Client 编译侧，不能因无运行时代码排除。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/core/tools/package.json",
+        "packages/core/tools/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-approval:./invariant",
+      "status": "separate-owner",
+      "reason": "此子路径只导出包级 InvariantInstaller/运行断言，目标包的普通插件注册、调用、卸载不导入它；运行时不变式组合由独立 infra-runtime 任务拥有。",
+      "evidencePaths": [
+        "packages/interaction/user-approval/package.json",
+        "packages/interaction/user-approval/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-approval:./types",
+      "status": "type-face-pending",
+      "reason": "公开的 type-only 消费面；需核查其相对包根的导出差集和 Client 编译侧，不能因无运行时代码排除。 该候选保留在共享待裁决队列，当前不写入 excluded。",
+      "evidencePaths": [
+        "packages/interaction/user-approval/package.json",
+        "packages/interaction/user-approval/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-questions:./remote",
+      "status": "pending-cross-side",
+      "reason": "生成的 Client Remote 入口含续答控制，需 UI 与 Typert 联调。",
+      "evidencePaths": [
+        "packages/interaction/user-questions/package.json",
+        "packages/interaction/user-questions/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-questions:./typert",
+      "status": "pending-cross-side",
+      "reason": "生成的 Host Remote 装配面，需方法级签名与生成版本核验。",
+      "evidencePaths": [
+        "packages/interaction/user-questions/package.json",
+        "packages/interaction/user-questions/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "pending"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-questions:./types",
+      "status": "root-reexport",
+      "reason": "包根明确重导出问题/答案类型；子路径提供 Client-safe 类型面，跨侧编译另查。",
+      "evidencePaths": [
+        "packages/interaction/user-questions/package.json",
+        "packages/interaction/user-questions/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-user-questions:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workflow:./invariant",
+      "status": "separate-owner",
+      "reason": "只安装 workflow/start/end 等事件配对不变式；普通 workflow consumer 不导入，归 infra-runtime。",
+      "evidencePaths": [
+        "packages/workflow/workflow/package.json",
+        "packages/workflow/workflow/src/invariant.ts"
+      ],
+      "assignedTopic": "infra-runtime",
+      "decision": "excluded"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workflow:./types",
+      "status": "root-reexport",
+      "reason": "包根明确重导出 WorkflowMeta/Result 等公共类型；子路径可供较窄 type-only 消费，事实归包根。",
+      "evidencePaths": [
+        "packages/workflow/workflow/package.json",
+        "packages/workflow/workflow/src/index.ts"
+      ],
+      "assignedTopic": "cross-side",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-workflow:."
+    }
+  ]
+}

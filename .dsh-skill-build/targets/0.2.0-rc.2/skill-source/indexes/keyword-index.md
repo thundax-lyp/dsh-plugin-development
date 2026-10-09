@@ -1,8 +1,0 @@
-# 关键词索引
-
-| 关键词                                                                                                                                                  | 归属                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Agent、Session、SystemPrompt、ToolRuntime、LLM、command、approval、goal、job、Skill、subagent、workflow                                                 | [Host/Core](api-host-core.md)                                                                                                 |
-| dsh.client、Client module、slot、input action、input activity、bundle activation、store、Remote、Typert、ConfigForm、settings                           | [Client/Web](api-client-web.md)                                                                                               |
-| Cordis Service、provider、package manifest、bundle、Profile、attachment、credential、filesystem、shell、sandbox、storage、MCP、LSP、PTC、route、webhook | [基础设施](api-infra-runtime.md)                                                                                              |
-| 精确签名与选定成员                                                                                                                                      | [Host 对象](api-host-core-surface.md)、[Client 对象](api-client-web-surface.md)、[基础设施对象](api-infra-runtime-surface.md) |

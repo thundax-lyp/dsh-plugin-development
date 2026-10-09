@@ -1,0 +1,1566 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0-rc.2",
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "topic": "infra-integration",
+  "entries": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-web:.",
+      "decision": "included",
+      "owner": "api-infra-provider-web.md",
+      "task": "register-web-provider",
+      "evidence": [
+        "packages/web/web/package.json",
+        "packages/web/web/lib/types/index.d.ts",
+        "packages/web/web/lib/types/types.d.ts",
+        "packages/web/web/src/index.ts",
+        "packages/web/web/src/types.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "WebRuntime",
+          "members": [
+            "registerSearchProvider",
+            "registerFetchProvider",
+            "search",
+            "fetch"
+          ]
+        },
+        {
+          "symbol": "WebSearchProvider",
+          "members": [
+            "id",
+            "available",
+            "search"
+          ]
+        },
+        {
+          "symbol": "WebFetchProvider",
+          "members": [
+            "id",
+            "available",
+            "fetch"
+          ]
+        },
+        {
+          "symbol": "WebRuntimeConfig",
+          "members": [
+            "searchProvider",
+            "fetchProvider"
+          ]
+        },
+        {
+          "symbol": "WebSearchRequest",
+          "members": [
+            "query",
+            "maxResults"
+          ]
+        },
+        {
+          "symbol": "WebSearchResult",
+          "members": [
+            "content",
+            "sources",
+            "truncated"
+          ]
+        },
+        {
+          "symbol": "WebFetchRequest",
+          "members": [
+            "url"
+          ]
+        },
+        {
+          "symbol": "WebFetchResult",
+          "members": [
+            "url",
+            "statusCode",
+            "body",
+            "truncated"
+          ]
+        }
+      ],
+      "reason": "公开 Service 提供搜索/抓取 provider 注册和选择；已有内置 provider 与工具消费，插件作者可直接实现并注册。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-lsp:.",
+      "decision": "included",
+      "owner": "api-infra-provider-lsp.md",
+      "task": "register-lsp-provider",
+      "evidence": [
+        "packages/lsp/lsp/package.json",
+        "packages/lsp/lsp/lib/types/index.d.ts",
+        "packages/lsp/lsp/lib/types/types.d.ts",
+        "packages/lsp/lsp/src/index.ts",
+        "packages/lsp/lsp/src/types.ts",
+        "packages/lsp/lsp-stdio/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "Lsp",
+          "members": [
+            "registerProvider",
+            "query"
+          ]
+        },
+        {
+          "symbol": "LspProvider",
+          "members": [
+            "id",
+            "extensionToLanguage",
+            "query"
+          ]
+        },
+        {
+          "symbol": "LspProviderId",
+          "members": []
+        },
+        {
+          "symbol": "LspQueryRequest",
+          "members": [
+            "operation",
+            "filePath",
+            "position",
+            "workspaceRoot"
+          ]
+        },
+        {
+          "symbol": "LspProviderQuery",
+          "members": [
+            "languageId"
+          ]
+        },
+        {
+          "symbol": "LspQueryResult",
+          "members": [
+            "kind"
+          ]
+        }
+      ],
+      "reason": "公开注册表按 id 与扩展名路由，stdio 实现证明真实装载和消费；可实现自定义 Host 查询后端。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-skill:.",
+      "owner": "api-infra-provider-skill.md",
+      "task": "register-skill-provider",
+      "evidence": [
+        "packages/skill/skill/package.json",
+        "packages/skill/skill/lib/types/index.d.ts",
+        "packages/skill/skill/src/index.ts",
+        "packages/skill/skill-badge/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "SkillRegistry",
+          "members": [
+            "registerProvider",
+            "register",
+            "list",
+            "snapshot",
+            "get"
+          ]
+        },
+        {
+          "symbol": "SkillProvider",
+          "members": [
+            "name",
+            "list",
+            "get"
+          ]
+        },
+        {
+          "symbol": "SkillCandidate",
+          "members": [
+            "name",
+            "description",
+            "invocation",
+            "source",
+            "provider",
+            "rank",
+            "locator"
+          ]
+        },
+        {
+          "symbol": "SkillDefinition",
+          "members": [
+            "content",
+            "name",
+            "provider"
+          ]
+        }
+      ],
+      "reason": "公开注册表支持插件按 scope 贡献并按需加载 Skill；内置 badge/filesystem provider 证实组合。",
+      "decision": "included",
+      "topic": "infra-integration"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-mcp-resources:.",
+      "owner": "api-infra-provider-mcp-resources.md",
+      "task": "register-mcp-resource-provider",
+      "evidence": [
+        "packages/mcp/mcp-resources/package.json",
+        "packages/mcp/mcp-resources/lib/types/index.d.ts",
+        "packages/mcp/mcp-resources/src/index.ts",
+        "packages/mcp/mcp-resources/src/tools.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "McpResourceRuntime",
+          "members": [
+            "register"
+          ]
+        },
+        {
+          "symbol": "McpResourceProvider",
+          "members": [
+            "request"
+          ]
+        },
+        {
+          "symbol": "McpResourceRequest",
+          "members": [
+            "method"
+          ]
+        }
+      ],
+      "reason": "公开 scoped register 将独立资源 provider 接到共享模型工具，mcp-client 用该入口挂载真实服务器。",
+      "decision": "included",
+      "topic": "infra-integration"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-fs:.",
+      "owner": "api-infra-provider-fs.md",
+      "task": "consume-filesystem-service",
+      "evidence": [
+        "packages/fs/fs/package.json",
+        "packages/fs/fs/lib/types/index.d.ts",
+        "packages/fs/fs/lib/types/types.d.ts",
+        "packages/fs/fs/src/index.ts",
+        "packages/fs/fs-local/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "FileSystem",
+          "members": [
+            "resolve",
+            "processPath",
+            "processPathFromHostPath",
+            "fileUrl",
+            "contains",
+            "stat",
+            "lstat",
+            "readText",
+            "streamText",
+            "readBytes",
+            "readByteRange",
+            "listDir",
+            "writeText",
+            "editText",
+            "watch",
+            "sandboxMode"
+          ]
+        },
+        {
+          "symbol": "FsTarget",
+          "members": [
+            "targetKey",
+            "displayPath"
+          ]
+        },
+        {
+          "symbol": "FsInfo",
+          "members": [
+            "version",
+            "type",
+            "size"
+          ]
+        },
+        {
+          "symbol": "FsError",
+          "members": [
+            "code"
+          ]
+        }
+      ],
+      "reason": "公开 FileSystem Service 可供插件消费或实现；本批完整记录对象契约，并给已装载后端的只读消费示例；第三方后端实现仍需全成员行为验证。",
+      "decision": "included",
+      "topic": "infra-integration"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-execution.md",
+      "task": "execute-confined-command",
+      "evidence": [
+        "packages/subprocess/subprocess/package.json",
+        "packages/subprocess/subprocess/lib/types/index.d.ts",
+        "packages/subprocess/subprocess/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "SubprocessRuntime",
+          "members": [
+            "resolveExecutable",
+            "terminalEnvironment",
+            "spawn",
+            "spawnTerminal"
+          ]
+        },
+        {
+          "symbol": "SubprocessHandle",
+          "members": [
+            "done",
+            "terminate",
+            "waitForExit",
+            "collected"
+          ]
+        }
+      ],
+      "reason": "可实现的受管理进程 Service；同执行世界和进程范围生命周期是公共契约。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-execution.md",
+      "task": "execute-confined-command",
+      "evidence": [
+        "packages/sandbox/sandbox/package.json",
+        "packages/sandbox/sandbox/lib/types/index.d.ts",
+        "packages/sandbox/sandbox/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "SandboxProvider",
+          "members": [
+            "confine"
+          ]
+        },
+        {
+          "symbol": "ConfinedArgv",
+          "members": [
+            "argv",
+            "enforcement",
+            "denialSignatures",
+            "runnerFailureRules"
+          ]
+        }
+      ],
+      "reason": "可替换隔离后端，必须失败关闭；OS 隔离强度单独标未验证。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-shell:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-execution.md",
+      "task": "execute-confined-command",
+      "evidence": [
+        "packages/shell/shell/package.json",
+        "packages/shell/shell/lib/types/index.d.ts",
+        "packages/shell/shell/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "ShellExecutor",
+          "members": [
+            "sandboxMode",
+            "resolve",
+            "execute"
+          ]
+        },
+        {
+          "symbol": "ShellExecution",
+          "members": [
+            "result",
+            "done",
+            "readOutput",
+            "kill"
+          ]
+        }
+      ],
+      "reason": "公开命令 executor Service；消费任务可经现成受限后端运行。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-terminal:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-terminal.md",
+      "task": "use-agent-pty",
+      "evidence": [
+        "packages/terminal/terminal/package.json",
+        "packages/terminal/terminal/lib/types/index.d.ts",
+        "packages/terminal/terminal/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "TerminalSessionService",
+          "members": [
+            "registerBackend",
+            "listBackends",
+            "spawn",
+            "startSend",
+            "read",
+            "signal",
+            "kill",
+            "list"
+          ]
+        },
+        {
+          "symbol": "TerminalBackend",
+          "members": [
+            "type",
+            "spawn"
+          ]
+        },
+        {
+          "symbol": "TerminalBackendSession",
+          "members": [
+            "motd",
+            "pid",
+            "startSend",
+            "read",
+            "signal",
+            "status",
+            "close"
+          ]
+        }
+      ],
+      "reason": "公开 PTY backend registry 和 owner-scoped 会话操作，现有 terminal-bash 为具体实现。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-spill:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-artifacts.md",
+      "task": "save-host-artifacts",
+      "evidence": [
+        "packages/spill/spill/package.json",
+        "packages/spill/spill/lib/types/index.d.ts",
+        "packages/spill/spill/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "SpillStore",
+          "members": [
+            "saveText"
+          ]
+        },
+        {
+          "symbol": "SaveTextSpill",
+          "members": [
+            "owner",
+            "source",
+            "suggestedName",
+            "content"
+          ]
+        },
+        {
+          "symbol": "SpillRef",
+          "members": [
+            "locator",
+            "bytes",
+            "retrievalHint"
+          ]
+        }
+      ],
+      "reason": "公开大文本持久化抽象，消费方可按 session 所有权保存完整内容。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-attachment:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-artifacts.md",
+      "task": "save-host-artifacts",
+      "evidence": [
+        "packages/attachment/attachment/package.json",
+        "packages/attachment/attachment/lib/types/index.d.ts",
+        "packages/attachment/attachment/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "AttachmentStore",
+          "members": [
+            "imageLimits",
+            "validateImage",
+            "saveImages",
+            "admitPromptContent",
+            "admitEncodedFile",
+            "saveImage",
+            "readImage",
+            "imageHostPath",
+            "saveFile",
+            "saveFileStream",
+            "readFileStream",
+            "fileHostPath",
+            "readImageRequest"
+          ]
+        }
+      ],
+      "reason": "公开不可变附件 Service，消费方可保存并读取引用，后端耐久和完整性另验。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-ptc.md",
+      "task": "run-ptc-program",
+      "evidence": [
+        "packages/ptc-runtime/ptc-runtime/package.json",
+        "packages/ptc-runtime/ptc-runtime/lib/types/index.d.ts",
+        "packages/ptc-runtime/ptc-runtime/lib/types/types.d.ts",
+        "packages/ptc-runtime/ptc-runtime/src/index.ts",
+        "packages/ptc-runtime/ptc-runtime-node/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "PtcRuntime",
+          "members": [
+            "language",
+            "isolation",
+            "executionInstructions",
+            "sandboxMode",
+            "timeout",
+            "resolve",
+            "run"
+          ]
+        },
+        {
+          "symbol": "PtcRunRequest",
+          "members": [
+            "program",
+            "bindings",
+            "cwd",
+            "timeoutMs",
+            "sandboxPolicy",
+            "signal"
+          ]
+        },
+        {
+          "symbol": "PtcBindingNamespace",
+          "members": [
+            "global",
+            "functions",
+            "errorClass"
+          ]
+        },
+        {
+          "symbol": "PtcRunResult",
+          "members": [
+            "value",
+            "logs",
+            "error",
+            "sandbox"
+          ]
+        }
+      ],
+      "reason": "公开抽象 PTC runtime；Node 后端发布并有 fs/subprocess/sandbox 注入，可在插件中提供 JSON binding 后运行。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-speech.md",
+      "task": "register-speech-provider",
+      "evidence": [
+        "packages/experimental/speech-to-text/package.json",
+        "packages/experimental/speech-to-text/lib/types/index.d.ts",
+        "packages/experimental/speech-to-text/src/index.ts",
+        "packages/experimental/speech-to-text/src/types.ts",
+        "packages/experimental/speech-to-text-sensevoice/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "default",
+          "members": [
+            "register",
+            "listProviders",
+            "follow",
+            "snapshot",
+            "configure",
+            "prepare",
+            "cancelPreparation",
+            "resolve",
+            "transcribe"
+          ],
+          "signature": "SpeechToText"
+        },
+        {
+          "symbol": "SpeechProvider",
+          "members": [
+            "info",
+            "preparation",
+            "transcribe"
+          ]
+        },
+        {
+          "symbol": "Transcript",
+          "members": [
+            "text",
+            "audioSeconds",
+            "inferenceSeconds"
+          ]
+        }
+      ],
+      "reason": "虽为实验命名，但目标 tag 是非 private 的公开包，有完整 provider 注册/选择/转写 API 与 SenseVoice 实现。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-browser-use:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-browser-use.md",
+      "task": "mount-browser-use-provider",
+      "evidence": [
+        "packages/browser-use/browser-use/package.json",
+        "packages/browser-use/browser-use/lib/types/index.d.ts",
+        "packages/browser-use/browser-use/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "BrowserUseRegistry",
+          "members": [
+            "providerName",
+            "register"
+          ]
+        }
+      ],
+      "reason": "公开独占 provider 注册槽；具体实验后端用该槽并自己注册工具，抽象槽生命周期可独立文档化。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-browser-use:./brand",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-browser-use.md",
+      "task": "mount-browser-use-provider",
+      "evidence": [
+        "packages/browser-use/browser-use/package.json",
+        "packages/browser-use/browser-use/lib/types/brand.d.ts",
+        "packages/browser-use/browser-use/src/brand.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "BrowserUseProviderName",
+          "members": []
+        }
+      ],
+      "reason": "公开品牌工厂是 register 的必需身份输入，归同一独占槽任务。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-computer-use:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-computer-use.md",
+      "task": "mount-computer-use-provider",
+      "evidence": [
+        "packages/computer-use/computer-use/package.json",
+        "packages/computer-use/computer-use/lib/types/index.d.ts",
+        "packages/computer-use/computer-use/src/index.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "ComputerUseRegistry",
+          "members": [
+            "providerName",
+            "register"
+          ]
+        }
+      ],
+      "reason": "公开独占 provider 注册槽；具体实验后端用该槽并自己注册工具，抽象槽生命周期可独立文档化。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-computer-use:./brand",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-computer-use.md",
+      "task": "mount-computer-use-provider",
+      "evidence": [
+        "packages/computer-use/computer-use/package.json",
+        "packages/computer-use/computer-use/lib/types/brand.d.ts",
+        "packages/computer-use/computer-use/src/brand.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "ComputerUseProviderName",
+          "members": []
+        }
+      ],
+      "reason": "公开品牌工厂是 register 的必需身份输入，归同一独占槽任务。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-browser-use-runtime:.",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-browser-use.md",
+      "task": "mount-browser-use-provider",
+      "evidence": [
+        "packages/experimental/browser-use-runtime/package.json",
+        "packages/experimental/browser-use-runtime/lib/types/index.d.ts",
+        "packages/experimental/browser-use-runtime/src/index.ts",
+        "packages/experimental/browser-use-stagehand-native/src/index.ts",
+        "packages/experimental/browser-use-runtime/tests/resources.spec.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "OwnedSessionResource",
+          "members": [
+            "value",
+            "close"
+          ]
+        },
+        {
+          "symbol": "SessionResourceOptions",
+          "members": [
+            "label",
+            "exclusive",
+            "open"
+          ]
+        },
+        {
+          "symbol": "SessionResources",
+          "members": [
+            "available",
+            "get",
+            "run",
+            "dispose"
+          ]
+        }
+      ],
+      "reason": "公开根入口提供每个活跃 Agent 的浏览器资源获取、串行调用与静默清理；Stagehand 具体 provider 直接复用，插件作者可用于自定义浏览器后端。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-browser-use-runtime:./mcp",
+      "decision": "included",
+      "topic": "infra-integration",
+      "owner": "api-infra-provider-browser-use.md",
+      "task": "mount-browser-use-provider",
+      "evidence": [
+        "packages/experimental/browser-use-runtime/package.json",
+        "packages/experimental/browser-use-runtime/lib/types/mcp.d.ts",
+        "packages/experimental/browser-use-runtime/src/mcp.ts",
+        "packages/experimental/browser-use-playwright-mcp/src/index.ts",
+        "packages/experimental/browser-use-chrome-devtools-mcp/src/index.ts",
+        "packages/experimental/browser-use-runtime/tests/mcp.spec.ts"
+      ],
+      "objects": [
+        {
+          "symbol": "BrowserMcpLaunchConfig",
+          "members": [
+            "mode",
+            "headless",
+            "executablePath",
+            "toolCallTimeoutMs"
+          ]
+        },
+        {
+          "symbol": "BrowserMcpAttachConfig",
+          "members": [
+            "mode",
+            "endpoint",
+            "toolCallTimeoutMs"
+          ]
+        },
+        {
+          "symbol": "BrowserMcpConfig",
+          "members": [
+            "mode",
+            "toolCallTimeoutMs"
+          ]
+        },
+        {
+          "symbol": "SessionMcpOptions",
+          "members": [
+            "name",
+            "exclusive",
+            "command",
+            "args",
+            "env",
+            "toolCallTimeoutMs"
+          ]
+        },
+        {
+          "symbol": "validateBrowserMcpConfig",
+          "members": []
+        },
+        {
+          "symbol": "mountSessionMcp",
+          "members": []
+        }
+      ],
+      "reason": "公开 ./mcp 子路径供 Playwright 与 Chrome DevTools 具体 provider 复用配置验证和每 Session MCP server 装载/清理，可直接用于同类插件。"
+    }
+  ],
+  "capabilities": [
+    {
+      "candidate": "package:@deepseek-ai/dsh-web",
+      "decision": "included",
+      "task": "register-web-provider",
+      "evidence": "packages/web/web/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-lsp",
+      "decision": "included",
+      "task": "register-lsp-provider",
+      "evidence": "packages/lsp/lsp/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-web-fetch-http",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-web",
+      "reason": "具体 HTTP 抓取 provider，公共契约归 WebRuntime。",
+      "evidence": "packages/web/web-fetch-http/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-web-search-deepseek",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-web",
+      "reason": "具体搜索 provider，公共契约归 WebRuntime。",
+      "evidence": "packages/web/web-search-deepseek/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-web-search-exa",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-web",
+      "reason": "具体搜索 provider，公共契约归 WebRuntime。",
+      "evidence": "packages/web/web-search-exa/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-web-search-perplexity",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-web",
+      "reason": "具体搜索 provider，公共契约归 WebRuntime。",
+      "evidence": "packages/web/web-search-perplexity/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-lsp-stdio",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-lsp",
+      "reason": "公开的 stdio 后端实现；自定义 provider 的注册契约归 Lsp。",
+      "evidence": "packages/lsp/lsp-stdio/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-skill",
+      "decision": "included",
+      "task": "register-skill-provider",
+      "evidence": "packages/skill/skill/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-mcp-resources",
+      "decision": "included",
+      "task": "register-mcp-resource-provider",
+      "evidence": "packages/mcp/mcp-resources/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-fs",
+      "decision": "included",
+      "task": "consume-filesystem-service",
+      "evidence": "packages/fs/fs/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-subprocess",
+      "decision": "included",
+      "task": "execute-confined-command",
+      "evidence": "packages/subprocess/subprocess/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-sandbox",
+      "decision": "included",
+      "task": "execute-confined-command",
+      "evidence": "packages/sandbox/sandbox/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-shell",
+      "decision": "included",
+      "task": "execute-confined-command",
+      "evidence": "packages/shell/shell/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-terminal",
+      "decision": "included",
+      "task": "use-agent-pty",
+      "evidence": "packages/terminal/terminal/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-spill",
+      "decision": "included",
+      "task": "save-host-artifacts",
+      "evidence": "packages/spill/spill/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-attachment",
+      "decision": "included",
+      "task": "save-host-artifacts",
+      "evidence": "packages/attachment/attachment/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-ptc-runtime",
+      "decision": "included",
+      "task": "run-ptc-program",
+      "evidence": "packages/ptc-runtime/ptc-runtime/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-speech-to-text",
+      "decision": "included",
+      "task": "register-speech-provider",
+      "evidence": "packages/experimental/speech-to-text/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-ptc-runtime-node",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-ptc-runtime",
+      "reason": "已发布的 TypeScript/Node 具体后端，基础契约归 PtcRuntime。",
+      "evidence": "packages/ptc-runtime/ptc-runtime-node/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-experimental-speech-to-text",
+      "reason": "本地具体 recognizer，需要独立模型准备与真实音频验证。",
+      "evidence": "packages/experimental/speech-to-text-sensevoice/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-api-speech-to-text",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-experimental-speech-to-text",
+      "reason": "浏览器侧调用适配器，转写注册与选择契约归 SpeechToText。",
+      "evidence": "packages/experimental/api-speech-to-text/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-browser-use",
+      "decision": "included",
+      "task": "mount-browser-use-provider",
+      "evidence": "packages/browser-use/browser-use/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-computer-use",
+      "decision": "included",
+      "task": "mount-computer-use-provider",
+      "evidence": "packages/computer-use/computer-use/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-browser-use",
+      "reason": "目标版本具体实验 provider；独占注册契约归基础 registry，工具/平台行为须实机验证。",
+      "evidence": "packages/experimental/browser-use-playwright-mcp/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-browser-use",
+      "reason": "目标版本具体实验 provider；独占注册契约归基础 registry，工具/平台行为须实机验证。",
+      "evidence": "packages/experimental/browser-use-chrome-devtools-mcp/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-browser-use-stagehand-native",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-browser-use",
+      "reason": "目标版本具体实验 provider；独占注册契约归基础 registry，工具/平台行为须实机验证。",
+      "evidence": "packages/experimental/browser-use-stagehand-native/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-computer-use",
+      "reason": "目标版本具体实验 provider；独占注册契约归基础 registry，工具/平台行为须实机验证。",
+      "evidence": "packages/experimental/computer-use-cua-driver-mcp/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-native",
+      "decision": "merged",
+      "into": "package:@deepseek-ai/dsh-computer-use",
+      "reason": "目标版本具体实验 provider；独占注册契约归基础 registry，工具/平台行为须实机验证。",
+      "evidence": "packages/experimental/computer-use-cua-driver-native/package.json"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-browser-use-runtime",
+      "decision": "included",
+      "task": "mount-browser-use-provider",
+      "evidence": "packages/experimental/browser-use-runtime/package.json",
+      "reason": "公开可复用的 Session 浏览器资源与 MCP 组合助手，已在具体 provider 中使用。"
+    }
+  ],
+  "tasks": [
+    {
+      "candidate": "task:packages/web/web/README.zh.md:34",
+      "task": "register-web-provider",
+      "evidence": "packages/web/web/README.zh.md"
+    },
+    {
+      "candidate": "task:packages/skill/skill/README.zh.md:34",
+      "task": "register-skill-provider",
+      "evidence": "packages/skill/skill/README.zh.md"
+    },
+    {
+      "candidate": "task:packages/mcp/mcp-resources/README.zh.md:30",
+      "task": "register-mcp-resource-provider",
+      "evidence": "packages/mcp/mcp-resources/README.zh.md"
+    }
+  ],
+  "files": [
+    {
+      "source": "api-guardrails/infra-provider-web.md",
+      "output": "references/api-infra-provider-web.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "web-provider"
+    },
+    {
+      "source": "api-guardrails/infra-provider-lsp.md",
+      "output": "references/api-infra-provider-lsp.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "lsp-provider"
+    },
+    {
+      "source": "how-to/infra-provider-web.md",
+      "output": "references/how-to-infra-provider-web.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "how-to/infra-provider-lsp.md",
+      "output": "references/how-to-infra-provider-lsp.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-web.md",
+      "output": "references/example-infra-provider-web.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-lsp.md",
+      "output": "references/example-infra-provider-lsp.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-skill.md",
+      "output": "references/api-infra-provider-skill.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "skill-provider"
+    },
+    {
+      "source": "how-to/infra-provider-skill.md",
+      "output": "references/how-to-infra-provider-skill.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-skill.md",
+      "output": "references/example-infra-provider-skill.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-mcp-resources.md",
+      "output": "references/api-infra-provider-mcp-resources.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "mcp-resource-provider"
+    },
+    {
+      "source": "how-to/infra-provider-mcp-resources.md",
+      "output": "references/how-to-infra-provider-mcp-resources.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-mcp-resources.md",
+      "output": "references/example-infra-provider-mcp-resources.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-fs.md",
+      "output": "references/api-infra-provider-fs.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "filesystem-service"
+    },
+    {
+      "source": "how-to/infra-provider-fs.md",
+      "output": "references/how-to-infra-provider-fs.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-fs.md",
+      "output": "references/example-infra-provider-fs.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-execution.md",
+      "output": "references/api-infra-provider-execution.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "process-sandbox-execution"
+    },
+    {
+      "source": "how-to/infra-provider-execution.md",
+      "output": "references/how-to-infra-provider-execution.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-execution.md",
+      "output": "references/example-infra-provider-execution.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-terminal.md",
+      "output": "references/api-infra-provider-terminal.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "persistent-terminal"
+    },
+    {
+      "source": "how-to/infra-provider-terminal.md",
+      "output": "references/how-to-infra-provider-terminal.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-terminal.md",
+      "output": "references/example-infra-provider-terminal.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-artifacts.md",
+      "output": "references/api-infra-provider-artifacts.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "spill-and-attachments"
+    },
+    {
+      "source": "how-to/infra-provider-artifacts.md",
+      "output": "references/how-to-infra-provider-artifacts.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-artifacts.md",
+      "output": "references/example-infra-provider-artifacts.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-ptc.md",
+      "output": "references/api-infra-provider-ptc.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "ptc-runtime"
+    },
+    {
+      "source": "how-to/infra-provider-ptc.md",
+      "output": "references/how-to-infra-provider-ptc.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-ptc.md",
+      "output": "references/example-infra-provider-ptc.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-speech.md",
+      "output": "references/api-infra-provider-speech.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "speech-provider"
+    },
+    {
+      "source": "how-to/infra-provider-speech.md",
+      "output": "references/how-to-infra-provider-speech.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-speech.md",
+      "output": "references/example-infra-provider-speech.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-browser-use.md",
+      "output": "references/api-infra-provider-browser-use.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "browser-use-registry"
+    },
+    {
+      "source": "how-to/infra-provider-browser-use.md",
+      "output": "references/how-to-infra-provider-browser-use.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-browser-use.md",
+      "output": "references/example-infra-provider-browser-use.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "api-guardrails/infra-provider-computer-use.md",
+      "output": "references/api-infra-provider-computer-use.md",
+      "kind": "api-guardrail",
+      "topic": "infra-integration",
+      "role": "subject",
+      "subject": "computer-use-registry"
+    },
+    {
+      "source": "how-to/infra-provider-computer-use.md",
+      "output": "references/how-to-infra-provider-computer-use.md",
+      "kind": "how-to",
+      "topic": "infra-integration"
+    },
+    {
+      "source": "examples/example-infra-provider-computer-use.md",
+      "output": "references/example-infra-provider-computer-use.md",
+      "kind": "example",
+      "topic": "infra-integration"
+    }
+  ],
+  "remaining": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:.",
+      "decision": "not-covered",
+      "reason": "JobRegistry 是可替换 Service，但 start/list/read/kill/wait/remove 与 session 可见性、输出订阅、控制器所有权构成整套注册表契约；尚无独立实现验证。",
+      "evidence": "packages/jobs/jobs/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-mcp-client:.",
+      "decision": "merged",
+      "reason": "这是外部 MCP server 的 Client bridge/配置插件，其资源 provider 注册由 mcp-resources 管理，未另造 Host 基础 provider 契约。",
+      "evidence": "packages/mcp/mcp-client/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-web-fetch-http:.",
+      "decision": "merged",
+      "reason": "具体 fetch provider 实现已作为 WebRuntime 组合证据；插件作者扩展点在 dsh-web。",
+      "evidence": "packages/web/web-fetch-http/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-lsp-stdio:.",
+      "decision": "merged",
+      "reason": "可配置的 stdio 实现已作为 Lsp 组合证据；扩展点在 dsh-lsp。",
+      "evidence": "packages/lsp/lsp-stdio/src/index.ts"
+    }
+  ],
+  "entryDispositions": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-fs-local:.",
+      "decision": "merged",
+      "reason": "FileSystem 的本地实现；扩展契约归 dsh-fs，尚未验证第三方后端。",
+      "evidence": "packages/fs/fs-local/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-fs-observation-policy:.",
+      "decision": "merged",
+      "reason": "目标版本的具体 fs/* 事件政策插件：记录 owner/target 观察，并为 write/edit 决策提供版本 guard；它不实现 FileSystem Service，组合语义归 FS 子主题。",
+      "evidence": "packages/fs/fs-observation-policy/src/index.ts",
+      "into": "export:@deepseek-ai/dsh-fs:."
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-fs-sandbox:.",
+      "decision": "merged",
+      "reason": "文件系统与 Sandbox 的组合适配层，提供具体实现线索；两个基础服务契约分别归 dsh-fs 与 dsh-sandbox。",
+      "evidence": "packages/fs/fs-sandbox/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-fs-ssh:.",
+      "decision": "merged",
+      "reason": "FileSystem 的 SSH 实现；扩展契约归 dsh-fs，目标身份和远端取消需单独验证。",
+      "evidence": "packages/ssh/fs-ssh/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-fs:./invariant",
+      "decision": "excluded",
+      "reason": "不变量辅助子路径，供实现校验；不是独立注册入口或插件形态。",
+      "evidence": "packages/fs/fs/src/invariant.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs-local:.",
+      "decision": "merged",
+      "reason": "JobRegistry 的具体内存/本地实现；扩展契约归 dsh-jobs。",
+      "evidence": "packages/jobs/jobs-local/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:./brand",
+      "decision": "merged",
+      "reason": "JobId 等品牌标识供 JobRegistry 类型使用；并入该基础 Service 契约。",
+      "evidence": "packages/jobs/jobs/src/brand.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:./invariant",
+      "decision": "excluded",
+      "reason": "内部不变量辅助子路径；不提供独立 Job provider 注册任务。",
+      "evidence": "packages/jobs/jobs/src/invariant.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-jobs:./view",
+      "decision": "merged",
+      "reason": "JobView 等观察结果类型；归 JobRegistry 公开契约，尚无独立后端指南。",
+      "evidence": "packages/jobs/jobs/src/view.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox-local:.",
+      "decision": "merged",
+      "reason": "SandboxProvider 的平台实现；通用 confine 契约归 dsh-sandbox，OS enforcement 尚未验证。",
+      "evidence": "packages/sandbox/sandbox-local/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox-policy:.",
+      "decision": "excluded",
+      "reason": "策略编排/模式选择插件，不是 SandboxProvider 的替代实现入口。",
+      "evidence": "packages/sandbox/sandbox-policy/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox-policy:./invariant",
+      "decision": "excluded",
+      "reason": "策略不变量辅助子路径，未发现独立 provider 装载任务。",
+      "evidence": "packages/sandbox/sandbox-policy/src/invariant.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox-ssh:.",
+      "decision": "merged",
+      "reason": "远端 SandboxProvider 实现，通用契约归 dsh-sandbox；远端隔离语义需另验。",
+      "evidence": "packages/ssh/sandbox-ssh/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox-windows-acl:.",
+      "decision": "merged",
+      "reason": "Windows ACL 的具体隔离实现；通用契约归 dsh-sandbox。",
+      "evidence": "packages/sandbox/sandbox-windows-acl/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-sandbox-windows-acl:./runner",
+      "decision": "excluded",
+      "reason": "Windows ACL runner 实现细节；没有独立 Cordis provider 注册路径。",
+      "evidence": "packages/sandbox/sandbox-windows-acl/src/runner.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-local:.",
+      "decision": "merged",
+      "reason": "SubprocessRuntime 的本地实现；provider 契约归 dsh-subprocess。",
+      "evidence": "packages/subprocess/subprocess-local/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-local:./output",
+      "decision": "excluded",
+      "reason": "本地 provider 的输出收集实现子路径；非独立服务/插件注册入口。",
+      "evidence": "packages/subprocess/subprocess-local/src/output.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-local:./runner",
+      "decision": "excluded",
+      "reason": "本地进程 runner 可执行子路径，由 subprocess-local 启动管理；非独立 Service 注册入口。",
+      "evidence": "packages/subprocess/subprocess-local/src/bin.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-ssh:.",
+      "decision": "merged",
+      "reason": "SubprocessRuntime 的 SSH 实现；抽象契约归 dsh-subprocess。",
+      "evidence": "packages/ssh/subprocess-ssh/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess:./control",
+      "decision": "merged",
+      "reason": "进程控制辅助契约；实现 SubprocessRuntime 时需考虑，但不是另一 provider。",
+      "evidence": "packages/subprocess/subprocess/src/control.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-web-search-deepseek:.",
+      "decision": "merged",
+      "reason": "具体 Web 搜索 provider；公开注册和选择契约归 dsh-web。",
+      "evidence": "packages/web/web-search-deepseek/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-web-search-exa:.",
+      "decision": "merged",
+      "reason": "具体 Web 搜索 provider；公开注册和选择契约归 dsh-web。",
+      "evidence": "packages/web/web-search-exa/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-web-search-perplexity:.",
+      "decision": "merged",
+      "reason": "具体 Web 搜索 provider；公开注册和选择契约归 dsh-web。",
+      "evidence": "packages/web/web-search-perplexity/src/index.ts"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-ptc-runtime-node:.",
+      "decision": "merged",
+      "into": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "reason": "Node 具体后端，抽象消费契约归 PtcRuntime；独立后端实现安全验证未覆盖。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-ptc-runtime-node:./process",
+      "decision": "excluded",
+      "reason": "Node 后端进程 runner 子路径；不是插件作者新增 provider 的 Service 注册入口。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text:./types",
+      "decision": "merged",
+      "into": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+      "reason": "语音 provider/请求/结果类型重导出，归 SpeechToText 主题。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text:./wave",
+      "decision": "excluded",
+      "reason": "WAVE 编码/解码辅助函数；没有独立 provider 注册或模型任务。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice:.",
+      "decision": "merged",
+      "into": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+      "reason": "具体本地 recognizer；注册/选择契约归 SpeechToText，实际识别性能另验。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice:./worker",
+      "decision": "excluded",
+      "reason": "SenseVoice 的内部 worker 入口，非跨后端 provider 契约。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-browser-use-stagehand-native:./worker",
+      "decision": "excluded",
+      "reason": "虽由 package exports 公开，worker.ts 在导入时要求 parentPort 和特定 workerData，只供同包 worker-client.ts 通过 new Worker 启动；没有插件可调用的 provider 注册或资源接口。",
+      "evidence": [
+        "packages/experimental/browser-use-stagehand-native/package.json",
+        "packages/experimental/browser-use-stagehand-native/src/worker.ts",
+        "packages/experimental/browser-use-stagehand-native/src/worker-client.ts"
+      ]
+    }
+  ],
+  "manualTaskPaths": [
+    {
+      "task": "register-lsp-provider",
+      "outcome": "为文件扩展名注册 LSP provider",
+      "candidates": [
+        "package:@deepseek-ai/dsh-lsp"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-lsp:.:Lsp",
+        "export:@deepseek-ai/dsh-lsp:.:LspProvider"
+      ],
+      "destination": "references/how-to-infra-provider-lsp.md"
+    },
+    {
+      "task": "consume-filesystem-service",
+      "outcome": "在 Host 插件中通过 ctx.fs 读取文件",
+      "candidates": [
+        "package:@deepseek-ai/dsh-fs"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-fs:.:FileSystem"
+      ],
+      "destination": "references/how-to-infra-provider-fs.md"
+    },
+    {
+      "task": "execute-confined-command",
+      "outcome": "通过 ShellExecutor 运行受限命令",
+      "candidates": [
+        "package:@deepseek-ai/dsh-shell",
+        "package:@deepseek-ai/dsh-sandbox",
+        "package:@deepseek-ai/dsh-subprocess"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-shell:.:ShellExecutor"
+      ],
+      "destination": "references/how-to-infra-provider-execution.md"
+    },
+    {
+      "task": "use-agent-pty",
+      "outcome": "在 Agent 作用域中使用持久 PTY",
+      "candidates": [
+        "package:@deepseek-ai/dsh-terminal"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-terminal:.:TerminalSessionService"
+      ],
+      "destination": "references/how-to-infra-provider-terminal.md"
+    },
+    {
+      "task": "save-host-artifacts",
+      "outcome": "从插件调用 Spill 与附件存储",
+      "candidates": [
+        "package:@deepseek-ai/dsh-spill",
+        "package:@deepseek-ai/dsh-attachment"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-spill:.:SpillStore",
+        "export:@deepseek-ai/dsh-attachment:.:AttachmentStore"
+      ],
+      "destination": "references/how-to-infra-provider-artifacts.md"
+    },
+    {
+      "task": "run-ptc-program",
+      "outcome": "在 Host 插件中运行带 binding 的程序",
+      "candidates": [
+        "package:@deepseek-ai/dsh-ptc-runtime"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-ptc-runtime:.:PtcRuntime"
+      ],
+      "destination": "references/how-to-infra-provider-ptc.md"
+    },
+    {
+      "task": "register-speech-provider",
+      "outcome": "注册语音转写 provider",
+      "candidates": [
+        "package:@deepseek-ai/dsh-experimental-speech-to-text"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-experimental-speech-to-text:.:default"
+      ],
+      "destination": "references/how-to-infra-provider-speech.md"
+    },
+    {
+      "task": "mount-browser-use-provider",
+      "outcome": "选择并装载一个 Browser use provider",
+      "candidates": [
+        "package:@deepseek-ai/dsh-browser-use",
+        "package:@deepseek-ai/dsh-experimental-browser-use-runtime"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-browser-use:.:BrowserUseRegistry",
+        "export:@deepseek-ai/dsh-browser-use:./brand:BrowserUseProviderName",
+        "export:@deepseek-ai/dsh-experimental-browser-use-runtime:.:SessionResources",
+        "export:@deepseek-ai/dsh-experimental-browser-use-runtime:.:SessionResourceOptions",
+        "export:@deepseek-ai/dsh-experimental-browser-use-runtime:.:OwnedSessionResource",
+        "export:@deepseek-ai/dsh-experimental-browser-use-runtime:./mcp:mountSessionMcp",
+        "export:@deepseek-ai/dsh-experimental-browser-use-runtime:./mcp:BrowserMcpConfig"
+      ],
+      "destination": "references/how-to-infra-provider-browser-use.md"
+    },
+    {
+      "task": "mount-computer-use-provider",
+      "outcome": "选择并装载一个 Computer use provider",
+      "candidates": [
+        "package:@deepseek-ai/dsh-computer-use"
+      ],
+      "apiObjects": [
+        "export:@deepseek-ai/dsh-computer-use:.:ComputerUseRegistry",
+        "export:@deepseek-ai/dsh-computer-use:./brand:ComputerUseProviderName"
+      ],
+      "destination": "references/how-to-infra-provider-computer-use.md"
+    }
+  ]
+}
