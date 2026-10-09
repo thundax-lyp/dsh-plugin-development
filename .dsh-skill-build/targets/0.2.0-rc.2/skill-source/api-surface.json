@@ -31646,7 +31646,7 @@
             "source": "packages/client/ui-primitives/src/BrandWordmark.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "BrandWordmark 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "BrandWordmark 的公开用途为字形与品牌标识；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:BrandWordmarkProps",
@@ -31695,7 +31695,7 @@
             "source": "packages/util/code-language/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "CODE_HIGHLIGHT_EXTENSIONS 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "CODE_HIGHLIGHT_EXTENSIONS 的公开用途为代码预览与 diff review 共用的惰性逐行 token 高亮；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Checkbox",
@@ -31703,9 +31703,10 @@
             "symbol": "Checkbox",
             "signature": "any",
             "source": "packages/client/ui-primitives/src/Checkbox.tsx",
-            "decision": "excluded",
+            "decision": "included",
             "members": [],
-            "reason": "Checkbox 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "owner": "references/client/api/api-client-shared-ui.md",
+            "section": "`Checkbox`"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:CodeBlock",
@@ -31715,7 +31716,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "CodeBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "CodeBlock 的公开用途为不可信 GFM 与 TeX 数学、owner 委托的 HTTP(S) 导航，以及高亮代码；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:CodeBlockProps",
@@ -31865,7 +31866,7 @@
             "source": "packages/client/ui-primitives/src/ConnectionIndicator.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "ConnectionIndicator 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "ConnectionIndicator 的公开用途为行内连接恢复控件，覆盖断线、重试与已恢复三种状态；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ConnectionIndicatorState",
@@ -31925,7 +31926,7 @@
             "source": "packages/client/ui-primitives/src/DiffBlock.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "DiffBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "DiffBlock 的公开用途为与各类工具结果意图对应的 agent 输出卡片；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:DiffBlockLabels",
@@ -32059,7 +32060,7 @@
             "source": "packages/client/ui-primitives/src/DisclosureRow.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "DisclosureRow 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "DisclosureRow 的公开用途为24px 紧凑折叠行，标题与内容左右排列；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:DisclosureRowProps",
@@ -32236,7 +32237,7 @@
             "source": "packages/client/ui-primitives/src/FileTypeIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "FileTypeIcon 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "FileTypeIcon 的公开用途为按类别着色的 28px 文件或文件夹图形，以及它背后共享的不区分大小写文件名映射；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:FileTypeIconProps",
@@ -32284,7 +32285,7 @@
             "source": "packages/client/ui-primitives/src/FishLogo.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "FishLogo 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "FishLogo 的公开用途为字形与品牌标识；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:GuideArtworkBrowser",
@@ -32294,7 +32295,7 @@
             "source": "packages/client/ui-primitives/src/guide-artwork.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "GuideArtworkBrowser 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "GuideArtworkBrowser 的公开用途为固定配色的 36×36 浏览器与文件夹插画，用于侧栏引导入口；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:GuideArtworkFiles",
@@ -32339,7 +32340,7 @@
             "source": "packages/client/ui-primitives/src/HoverCard.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "HoverCard 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "HoverCard 的公开用途为指针可停留、可选中的悬停预览；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ICON_MEDIUM_STROKE",
@@ -34274,7 +34275,7 @@
             "source": "packages/client/ui-primitives/src/ImageLightbox.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "ImageLightbox 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "ImageLightbox 的公开用途为共享图片浮层，支持焦点恢复与 Esc 关闭；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ImageLightboxLabels",
@@ -34307,9 +34308,10 @@
             "symbol": "Input",
             "signature": "any",
             "source": "packages/client/ui-primitives/src/Input.tsx",
-            "decision": "excluded",
+            "decision": "included",
             "members": [],
-            "reason": "Input 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "owner": "references/client/api/api-client-shared-ui.md",
+            "section": "`Input`"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:JsonBlock",
@@ -34319,7 +34321,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "JsonBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "JsonBlock 的公开用途为只读 JSON 查看；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:JsonTree",
@@ -34329,7 +34331,7 @@
             "source": "packages/client/ui-primitives/src/JsonTree.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "JsonTree 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "JsonTree 的公开用途为只读 JSON 查看；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:JsonTreeLabels",
@@ -34497,7 +34499,7 @@
             "source": "packages/client/ui-primitives/src/LinkIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "LinkIconMedium 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "LinkIconMedium 的公开用途为字形与品牌标识；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:LinkIconProps",
@@ -34532,7 +34534,7 @@
             "source": "packages/client/ui-primitives/src/LinkIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "LinkIconRegular 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "LinkIconRegular 的公开用途为字形与品牌标识；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:MarkdownCodeLabels",
@@ -34606,7 +34608,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "MarkdownDelegateProvider 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "MarkdownDelegateProvider 的公开用途为不可信 GFM 与 TeX 数学、owner 委托的 HTTP(S) 导航，以及高亮代码；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:MarkdownDelegateProviderProps",
@@ -34754,7 +34756,7 @@
             "source": "packages/client/ui-primitives/src/WebBlock.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "MarkdownText 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "MarkdownText 的公开用途为不可信 GFM 与 TeX 数学、owner 委托的 HTTP(S) 导航，以及高亮代码；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Menu",
@@ -34793,7 +34795,7 @@
             "source": "packages/client/ui-primitives/src/MenuGroup.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "MenuGroup 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "MenuGroup 的公开用途为为自定义菜单与列表框提供本地化、可访问的分组，共用吸顶标题样式与原生交叉／尺寸观察；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:MenuItem",
@@ -34863,7 +34865,7 @@
             "source": "packages/client/ui-primitives/src/Menu.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "MenuItemButton 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "MenuItemButton 的公开用途为由 items 数据行、分隔线与分组标题构成的下拉菜单，支持嵌套子菜单；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:MenuItemButtonProps",
@@ -35019,7 +35021,7 @@
             "source": "packages/client/ui-primitives/src/Modal.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "Modal 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "Modal 的公开用途为页面遮罩之上的居中对话框；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:PathLabel",
@@ -35029,7 +35031,7 @@
             "source": "packages/client/ui-primitives/src/PathLabel.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "PathLabel 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "PathLabel 的公开用途为单行文件路径：目录使用弱化颜色，文件名使用主色，悬停可查看完整路径；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:PermissionIconFullAccessMedium",
@@ -35049,7 +35051,7 @@
             "source": "packages/client/ui-primitives/src/PermissionIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "PermissionIconFullAccessRegular 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "PermissionIconFullAccessRegular 的公开用途为只读、工作区写入与完全访问选项使用的权限模式图形；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:PermissionIconReadOnlyMedium",
@@ -35069,7 +35071,7 @@
             "source": "packages/client/ui-primitives/src/PermissionIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "PermissionIconReadOnlyRegular 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "PermissionIconReadOnlyRegular 的公开用途为只读、工作区写入与完全访问选项使用的权限模式图形；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:PermissionIconWorkspaceWriteMedium",
@@ -35089,7 +35091,7 @@
             "source": "packages/client/ui-primitives/src/PermissionIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "PermissionIconWorkspaceWriteRegular 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "PermissionIconWorkspaceWriteRegular 的公开用途为只读、工作区写入与完全访问选项使用的权限模式图形；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Pill",
@@ -35097,9 +35099,10 @@
             "symbol": "Pill",
             "signature": "any",
             "source": "packages/client/ui-primitives/src/Pill.tsx",
-            "decision": "excluded",
+            "decision": "included",
             "members": [],
-            "reason": "Pill 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "owner": "references/client/api/api-client-shared-ui.md",
+            "section": "`Pill`"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:PluginArtworkDefault",
@@ -35149,7 +35152,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "PluginArtworkTerminal 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "PluginArtworkTerminal 的公开用途为固定配色的 36×36 插件插画；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ReadBlock",
@@ -35159,7 +35162,7 @@
             "source": "packages/client/ui-primitives/src/ReadBlock.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "ReadBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "ReadBlock 的公开用途为与各类工具结果意图对应的 agent 输出卡片；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ReadBlockLabels",
@@ -35324,7 +35327,7 @@
             "source": "packages/client/ui-primitives/src/ReferenceIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "ReferenceIconMedium 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "ReferenceIconMedium 的公开用途为字形与品牌标识；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ReferenceIconProps",
@@ -35352,7 +35355,7 @@
             "source": "packages/client/ui-primitives/src/ReferenceIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "ReferenceIconRegular 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "ReferenceIconRegular 的公开用途为字形与品牌标识；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:RelativeTime",
@@ -35397,7 +35400,7 @@
             "source": "packages/client/ui-primitives/src/RiskConfirmation.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "RiskConfirmation 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "RiskConfirmation 的公开用途为以显式复选框把关的敏感操作确认；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:RiskConfirmationProps",
@@ -35512,7 +35515,7 @@
             "source": "packages/client/ui-primitives/src/SearchBlock.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "SearchBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "SearchBlock 的公开用途为与各类工具结果意图对应的 agent 输出卡片；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:SearchBlockLabels",
@@ -35817,9 +35820,10 @@
             "symbol": "SegmentedControl",
             "signature": "any",
             "source": "packages/client/ui-primitives/src/SegmentedControl.tsx",
-            "decision": "excluded",
+            "decision": "included",
             "members": [],
-            "reason": "SegmentedControl 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "owner": "references/client/api/api-client-shared-ui.md",
+            "section": "`SegmentedControl`"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:SegmentedControlOption",
@@ -35907,7 +35911,7 @@
             "source": "packages/client/ui-primitives/src/SegmentedTabs.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "SegmentedTabs 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "SegmentedTabs 的公开用途为受控的等宽分段标签，支持滑动指示条及左／右方向键、Home、End 导航；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:SettingsFieldProps",
@@ -36094,7 +36098,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "SettingsForm 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "SettingsForm 的公开用途为插件设置页的框架与控件：框架以 labels 接收文案，只在按钮点击时保存，卸载即丢弃；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:SettingsFormActions",
@@ -36232,7 +36236,7 @@
                     "reason": "所属 SettingsFormModel 对象未纳入常规插件任务。"
                 }
             ],
-            "reason": "SettingsFormModel 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "SettingsFormModel 的公开用途为这类页面背后基于设置 scope 的暂存编辑模型：草稿先暂存、保存时写入，字段是否被覆盖看用户层是否含有它，未落地的保存保留草稿；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:SettingsFormPathOp",
@@ -36451,7 +36455,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "SettingsSecretField 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "SettingsSecretField 的公开用途为插件设置页的框架与控件：框架以 labels 接收文案，只在按钮点击时保存，卸载即丢弃；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:SettingsSecretSpec",
@@ -36486,7 +36490,7 @@
             "source": "packages/client/ui-primitives/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "SettingsValueField 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "SettingsValueField 的公开用途为插件设置页的框架与控件：框架以 labels 接收文案，只在按钮点击时保存，卸载即丢弃；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:ShortcutKeys",
@@ -36506,7 +36510,7 @@
             "source": "packages/client/ui-primitives/src/ConnectionIndicator.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "StateDot 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "StateDot 的公开用途为10px 槽内的绿色 done、琥珀色 warning、红色 error、中性灰色 idle 圆点，以及 tertiary 灰色 14px 旋转 ongoing loading，其动画固定到文档时间零点，所以所有可见 l…；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:StateDotState",
@@ -36524,9 +36528,10 @@
             "symbol": "Switch",
             "signature": "any",
             "source": "packages/client/ui-primitives/src/Switch.tsx",
-            "decision": "excluded",
+            "decision": "included",
             "members": [],
-            "reason": "Switch 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "owner": "references/client/api/api-client-shared-ui.md",
+            "section": "`Switch`"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Tag",
@@ -36557,7 +36562,7 @@
             "source": "packages/client/ui-primitives/src/DiffBlock.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "TerminalBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "TerminalBlock 的公开用途为与各类工具结果意图对应的 agent 输出卡片；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:TerminalBlockLabels",
@@ -36764,7 +36769,7 @@
             "source": "packages/client/ui-primitives/src/DisclosureRow.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "TextShimmer 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "TextShimmer 的公开用途为同一道高光从左到右扫过一行的标题、分隔符、摘要与后缀：首次等待 300ms，扫动一秒，再静止 500ms；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:TextShimmerProps",
@@ -36813,7 +36818,7 @@
             "source": "packages/client/ui-primitives/src/Toast.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "Toast 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "Toast 的公开用途为顶部居中的瞬时横幅，保持时长由所有者的 holdMs 决定；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Tooltip",
@@ -36821,9 +36826,10 @@
             "symbol": "Tooltip",
             "signature": "any",
             "source": "packages/client/ui-primitives/src/CodeToolbar.tsx",
-            "decision": "excluded",
+            "decision": "included",
             "members": [],
-            "reason": "Tooltip 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "owner": "references/client/api/api-client-shared-ui.md",
+            "section": "`Tooltip`"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:TooltipSide",
@@ -36868,7 +36874,7 @@
             "source": "packages/client/ui-primitives/src/WebBlock.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "WebBlock 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "WebBlock 的公开用途为与各类工具结果意图对应的 agent 输出卡片；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:WebBlockLabels",
@@ -37108,7 +37114,7 @@
             "source": "packages/client/ui-primitives/src/FileTypeIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "classifyFileType 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "classifyFileType 的公开用途为按类别着色的 28px 文件或文件夹图形，以及它背后共享的不区分大小写文件名映射；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:classifyLinkPath",
@@ -37158,7 +37164,7 @@
             "source": "packages/client/ui-primitives/src/FileTypeIcon.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "fileExtension 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "fileExtension 的公开用途为按类别着色的 28px 文件或文件夹图形，以及它背后共享的不区分大小写文件名映射；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:fileSizeText",
@@ -37208,7 +37214,7 @@
             "source": "packages/util/code-language/src/index.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "languageForPath 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "languageForPath 的公开用途为代码预览与 diff review 共用的惰性逐行 token 高亮；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:modalSelector",
@@ -37238,7 +37244,7 @@
             "source": "packages/client/ui-primitives/src/MenuGroup.tsx",
             "decision": "excluded",
             "members": [],
-            "reason": "observeStickyMenuGroups 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "observeStickyMenuGroups 的公开用途为为自定义菜单与列表框提供本地化、可访问的分组，共用吸顶标题样式与原生交叉／尺寸观察；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:pointerModality",
@@ -37288,7 +37294,7 @@
             "source": "packages/client/ui-primitives/src/settings-form/form-model.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "settingsNumberField 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "settingsNumberField 的公开用途为这类页面背后基于设置 scope 的暂存编辑模型：草稿先暂存、保存时写入，字段是否被覆盖看用户层是否含有它，未落地的保存保留草稿；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:settingsTextField",
@@ -37298,7 +37304,7 @@
             "source": "packages/client/ui-primitives/src/settings-form/form-model.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "settingsTextField 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "settingsTextField 的公开用途为这类页面背后基于设置 scope 的暂存编辑模型：草稿先暂存、保存时写入，字段是否被覆盖看用户层是否含有它，未落地的保存保留草稿；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:useAnchoredMaxHeight",
@@ -37328,7 +37334,7 @@
             "source": "packages/client/ui-primitives/src/code-highlighting.ts",
             "decision": "excluded",
             "members": [],
-            "reason": "useCodeHighlighter 不是本入口已核实插件任务直接调用、实现或挂载的对象；本次任务由同入口的已纳入对象承担。"
+            "reason": "useCodeHighlighter 的公开用途为代码预览与 diff review 共用的惰性逐行 token 高亮；本次选型页给出发现路径，尚未核实该项专用的 props、组合与交互验证，因此不展开为 API 契约。"
         },
         {
             "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:useDismissOnOutsidePointer",

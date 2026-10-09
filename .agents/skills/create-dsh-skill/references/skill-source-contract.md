@@ -14,6 +14,8 @@
 
 需要在 `SKILL.md` 首屏直达的高价值任务，可在对应 `coverage.taskPaths` 项添加 `entry: { "output": "references/<side>/how-to/how-to-*.md", "section": "标题原文", "anchor": "markdown-anchor" }`。`entry` 必须与该任务的一项 `destinations` 完全对应，目标必须是 HOW-TO，且 `SKILL.md` 必须直接包含该文档和 anchor 的链接。生成目录的 Markdown 校验继续确认 anchor 真正存在；冻结器检查任务与入口的关联。`entry` 只是路由元数据，不复制 API 契约或 HOW-TO 正文。任务的 `outcome` 或原章节标题不适合首屏阅读时，可另设非空 `navigationLabel`，只改变导航文案，不改变目标小节与事实裁决。未设 `entry` 的任务仍须从 `SKILL.md` 的完整任务表到达。
 
+公开 `@deepseek-ai/dsh-client-ui-primitives` 时，`task-candidates.json` 还包含 `kind: "shared-ui-component-selection"` 的包级候选。它须在 `taskDiscoveries` 中纳入一个 `kind: "shared-ui-component-selection"` 的已覆盖 Client 控件选型任务；该任务引用已纳入的该包控件对象，并由独立 HOW-TO 链至其 API owner，入口关键词索引用“组件／控件”等查找词链至该 owner。冻结器会对 README 组件目录中已排除的公开控件拒绝“不是本入口已核实插件任务直接调用”或“由同入口的已纳入对象承担”这类泛化理由。是否纳入仍由目标 tag 的公开契约与插件用途决定，不按组件数量设配额。
+
 ## 任务导航与场景验证
 
 新准备的 schema v3 目标在 manifest 中设置 `"taskNavigation": "entrypoint"`。既有 `"generated"` 目标维持旧版双文件导航以便读取冻结素材。此模式要求每条 `covered` 任务的 `destinations` 指向 HOW-TO 中该任务独占、标题和正文非空的小节；不得让不同任务共用一个泛化小节。单对象任务也须如此；任务小节链接其 `apiObjects` 中每个对象的权威 API reference。HOW-TO 可按不重叠的任务边界拆成多篇，没有文件数上限；若 API 页已有完整用法，任务小节可链接而不重复，但须保留任务目标、缺失步骤和完成判据。首屏任务还需提供至少一个非空 `userIntents` 和精确的 `entry`：其 `section` 与 `anchor` 必须标识同一个 HOW-TO 标题。维护者审阅小节的操作步骤、装载和完成判据；结构门禁只核验位置、内容非空及对象链接。

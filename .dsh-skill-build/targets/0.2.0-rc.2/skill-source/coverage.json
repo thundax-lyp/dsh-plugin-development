@@ -338,6 +338,38 @@
             "navigationLabel": "在 Client 导航和控制子 Agent"
         },
         {
+            "id": "client-shared-ui",
+            "kind": "shared-ui-component-selection",
+            "decision": "covered",
+            "outcome": "为 Web 扩展选择现成控件",
+            "navigationLabel": "查找并复用 Web UI 组件",
+            "candidates": [
+                "package:@deepseek-ai/dsh-client-ui-primitives"
+            ],
+            "apiObjects": [
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Button",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Pill",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Switch",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Checkbox",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Input",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:SegmentedControl",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Tooltip",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Menu",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:MenuSurface",
+                "export:@deepseek-ai/dsh-client-ui-primitives:.:Tag"
+            ],
+            "compositionSteps": [
+                "按交互语义选择包根公开导出的控件并核对 props。",
+                "在 Client 插件持有状态、文案与动作，装载到页面后验证焦点、主题和卸载。"
+            ],
+            "destinations": [
+                {
+                    "output": "references/client/how-to/how-to-client-shared-ui.md",
+                    "section": "为 Web 扩展选择现成控件"
+                }
+            ]
+        },
+        {
             "id": "client-theme-ui",
             "decision": "covered",
             "outcome": "让 Web 扩展遵守主题与多语言样式",
@@ -4587,6 +4619,11 @@
             "candidate": "task:python/sdk-runtime/README.zh.md:49",
             "decision": "excluded",
             "reason": "Python SDK runtime 的构建分发流程，不是 Cordis 插件创建或装载任务。"
+        },
+        {
+            "candidate": "task:package:@deepseek-ai/dsh-client-ui-primitives:component-reuse",
+            "decision": "included",
+            "taskId": "client-shared-ui"
         }
     ],
     "dispositions": [
@@ -5777,9 +5814,9 @@
                 "references/client/api/api-client-shared-ui.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-primitives：Pure React atoms for the dsh web UI: controls, icons, markdown, and JSON inspectors (zero cordis)",
-            "pluginTask": "在已有页面的 slot 显示插件内容",
+            "pluginTask": "为 Web 扩展选择现成控件",
             "ownerSections": {
-                "references/client/api/api-client-shared-ui.md": "`Button`"
+                "references/client/api/api-client-shared-ui.md": "控件选型"
             }
         },
         {

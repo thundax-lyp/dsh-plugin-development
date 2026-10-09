@@ -1158,6 +1158,12 @@
             "title": "开发备注"
         },
         {
+            "id": "task:package:@deepseek-ai/dsh-client-ui-primitives:component-reuse",
+            "path": "packages/client/ui-primitives/package.json",
+            "title": "查找、选择并复用公开 Web UI 控件",
+            "kind": "shared-ui-component-selection"
+        },
+        {
             "id": "task:packages/client/ui-reference/README.zh.md:99",
             "path": "packages/client/ui-reference/README.zh.md",
             "line": 99,

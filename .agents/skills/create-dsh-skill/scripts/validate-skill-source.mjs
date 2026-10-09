@@ -16,6 +16,7 @@ import {
 import { markdownSection, withoutFencedCode } from "./markdown-structure.mjs";
 import { renderTaskNavigation } from "./task-navigation.mjs";
 import { loadTaskScenarios } from "./task-scenarios.mjs";
+import { validateSharedUiCoverage } from "./shared-ui-coverage.mjs";
 
 const allowedKinds = new Set([
     "entrypoint",
@@ -159,11 +160,8 @@ export function validateSkillSource(targetArgument, options = {}) {
                 );
         }
     }
-    assertIdentity(
-        readJson(inventoryPath),
-        target.provenance,
-        "evidence inventory",
-    );
+    const inventory = readJson(inventoryPath);
+    assertIdentity(inventory, target.provenance, "evidence inventory");
     const claims = readJson(claimsPath);
     const candidateDocument = readJson(candidatesPath);
     assertIdentity(
@@ -705,11 +703,12 @@ export function validateSkillSource(targetArgument, options = {}) {
     const objectSections = new Set();
     const subjectObjectCounts = new Map();
     let apiSurface;
+    let taskCandidates;
     let taskCandidateIds = new Set();
     if (manifest.schemaVersion === 3) {
         const apiEntries = readJson(apiEntriesPath);
         const apiSymbols = readJson(apiSymbolsPath);
-        const taskCandidates = readJson(taskCandidatesPath);
+        taskCandidates = readJson(taskCandidatesPath);
         apiSurface = readJson(apiSurfacePath);
         for (const [document, label] of [
             [apiEntries, "API entry candidates"],
@@ -1515,6 +1514,22 @@ export function validateSkillSource(targetArgument, options = {}) {
                 throw new Error(
                     `Task candidates lack a disposition: ${missing.slice(0, 5).join(", ")}`,
                 );
+        }
+        if (
+            manifest.schemaVersion === 3 &&
+            manifest.taskNavigation === "entrypoint" &&
+            options.freeze
+        ) {
+            validateSharedUiCoverage({
+                inventory,
+                taskCandidates,
+                coverage,
+                apiSurface,
+                files,
+                sourceRoot: target.skillSourcePath,
+                checkoutRoot: target.checkoutPath,
+                entrypointBody,
+            });
         }
         const missingTaskCandidates = [...decisionsByCandidate]
             .filter(
