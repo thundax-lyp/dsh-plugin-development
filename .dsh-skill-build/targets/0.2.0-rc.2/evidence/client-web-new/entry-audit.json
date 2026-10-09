@@ -1,0 +1,112 @@
+{
+  "version": "0.2.0-rc.2",
+  "entries": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-chat:./client",
+      "decision": "included",
+      "taskId": "client-conversation-node",
+      "owner": "references/api-client-conversation.md",
+      "reason": "ChatNodeDataMap declaration merging and conversation.chat.node keyed slot are usable by third-party Chat node contributors.",
+      "evidence": [
+        "packages/client/ui-chat/package.json",
+        "packages/client/ui-chat/src/client/index.ts"
+      ],
+      "objects": [
+        "export:@deepseek-ai/dsh-client-ui-chat:./client:ChatNodeDataMap",
+        "export:@deepseek-ai/dsh-client-ui-chat:./client:ChatNode"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "decision": "included",
+      "taskId": "client-settings-card",
+      "owner": "references/api-client-settings.md",
+      "reason": "plugins.item/detail slot contracts and ctx.pluginNavigation.openBundle are usable by third-party pages and detail contributions.",
+      "evidence": [
+        "packages/client/ui-plugin-manager/package.json",
+        "packages/client/ui-plugin-manager/src/client/index.ts"
+      ],
+      "objects": [
+        "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginConfigViewProps",
+        "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginDetailProps",
+        "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginsSubject"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-plugins:./client",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "owner": "references/api-client-settings.md",
+      "reason": "Package declares settings.plugins.tab root list slot, but exported SectionInjected/Props are owner component internals. Merge entry into settings contract; keep package capability as slot owner.",
+      "evidence": [
+        "packages/client/ui-settings-plugins/package.json",
+        "packages/client/ui-settings-plugins/src/client/index.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-web-search:./client",
+      "decision": "merged",
+      "taskId": "client-settings-card",
+      "owner": "references/api-client-settings.md",
+      "reason": "Concrete web-search settings card over ConfigForms and plugins.item; its WebSearchCardFace/Props/State are specific to built-in namespace, not a generic card registration API.",
+      "evidence": [
+        "packages/client/ui-settings-web-search/package.json",
+        "packages/client/ui-settings-web-search/src/client/index.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-sidebar:./client",
+      "decision": "included",
+      "taskId": "client-sidebar-panel",
+      "owner": "references/api-client-sidebar.md",
+      "reason": "Sidebar SlotMap with brand, global panel, workspace, settings and footer seats supports third-party contributions.",
+      "evidence": [
+        "packages/client/ui-sidebar/package.json",
+        "packages/client/ui-sidebar/src/client/index.ts"
+      ],
+      "objects": [
+        "export:@deepseek-ai/dsh-client-ui-sidebar:./client:SidebarPanelMetadata",
+        "export:@deepseek-ai/dsh-client-ui-sidebar:./client:SidebarBrandMarkOwnerProps"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./client",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "owner": "references/api-client-conversation.md",
+      "reason": "Client entry is exactly export type * from ./types.ts; GoalProjection and GoalView are useful domain values, but no independent Client service or registration seam exists here.",
+      "evidence": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/client.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-title:./client",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "owner": "references/api-client-conversation.md",
+      "reason": "Client entry is exactly export type * from ./types.ts; title projection/event values are safe to import but no distinct Client operation is introduced.",
+      "evidence": [
+        "packages/session/session-title/package.json",
+        "packages/session/session-title/src/client.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-typert-registry:./client",
+      "decision": "excluded",
+      "taskId": "client-call-remote",
+      "owner": "references/api-client-remote.md",
+      "reason": "Client entry exports only apply and inject, creating shared TypertRegistry boot service; no third-party business method/extension registration on this subpath.",
+      "evidence": [
+        "packages/typert/registry/package.json",
+        "packages/typert/registry/src/client/index.ts"
+      ],
+      "objects": []
+    }
+  ],
+  "note": "Included entries use named public objects or SlotMap augmentation; merged entries remain usable as type or owner dependencies but add no separate generic task API."
+}

@@ -1,0 +1,38 @@
+{
+    "schemaVersion": 1,
+    "entries": [
+        {
+            "candidate": "export:@deepseek-ai/dsh-invariants:.",
+            "topic": "infra-profile",
+            "owner": "api-infra-invariants.md",
+            "objects": [
+                { "symbol": "InvariantRegistry", "members": ["register"] },
+                { "symbol": "InvariantInstaller", "members": ["inject"] },
+                { "symbol": "InvariantError", "members": ["code", "packageName"] },
+                { "symbol": "Config", "members": ["enabled", "package_allowlist", "package_blocklist"] }
+            ]
+        },
+        {
+            "candidate": "export:@deepseek-ai/dsh-typert-generator:./tsdown",
+            "topic": "client-web",
+            "owner": "api-client-typert-build.md",
+            "objects": [
+                { "symbol": "typertPlugin", "members": [] },
+                { "symbol": "TypertPluginOptions", "members": ["faces", "mode"] }
+            ]
+        }
+    ],
+    "capabilities": [
+        { "candidate": "package:@deepseek-ai/dsh-invariants", "decision": "included", "task": "install-invariant-companion" },
+        { "candidate": "subsystems:invariants", "decision": "included", "task": "install-invariant-companion" }
+    ],
+    "tasks": [
+        { "candidate": "task:packages/runtime-diagnostics/invariants/README.md:73", "task": "install-invariant-companion" }
+    ],
+    "files": [
+        { "source": "api-guardrails/infra-invariants.md", "output": "references/api-infra-invariants.md", "kind": "api-guardrail", "topic": "infra-profile", "role": "subject", "subject": "invariants" },
+        { "source": "how-to/infra-invariants.md", "output": "references/how-to-infra-invariants.md", "kind": "how-to" },
+        { "source": "examples/example-infra-invariants.md", "output": "references/example-infra-invariants.md", "kind": "example" },
+        { "source": "api-guardrails/client-typert-build.md", "output": "references/api-client-typert-build.md", "kind": "api-guardrail", "topic": "client-web", "role": "subject", "subject": "typert-build" }
+    ]
+}

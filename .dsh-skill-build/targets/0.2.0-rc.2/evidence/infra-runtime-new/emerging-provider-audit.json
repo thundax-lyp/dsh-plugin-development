@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "capabilities": [
+    {
+      "candidate": "package:@deepseek-ai/dsh-ptc-runtime",
+      "decision": "included",
+      "owner": "api-infra-provider-ptc.md",
+      "reason": "公开抽象 PtcRuntime；Node 具体后端已发布，插件可调用 resolve/run 或实现后端。安全和隔离需真实运行验证。",
+      "evidence": [
+        "packages/ptc-runtime/ptc-runtime/package.json",
+        "packages/ptc-runtime/ptc-runtime/src/index.ts",
+        "packages/ptc-runtime/ptc-runtime-node/src/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-browser-use",
+      "decision": "included",
+      "reason": "公开独占注册槽已写 API 子主题、具体实验 provider 组合 HOW-TO 与 Profile patch；真实浏览器/桌面行为仍须平台测试。",
+      "evidence": [
+        "packages/browser-use/browser-use/package.json",
+        "packages/browser-use/browser-use/src/index.ts",
+        "packages/experimental/browser-use-runtime/src/mcp.ts",
+        "packages/experimental/browser-use-stagehand-native/src/index.ts"
+      ],
+      "owner": "api-infra-provider-browser-use.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-computer-use",
+      "decision": "included",
+      "reason": "公开独占注册槽已写 API 子主题、具体实验 provider 组合 HOW-TO 与 Profile patch；真实浏览器/桌面行为仍须平台测试。",
+      "evidence": [
+        "packages/computer-use/computer-use/package.json",
+        "packages/computer-use/computer-use/src/index.ts",
+        "packages/experimental/computer-use-cua-driver-mcp/src/index.ts",
+        "packages/experimental/computer-use-cua-driver-native/src/index.ts"
+      ],
+      "owner": "api-infra-provider-computer-use.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-experimental-speech-to-text",
+      "decision": "included",
+      "owner": "api-infra-provider-speech.md",
+      "reason": "实验命名但 package private=false，公开注册、选择、转写与 Settings 选择；SenseVoice 实现证明扩展点，指南明确仅烟测。",
+      "evidence": [
+        "packages/experimental/speech-to-text/package.json",
+        "packages/experimental/speech-to-text/src/index.ts",
+        "packages/experimental/speech-to-text-sensevoice/src/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-fs-observation-policy",
+      "decision": "merged",
+      "owner": "api-infra-provider-fs.md",
+      "reason": "这是具体 fs/* 事件政策插件，按 owner/target 记录观察并给写/编辑提供版本 guard；不注册 FileSystem 服务，已纳入 FS 子主题解释。",
+      "evidence": [
+        "packages/fs/fs-observation-policy/package.json",
+        "packages/fs/fs-observation-policy/src/index.ts"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "decision": "included",
+      "owner": "api-infra-provider-ptc.md",
+      "reason": "PtcRuntime 与绑定/结果公开契约。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-ptc-runtime-node:.",
+      "decision": "merged",
+      "into": "export:@deepseek-ai/dsh-ptc-runtime:.",
+      "reason": "Node 具体后端，抽象消费契约归 PtcRuntime；独立后端实现安全验证未覆盖。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-ptc-runtime-node:./process",
+      "decision": "excluded",
+      "reason": "Node 后端进程 runner 子路径；不是插件作者新增 provider 的 Service 注册入口。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-browser-use:.",
+      "decision": "included",
+      "reason": "公开独占注册槽，但工具形状归实际浏览器 provider；需独立组合与行为任务。",
+      "owner": "api-infra-provider-browser-use.md"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-browser-use:./brand",
+      "decision": "included",
+      "into": "export:@deepseek-ai/dsh-browser-use:.",
+      "reason": "BrowserUseProviderName 品牌工厂供注册槽使用。",
+      "owner": "api-infra-provider-browser-use.md"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-computer-use:.",
+      "decision": "included",
+      "reason": "公开独占注册槽，但工具形状归实际 Cua Driver provider；需独立平台任务。",
+      "owner": "api-infra-provider-computer-use.md"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-computer-use:./brand",
+      "decision": "included",
+      "into": "export:@deepseek-ai/dsh-computer-use:.",
+      "reason": "ComputerUseProviderName 品牌工厂供注册槽使用。",
+      "owner": "api-infra-provider-computer-use.md"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+      "decision": "included",
+      "owner": "api-infra-provider-speech.md",
+      "reason": "公开语音 provider 注册与转写 Service。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text:./types",
+      "decision": "merged",
+      "into": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+      "reason": "语音 provider/请求/结果类型重导出，归 SpeechToText 主题。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text:./wave",
+      "decision": "excluded",
+      "reason": "WAVE 编码/解码辅助函数；没有独立 provider 注册或模型任务。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice:.",
+      "decision": "merged",
+      "into": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+      "reason": "具体本地 recognizer；注册/选择契约归 SpeechToText，实际识别性能另验。"
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice:./worker",
+      "decision": "excluded",
+      "reason": "SenseVoice 的内部 worker 入口，非跨后端 provider 契约。"
+    }
+  ]
+}

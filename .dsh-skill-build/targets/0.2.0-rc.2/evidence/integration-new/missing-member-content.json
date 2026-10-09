@@ -1,0 +1,1138 @@
+[
+  {
+    "object": "export:@deepseek-ai/cordis:.:Context",
+    "member": "baseUrl",
+    "signature": "string | undefined",
+    "source": "vendor/cordis/src/context.ts",
+    "owner": "references/api-host-cordis.md",
+    "section": "Context"
+  },
+  {
+    "object": "export:@deepseek-ai/cordis:.:Context",
+    "member": "events",
+    "signature": "EventsService",
+    "source": "vendor/cordis/src/context.ts",
+    "owner": "references/api-host-cordis.md",
+    "section": "Context"
+  },
+  {
+    "object": "export:@deepseek-ai/cordis:.:Context",
+    "member": "logger",
+    "signature": "LoggerService",
+    "source": "vendor/cordis/src/context.ts",
+    "owner": "references/api-host-cordis.md",
+    "section": "Context"
+  },
+  {
+    "object": "export:@deepseek-ai/cordis:.:Context",
+    "member": "reflect",
+    "signature": "ReflectService",
+    "source": "vendor/cordis/src/context.ts",
+    "owner": "references/api-host-cordis.md",
+    "section": "Context"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-agent-loop:.:AgentLoop",
+    "member": "config",
+    "signature": "Config",
+    "source": "packages/core/agent-loop/src/index.ts",
+    "owner": "references/api-host-agent.md",
+    "section": "AgentLoop"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-agent-loop:.:AgentLoop",
+    "member": "createAgent",
+    "signature": "(ownerCtx: Context, options: CreateAgentOptions) => Promise<AgentHandle>",
+    "source": "packages/core/agent-loop/src/index.ts",
+    "owner": "references/api-host-agent.md",
+    "section": "AgentLoop"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-app-boot:.:Profile",
+    "member": "dir",
+    "signature": "string",
+    "source": "packages/boot/app-boot/src/profile.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "Profile"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-app-boot:.:Profile",
+    "member": "layers",
+    "signature": "ProfileLayer[]",
+    "source": "packages/boot/app-boot/src/profile.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "Profile"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-app-boot:.:Profile",
+    "member": "patches",
+    "signature": "PatchOptions[]",
+    "source": "packages/boot/app-boot/src/profile.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "Profile"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-app-boot:.:Profile",
+    "member": "patchPath",
+    "signature": "string",
+    "source": "packages/boot/app-boot/src/profile.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "Profile"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-authorization:.:AuthorizationFlow",
+    "member": "key",
+    "signature": "CredentialKey",
+    "source": "packages/credentials/authorization/src/index.ts",
+    "owner": "references/api-host-credentials.md",
+    "section": "AuthorizationFlow"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-client-ui-layout:./client:ILayout",
+    "member": "panelInfo",
+    "signature": "HostObservable<PanelInfo>",
+    "source": "packages/client/ui-layout/src/client/service.ts",
+    "owner": "references/api-client-sidebar.md",
+    "section": "`ILayout`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-client-ui-session:./client:UiSession",
+    "member": "bindingSource",
+    "signature": "(reference: SessionReference | undefined) => HostObservable<StandardSourceBinding>",
+    "source": "packages/client/ui-session/src/client/index.ts",
+    "owner": "references/api-client-conversation.md",
+    "section": "`UiSession`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:ISidebarRight",
+    "member": "mounted",
+    "signature": "ObservableSnapshot<SessionId | undefined>",
+    "source": "packages/client/ui-sidebar-right/src/client/service.ts",
+    "owner": "references/api-client-sidebar.md",
+    "section": "`ISidebarRight`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabClaim",
+    "member": "title",
+    "signature": "string",
+    "source": "packages/client/ui-sidebar-right/src/client/tab-registry.ts",
+    "owner": "references/api-client-sidebar.md",
+    "section": "`SidebarRightTabClaim`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-commands:.:CommandDescriptor",
+    "member": "description",
+    "signature": "string",
+    "source": "packages/interaction/commands/src/types.ts",
+    "owner": "references/api-host-commands.md",
+    "section": "CommandDescriptor"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-commands:.:CommandDescriptor",
+    "member": "name",
+    "signature": "string",
+    "source": "packages/interaction/commands/src/types.ts",
+    "owner": "references/api-host-commands.md",
+    "section": "CommandDescriptor"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "endSeq",
+    "signature": "SessionSeq",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "shadowedRange",
+    "signature": "{ start: SessionSeq; end: SessionSeq; }",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "shadowedSeqs",
+    "signature": "SessionSeq[]",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "shadowedTokenCount",
+    "signature": "number",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "sourceCommandId",
+    "signature": "CommandId | undefined",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "startSeq",
+    "signature": "SessionSeq",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:CompactionResult",
+    "member": "summarySeq",
+    "signature": "SessionSeq",
+    "source": "packages/compaction/compaction/src/types.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "CompactionResult"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-compaction:.:ManualCompactionError",
+    "member": "name",
+    "signature": "\"ManualCompactionError\"",
+    "source": "packages/compaction/compaction/src/index.ts",
+    "owner": "references/api-host-compaction.md",
+    "section": "ManualCompactionError"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-config-editor:.:ConfigEditor",
+    "member": "configuration",
+    "signature": "() => { entry: Entry; inherited: Record<string, unknown>; override: Record<string, unknown>; }[]",
+    "source": "packages/boot/config-editor/src/index.ts",
+    "owner": "references/api-infra-live-config.md",
+    "section": "ConfigEditor"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-file-reference-local:.:LocalFileReferenceService",
+    "member": "list",
+    "signature": "(agent: Agent, query: string, signal: AbortSignal) => Promise<FileReferenceCandidate[]>",
+    "source": "packages/context/file-reference-local/src/index.ts",
+    "owner": "references/api-client-references.md",
+    "section": "`LocalFileReferenceService`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:CreateGoalRequest",
+    "member": "maxGoalRounds",
+    "signature": "number | undefined",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "CreateGoalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:CreateGoalRequest",
+    "member": "objective",
+    "signature": "string",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "CreateGoalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalService",
+    "member": "remoteExportCreate",
+    "signature": "(agent: Agent, request: CreateGoalRequest) => CreateGoalResult",
+    "source": "packages/goal/goal/src/index.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalService"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "blockedReason",
+    "signature": "GoalBlockReason | undefined",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "createdAt",
+    "signature": "number",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "id",
+    "signature": "GoalId",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "maxGoalRounds",
+    "signature": "number",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "objective",
+    "signature": "string",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "roundsStarted",
+    "signature": "number",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-goal:.:GoalView",
+    "member": "updatedAt",
+    "signature": "number",
+    "source": "packages/goal/goal/src/types.ts",
+    "owner": "references/api-host-goal.md",
+    "section": "GoalView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-host-directory-picker:.:DirectoryPickerError",
+    "member": "path",
+    "signature": "string",
+    "source": "packages/host/directory-picker/src/index.ts",
+    "owner": "references/api-host-directory-picker.md",
+    "section": "DirectoryPickerError"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-host-webserver:.:WebServer",
+    "member": "applyIndexTaps",
+    "signature": "(html: string) => string",
+    "source": "packages/host/webserver/src/index.ts",
+    "owner": "references/api-infra-webserver.md",
+    "section": "WebServer"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-host-webserver:.:WebServer",
+    "member": "collectIndexInjections",
+    "signature": "() => IndexInjection[]",
+    "source": "packages/host/webserver/src/index.ts",
+    "owner": "references/api-infra-webserver.md",
+    "section": "WebServer"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-host-webserver:.:WebServer",
+    "member": "renderIndex",
+    "signature": "(html: string) => string",
+    "source": "packages/host/webserver/src/index.ts",
+    "owner": "references/api-infra-webserver.md",
+    "section": "WebServer"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-host-webserver:.:WebServer",
+    "member": "tapIndex",
+    "signature": "(transform: (html: string) => string) => () => void",
+    "source": "packages/host/webserver/src/index.ts",
+    "owner": "references/api-infra-webserver.md",
+    "section": "WebServer"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobHandle",
+    "member": "id",
+    "signature": "JobId",
+    "source": "packages/jobs/jobs/src/types.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobHandle"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobRegistry",
+    "member": "attachController",
+    "signature": "(name: string) => () => void",
+    "source": "packages/jobs/jobs/src/index.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobRegistry"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobSpec",
+    "member": "outputLimitBytes",
+    "signature": "number | undefined",
+    "source": "packages/jobs/jobs/src/types.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobSpec"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "detail",
+    "signature": "string | undefined",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "finishedAt",
+    "signature": "number | undefined",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "id",
+    "signature": "JobId",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "kind",
+    "signature": "string",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "label",
+    "signature": "string",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "output",
+    "signature": "{ readonly total: number; readonly earliest: number; readonly spillPaths?: readonly string[] | undefined; }",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "outputLimitBytes",
+    "signature": "number | undefined",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "progress",
+    "signature": "string | undefined",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "startedAt",
+    "signature": "number",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-jobs:.:JobView",
+    "member": "status",
+    "signature": "JobStatus",
+    "source": "packages/jobs/jobs/src/view.ts",
+    "owner": "references/api-host-jobs.md",
+    "section": "JobView"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-llm:.:AssistantStreamRecord",
+    "member": "type",
+    "signature": "\"chunk\" | \"text-chunks\" | \"reasoning-chunks\" | \"tool-call-chunks\"",
+    "source": "packages/llm/llm/src/assistant-stream.ts",
+    "owner": "references/api-host-llm-message.md",
+    "section": "AssistantStreamRecord"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-llm:.:LlmRuntime",
+    "member": "listModels",
+    "signature": "(provider: string) => Promise<LlmModelInfo[]>",
+    "source": "packages/llm/llm/src/index.ts",
+    "owner": "references/api-host-llm.md",
+    "section": "LlmRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-llm:.:LlmRuntime",
+    "member": "resolveModelInfo",
+    "signature": "(provider: string, model: string, signal?: AbortSignal | undefined) => Promise<LlmResolvedModelInfo>",
+    "source": "packages/llm/llm/src/index.ts",
+    "owner": "references/api-host-llm.md",
+    "section": "LlmRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-plugin-manager:.:PluginManager",
+    "member": "listPlugins",
+    "signature": "() => Promise<PluginInfo[]>",
+    "source": "packages/boot/plugin-manager/src/index.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "PluginManager"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-plugin-manager:.:PluginManager",
+    "member": "listVersionExemptions",
+    "signature": "() => { exemptions: Record<string, string[]>; warnings: string[]; }",
+    "source": "packages/boot/plugin-manager/src/index.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "PluginManager"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-plugin-manager:.:PluginManager",
+    "member": "registries",
+    "signature": "() => Promise<PluginRegistries>",
+    "source": "packages/boot/plugin-manager/src/index.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "PluginManager"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-plugin-manager:.:PluginManager",
+    "member": "setPluginEnabled",
+    "signature": "(id: PluginEntryId, enabled: boolean) => Promise<ChangeResult>",
+    "source": "packages/boot/plugin-manager/src/index.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "PluginManager"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-plugin-manager:.:PluginManager",
+    "member": "setVersionExemption",
+    "signature": "(packageVersion: string, runtimeVersion: string, enabled: boolean, acceptRisk?: boolean | undefined) => Promise<ChangeResult>",
+    "source": "packages/boot/plugin-manager/src/index.ts",
+    "owner": "references/api-infra-profile-runtime.md",
+    "section": "PluginManager"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-scope:.:ScopedLayers",
+    "member": "chainLayers",
+    "signature": "(scope: object | undefined) => L[]",
+    "source": "packages/core/scope/src/store.ts",
+    "owner": "references/api-host-scope.md",
+    "section": "ScopedLayers"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-scope:.:ScopedLayers",
+    "member": "global",
+    "signature": "L",
+    "source": "packages/core/scope/src/store.ts",
+    "owner": "references/api-host-scope.md",
+    "section": "ScopedLayers"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-scope:.:ScopedLayers",
+    "member": "peek",
+    "signature": "(scope: object | undefined) => L | undefined",
+    "source": "packages/core/scope/src/store.ts",
+    "owner": "references/api-host-scope.md",
+    "section": "ScopedLayers"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-persistence:.:SessionPersistenceSnapshot",
+    "member": "header",
+    "signature": "SessionHeader",
+    "source": "packages/session/session-persistence/src/index.ts",
+    "owner": "references/api-host-persistence.md",
+    "section": "SessionPersistenceSnapshot"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionEventResultFilter",
+    "member": "kind",
+    "signature": "\"text\" | \"type\" | \"time\" | \"seq\" | \"surface\"",
+    "source": "packages/session-query/session-query/src/types.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionEventResultFilter"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+    "member": "cursor",
+    "signature": "SessionSeqCursor",
+    "source": "packages/session-query/session-query/src/observation.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionObservation"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+    "member": "events",
+    "signature": "readonly SessionEvent[]",
+    "source": "packages/session-query/session-query/src/observation.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionObservation"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+    "member": "header",
+    "signature": "SessionHeader",
+    "source": "packages/session-query/session-query/src/observation.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionObservation"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+    "member": "projections",
+    "signature": "ProjectionSnapshot | undefined",
+    "source": "packages/session-query/session-query/src/observation.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionObservation"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+    "member": "retain",
+    "signature": "() => SessionObservation",
+    "source": "packages/session-query/session-query/src/observation.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionObservation"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionObservation",
+    "member": "source",
+    "signature": "\"live\" | \"prepared\"",
+    "source": "packages/session-query/session-query/src/observation.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionObservation"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+    "member": "observeSession",
+    "signature": "(sessionId: SessionId, options?: SessionObservationOptions | undefined) => Promise<SessionObservation>",
+    "source": "packages/session-query/session-query/src/index.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionQueryEngine"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+    "member": "readTitle",
+    "signature": "(sessionId: SessionId, signal?: AbortSignal | undefined) => Promise<SessionTitleSnapshot | undefined>",
+    "source": "packages/session-query/session-query/src/index.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionQueryEngine"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+    "member": "readTitleSnapshot",
+    "signature": "(sessionId: SessionId, signal?: AbortSignal | undefined) => Promise<SessionTitleObservation>",
+    "source": "packages/session-query/session-query/src/index.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionQueryEngine"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+    "member": "readTitleSnapshots",
+    "signature": "(sessionIds: readonly SessionId[], signal?: AbortSignal | undefined) => Promise<SessionTitleObservationResult[]>",
+    "source": "packages/session-query/session-query/src/index.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionQueryEngine"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+    "member": "traceEvent",
+    "signature": "(request: SessionEventTraceRequest, signal?: AbortSignal | undefined) => Promise<SessionEventTraceObservation>",
+    "source": "packages/session-query/session-query/src/index.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionQueryEngine"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionQueryEngine",
+    "member": "traceSession",
+    "signature": "(sessionId: SessionId, signal?: AbortSignal | undefined) => Promise<SessionLineageTrace>",
+    "source": "packages/session-query/session-query/src/index.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionQueryEngine"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-query:.:SessionResultFilter",
+    "member": "kind",
+    "signature": "\"id\" | \"cwd\" | \"parent\" | \"created-at\" | \"availability\"",
+    "source": "packages/session-query/session-query/src/types.ts",
+    "owner": "references/api-host-session-query.md",
+    "section": "SessionResultFilter"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session-title:.:SessionTitleProvider",
+    "member": "automatic",
+    "signature": "SessionTitleAutomaticMode",
+    "source": "packages/session/session-title/src/index.ts",
+    "owner": "references/api-host-session-title.md",
+    "section": "SessionTitleProvider"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:Session",
+    "member": "deriveMessages",
+    "signature": "() => Message[]",
+    "source": "packages/core/session/src/index.ts",
+    "owner": "references/api-host-session.md",
+    "section": "Session"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:Session",
+    "member": "requestHeader",
+    "signature": "() => EpochHeader | undefined",
+    "source": "packages/core/session/src/index.ts",
+    "owner": "references/api-host-session.md",
+    "section": "Session"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:SessionEvent",
+    "member": "seq",
+    "signature": "SessionSeq",
+    "source": "packages/core/session/src/types.ts",
+    "owner": "references/api-host-session.md",
+    "section": "SessionEvent"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:SessionEvent",
+    "member": "time",
+    "signature": "number",
+    "source": "packages/core/session/src/types.ts",
+    "owner": "references/api-host-session.md",
+    "section": "SessionEvent"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:SessionStore",
+    "member": "create",
+    "signature": "(id?: SessionId | undefined, options?: CreateSessionOptions | undefined) => Session",
+    "source": "packages/core/session/src/index.ts",
+    "owner": "references/api-host-session.md",
+    "section": "SessionStore"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:SessionStore",
+    "member": "list",
+    "signature": "() => Session[]",
+    "source": "packages/core/session/src/index.ts",
+    "owner": "references/api-host-session.md",
+    "section": "SessionStore"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-session:.:SessionStore",
+    "member": "registerMessageProjection",
+    "signature": "(projection: SessionMessageProjection<keyof SessionEventMap>) => () => Promise<void>",
+    "source": "packages/core/session/src/index.ts",
+    "owner": "references/api-host-session.md",
+    "section": "SessionStore"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-settings:.:SettingsForms",
+    "member": "documentPath",
+    "signature": "string",
+    "source": "packages/settings/settings/src/index.ts",
+    "owner": "references/api-infra-live-config.md",
+    "section": "SettingsForms"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-settings:.:SettingsForms",
+    "member": "prepareDocument",
+    "signature": "() => Promise<string>",
+    "source": "packages/settings/settings/src/index.ts",
+    "owner": "references/api-infra-live-config.md",
+    "section": "SettingsForms"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-settings:.:SettingsForms",
+    "member": "writable",
+    "signature": "boolean",
+    "source": "packages/settings/settings/src/index.ts",
+    "owner": "references/api-infra-live-config.md",
+    "section": "SettingsForms"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-shell:.:ShellExecution",
+    "member": "done",
+    "signature": "Promise<void>",
+    "source": "packages/shell/shell/src/types.ts",
+    "owner": "references/api-infra-provider-execution.md",
+    "section": "ShellExecution"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-shell:.:ShellExecution",
+    "member": "kill",
+    "signature": "() => boolean",
+    "source": "packages/shell/shell/src/types.ts",
+    "owner": "references/api-infra-provider-execution.md",
+    "section": "ShellExecution"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-shell:.:ShellExecution",
+    "member": "readOutput",
+    "signature": "() => ShellProcessRead",
+    "source": "packages/shell/shell/src/types.ts",
+    "owner": "references/api-infra-provider-execution.md",
+    "section": "ShellExecution"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-skill:.:SkillDefinition",
+    "member": "name",
+    "signature": "string",
+    "source": "packages/skill/skill/src/index.ts",
+    "owner": "references/api-infra-provider-skill.md",
+    "section": "SkillDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-storage-domain:.:DomainFacility",
+    "member": "closeAll",
+    "signature": "() => Promise<void>",
+    "source": "packages/storage/storage-domain/src/index.ts",
+    "owner": "references/api-infra-storage-domain.md",
+    "section": "DomainFacility"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-storage-domain:.:DomainFacility",
+    "member": "get",
+    "signature": "(name: string) => DomainImpl | undefined",
+    "source": "packages/storage/storage-domain/src/index.ts",
+    "owner": "references/api-infra-storage-domain.md",
+    "section": "DomainFacility"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-storage:.:Storage",
+    "member": "domain",
+    "signature": "DomainFacility",
+    "source": "packages/storage/storage/src/index.ts",
+    "owner": "references/api-infra-storage.md",
+    "section": "Storage"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-storage:.:StorageError",
+    "member": "code",
+    "signature": "StorageErrorCode",
+    "source": "packages/storage/storage/src/error.ts",
+    "owner": "references/api-infra-storage.md",
+    "section": "StorageError"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-storage:.:StorageError",
+    "member": "name",
+    "signature": "\"StorageError\"",
+    "source": "packages/storage/storage/src/error.ts",
+    "owner": "references/api-infra-storage.md",
+    "section": "StorageError"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentProvider",
+    "member": "agentRouteDefaults",
+    "signature": "Readonly<{ provider: string; model: string; }> | undefined",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentProvider"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentProvider",
+    "member": "inheritsParentContext",
+    "signature": "boolean",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentProvider"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "drainContinuableChildren",
+    "signature": "(parent: Agent, childIds: readonly SessionId[]) => Promise<void>",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "drainContinuableDescendants",
+    "signature": "(parents: readonly Agent[]) => Promise<void>",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "interruptByParent",
+    "signature": "(childSessionId: SessionId, parentSessionId: SessionId, mode: \"continuable\") => SubagentInterruptReceipt",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "listChildren",
+    "signature": "(parentSessionId: SessionId, signal?: AbortSignal | undefined) => Promise<SubagentCatalogEntry[]>",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "listDescendants",
+    "signature": "(rootSessionId: SessionId, signal?: AbortSignal | undefined) => Promise<SubagentDescendantListEntry[]>",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "prompt",
+    "signature": "(request: SubagentPromptRequest, signal: AbortSignal) => Promise<SubagentPromptReceipt>",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentRuntime",
+    "member": "resolveMaxDepth",
+    "signature": "(configured?: number | \"provider-managed\" | undefined) => number | undefined",
+    "source": "packages/subagent/subagent/src/index.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+    "member": "agentOptions",
+    "signature": "AgentOptions | undefined",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+    "member": "label",
+    "signature": "string | undefined",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+    "member": "outputSchema",
+    "signature": "ObjectJsonSchema | undefined",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+    "member": "parent",
+    "signature": "Agent",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+    "member": "prompt",
+    "signature": "ContentBlock[]",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:.:SubagentStartRequest",
+    "member": "toolFilter",
+    "signature": "ToolRestriction | undefined",
+    "source": "packages/subagent/subagent/src/types.ts",
+    "owner": "references/api-host-subagent.md",
+    "section": "SubagentStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:./client:SubagentCatalogRow",
+    "member": "label",
+    "signature": "string | undefined",
+    "source": "packages/subagent/subagent/src/control-types.ts",
+    "owner": "references/api-client-subagent.md",
+    "section": "`SubagentCatalogRow`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:./client:SubagentPromptRequest",
+    "member": "childSessionId",
+    "signature": "SessionId",
+    "source": "packages/subagent/subagent/src/control-types.ts",
+    "owner": "references/api-client-subagent.md",
+    "section": "`SubagentPromptRequest`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-subagent:./client:SubagentPromptRequest",
+    "member": "parentSessionId",
+    "signature": "SessionId",
+    "source": "packages/subagent/subagent/src/control-types.ts",
+    "owner": "references/api-client-subagent.md",
+    "section": "`SubagentPromptRequest`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+    "member": "finalizeContent",
+    "signature": "((exec: Readonly<ToolExecution>, result: Readonly<ToolExecutionResult>) => ContentBlock[] | undefined) | undefined",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+    "member": "isConcurrencySafe",
+    "signature": "((args: unknown) => boolean) | undefined",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+    "member": "presentCall",
+    "signature": "((args: unknown) => ToolCallView | undefined) | undefined",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+    "member": "presentResult",
+    "signature": "((args: unknown, result: ToolResult) => ToolResultView | undefined) | undefined",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+    "member": "projectContent",
+    "signature": "((exec: Readonly<ToolExecution>, result: Readonly<ToolExecutionResult>) => ContentBlock[] | undefined) | undefined",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolDefinition",
+    "member": "timeoutMs",
+    "signature": "number | undefined",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolDefinition"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolRuntime",
+    "member": "execute",
+    "signature": "(exec: ToolExecutionInput) => Promise<ToolExecutionResult>",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-tools:.:ToolRuntime",
+    "member": "presentAs",
+    "signature": "(mode: ToolPresentationMode) => () => void",
+    "source": "packages/core/tools/src/index.ts",
+    "owner": "references/api-host-tools.md",
+    "section": "ToolRuntime"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-approval:.:ApprovalRequest",
+    "member": "agent",
+    "signature": "Agent",
+    "source": "packages/interaction/user-approval/src/index.ts",
+    "owner": "references/api-host-prompt-policy.md",
+    "section": "ApprovalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-approval:.:ApprovalRequest",
+    "member": "callId",
+    "signature": "ToolCallId | undefined",
+    "source": "packages/interaction/user-approval/src/index.ts",
+    "owner": "references/api-host-prompt-policy.md",
+    "section": "ApprovalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-approval:.:ApprovalRequest",
+    "member": "reason",
+    "signature": "string | undefined",
+    "source": "packages/interaction/user-approval/src/index.ts",
+    "owner": "references/api-host-prompt-policy.md",
+    "section": "ApprovalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-approval:.:ApprovalRequest",
+    "member": "signal",
+    "signature": "AbortSignal | undefined",
+    "source": "packages/interaction/user-approval/src/index.ts",
+    "owner": "references/api-host-prompt-policy.md",
+    "section": "ApprovalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-approval:.:ApprovalRequest",
+    "member": "toolName",
+    "signature": "string",
+    "source": "packages/interaction/user-approval/src/index.ts",
+    "owner": "references/api-host-prompt-policy.md",
+    "section": "ApprovalRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-approval:.:ApprovalService",
+    "member": "overrideOf",
+    "signature": "(session: Session) => ApprovalPolicy | undefined",
+    "source": "packages/interaction/user-approval/src/index.ts",
+    "owner": "references/api-host-prompt-policy.md",
+    "section": "ApprovalService"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-user-questions:.:AskUserQuestionAnswer",
+    "member": "answers",
+    "signature": "AskUserQuestionAnswerItem[]",
+    "source": "packages/interaction/user-questions/src/types.ts",
+    "owner": "references/api-host-user-questions.md",
+    "section": "AskUserQuestionAnswer"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workflow:.:WorkflowStartRequest",
+    "member": "maxTotalAgents",
+    "signature": "number | undefined",
+    "source": "packages/workflow/workflow/src/runtime-types.ts",
+    "owner": "references/api-host-workflow.md",
+    "section": "WorkflowStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workflow:.:WorkflowStartRequest",
+    "member": "parent",
+    "signature": "Agent",
+    "source": "packages/workflow/workflow/src/runtime-types.ts",
+    "owner": "references/api-host-workflow.md",
+    "section": "WorkflowStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workflow:.:WorkflowStartRequest",
+    "member": "script",
+    "signature": "string",
+    "source": "packages/workflow/workflow/src/runtime-types.ts",
+    "owner": "references/api-host-workflow.md",
+    "section": "WorkflowStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workflow:.:WorkflowStartRequest",
+    "member": "subagentProvider",
+    "signature": "string | undefined",
+    "source": "packages/workflow/workflow/src/runtime-types.ts",
+    "owner": "references/api-host-workflow.md",
+    "section": "WorkflowStartRequest"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceChangesSummary",
+    "member": "added",
+    "signature": "number",
+    "source": "packages/deliverables/workspace-changes/src/types.ts",
+    "owner": "references/api-client-workspace-data.md",
+    "section": "`WorkspaceChangesSummary`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceChangesSummary",
+    "member": "deleted",
+    "signature": "number",
+    "source": "packages/deliverables/workspace-changes/src/types.ts",
+    "owner": "references/api-client-workspace-data.md",
+    "section": "`WorkspaceChangesSummary`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceChangesSummary",
+    "member": "files",
+    "signature": "WorkspaceChangedFile[]",
+    "source": "packages/deliverables/workspace-changes/src/types.ts",
+    "owner": "references/api-client-workspace-data.md",
+    "section": "`WorkspaceChangesSummary`"
+  },
+  {
+    "object": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceChangesSummary",
+    "member": "total",
+    "signature": "number",
+    "source": "packages/deliverables/workspace-changes/src/types.ts",
+    "owner": "references/api-client-workspace-data.md",
+    "section": "`WorkspaceChangesSummary`"
+  }
+]

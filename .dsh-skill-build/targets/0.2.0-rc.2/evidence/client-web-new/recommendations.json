@@ -1,0 +1,2300 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0-rc.2",
+  "topic": "client-web",
+  "entryRecommendations": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-modules:.",
+      "decision": "included",
+      "owner": "api-client-modules.md",
+      "evidence": [
+        "packages/client/modules/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-modules:.:ClientModuleRegistry",
+          "symbol": "ClientModuleRegistry",
+          "retainMembers": [
+            "graph",
+            "onGraphChanged",
+            "onRebuilt",
+            "rebuilt"
+          ],
+          "declaration": "packages/client/modules/lib/types/index.d.ts",
+          "owner": "references/api-client-modules.md",
+          "section": "`ClientModuleRegistry`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-modules:./client",
+      "decision": "included",
+      "owner": "api-client-modules.md",
+      "evidence": [
+        "packages/client/modules/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-modules:./client:ClientModuleSystem",
+          "symbol": "ClientModuleSystem",
+          "retainMembers": [
+            "entries",
+            "import",
+            "invalidate",
+            "prefetch"
+          ],
+          "declaration": "packages/client/modules/lib/types/client/system.d.ts",
+          "owner": "references/api-client-modules.md",
+          "section": "`ClientModuleSystem`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-modules:./client:createClientModuleSystem",
+          "symbol": "createClientModuleSystem",
+          "retainMembers": [],
+          "declaration": "packages/client/modules/lib/types/client/index.d.ts",
+          "owner": "references/api-client-modules.md",
+          "section": "`createClientModuleSystem`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-slots:.",
+      "decision": "included",
+      "owner": "api-client-slots.md",
+      "evidence": [
+        "packages/client/ui-slots/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotMap",
+          "symbol": "SlotMap",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotMap`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotEntryDef",
+          "symbol": "SlotEntryDef",
+          "retainMembers": [
+            "kind",
+            "owner",
+            "scope"
+          ],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotEntryDef`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotKind",
+          "symbol": "SlotKind",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotKind`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotScope",
+          "symbol": "SlotScope",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotScope`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotCore",
+          "symbol": "SlotCore",
+          "retainMembers": [
+            "register",
+            "registerFactory"
+          ],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotCore`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:RegisterFactory",
+          "symbol": "RegisterFactory",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`RegisterFactory`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:ComposedProps",
+          "symbol": "ComposedProps",
+          "retainMembers": [
+            "renderFactorySlot",
+            "renderSlot"
+          ],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`ComposedProps`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:PropsRuntime",
+          "symbol": "PropsRuntime",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`PropsRuntime`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:PropsRenderSlots",
+          "symbol": "PropsRenderSlots",
+          "retainMembers": [
+            "renderSlot"
+          ],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`PropsRenderSlots`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:PropsRenderFactories",
+          "symbol": "PropsRenderFactories",
+          "retainMembers": [
+            "renderFactorySlot"
+          ],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`PropsRenderFactories`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:PropsStore",
+          "symbol": "PropsStore",
+          "retainMembers": [],
+          "declaration": "packages/client/store/lib/types/contract.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`PropsStore`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotFactoryMap",
+          "symbol": "SlotFactoryMap",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotFactoryMap`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-slots:.:LocaleNamespaceMap",
+          "symbol": "LocaleNamespaceMap",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-slots/lib/types/index.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`LocaleNamespaceMap`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-renderer:./client",
+      "decision": "included",
+      "owner": "api-client-slots.md",
+      "evidence": [
+        "packages/client/ui-renderer/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-renderer:./client:SlotRegistry",
+          "symbol": "SlotRegistry",
+          "retainMembers": [
+            "inject",
+            "register"
+          ],
+          "declaration": "packages/client/ui-renderer/lib/types/client/registry.d.ts",
+          "owner": "references/api-client-slots.md",
+          "section": "`SlotRegistry`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-typert-protocol:.",
+      "decision": "included",
+      "owner": "api-client-remote.md",
+      "evidence": [
+        "packages/typert/protocol/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-typert-protocol:.:TypertRemoteService",
+          "symbol": "TypertRemoteService",
+          "retainMembers": [],
+          "declaration": "packages/typert/protocol/lib/types/index.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`TypertRemoteService`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-typert-protocol:.:Remote",
+          "symbol": "Remote",
+          "retainMembers": [],
+          "declaration": "packages/typert/protocol/lib/types/index.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`Remote`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteScope",
+          "symbol": "RemoteScope",
+          "retainMembers": [],
+          "declaration": "packages/typert/protocol/lib/types/index.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`RemoteScope`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteError",
+          "symbol": "RemoteError",
+          "retainMembers": [
+            "code",
+            "details"
+          ],
+          "declaration": "packages/typert/protocol/lib/types/remote-error.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`RemoteError`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteResult",
+          "symbol": "RemoteResult",
+          "retainMembers": [
+            "ok"
+          ],
+          "declaration": "packages/typert/protocol/lib/types/types.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`RemoteResult<T>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-typert-protocol:.:RemoteErrorDetailsMap",
+          "symbol": "RemoteErrorDetailsMap",
+          "retainMembers": [],
+          "declaration": "packages/typert/protocol/lib/types/types.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`RemoteErrorDetailsMap`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-remotes:./client",
+      "decision": "included",
+      "owner": "api-client-remote.md",
+      "evidence": [
+        "packages/api/remotes/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-api-remotes:./client:ClientRemote",
+          "symbol": "ClientRemote",
+          "retainMembers": [
+            "$host"
+          ],
+          "declaration": "packages/api/gateway/lib/types/client/index.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`ClientRemote`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-api-gateway:./client",
+      "decision": "included",
+      "owner": "api-client-remote.md",
+      "evidence": [
+        "packages/api/gateway/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-api-gateway:./client:isRemoteFailure",
+          "symbol": "isRemoteFailure",
+          "retainMembers": [],
+          "declaration": "packages/api/gateway/lib/types/client/index.d.ts",
+          "owner": "references/api-client-remote.md",
+          "section": "`isRemoteFailure`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-conversation:./client",
+      "decision": "included",
+      "owner": "api-client-conversation.md",
+      "evidence": [
+        "packages/client/ui-conversation/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:UiConversation",
+          "symbol": "UiConversation",
+          "retainMembers": [
+            "events",
+            "groups",
+            "views"
+          ],
+          "declaration": "packages/client/ui-conversation/lib/types/client/conversation/assembly.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`UiConversation`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationNodeDefinition",
+          "symbol": "ConversationNodeDefinition",
+          "retainMembers": [
+            "buildLocationData",
+            "buildViewNode",
+            "kind",
+            "match",
+            "publication",
+            "start",
+            "target",
+            "update"
+          ],
+          "declaration": "packages/client/ui-conversation/lib/types/client/contract/conversation.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`ConversationNodeDefinition<State>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationViewDefinition",
+          "symbol": "ConversationViewDefinition",
+          "retainMembers": [
+            "create",
+            "isActive",
+            "target",
+            "toolCallFocus"
+          ],
+          "declaration": "packages/client/ui-conversation/lib/types/client/contract/conversation.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`ConversationViewDefinition<Node, Snapshot>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationViewBuilder",
+          "symbol": "ConversationViewBuilder",
+          "retainMembers": [
+            "apply",
+            "empty",
+            "groupInput",
+            "publish",
+            "replace"
+          ],
+          "declaration": "packages/client/ui-conversation/lib/types/client/contract/conversation.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`ConversationViewBuilder<Node, Snapshot>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationEventRegistry",
+          "symbol": "ConversationEventRegistry",
+          "retainMembers": [
+            "register"
+          ],
+          "declaration": "packages/client/ui-conversation/lib/types/client/conversation/event-registry.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`ConversationEventRegistry`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings:./client",
+      "decision": "included",
+      "owner": "api-client-settings.md",
+      "evidence": [
+        "packages/client/ui-settings/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-settings:./client:ConfigForms",
+          "symbol": "ConfigForms",
+          "retainMembers": [
+            "describe",
+            "get",
+            "whileServed"
+          ],
+          "declaration": "packages/client/ui-settings/lib/types/client/config-form.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`ConfigForms`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-settings:./client:ConfigForm",
+          "symbol": "ConfigForm",
+          "retainMembers": [
+            "getSnapshot",
+            "mutate",
+            "set",
+            "subscribe",
+            "unset"
+          ],
+          "declaration": "packages/client/ui-settings/lib/types/client/config-form-types.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`ConfigForm<T>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-settings:./client:ConfigFormSnapshot",
+          "symbol": "ConfigFormSnapshot",
+          "retainMembers": [
+            "base",
+            "mode",
+            "revision",
+            "status",
+            "user",
+            "value",
+            "writable"
+          ],
+          "declaration": "packages/client/ui-settings/lib/types/client/config-form-types.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`ConfigFormSnapshot<T>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-settings:./client:SettingsSchemaService",
+          "symbol": "SettingsSchemaService",
+          "retainMembers": [
+            "deletePath",
+            "getPath",
+            "hasPath",
+            "nodeAtPath",
+            "rehydrate",
+            "setPath",
+            "validate"
+          ],
+          "declaration": "packages/client/ui-settings/lib/types/client/schema.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`SettingsSchemaService`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-primitives:.",
+      "decision": "included",
+      "owner": "api-client-shared-ui.md",
+      "evidence": [
+        "packages/client/ui-primitives/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Button",
+          "symbol": "Button",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-primitives/lib/types/Button.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`Button`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Tag",
+          "symbol": "Tag",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-primitives/lib/types/Tag.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`Tag`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:Menu",
+          "symbol": "Menu",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-primitives/lib/types/Menu.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`Menu`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-primitives:.:MenuSurface",
+          "symbol": "MenuSurface",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-primitives/lib/types/MenuSurface.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`MenuSurface`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-theme:./client",
+      "decision": "included",
+      "owner": "api-client-shared-ui.md",
+      "evidence": [
+        "packages/client/ui-theme/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-theme:./client:ThemeRuntime",
+          "symbol": "ThemeRuntime",
+          "retainMembers": [
+            "getTheme",
+            "overrideTokens",
+            "register",
+            "setFontSize",
+            "setTheme"
+          ],
+          "declaration": "packages/client/ui-theme/lib/types/client/index.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`ThemeRuntime`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-theme:./client:ThemeDefinition",
+          "symbol": "ThemeDefinition",
+          "retainMembers": [
+            "colorScheme",
+            "id",
+            "tokens"
+          ],
+          "declaration": "packages/client/ui-theme/lib/types/client/index.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`ThemeDefinition`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-theme:./client:ThemeTokenOverrides",
+          "symbol": "ThemeTokenOverrides",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-theme/lib/types/client/index.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`ThemeTokenOverrides`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-theme:./client:ThemeSnapshot",
+          "symbol": "ThemeSnapshot",
+          "retainMembers": [
+            "active",
+            "fontSize",
+            "preference",
+            "revision",
+            "themes"
+          ],
+          "declaration": "packages/client/ui-theme/lib/types/client/index.d.ts",
+          "owner": "references/api-client-shared-ui.md",
+          "section": "`ThemeSnapshot`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-resources:./client",
+      "decision": "included",
+      "owner": "api-client-services.md",
+      "evidence": [
+        "packages/client/resources/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-resources:./client:Resources",
+          "symbol": "Resources",
+          "retainMembers": [
+            "pin",
+            "register",
+            "source"
+          ],
+          "declaration": "packages/client/resources/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`Resources`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-resources:./client:ResourceProvider",
+          "symbol": "ResourceProvider",
+          "retainMembers": [
+            "open",
+            "protocol"
+          ],
+          "declaration": "packages/client/resources/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`ResourceProvider<P>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-resources:./client:ResourceSnapshot",
+          "symbol": "ResourceSnapshot",
+          "retainMembers": [
+            "failure",
+            "status",
+            "value"
+          ],
+          "declaration": "packages/client/resources/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`ResourceSnapshot<Value>`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-resources:./client:UseResource",
+          "symbol": "UseResource",
+          "retainMembers": [],
+          "declaration": "packages/client/resources/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`UseResource`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-locale:./client",
+      "decision": "included",
+      "owner": "api-client-services.md",
+      "evidence": [
+        "packages/client/locale/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-locale:./client:LocaleRuntime",
+          "symbol": "LocaleRuntime",
+          "retainMembers": [
+            "addLanguage",
+            "bind",
+            "getLocale",
+            "register",
+            "setLocale",
+            "subscribe"
+          ],
+          "declaration": "packages/client/locale/lib/types/client/index.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`LocaleRuntime`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-shortcuts:./client",
+      "decision": "included",
+      "owner": "api-client-services.md",
+      "evidence": [
+        "packages/client/shortcuts/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-shortcuts:./client:Shortcuts",
+          "symbol": "Shortcuts",
+          "retainMembers": [
+            "catalog",
+            "config",
+            "describeBinding",
+            "edit",
+            "fixedCatalog",
+            "observeFixedInput",
+            "register",
+            "registerFixed"
+          ],
+          "declaration": "packages/client/shortcuts/lib/types/client/types.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`Shortcuts`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-shortcuts:./client:ShortcutCommand",
+          "symbol": "ShortcutCommand",
+          "retainMembers": [
+            "aliases",
+            "defaults",
+            "id",
+            "label",
+            "modals",
+            "regions",
+            "resolve"
+          ],
+          "declaration": "packages/client/shortcuts/lib/types/client/types.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`ShortcutCommand`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-tool:./client",
+      "decision": "included",
+      "owner": "api-client-interaction.md",
+      "evidence": [
+        "packages/client/ui-tool/src/client/contract/slots.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-tool:./client:ToolCallViewProps",
+          "symbol": "ToolCallViewProps",
+          "retainMembers": [
+            "block",
+            "callId",
+            "inspect",
+            "loadImage",
+            "openFile",
+            "phase",
+            "toolName",
+            "useDisclosure"
+          ],
+          "declaration": "packages/client/ui-tool/lib/types/client/contract/slots.d.ts",
+          "owner": "references/api-client-interaction.md",
+          "section": "`ToolCallViewProps`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-tool:./client:ToolCallOwnerProps",
+          "symbol": "ToolCallOwnerProps",
+          "retainMembers": [
+            "block",
+            "callId",
+            "inspect",
+            "loadImage",
+            "openFile",
+            "phase",
+            "toolName",
+            "useDisclosure"
+          ],
+          "declaration": "packages/client/ui-tool/lib/types/client/contract/slots.d.ts",
+          "owner": "references/api-client-interaction.md",
+          "section": "`ToolCallOwnerProps`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client",
+      "decision": "included",
+      "owner": "api-client-interaction.md",
+      "evidence": [
+        "packages/client/ui-input-trigger/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerServiceContract",
+          "symbol": "InputTriggerServiceContract",
+          "retainMembers": [
+            "registerSource",
+            "sessionOf"
+          ],
+          "declaration": "packages/client/ui-input-trigger/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-interaction.md",
+          "section": "`InputTriggerServiceContract`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerSource",
+          "symbol": "InputTriggerSource",
+          "retainMembers": [
+            "candidates",
+            "matchEnter",
+            "matchSpace",
+            "name",
+            "onPick",
+            "order",
+            "showGroupTitle",
+            "trigger",
+            "warm"
+          ],
+          "declaration": "packages/client/ui-input-trigger/lib/types/types.d.ts",
+          "owner": "references/api-client-interaction.md",
+          "section": "`InputTriggerSource`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-input-trigger:./client:InputTriggerCandidate",
+          "symbol": "InputTriggerCandidate",
+          "retainMembers": [
+            "drill",
+            "label",
+            "name",
+            "value"
+          ],
+          "declaration": "packages/client/ui-input-trigger/lib/types/types.d.ts",
+          "owner": "references/api-client-interaction.md",
+          "section": "`InputTriggerCandidate`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-sidebar-documentpreview:./client",
+      "decision": "included",
+      "owner": "api-client-preview.md",
+      "evidence": [
+        "packages/client/ui-sidebar-documentpreview/src/client/index.ts",
+        "packages/client/ui-sidebar-documentpreview/src/client/document/registry.ts",
+        "packages/client/ui-sidebar-documentpreview/src/client/document/contract.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-documentpreview:./client:DocumentPreviewDefinition",
+          "symbol": "DocumentPreviewDefinition",
+          "retainMembers": [
+            "binaryExtensions",
+            "extensions",
+            "id",
+            "loading",
+            "priority",
+            "title",
+            "wrap"
+          ],
+          "declaration": "packages/client/ui-sidebar-documentpreview/lib/types/client/document/registry.d.ts",
+          "owner": "references/api-client-preview.md",
+          "section": "`DocumentPreviewDefinition`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-documentpreview:./client:DocumentLoadMode",
+          "symbol": "DocumentLoadMode",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-sidebar-documentpreview/lib/types/client/document/registry.d.ts",
+          "owner": "references/api-client-preview.md",
+          "section": "`DocumentLoadMode`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-documentpreview:./client:DocumentPreviewProps",
+          "symbol": "DocumentPreviewProps",
+          "retainMembers": [
+            "addResource",
+            "content",
+            "resourceAddress",
+            "scrollportRef",
+            "setResources",
+            "wrap"
+          ],
+          "declaration": "packages/client/ui-sidebar-documentpreview/lib/types/client/document/contract.d.ts",
+          "owner": "references/api-client-preview.md",
+          "section": "`DocumentPreviewProps`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-documentpreview:./client:DocumentContent",
+          "symbol": "DocumentContent",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-sidebar-documentpreview/lib/types/client/document/contract.d.ts",
+          "owner": "references/api-client-preview.md",
+          "section": "`DocumentContent`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-commands:./client",
+      "decision": "included",
+      "owner": "api-client-commands.md",
+      "evidence": [
+        "packages/client/ui-commands/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:CommandUiRuntime",
+          "symbol": "CommandUiRuntime",
+          "retainMembers": [
+            "register",
+            "decorate",
+            "dismiss",
+            "popupFor"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/service.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`CommandUiRuntime`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:CommandUiContract",
+          "symbol": "CommandUiContract",
+          "retainMembers": [
+            "register",
+            "decorate",
+            "dismiss",
+            "popupFor"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`CommandUiContract`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:CommandContribution",
+          "symbol": "CommandContribution",
+          "retainMembers": [
+            "name",
+            "label",
+            "description",
+            "icon",
+            "available",
+            "ui"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`CommandContribution`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:CommandDecoration",
+          "symbol": "CommandDecoration",
+          "retainMembers": [
+            "name",
+            "available",
+            "ui"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`CommandDecoration`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:CommandUiSpec",
+          "symbol": "CommandUiSpec",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`CommandUiSpec`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:ActionSpec",
+          "symbol": "ActionSpec",
+          "retainMembers": [
+            "kind",
+            "run"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`ActionSpec`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:PopupSelectSpec",
+          "symbol": "PopupSelectSpec",
+          "retainMembers": [
+            "kind",
+            "searchMode",
+            "searchLabels",
+            "options",
+            "onSelect"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`PopupSelectSpec`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:SelectOption",
+          "symbol": "SelectOption",
+          "retainMembers": [
+            "id",
+            "label",
+            "detail",
+            "badge",
+            "group",
+            "active",
+            "confirmation"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`SelectOption`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:SelectOptionGroup",
+          "symbol": "SelectOptionGroup",
+          "retainMembers": [
+            "name",
+            "label"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`SelectOptionGroup`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-commands:./client:SelectConfirmation",
+          "symbol": "SelectConfirmation",
+          "retainMembers": [
+            "title",
+            "description",
+            "acknowledgeLabel",
+            "cancelLabel",
+            "confirmLabel"
+          ],
+          "declaration": "packages/client/ui-commands/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-commands.md",
+          "section": "`SelectConfirmation`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client",
+      "decision": "included",
+      "owner": "api-client-sidebar.md",
+      "evidence": [
+        "packages/client/ui-sidebar-right/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabDefinition",
+          "symbol": "SidebarRightTabDefinition",
+          "retainMembers": [
+            "id",
+            "kind",
+            "multiple",
+            "keepMounted",
+            "patterns",
+            "priority",
+            "canOpen",
+            "title",
+            "guide"
+          ],
+          "declaration": "packages/client/ui-sidebar-right/lib/types/client/tab-registry.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarRightTabDefinition`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabPriority",
+          "symbol": "SidebarRightTabPriority",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-sidebar-right/lib/types/client/tab-registry.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarRightTabPriority`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabClaim",
+          "symbol": "SidebarRightTabClaim",
+          "retainMembers": [
+            "kind",
+            "contentId",
+            "title"
+          ],
+          "declaration": "packages/client/ui-sidebar-right/lib/types/client/tab-registry.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarRightTabClaim`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:ISidebarRight",
+          "symbol": "ISidebarRight",
+          "retainMembers": [
+            "mounted",
+            "openResource",
+            "openTab",
+            "close",
+            "active",
+            "isExpanded",
+            "toggleExpanded",
+            "focus",
+            "split"
+          ],
+          "declaration": "packages/client/ui-sidebar-right/lib/types/client/service.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`ISidebarRight`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabInjected",
+          "symbol": "SidebarRightTabInjected",
+          "retainMembers": [
+            "hooks"
+          ],
+          "declaration": "packages/client/ui-sidebar-right/lib/types/client/contract/slots.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarRightTabInjected`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabParamsMap",
+          "symbol": "SidebarRightTabParamsMap",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-sidebar-right/lib/types/client/contract/params.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarRightTabParamsMap`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-file-upload:./client",
+      "decision": "included",
+      "owner": "api-client-services.md",
+      "evidence": [
+        "packages/client/file-upload/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-file-upload:./client:FileUploadService",
+          "symbol": "FileUploadService",
+          "retainMembers": [
+            "upload"
+          ],
+          "declaration": "packages/client/file-upload/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`FileUploadService`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-file-upload:./client:FileUploadProgress",
+          "symbol": "FileUploadProgress",
+          "retainMembers": [
+            "loaded",
+            "total"
+          ],
+          "declaration": "packages/client/file-upload/lib/types/client/contract.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`FileUploadProgress`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-store:.",
+      "decision": "included",
+      "owner": "api-client-services.md",
+      "evidence": [
+        "packages/client/store/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-store:.:createSnapshotStore",
+          "symbol": "createSnapshotStore",
+          "retainMembers": [],
+          "declaration": "packages/client/store/lib/types/index.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`createSnapshotStore`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-store:.:defineStore",
+          "symbol": "defineStore",
+          "retainMembers": [],
+          "declaration": "packages/client/store/lib/types/index.d.ts",
+          "owner": "references/api-client-services.md",
+          "section": "`defineStore`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-layout:./client",
+      "decision": "included",
+      "owner": "api-client-sidebar.md",
+      "evidence": [
+        "packages/client/ui-layout/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-layout:./client:ILayout",
+          "symbol": "ILayout",
+          "retainMembers": [
+            "panelInfo",
+            "selectPanel",
+            "beginNavigation",
+            "toggleSidebar",
+            "openRightbar",
+            "closeRightbar"
+          ],
+          "declaration": "packages/client/ui-layout/lib/types/client/service.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`ILayout`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-layout:./client:LayoutController",
+          "symbol": "LayoutController",
+          "retainMembers": [
+            "selectPanel",
+            "beginNavigation",
+            "toggleSidebar",
+            "openRightbar",
+            "closeRightbar"
+          ],
+          "declaration": "packages/client/ui-layout/lib/types/client/service.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`LayoutController`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-workspace:./client",
+      "decision": "included",
+      "owner": "api-client-sidebar.md",
+      "evidence": [
+        "packages/client/ui-workspace/src/client/index.ts",
+        "packages/client/ui-workspace/src/client/navigation.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-workspace:./client:UiWorkspace",
+          "symbol": "UiWorkspace",
+          "retainMembers": [
+            "openSession",
+            "openWorkspace",
+            "connectWorkspace",
+            "startSession",
+            "forkSession",
+            "archiveSession",
+            "unarchiveSession",
+            "pinSession",
+            "unpinSession",
+            "pickDirectory",
+            "listDirectory",
+            "createDirectory"
+          ],
+          "declaration": "packages/client/ui-workspace/lib/types/client/navigation.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`UiWorkspace`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-session:./client",
+      "decision": "included",
+      "owner": "api-client-conversation.md",
+      "evidence": [
+        "packages/client/ui-session/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-session:./client:UiSession",
+          "symbol": "UiSession",
+          "retainMembers": [
+            "provide",
+            "registerPendingInteraction",
+            "sessionStatus",
+            "bindingSource"
+          ],
+          "declaration": "packages/client/ui-session/lib/types/client/index.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`UiSession`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-file-reference:.",
+      "decision": "included",
+      "owner": "api-client-references.md",
+      "evidence": [
+        "packages/context/file-reference/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference:.:FileReferenceService",
+          "symbol": "FileReferenceService",
+          "retainMembers": [
+            "list"
+          ],
+          "declaration": "packages/context/file-reference/lib/types/index.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`FileReferenceService`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference:.:FileReferenceCandidate",
+          "symbol": "FileReferenceCandidate",
+          "retainMembers": [
+            "path",
+            "kind"
+          ],
+          "declaration": "packages/context/file-reference/lib/types/types.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`FileReferenceCandidate`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-file-reference:./grammar",
+      "decision": "included",
+      "owner": "api-client-references.md",
+      "evidence": [
+        "packages/context/file-reference/src/grammar.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference:./grammar:activeAtToken",
+          "symbol": "activeAtToken",
+          "retainMembers": [],
+          "declaration": "packages/context/file-reference/lib/types/grammar.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`activeAtToken`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference:./grammar:formatFileMention",
+          "symbol": "formatFileMention",
+          "retainMembers": [],
+          "declaration": "packages/context/file-reference/lib/types/grammar.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`formatFileMention`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-file-reference:./types",
+      "decision": "merged",
+      "owner": "api-client-references.md",
+      "reason": "同一 FileReferenceCandidate 契约归主入口章节；此 type-only 子路径供 Client 安全导入。",
+      "evidence": [
+        "packages/context/file-reference/src/types.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-file-reference-local:.",
+      "decision": "included",
+      "owner": "api-client-references.md",
+      "evidence": [
+        "packages/context/file-reference-local/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference-local:.:LocalFileReferenceService",
+          "symbol": "LocalFileReferenceService",
+          "retainMembers": [
+            "list"
+          ],
+          "declaration": "packages/context/file-reference-local/lib/types/index.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`LocalFileReferenceService`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-file-reference-local:./search",
+      "decision": "included",
+      "owner": "api-client-references.md",
+      "evidence": [
+        "packages/context/file-reference-local/src/search.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference-local:./search:WorkspaceFileSearch",
+          "symbol": "WorkspaceFileSearch",
+          "retainMembers": [
+            "list",
+            "invalidate",
+            "dispose"
+          ],
+          "declaration": "packages/context/file-reference-local/lib/types/search.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`WorkspaceFileSearch`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-file-reference-local:./search:FileSearchConfig",
+          "symbol": "FileSearchConfig",
+          "retainMembers": [
+            "maxResults",
+            "maxEntries",
+            "excludedDirectories"
+          ],
+          "declaration": "packages/context/file-reference-local/lib/types/search.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`FileSearchConfig`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-reference:.",
+      "decision": "included",
+      "owner": "api-client-references.md",
+      "evidence": [
+        "packages/context/session-reference/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-session-reference:.:SessionReferenceResolver",
+          "symbol": "SessionReferenceResolver",
+          "retainMembers": [
+            "listCandidates",
+            "prepare",
+            "remoteExportCandidates"
+          ],
+          "declaration": "packages/context/session-reference/lib/types/index.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`SessionReferenceResolver`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-session-reference:.:SessionReferenceMentionCandidate",
+          "symbol": "SessionReferenceMentionCandidate",
+          "retainMembers": [
+            "mention"
+          ],
+          "declaration": "packages/context/session-reference/lib/types/types.d.ts",
+          "owner": "references/api-client-references.md",
+          "section": "`SessionReferenceMentionCandidate`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-reference:./types",
+      "decision": "merged",
+      "owner": "api-client-references.md",
+      "reason": "Client-safe type vocabulary；规范对象章节在本页主入口。",
+      "evidence": [
+        "packages/context/session-reference/src/types.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-reference:./remote",
+      "decision": "merged",
+      "owner": "api-client-references.md",
+      "reason": "Typert 生成贡献已由 api-remotes/client assembly 引用；业务 Client 从聚合面调用。",
+      "evidence": [
+        "packages/context/session-reference/package.json"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-reference:./typert",
+      "decision": "merged",
+      "owner": "api-client-references.md",
+      "reason": "Typert Host descriptor 为生成载体，不是业务插件直接实现面。",
+      "evidence": [
+        "packages/context/session-reference/package.json"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workspace:.",
+      "decision": "included",
+      "owner": "api-client-workspace-data.md",
+      "evidence": [
+        "packages/workspace/workspace/src/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-workspace:.:WorkspaceRegistry",
+          "symbol": "WorkspaceRegistry",
+          "retainMembers": [
+            "create",
+            "get",
+            "list",
+            "delete",
+            "resolveByPath",
+            "insertBefore",
+            "archiveSession",
+            "unarchiveSession",
+            "pinSession",
+            "unpinSession"
+          ],
+          "declaration": "packages/workspace/workspace/lib/types/index.d.ts",
+          "owner": "references/api-client-workspace-data.md",
+          "section": "`WorkspaceRegistry`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workspace:.:WorkspaceId",
+          "symbol": "WorkspaceId",
+          "retainMembers": [],
+          "declaration": "packages/workspace/workspace/lib/types/index.d.ts",
+          "owner": "references/api-client-workspace-data.md",
+          "section": "`WorkspaceId`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workspace:.:Workspace",
+          "symbol": "Workspace",
+          "retainMembers": [
+            "path",
+            "title",
+            "sessionIds",
+            "setTitle"
+          ],
+          "declaration": "packages/workspace/workspace/lib/types/types.d.ts",
+          "owner": "references/api-client-workspace-data.md",
+          "section": "`Workspace`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workspace:./types",
+      "decision": "merged",
+      "owner": "api-client-workspace-data.md",
+      "reason": "Client-safe Workspace 值词汇；Host 写入服务以主入口为权威。",
+      "evidence": [
+        "packages/workspace/workspace/src/types.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workspace:./invariant",
+      "decision": "excluded",
+      "owner": "api-client-workspace-data.md",
+      "reason": "Workspace invariant plugin 是启动时持久域检查，普通业务插件不调用。",
+      "evidence": [
+        "packages/workspace/workspace/src/invariant.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workspace-changes:./types",
+      "decision": "included",
+      "owner": "api-client-workspace-data.md",
+      "evidence": [
+        "packages/deliverables/workspace-changes/src/types.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceChanges",
+          "symbol": "WorkspaceChanges",
+          "retainMembers": [
+            "summary",
+            "diff"
+          ],
+          "declaration": "packages/deliverables/workspace-changes/lib/types/types.d.ts",
+          "owner": "references/api-client-workspace-data.md",
+          "section": "`WorkspaceChanges`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceChangesSummary",
+          "symbol": "WorkspaceChangesSummary",
+          "retainMembers": [
+            "turn",
+            "cwd",
+            "files",
+            "total",
+            "added",
+            "deleted",
+            "snapshot"
+          ],
+          "declaration": "packages/deliverables/workspace-changes/lib/types/types.d.ts",
+          "owner": "references/api-client-workspace-data.md",
+          "section": "`WorkspaceChangesSummary`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-workspace-changes:./types:WorkspaceFileDiff",
+          "symbol": "WorkspaceFileDiff",
+          "retainMembers": [],
+          "declaration": "packages/deliverables/workspace-changes/lib/types/types.d.ts",
+          "owner": "references/api-client-workspace-data.md",
+          "section": "`WorkspaceFileDiff`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-workspace-changes:.",
+      "decision": "merged",
+      "owner": "api-client-workspace-data.md",
+      "reason": "Host plugin apply 提供 ctx.workspaceChanges；可消费类型与事件契约由 ./types 承担，Client 无直接 Remote。",
+      "evidence": [
+        "packages/deliverables/workspace-changes/src/index.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subagent:./client",
+      "decision": "included",
+      "owner": "api-client-subagent.md",
+      "evidence": [
+        "packages/subagent/subagent/src/client.ts",
+        "packages/subagent/subagent/src/control-types.ts",
+        "packages/subagent/subagent/src/projection-types.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentAddress",
+          "symbol": "SubagentAddress",
+          "retainMembers": [
+            "parentSessionId",
+            "childSessionId",
+            "mode"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentAddress`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentCatalogEntry",
+          "symbol": "SubagentCatalogEntry",
+          "retainMembers": [
+            "id",
+            "createdAt",
+            "mode",
+            "label"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentCatalogEntry`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentCatalogRow",
+          "symbol": "SubagentCatalogRow",
+          "retainMembers": [
+            "id",
+            "activity",
+            "mode",
+            "label"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentCatalogRow`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentListEntry",
+          "symbol": "SubagentListEntry",
+          "retainMembers": [],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentListEntry`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentIdentityProjection",
+          "symbol": "SubagentIdentityProjection",
+          "retainMembers": [
+            "mode",
+            "label",
+            "seq"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentIdentityProjection`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentTimingProjection",
+          "symbol": "SubagentTimingProjection",
+          "retainMembers": [
+            "settledMs",
+            "active",
+            "lastTurnCompleted"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentTimingProjection`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentPromptRequest",
+          "symbol": "SubagentPromptRequest",
+          "retainMembers": [
+            "requestId",
+            "parentSessionId",
+            "childSessionId",
+            "mode",
+            "delivery",
+            "content",
+            "clientTimeZone"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentPromptRequest`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentPromptReceipt",
+          "symbol": "SubagentPromptReceipt",
+          "retainMembers": [
+            "messageId"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentPromptReceipt`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-subagent:./client:SubagentInterruptReceipt",
+          "symbol": "SubagentInterruptReceipt",
+          "retainMembers": [
+            "accepted"
+          ],
+          "declaration": "packages/subagent/subagent/lib/types/client.d.ts",
+          "owner": "references/api-client-subagent.md",
+          "section": "`SubagentInterruptReceipt`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-chat:./client",
+      "decision": "included",
+      "owner": "api-client-conversation.md",
+      "evidence": [
+        "packages/client/ui-chat/package.json",
+        "packages/client/ui-chat/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-chat:./client:ChatNodeDataMap",
+          "symbol": "ChatNodeDataMap",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-chat/lib/types/client/index.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`ChatNodeDataMap`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-chat:./client:ChatNode",
+          "symbol": "ChatNode",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-chat/lib/types/client/index.d.ts",
+          "owner": "references/api-client-conversation.md",
+          "section": "`ChatNode`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client",
+      "decision": "included",
+      "owner": "api-client-settings.md",
+      "evidence": [
+        "packages/client/ui-plugin-manager/package.json",
+        "packages/client/ui-plugin-manager/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginConfigViewProps",
+          "symbol": "PluginConfigViewProps",
+          "retainMembers": [
+            "view",
+            "form"
+          ],
+          "declaration": "packages/client/ui-plugin-manager/lib/types/client/index.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`PluginConfigViewProps`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginDetailProps",
+          "symbol": "PluginDetailProps",
+          "retainMembers": [
+            "subject"
+          ],
+          "declaration": "packages/client/ui-plugin-manager/lib/types/client/index.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`PluginDetailProps`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-plugin-manager:./client:PluginsSubject",
+          "symbol": "PluginsSubject",
+          "retainMembers": [],
+          "declaration": "packages/client/ui-plugin-manager/lib/types/client/index.d.ts",
+          "owner": "references/api-client-settings.md",
+          "section": "`PluginsSubject`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-sidebar:./client",
+      "decision": "included",
+      "owner": "api-client-sidebar.md",
+      "evidence": [
+        "packages/client/ui-sidebar/package.json",
+        "packages/client/ui-sidebar/src/client/index.ts"
+      ],
+      "objects": [
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar:./client:SidebarPanelMetadata",
+          "symbol": "SidebarPanelMetadata",
+          "retainMembers": [
+            "id",
+            "order",
+            "label"
+          ],
+          "declaration": "packages/client/ui-sidebar/lib/types/client/index.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarPanelMetadata`"
+        },
+        {
+          "id": "export:@deepseek-ai/dsh-client-ui-sidebar:./client:SidebarBrandMarkOwnerProps",
+          "symbol": "SidebarBrandMarkOwnerProps",
+          "retainMembers": [
+            "size"
+          ],
+          "declaration": "packages/client/ui-sidebar/lib/types/client/index.d.ts",
+          "owner": "references/api-client-sidebar.md",
+          "section": "`SidebarBrandMarkOwnerProps`"
+        }
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-plugins:./client",
+      "decision": "merged",
+      "owner": "api-client-settings.md",
+      "reason": "其 ./client 导出的 SectionInjected/Props 是内置 Plugins tab owner 自身的组件输入；第三方插件使用该包声明的 settings.plugins.tab SlotMap，经通用 SlotCore 注册；契约已归 api-client-settings。",
+      "evidence": [
+        "packages/client/ui-settings-plugins/package.json",
+        "packages/client/ui-settings-plugins/src/client/index.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-client-ui-settings-web-search:./client",
+      "decision": "merged",
+      "owner": "api-client-settings.md",
+      "reason": "此 ./client 是 web-search 特定设置卡片的 props/state 与 apply；没有独立通用设置扩展注册表。第三方卡片使用 ConfigForms 与 plugins.item/settings slot。",
+      "evidence": [
+        "packages/client/ui-settings-web-search/package.json",
+        "packages/client/ui-settings-web-search/src/client/index.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-goal:./client",
+      "decision": "merged",
+      "owner": "api-client-conversation.md",
+      "reason": "src/client.ts 明确仅 export type * from ./types.ts；与 Host/types 同源的 goal 投影/请求词汇，不提供新的 Client service、slot 或注册方法；使用者经既有 goal Remote/投影任务读取。",
+      "evidence": [
+        "packages/goal/goal/package.json",
+        "packages/goal/goal/src/client.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-title:./client",
+      "decision": "merged",
+      "owner": "api-client-conversation.md",
+      "reason": "src/client.ts 仅 export type * from ./types.ts；是同一 title 投影/事件词汇的 Client 安全别名，无独立 Client 插件/扩展注册入口。",
+      "evidence": [
+        "packages/session/session-title/package.json",
+        "packages/session/session-title/src/client.ts"
+      ],
+      "objects": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-typert-registry:./client",
+      "decision": "excluded",
+      "owner": "api-client-remote.md",
+      "reason": "./client 只导出 apply 与 inject=[]，apply 构造 TypertRegistry 作为 Client reflection root；业务插件不自行注册/替换此 boot service，Remote 作者使用 Typert protocol/generator 与聚合 assembly。",
+      "evidence": [
+        "packages/typert/registry/package.json",
+        "packages/typert/registry/src/client/index.ts"
+      ],
+      "objects": []
+    }
+  ],
+  "capabilityRecommendations": [
+    {
+      "candidate": "composition:packages/bundle/web-app/cordis.patch.yml",
+      "decision": "included",
+      "taskId": "client-load-web-half",
+      "evidence": [
+        "packages/bundle/web-app/cordis.patch.yml"
+      ],
+      "owner": "references/how-to-client-web-package.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-modules",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-load-web-half",
+      "evidence": [
+        "packages/client/modules/package.json"
+      ],
+      "owner": "references/how-to-client-web-package.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-slots",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "packages/client/ui-slots/package.json"
+      ],
+      "owner": "references/how-to-client-slot-contribution.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-renderer",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "packages/client/ui-renderer/package.json"
+      ],
+      "owner": "references/how-to-client-slot-contribution.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-primitives",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "packages/client/ui-primitives/package.json"
+      ],
+      "owner": "references/how-to-client-slot-contribution.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-theme",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "packages/client/ui-theme/package.json"
+      ],
+      "owner": "references/how-to-client-slot-contribution.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-api-remotes",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-call-remote",
+      "evidence": [
+        "packages/api/remotes/package.json"
+      ],
+      "owner": "references/how-to-client-remote-call.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-typert-protocol",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-call-remote",
+      "evidence": [
+        "packages/typert/protocol/package.json"
+      ],
+      "owner": "references/how-to-client-remote-call.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-web-search",
+      "decision": "merged",
+      "topic": "client-web",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "packages/client/ui-settings-web-search/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-conversation",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-conversation-node",
+      "evidence": [
+        "packages/client/ui-conversation/package.json"
+      ],
+      "owner": "references/how-to-client-conversation-node.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-settings-card",
+      "evidence": [
+        "packages/client/ui-settings/package.json"
+      ],
+      "owner": "references/how-to-client-settings-card.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-plugin-manager",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-settings-card",
+      "evidence": [
+        "packages/client/ui-plugin-manager/package.json"
+      ],
+      "owner": "references/how-to-client-settings-card.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-chat",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-conversation-node",
+      "evidence": [
+        "packages/client/ui-chat/package.json"
+      ],
+      "owner": "references/how-to-client-conversation-node.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-resources",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-resource-provider",
+      "evidence": [
+        "packages/client/resources/package.json"
+      ],
+      "owner": "references/how-to-client-resource-provider.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-locale",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-locale-shortcuts",
+      "evidence": [
+        "packages/client/locale/package.json"
+      ],
+      "owner": "references/how-to-client-locale-shortcuts.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-shortcuts",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-locale-shortcuts",
+      "evidence": [
+        "packages/client/shortcuts/package.json"
+      ],
+      "owner": "references/how-to-client-locale-shortcuts.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-tool",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-tool-view",
+      "evidence": [
+        "packages/client/ui-tool/package.json"
+      ],
+      "owner": "references/how-to-client-tool-view.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-input-trigger",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-input-trigger",
+      "evidence": [
+        "packages/client/ui-input-trigger/package.json"
+      ],
+      "owner": "references/how-to-client-input-trigger.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-document-preview",
+      "evidence": [
+        "packages/client/ui-sidebar-documentpreview/package.json",
+        "packages/client/ui-sidebar-documentpreview/src/client/document/registry.ts"
+      ],
+      "owner": "references/how-to-client-document-preview.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-commands",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-command-ui",
+      "evidence": [
+        "packages/client/ui-commands/src/client/index.ts",
+        "packages/client/ui-commands/package.json"
+      ],
+      "owner": "references/how-to-client-command-ui.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-right",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-sidebar-tab",
+      "evidence": [
+        "packages/client/ui-sidebar-right/src/client/index.ts",
+        "packages/client/ui-sidebar-right/package.json"
+      ],
+      "owner": "references/how-to-client-sidebar-tab.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-file-upload",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-upload-file",
+      "evidence": [
+        "packages/client/file-upload/package.json",
+        "packages/client/file-upload/src/client/index.ts"
+      ],
+      "owner": "references/how-to-client-upload-file.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-store",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "packages/client/store/package.json",
+        "packages/client/store/src/index.ts"
+      ],
+      "owner": "references/how-to-client-slot-contribution.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-layout",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-sidebar-tab",
+      "evidence": [
+        "packages/client/ui-layout/package.json",
+        "packages/client/ui-layout/src/client/index.ts"
+      ],
+      "owner": "references/how-to-client-sidebar-tab.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-workspace",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-workspace-navigation",
+      "evidence": [
+        "packages/client/ui-workspace/package.json",
+        "packages/client/ui-workspace/src/client/index.ts"
+      ],
+      "owner": "references/how-to-client-workspace-navigation.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-settings-plugins",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-settings-card",
+      "evidence": [
+        "packages/client/ui-settings-plugins/package.json",
+        "packages/client/ui-settings-plugins/src/client/index.ts"
+      ],
+      "owner": "references/api-client-settings.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-session",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-conversation-node",
+      "owner": "references/api-client-conversation.md",
+      "evidence": [
+        "packages/client/ui-session/package.json",
+        "packages/client/ui-session/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-sidebar-panel",
+      "owner": "references/how-to-client-sidebar-panel.md",
+      "evidence": [
+        "packages/client/ui-sidebar/package.json",
+        "packages/client/ui-sidebar/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-file-reference",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "host-file-reference-provider",
+      "owner": "references/how-to-client-file-reference-provider.md",
+      "evidence": [
+        "packages/context/file-reference/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-file-reference-local",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "host-file-reference-provider",
+      "owner": "references/how-to-client-file-reference-provider.md",
+      "evidence": [
+        "packages/context/file-reference-local/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-session-reference",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "client-reference-candidates",
+      "owner": "references/how-to-client-reference-candidates.md",
+      "evidence": [
+        "packages/context/session-reference/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-workspace",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "host-workspace-registry",
+      "owner": "references/how-to-client-workspace-registry.md",
+      "evidence": [
+        "packages/workspace/workspace/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-workspace-changes",
+      "decision": "included",
+      "topic": "client-web",
+      "taskId": "host-workspace-changes",
+      "owner": "references/how-to-client-workspace-changes.md",
+      "evidence": [
+        "packages/deliverables/workspace-changes/package.json"
+      ]
+    }
+  ],
+  "taskRecommendations": [
+    {
+      "candidate": "task:docs/cookbook/adding-a-remote-api.md:1",
+      "decision": "included",
+      "taskId": "host-publish-remote",
+      "evidence": [
+        "docs/cookbook/adding-a-remote-api.zh.md"
+      ],
+      "owner": "references/how-to-client-publish-remote.md"
+    },
+    {
+      "candidate": "task:docs/cookbook/adding-a-settings-card.zh.md:1",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "evidence": [
+        "docs/cookbook/adding-a-settings-card.zh.md"
+      ]
+    },
+    {
+      "candidate": "task:packages/client/ui-settings/README.zh.md:30",
+      "decision": "included",
+      "taskId": "client-settings-card",
+      "evidence": [
+        "packages/client/ui-settings/README.zh.md"
+      ]
+    },
+    {
+      "candidate": "task:packages/client/ui-plugin-manager/README.zh.md:106",
+      "decision": "included",
+      "taskId": "client-settings-card",
+      "evidence": [
+        "packages/client/ui-plugin-manager/README.zh.md"
+      ]
+    }
+  ],
+  "otherCandidatePolicy": [
+    {
+      "category": "feature-specific Client UI package and ./client entries",
+      "recommendation": "Do not blanket-exclude; merge into the concrete feature task when its public data or slot contract is needed; otherwise record package-specific reason.",
+      "evidence": [
+        "packages/client/AGENTS.md"
+      ]
+    },
+    {
+      "category": "Client test runtime and internal module graph implementation",
+      "recommendation": "Use as evidence, exclude from plugin-facing normal API unless a test task requires the public test harness.",
+      "evidence": [
+        "packages/client/AGENTS.md"
+      ]
+    },
+    {
+      "category": "experimental Client packages",
+      "recommendation": "Assess explicit experimental opt-in and public loading path; do not present as default Web capability.",
+      "evidence": [
+        "packages/experimental/client-ui-agent-team/package.json"
+      ]
+    }
+  ],
+  "manualTasks": [
+    {
+      "taskId": "client-conversation-node",
+      "evidence": [
+        "docs/subsystems/conversation.zh.md",
+        "packages/client/ui-conversation/src/client/contract/conversation.ts"
+      ]
+    },
+    {
+      "taskId": "client-theme-ui",
+      "evidence": [
+        "packages/client/ui-theme/src/client/index.ts",
+        "docs/web-styling.md"
+      ]
+    },
+    {
+      "taskId": "client-resource-provider",
+      "evidence": [
+        "packages/client/resources/src/client/contract.ts",
+        "docs/subsystems/client-resources.md"
+      ]
+    },
+    {
+      "taskId": "client-locale-shortcuts",
+      "evidence": [
+        "packages/client/locale/src/client/index.ts",
+        "packages/client/shortcuts/src/client/types.ts"
+      ]
+    },
+    {
+      "taskId": "client-tool-view",
+      "evidence": [
+        "packages/client/ui-tool/src/client/contract/slots.ts",
+        "packages/client/ui-skill/src/client/index.ts"
+      ]
+    },
+    {
+      "taskId": "client-input-trigger",
+      "evidence": [
+        "packages/client/ui-input-trigger/src/types.ts",
+        "packages/client/ui-input-trigger/src/client/service.ts"
+      ]
+    },
+    {
+      "taskId": "client-document-preview",
+      "evidence": [
+        "packages/client/ui-sidebar-documentpreview/src/client/document/registry.ts",
+        "packages/client/ui-sidebar-documentpreview/src/client/document/contract.ts"
+      ]
+    },
+    {
+      "taskId": "client-command-ui",
+      "evidence": [
+        "packages/client/ui-commands/src/client/contract.ts",
+        "packages/client/ui-commands/src/client/service.ts"
+      ]
+    },
+    {
+      "taskId": "client-sidebar-tab",
+      "evidence": [
+        "packages/client/ui-sidebar-right/src/client/tab-registry.ts",
+        "packages/client/ui-sidebar-right/src/client/contract/slots.ts"
+      ]
+    },
+    {
+      "taskId": "client-workspace-navigation",
+      "evidence": [
+        "packages/client/ui-workspace/src/client/navigation.ts"
+      ]
+    },
+    {
+      "taskId": "host-file-reference-provider",
+      "evidence": [
+        "packages/context/file-reference/src/index.ts",
+        "packages/context/file-reference-local/src/index.ts"
+      ]
+    },
+    {
+      "taskId": "client-reference-candidates",
+      "evidence": [
+        "packages/client/ui-reference/src/client/index.ts",
+        "packages/context/session-reference/src/index.ts"
+      ]
+    },
+    {
+      "taskId": "host-workspace-changes",
+      "evidence": [
+        "packages/deliverables/workspace-changes/src/types.ts"
+      ]
+    },
+    {
+      "taskId": "host-workspace-registry",
+      "evidence": [
+        "packages/workspace/workspace/src/index.ts",
+        "packages/workspace/workspace/src/types.ts"
+      ]
+    },
+    {
+      "taskId": "client-subagent-navigation",
+      "evidence": [
+        "packages/client/ui-subagent/src/client/index.ts",
+        "packages/client/ui-workspace/src/client/navigation.ts",
+        "packages/api/session-controller/src/client/sessions/session.ts"
+      ]
+    },
+    {
+      "taskId": "client-sidebar-panel",
+      "evidence": [
+        "packages/client/ui-sidebar/src/client/contract/slots.ts",
+        "packages/client/ui-plugin-manager/src/client/index.ts"
+      ]
+    }
+  ],
+  "unverifiedConsumerPaths": [
+    "External npm Web clientBundle: no independent build/loader test; package requires equivalent lazy-CJS preset and real Web Profile installation.",
+    "Client Remote and Host RPC examples: checked declarations and source, not end-to-end network/runtime.",
+    "Command UI, Sidebar Tab, Conversation Node, settings, document preview: source/type checked only; no browser smoke for full lifecycle."
+  ]
+}

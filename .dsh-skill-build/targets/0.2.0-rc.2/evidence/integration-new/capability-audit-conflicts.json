@@ -1,0 +1,1569 @@
+[
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-open-in-app",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-host-open-in-app",
+            "decision": "excluded",
+            "ownerGroup": "infra-integration",
+            "reason": "固定应用目录与固定 HTTP 路由的内置 Web 产品功能；未发现让第三方插件注册新应用目录项的公开扩展契约。",
+            "evidence": "packages/host/open-in-app/package.json",
+            "implementation": "packages/host/open-in-app/src/index.ts"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-host-open-in-app",
+            "path": "packages/host/open-in-app/package.json",
+            "decision": "merged",
+            "owner": "host-webserver",
+            "taskIds": [
+                "register-open-in-app"
+            ],
+            "reason": "编辑器/终端启动器和 Web 路由的产品特定实现；需要独立路由与本机进程安全核验。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-open-in-app"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory",
+            "decision": "included",
+            "ownerGroup": "client-web",
+            "reason": "Remote 只读 Loader/preset 快照，用于插件列表或诊断 UI；没有同进程 Context 服务或修改能力。",
+            "evidence": "packages/host/plugin-inventory/package.json",
+            "implementation": "packages/host/plugin-inventory/src/index.ts"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-host-plugin-inventory",
+            "path": "packages/host/plugin-inventory/package.json",
+            "decision": "merged",
+            "owner": "client-remote",
+            "taskIds": [
+                "read-plugin-inventory"
+            ],
+            "reason": "当前 Loader 状态的内置只读 Remote 投影；不把它误写为第三方 Client 插件注册 seam。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+            "decision": "excluded",
+            "ownerGroup": "infra-integration",
+            "reason": "随附产品遥测 exporter，属于部署观测实现；未发现插件作者必须使用的通用注册/调用入口。",
+            "evidence": "packages/host/product-telemetry-otel/package.json",
+            "implementation": "packages/host/product-telemetry-otel/src/index.ts"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+            "path": "packages/host/product-telemetry-otel/package.json",
+            "decision": "merged",
+            "owner": "telemetry",
+            "taskIds": [
+                "configure-product-telemetry"
+            ],
+            "reason": "产品使用事件的 OTEL 后端实现；部署配置与发送边界归遥测主题。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-jobs",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-jobs",
+            "path": "packages/jobs/jobs/package.json",
+            "decision": "needs-owner",
+            "reason": "JobRegistry 可子类化；后台任务所有权、输出、取消和可见性需要专门任务文档。",
+            "candidate": "package:@deepseek-ai/dsh-jobs"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-jobs",
+            "path": "packages/jobs/jobs/package.json",
+            "decision": "included",
+            "owner": "references/api-host-jobs.md",
+            "taskIds": [
+                "register-background-job"
+            ],
+            "reason": "抽象 JobRegistry 与 producer/owner/output 契约公开；local backend 和模型控制器是独立组合。",
+            "candidate": "package:@deepseek-ai/dsh-jobs"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-permission-presets",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-permission-presets",
+            "decision": "included",
+            "ownerGroup": "host-core",
+            "reason": "插件可发布或消费权限 preset，影响 Agent 会话与工具执行门禁。",
+            "evidence": "packages/interaction/permission-presets/package.json",
+            "implementation": "packages/interaction/permission-presets/src/index.ts"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-permission-presets",
+            "path": "packages/interaction/permission-presets/package.json",
+            "decision": "merged",
+            "owner": "host-prompt-policy",
+            "taskIds": [
+                "configure-permission-preset"
+            ],
+            "reason": "部署用沙箱与审批策略组合；具体 preset 不等同单次 ApprovalOutcome。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-permission-presets"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+            "decision": "excluded",
+            "ownerGroup": "infra-profile",
+            "reason": "DeepSeek 官方 LLM 请求的提供方元数据贡献，收集活跃 Loader 包名/版本；不提供插件作者可调用、注册或挂载的新通用扩展 seam，也不反映动态子 fiber。",
+            "evidence": "packages/llm/plugin-package-inventory-deepseek/package.json",
+            "implementation": "packages/llm/plugin-package-inventory-deepseek/src/index.ts"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+            "path": "packages/llm/plugin-package-inventory-deepseek/package.json",
+            "decision": "merged",
+            "owner": "provider-deepseek",
+            "taskIds": [
+                "inspect-deepseek-package-inventory"
+            ],
+            "reason": "向官方 DeepSeek 请求提供活跃 Loader 包元数据的产品特定实现。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-shell-env",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-shell-env",
+            "path": "packages/shell/shell-env/package.json",
+            "decision": "needs-owner",
+            "reason": "管理 DSH_* shell 环境的注册表是插件可参与的能力；需核查注入与跨调用生命周期。",
+            "candidate": "package:@deepseek-ai/dsh-shell-env"
+        },
+        "final": {
+            "candidateId": "package:@deepseek-ai/dsh-shell-env",
+            "path": "packages/shell/shell-env/package.json",
+            "decision": "included",
+            "owner": "references/api-host-shell-env.md",
+            "taskIds": [
+                "register-shell-environment-fact"
+            ],
+            "reason": "公开 ShellEnvRegistry 注册 API 和按执行收集的环境贡献者；用户任务明确要求新增环境事实。",
+            "candidate": "package:@deepseek-ai/dsh-shell-env"
+        }
+    },
+    {
+        "candidate": "cookbook:reviewing-persistence-type-changes",
+        "earlier": {
+            "candidate": "cookbook:reviewing-persistence-type-changes",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "Session/领域格式维护流程，属于数据迁移与测试指南；不构成独立运行时插件产品形态",
+            "evidence": "docs/cookbook/reviewing-persistence-type-changes.md"
+        },
+        "final": {
+            "candidate": "cookbook:reviewing-persistence-type-changes",
+            "decision": "excluded",
+            "reason": "核心持久化类型变更的仓库维护流程，不是第三方插件使用路径。",
+            "evidence": "docs/cookbook/reviewing-persistence-type-changes.md"
+        }
+    },
+    {
+        "candidate": "subsystems:approval",
+        "earlier": {
+            "candidate": "subsystems:approval",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+            "evidence": "docs/subsystems/approval.md"
+        },
+        "final": {
+            "candidate": "subsystems:approval",
+            "decision": "included",
+            "taskId": "guard-host-tool-execution",
+            "reason": "approval 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/approval.md"
+        }
+    },
+    {
+        "candidate": "subsystems:boot",
+        "earlier": {
+            "candidate": "subsystems:boot",
+            "decision": "merged",
+            "ownerGroup": "infra-profile",
+            "reason": "Profile/Bundle 说明线索，实际公开装载契约已归 app-boot、package-manifest、cmdline 与 plugin-manager；不另立产品能力。",
+            "evidence": "docs/subsystems/boot.md"
+        },
+        "final": {
+            "candidate": "subsystems:boot",
+            "decision": "included",
+            "taskId": "ship-profile-bundle",
+            "reason": "boot 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/boot.md"
+        }
+    },
+    {
+        "candidate": "subsystems:credentials",
+        "earlier": {
+            "candidate": "subsystems:credentials",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+            "evidence": "docs/subsystems/credentials.md"
+        },
+        "final": {
+            "candidate": "subsystems:credentials",
+            "decision": "included",
+            "taskId": "store-plugin-credential",
+            "reason": "credentials 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/credentials.md"
+        }
+    },
+    {
+        "candidate": "subsystems:permission-presets",
+        "earlier": {
+            "candidate": "subsystems:permission-presets",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+            "evidence": "docs/subsystems/permission-presets.md"
+        },
+        "final": {
+            "candidate": "subsystems:permission-presets",
+            "decision": "excluded",
+            "reason": "内置权限选择器的配置与事件投影，不定义第三方插件提供新 Tool 或审批 service 的通用契约。",
+            "evidence": "docs/subsystems/permission-presets.md"
+        }
+    },
+    {
+        "candidate": "subsystems:persistence",
+        "earlier": {
+            "candidate": "subsystems:persistence",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+            "evidence": "docs/subsystems/persistence.md"
+        },
+        "final": {
+            "candidate": "subsystems:persistence",
+            "decision": "included",
+            "taskId": "implement-session-persistence",
+            "reason": "persistence 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/persistence.md"
+        }
+    },
+    {
+        "candidate": "subsystems:settings",
+        "earlier": {
+            "candidate": "subsystems:settings",
+            "decision": "merged",
+            "ownerGroup": "infra-profile",
+            "reason": "Settings/ConfigEditor 说明线索，能力已由公开包及实时配置任务覆盖；Client 页面另归 Client 组。",
+            "evidence": "docs/subsystems/settings.md"
+        },
+        "final": {
+            "candidate": "subsystems:settings",
+            "decision": "included",
+            "taskId": "expose-live-config",
+            "reason": "settings 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/settings.md"
+        }
+    },
+    {
+        "candidate": "subsystems:subprocess",
+        "earlier": {
+            "candidate": "subsystems:subprocess",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+            "evidence": "docs/subsystems/subprocess.md"
+        },
+        "final": {
+            "candidate": "subsystems:subprocess",
+            "decision": "included",
+            "taskId": "execute-confined-command",
+            "reason": "subprocess 子系统描述本次纳入的公开插件对象关系与使用边界，归入对应 HOW-TO。",
+            "evidence": "docs/subsystems/subprocess.md"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-agent-default-model",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-agent-default-model",
+            "path": "packages/core/agent-default-model/package.json",
+            "decision": "merged",
+            "owner": "host-agent",
+            "taskIds": [
+                "choose-default-model"
+            ],
+            "reason": "内置新 Agent 默认模型选择器；其配置影响 Agent 创建，但不定义新的 Agent 扩展契约。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-agent-default-model"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-agent-default-model",
+            "decision": "excluded",
+            "reason": "Default model selection shared by Agent entry points。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/core/agent-default-model/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-agent-tool-presentation",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-agent-tool-presentation",
+            "path": "packages/core/agent-tool-presentation/package.json",
+            "decision": "merged",
+            "owner": "host-agent",
+            "taskIds": [
+                "choose-tool-presentation"
+            ],
+            "reason": "内置 Agent 工具呈现模式选择器；属于 Agent 装载配置，具体模型可见形态须按此包核验。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-agent-tool-presentation"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-agent-tool-presentation",
+            "decision": "excluded",
+            "reason": "Agent-plane presentation selector: composes one agent's tools as PTC mode, native, or both。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/core/agent-tool-presentation/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-bash-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-bash-local",
+            "path": "packages/shell/bash-local/package.json",
+            "decision": "merged",
+            "owner": "dsh-shell",
+            "reason": "本地 Bash executor 后端；插件接口由 ctx.shell 的抽象 Service 定义。",
+            "candidate": "package:@deepseek-ai/dsh-bash-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-bash-local",
+            "decision": "excluded",
+            "reason": "Local-subprocess implementation of the DeepSeek Harness bash executor seam。这是已发布的 Shell 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/shell/bash-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-bash-sandbox",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-bash-sandbox",
+            "path": "packages/shell/bash-sandbox/package.json",
+            "decision": "merged",
+            "owner": "dsh-shell",
+            "reason": "Sandbox 消费型 Bash executor；由 ctx.shell 与 ctx.sandbox 共同约束。",
+            "candidate": "package:@deepseek-ai/dsh-bash-sandbox"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-bash-sandbox",
+            "decision": "excluded",
+            "reason": "Sandbox-consuming implementation of the DeepSeek Harness bash executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)。这是已发布的 Shell 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/shell/bash-sandbox/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-cordis-host-runner",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-cordis-host-runner",
+            "decision": "included",
+            "ownerGroup": "host-core",
+            "reason": "公开 Cordis Host runner 可组合外部 Host 插件；Remote 生成子路径另由 Client/Remote 组核查。",
+            "evidence": "packages/extensions/cordis-host-runner/package.json",
+            "implementation": "packages/extensions/cordis-host-runner/src/index.ts"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-cordis-host-runner",
+            "decision": "excluded",
+            "reason": "Dynamic package definition registry, host-half sandbox lifecycle, and invoke handler table for model-mounted dual-half packages。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/extensions/cordis-host-runner/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-credentials-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-credentials-local",
+            "path": "packages/credentials/credentials-local/package.json",
+            "decision": "merged",
+            "owner": "host-credentials",
+            "taskIds": [
+                "configure-local-credentials"
+            ],
+            "reason": "文件型 CredentialProvider 具体实现，作为凭据 seam 的部署例子；不能把其文件布局当成所有 provider 的契约。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-credentials-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-credentials-local",
+            "decision": "excluded",
+            "reason": "File-backed credentials provider ($DSH_HOME/.env under the live process environment) for the DeepSeek Harness。它是本地或官方 DeepSeek 凭据实现；插件自有凭据与授权应通过 Credentials/Authorization 服务契约，不复用该官方 provider 的内部记录。",
+            "evidence": "packages/credentials/credentials-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-deepseek-account",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-deepseek-account",
+            "path": "packages/credentials/deepseek-account/package.json",
+            "decision": "merged",
+            "owner": "provider-authentication",
+            "taskIds": [
+                "use-deepseek-account"
+            ],
+            "reason": "DeepSeek 账号消费服务和登录状态入口；是特定账号集成，不属于通用凭据 Service 定义。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-deepseek-account"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-deepseek-account",
+            "decision": "excluded",
+            "reason": "Read account state and resolve official API credentials。它是本地或官方 DeepSeek 凭据实现；插件自有凭据与授权应通过 Credentials/Authorization 服务契约，不复用该官方 provider 的内部记录。",
+            "evidence": "packages/credentials/deepseek-account/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-deepseek-account-platform",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-deepseek-account-platform",
+            "path": "packages/credentials/deepseek-account-platform/package.json",
+            "decision": "merged",
+            "owner": "provider-authentication",
+            "taskIds": [
+                "configure-deepseek-login"
+            ],
+            "reason": "系统浏览器登录与本地凭据存储的具体组合；具体 OAuth 协议归账号集成主题。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-deepseek-account-platform"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-deepseek-account-platform",
+            "decision": "excluded",
+            "reason": "Authorize DeepSeek accounts through browser PKCE。它是本地或官方 DeepSeek 凭据实现；插件自有凭据与授权应通过 Credentials/Authorization 服务契约，不复用该官方 provider 的内部记录。",
+            "evidence": "packages/credentials/deepseek-account-platform/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-deepseek-llm-api-extensions",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-deepseek-llm-api-extensions",
+            "path": "packages/llm/deepseek-llm-api-extensions/package.json",
+            "decision": "merged",
+            "owner": "provider-deepseek",
+            "taskIds": [
+                "extend-deepseek-request"
+            ],
+            "reason": "官方 DeepSeek 请求扩展注册表是独立公开 provider 插件 seam；需独立对象与请求字段裁决，不应仅当内置适配器细节。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-deepseek-llm-api-extensions"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-deepseek-llm-api-extensions",
+            "decision": "excluded",
+            "reason": "Additive request-field registry for the official DeepSeek LLM API adapter。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/llm/deepseek-llm-api-extensions/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-fs-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-fs-local",
+            "path": "packages/fs/fs-local/package.json",
+            "decision": "merged",
+            "owner": "dsh-fs",
+            "reason": "本地文件系统实现证明 FileSystem 可装载；第三方实现契约归 dsh-fs。",
+            "candidate": "package:@deepseek-ai/dsh-fs-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-fs-local",
+            "decision": "excluded",
+            "reason": "Local-filesystem implementation of the DeepSeek Harness filesystem seam (ctx.fs)。这是已发布的 FileSystem 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/fs/fs-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-fs-observation-policy",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-fs-observation-policy",
+            "path": "packages/fs/fs-observation-policy/package.json",
+            "decision": "merged",
+            "reason": "目标版本的具体 fs/* 事件政策插件：按 owner/target 记录观察，并把 write/edit 意图转成版本保护；不注册 FileSystem Service，挂载与未挂载语义已在 FS API 子主题说明。",
+            "owner": "api-infra-provider-fs.md",
+            "candidate": "package:@deepseek-ai/dsh-fs-observation-policy"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-fs-observation-policy",
+            "decision": "excluded",
+            "reason": "它是内置 fs/* read-before-edit 与版本写入政策的具体监听器，不实现新的 FileSystem provider；自有文件服务使用 FileSystem 抽象契约。",
+            "evidence": "packages/fs/fs-observation-policy/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-fs-sandbox",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-fs-sandbox",
+            "path": "packages/fs/fs-sandbox/package.json",
+            "decision": "merged",
+            "owner": "dsh-fs",
+            "reason": "文件系统变体消费 sandbox policy 并约束写入；与 FileSystem provider 选型共同说明。",
+            "candidate": "package:@deepseek-ai/dsh-fs-sandbox"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-fs-sandbox",
+            "decision": "excluded",
+            "reason": "Sandbox-enforcing implementation of the DeepSeek Harness filesystem seam: fences write/edit by the per-call sandbox mode (read-only denies mutation, workspace-write contains it to the workspace + temp roots) while reads pass through。这是已发布的 FileSystem 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/fs/fs-sandbox/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-directory-picker-auto",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-directory-picker-auto",
+            "path": "packages/host/directory-picker-auto/package.json",
+            "decision": "merged",
+            "owner": "host-directory-picker",
+            "taskIds": [
+                "configure-directory-picker"
+            ],
+            "reason": "原生与浏览后端的启动时选择器；归目录选择任务的组合变体。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-directory-picker-auto"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-directory-picker-auto",
+            "decision": "excluded",
+            "reason": "Adaptive chooser of the directory-picker seam: resolves the host situation at boot and mounts the native or browse backend for the DeepSeek Harness web GUI host。它是已选 Host seam 的一种具体产品后端或静态页面/遥测实现；第三方后端以抽象 service 合约接入。",
+            "evidence": "packages/host/directory-picker-auto/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-directory-picker-browse",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-directory-picker-browse",
+            "path": "packages/host/directory-picker-browse/package.json",
+            "decision": "merged",
+            "owner": "host-directory-picker",
+            "taskIds": [
+                "configure-directory-picker"
+            ],
+            "reason": "目录选择 browse 具体实现，同时装载匹配 Client 流程；现成组合见本组 example。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-directory-picker-browse"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-directory-picker-browse",
+            "decision": "excluded",
+            "reason": "In-app browsing backend of the directory-picker seam (listing/creation primitives over the host filesystem)。它是已选 Host seam 的一种具体产品后端或静态页面/遥测实现；第三方后端以抽象 service 合约接入。",
+            "evidence": "packages/host/directory-picker-browse/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-directory-picker-native",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-directory-picker-native",
+            "path": "packages/host/directory-picker-native/package.json",
+            "decision": "merged",
+            "owner": "host-directory-picker",
+            "taskIds": [
+                "configure-directory-picker"
+            ],
+            "reason": "目录选择 native 具体实现；其 OS 对话框只适用于操作者可接触 Host 屏幕的部署。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-directory-picker-native"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-directory-picker-native",
+            "decision": "excluded",
+            "reason": "Native-OS-chooser backend of the directory-picker seam for the DeepSeek Harness web GUI host。它是已选 Host seam 的一种具体产品后端或静态页面/遥测实现；第三方后端以抽象 service 合约接入。",
+            "evidence": "packages/host/directory-picker-native/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-frontend-static",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-frontend-static",
+            "path": "packages/host/frontend-static/package.json",
+            "decision": "merged",
+            "owner": "host-webserver",
+            "taskIds": [
+                "serve-web-frontend"
+            ],
+            "reason": "SPA dist 的具体现成服务插件，建立在 Host webserver 回退席位上；不是静态资源通用 API owner。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-frontend-static"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-frontend-static",
+            "decision": "excluded",
+            "reason": "SPA dist server for the Web shell: owns the webserver fallback seat, serving explicit index entries and static assets with traversal rejection and 404 misses。它是已选 Host seam 的一种具体产品后端或静态页面/遥测实现；第三方后端以抽象 service 合约接入。",
+            "evidence": "packages/host/frontend-static/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-open-in-app",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-open-in-app",
+            "path": "packages/host/open-in-app/package.json",
+            "decision": "merged",
+            "owner": "host-webserver",
+            "taskIds": [
+                "register-open-in-app"
+            ],
+            "reason": "编辑器/终端启动器和 Web 路由的产品特定实现；需要独立路由与本机进程安全核验。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-open-in-app"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-open-in-app",
+            "decision": "excluded",
+            "reason": "Host half of open-in-app: resolved application catalog, icons, and the launch endpoint as three webServer routes。它是已选 Host seam 的一种具体产品后端或静态页面/遥测实现；第三方后端以抽象 service 合约接入。",
+            "evidence": "packages/host/open-in-app/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-plugin-inventory",
+            "path": "packages/host/plugin-inventory/package.json",
+            "decision": "merged",
+            "owner": "client-remote",
+            "taskIds": [
+                "read-plugin-inventory"
+            ],
+            "reason": "当前 Loader 状态的内置只读 Remote 投影；不把它误写为第三方 Client 插件注册 seam。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory",
+            "decision": "excluded",
+            "reason": "Read-only Remote projection of current Cordis Loader plugin state。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/host/plugin-inventory/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+            "path": "packages/host/product-telemetry-otel/package.json",
+            "decision": "merged",
+            "owner": "telemetry",
+            "taskIds": [
+                "configure-product-telemetry"
+            ],
+            "reason": "产品使用事件的 OTEL 后端实现；部署配置与发送边界归遥测主题。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+            "decision": "excluded",
+            "reason": "Explicit product usage events exported through OpenTelemetry HTTP logs。它是已选 Host seam 的一种具体产品后端或静态页面/遥测实现；第三方后端以抽象 service 合约接入。",
+            "evidence": "packages/host/product-telemetry-otel/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-jobs-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-jobs-local",
+            "path": "packages/jobs/jobs-local/package.json",
+            "decision": "merged",
+            "owner": "dsh-jobs",
+            "reason": "进程本地 JobRegistry 实现，归抽象注册表契约。",
+            "candidate": "package:@deepseek-ai/dsh-jobs-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-jobs-local",
+            "decision": "excluded",
+            "reason": "Process-local implementation of the DeepSeek Harness background job registry seam。这是已发布的 Jobs 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/jobs/jobs-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-llm-deepseek",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-llm-deepseek",
+            "path": "packages/llm/llm-deepseek/package.json",
+            "decision": "merged",
+            "owner": "provider-deepseek",
+            "taskIds": [
+                "configure-deepseek-llm"
+            ],
+            "reason": "DeepSeek Messages/推理/图像的具体适配器；通用 LlmAdapter 契约归 dsh-llm。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-llm-deepseek"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-llm-deepseek",
+            "decision": "excluded",
+            "reason": "DeepSeek Messages adapter。它是现成模型 adapter、恢复策略或测试 provider；新模型集成由 LlmAdapter 注册契约和自己的 provider 包负责。",
+            "evidence": "packages/llm/llm-deepseek/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-llm-deepseek-account",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-llm-deepseek-account",
+            "path": "packages/llm/llm-deepseek-account/package.json",
+            "decision": "merged",
+            "owner": "provider-deepseek",
+            "taskIds": [
+                "configure-deepseek-account-model"
+            ],
+            "reason": "DeepSeek 账号的鉴权和模型发现具体路由；需账号集成主题验证。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-llm-deepseek-account"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-llm-deepseek-account",
+            "decision": "excluded",
+            "reason": "DeepSeek account provider authentication and discovery。它是现成模型 adapter、恢复策略或测试 provider；新模型集成由 LlmAdapter 注册契约和自己的 provider 包负责。",
+            "evidence": "packages/llm/llm-deepseek-account/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-llm-deepseek-api-key",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-llm-deepseek-api-key",
+            "path": "packages/llm/llm-deepseek-api-key/package.json",
+            "decision": "merged",
+            "owner": "provider-deepseek",
+            "taskIds": [
+                "configure-deepseek-api-key-model"
+            ],
+            "reason": "DeepSeek API key 鉴权和模型发现具体路由；需账号集成主题验证。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-llm-deepseek-api-key"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-llm-deepseek-api-key",
+            "decision": "excluded",
+            "reason": "DeepSeek api-key provider authentication and discovery。它是现成模型 adapter、恢复策略或测试 provider；新模型集成由 LlmAdapter 注册契约和自己的 provider 包负责。",
+            "evidence": "packages/llm/llm-deepseek-api-key/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-llm-pi-ai",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-llm-pi-ai",
+            "path": "packages/llm/llm-pi-ai/package.json",
+            "decision": "merged",
+            "owner": "host-llm",
+            "taskIds": [
+                "configure-pi-ai-adapter"
+            ],
+            "reason": "pi-ai 多 provider 具体 LlmAdapter 与模型目录；是通用适配器契约的实现样本。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-llm-pi-ai"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-llm-pi-ai",
+            "decision": "excluded",
+            "reason": "pi-ai-backed DeepSeek adapter for the DeepSeek Harness LLM seam (design-verification twin of dsh-llm-deepseek)。它是现成模型 adapter、恢复策略或测试 provider；新模型集成由 LlmAdapter 注册契约和自己的 provider 包负责。",
+            "evidence": "packages/llm/llm-pi-ai/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-llm-retry",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-llm-retry",
+            "path": "packages/llm/llm-retry/package.json",
+            "decision": "merged",
+            "owner": "host-llm",
+            "taskIds": [
+                "configure-llm-retry"
+            ],
+            "reason": "Agent step 边界的路由化重试执行器；不能由适配器单次 stream 契约推导其恢复语义。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-llm-retry"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-llm-retry",
+            "decision": "excluded",
+            "reason": "Provider-routed LLM request retry policy for the DeepSeek Harness。它是现成模型 adapter、恢复策略或测试 provider；新模型集成由 LlmAdapter 注册契约和自己的 provider 包负责。",
+            "evidence": "packages/llm/llm-retry/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-mcp-client",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-mcp-client",
+            "path": "packages/mcp/mcp-client/package.json",
+            "decision": "needs-owner",
+            "reason": "MCP 客户端桥接插件可配置 stdio 或 Streamable HTTP server 并注册模型工具；不是资源 provider 本身。",
+            "candidate": "package:@deepseek-ai/dsh-mcp-client"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-mcp-client",
+            "decision": "excluded",
+            "reason": "它把外部 MCP Server 的 Tool 接入 ctx.tools，是现成协议桥接器；自有资源 Provider 的注册契约由 dsh-mcp-resources 拥有。",
+            "evidence": "packages/mcp/mcp-client/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-permission-presets",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-permission-presets",
+            "path": "packages/interaction/permission-presets/package.json",
+            "decision": "merged",
+            "owner": "host-prompt-policy",
+            "taskIds": [
+                "configure-permission-preset"
+            ],
+            "reason": "部署用沙箱与审批策略组合；具体 preset 不等同单次 ApprovalOutcome。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-permission-presets"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-permission-presets",
+            "decision": "excluded",
+            "reason": "User-facing permission presets (ctx.permissionPresets) for the DeepSeek Harness: one product-level Permissions select bundling the sandbox-mode and approval-policy knobs, written through to their own session events。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/interaction/permission-presets/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+            "path": "packages/llm/plugin-package-inventory-deepseek/package.json",
+            "decision": "merged",
+            "owner": "provider-deepseek",
+            "taskIds": [
+                "inspect-deepseek-package-inventory"
+            ],
+            "reason": "向官方 DeepSeek 请求提供活跃 Loader 包元数据的产品特定实现。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+            "decision": "excluded",
+            "reason": "Active Loader-backed plugin package inventory for official DeepSeek LLM API requests。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/llm/plugin-package-inventory-deepseek/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-pwsh-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-pwsh-local",
+            "path": "packages/shell/pwsh-local/package.json",
+            "decision": "merged",
+            "owner": "dsh-shell",
+            "reason": "本地 PowerShell executor 后端，共用 shell 执行接口。",
+            "candidate": "package:@deepseek-ai/dsh-pwsh-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-pwsh-local",
+            "decision": "excluded",
+            "reason": "Local PowerShell implementation of the DeepSeek Harness bash executor seam。这是已发布的 Shell 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/shell/pwsh-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-pwsh-sandbox",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-pwsh-sandbox",
+            "path": "packages/shell/pwsh-sandbox/package.json",
+            "decision": "merged",
+            "owner": "dsh-shell",
+            "reason": "消费 sandbox 的 PowerShell executor 后端，共用 shell/sandbox 契约。",
+            "candidate": "package:@deepseek-ai/dsh-pwsh-sandbox"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-pwsh-sandbox",
+            "decision": "excluded",
+            "reason": "Sandbox-consuming implementation of the DeepSeek Harness PowerShell executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)。这是已发布的 Shell 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/shell/pwsh-sandbox/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-sandbox-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-sandbox-local",
+            "path": "packages/sandbox/sandbox-local/package.json",
+            "decision": "merged",
+            "owner": "dsh-sandbox",
+            "reason": "本地多平台隔离实现，能力探测和失败关闭属基础 sandbox 契约。",
+            "candidate": "package:@deepseek-ai/dsh-sandbox-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-sandbox-local",
+            "decision": "excluded",
+            "reason": "Local process-sandbox backends for the DeepSeek Harness sandbox seam: bwrap, the npm-distributed landlock-run launcher, macOS Seatbelt, or the Windows ACL restricted-token runner — functionally probed, fail-closed。这是已发布的 SandboxProvider 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/sandbox/sandbox-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-sandbox-policy",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-sandbox-policy",
+            "path": "packages/sandbox/sandbox-policy/package.json",
+            "decision": "needs-owner",
+            "reason": "每次调用的 mode/workspace policy 解析影响 enforcing provider；需独立解释配置及会话边界。",
+            "candidate": "package:@deepseek-ai/dsh-sandbox-policy"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-sandbox-policy",
+            "decision": "excluded",
+            "reason": "Per-call sandbox policy resolver and current model context: deployment fallbacks plus each session's mode and workspace root, shared by every enforcing capability family。这是已发布的 SandboxProvider 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/sandbox/sandbox-policy/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-sandbox-windows-acl",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-sandbox-windows-acl",
+            "path": "packages/sandbox/sandbox-windows-acl/package.json",
+            "decision": "merged",
+            "owner": "dsh-sandbox",
+            "reason": "Windows ACL 具体隔离后端，平台机制不能替代通用 provider 契约。",
+            "candidate": "package:@deepseek-ai/dsh-sandbox-windows-acl"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-sandbox-windows-acl",
+            "decision": "excluded",
+            "reason": "Windows ACL write-restriction sandbox backend (restricted-token spawn with capability-SID write allowlist) for the DeepSeek Harness sandbox seam。这是已发布的 SandboxProvider 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/sandbox/sandbox-windows-acl/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-checkpoint-policy",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-checkpoint-policy",
+            "path": "packages/session/session-checkpoint-policy/package.json",
+            "decision": "merged",
+            "owner": "host-persistence",
+            "taskIds": [
+                "configure-session-checkpoint"
+            ],
+            "reason": "持久 Agent 的语义检查点服务；位于 Agent 调用与 SessionPersistence 之间，需独立恢复任务。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-checkpoint-policy"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-checkpoint-policy",
+            "decision": "excluded",
+            "reason": "Semantic session durability checkpoints before model requests and tool side effects。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-checkpoint-policy/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-format",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-format",
+            "path": "packages/session/session-format/package.json",
+            "decision": "merged",
+            "owner": "session-format",
+            "taskIds": [
+                "migrate-session-format"
+            ],
+            "reason": "公开纯函数格式规划与编解码分派；属于持久化后端的格式契约，不是 Session 日志写入 API。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-format"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-format",
+            "decision": "excluded",
+            "reason": "Streaming adjacent Session format migration machinery。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-format/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-format-catalog",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-format-catalog",
+            "path": "packages/session/session-format-catalog/package.json",
+            "decision": "merged",
+            "owner": "session-format",
+            "taskIds": [
+                "migrate-session-format"
+            ],
+            "reason": "第一方格式编解码器与相邻迁移目录；为持久化冷读提供版本路径。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-format-catalog"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-format-catalog",
+            "decision": "excluded",
+            "reason": "Build-static first-party Session format codec and migration catalog。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-format-catalog/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-log-deepseek",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-log-deepseek",
+            "path": "packages/session/session-log-deepseek/package.json",
+            "decision": "merged",
+            "owner": "telemetry",
+            "taskIds": [
+                "configure-deepseek-session-log"
+            ],
+            "reason": "向官方 DeepSeek 端增量上传规范 Session 日志的具体部署实现；需独立外发数据边界核验。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-log-deepseek"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-log-deepseek",
+            "decision": "excluded",
+            "reason": "Incremental lossless session-log request extension for the official DeepSeek LLM API。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-log-deepseek/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-persistence-jsonl",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-persistence-jsonl",
+            "path": "packages/session/session-persistence-jsonl/package.json",
+            "decision": "merged",
+            "owner": "host-persistence",
+            "taskIds": [
+                "configure-jsonl-persistence"
+            ],
+            "reason": "产品自带 JSONL 存储后端；是 SessionPersistence 的具体实现，不能替代抽象单写者契约。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-persistence-jsonl"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-persistence-jsonl",
+            "decision": "excluded",
+            "reason": "JSONL durable session persistence backend for the DeepSeek Harness。这是已发布的 SessionPersistence 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/session/session-persistence-jsonl/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-projection-cache",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-projection-cache",
+            "path": "packages/session/session-projection-cache/package.json",
+            "decision": "merged",
+            "owner": "host-session",
+            "taskIds": [
+                "configure-projection-cache"
+            ],
+            "reason": "投影持久检查点和冷读加速的具体服务；投影定义仍由 dsh-session-projection 持有。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-projection-cache"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-projection-cache",
+            "decision": "excluded",
+            "reason": "Persisted projection cache (ctx.sessionProjectionCache): durable per-session checkpoint records on the session_projcache storage domain (per-record layout), throttled write-behind, and the cached listing read。这是已发布的 SessionProjectionRegistry 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/session/session-projection-cache/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-stats",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-stats",
+            "path": "packages/session/session-stats/package.json",
+            "decision": "merged",
+            "owner": "host-session",
+            "taskIds": [
+                "inspect-session-stats"
+            ],
+            "reason": "基于日志的内置计数/时长投影单元；业务插件可消费，但新投影扩展契约归 dsh-session-projection。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-stats"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-stats",
+            "decision": "excluded",
+            "reason": "Whole-log conversation counts and wall times projection (sessionStats) for the DeepSeek Harness。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-stats/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-telemetry",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-telemetry",
+            "path": "packages/session/session-telemetry/package.json",
+            "decision": "merged",
+            "owner": "telemetry",
+            "taskIds": [
+                "provide-session-telemetry"
+            ],
+            "reason": "公开 Session 遥测捕获、脱敏与后端注册 seam；应有独立 Host API owner，不能整批排除。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-telemetry"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-telemetry",
+            "decision": "excluded",
+            "reason": "SessionTelemetryBackend seam for the DeepSeek Harness: session-event capture, projection, redaction, and handoff to a reporting backend。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-telemetry/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-telemetry-otel",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-telemetry-otel",
+            "path": "packages/session/session-telemetry-otel/package.json",
+            "decision": "merged",
+            "owner": "telemetry",
+            "taskIds": [
+                "configure-otel-session-telemetry"
+            ],
+            "reason": "SessionTelemetry 的 OTEL 具体后端，负责导出配置与数据边界。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-telemetry-otel"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-telemetry-otel",
+            "decision": "excluded",
+            "reason": "Feedback-authorized Session logs over byte-bounded OpenTelemetry HTTP requests。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-telemetry-otel/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-title-all-prompts-llm",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-title-all-prompts-llm",
+            "path": "packages/session/session-title-all-prompts-llm/package.json",
+            "decision": "merged",
+            "owner": "host-session",
+            "taskIds": [
+                "configure-session-title"
+            ],
+            "reason": "基于所有提示词的现成 LLM 标题来源；属于标题策略实现。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-title-all-prompts-llm"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-title-all-prompts-llm",
+            "decision": "excluded",
+            "reason": "All-user-messages LLM provider plugin for DeepSeek Harness session titles。这是已发布的 SessionTitleService 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/session/session-title-all-prompts-llm/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-title-first-prompt-llm",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-title-first-prompt-llm",
+            "path": "packages/session/session-title-first-prompt-llm/package.json",
+            "decision": "merged",
+            "owner": "host-session",
+            "taskIds": [
+                "configure-session-title"
+            ],
+            "reason": "基于首条提示词的现成 LLM 标题来源；属于标题策略实现。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-title-first-prompt-llm"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-title-first-prompt-llm",
+            "decision": "excluded",
+            "reason": "First-message LLM provider plugin for DeepSeek Harness session titles。这是已发布的 SessionTitleService 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/session/session-title-first-prompt-llm/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-title-llm",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-title-llm",
+            "path": "packages/session/session-title-llm/package.json",
+            "decision": "merged",
+            "owner": "host-session",
+            "taskIds": [
+                "provide-session-title"
+            ],
+            "reason": "共享 LLM 标题生成策略，可由具体标题来源组合。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-title-llm"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-title-llm",
+            "decision": "excluded",
+            "reason": "Shared LLM generation policy for DeepSeek Harness session-title providers。这是已发布的 SessionTitleService 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/session/session-title-llm/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-session-turn-outline",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-session-turn-outline",
+            "path": "packages/session/session-turn-outline/package.json",
+            "decision": "merged",
+            "owner": "host-session",
+            "taskIds": [
+                "inspect-turn-outline"
+            ],
+            "reason": "供 Client 导航的内置完整轮次大纲投影；自定义投影仍按 dsh-session-projection 契约。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-session-turn-outline"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-session-turn-outline",
+            "decision": "excluded",
+            "reason": "Whole-log turn outline projection (turnOutline) for the DeepSeek Harness。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/session/session-turn-outline/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-skill-badge",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-skill-badge",
+            "path": "packages/skill/skill-badge/package.json",
+            "decision": "merged",
+            "owner": "dsh-skill",
+            "reason": "内置 badge skill provider 仅作 registry 实现例，归 Skill provider 主题。",
+            "candidate": "package:@deepseek-ai/dsh-skill-badge"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-skill-badge",
+            "decision": "excluded",
+            "reason": "Bundled dsh badge skill provider for DeepSeek Harness。这是已发布的 SkillRegistry 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/skill/skill-badge/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-skill-filesystem",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-skill-filesystem",
+            "path": "packages/skill/skill-filesystem/package.json",
+            "decision": "merged",
+            "owner": "dsh-skill",
+            "reason": "本地文件系统 Skill provider；归 Skill provider 装载/发现契约。",
+            "candidate": "package:@deepseek-ai/dsh-skill-filesystem"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-skill-filesystem",
+            "decision": "excluded",
+            "reason": "Local filesystem skill provider for the DeepSeek Harness。这是已发布的 SkillRegistry 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/skill/skill-filesystem/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-skill-office",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-skill-office",
+            "path": "packages/skill/skill-office/package.json",
+            "decision": "merged",
+            "owner": "dsh-skill",
+            "reason": "内置 Office 工作流内容；与 Skill provider 发现/加载任务合并。",
+            "candidate": "package:@deepseek-ai/dsh-skill-office"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-skill-office",
+            "decision": "excluded",
+            "reason": "Bundled Word, PowerPoint, and Excel workflows and structural checks。这是已发布的 SkillRegistry 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/skill/skill-office/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-subprocess-local",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-subprocess-local",
+            "path": "packages/subprocess/subprocess-local/package.json",
+            "decision": "merged",
+            "owner": "dsh-subprocess",
+            "reason": "本地 SubprocessRuntime 实现，具体容器/进程树机制归抽象服务。",
+            "candidate": "package:@deepseek-ai/dsh-subprocess-local"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-subprocess-local",
+            "decision": "excluded",
+            "reason": "Local-subprocess implementation of the DeepSeek Harness subprocess seam。这是已发布的 Subprocess 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/subprocess/subprocess-local/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-subprocess-ssh",
+        "earlier": {
+            "candidate": "package:@deepseek-ai/dsh-subprocess-ssh",
+            "decision": "merged",
+            "ownerGroup": "host-core",
+            "reason": "具体本地或 SSH provider 实现；业务调用语义归 dsh-subprocess。",
+            "evidence": "packages/ssh/subprocess-ssh/package.json",
+            "implementation": "packages/ssh/subprocess-ssh/src/index.ts"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-subprocess-ssh",
+            "decision": "excluded",
+            "reason": "Subprocess and terminal provider over the shared POSIX SSH helper。这是已发布的 Subprocess 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/ssh/subprocess-ssh/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-terminal-bash",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-terminal-bash",
+            "path": "packages/terminal/terminal-bash/package.json",
+            "decision": "merged",
+            "owner": "dsh-terminal",
+            "reason": "Bash PTY 具体后端，依赖 subprocess terminal primitive。",
+            "candidate": "package:@deepseek-ai/dsh-terminal-bash"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-terminal-bash",
+            "decision": "excluded",
+            "reason": "Persistent shell PTY backend over the DeepSeek Harness subprocess terminal primitive。这是已发布的 Terminal 具体实现或策略；自定义插件应从对应抽象 service 合约注册，不能复制该产品后端的内部状态与副作用。",
+            "evidence": "packages/terminal/terminal-bash/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-token-meter",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-token-meter",
+            "path": "packages/llm/token-meter/package.json",
+            "decision": "merged",
+            "owner": "host-llm",
+            "taskIds": [
+                "inspect-token-usage"
+            ],
+            "reason": "回放感知 token/上下文压力服务，影响压缩与预算；需独立计量契约核验。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-token-meter"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-token-meter",
+            "decision": "excluded",
+            "reason": "Replay-aware token measurement service (ctx.tokenMeter) for the DeepSeek Harness。它属于产品预装的配置、状态、遥测、迁移、界面或运行策略，不提供独立于已纳入 Tool/Service/Remote/Client/Profile 契约的第三方插件注册任务。",
+            "evidence": "packages/llm/token-meter/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-ask-user",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-ask-user",
+            "path": "packages/interaction/tool-ask-user/package.json",
+            "decision": "merged",
+            "owner": "host-user-questions",
+            "taskIds": [
+                "ask-user-from-tool"
+            ],
+            "reason": "基于 user-questions seam 的现成模型工具；通用工具注册归 dsh-tools。",
+            "coverageStatus": "assigned-to-separate-owner; not documented in host-core draft",
+            "candidate": "package:@deepseek-ai/dsh-tool-ask-user"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-ask-user",
+            "decision": "excluded",
+            "reason": "Model-facing ask_user_question tool over the ctx.userQuestions seam。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/interaction/tool-ask-user/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-bash",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-bash",
+            "path": "packages/shell/tool-bash/package.json",
+            "decision": "merged",
+            "owner": "dsh-shell",
+            "reason": "模型可见一次性 Bash 工具消费 shell executor；入口文档归 shell 任务。",
+            "candidate": "package:@deepseek-ai/dsh-tool-bash"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-bash",
+            "decision": "excluded",
+            "reason": "Model-facing bash tool with optional generic background-job and sandbox-escalation support。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/shell/tool-bash/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-bash-persistent",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-bash-persistent",
+            "path": "packages/shell/tool-bash-persistent/package.json",
+            "decision": "merged",
+            "owner": "dsh-terminal",
+            "reason": "模型可见持久 Bash 工具消费 terminal session。",
+            "candidate": "package:@deepseek-ai/dsh-tool-bash-persistent"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-bash-persistent",
+            "decision": "excluded",
+            "reason": "Model-facing owner-scoped persistent Bash tool backed by the Harness PTY service。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/shell/tool-bash-persistent/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-fs",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-fs",
+            "path": "packages/fs/tool-fs/package.json",
+            "decision": "merged",
+            "owner": "dsh-fs",
+            "reason": "模型可见读写工具消费 FileSystem；不能把工具当 provider。",
+            "candidate": "package:@deepseek-ai/dsh-tool-fs"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-fs",
+            "decision": "excluded",
+            "reason": "Model-facing filesystem tools (read, write, edit) over the DeepSeek Harness filesystem seam (ctx.fs)。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/fs/tool-fs/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-fs-search",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-fs-search",
+            "path": "packages/fs/tool-fs-search/package.json",
+            "decision": "merged",
+            "owner": "dsh-fs",
+            "reason": "模型可见 glob/grep 工具消费文件发现能力；与文件 provider 选型组合。",
+            "candidate": "package:@deepseek-ai/dsh-tool-fs-search"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-fs-search",
+            "decision": "excluded",
+            "reason": "Model-facing filesystem discovery tools (glob, grep) backed by the packaged ripgrep binary (@vscode/ripgrep)。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/fs/tool-fs-search/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-jobs",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-jobs",
+            "path": "packages/jobs/tool-jobs/package.json",
+            "decision": "merged",
+            "owner": "dsh-jobs",
+            "reason": "模型可见 job 控制工具消费 JobRegistry。",
+            "candidate": "package:@deepseek-ai/dsh-tool-jobs"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-jobs",
+            "decision": "excluded",
+            "reason": "Model-facing background job control tools (job_output, job_list, job_kill) over the ctx.jobs registry。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/jobs/tool-jobs/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-lsp",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-lsp",
+            "path": "packages/lsp/tool-lsp/package.json",
+            "decision": "merged",
+            "owner": "dsh-lsp",
+            "reason": "模型可见 LSP 工具消费 Lsp provider；已在 LSP 子主题说明观察路径。",
+            "candidate": "package:@deepseek-ai/dsh-tool-lsp"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-lsp",
+            "decision": "excluded",
+            "reason": "Model-facing lsp tool over the DeepSeek Harness LSP capability seam (ctx.lsp) — one read-only tool with goToDefinition/findReferences/goToImplementation/hover operations, one-based UTF-16 cursor coordinates, bounded location rendering, and hover normalization。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/lsp/tool-lsp/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-pwsh",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-pwsh",
+            "path": "packages/shell/tool-pwsh/package.json",
+            "decision": "merged",
+            "owner": "dsh-shell",
+            "reason": "模型可见 PowerShell 工具消费 shell executor。",
+            "candidate": "package:@deepseek-ai/dsh-tool-pwsh"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-pwsh",
+            "decision": "excluded",
+            "reason": "Model-facing pwsh tool over the bash executor seam。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/shell/tool-pwsh/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-pwsh-persistent",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-pwsh-persistent",
+            "path": "packages/shell/tool-pwsh-persistent/package.json",
+            "decision": "merged",
+            "owner": "dsh-terminal",
+            "reason": "模型可见持久 PowerShell 工具消费 terminal session。",
+            "candidate": "package:@deepseek-ai/dsh-tool-pwsh-persistent"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-pwsh-persistent",
+            "decision": "excluded",
+            "reason": "Model-facing owner-scoped persistent PowerShell tool backed by the Harness PTY service。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/shell/tool-pwsh-persistent/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-skill",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-skill",
+            "path": "packages/skill/tool-skill/package.json",
+            "decision": "merged",
+            "owner": "dsh-skill",
+            "reason": "模型可见 Skill 加载工具消费 Skill provider registry。",
+            "candidate": "package:@deepseek-ai/dsh-tool-skill"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-skill",
+            "decision": "excluded",
+            "reason": "Model-facing skill loading tool for the DeepSeek Harness。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/skill/tool-skill/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-str-replace-editor",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-str-replace-editor",
+            "path": "packages/fs/tool-str-replace-editor/package.json",
+            "decision": "merged",
+            "owner": "dsh-fs",
+            "reason": "模型可见文本编辑工具消费 FileSystem 的版本保护与原子编辑。",
+            "candidate": "package:@deepseek-ai/dsh-tool-str-replace-editor"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-str-replace-editor",
+            "decision": "excluded",
+            "reason": "Model-facing view, create, literal replace, and line insert tool over the Harness filesystem service。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/fs/tool-str-replace-editor/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-terminal",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-terminal",
+            "path": "packages/terminal/tool-terminal/package.json",
+            "decision": "merged",
+            "owner": "dsh-terminal",
+            "reason": "模型可见 PTY 工具消费 terminal session registry。",
+            "candidate": "package:@deepseek-ai/dsh-tool-terminal"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-terminal",
+            "decision": "excluded",
+            "reason": "Six model-facing persistent PTY tools with owner isolation and generic background-job integration。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/terminal/tool-terminal/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-web",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-web",
+            "path": "packages/web/tool-web/package.json",
+            "decision": "merged",
+            "owner": "dsh-web",
+            "reason": "模型可见 web_search/web_fetch 工具消费 WebRuntime，provider 任务已说明装载条件。",
+            "candidate": "package:@deepseek-ai/dsh-tool-web"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-web",
+            "decision": "excluded",
+            "reason": "Model-facing web tools (web_search, web_fetch) over the DeepSeek Harness web capability seam (ctx.web)。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/web/tool-web/package.json"
+        }
+    },
+    {
+        "candidate": "package:@deepseek-ai/dsh-tool-workspace-dependencies",
+        "earlier": {
+            "candidateId": "package:@deepseek-ai/dsh-tool-workspace-dependencies",
+            "path": "packages/skill/tool-workspace-dependencies/package.json",
+            "decision": "needs-owner",
+            "reason": "模型可见 bundled runtime 路径工具；需确定插件作者是否能安装/声明自有依赖 payload。",
+            "candidate": "package:@deepseek-ai/dsh-tool-workspace-dependencies"
+        },
+        "final": {
+            "candidate": "package:@deepseek-ai/dsh-tool-workspace-dependencies",
+            "decision": "excluded",
+            "reason": "The load_workspace_dependencies tool: absolute paths into a bundled Python, Node.js, and pnpm payload。这是产品预装的具体模型工具，创建自有 Tool 应按 defineTool/ToolRuntime 契约实现，不能把该包的业务工具当作可继承模板。",
+            "evidence": "packages/skill/tool-workspace-dependencies/package.json"
+        }
+    }
+]

@@ -1,0 +1,68 @@
+{
+  "version": "0.2.0-rc.2",
+  "dispositions": [
+    {
+      "candidate": "package:@deepseek-ai/dsh-file-reference",
+      "decision": "included",
+      "taskId": "host-file-reference-provider",
+      "owner": "references/api-client-references.md",
+      "reason": "Host FileReferenceService is a replaceable Cordis service seam; Session Controller exposes its list through fileReferences Remote to Web.",
+      "evidence": [
+        "packages/context/file-reference/src/index.ts",
+        "packages/api/session-controller/src/file-references.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-file-reference-local",
+      "decision": "included",
+      "taskId": "host-file-reference-provider",
+      "owner": "references/api-client-references.md",
+      "reason": "Published local provider and reusable WorkspaceFileSearch implementation; provider is replaceable and search utility can be used by another provider, with Agent-scoped cleanup.",
+      "evidence": [
+        "packages/context/file-reference-local/src/index.ts",
+        "packages/context/file-reference-local/src/search.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-session-reference",
+      "decision": "included",
+      "taskId": "client-reference-candidates",
+      "owner": "references/api-client-references.md",
+      "reason": "Host resolver publishes generated candidates Remote to Client assembly; prepare remains Host-only durable untrusted context path.",
+      "evidence": [
+        "packages/context/session-reference/src/index.ts",
+        "packages/api/remotes/src/client/index.ts",
+        "packages/client/ui-reference/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-workspace",
+      "decision": "included",
+      "taskId": "host-workspace-registry",
+      "owner": "references/how-to-client-workspace-registry.md",
+      "reason": "WorkspaceRegistry is public Host durable entity service; workspace/session-activity and workspace/session-stop are composition events. Browser uses UiWorkspace or Workspace Controller, not direct registry.",
+      "evidence": [
+        "packages/workspace/workspace/src/index.ts",
+        "packages/workspace/workspace/src/types.ts",
+        "packages/client/ui-workspace/src/client/navigation.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-workspace-changes",
+      "decision": "included",
+      "taskId": "host-workspace-changes",
+      "owner": "references/api-client-workspace-data.md",
+      "reason": "Host ctx.workspaceChanges summary/diff is a public typed service tied to workspace/changes event sequence; no direct Client Remote is exported. Built-in deliverables supplies its own presentation path.",
+      "evidence": [
+        "packages/deliverables/workspace-changes/src/index.ts",
+        "packages/deliverables/workspace-changes/src/types.ts",
+        "packages/client/ui-deliverables/src/present-open.ts"
+      ]
+    }
+  ],
+  "unverified": [
+    "External package build and Profile composition",
+    "Browser end-to-end Remote discovery",
+    "Workspace change presentation authorization for third-party Clients"
+  ]
+}

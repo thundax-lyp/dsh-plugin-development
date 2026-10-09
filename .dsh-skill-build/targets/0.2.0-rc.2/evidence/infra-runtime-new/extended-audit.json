@@ -1,0 +1,1137 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0-rc.2",
+  "tag": "dsh-v0.2.0-rc.2",
+  "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "note": "独立补查；此文件给主 agent 的建议，不写共享账本。included 且 ownerGroup 不为 infra-* 的项须由对应组核对后分配唯一 owner。",
+  "entries": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-atomic-write:.",
+      "package": "@deepseek-ai/dsh-atomic-write",
+      "subpath": ".",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "通用文件锁和原子写工具；实际 Profile/Settings 文件所有权已由 PluginManager/ConfigEditor 公开入口负责，第三方不应绕过它们直接写 profile。",
+      "evidence": [
+        "packages/util/atomic-write/package.json",
+        "packages/util/atomic-write/lib/types/index.d.ts",
+        "packages/util/atomic-write/src/index.ts",
+        "packages/util/atomic-write/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-authorization:.",
+      "package": "@deepseek-ai/dsh-authorization",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可注册授权 flow，并将交互结果写入凭据记录，是真实插件扩展点。",
+      "evidence": [
+        "packages/credentials/authorization/package.json",
+        "packages/credentials/authorization/lib/types/index.d.ts",
+        "packages/credentials/authorization/src/index.ts",
+        "packages/credentials/authorization/README.zh.md"
+      ],
+      "publicSymbols": [
+        "AuthorizationDeclinedError",
+        "AuthorizationEntry",
+        "AuthorizationError",
+        "AuthorizationFlow",
+        "AuthorizationInteraction",
+        "AuthorizationMethod",
+        "AuthorizationNotice",
+        "AuthorizationOutcome",
+        "AuthorizationPrompt",
+        "AuthorizationPromptOption",
+        "AuthorizationRequest",
+        "AuthorizationService",
+        "AuthorizationSession",
+        "AuthorizationSettlement",
+        "AuthorizationStatus",
+        "default"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-authorization:./invariant",
+      "package": "@deepseek-ai/dsh-authorization",
+      "subpath": "./invariant",
+      "decision": "excluded",
+      "ownerGroup": "host-core",
+      "reason": "运行时不变式伴生入口用于验证状态，非普通插件作者操作路径",
+      "evidence": [
+        "packages/credentials/authorization/package.json",
+        "packages/credentials/authorization/lib/types/invariant.d.ts",
+        "packages/credentials/authorization/src/index.ts",
+        "packages/credentials/authorization/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-authorization:./types",
+      "package": "@deepseek-ai/dsh-authorization",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/credentials/authorization/package.json",
+        "packages/credentials/authorization/lib/types/types.d.ts",
+        "packages/credentials/authorization/src/index.ts",
+        "packages/credentials/authorization/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:.",
+      "package": "@deepseek-ai/dsh-cordis-host-runner",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "公开 Cordis Host runner 可组合外部 Host 插件；Remote 生成子路径另由 Client/Remote 组核查。",
+      "evidence": [
+        "packages/extensions/cordis-host-runner/package.json",
+        "packages/extensions/cordis-host-runner/lib/types/index.d.ts",
+        "packages/extensions/cordis-host-runner/src/index.ts",
+        "packages/extensions/cordis-host-runner/README.zh.md"
+      ],
+      "publicSymbols": [
+        "ApprovalRequestId",
+        "Config",
+        "CordisDynamicPackageId",
+        "CordisDynamicPluginId",
+        "CordisDynamicPluginRunId",
+        "CordisDynamicRunMode",
+        "CordisErrorDetails",
+        "CordisHalfState",
+        "CordisInspectMethodManifest",
+        "CordisInspectPlatform",
+        "CordisInspectProviderManifest",
+        "CordisInspectProviderView",
+        "CordisInspectQueryRequest",
+        "CordisInspectQueryResolution",
+        "CordisInspectQueryResolved",
+        "CordisInspectRegistryService",
+        "CordisInspectRequestId",
+        "CordisInspectResolveAck",
+        "CordisRunDiagnostic",
+        "CordisRunStatus",
+        "default",
+        "DynamicCordisClientSource",
+        "DynamicCordisDefineReceipt",
+        "DynamicCordisDefineRequest",
+        "DynamicCordisDefinition",
+        "DynamicCordisHandler",
+        "DynamicCordisHostHalfResult",
+        "DynamicCordisInventoryPackage",
+        "DynamicCordisInventoryRow",
+        "DynamicCordisInvokeResult",
+        "DynamicCordisPackage",
+        "DynamicCordisPackageInspection",
+        "DynamicCordisPlugin",
+        "DynamicCordisPluginInspection",
+        "DynamicCordisReference",
+        "DynamicCordisRenderFailure",
+        "DynamicCordisRequestResolved",
+        "DynamicCordisResolveAck",
+        "DynamicCordisRetracted",
+        "DynamicCordisRun",
+        "DynamicCordisRunAttempt",
+        "DynamicCordisRunnerService",
+        "DynamicCordisRunRequest",
+        "DynamicCordisRunResolution",
+        "DynamicCordisRunResponse",
+        "DynamicCordisSnapshotRow",
+        "DynamicCordisStopResponse",
+        "DynamicCordisUndefineReceipt",
+        "HostCordisInspectProviderRegistration",
+        "RequestRunOutcome"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:./remote",
+      "package": "@deepseek-ai/dsh-cordis-host-runner",
+      "subpath": "./remote",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "Typert 生成的 Remote 声明或贡献项；业务对象契约由对应根包与 Remote 主题唯一拥有",
+      "evidence": [
+        "packages/extensions/cordis-host-runner/package.json",
+        "packages/extensions/cordis-host-runner/lib/typert.remote-client.d.ts",
+        "packages/extensions/cordis-host-runner/src/index.ts",
+        "packages/extensions/cordis-host-runner/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:./typert",
+      "package": "@deepseek-ai/dsh-cordis-host-runner",
+      "subpath": "./typert",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "Typert 生成的 Remote 声明或贡献项；业务对象契约由对应根包与 Remote 主题唯一拥有",
+      "evidence": [
+        "packages/extensions/cordis-host-runner/package.json",
+        "packages/extensions/cordis-host-runner/lib/typert.host.d.ts",
+        "packages/extensions/cordis-host-runner/src/index.ts",
+        "packages/extensions/cordis-host-runner/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-cordis-host-runner:./types",
+      "package": "@deepseek-ai/dsh-cordis-host-runner",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/extensions/cordis-host-runner/package.json",
+        "packages/extensions/cordis-host-runner/lib/types/types.d.ts",
+        "packages/extensions/cordis-host-runner/src/index.ts",
+        "packages/extensions/cordis-host-runner/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-credentials-local:.",
+      "package": "@deepseek-ai/dsh-credentials-local",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "本地凭据介质提供者，需配置路径并挂载；业务契约由 dsh-credentials 拥有。",
+      "evidence": [
+        "packages/credentials/credentials-local/package.json",
+        "packages/credentials/credentials-local/lib/types/index.d.ts",
+        "packages/credentials/credentials-local/src/index.ts",
+        "packages/credentials/credentials-local/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-credentials:.",
+      "package": "@deepseek-ai/dsh-credentials",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件经公开 ctx.credentials 解析密钥或持久化自身凭据记录，属于直接可调用的 Host 契约；不能当作普通配置文件。",
+      "evidence": [
+        "packages/credentials/credentials/package.json",
+        "packages/credentials/credentials/lib/types/index.d.ts",
+        "packages/credentials/credentials/src/index.ts",
+        "packages/credentials/credentials/README.zh.md"
+      ],
+      "publicSymbols": [
+        "ApiKeyRecord",
+        "CredentialInfo",
+        "credentialKey",
+        "CredentialKey",
+        "credentialKeyId",
+        "credentialKeyScope",
+        "CredentialProvider",
+        "CredentialRecord",
+        "CredentialRecordEntry",
+        "CredentialRecordInfo",
+        "credentialRef",
+        "CredentialRef",
+        "default",
+        "GrantRecord",
+        "isCredentialKeySegment",
+        "isCredentialRefName",
+        "parseCredentialKey",
+        "ResolvedCredential"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-credentials:./invariant",
+      "package": "@deepseek-ai/dsh-credentials",
+      "subpath": "./invariant",
+      "decision": "excluded",
+      "ownerGroup": "host-core",
+      "reason": "运行时不变式伴生入口用于验证状态，非普通插件作者操作路径",
+      "evidence": [
+        "packages/credentials/credentials/package.json",
+        "packages/credentials/credentials/lib/types/invariant.d.ts",
+        "packages/credentials/credentials/src/index.ts",
+        "packages/credentials/credentials/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-credentials:./types",
+      "package": "@deepseek-ai/dsh-credentials",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/credentials/credentials/package.json",
+        "packages/credentials/credentials/lib/types/types.d.ts",
+        "packages/credentials/credentials/src/index.ts",
+        "packages/credentials/credentials/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker-auto:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker-auto",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附目录选择后端或适配器；组合选型归 DirectoryPicker seam，浏览器配套交互需 Client 组核查。",
+      "evidence": [
+        "packages/host/directory-picker-auto/package.json",
+        "packages/host/directory-picker-auto/lib/types/index.d.ts",
+        "packages/host/directory-picker-auto/src/index.ts",
+        "packages/host/directory-picker-auto/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker-browse:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker-browse",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附目录选择后端或适配器；组合选型归 DirectoryPicker seam，浏览器配套交互需 Client 组核查。",
+      "evidence": [
+        "packages/host/directory-picker-browse/package.json",
+        "packages/host/directory-picker-browse/lib/types/index.d.ts",
+        "packages/host/directory-picker-browse/src/index.ts",
+        "packages/host/directory-picker-browse/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker-native:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker-native",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附目录选择后端或适配器；组合选型归 DirectoryPicker seam，浏览器配套交互需 Client 组核查。",
+      "evidence": [
+        "packages/host/directory-picker-native/package.json",
+        "packages/host/directory-picker-native/lib/types/index.d.ts",
+        "packages/host/directory-picker-native/src/index.ts",
+        "packages/host/directory-picker-native/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker-native:./worker",
+      "package": "@deepseek-ai/dsh-host-directory-picker-native",
+      "subpath": "./worker",
+      "decision": "excluded",
+      "ownerGroup": "host-core",
+      "reason": "应用内部 Worker bootstrap，不是第三方插件入口",
+      "evidence": [
+        "packages/host/directory-picker-native/package.json",
+        "packages/host/directory-picker-native/lib/types/win32-dialog-worker.d.ts",
+        "packages/host/directory-picker-native/src/index.ts",
+        "packages/host/directory-picker-native/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker:.",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "目录选择是可合并能力的公开 Service seam，插件可实现新后端或消费 capability 判别联合。",
+      "evidence": [
+        "packages/host/directory-picker/package.json",
+        "packages/host/directory-picker/lib/types/index.d.ts",
+        "packages/host/directory-picker/src/index.ts",
+        "packages/host/directory-picker/README.zh.md"
+      ],
+      "publicSymbols": [
+        "default",
+        "DirectoryEntry",
+        "DirectoryListing",
+        "DirectoryPicker",
+        "DirectoryPickerBrowseCapability",
+        "DirectoryPickerCapabilities",
+        "DirectoryPickerCapability",
+        "DirectoryPickerError",
+        "DirectoryPickerErrorCode",
+        "DirectoryPickerNativeCapability"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-directory-picker:./types",
+      "package": "@deepseek-ai/dsh-host-directory-picker",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/host/directory-picker/package.json",
+        "packages/host/directory-picker/lib/types/types.d.ts",
+        "packages/host/directory-picker/src/index.ts",
+        "packages/host/directory-picker/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-frontend-static:.",
+      "package": "@deepseek-ai/dsh-host-frontend-static",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "infra-integration",
+      "reason": "Web 壳 SPA dist 的唯一 fallback 实现；属于 WebServer fallback 组合，非任意静态文件 API。",
+      "evidence": [
+        "packages/host/frontend-static/package.json",
+        "packages/host/frontend-static/lib/types/index.d.ts",
+        "packages/host/frontend-static/src/index.ts",
+        "packages/host/frontend-static/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-open-in-app:.",
+      "package": "@deepseek-ai/dsh-host-open-in-app",
+      "subpath": ".",
+      "decision": "excluded",
+      "ownerGroup": "infra-integration",
+      "reason": "固定应用目录与固定 HTTP 路由的内置 Web 产品功能；未发现让第三方插件注册新应用目录项的公开扩展契约。",
+      "evidence": [
+        "packages/host/open-in-app/package.json",
+        "packages/host/open-in-app/lib/types/index.d.ts",
+        "packages/host/open-in-app/src/index.ts",
+        "packages/host/open-in-app/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-open-in-app:./shared",
+      "package": "@deepseek-ai/dsh-host-open-in-app",
+      "subpath": "./shared",
+      "decision": "merged",
+      "ownerGroup": "infra-integration",
+      "reason": "Host 与 Client 共享路由常量/类型，不是额外可挂载插件",
+      "evidence": [
+        "packages/host/open-in-app/package.json",
+        "packages/host/open-in-app/lib/types/shared.d.ts",
+        "packages/host/open-in-app/src/index.ts",
+        "packages/host/open-in-app/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-plugin-inventory:.",
+      "package": "@deepseek-ai/dsh-host-plugin-inventory",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "client-web",
+      "reason": "Remote 只读 Loader/preset 快照，用于插件列表或诊断 UI；没有同进程 Context 服务或修改能力。",
+      "evidence": [
+        "packages/host/plugin-inventory/package.json",
+        "packages/host/plugin-inventory/lib/types/index.d.ts",
+        "packages/host/plugin-inventory/src/index.ts",
+        "packages/host/plugin-inventory/README.zh.md"
+      ],
+      "publicSymbols": [
+        "AgentPresetPluginGroup",
+        "AgentPresetPluginRow",
+        "default",
+        "pluginEntryId",
+        "PluginEntryId",
+        "PluginFiberPhase",
+        "PluginInventoryEntry",
+        "PluginInventoryGateway",
+        "PluginInventorySnapshot",
+        "PresetPluginEnablement",
+        "readPluginInventory"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-plugin-inventory:./remote",
+      "package": "@deepseek-ai/dsh-host-plugin-inventory",
+      "subpath": "./remote",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "Typert 生成的 Remote 声明或贡献项；业务对象契约由对应根包与 Remote 主题唯一拥有",
+      "evidence": [
+        "packages/host/plugin-inventory/package.json",
+        "packages/host/plugin-inventory/lib/typert.remote-client.d.ts",
+        "packages/host/plugin-inventory/src/index.ts",
+        "packages/host/plugin-inventory/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-plugin-inventory:./typert",
+      "package": "@deepseek-ai/dsh-host-plugin-inventory",
+      "subpath": "./typert",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "Typert 生成的 Remote 声明或贡献项；业务对象契约由对应根包与 Remote 主题唯一拥有",
+      "evidence": [
+        "packages/host/plugin-inventory/package.json",
+        "packages/host/plugin-inventory/lib/typert.host.d.ts",
+        "packages/host/plugin-inventory/src/index.ts",
+        "packages/host/plugin-inventory/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-plugin-inventory:./types",
+      "package": "@deepseek-ai/dsh-host-plugin-inventory",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/host/plugin-inventory/package.json",
+        "packages/host/plugin-inventory/lib/types/types.d.ts",
+        "packages/host/plugin-inventory/src/index.ts",
+        "packages/host/plugin-inventory/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-host-product-telemetry-otel:.",
+      "package": "@deepseek-ai/dsh-host-product-telemetry-otel",
+      "subpath": ".",
+      "decision": "excluded",
+      "ownerGroup": "infra-integration",
+      "reason": "随附产品遥测 exporter，属于部署观测实现；未发现插件作者必须使用的通用注册/调用入口。",
+      "evidence": [
+        "packages/host/product-telemetry-otel/package.json",
+        "packages/host/product-telemetry-otel/lib/types/index.d.ts",
+        "packages/host/product-telemetry-otel/src/index.ts",
+        "packages/host/product-telemetry-otel/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-permission-presets:.",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可发布或消费权限 preset，影响 Agent 会话与工具执行门禁。",
+      "evidence": [
+        "packages/interaction/permission-presets/package.json",
+        "packages/interaction/permission-presets/lib/types/index.d.ts",
+        "packages/interaction/permission-presets/src/index.ts",
+        "packages/interaction/permission-presets/README.zh.md"
+      ],
+      "publicSymbols": [
+        "AUTO_PRESET",
+        "Config",
+        "CUSTOM_PRESET",
+        "default",
+        "KnobState",
+        "PermissionCatalog",
+        "PermissionPresetService",
+        "PermissionSelection",
+        "PermissionSettings",
+        "PresetOption",
+        "PresetSpec"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-permission-presets:./client",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "subpath": "./client",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "浏览器侧模块导出，随该包的 Client 装载任务裁决；不能等同 Host 默认入口",
+      "evidence": [
+        "packages/interaction/permission-presets/package.json",
+        "packages/interaction/permission-presets/lib/types/client.d.ts",
+        "packages/interaction/permission-presets/src/index.ts",
+        "packages/interaction/permission-presets/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-permission-presets:./invariant",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "subpath": "./invariant",
+      "decision": "excluded",
+      "ownerGroup": "host-core",
+      "reason": "运行时不变式伴生入口用于验证状态，非普通插件作者操作路径",
+      "evidence": [
+        "packages/interaction/permission-presets/package.json",
+        "packages/interaction/permission-presets/lib/types/invariant.d.ts",
+        "packages/interaction/permission-presets/src/index.ts",
+        "packages/interaction/permission-presets/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-permission-presets:./remote",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "subpath": "./remote",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "Typert 生成的 Remote 声明或贡献项；业务对象契约由对应根包与 Remote 主题唯一拥有",
+      "evidence": [
+        "packages/interaction/permission-presets/package.json",
+        "packages/interaction/permission-presets/lib/typert.remote-client.d.ts",
+        "packages/interaction/permission-presets/src/index.ts",
+        "packages/interaction/permission-presets/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-permission-presets:./typert",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "subpath": "./typert",
+      "decision": "merged",
+      "ownerGroup": "client-web",
+      "reason": "Typert 生成的 Remote 声明或贡献项；业务对象契约由对应根包与 Remote 主题唯一拥有",
+      "evidence": [
+        "packages/interaction/permission-presets/package.json",
+        "packages/interaction/permission-presets/lib/typert.host.d.ts",
+        "packages/interaction/permission-presets/src/index.ts",
+        "packages/interaction/permission-presets/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-permission-presets:./types",
+      "package": "@deepseek-ai/dsh-permission-presets",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/interaction/permission-presets/package.json",
+        "packages/interaction/permission-presets/lib/types/types.d.ts",
+        "packages/interaction/permission-presets/src/index.ts",
+        "packages/interaction/permission-presets/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-persistence-jsonl:.",
+      "package": "@deepseek-ai/dsh-session-persistence-jsonl",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附 JSONL Session 后端；可作为组合与行为证据，规范 Session 后端契约由 dsh-session-persistence 拥有。",
+      "evidence": [
+        "packages/session/session-persistence-jsonl/package.json",
+        "packages/session/session-persistence-jsonl/lib/types/index.d.ts",
+        "packages/session/session-persistence-jsonl/src/index.ts",
+        "packages/session/session-persistence-jsonl/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-session-persistence:.",
+      "package": "@deepseek-ai/dsh-session-persistence",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "Session 事件日志后端的公开句柄与持久化契约，和非 Session 的 StorageDomain 不可互换。",
+      "evidence": [
+        "packages/session/session-persistence/package.json",
+        "packages/session/session-persistence/lib/types/index.d.ts",
+        "packages/session/session-persistence/src/index.ts",
+        "packages/session/session-persistence/README.zh.md"
+      ],
+      "publicSymbols": [
+        "assertContiguous",
+        "assertStoredId",
+        "assertVersion",
+        "default",
+        "materializeAppendBatch",
+        "materializeCreateHeader",
+        "SessionAccess",
+        "SessionAlreadyExistsError",
+        "SessionAlreadyOwnedError",
+        "SessionFormatUnsupportedError",
+        "sessionFormatVersionRefusal",
+        "SessionHandle",
+        "SessionHandleAppendOptions",
+        "SessionHandleClosedError",
+        "SessionHandleFlushOptions",
+        "SessionHandleReadOptions",
+        "SessionHandleReadResult",
+        "SessionHeader",
+        "SessionInspection",
+        "SessionLocation",
+        "SessionOwnershipLostError",
+        "SessionPersistence",
+        "SessionPersistenceCorruptionError",
+        "SessionPersistenceCreateOptions",
+        "SessionPersistenceListOptions",
+        "SessionPersistenceNotFoundError",
+        "SessionPersistenceOpenOptions",
+        "SessionPersistenceRevision",
+        "SessionPersistenceSnapshot",
+        "SessionPersistenceStatOptions",
+        "SessionReadOnlyError",
+        "SessionStorageMetadata",
+        "validateStoredEvents"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-local:.",
+      "package": "@deepseek-ai/dsh-subprocess-local",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "具体本地或 SSH provider 实现；业务调用语义归 dsh-subprocess。",
+      "evidence": [
+        "packages/subprocess/subprocess-local/package.json",
+        "packages/subprocess/subprocess-local/lib/types/index.d.ts",
+        "packages/subprocess/subprocess-local/src/index.ts",
+        "packages/subprocess/subprocess-local/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-local:./output",
+      "package": "@deepseek-ai/dsh-subprocess-local",
+      "subpath": "./output",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "具体 subprocess provider 内部辅助子路径，调用语义归 dsh-subprocess",
+      "evidence": [
+        "packages/subprocess/subprocess-local/package.json",
+        "packages/subprocess/subprocess-local/lib/types/output.d.ts",
+        "packages/subprocess/subprocess-local/src/index.ts",
+        "packages/subprocess/subprocess-local/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-local:./runner",
+      "package": "@deepseek-ai/dsh-subprocess-local",
+      "subpath": "./runner",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "具体 subprocess provider 内部辅助子路径，调用语义归 dsh-subprocess",
+      "evidence": [
+        "packages/subprocess/subprocess-local/package.json",
+        "packages/subprocess/subprocess-local/lib/types/bin.d.ts",
+        "packages/subprocess/subprocess-local/src/index.ts",
+        "packages/subprocess/subprocess-local/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess-ssh:.",
+      "package": "@deepseek-ai/dsh-subprocess-ssh",
+      "subpath": ".",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "具体本地或 SSH provider 实现；业务调用语义归 dsh-subprocess。",
+      "evidence": [
+        "packages/ssh/subprocess-ssh/package.json",
+        "packages/ssh/subprocess-ssh/lib/types/index.d.ts",
+        "packages/ssh/subprocess-ssh/src/index.ts",
+        "packages/ssh/subprocess-ssh/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess:.",
+      "package": "@deepseek-ai/dsh-subprocess",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可调用抽象 SubprocessRuntime；执行、取消、输出与环境边界是 Host 契约。",
+      "evidence": [
+        "packages/subprocess/subprocess/package.json",
+        "packages/subprocess/subprocess/lib/types/index.d.ts",
+        "packages/subprocess/subprocess/src/index.ts",
+        "packages/subprocess/subprocess/README.zh.md"
+      ],
+      "publicSymbols": [
+        "CollectedOutput",
+        "default",
+        "DSH_ENV_PREFIX",
+        "DshEnvironment",
+        "DshEnvironmentKey",
+        "scrubbedParentEnv",
+        "SENSITIVE_ENV_PATTERN",
+        "SubprocessCollect",
+        "SubprocessCollectedOutputs",
+        "SubprocessExecutableNotFoundError",
+        "SubprocessHandle",
+        "SubprocessOutcome",
+        "SubprocessOutputMode",
+        "SubprocessOutputRead",
+        "SubprocessOutputReader",
+        "SubprocessRuntime",
+        "SubprocessSpawnSpec",
+        "SubprocessStdinMode",
+        "SubprocessStdio",
+        "SubprocessTerminalActivity",
+        "SubprocessTerminalEnvironment",
+        "SubprocessTerminalForeground",
+        "SubprocessTerminalHandle",
+        "SubprocessTerminalSignal",
+        "SubprocessTerminalSpawnSpec"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-subprocess:./control",
+      "package": "@deepseek-ai/dsh-subprocess",
+      "subpath": "./control",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "子进程控制通道辅助路径，主契约由 dsh-subprocess 拥有",
+      "evidence": [
+        "packages/subprocess/subprocess/package.json",
+        "packages/subprocess/subprocess/lib/types/control.d.ts",
+        "packages/subprocess/subprocess/src/index.ts",
+        "packages/subprocess/subprocess/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-approval:.",
+      "package": "@deepseek-ai/dsh-user-approval",
+      "subpath": ".",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可向用户发起单次审批，需受开放 turn、取消及结算边界约束。",
+      "evidence": [
+        "packages/interaction/user-approval/package.json",
+        "packages/interaction/user-approval/lib/types/index.d.ts",
+        "packages/interaction/user-approval/src/index.ts",
+        "packages/interaction/user-approval/README.zh.md"
+      ],
+      "publicSymbols": [
+        "APPROVAL_POLICIES",
+        "ApprovalOutcome",
+        "ApprovalPolicy",
+        "ApprovalRequest",
+        "ApprovalRequestId",
+        "ApprovalService",
+        "Config",
+        "default",
+        "setApprovalPolicy"
+      ]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-approval:./invariant",
+      "package": "@deepseek-ai/dsh-user-approval",
+      "subpath": "./invariant",
+      "decision": "excluded",
+      "ownerGroup": "host-core",
+      "reason": "运行时不变式伴生入口用于验证状态，非普通插件作者操作路径",
+      "evidence": [
+        "packages/interaction/user-approval/package.json",
+        "packages/interaction/user-approval/lib/types/invariant.d.ts",
+        "packages/interaction/user-approval/src/index.ts",
+        "packages/interaction/user-approval/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-user-approval:./types",
+      "package": "@deepseek-ai/dsh-user-approval",
+      "subpath": "./types",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "类型重导出，字段归根包的权威对象页；不形成另一套运行时装载步骤",
+      "evidence": [
+        "packages/interaction/user-approval/package.json",
+        "packages/interaction/user-approval/lib/types/types.d.ts",
+        "packages/interaction/user-approval/src/index.ts",
+        "packages/interaction/user-approval/README.zh.md"
+      ],
+      "publicSymbols": []
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-plugin-package-inventory-deepseek:.",
+      "package": "@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+      "subpath": ".",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "Provider-specific official DeepSeek request metadata contributor; it does not expose a general plugin author API and omits dynamic sub-fibers, so package inventory is not a source of all plugin identities.",
+      "evidence": [
+        "packages/llm/plugin-package-inventory-deepseek/package.json",
+        "packages/llm/plugin-package-inventory-deepseek/src/index.ts",
+        "packages/llm/plugin-package-inventory-deepseek/README.zh.md"
+      ],
+      "publicSymbols": []
+    }
+  ],
+  "capabilities": [
+    {
+      "candidate": "composition:packages/experimental/agent-team-profile/cordis.patch.yml",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "实验专用 bundle 组合，不是默认 profile；可作为 bundle 格式与可选装载证据，但不建立通用必选插件形态",
+      "evidence": "packages/experimental/agent-team-profile/cordis.patch.yml",
+      "implementation": "packages/experimental/agent-team-profile/src/index.ts"
+    },
+    {
+      "candidate": "composition:packages/experimental/auto-review/cordis.patch.yml",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "实验专用 bundle 组合，不是默认 profile；可作为 bundle 格式与可选装载证据，但不建立通用必选插件形态",
+      "evidence": "packages/experimental/auto-review/cordis.patch.yml",
+      "implementation": "packages/experimental/auto-review/src/index.ts"
+    },
+    {
+      "candidate": "composition:packages/experimental/inspector/cordis.patch.yml",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "实验专用 bundle 组合，不是默认 profile；可作为 bundle 格式与可选装载证据，但不建立通用必选插件形态",
+      "evidence": "packages/experimental/inspector/cordis.patch.yml",
+      "implementation": "packages/experimental/inspector/src/index.ts"
+    },
+    {
+      "candidate": "composition:packages/experimental/inspector/cordis.source.patch.yml",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "实验专用 bundle 组合，不是默认 profile；可作为 bundle 格式与可选装载证据，但不建立通用必选插件形态",
+      "evidence": "packages/experimental/inspector/cordis.source.patch.yml",
+      "implementation": "packages/experimental/inspector/src/index.ts"
+    },
+    {
+      "candidate": "composition:packages/experimental/schedule-bundle/cordis.patch.yml",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "实验专用 bundle 组合，不是默认 profile；可作为 bundle 格式与可选装载证据，但不建立通用必选插件形态",
+      "evidence": "packages/experimental/schedule-bundle/cordis.patch.yml",
+      "implementation": "packages/experimental/schedule-bundle/src/index.ts"
+    },
+    {
+      "candidate": "composition:packages/experimental/voice-input-bundle/cordis.patch.yml",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "实验专用 bundle 组合，不是默认 profile；可作为 bundle 格式与可选装载证据，但不建立通用必选插件形态",
+      "evidence": "packages/experimental/voice-input-bundle/cordis.patch.yml",
+      "implementation": "packages/experimental/voice-input-bundle/src/index.ts"
+    },
+    {
+      "candidate": "cookbook:reviewing-persistence-type-changes",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "Session/领域格式维护流程，属于数据迁移与测试指南；不构成独立运行时插件产品形态",
+      "evidence": "docs/cookbook/reviewing-persistence-type-changes.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-atomic-write",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "通用文件锁和原子写工具；实际 Profile/Settings 文件所有权已由 PluginManager/ConfigEditor 公开入口负责，第三方不应绕过它们直接写 profile。",
+      "evidence": "packages/util/atomic-write/package.json",
+      "implementation": "packages/util/atomic-write/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-authorization",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可注册授权 flow，并将交互结果写入凭据记录，是真实插件扩展点。",
+      "evidence": "packages/credentials/authorization/package.json",
+      "implementation": "packages/credentials/authorization/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-cordis-host-runner",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "公开 Cordis Host runner 可组合外部 Host 插件；Remote 生成子路径另由 Client/Remote 组核查。",
+      "evidence": "packages/extensions/cordis-host-runner/package.json",
+      "implementation": "packages/extensions/cordis-host-runner/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-credentials",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件经公开 ctx.credentials 解析密钥或持久化自身凭据记录，属于直接可调用的 Host 契约；不能当作普通配置文件。",
+      "evidence": "packages/credentials/credentials/package.json",
+      "implementation": "packages/credentials/credentials/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-credentials-local",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "本地凭据介质提供者，需配置路径并挂载；业务契约由 dsh-credentials 拥有。",
+      "evidence": "packages/credentials/credentials-local/package.json",
+      "implementation": "packages/credentials/credentials-local/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-directory-picker",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "目录选择是可合并能力的公开 Service seam，插件可实现新后端或消费 capability 判别联合。",
+      "evidence": "packages/host/directory-picker/package.json",
+      "implementation": "packages/host/directory-picker/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-directory-picker-auto",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附目录选择后端或适配器；组合选型归 DirectoryPicker seam，浏览器配套交互需 Client 组核查。",
+      "evidence": "packages/host/directory-picker-auto/package.json",
+      "implementation": "packages/host/directory-picker-auto/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-directory-picker-browse",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附目录选择后端或适配器；组合选型归 DirectoryPicker seam，浏览器配套交互需 Client 组核查。",
+      "evidence": "packages/host/directory-picker-browse/package.json",
+      "implementation": "packages/host/directory-picker-browse/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-directory-picker-native",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附目录选择后端或适配器；组合选型归 DirectoryPicker seam，浏览器配套交互需 Client 组核查。",
+      "evidence": "packages/host/directory-picker-native/package.json",
+      "implementation": "packages/host/directory-picker-native/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-frontend-static",
+      "decision": "merged",
+      "ownerGroup": "infra-integration",
+      "reason": "Web 壳 SPA dist 的唯一 fallback 实现；属于 WebServer fallback 组合，非任意静态文件 API。",
+      "evidence": "packages/host/frontend-static/package.json",
+      "implementation": "packages/host/frontend-static/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-open-in-app",
+      "decision": "excluded",
+      "ownerGroup": "infra-integration",
+      "reason": "固定应用目录与固定 HTTP 路由的内置 Web 产品功能；未发现让第三方插件注册新应用目录项的公开扩展契约。",
+      "evidence": "packages/host/open-in-app/package.json",
+      "implementation": "packages/host/open-in-app/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-plugin-inventory",
+      "decision": "included",
+      "ownerGroup": "client-web",
+      "reason": "Remote 只读 Loader/preset 快照，用于插件列表或诊断 UI；没有同进程 Context 服务或修改能力。",
+      "evidence": "packages/host/plugin-inventory/package.json",
+      "implementation": "packages/host/plugin-inventory/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-host-product-telemetry-otel",
+      "decision": "excluded",
+      "ownerGroup": "infra-integration",
+      "reason": "随附产品遥测 exporter，属于部署观测实现；未发现插件作者必须使用的通用注册/调用入口。",
+      "evidence": "packages/host/product-telemetry-otel/package.json",
+      "implementation": "packages/host/product-telemetry-otel/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-permission-presets",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可发布或消费权限 preset，影响 Agent 会话与工具执行门禁。",
+      "evidence": "packages/interaction/permission-presets/package.json",
+      "implementation": "packages/interaction/permission-presets/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-session-persistence",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "Session 事件日志后端的公开句柄与持久化契约，和非 Session 的 StorageDomain 不可互换。",
+      "evidence": "packages/session/session-persistence/package.json",
+      "implementation": "packages/session/session-persistence/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-session-persistence-jsonl",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "随附 JSONL Session 后端；可作为组合与行为证据，规范 Session 后端契约由 dsh-session-persistence 拥有。",
+      "evidence": "packages/session/session-persistence-jsonl/package.json",
+      "implementation": "packages/session/session-persistence-jsonl/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-subprocess",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可调用抽象 SubprocessRuntime；执行、取消、输出与环境边界是 Host 契约。",
+      "evidence": "packages/subprocess/subprocess/package.json",
+      "implementation": "packages/subprocess/subprocess/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-subprocess-local",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "具体本地或 SSH provider 实现；业务调用语义归 dsh-subprocess。",
+      "evidence": "packages/subprocess/subprocess-local/package.json",
+      "implementation": "packages/subprocess/subprocess-local/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-subprocess-ssh",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "具体本地或 SSH provider 实现；业务调用语义归 dsh-subprocess。",
+      "evidence": "packages/ssh/subprocess-ssh/package.json",
+      "implementation": "packages/ssh/subprocess-ssh/src/index.ts"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-user-approval",
+      "decision": "included",
+      "ownerGroup": "host-core",
+      "reason": "插件可向用户发起单次审批，需受开放 turn、取消及结算边界约束。",
+      "evidence": "packages/interaction/user-approval/package.json",
+      "implementation": "packages/interaction/user-approval/src/index.ts"
+    },
+    {
+      "candidate": "subsystems:approval",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+      "evidence": "docs/subsystems/approval.md"
+    },
+    {
+      "candidate": "subsystems:credentials",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+      "evidence": "docs/subsystems/credentials.md"
+    },
+    {
+      "candidate": "subsystems:permission-presets",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+      "evidence": "docs/subsystems/permission-presets.md"
+    },
+    {
+      "candidate": "subsystems:persistence",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+      "evidence": "docs/subsystems/persistence.md"
+    },
+    {
+      "candidate": "subsystems:subprocess",
+      "decision": "merged",
+      "ownerGroup": "host-core",
+      "reason": "子系统说明仅作任务发现与语义线索；对应公开包和对象须由 Host owner 回查源码",
+      "evidence": "docs/subsystems/subprocess.md"
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+      "decision": "excluded",
+      "ownerGroup": "infra-profile",
+      "reason": "DeepSeek 官方 LLM 请求的提供方元数据贡献，收集活跃 Loader 包名/版本；不提供插件作者可调用、注册或挂载的新通用扩展 seam，也不反映动态子 fiber。",
+      "evidence": "packages/llm/plugin-package-inventory-deepseek/package.json",
+      "implementation": "packages/llm/plugin-package-inventory-deepseek/src/index.ts"
+    },
+    {
+      "candidate": "subsystems:boot",
+      "decision": "merged",
+      "ownerGroup": "infra-profile",
+      "reason": "Profile/Bundle 说明线索，实际公开装载契约已归 app-boot、package-manifest、cmdline 与 plugin-manager；不另立产品能力。",
+      "evidence": "docs/subsystems/boot.md"
+    },
+    {
+      "candidate": "subsystems:settings",
+      "decision": "merged",
+      "ownerGroup": "infra-profile",
+      "reason": "Settings/ConfigEditor 说明线索，能力已由公开包及实时配置任务覆盖；Client 页面另归 Client 组。",
+      "evidence": "docs/subsystems/settings.md"
+    }
+  ],
+  "ownerBoundary": [
+    "@deepseek-ai/dsh-client-ui-* and @deepseek-ai/dsh-api-* are reserved for the Client/Remote group; this infra audit does not adjudicate their object members or task owners."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "entries": [
+    {
+      "candidate": "export:@deepseek-ai/dsh-agent-preset-registry:./display",
+      "decision": "excluded",
+      "reason": "./display 只把内置 preset id 映射到本地化文案并保留用户自定义名称，不注册 preset 或提供 Profile 装载入口；制作 preset 使用 registry 根入口及 Profile 声明。",
+      "evidencePaths": ["packages/preset/agent-preset-registry/src/display.ts", "packages/preset/agent-preset-registry/src/index.ts"]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-compaction:./checkpoint",
+      "decision": "merged",
+      "mergedInto": "export:@deepseek-ai/dsh-compaction:.",
+      "reason": "checkpoint 的构造函数、判别函数和类型由 compaction 包根明确重导出；无独立 backend 注册面，使用约束归根入口的 Compaction 契约。",
+      "evidencePaths": ["packages/compaction/compaction/src/checkpoint.ts", "packages/compaction/compaction/src/index.ts"]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh-typert-generator:.",
+      "decision": "excluded",
+      "reason": "包根暴露 WorkspaceAnalyzer 与模型/发射器等生成器内部构建编排；插件作者的 tsdown 接入使用独立 ./tsdown 的 typertPlugin，Remote 声明与发布契约另归 Typert protocol。",
+      "evidencePaths": ["packages/typert/generator/src/index.ts", "packages/typert/generator/src/tsdown-plugin.ts"]
+    },
+    {
+      "candidate": "export:@deepseek-ai/dsh:./profile-boot",
+      "decision": "excluded",
+      "reason": "./profile-boot 是 dsh CLI 启动器调用的 Profile 初始化和进程退出编排入口；普通 Cordis 插件通过 Profile manifest 与 patch 装载，不直接调用 runProfile 或 prepareProfile。",
+      "evidencePaths": ["apps/cli/src/profile-boot.ts", "apps/cli/package.json"]
+    }
+  ]
+}

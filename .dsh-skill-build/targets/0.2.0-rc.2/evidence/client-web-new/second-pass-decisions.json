@@ -1,0 +1,175 @@
+{
+  "version": "0.2.0-rc.2",
+  "scope": "17 Client package entry reviews",
+  "decisions": [
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-connection",
+      "decision": "merged",
+      "taskId": "client-call-remote",
+      "reason": "Authenticated transport and generation lifecycle are consumed through ctx.remote; direct ClientConnectionRpc or transport hooks are gateway/boot integration, not normal business plugin task.",
+      "evidence": [
+        "packages/client/connection/package.json",
+        "packages/client/connection/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-file-upload",
+      "decision": "included",
+      "taskId": "client-upload-file",
+      "reason": "ctx.fileUpload.upload is a public Session-addressed browser upload service; retain FileUploadService and FileUploadProgress.",
+      "evidence": [
+        "packages/client/file-upload/package.json",
+        "packages/client/file-upload/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-product-analytics",
+      "decision": "excluded-default",
+      "taskId": "none",
+      "reason": "Client module states desktop renderer analytics; browser applications have no collection capability, and product event vocabulary is product-specific telemetry.",
+      "evidence": [
+        "packages/client/product-analytics/package.json",
+        "packages/client/product-analytics/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-store",
+      "decision": "included",
+      "taskId": "client-contribute-slot",
+      "reason": "Public createSnapshotStore and defineStore are used by slot state owners; retain as supporting contract.",
+      "evidence": [
+        "packages/client/store/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-commands",
+      "decision": "included",
+      "taskId": "client-command-ui",
+      "reason": "CommandUiRuntime.register/decorate is the public slash-menu extension seam; new API and task documented.",
+      "evidence": [
+        "packages/client/ui-commands/package.json",
+        "packages/client/ui-commands/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-dockkit",
+      "decision": "merged",
+      "taskId": "client-sidebar-tab",
+      "reason": "Pure docking engine and React kit under right-sidebar owner; tab plugins use sidebarRightTabs and keyed tab slot rather than mutating layout engine directly.",
+      "evidence": [
+        "packages/client/ui-dockkit/package.json"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-layout",
+      "decision": "included",
+      "taskId": "client-sidebar-tab",
+      "reason": "ctx.layout exposes selectPanel and beginNavigation for cross-plugin main-panel navigation; rightbar presentation methods remain owner-facing.",
+      "evidence": [
+        "packages/client/ui-layout/package.json",
+        "packages/client/ui-layout/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-message-feedback",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "reason": "Concrete feedback UI contribution into assistant-actions and command overlay; its exported dialog props describe this built-in feature, while generic entry is slot/command contract.",
+      "evidence": [
+        "packages/client/ui-message-feedback/package.json",
+        "packages/client/ui-message-feedback/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-model-selection",
+      "decision": "merged",
+      "taskId": "client-command-ui",
+      "reason": "Built-in /model contribution and conversation.input.model seat consume shared command UI and slot contracts; ModelDirectory is feature catalog, not a generic registration service.",
+      "evidence": [
+        "packages/client/ui-model-selection/package.json",
+        "packages/client/ui-model-selection/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-reference",
+      "decision": "merged",
+      "taskId": "client-input-trigger",
+      "reason": "Built-in @file/@session source is an implementation of InputTriggerSource; use input-trigger contract to add a new source.",
+      "evidence": [
+        "packages/client/ui-reference/package.json",
+        "packages/client/ui-reference/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-session",
+      "decision": "included-supporting",
+      "taskId": "client-conversation-node",
+      "reason": "Session selector hooks, status and pending-interaction publisher support session-scoped UI; document further when task calls for a domain pending-interaction flow.",
+      "evidence": [
+        "packages/client/ui-session/package.json",
+        "packages/client/ui-session/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "reason": "Sidebar shell declares sidebar.panellist and related slots; a third-party panel uses slot registration and ctx.layout.selectPanel.",
+      "evidence": [
+        "packages/client/ui-sidebar/package.json",
+        "packages/client/ui-sidebar/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-browser",
+      "decision": "merged",
+      "taskId": "client-sidebar-tab",
+      "reason": "Built-in HTTP(S) Browser tab demonstrates right-sidebar registry/slot path, but BrowserControllerState and address types serve that viewer.",
+      "evidence": [
+        "packages/client/ui-sidebar-browser/package.json",
+        "packages/client/ui-sidebar-browser/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-files",
+      "decision": "merged",
+      "taskId": "client-sidebar-tab",
+      "reason": "Built-in workspace file tree tab demonstrates right-sidebar registry/slot path; FilesState and FilesInjected are feature internals.",
+      "evidence": [
+        "packages/client/ui-sidebar-files/package.json",
+        "packages/client/ui-sidebar-files/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-sidebar-right",
+      "decision": "included",
+      "taskId": "client-sidebar-tab",
+      "reason": "sidebarRightTabs register plus keyed body slot and ctx.sidebarRight navigation are public extension contracts.",
+      "evidence": [
+        "packages/client/ui-sidebar-right/package.json",
+        "packages/client/ui-sidebar-right/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-trajectory",
+      "decision": "merged",
+      "taskId": "client-conversation-node",
+      "reason": "Built-in trajectory event ledger contributes a conversation view; public TrajectoryContribution is feature-specific whereas ViewDefinition and slot are generic seams.",
+      "evidence": [
+        "packages/client/ui-trajectory/package.json",
+        "packages/client/ui-trajectory/src/client/index.ts"
+      ]
+    },
+    {
+      "candidate": "package:@deepseek-ai/dsh-client-ui-workspace",
+      "decision": "merged",
+      "taskId": "client-contribute-slot",
+      "reason": "Built-in workspace picker fills sidebar.workspaces and conversation.hero.workspace slots; DirectoryPickingHooks are picker-owner integration, not a generic independent picker backend.",
+      "evidence": [
+        "packages/client/ui-workspace/package.json",
+        "packages/client/ui-workspace/src/client/index.ts"
+      ]
+    }
+  ],
+  "note": "Package dispositions are scoped to general plugin-author tasks; they do not erase separate individual API symbol candidates."
+}

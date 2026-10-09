@@ -1,5 +1,17 @@
-# Skill 维护
+# DSH Plugin Development Skill 维护
 
-本产物只属于 `dsh-v0.2.0-rc.2`。重建时必须重新运行仓库的 create-dsh-skill 准备、inventory、API 成员发现、能力初始化、证据裁决、冻结、构建和独立验证流程；不得从本产物反推新版本事实。
+此 Skill 对应 `@deepseek-ai/dsh-agent@0.2.0-rc.2`。更新时在创建仓库显式调用 `$create-dsh-skill [version]`，先解析已发布版本，再从该版本的精确 checkout 重新发现公开入口、成员和插件任务。不要从本 Skill 的旧正文反推新版本的 API 范围。
 
-修改冻结素材前把 manifest 明确恢复为 draft，重新核对 capability、API 与 task 候选，然后再次冻结。正式目录只能由通过独立验证的 generated-skill 整体替换。
+## 重建顺序
+
+1. 准备目标版本并记录 npm 版本、tag 与精确 checkout。
+2. 从目标源码和文档生成候选；逐项裁决公开性、弃用状态、任务归属及证据冲突。
+3. 编写 API 主题和子主题、HOW-TO、完整 example、入口任务表及对象索引；每项事实只在一个权威位置维护。
+4. 冻结素材，生成独立产物，再验证元数据、链接、JSON、离线边界、源码映射、类型与代表性真实装载任务。
+5. 独立产物全部通过后整体替换正式 Skill。记录实际运行的检查与尚未验证的路径。
+
+## 事实与示例
+
+API 事实按目标版本的公开代码、源码注释、文档顺序裁决。对象成员的权威契约归 API 子主题，任务步骤归 HOW-TO，较长完整代码归相应 example。代码需要核对公开导出和运行时，并分别在 Host、Client 或 Remote 所在编译面验证；静态检查和示例编译不能代替 Profile 装载与用户可见行为。
+
+需要追溯本版正文时，从[源码映射](source-map.md)定位目标版本的类型、实现、配置和行为测试。证据路径相对目标 checkout；Skill 使用者无需在本地拥有创建工作区。
