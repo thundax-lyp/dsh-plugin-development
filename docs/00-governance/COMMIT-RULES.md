@@ -13,26 +13,26 @@
 提交信息和 PR 标题统一使用：
 
 ```text
-Type(<project>[/<module>]): <中文工程判断或阶段性交付结论>
+Type(<project>): <中文工程判断或阶段性交付结论>
 ```
 
-`Type` 可使用 `Feat`、`Fix`、`Docs`、`Test`、`Refactor`、`CI`。摘要说明最终工程判断或能力，避免“调整”“修改”“优化”等含糊表述。可选 module 表示项目内的稳定领域，不能代替 project；不使用未注册项目名或临时别名。
+`Type` 可使用 `Feat`、`Fix`、`Docs`、`Test`、`Refactor`、`CI`。摘要说明最终工程判断或能力，避免“调整”“修改”“优化”等含糊表述。`project` 必填，且只能使用下表中的固定名称；不使用 `cross-project`、module、未注册项目名或临时别名。新增项目应先修改本表并说明与现有项目的边界。
 
-| 项目       | 范围                               | 边界                                   |
-| ---------- | ---------------------------------- | -------------------------------------- |
-| `repo`     | 根目录治理、公开文档、CI、共享配置 | 不用于 Skill 内部内容                  |
-| `creator`  | `.agents/skills/create-dsh-skill/` | 创建流程、证据与构建契约、脚本及其测试 |
-| `reviewer` | `.agents/skills/review-dsh-skill/` | 已生成 Skill 的审核流程与判定标准      |
-| `skill`    | `skills/dsh-plugin-development/`   | 经过验证的生成产物及其版本内契约       |
+| 固定项目   | 负责的判断与主要文件                                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `repo`     | 仓库治理、公开文档、CI、共享配置与检查工具；根目录文件、`docs/`、`.github/`、根目录 `scripts/` 及 `codex-comment-fix` Skill |
+| `creator`  | 创建流程、事实裁决、生成与验证；`create-dsh-skill` Skill 和 `.dsh-skill-build/`                                             |
+| `reviewer` | 已生成 Skill 的审核流程与判定标准；`review-dsh-skill` Skill                                                                 |
+| `skill`    | 经过验证的正式生成产物及其版本内契约；`skills/dsh-plugin-development/`                                                      |
 
-确实无法按项目拆分的同一判断使用以下格式；可独立理解、验证和回退的变更不使用 `cross-project`：
+按工程判断的**权威源**选择一个项目，不按变更文件数量选择。创建流程、冻结素材与正式产物同步变化时，以 `creator` 为标题归属；仅更新已验证正式产物的版本内内容时用 `skill`。同一判断必须跨项目原子变更时保留一个提交，在正文列出其他受影响项目和验证；可独立理解、验证和回退的判断分开提交。PR 标题同样选一个主项目，跨项目影响写在 PR 正文。
 
 ```text
-Type(cross-project): <中文工程判断>
+Type(creator): <中文工程判断>
 
-Projects: <project-a>, <project-b>
-Decision: <这些项目必须原子变更的原因>
-Verification: <覆盖各项目及其共享契约的证据>
+Affected: skill
+Decision: <两个项目必须原子变更的原因>
+Verification: <覆盖受影响项目及其共享契约的证据>
 ```
 
 ## 提交前检查
