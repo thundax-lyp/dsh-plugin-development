@@ -7,6 +7,7 @@ import {
     listFiles,
     resolveInside,
     sha256File,
+    stripBuildComments,
 } from "./skill-build-contract.mjs";
 import { markdownAnchors, withoutFencedCode } from "./markdown-structure.mjs";
 import { validateSkillSource } from "./validate-skill-source.mjs";
@@ -204,7 +205,16 @@ export function verifyGeneratedSkill(targetArgument, generatedSkillPath) {
         const generated = resolveInside(outputPath, output, "generated output");
         if (!existsSync(generated))
             throw new Error(`Missing generated file: ${output}`);
-        if (sha256File(generated) !== entry.sha256) {
+        const source = resolveInside(
+            target.skillSourcePath,
+            entry.source,
+            "skill source",
+        );
+        const matchesSource = output.endsWith(".md")
+            ? readFileSync(generated, "utf8") ===
+              stripBuildComments(readFileSync(source, "utf8"))
+            : sha256File(generated) === entry.sha256;
+        if (!matchesSource) {
             throw new Error(
                 `Generated file differs from frozen source: ${output}`,
             );
@@ -216,6 +226,11 @@ export function verifyGeneratedSkill(targetArgument, generatedSkillPath) {
         const path = resolveInside(outputPath, output, "generated output");
         const text = readUtf8Text(path);
         if (text === null) continue;
+        if (output.endsWith(".md") && text.includes("<!--")) {
+            errors.push(
+                `${output}: distributed Markdown contains an HTML comment`,
+            );
+        }
         if (text.includes(target.provenance.commit)) {
             errors.push(
                 `${output}: target commit must stay in build evidence, not the distributed Skill`,

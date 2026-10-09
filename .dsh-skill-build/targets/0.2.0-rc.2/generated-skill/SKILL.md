@@ -27,8 +27,6 @@ Remote 是 Host 与 Client 之间的调用方式，不单独构成用户可见�
 
 先看常用入口，再按 Host、Web Client 或配置与运行时选择任务。每项任务直达 HOW-TO；API 页提供对象契约，example 提供较长的完整代码。
 
-<!-- BEGIN GENERATED TASK NAVIGATION -->
-<!-- prettier-ignore -->
 ### 常用入口
 
 - [注册一个可取消的 Agent Tool](references/host/how-to/how-to-host-tool.md#让-agent-调用一个可取消的模型工具)
@@ -112,14 +110,10 @@ Remote 是 Host 与 Client 之间的调用方式，不单独构成用户可见�
 | [注册可用的 Web 搜索 provider](references/infra/how-to/how-to-infra-provider-web.md#注册可用的-web-搜索-provider) |
 | [让可信外部事件创建一次 Agent 会话](references/infra/how-to/how-to-infra-webhook.md#让可信外部事件创建一次-agent-会话) |
 
-<!-- END GENERATED TASK NAVIGATION -->
-
 ## 关键对象索引
 
 这里按运行侧列出已纳入对象的名称；同名对象的包身份及唯一权威 API 小节见[完整对象索引](references/object-index.md)。
 
-<!-- BEGIN GENERATED OBJECT INDEX -->
-<!-- prettier-ignore -->
 ### Host
 
 - `AdapterRegistrationHandle`、`Agent`、`AgentHandle`、`AgentLoop`、`AgentRegistry`、`ApprovalOutcome`、`ApprovalRequest`、`ApprovalService`、`AskUserQuestionAnswer`、`AskUserQuestionRequest`、`AssistantStreamAccumulator`、`AssistantStreamRecord`
@@ -156,8 +150,6 @@ Remote 是 Host 与 Client 之间的调用方式，不单独构成用户可见�
 - `SkillRegistry`、`SpeechProvider`、`SpillRef`、`SpillStore`、`Storage`、`StorageError`、`SubprocessHandle`、`SubprocessRuntime`、`TerminalBackend`、`TerminalBackendSession`、`TerminalSessionService`、`Transcript`
 - `validateBrowserMcpConfig`、`VerifiedWebhookDelivery`、`WebFetchProvider`、`WebFetchRequest`、`WebFetchResult`、`WebhookRule`、`WebhookRuntime`、`WebhookSessionRequest`、`WebRoute`、`WebRuntime`、`WebRuntimeConfig`、`WebSearchProvider`
 - `WebSearchRequest`、`WebSearchResult`、`WebServer`、`WebUpgradeRoute`
-
-<!-- END GENERATED OBJECT INDEX -->
 
 ## 术语与边界
 

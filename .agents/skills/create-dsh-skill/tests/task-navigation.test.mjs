@@ -142,6 +142,13 @@ test("generated navigation routes a featured task to its own exact section", (t)
     );
     validateSkillSource(fixture.targetPath, { freeze: true });
     buildSkill(fixture.targetPath);
+    assert.doesNotMatch(
+        readFileSync(
+            join(fixture.targetPath, "generated-skill/SKILL.md"),
+            "utf8",
+        ),
+        /<!--/,
+    );
     assert.equal(verifyTaskScenarios(fixture.targetPath).passed.length, 1);
     write(
         scriptPath,
@@ -230,6 +237,23 @@ test("entrypoint navigation contains every task and a linked API object index", 
         validateSkillSource(fixture.targetPath, { freeze: true }),
     );
     buildSkill(fixture.targetPath);
+    assert.doesNotMatch(
+        readFileSync(
+            join(fixture.targetPath, "generated-skill/SKILL.md"),
+            "utf8",
+        ),
+        /<!--/,
+    );
+    assert.doesNotMatch(
+        readFileSync(
+            join(
+                fixture.targetPath,
+                "generated-skill/references/object-index.md",
+            ),
+            "utf8",
+        ),
+        /<!--/,
+    );
     assert.equal(verifyTaskScenarios(fixture.targetPath).passed.length, 1);
     assert.equal(
         existsSync(

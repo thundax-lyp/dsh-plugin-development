@@ -8,7 +8,7 @@
 node .agents/skills/create-dsh-skill/scripts/build-dsh-plugin-development-skill.mjs <target>
 ```
 
-构建器先核对冻结素材，再把 manifest 声明的文件复制到临时目录并验证完整产物。验证成功后才整体替换 `generated-skill/`；验证失败时保留旧目录。`generated-skill/` 是构建产物，不在其中人工编辑。
+构建器先核对冻结素材，再把 manifest 声明的文件写入临时目录并验证完整产物。`skill-source/` 中的生成区标记及 `prettier-ignore` 只供同步与格式控制，构建时从分发 Markdown 剥离；示例代码中解释 API 和生命周期的注释保留。验证成功后才整体替换 `generated-skill/`；验证失败时保留旧目录。`generated-skill/` 是构建产物，不在其中人工编辑。
 
 独立验证命令：
 
@@ -18,8 +18,8 @@ node .agents/skills/create-dsh-skill/scripts/verify-generated-skill.mjs <target>
 
 验证器确认：
 
-- 生成目录只包含 manifest 声明的文件，内容与冻结源一致；
-- 新目标的 `SKILL.md` 内含完整任务表和全部纳入 API 对象到权威小节的索引，且不含单独的开发任务路由、术语或关键词索引文件；API 主题页与子主题页的链接、对象 owner 及小节独占通过冻结校验；
+- 生成目录只包含 manifest 声明的文件，Markdown 内容与冻结源剥离维护注释后的结果一致，分发 Markdown 不含 HTML 注释；
+- 新目标的 `SKILL.md` 内含完整任务表和全部纳入 API 对象的名称，`references/object-index.md` 链接到权威小节，且不含单独的开发任务路由、术语或关键词索引文件；API 主题页与子主题页的链接、对象 owner 及小节独占通过冻结校验；
 - Skill frontmatter 与展示元数据是结构合法、字段完整的受支持 YAML；入口和 source-map 包含精确 npm 版本，所有分发文件均不包含目标 commit；
 - 分发正文不含创建进度或验证覆盖状态用语（如 `Not Covered`、`已覆盖`、`未覆盖`、`本次创建`），也不指向未分发的裁决账本；具体产品限制与读者验证步骤保留；
 - 本地 Markdown 链接和锚点、JSON 代码块、行尾空白有效；

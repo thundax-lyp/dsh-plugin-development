@@ -28,6 +28,22 @@ export function sha256File(path) {
     return createHash("sha256").update(readFileSync(path)).digest("hex");
 }
 
+export function stripBuildComments(markdown) {
+    if (
+        !/^<!-- (?:BEGIN|END) GENERATED |^<!-- prettier-ignore -->/m.test(
+            markdown,
+        )
+    )
+        return markdown;
+    return markdown
+        .replace(
+            /^<!-- (?:BEGIN|END) GENERATED (?:TASK NAVIGATION|OBJECT INDEX|OBJECT TABLE) -->\r?\n|^<!-- prettier-ignore -->\r?\n/gm,
+            "",
+        )
+        .replace(/\n{3,}/g, "\n\n")
+        .replace(/\n+$/, "\n");
+}
+
 export function normalizeRelativePath(value, label) {
     if (typeof value !== "string" || value === "" || isAbsolute(value)) {
         throw new Error(`${label} must be a non-empty relative path.`);

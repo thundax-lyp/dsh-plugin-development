@@ -31,6 +31,8 @@
 <!-- END GENERATED OBJECT TABLE -->
 ```
 
+这些标记只保留在 `skill-source/` 中以便同步和冻结核验；构建器从分发 Markdown 剥离标记及 `prettier-ignore`。示例代码中解释公开契约、资源所有权或失败边界的注释属于读者内容，仍保留。
+
 每次修改 `coverage.taskPaths` 或相关标题后，于 `draft` 状态运行：
 
 ```text

@@ -2,8 +2,6 @@
 
 按对象名直达唯一权威 API 小节；重名对象以所属包区分。
 
-<!-- BEGIN GENERATED OBJECT TABLE -->
-<!-- prettier-ignore -->
 | 权威契约 |
 | --- |
 | [`ActionSpec`](client/api/api-client-commands.md#actionspec) |
@@ -323,5 +321,3 @@
 | [`WorkspaceFileSearch`](client/api/api-client-references.md#workspacefilesearch) |
 | [`WorkspaceId`](client/api/api-client-workspace-data.md#workspaceid) |
 | [`WorkspaceRegistry`](client/api/api-client-workspace-data.md#workspaceregistry) |
-
-<!-- END GENERATED OBJECT TABLE -->

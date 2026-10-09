@@ -68,6 +68,18 @@ test("Markdown example endpoints remain offline reference data", (t) => {
     assert.doesNotThrow(() => buildSkill(fixture.targetPath));
 });
 
+test("distributed Markdown rejects HTML comments unrelated to build markers", (t) => {
+    const fixture = createFixture(t, {
+        entrypoint:
+            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n<!-- internal note -->\n",
+    });
+    validateSkillSource(fixture.targetPath, { freeze: true });
+    assert.throws(
+        () => buildSkill(fixture.targetPath),
+        /distributed Markdown contains an HTML comment/,
+    );
+});
+
 test("generated Skill requires structured frontmatter and metadata", async (t) => {
     await t.test("frontmatter description is required", (child) => {
         const fixture = createFixture(child, {
