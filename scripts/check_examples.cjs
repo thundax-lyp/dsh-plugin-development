@@ -55,8 +55,8 @@ try {
     // Modified runtime, gates or manifests would invalidate exact-tag evidence.
     if (git("status", "--porcelain", "--untracked-files=no"))
         throw Error("DSH tracked files are modified");
-    run("python3", [
-        path.join(__dirname, "validate_skill.py"),
+    run(process.execPath, [
+        path.join(__dirname, "validate_skill.mjs"),
         "--dsh",
         root,
         ...(argv.length === 4 ? ["--skill", skill] : []),
