@@ -4,10 +4,74 @@ import { join } from "node:path";
 import test from "node:test";
 import { buildSkill } from "../scripts/build-dsh-plugin-development-skill.mjs";
 import { syncTaskNavigation } from "../scripts/sync-task-navigation.mjs";
-import { renderTaskNavigation } from "../scripts/task-navigation.mjs";
+import {
+    renderEntrypointTasks,
+    renderTaskNavigation,
+} from "../scripts/task-navigation.mjs";
 import { validateSkillSource } from "../scripts/validate-skill-source.mjs";
 import { verifyTaskScenarios } from "../scripts/verify-task-scenarios.mjs";
 import { createFixture, write } from "./fixture.mjs";
+
+test("entrypoint groups tasks and shows each task name once", () => {
+    const rows = [
+        {
+            task: {
+                id: "tool",
+                outcome: "注册工具",
+                userIntents: ["让 Agent 调用工具"],
+                entry: {
+                    output: "references/host/how-to/how-to-host-tool.md",
+                    anchor: "注册工具",
+                },
+                destinations: [
+                    { output: "references/host/how-to/how-to-host-tool.md" },
+                ],
+            },
+            links: [
+                "[注册工具](references/host/how-to/how-to-host-tool.md#注册工具)",
+            ],
+        },
+        ...[
+            ["Host 任务", "references/host/how-to/how-to-host-service.md"],
+            ["Client 任务", "references/client/how-to/how-to-client-slot.md"],
+            ["配置任务", "references/infra/how-to/how-to-infra-profile.md"],
+        ].map(([outcome, output]) => ({
+            task: { outcome, destinations: [{ output }] },
+            links: [`[${outcome}](${output}#任务)`],
+        })),
+        {
+            task: {
+                outcome: "Host Registry",
+                navigationGroup: "host",
+                destinations: [
+                    {
+                        output: "references/client/how-to/how-to-client-workspace.md",
+                    },
+                ],
+            },
+            links: [
+                "[Host Registry](references/client/how-to/how-to-client-workspace.md#任务)",
+            ],
+        },
+    ];
+    const rendered = renderEntrypointTasks(rows);
+    assert.match(rendered, /### 常用入口/);
+    assert.match(rendered, /### Host 与 Agent/);
+    assert.match(rendered, /### Web Client 与跨侧交互/);
+    assert.match(rendered, /### 配置、运行时与 Provider/);
+    assert.equal((rendered.match(/让 Agent 调用工具/g) ?? []).length, 1);
+    assert.equal((rendered.match(/Host 任务/g) ?? []).length, 1);
+    assert.equal((rendered.match(/\| 开发任务 \|/g) ?? []).length, 3);
+    assert.doesNotMatch(rendered, /实现与验证|操作步骤/);
+    assert.match(
+        rendered,
+        /\| \[Host 任务\]\(references\/host\/how-to\/how-to-host-service\.md#任务\) \|/,
+    );
+    assert.match(
+        rendered,
+        /### Host 与 Agent[\s\S]*Host Registry[\s\S]*### Web Client/,
+    );
+});
 
 test("generated navigation routes a featured task to its own exact section", (t) => {
     const task = {
@@ -132,7 +196,7 @@ test("entrypoint navigation contains every task and a linked API object index", 
             },
         ],
         entrypoint:
-            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n## 适用范围\n\n仅适用于此版本。\n\n## 插件形态\n\n| 形态 | 用途 | 呈现 | 使用 | 指南 |\n| --- | --- | --- | --- | --- |\n| 工具插件 | 注册工具 | Agent 可调用 | Profile 装载 | [实现](references/how-to.md#complete-task) |\n\n## 开发任务\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n\n## 关键对象索引\n\n<!-- BEGIN GENERATED OBJECT INDEX -->\n<!-- END GENERATED OBJECT INDEX -->\n\n## 术语与边界\n\n- **Plugin**：由 Profile 装载的扩展包。\n\n## 关键词索引\n\n- Fixture：[对象契约](references/api-tools.md#fixture)。\n\n## 跨主题不变量\n\n保留资源所有权。\n\n## 完成边界\n\n核查装载和卸载。\n",
+            "---\nname: dsh-plugin-development\ndescription: Fixture Skill\n---\n# @deepseek-ai/dsh-agent@9.9.9-rc.9\n\n## 适用范围\n\n仅适用于此版本。\n\n## 插件形态\n\n| 形态 | 用途 | 呈现 | 使用 | 指南 |\n| --- | --- | --- | --- | --- |\n| 工具插件 | 注册工具 | Agent 可调用 | Profile 装载 | [实现](references/how-to.md#complete-task) |\n\n## 开发任务\n\n<!-- BEGIN GENERATED TASK NAVIGATION -->\n<!-- END GENERATED TASK NAVIGATION -->\n\n## 关键对象索引\n\n详细契约见[完整对象索引](references/object-index.md)。\n\n<!-- BEGIN GENERATED OBJECT INDEX -->\n<!-- END GENERATED OBJECT INDEX -->\n\n## 术语与边界\n\n- **Plugin**：由 Profile 装载的扩展包。\n\n## 关键词索引\n\n- Fixture：[对象契约](references/api-tools.md#fixture)。\n\n## 跨主题不变量\n\n保留资源所有权。\n\n## 完成边界\n\n核查装载和卸载。\n",
     });
     write(
         join(fixture.targetPath, "evidence/task-scenarios.json"),
@@ -151,10 +215,17 @@ test("entrypoint navigation contains every task and a linked API object index", 
         entrypoint,
         /Register a callable tool.*references\/how-to\.md#complete-task/,
     );
-    assert.match(
-        entrypoint,
-        /Fixture \(fixture\).*references\/api-tools\.md#fixture/,
+    assert.match(entrypoint, /### 其他[\s\S]*`Fixture`/);
+    const names = entrypoint
+        .split("<!-- BEGIN GENERATED OBJECT INDEX -->")[1]
+        .split("<!-- END GENERATED OBJECT INDEX -->")[0];
+    assert.doesNotMatch(names, /fixture\)|api-tools\.md/);
+    const objectIndex = readFileSync(
+        join(fixture.skillSourcePath, "indexes/object-index.md"),
+        "utf8",
     );
+    assert.match(objectIndex, /\| \[\`Fixture\`\]\(api-tools\.md#fixture\) \|/);
+    assert.doesNotMatch(objectIndex, /export:|\| 关键对象 \|/);
     assert.doesNotThrow(() =>
         validateSkillSource(fixture.targetPath, { freeze: true }),
     );
@@ -181,6 +252,16 @@ test("entrypoint navigation contains every task and a linked API object index", 
     const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
     manifest.status = "draft";
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
+    const objectIndexPath = join(
+        fixture.skillSourcePath,
+        "indexes/object-index.md",
+    );
+    write(objectIndexPath, objectIndex.replace("[`Fixture`]", "[Fixture]"));
+    assert.throws(
+        () => validateSkillSource(fixture.targetPath, { freeze: true }),
+        /Object index differs from api-surface.json/,
+    );
+    write(objectIndexPath, objectIndex);
     delete manifest.taskNavigation;
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
     assert.throws(
@@ -236,11 +317,11 @@ test("entrypoint navigation contains every task and a linked API object index", 
     write(examplePath, exampleBody);
     manifest.files.push({
         source: "examples/example-fixture.md",
-        output: "references/example-fixture.md",
+        output: "references/host/examples/example-fixture.md",
         kind: "example",
     });
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
-    const linkedHowTo = `${howTo}\nRead the [complete example](example-fixture.md).\n`;
+    const linkedHowTo = `${howTo}\nRead the [complete example](host/examples/example-fixture.md).\n`;
     write(howToPath, howTo);
     assert.throws(
         () => validateSkillSource(fixture.targetPath, { freeze: true }),
@@ -257,9 +338,10 @@ test("entrypoint navigation contains every task and a linked API object index", 
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
     assert.throws(
         () => validateSkillSource(fixture.targetPath, { freeze: true }),
-        /Example must be a top-level references\/example-\*\.md/,
+        /Example must be a grouped references\/<side>\/examples\/example-\*\.md/,
     );
-    manifest.files.at(-1).output = "references/example-fixture.md";
+    manifest.files.at(-1).output =
+        "references/host/examples/example-fixture.md";
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
     assert.doesNotThrow(() =>
         validateSkillSource(fixture.targetPath, { freeze: true }),
@@ -269,7 +351,7 @@ test("entrypoint navigation contains every task and a linked API object index", 
         existsSync(
             join(
                 fixture.targetPath,
-                "generated-skill/references/example-fixture.md",
+                "generated-skill/references/host/examples/example-fixture.md",
             ),
         ),
         true,
@@ -317,7 +399,7 @@ test("entrypoint navigation contains every task and a linked API object index", 
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);
     assert.throws(
         () => validateSkillSource(fixture.targetPath, { freeze: true }),
-        /not separate index files/,
+        /only references\/object-index\.md as a separate index file/,
     );
     manifest.files.pop();
     write(manifestPath, `${JSON.stringify(manifest, null, 4)}\n`);

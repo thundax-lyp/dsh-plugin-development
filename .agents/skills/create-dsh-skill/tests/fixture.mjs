@@ -176,6 +176,13 @@ export function createFixture(t, options = {}) {
         ...(options.extraFiles ?? []),
     ];
     if (options.taskNavigation === "entrypoint") {
+        sourceFiles.push({
+            source: "indexes/object-index.md",
+            output: "references/object-index.md",
+            kind: "index",
+            content:
+                "# 关键对象索引\n\n<!-- BEGIN GENERATED OBJECT TABLE -->\n<!-- END GENERATED OBJECT TABLE -->\n",
+        });
         for (const output of [
             "references/plugin-development-routing.md",
             "references/keyword-index.md",

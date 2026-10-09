@@ -32,7 +32,7 @@ node scripts/validate_skill.mjs --skill <target>/generated-skill --dsh <target>/
 node scripts/check_examples.cjs --dsh <target>/checkout --skill <target>/generated-skill
 ```
 
-示例编译器只扫描 `references/` 第一层的 Markdown，并选择其中的 TypeScript 代码块；新目标的完整代码示例放在 `references/example-*.md`。该检查只能证明被选中代码块与目标版本类型面相容，不能证明多文件包可构建或已装载。对声称可独立创建、安装和挂载的代表性 HOW-TO 及其 example，还须在隔离消费项目检查依赖解析、构建输出、公开安装入口、真实 Profile 装载、可观察行为和卸载；跨 Client 或 Remote 的任务分别验证相应运行面。按本次纳入的插件任务选取验证对象，在交付报告中逐项列出执行步骤和结果。无法运行的路径记录为 `Not Covered` 并说明影响，不把静态检查写成端到端验证。
+示例编译器递归扫描 `references/` 下的 Markdown，并选择其中的 TypeScript 代码块；新目标的完整代码示例放在 `references/<side>/examples/example-*.md`。该检查只能证明被选中代码块与目标版本类型面相容，不能证明多文件包可构建或已装载。对声称可独立创建、安装和挂载的代表性 HOW-TO 及其 example，还须在隔离消费项目检查依赖解析、构建输出、公开安装入口、真实 Profile 装载、可观察行为和卸载；跨 Client 或 Remote 的任务分别验证相应运行面。按本次纳入的插件任务选取验证对象，在交付报告中逐项列出执行步骤和结果。无法运行的路径记录为 `Not Covered` 并说明影响，不把静态检查写成端到端验证。
 
 `--skill` 仅检查指定 Skill 目录；省略时两个脚本保持原有行为，检查正式 `skills/dsh-plugin-development/`。`--dsh` 验证传入 checkout 的 `HEAD` 与该 npm 版本对应 tag 指向同一 commit，并核查 source-map 路径；commit 不从分发 Skill 读取。示例编译依赖目标 checkout 的锁定依赖、Host 构建和 generated Remote 声明。
 

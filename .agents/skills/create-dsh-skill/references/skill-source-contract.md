@@ -12,13 +12,13 @@
 
 写正文前按[入口范围与定位流程](entrypoint-scope.md)从包导出和公开声明生成对象、成员候选并完成 `api-surface.json` 裁决，再查 DSH 文档补语义，随后完成归类和插件任务路径反查。`task-candidates.json` 中的操作标题逐项映射到 `coverage.taskDiscoveries`；任务的 `apiObjects` 指向已纳入对象，多对象任务的 `compositionSteps` 记录协作顺序。API 主题页、子主题页与 how-to 使用[reference 模板](reference-template.md)；模板结构不会替代入口语义审查。`coverage.json` 的 `pluginTask` 必须描述可观察的插件结果，相关 `ownerSections` 必须包含完成该任务的契约或步骤，不能仅重复包职责。多个候选共享一个任务时核查合成后的路径，而不是逐包写相同的空泛任务。
 
-需要在 `SKILL.md` 首屏直达的高价值任务，可在对应 `coverage.taskPaths` 项添加 `entry: { "output": "references/how-to-*.md", "section": "标题原文", "anchor": "markdown-anchor" }`。`entry` 必须与该任务的一项 `destinations` 完全对应，目标必须是 HOW-TO，且 `SKILL.md` 必须直接包含该文档和 anchor 的链接。生成目录的 Markdown 校验继续确认 anchor 真正存在；冻结器检查任务与入口的关联。`entry` 只是路由元数据，不复制 API 契约或 HOW-TO 正文。未设 `entry` 的任务仍须从 `SKILL.md` 的完整任务表到达。
+需要在 `SKILL.md` 首屏直达的高价值任务，可在对应 `coverage.taskPaths` 项添加 `entry: { "output": "references/<side>/how-to/how-to-*.md", "section": "标题原文", "anchor": "markdown-anchor" }`。`entry` 必须与该任务的一项 `destinations` 完全对应，目标必须是 HOW-TO，且 `SKILL.md` 必须直接包含该文档和 anchor 的链接。生成目录的 Markdown 校验继续确认 anchor 真正存在；冻结器检查任务与入口的关联。`entry` 只是路由元数据，不复制 API 契约或 HOW-TO 正文。任务的 `outcome` 或原章节标题不适合首屏阅读时，可另设非空 `navigationLabel`，只改变导航文案，不改变目标小节与事实裁决。未设 `entry` 的任务仍须从 `SKILL.md` 的完整任务表到达。
 
 ## 任务导航与场景验证
 
 新准备的 schema v3 目标在 manifest 中设置 `"taskNavigation": "entrypoint"`。既有 `"generated"` 目标维持旧版双文件导航以便读取冻结素材。此模式要求每条 `covered` 任务的 `destinations` 指向 HOW-TO 中该任务独占、标题和正文非空的小节；不得让不同任务共用一个泛化小节。单对象任务也须如此；任务小节链接其 `apiObjects` 中每个对象的权威 API reference。HOW-TO 可按不重叠的任务边界拆成多篇，没有文件数上限；若 API 页已有完整用法，任务小节可链接而不重复，但须保留任务目标、缺失步骤和完成判据。首屏任务还需提供至少一个非空 `userIntents` 和精确的 `entry`：其 `section` 与 `anchor` 必须标识同一个 HOW-TO 标题。维护者审阅小节的操作步骤、装载和完成判据；结构门禁只核验位置、内容非空及对象链接。
 
-入口 `SKILL.md` 依次包含 `## 适用范围`、`## 插件形态`、`## 开发任务`、`## 关键对象索引`、`## 术语与边界`、`## 关键词索引`、`## 跨主题不变量`、`## 完成边界`。适用范围写精确 npm 版本和停止套用的条件；“插件形态”按目标 tag 的公开组合列出实际成立的产品形态数量、用途、呈现或发现位置、装载与使用方法，并链接各自的 HOW-TO，遵守[形态总览模板](reference-template.md#插件形态总览)。术语解释插件作者会混淆的概念及边界，关键词索引将符号、包名和能力词链接到对应权威 reference；不变量与完成边界写读者可执行的规则。任务表与对象表分别放在同名小节中的生成区：
+入口 `SKILL.md` 依次包含 `## 适用范围`、`## 插件形态`、`## 开发任务`、`## 关键对象索引`、`## 术语与边界`、`## 关键词索引`、`## 跨主题不变量`、`## 完成边界`。适用范围写精确 npm 版本和停止套用的条件；“插件形态”按目标 tag 的公开组合列出实际成立的产品形态数量、用途、呈现或发现位置、装载与使用方法，并链接各自的 HOW-TO，遵守[形态总览模板](reference-template.md#插件形态总览)。术语解释插件作者会混淆的概念及边界，关键词索引将符号、包名和能力词链接到对应权威 reference；不变量与完成边界写读者可执行的规则。任务表与对象名称放在入口同名小节的生成区；入口须链接 `references/object-index.md`，后者容纳对象名与权威契约链接表：
 
 ```text
 <!-- BEGIN GENERATED TASK NAVIGATION -->
@@ -26,6 +26,9 @@
 
 <!-- BEGIN GENERATED OBJECT INDEX -->
 <!-- END GENERATED OBJECT INDEX -->
+
+<!-- BEGIN GENERATED OBJECT TABLE -->
+<!-- END GENERATED OBJECT TABLE -->
 ```
 
 每次修改 `coverage.taskPaths` 或相关标题后，于 `draft` 状态运行：
@@ -34,7 +37,7 @@
 node .agents/skills/create-dsh-skill/scripts/sync-task-navigation.mjs <target>
 ```
 
-该命令在 `SKILL.md` 生成全部已覆盖任务表及全部纳入 API 对象索引。任务表从 `coverage.taskPaths` 生成，对象表从 `api-surface.json` 生成，每个对象链接到唯一权威 API 子主题小节。冻结器重新渲染并逐字比较两个生成区；手动改表或遗漏同步会失败。新模式不分发 `references/plugin-development-routing.md`、`references/keyword-index.md`、`references/terminology.md` 或其他独立索引文件，且须有至少一个首屏任务。旧 `generated` 模式与未启用生成模式的冻结素材继续使用原链接契约。
+该命令在 `SKILL.md` 生成全部已覆盖任务的入口和全部纳入对象的名称，在 `references/object-index.md` 生成对象名称与唯一权威 API 子主题小节链接，重名对象以包名区分。首屏任务单列，其余任务按 HOW-TO 的 Host、Client、基础设施路径分组；跨侧任务可用 `navigationGroup` 指定 `host`、`client`、`infra` 或 `other`，每项任务直接链接具体小节，未知路径归入其他任务。对象表从 `api-surface.json` 生成。冻结器重新渲染并逐字比较三个生成区；手动改动或遗漏同步会失败。新模式只允许独立的对象索引，不分发 `references/plugin-development-routing.md`、`references/keyword-index.md`、`references/terminology.md`，且须有至少一个首屏任务。旧 `generated` 模式与未启用生成模式的冻结素材继续使用原链接契约。
 
 `evidence/task-scenarios.json` 为每个首屏任务至少指定一个可运行场景。脚本是维护证据，须审查其是否真正执行包解析、构建、Profile 装载、可观察调用、卸载等所声明的检查；场景输出中的 `true` 不自动证明脚本执行了这些行为。清单示例：
 
@@ -87,14 +90,14 @@ node .agents/skills/create-dsh-skill/scripts/verify-task-scenarios.mjs <target>
         },
         {
             "source": "api-guardrails/tools-overview.md",
-            "output": "references/api-tools-overview.md",
+            "output": "references/host/api/api-tools-overview.md",
             "kind": "api-guardrail",
             "role": "topic",
             "topic": "tools"
         },
         {
             "source": "api-guardrails/tools-runtime.md",
-            "output": "references/api-tools-runtime.md",
+            "output": "references/host/api/api-tools-runtime.md",
             "kind": "api-guardrail",
             "role": "subject",
             "topic": "tools",
@@ -102,12 +105,17 @@ node .agents/skills/create-dsh-skill/scripts/verify-task-scenarios.mjs <target>
         },
         {
             "source": "how-to/register-tool.md",
-            "output": "references/how-to-register-tool.md",
+            "output": "references/host/how-to/how-to-register-tool.md",
             "kind": "how-to"
         },
         {
+            "source": "indexes/object-index.md",
+            "output": "references/object-index.md",
+            "kind": "index"
+        },
+        {
             "source": "examples/example-register-tool.md",
-            "output": "references/example-register-tool.md",
+            "output": "references/host/examples/example-register-tool.md",
             "kind": "example"
         },
         {
@@ -124,16 +132,18 @@ node .agents/skills/create-dsh-skill/scripts/verify-task-scenarios.mjs <target>
 }
 ```
 
-`source` 相对于 `skill-source/`，`output` 相对于待生成 Skill。每个输入和输出只能出现一次。支持的 `kind` 为 `entrypoint`、`metadata`、`api-guardrail`、`concept`、`how-to`、`example`、`index`、`maintenance` 和 `asset`。新目标的完整代码示例使用 `kind: "example"`，输出到 `references/example-*.md`，由相应 HOW-TO 的具体任务小节以相对链接导航；冻结器检查位置、代码块和可达性。详情见[Example 编写契约](reference-template.md#example-编写契约)。
+`source` 相对于 `skill-source/`，`output` 相对于待生成 Skill。每个输入和输出只能出现一次。入口导航模式仅分发一个 `kind: "index"` 文件，即 `references/object-index.md`。支持的 `kind` 为 `entrypoint`、`metadata`、`api-guardrail`、`concept`、`how-to`、`example`、`index`、`maintenance` 和 `asset`。新目标的完整代码示例使用 `kind: "example"`，输出到 `references/<side>/examples/example-*.md`，由相应 HOW-TO 的具体任务小节以相对链接导航；冻结器检查位置、代码块和可达性。详情见[Example 编写契约](reference-template.md#example-编写契约)。
+
+产物 reference 按 `references/<side>/<kind>/` 分组：`<side>` 为 `host`、`client` 或 `infra`，`<kind>` 为 `api`、`how-to` 或 `examples`。跨侧主题按主要读者入口归组，具体运行边界仍由正文说明。修改 `output` 时同步相对链接、`coverage.json`、`api-surface.json`、`claims.json` 和 source-map，再冻结、构建和验证；示例编译器递归扫描这些子目录。
 
 新目标的每个 API 主题有一份主题页和至少一份子主题页。manifest 的 API 文件分别标 `role: "topic"` 或 `role: "subject"`，都标所属 `topic`，子主题还标同主题内唯一的 `subject`。主题页要有非空的“对象关系”和“选型与使用”小节，并链接本主题所有子主题；每份子主题至少拥有一个纳入对象，对象在独占且包含公开符号名的小节中写具体契约。`api-surface.json` 的 `owner` 只能指向子主题页；对象索引由这些 owner 生成，具体任务的使用路径由 HOW-TO 承接。文件名由该次主题裁决确定，不固定沿用旧产物。冻结器检查元数据、链接、owner、小节独占和成员出现；关系、用法及示例的语义仍须人工核查。既有冻结素材维持原格式。
 
 新产物至少包含：
 
 - `SKILL.md` 和 `agents/openai.yaml`；
-- `SKILL.md` 内的完整任务表、对象索引、术语与边界、关键词索引；
+- `SKILL.md` 内的完整任务表、对象名称、术语与边界、关键词索引，以及 `references/object-index.md` 中的对象契约表；
 - 至少一个 API 围挡和一个端到端 HOW-TO；
-- 需要独立放置完整代码时，HOW-TO 链接 `references/example-*.md`，示例文件保留完整代码、构建、装载与验证步骤；
+- 需要独立放置完整代码时，HOW-TO 链接 `references/<side>/examples/example-*.md`，示例文件保留完整代码、构建、装载与验证步骤；
 - `maintenance/source-map.md` 与 `maintenance/skill-maintenance.md`。
 
 ## 冻结

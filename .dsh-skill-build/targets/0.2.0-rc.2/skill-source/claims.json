@@ -4,7 +4,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-commands.md",
+        "owner": "references/client/api/api-client-commands.md",
         "summary": "Client 命令 UI：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -18,7 +18,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-conversation.md",
+        "owner": "references/client/api/api-client-conversation.md",
         "summary": "Conversation Node 扩展契约：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -32,7 +32,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-interaction.md",
+        "owner": "references/client/api/api-client-interaction.md",
         "summary": "Tool 结果与输入触发扩展：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -46,7 +46,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-modules.md",
+        "owner": "references/client/api/api-client-modules.md",
         "summary": "Client 包与模块装载：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -60,7 +60,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-preview.md",
+        "owner": "references/client/api/api-client-preview.md",
         "summary": "右侧栏文档预览扩展：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -74,7 +74,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-references.md",
+        "owner": "references/client/api/api-client-references.md",
         "summary": "Client 引用与 Host 发现服务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -88,7 +88,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-remote.md",
+        "owner": "references/client/api/api-client-remote.md",
         "summary": "Client Remote 调用与新端点边界：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -102,7 +102,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-services.md",
+        "owner": "references/client/api/api-client-services.md",
         "summary": "Client 共享服务：资源、语言与快捷键：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -116,7 +116,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-settings.md",
+        "owner": "references/client/api/api-client-settings.md",
         "summary": "Client 配置表单与设置页面：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -130,7 +130,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-shared-ui.md",
+        "owner": "references/client/api/api-client-shared-ui.md",
         "summary": "共享控件、样式与主题：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -144,7 +144,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-sidebar.md",
+        "owner": "references/client/api/api-client-sidebar.md",
         "summary": "Client 右侧栏 Tab 与导航：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -158,7 +158,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-slots.md",
+        "owner": "references/client/api/api-client-slots.md",
         "summary": "Client slot 与共享界面：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -172,7 +172,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-subagent.md",
+        "owner": "references/client/api/api-client-subagent.md",
         "summary": "子 Agent 的 Client 投影、地址与控制词汇：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -186,7 +186,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-typert-build.md",
+        "owner": "references/client/api/api-client-typert-build.md",
         "summary": "Typert 构建接入：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -200,7 +200,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-web-topic.md",
+        "owner": "references/client/api/api-client-web-topic.md",
         "summary": "Client Web：包、模块与界面扩展关系：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -214,7 +214,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/api-client-workspace-data.md",
+        "owner": "references/client/api/api-client-workspace-data.md",
         "summary": "Workspace 实体与变更摘要的分侧契约：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -228,7 +228,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-agent.md",
+        "owner": "references/host/api/api-host-agent.md",
         "summary": "Host Agent 对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -242,7 +242,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-commands.md",
+        "owner": "references/host/api/api-host-commands.md",
         "summary": "Host 命令对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -256,7 +256,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-compaction.md",
+        "owner": "references/host/api/api-host-compaction.md",
         "summary": "Host 会话压缩对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -270,7 +270,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-cordis.md",
+        "owner": "references/host/api/api-host-cordis.md",
         "summary": "Host Cordis 对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -284,7 +284,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-core-topic.md",
+        "owner": "references/host/api/api-host-core-topic.md",
         "summary": "Host 插件核心：Context、Service 与模型工具：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -298,7 +298,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-credentials.md",
+        "owner": "references/host/api/api-host-credentials.md",
         "summary": "Host 凭据与授权对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -312,7 +312,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-directory-picker.md",
+        "owner": "references/host/api/api-host-directory-picker.md",
         "summary": "Host 目录选择对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -326,7 +326,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-goal.md",
+        "owner": "references/host/api/api-host-goal.md",
         "summary": "Host 持久目标对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -340,7 +340,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-jobs.md",
+        "owner": "references/host/api/api-host-jobs.md",
         "summary": "Host 后台 Job 对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -354,7 +354,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-llm-message.md",
+        "owner": "references/host/api/api-host-llm-message.md",
         "summary": "Host LLM 消息与流记录对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -368,7 +368,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-llm.md",
+        "owner": "references/host/api/api-host-llm.md",
         "summary": "Host LLM Adapter 对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -382,7 +382,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-persistence.md",
+        "owner": "references/host/api/api-host-persistence.md",
         "summary": "Host Session 持久化对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -396,7 +396,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-prompt-policy.md",
+        "owner": "references/host/api/api-host-prompt-policy.md",
         "summary": "Host 提示词与执行策略对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -410,7 +410,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-scope.md",
+        "owner": "references/host/api/api-host-scope.md",
         "summary": "Host 作用域注册对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -424,7 +424,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-session-query.md",
+        "owner": "references/host/api/api-host-session-query.md",
         "summary": "Host Session 查询对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -438,7 +438,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-session-surface.md",
+        "owner": "references/host/api/api-host-session-surface.md",
         "summary": "Host Session 模型历史投影对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -452,7 +452,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-session-title.md",
+        "owner": "references/host/api/api-host-session-title.md",
         "summary": "Host 会话标题对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -466,7 +466,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-session.md",
+        "owner": "references/host/api/api-host-session.md",
         "summary": "Host Session 对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -480,7 +480,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-shell-env.md",
+        "owner": "references/host/api/api-host-shell-env.md",
         "summary": "Host 托管 Shell 环境对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -494,7 +494,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-subagent.md",
+        "owner": "references/host/api/api-host-subagent.md",
         "summary": "Host 子 Agent 委派对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -508,7 +508,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-tools.md",
+        "owner": "references/host/api/api-host-tools.md",
         "summary": "Host 模型工具对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -522,7 +522,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-user-questions.md",
+        "owner": "references/host/api/api-host-user-questions.md",
         "summary": "Host 用户问答对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -536,7 +536,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/api-host-workflow.md",
+        "owner": "references/host/api/api-host-workflow.md",
         "summary": "Host Workflow 编排对象：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -550,7 +550,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-cmdline.md",
+        "owner": "references/infra/api/api-infra-cmdline.md",
         "summary": "应用自有命令行参数：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -564,7 +564,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-integration-topic.md",
+        "owner": "references/infra/api/api-infra-integration-topic.md",
         "summary": "外部事件进入插件组合：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -578,7 +578,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-invariants.md",
+        "owner": "references/infra/api/api-infra-invariants.md",
         "summary": "Profile 运行时不变式：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -592,7 +592,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-live-config.md",
+        "owner": "references/infra/api/api-infra-live-config.md",
         "summary": "运行时配置与设置表单：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -606,7 +606,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-package-operations.md",
+        "owner": "references/infra/api/api-infra-package-operations.md",
         "summary": "嵌入式应用的 Profile 包操作：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -620,7 +620,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-persistence",
-        "owner": "references/api-infra-persistence-topic.md",
+        "owner": "references/infra/api/api-infra-persistence-topic.md",
         "summary": "插件自有持久数据：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -634,7 +634,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-profile-manifest.md",
+        "owner": "references/infra/api/api-infra-profile-manifest.md",
         "summary": "组合包与 Profile manifest：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -648,7 +648,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-profile-runtime.md",
+        "owner": "references/infra/api/api-infra-profile-runtime.md",
         "summary": "Profile 解析、装载与管理：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -662,7 +662,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/api-infra-profile-topic.md",
+        "owner": "references/infra/api/api-infra-profile-topic.md",
         "summary": "Profile 与组合包：交付可装载的插件组合：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -676,7 +676,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-artifacts.md",
+        "owner": "references/infra/api/api-infra-provider-artifacts.md",
         "summary": "Spill 与附件存储后端：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -690,7 +690,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-browser-use.md",
+        "owner": "references/infra/api/api-infra-provider-browser-use.md",
         "summary": "Browser use 独占 provider 槽：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -704,7 +704,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-computer-use.md",
+        "owner": "references/infra/api/api-infra-provider-computer-use.md",
         "summary": "Computer use 独占 provider 槽：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -718,7 +718,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-execution.md",
+        "owner": "references/infra/api/api-infra-provider-execution.md",
         "summary": "进程与受限命令执行：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -732,7 +732,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-fs.md",
+        "owner": "references/infra/api/api-infra-provider-fs.md",
         "summary": "FileSystem 执行世界：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -746,7 +746,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-lsp.md",
+        "owner": "references/infra/api/api-infra-provider-lsp.md",
         "summary": "LSP 语义查询 provider：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -760,7 +760,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-mcp-resources.md",
+        "owner": "references/infra/api/api-infra-provider-mcp-resources.md",
         "summary": "MCP 资源 provider：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -774,7 +774,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-ptc.md",
+        "owner": "references/infra/api/api-infra-provider-ptc.md",
         "summary": "PTC 程序执行后端：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -788,7 +788,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-skill.md",
+        "owner": "references/infra/api/api-infra-provider-skill.md",
         "summary": "Agent Skill provider：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -802,7 +802,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-speech.md",
+        "owner": "references/infra/api/api-infra-provider-speech.md",
         "summary": "实验性语音转写 provider：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -816,7 +816,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-terminal.md",
+        "owner": "references/infra/api/api-infra-provider-terminal.md",
         "summary": "持久 PTY 会话后端：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -830,7 +830,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-provider-web.md",
+        "owner": "references/infra/api/api-infra-provider-web.md",
         "summary": "Web 搜索与抓取 provider：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -844,7 +844,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-persistence",
-        "owner": "references/api-infra-storage-domain.md",
+        "owner": "references/infra/api/api-infra-storage-domain.md",
         "summary": "领域数据契约：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -858,7 +858,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-persistence",
-        "owner": "references/api-infra-storage.md",
+        "owner": "references/infra/api/api-infra-storage.md",
         "summary": "Storage 枢纽与后端：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -872,7 +872,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-webhook.md",
+        "owner": "references/infra/api/api-infra-webhook.md",
         "summary": "Webhook 规则契约：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -886,7 +886,7 @@
         "kind": "implemented-behavior",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/api-infra-webserver.md",
+        "owner": "references/infra/api/api-infra-webserver.md",
         "summary": "Host HTTP 路由：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -900,7 +900,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-command-ui.md",
+        "owner": "references/client/how-to/how-to-client-command-ui.md",
         "summary": "贡献 Client 命令 UI：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -914,7 +914,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-conversation-node.md",
+        "owner": "references/client/how-to/how-to-client-conversation-node.md",
         "summary": "为业务事件注册 Conversation Node：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -928,7 +928,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-document-preview.md",
+        "owner": "references/client/how-to/how-to-client-document-preview.md",
         "summary": "为右侧栏添加文档预览格式：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -942,7 +942,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-file-reference-provider.md",
+        "owner": "references/client/how-to/how-to-client-file-reference-provider.md",
         "summary": "为 `@file` 提供 Host 发现后端：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -956,7 +956,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-input-trigger.md",
+        "owner": "references/client/how-to/how-to-client-input-trigger.md",
         "summary": "向 Web 输入框添加候选源：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -970,7 +970,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-locale-shortcuts.md",
+        "owner": "references/client/how-to/how-to-client-locale-shortcuts.md",
         "summary": "为 Web 插件添加词典和快捷键：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -984,7 +984,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-publish-remote.md",
+        "owner": "references/client/how-to/how-to-client-publish-remote.md",
         "summary": "发布 Host Remote 供 Client 调用：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -998,7 +998,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-reference-candidates.md",
+        "owner": "references/client/how-to/how-to-client-reference-candidates.md",
         "summary": "在 Client 读取 `@file` 与 `@session` 候选：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1012,7 +1012,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-remote-call.md",
+        "owner": "references/client/how-to/how-to-client-remote-call.md",
         "summary": "在 Web 插件调用 Host Remote：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1026,7 +1026,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-resource-provider.md",
+        "owner": "references/client/how-to/how-to-client-resource-provider.md",
         "summary": "在 Web slot 使用实时资源：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1040,7 +1040,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-settings-card.md",
+        "owner": "references/client/how-to/how-to-client-settings-card.md",
         "summary": "为 Host 配置贡献设置卡片：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1054,7 +1054,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-sidebar-panel.md",
+        "owner": "references/client/how-to/how-to-client-sidebar-panel.md",
         "summary": "贡献左栏全局面板：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1068,7 +1068,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-sidebar-tab.md",
+        "owner": "references/client/how-to/how-to-client-sidebar-tab.md",
         "summary": "贡献右侧栏 Tab：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1082,7 +1082,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-slot-contribution.md",
+        "owner": "references/client/how-to/how-to-client-slot-contribution.md",
         "summary": "向 Web 页面贡献 slot：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1096,7 +1096,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-subagent-navigation.md",
+        "owner": "references/client/how-to/how-to-client-subagent-navigation.md",
         "summary": "导航与控制子 Agent 会话：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1110,7 +1110,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-theme-ui.md",
+        "owner": "references/client/how-to/how-to-client-theme-ui.md",
         "summary": "复用共享控件并扩展主题：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1124,7 +1124,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-tool-view.md",
+        "owner": "references/client/how-to/how-to-client-tool-view.md",
         "summary": "自定义工具调用在 Web 中的展示：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1138,7 +1138,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-upload-file.md",
+        "owner": "references/client/how-to/how-to-client-upload-file.md",
         "summary": "向指定 Session 上传浏览器文件：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1152,7 +1152,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-web-package.md",
+        "owner": "references/client/how-to/how-to-client-web-package.md",
         "summary": "发布并装载 Web 半侧：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1166,7 +1166,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-workspace-changes.md",
+        "owner": "references/client/how-to/how-to-client-workspace-changes.md",
         "summary": "消费逐轮 Workspace 变更摘要：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1180,7 +1180,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-workspace-navigation.md",
+        "owner": "references/client/how-to/how-to-client-workspace-navigation.md",
         "summary": "导航 Workspace 与 Session：任务指南：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1194,7 +1194,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "client-web",
-        "owner": "references/how-to-client-workspace-registry.md",
+        "owner": "references/client/how-to/how-to-client-workspace-registry.md",
         "summary": "Host Workspace Registry 操作：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1208,7 +1208,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-agent-scope.md",
+        "owner": "references/host/how-to/how-to-host-agent-scope.md",
         "summary": "Agent 作用域任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1222,7 +1222,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-command.md",
+        "owner": "references/host/how-to/how-to-host-command.md",
         "summary": "Host 斜杠命令任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1236,7 +1236,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-compaction.md",
+        "owner": "references/host/how-to/how-to-host-compaction.md",
         "summary": "Host 会话压缩任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1250,7 +1250,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-credentials.md",
+        "owner": "references/host/how-to/how-to-host-credentials.md",
         "summary": "Host 凭据与授权任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1264,7 +1264,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-directory-picker.md",
+        "owner": "references/host/how-to/how-to-host-directory-picker.md",
         "summary": "Host 工作区目录选择任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1278,7 +1278,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-goal.md",
+        "owner": "references/host/how-to/how-to-host-goal.md",
         "summary": "Host 持久目标任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1292,7 +1292,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-jobs.md",
+        "owner": "references/host/how-to/how-to-host-jobs.md",
         "summary": "Host 后台 Job 任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1306,7 +1306,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-llm-adapter.md",
+        "owner": "references/host/how-to/how-to-host-llm-adapter.md",
         "summary": "Host 模型后端任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1320,7 +1320,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-llm-message.md",
+        "owner": "references/host/how-to/how-to-host-llm-message.md",
         "summary": "Host LLM 消息流任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1334,7 +1334,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-persistence.md",
+        "owner": "references/host/how-to/how-to-host-persistence.md",
         "summary": "Host Session 持久化任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1348,7 +1348,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-prompt-policy.md",
+        "owner": "references/host/how-to/how-to-host-prompt-policy.md",
         "summary": "Host 提示词与工具策略任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1362,7 +1362,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-scope.md",
+        "owner": "references/host/how-to/how-to-host-scope.md",
         "summary": "Host 作用域任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1376,7 +1376,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-service.md",
+        "owner": "references/host/how-to/how-to-host-service.md",
         "summary": "Host Service 任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1390,7 +1390,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-session-event.md",
+        "owner": "references/host/how-to/how-to-host-session-event.md",
         "summary": "Host Session 事实任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1404,7 +1404,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-session-fork.md",
+        "owner": "references/host/how-to/how-to-host-session-fork.md",
         "summary": "Host Session Fork 任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1418,7 +1418,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-session-query.md",
+        "owner": "references/host/how-to/how-to-host-session-query.md",
         "summary": "Host Session 查询任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1432,7 +1432,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-session-surface.md",
+        "owner": "references/host/how-to/how-to-host-session-surface.md",
         "summary": "Host Session 模型历史投影任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1446,7 +1446,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-session-title.md",
+        "owner": "references/host/how-to/how-to-host-session-title.md",
         "summary": "Host 会话标题任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1460,7 +1460,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-shell-env.md",
+        "owner": "references/host/how-to/how-to-host-shell-env.md",
         "summary": "Host Shell 环境任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1474,7 +1474,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-subagent.md",
+        "owner": "references/host/how-to/how-to-host-subagent.md",
         "summary": "Host 子 Agent 委派任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1488,7 +1488,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-tool.md",
+        "owner": "references/host/how-to/how-to-host-tool.md",
         "summary": "Host 模型工具任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1502,7 +1502,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-user-questions.md",
+        "owner": "references/host/how-to/how-to-host-user-questions.md",
         "summary": "Host 用户问答任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1516,7 +1516,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "host-core",
-        "owner": "references/how-to-host-workflow.md",
+        "owner": "references/host/how-to/how-to-host-workflow.md",
         "summary": "Host Workflow 任务：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1530,7 +1530,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/how-to-infra-app-args.md",
+        "owner": "references/infra/how-to/how-to-infra-app-args.md",
         "summary": "自定义 Profile 的应用参数：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1544,7 +1544,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-http-route.md",
+        "owner": "references/infra/how-to/how-to-infra-http-route.md",
         "summary": "Host HTTP 扩展：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1558,7 +1558,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/how-to-infra-invariants.md",
+        "owner": "references/infra/how-to/how-to-infra-invariants.md",
         "summary": "给自定义 Profile 安装运行时自检：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1572,7 +1572,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/how-to-infra-live-config.md",
+        "owner": "references/infra/how-to/how-to-infra-live-config.md",
         "summary": "插件实时配置：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1586,7 +1586,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-persistence",
-        "owner": "references/how-to-infra-persistence.md",
+        "owner": "references/infra/how-to/how-to-infra-persistence.md",
         "summary": "插件持久状态：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1600,7 +1600,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-profile",
-        "owner": "references/how-to-infra-profile-bundle.md",
+        "owner": "references/infra/how-to/how-to-infra-profile-bundle.md",
         "summary": "Profile 交付与装载：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1614,7 +1614,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-artifacts.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-artifacts.md",
         "summary": "Host 大文本与附件持久化：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1628,7 +1628,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-browser-use.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-browser-use.md",
         "summary": "Browser use provider 组合：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1642,7 +1642,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-computer-use.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-computer-use.md",
         "summary": "Computer use provider 组合：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1656,7 +1656,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-execution.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-execution.md",
         "summary": "受限命令执行：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1670,7 +1670,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-fs.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-fs.md",
         "summary": "在插件中使用 FileSystem：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1684,7 +1684,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-lsp.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-lsp.md",
         "summary": "LSP provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1698,7 +1698,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-mcp-resources.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-mcp-resources.md",
         "summary": "MCP 资源 provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1712,7 +1712,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-ptc.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-ptc.md",
         "summary": "PTC runtime 调用：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1726,7 +1726,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-skill.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-skill.md",
         "summary": "虚拟 Skill provider：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1740,7 +1740,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-speech.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-speech.md",
         "summary": "实验性语音 provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1754,7 +1754,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-terminal.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-terminal.md",
         "summary": "持久 PTY 操作：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1768,7 +1768,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-provider-web.md",
+        "owner": "references/infra/how-to/how-to-infra-provider-web.md",
         "summary": "Web provider 插件：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {
@@ -1782,7 +1782,7 @@
         "kind": "derived-guidance",
         "decision": "accepted",
         "topic": "infra-integration",
-        "owner": "references/how-to-infra-webhook.md",
+        "owner": "references/infra/how-to/how-to-infra-webhook.md",
         "summary": "外部事件驱动的 Agent 会话：依据目标版本公开入口及实现整理插件使用契约。",
         "evidence": [
             {

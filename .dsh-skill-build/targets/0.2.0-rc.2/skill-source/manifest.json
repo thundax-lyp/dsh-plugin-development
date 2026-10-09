@@ -18,7 +18,7 @@
             "source": "entrypoint/SKILL.md",
             "output": "SKILL.md",
             "kind": "entrypoint",
-            "sha256": "819b7ba687439317d76be1260f039a68259c6fd9b3afe9a749f9d230aebac443"
+            "sha256": "854aae75b6cd24fd5c51cfc08b2ed27acfd7b4f5324f477f279973998eed8cae"
         },
         {
             "source": "metadata/openai.yaml",
@@ -28,1212 +28,1212 @@
         },
         {
             "source": "api-guardrails/client-commands.md",
-            "output": "references/api-client-commands.md",
+            "output": "references/client/api/api-client-commands.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "commands",
-            "sha256": "6102bf03650c2ec6f3932334a0792141df799c34e9da34a859759cf6d186bcde"
+            "sha256": "4b9c7ecfe7a671343a42205ace57d8b34aa892b9986ca020813013e090e4d76d"
         },
         {
             "source": "api-guardrails/client-conversation.md",
-            "output": "references/api-client-conversation.md",
+            "output": "references/client/api/api-client-conversation.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "conversation",
-            "sha256": "decb1ee81ca7efa881b179f7bcbbf10659729348875085ffaaff61ce33a789ed"
+            "sha256": "0fb2adb125e0189db3448340b237c6d6cc5616f11505232a3e9ac5c7317fc8b5"
         },
         {
             "source": "api-guardrails/client-interaction.md",
-            "output": "references/api-client-interaction.md",
+            "output": "references/client/api/api-client-interaction.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "interaction",
-            "sha256": "80d45d4a8dc978283bfca3179cd416d79f1ebeece3f243c02f5be19b386edda1"
+            "sha256": "a0e0954fb25935ba83cc1108cbefe49d64ed037830bc730ecb729dd65524582d"
         },
         {
             "source": "api-guardrails/client-modules.md",
-            "output": "references/api-client-modules.md",
+            "output": "references/client/api/api-client-modules.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "modules",
-            "sha256": "f67b3cc6df08931a647f0c5b53adb61a737b651d550e7c4b64f123fe729b7ba4"
+            "sha256": "cf92afc73527a397978c8e57cdebcc72d372514265000f7a65dc895882ddaf9a"
         },
         {
             "source": "api-guardrails/client-preview.md",
-            "output": "references/api-client-preview.md",
+            "output": "references/client/api/api-client-preview.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "preview",
-            "sha256": "c6ef42a67be9ee1c113055daf32e1bf4bf95fa499376cba26283d37b8f5849f3"
+            "sha256": "7942a3ae520b4a4b4fe579a8b1baeca00bf7057b1574ec5e5d5f1ed77227b537"
         },
         {
             "source": "api-guardrails/client-references.md",
-            "output": "references/api-client-references.md",
+            "output": "references/client/api/api-client-references.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "references",
-            "sha256": "2fe232685ae1483e4eb8e5eca489d0eb27040be13ccfc3a34de8e53607e25892"
+            "sha256": "73813ef165157e22e260e424fa7037a2220f84b6464bc0ac2cf4d80aced2595e"
         },
         {
             "source": "api-guardrails/client-remote.md",
-            "output": "references/api-client-remote.md",
+            "output": "references/client/api/api-client-remote.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "remote",
-            "sha256": "050b833ee495c8e9c64dcfdfe5a14eca050f9b03f7e9a0259ef37ca3dc3799b6"
+            "sha256": "419e9417a807395c0b7ee85318b4b0ac92b048917b716be80fd22e0597d13b98"
         },
         {
             "source": "api-guardrails/client-services.md",
-            "output": "references/api-client-services.md",
+            "output": "references/client/api/api-client-services.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "services",
-            "sha256": "06e05784267571c8533ed5199403fee5d51fc84a4ac705c0ed639587b8efff8a"
+            "sha256": "241ddb9b382b7eff8cbc4334ff4ec3807baff70c0be076103e4acfa809e59345"
         },
         {
             "source": "api-guardrails/client-settings.md",
-            "output": "references/api-client-settings.md",
+            "output": "references/client/api/api-client-settings.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "settings",
-            "sha256": "981995e28936abb404229316e1f93bc063fa1319edbc7e46a45c593ffef2ad07"
+            "sha256": "e5b48198b6f5ec11e8462cde61a87c5af8f6f9b9e32d838fe6bf4886aeddb7d0"
         },
         {
             "source": "api-guardrails/client-shared-ui.md",
-            "output": "references/api-client-shared-ui.md",
+            "output": "references/client/api/api-client-shared-ui.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "shared-ui",
-            "sha256": "c8b3a150c7a29e0a8e41ec802790d0af2c3757de0f5d0213ea05f7c3a58bea15"
+            "sha256": "1fa667ccaa6f0a33b909c91342898d73603359b4f2ff887edc54ade437ef370f"
         },
         {
             "source": "api-guardrails/client-sidebar.md",
-            "output": "references/api-client-sidebar.md",
+            "output": "references/client/api/api-client-sidebar.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "sidebar",
-            "sha256": "82753c388bc885b0780cd4fc1e417366fb6a7647abd86922e769595e31536f1c"
+            "sha256": "6c4644f51d6369311be794922f8af3cc214d42e991ef233b0eca32bf1c71dafe"
         },
         {
             "source": "api-guardrails/client-slots.md",
-            "output": "references/api-client-slots.md",
+            "output": "references/client/api/api-client-slots.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "slots",
-            "sha256": "250003418305a2282c0f212fe23b4e02fb96322256e0fa67ab33b4756225cab0"
+            "sha256": "3e2472208f324ff9e722867a868718f7e73053b01c2aebf7af8e18bfe766f430"
         },
         {
             "source": "api-guardrails/client-subagent.md",
-            "output": "references/api-client-subagent.md",
+            "output": "references/client/api/api-client-subagent.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "subagent",
-            "sha256": "f3d44d33e211704fafcc7aff17d9548441cdd90a85ac776b61007f15517f21cb"
+            "sha256": "7688fcac438df08ff2eecd3f5264569d45fe3ea0292d28bd298a12c6629cfcbd"
         },
         {
             "source": "api-guardrails/client-typert-build.md",
-            "output": "references/api-client-typert-build.md",
+            "output": "references/client/api/api-client-typert-build.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "typert-build",
-            "sha256": "9eac6a1878383666595f63bfacbe02d3e67518770e537045b9f91bc2e619feba"
+            "sha256": "2f6ab33af8267d234292de7f9ff315c9701fa79fad4adc5b425749d11cee5c4a"
         },
         {
             "source": "api-guardrails/client-web-topic.md",
-            "output": "references/api-client-web-topic.md",
+            "output": "references/client/api/api-client-web-topic.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "topic",
-            "sha256": "ee0396b2c7c0721bd768bcac1120b5cbcff3d34ca47604b664661b695d705130"
+            "sha256": "b8bed1e76cae98377fcef44eca4bc62e499d886c6db5ac2e4b88a004a64007db"
         },
         {
             "source": "api-guardrails/client-workspace-data.md",
-            "output": "references/api-client-workspace-data.md",
+            "output": "references/client/api/api-client-workspace-data.md",
             "kind": "api-guardrail",
             "topic": "client-web",
             "role": "subject",
             "subject": "workspace-data",
-            "sha256": "76ff08d5bcfb157ce64a436c2fadf3f5b15afca97781820e910b476d64d7caba"
+            "sha256": "ce954a4dec22ced127a5346bbb78fcbc0d25c6af8d0467106daf2b74962a2261"
         },
         {
             "source": "api-guardrails/host-agent.md",
-            "output": "references/api-host-agent.md",
+            "output": "references/host/api/api-host-agent.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "agent",
-            "sha256": "2ddfb386ba94dc6f4ff69982bd8a01aa4484af51f8292d054d471d43a2524c69"
+            "sha256": "ebb6eb3bb83b4a41d7970dc074b4c437b355f8bef4809b7e16127617e6d25c27"
         },
         {
             "source": "api-guardrails/host-commands.md",
-            "output": "references/api-host-commands.md",
+            "output": "references/host/api/api-host-commands.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "commands",
-            "sha256": "3731d33001bde1303d8e06f26349581e3724e1d852e3956cd259f97b169c7a49"
+            "sha256": "475cbf2624beb8136bdb409740761d24ba35457b25c0c3857827a7506a47fc06"
         },
         {
             "source": "api-guardrails/host-compaction.md",
-            "output": "references/api-host-compaction.md",
+            "output": "references/host/api/api-host-compaction.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "compaction",
-            "sha256": "bc4c4f846b65e49777106db4ffbd87149b91301e317ecff809d637ef9fe4c23d"
+            "sha256": "a81a763f485a7d3d47bb1f92d12ec6b50858db4762a7dce614c1ae879795b8ec"
         },
         {
             "source": "api-guardrails/host-cordis.md",
-            "output": "references/api-host-cordis.md",
+            "output": "references/host/api/api-host-cordis.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "cordis",
-            "sha256": "b40e0f6d80f46227f72f4f2b462e222b5210b12dc869714f67995f403cc68c06"
+            "sha256": "f3da4f975c6968ea2d37282503a1b8919dae045caa98f22a25a54d3384138d6b"
         },
         {
             "source": "api-guardrails/host-core-topic.md",
-            "output": "references/api-host-core-topic.md",
+            "output": "references/host/api/api-host-core-topic.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "topic",
-            "sha256": "e5562159855f34c3a765fcb6fd7dc62af4c87f35f73a3ad2620f5eadd0e72568"
+            "sha256": "56da4ef70ab3d12f3aaf5303c2c3a46ea06c8ca3d0ec8084bee98c99056024fd"
         },
         {
             "source": "api-guardrails/host-credentials.md",
-            "output": "references/api-host-credentials.md",
+            "output": "references/host/api/api-host-credentials.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "credentials",
-            "sha256": "23f2777947dec132948061d53da3987021e5629868d3db63f74a450ec3a2afc4"
+            "sha256": "77f6d4b4ae4e52f8ba892da328eef12d393ca55dee8aa758d0ab46b35bf65e77"
         },
         {
             "source": "api-guardrails/host-directory-picker.md",
-            "output": "references/api-host-directory-picker.md",
+            "output": "references/host/api/api-host-directory-picker.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "directory-picker",
-            "sha256": "9a8e2666217d0247504f92b3064c42e19c4d4eba62ead9d68dda7633d987c6a3"
+            "sha256": "643763a45b77e933fbf2389c5d9d359a9a29a1738279f920dc1b3b65cdb2ae17"
         },
         {
             "source": "api-guardrails/host-goal.md",
-            "output": "references/api-host-goal.md",
+            "output": "references/host/api/api-host-goal.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "goal",
-            "sha256": "5efa264592fb084e24b66a61a2f0b440b891c0ee3fd5153b8e4c6509b92d958f"
+            "sha256": "ac5b609b61a351bf19e04f59c6e4d3e9b3f31a181f1777a373698527214137b0"
         },
         {
             "source": "api-guardrails/host-jobs.md",
-            "output": "references/api-host-jobs.md",
+            "output": "references/host/api/api-host-jobs.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "jobs",
-            "sha256": "89f6a84b020595194385862fdc428ae3fda4edc68a584f97efc0a045cd9fe7a8"
+            "sha256": "d509ff351a6b61dbc57670b24ea565df1494a393a9d8bf90a128f09c25017998"
         },
         {
             "source": "api-guardrails/host-llm-message.md",
-            "output": "references/api-host-llm-message.md",
+            "output": "references/host/api/api-host-llm-message.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "llm-message",
-            "sha256": "addd5913e9a588401e0a29368a1c444720bafc7e3f94d9a7ea7c007864f55229"
+            "sha256": "5bcada5627a40e4772c0a63d24407f19e501cb87bf3b167c36b96fdb472d54d7"
         },
         {
             "source": "api-guardrails/host-llm.md",
-            "output": "references/api-host-llm.md",
+            "output": "references/host/api/api-host-llm.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "llm",
-            "sha256": "6d021267e85931119d1844529b5828e0e5a33118c641d58ce4f4d688d51648d2"
+            "sha256": "415fe0b4f685420c16f8f4b3d39ab5def380240f5bf49cbd35c6164ff00b51a1"
         },
         {
             "source": "api-guardrails/host-persistence.md",
-            "output": "references/api-host-persistence.md",
+            "output": "references/host/api/api-host-persistence.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "persistence",
-            "sha256": "d283c347f52a6b2b9469f14dadebe4c16cc9ab37c664bb5218fa4dfca70fe100"
+            "sha256": "61359d7f1315a539a202746c475d86cc305dbaed2b0df1a2eafebf0de4e84356"
         },
         {
             "source": "api-guardrails/host-prompt-policy.md",
-            "output": "references/api-host-prompt-policy.md",
+            "output": "references/host/api/api-host-prompt-policy.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "prompt-policy",
-            "sha256": "6b0271ca0fb0713fb400670959ce3e8bf8d6928a10d026fcca6355afcfdf1d0a"
+            "sha256": "520ad5473a54036adfd00f734d9ca6d8381166023d064dd220705091f7ade9db"
         },
         {
             "source": "api-guardrails/host-scope.md",
-            "output": "references/api-host-scope.md",
+            "output": "references/host/api/api-host-scope.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "scope",
-            "sha256": "ff95525af72c6b60903477642258594b6cae2ebd23dc2e30894a384e64ed2e86"
+            "sha256": "0c51f9cb37af7a00a467ea470453be6c39d189ce40305d88b3f553bab196a772"
         },
         {
             "source": "api-guardrails/host-session-query.md",
-            "output": "references/api-host-session-query.md",
+            "output": "references/host/api/api-host-session-query.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "session-query",
-            "sha256": "f67b4cbdc43bf1f7838221b3f34de01b49ba2aaf472f9dae9433f1b8d9ee1303"
+            "sha256": "2b54e878f26e1f1c5d261f6e9faed404a85ef08afbfd4d9bf5d0ab106577d687"
         },
         {
             "source": "api-guardrails/host-session-surface.md",
-            "output": "references/api-host-session-surface.md",
+            "output": "references/host/api/api-host-session-surface.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "session-surface",
-            "sha256": "ddefb6aeb5c2f3fde2dd4202b37a1d6f63ae8ff657f225827add6cf0e996122b"
+            "sha256": "744f47f113094fc583d4b1e889915bef8f3392b982225f03a6c38753b713c035"
         },
         {
             "source": "api-guardrails/host-session-title.md",
-            "output": "references/api-host-session-title.md",
+            "output": "references/host/api/api-host-session-title.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "session-title",
-            "sha256": "37c9f2f62b5c0715d4141d6facddbb9b9f46400bf7f9063b493f8f9975926e42"
+            "sha256": "e7b003a2697f950ee7cfa35dbd6e049f6933dc0502a917097f91b698b42a3882"
         },
         {
             "source": "api-guardrails/host-session.md",
-            "output": "references/api-host-session.md",
+            "output": "references/host/api/api-host-session.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "session",
-            "sha256": "ca6365d63744e773f3638cac4b704311c3f20c89b163e9cb86aadc31298b0d7d"
+            "sha256": "0b79f4731b8d7428ad782070c694c0f9e93484d403bc3bcfacabca431529d31e"
         },
         {
             "source": "api-guardrails/host-shell-env.md",
-            "output": "references/api-host-shell-env.md",
+            "output": "references/host/api/api-host-shell-env.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "shell-env",
-            "sha256": "2da2f52d45121af076bc7496f7d041f7f8fe1f02714fe983b345b1ce64ec7500"
+            "sha256": "15b0825ddc710e83158b8d91bf2cda7e258e33441cd3300e5de0b82ef2b31121"
         },
         {
             "source": "api-guardrails/host-subagent.md",
-            "output": "references/api-host-subagent.md",
+            "output": "references/host/api/api-host-subagent.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "subagent",
-            "sha256": "6563a6155a62a62db21931fbeace96c52d4ca7a9e51ef7f20cf3d43c1da3ab0e"
+            "sha256": "da2febe14b04328651cdc4b5a6769349fe9723f1e131b54eb66544f39b2e818e"
         },
         {
             "source": "api-guardrails/host-tools.md",
-            "output": "references/api-host-tools.md",
+            "output": "references/host/api/api-host-tools.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "tools",
-            "sha256": "cb1aed7ed372c7bfbfbf32d979cdb0b845d584a9023e2d545cb9c5d6a9ec971a"
+            "sha256": "66b9082e4d51ff5e532fc03af36c590a9fa04072c32827d0623750d1d24164e8"
         },
         {
             "source": "api-guardrails/host-user-questions.md",
-            "output": "references/api-host-user-questions.md",
+            "output": "references/host/api/api-host-user-questions.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "user-questions",
-            "sha256": "2d66c5d27784eedb54828e4590cd5239ee8ea46dfa65daa884ccc2a3e83e8c37"
+            "sha256": "5fcd484b16e2ec35771f25d245b9fde375e9b40c62d7437f47a264adca43039c"
         },
         {
             "source": "api-guardrails/host-workflow.md",
-            "output": "references/api-host-workflow.md",
+            "output": "references/host/api/api-host-workflow.md",
             "kind": "api-guardrail",
             "topic": "host-core",
             "role": "subject",
             "subject": "workflow",
-            "sha256": "64c03caac2a66973d02342a06aebff899a1c896b58b3a6bca34c635ccad672b6"
+            "sha256": "bf608372b970ce8e91db6a8b194b7c56dba3f42e3b5d5a0bd79b66a04ea14269"
         },
         {
             "source": "api-guardrails/infra-cmdline.md",
-            "output": "references/api-infra-cmdline.md",
+            "output": "references/infra/api/api-infra-cmdline.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "subject",
             "subject": "cmdline",
-            "sha256": "0f7bcaba28c40974180832f436ec5c2a1d1b09a5424211a4f6404b72ed083c24"
+            "sha256": "569bea52a745f78c38e463379ffb900aecbb6baad13be9316d4062375a9ca2e1"
         },
         {
             "source": "api-guardrails/infra-integration-topic.md",
-            "output": "references/api-infra-integration-topic.md",
+            "output": "references/infra/api/api-infra-integration-topic.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "topic",
-            "sha256": "570a4467349946e2ad1cacc30c9b7dbecdae65dff97388a4deb019bc9040f712"
+            "sha256": "7aea0e774bc4ee6b1b09328198da7f570c82295e41c718326158a9f40dfb1101"
         },
         {
             "source": "api-guardrails/infra-invariants.md",
-            "output": "references/api-infra-invariants.md",
+            "output": "references/infra/api/api-infra-invariants.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "subject",
             "subject": "invariants",
-            "sha256": "30306ce5c8c15563708e26ea005f38b698a35b0da252b9c630749fb0585cb58d"
+            "sha256": "cef8d46de0b1b51095ed2c316483040007aa462207007a67b5342cf0c1baf023"
         },
         {
             "source": "api-guardrails/infra-live-config.md",
-            "output": "references/api-infra-live-config.md",
+            "output": "references/infra/api/api-infra-live-config.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "subject",
             "subject": "live-config",
-            "sha256": "d5448f96a9af5d3686819cf89262a3d251970109c2a061a3c6822a3fa84014e2"
+            "sha256": "b79ae9e1c21d969ccc8287e4c0e31340f16e75d7418298752349746be5fb3b34"
         },
         {
             "source": "api-guardrails/infra-package-operations.md",
-            "output": "references/api-infra-package-operations.md",
+            "output": "references/infra/api/api-infra-package-operations.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "subject",
             "subject": "package-operations",
-            "sha256": "90c631dea10f7d3a8228e84324f907d2719486892fbd7f519876dabe5c675ce1"
+            "sha256": "b7071bd6d021f515ed47d8351e19ef930088568a59972aec5d134bcd65f0952d"
         },
         {
             "source": "api-guardrails/infra-persistence-topic.md",
-            "output": "references/api-infra-persistence-topic.md",
+            "output": "references/infra/api/api-infra-persistence-topic.md",
             "kind": "api-guardrail",
             "topic": "infra-persistence",
             "role": "topic",
-            "sha256": "8e1042f900ffe2b65d2c2593d6b0c9385e3c4993812d6f68dfac895f4de930c0"
+            "sha256": "cde4c00f3abf1b7563555308dab86563cee7ffafc714fe72a1f93f1912b2ccf5"
         },
         {
             "source": "api-guardrails/infra-profile-manifest.md",
-            "output": "references/api-infra-profile-manifest.md",
+            "output": "references/infra/api/api-infra-profile-manifest.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "subject",
             "subject": "profile-manifest",
-            "sha256": "00ea29f739c0b9f7e96bf61f7234dd699702c5fc7976d9d04e9ec5900e01390c"
+            "sha256": "ec594a5fe6497607c2c2efed605dc0aea4b8bff28f65fe8df145c6e00e72a4fe"
         },
         {
             "source": "api-guardrails/infra-profile-runtime.md",
-            "output": "references/api-infra-profile-runtime.md",
+            "output": "references/infra/api/api-infra-profile-runtime.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "subject",
             "subject": "profile-runtime",
-            "sha256": "a3328f12113028f4b190660cb27de8aed040f158004a0f23021ee6086ece4a4a"
+            "sha256": "3116c406faf695e9065daa5bfda86277dbd1549465ee12ee5091cbb9ff31643b"
         },
         {
             "source": "api-guardrails/infra-profile-topic.md",
-            "output": "references/api-infra-profile-topic.md",
+            "output": "references/infra/api/api-infra-profile-topic.md",
             "kind": "api-guardrail",
             "topic": "infra-profile",
             "role": "topic",
-            "sha256": "cb99965673709336407e58d48acf543c0462d06ace302f5f13b9f6832ca037ac"
+            "sha256": "fb5b73f452e2d7fe96b8a177b1534537765d34031ff28453ed8a4abae6293296"
         },
         {
             "source": "api-guardrails/infra-provider-artifacts.md",
-            "output": "references/api-infra-provider-artifacts.md",
+            "output": "references/infra/api/api-infra-provider-artifacts.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "spill-and-attachments",
-            "sha256": "193febc25bc71479019a6f6ebf4b2f4d24d7c01c91dba10f0a466c0038463ab7"
+            "sha256": "16891736385e0850c2aed38a8b552ff25ed61eddd4ea997863d02d7e98f5e2fb"
         },
         {
             "source": "api-guardrails/infra-provider-browser-use.md",
-            "output": "references/api-infra-provider-browser-use.md",
+            "output": "references/infra/api/api-infra-provider-browser-use.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "browser-use-registry",
-            "sha256": "c4ba4f89275d56e663b87ceaed9f96faa9cfb12afab069dc3406ff2e175dbfdb"
+            "sha256": "2103ea78fbbefac08fd6f92317f7907e9e3bab7159e0a9f4e91051e703b0c564"
         },
         {
             "source": "api-guardrails/infra-provider-computer-use.md",
-            "output": "references/api-infra-provider-computer-use.md",
+            "output": "references/infra/api/api-infra-provider-computer-use.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "computer-use-registry",
-            "sha256": "6d444e13248fb555c028e3211beaf3b38d9b58bc1e974fe2ba50fb73cea391cc"
+            "sha256": "1aedc6ad698d1be5bb5a2c2cd20a06d291df77757457956c50fe3d9887f55187"
         },
         {
             "source": "api-guardrails/infra-provider-execution.md",
-            "output": "references/api-infra-provider-execution.md",
+            "output": "references/infra/api/api-infra-provider-execution.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "process-sandbox-execution",
-            "sha256": "0bd80018bb9f286df7d7111ba7d10e20f494857973cdebd7b5c27d217977c56a"
+            "sha256": "35f6037df7d9225e7086bcb8189e9f161d4ccc813675f9d5643b60335a103492"
         },
         {
             "source": "api-guardrails/infra-provider-fs.md",
-            "output": "references/api-infra-provider-fs.md",
+            "output": "references/infra/api/api-infra-provider-fs.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "filesystem-service",
-            "sha256": "474dea987178383c264290202ca71463c10883d33d20b13cce751af0a607c6a6"
+            "sha256": "aa0661a1b73d2b8d21ae235e20979a9ce9a72054212c89e7bf55115a17d06d75"
         },
         {
             "source": "api-guardrails/infra-provider-lsp.md",
-            "output": "references/api-infra-provider-lsp.md",
+            "output": "references/infra/api/api-infra-provider-lsp.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "lsp-provider",
-            "sha256": "b569efb8ac350fa5379e38e9fd16c4c0e290060ce77975a0e79b4c6f3c43e4d9"
+            "sha256": "4e34c1e9814d3f807dd0afa008dd0b26880c2e38f384317b8d6808ae5d7c7d26"
         },
         {
             "source": "api-guardrails/infra-provider-mcp-resources.md",
-            "output": "references/api-infra-provider-mcp-resources.md",
+            "output": "references/infra/api/api-infra-provider-mcp-resources.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "mcp-resource-provider",
-            "sha256": "4dbebc758fe4d71522f9ac07309feade93c33467a2a63a4d990771b47ba11330"
+            "sha256": "3165b0f4e35568534374535c7a79abf4208c9b654a8c2ee6a935171bf6fbbc74"
         },
         {
             "source": "api-guardrails/infra-provider-ptc.md",
-            "output": "references/api-infra-provider-ptc.md",
+            "output": "references/infra/api/api-infra-provider-ptc.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "ptc-runtime",
-            "sha256": "ea17a2b1721af3518a620431117459cfc5d5956f041a6c2dfe72f63e4d48b8a1"
+            "sha256": "3059f37fc1ca7e318deb9b28ea21d08cf06e99c1b419ed74e0565d9b0590917f"
         },
         {
             "source": "api-guardrails/infra-provider-skill.md",
-            "output": "references/api-infra-provider-skill.md",
+            "output": "references/infra/api/api-infra-provider-skill.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "skill-provider",
-            "sha256": "6e1894a9d3fb0e6f362be51bd907b3b0c4468aaf3d4c4dc54e68ebd583b39aa0"
+            "sha256": "7b4411dc1e728c95b2cb4d871e02c2cb21788b779f674c7abd872abff3961751"
         },
         {
             "source": "api-guardrails/infra-provider-speech.md",
-            "output": "references/api-infra-provider-speech.md",
+            "output": "references/infra/api/api-infra-provider-speech.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "speech-provider",
-            "sha256": "a9096957c93e47feec49317bbb89fa4215ee171cb4c7b4c47fd6d0ff69049f39"
+            "sha256": "c5a84fd7001b64c769de4272997735f1830f2c94d271bc04c1be4522b6bc3b94"
         },
         {
             "source": "api-guardrails/infra-provider-terminal.md",
-            "output": "references/api-infra-provider-terminal.md",
+            "output": "references/infra/api/api-infra-provider-terminal.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "persistent-terminal",
-            "sha256": "1c797f3fceb2f0eb889969615e3930273c07b8a091fe79594b6ac777b26d64f0"
+            "sha256": "1ecd8e3d7be3d22fa0470ae9c1ae0cc96e2e1e31154b4dc7cc58d06dece1577e"
         },
         {
             "source": "api-guardrails/infra-provider-web.md",
-            "output": "references/api-infra-provider-web.md",
+            "output": "references/infra/api/api-infra-provider-web.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "web-provider",
-            "sha256": "8a19f56a56604d4ad4e6550824e9fa58e5568db252af125dcd7a3583be24b638"
+            "sha256": "d21b668a4fbb5e0c9f2ff47e911319f6a851e1ecac8db5ccac57bc5311f681ff"
         },
         {
             "source": "api-guardrails/infra-storage-domain.md",
-            "output": "references/api-infra-storage-domain.md",
+            "output": "references/infra/api/api-infra-storage-domain.md",
             "kind": "api-guardrail",
             "topic": "infra-persistence",
             "role": "subject",
             "subject": "storage-domain",
-            "sha256": "45b727c5006d01e9817345eb269c547944a8f28b0dcb61cac3f48636ddb959be"
+            "sha256": "48adca4b09e53c4afcbb3eb61f33e5daf1b5ecd38307305ab7154afbd61ab5f4"
         },
         {
             "source": "api-guardrails/infra-storage.md",
-            "output": "references/api-infra-storage.md",
+            "output": "references/infra/api/api-infra-storage.md",
             "kind": "api-guardrail",
             "topic": "infra-persistence",
             "role": "subject",
             "subject": "storage",
-            "sha256": "3ee8a40b9965988689a127e3c2bdae0718a69362923971f1f22ae4e004644c07"
+            "sha256": "4b85dd23c1c68ed2235e4cb163ed67e7909258181739a5d40ecfd5d56ce6b4c9"
         },
         {
             "source": "api-guardrails/infra-webhook.md",
-            "output": "references/api-infra-webhook.md",
+            "output": "references/infra/api/api-infra-webhook.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "webhook",
-            "sha256": "33ae1b1367ba5eef95b1df886aba6658f4e87e55fb5a1bc487ec57e0f70997b9"
+            "sha256": "7b57f89df9b6388f4b738b9bf788ab3cb2ceb779b8e638505b213095ed647a73"
         },
         {
             "source": "api-guardrails/infra-webserver.md",
-            "output": "references/api-infra-webserver.md",
+            "output": "references/infra/api/api-infra-webserver.md",
             "kind": "api-guardrail",
             "topic": "infra-integration",
             "role": "subject",
             "subject": "webserver",
-            "sha256": "3f4d4013c8b487543cbca19d29b57b745afe6dee06207d0c2e7677476d956f9e"
+            "sha256": "184bb0cb319460735d37ab11331511bf8ebbab280fb2894769dae366f56e0aab"
         },
         {
             "source": "how-to/client-command-ui.md",
-            "output": "references/how-to-client-command-ui.md",
+            "output": "references/client/how-to/how-to-client-command-ui.md",
             "kind": "how-to",
-            "sha256": "24ba42752bf0b7b08c8792f1a6a2ba468606de53c2190411bd49e1d776e1ac01"
+            "sha256": "9af5399e6319b7dc16580ea2dff6c9285b58de29925d71fdcc41ed7e3dbad3e7"
         },
         {
             "source": "how-to/client-conversation-node.md",
-            "output": "references/how-to-client-conversation-node.md",
+            "output": "references/client/how-to/how-to-client-conversation-node.md",
             "kind": "how-to",
-            "sha256": "9afaa37d49f8e40a4e969bacc55ea11d1ff738c8dc4d2a18f5ed7f65e34e8090"
+            "sha256": "050511a1ecfea78e4ae32bfa66a3da745292961fc84ca84a4d8423145adcad4d"
         },
         {
             "source": "how-to/client-document-preview.md",
-            "output": "references/how-to-client-document-preview.md",
+            "output": "references/client/how-to/how-to-client-document-preview.md",
             "kind": "how-to",
-            "sha256": "fa8eca4da85a3ac0bb8ff1d814e0c92f634d4bdf1f5c790a2e00807fcb024302"
+            "sha256": "73df91cc7d3b68237bbe060646d28601c30f799723ddc64231de097d49692cc7"
         },
         {
             "source": "how-to/client-file-reference-provider.md",
-            "output": "references/how-to-client-file-reference-provider.md",
+            "output": "references/client/how-to/how-to-client-file-reference-provider.md",
             "kind": "how-to",
-            "sha256": "365224e8ba0fd31a6a12105df731ce5b988f2a68705a21c2cebef69fba5cf70d"
+            "sha256": "ac9e89ba65f11467417b8a386a1ef36c41a85e15719561517d2964f0660ca2f6"
         },
         {
             "source": "how-to/client-input-trigger.md",
-            "output": "references/how-to-client-input-trigger.md",
+            "output": "references/client/how-to/how-to-client-input-trigger.md",
             "kind": "how-to",
-            "sha256": "d8e9c1521337691104f1c7fa893dca556e4ddee9d45a2974ccae84d2c1c1afde"
+            "sha256": "86127ab2126d87137a6f82fd56a8d62f91a8a93db5e980285269d152166cf02c"
         },
         {
             "source": "how-to/client-locale-shortcuts.md",
-            "output": "references/how-to-client-locale-shortcuts.md",
+            "output": "references/client/how-to/how-to-client-locale-shortcuts.md",
             "kind": "how-to",
-            "sha256": "aea11056a2743917bdca0455c9c62183cb0ee022b0f624c98e77390ea66f3180"
+            "sha256": "20bdef65d28c83701864b40d4ea774ee91a2eff884b91c5543c3ee6dfed6f173"
         },
         {
             "source": "how-to/client-publish-remote.md",
-            "output": "references/how-to-client-publish-remote.md",
+            "output": "references/client/how-to/how-to-client-publish-remote.md",
             "kind": "how-to",
-            "sha256": "480dbf223cef3c70d6f6b40ac0b3fba9a5915740c2de987418defe5bf38a8388"
+            "sha256": "7ad7c5b961c8b246e51b94f46ea7541334dc0cccf2c1eecb1a76d263c1cff1d8"
         },
         {
             "source": "how-to/client-reference-candidates.md",
-            "output": "references/how-to-client-reference-candidates.md",
+            "output": "references/client/how-to/how-to-client-reference-candidates.md",
             "kind": "how-to",
-            "sha256": "34f92f604c9c6b2fee32e614307b80e619a1c306b030f23131ca957656da4508"
+            "sha256": "d74020a40c3ff2743eb89fc0f8c17ce8c880c2d8c5582bf46ce0a1894b21170b"
         },
         {
             "source": "how-to/client-remote-call.md",
-            "output": "references/how-to-client-remote-call.md",
+            "output": "references/client/how-to/how-to-client-remote-call.md",
             "kind": "how-to",
-            "sha256": "1b009bd4280072baef34e6fef6fd674141458349528b290e5dfae8fe81c51eee"
+            "sha256": "f9913ba42989f8b61d8a647e47765504c0ec03fcbef30fbd36c5b5620ce048ea"
         },
         {
             "source": "how-to/client-resource-provider.md",
-            "output": "references/how-to-client-resource-provider.md",
+            "output": "references/client/how-to/how-to-client-resource-provider.md",
             "kind": "how-to",
-            "sha256": "e3b5f12b3eca8d58c3700b5c0166d1442a48be26e826661cc71fe043b5a9ba53"
+            "sha256": "6da8349694b8a20fe57830589987be351cc9bc0a7381f51b08d0bff23b303d35"
         },
         {
             "source": "how-to/client-settings-card.md",
-            "output": "references/how-to-client-settings-card.md",
+            "output": "references/client/how-to/how-to-client-settings-card.md",
             "kind": "how-to",
-            "sha256": "795e540180a0b56cc7b4fc9cf3f0e95b7723624dc731cfa91356db1f8895422d"
+            "sha256": "764090cd9768e0ab6daea0961ef5b3a12a6b573b23e305af1d48a1943fcdc8cb"
         },
         {
             "source": "how-to/client-sidebar-panel.md",
-            "output": "references/how-to-client-sidebar-panel.md",
+            "output": "references/client/how-to/how-to-client-sidebar-panel.md",
             "kind": "how-to",
-            "sha256": "418a50b40cd124888efc311c23cae25ec07d9ebe36939f2bfc5ff94299931c01"
+            "sha256": "afeafa707c5b7bb7145cf4c85d1714cba95ca3c8937a569607e22639039ec993"
         },
         {
             "source": "how-to/client-sidebar-tab.md",
-            "output": "references/how-to-client-sidebar-tab.md",
+            "output": "references/client/how-to/how-to-client-sidebar-tab.md",
             "kind": "how-to",
-            "sha256": "985866ca047fc5d3ccbb082bbffe2d97e857ac41fd8ab7437a6dcfa183bf8ec9"
+            "sha256": "743acf952c56bd4fc339185d68a4b2dbe73797a88098e94c5ae2d2fbf2b591e3"
         },
         {
             "source": "how-to/client-slot-contribution.md",
-            "output": "references/how-to-client-slot-contribution.md",
+            "output": "references/client/how-to/how-to-client-slot-contribution.md",
             "kind": "how-to",
-            "sha256": "a1c18262c1480d4b8a1a67b517b3faa9e09f3aff684cb5f6e29ded5b76d76d66"
+            "sha256": "e17bccb073b349dc94fc201980d3931845c076e3926fc013319741a20006f532"
         },
         {
             "source": "how-to/client-subagent-navigation.md",
-            "output": "references/how-to-client-subagent-navigation.md",
+            "output": "references/client/how-to/how-to-client-subagent-navigation.md",
             "kind": "how-to",
-            "sha256": "0b5c3f137d2c18eab8ea294b327d9009084f548de79a7ef516b387a282952453"
+            "sha256": "6473d157d37fdb1372be5dbba53063f9e271b00fc62dafd1a51730b44f1004be"
         },
         {
             "source": "how-to/client-theme-ui.md",
-            "output": "references/how-to-client-theme-ui.md",
+            "output": "references/client/how-to/how-to-client-theme-ui.md",
             "kind": "how-to",
-            "sha256": "f12a020a09f68dcc9fbb494507e23b1e8ab14b8bc634fd95b9068a729f662617"
+            "sha256": "e99a5d791454fa41018af42f8a98c50da4c8d855c67153114e83745135290bf0"
         },
         {
             "source": "how-to/client-tool-view.md",
-            "output": "references/how-to-client-tool-view.md",
+            "output": "references/client/how-to/how-to-client-tool-view.md",
             "kind": "how-to",
-            "sha256": "5a88911cb3d990f3ba03d6e7641ca0255ff5bda391e748dd27b136401f0ef396"
+            "sha256": "867b4a59f9780f8fa2bb2dec8527e2a119e3300bd3ac4ebf207b6b379c06866e"
         },
         {
             "source": "how-to/client-upload-file.md",
-            "output": "references/how-to-client-upload-file.md",
+            "output": "references/client/how-to/how-to-client-upload-file.md",
             "kind": "how-to",
-            "sha256": "d08f2c8079d2c0d0d1acc11ce73121359eea1df3276a9e522b7b6e4ded1c6392"
+            "sha256": "4c7d5fb83cf0b1e9188b00015acf4a388dfda9713417b9119fb61cf678b6cad8"
         },
         {
             "source": "how-to/client-web-package.md",
-            "output": "references/how-to-client-web-package.md",
+            "output": "references/client/how-to/how-to-client-web-package.md",
             "kind": "how-to",
-            "sha256": "99da05be53dccac7810327d81278da52850cfc76c2eefabe2d039253e343301e"
+            "sha256": "106b5a0527f94a4104a43896eb810c13850ee40ab2a4a5bb489a80002c34b086"
         },
         {
             "source": "how-to/client-workspace-changes.md",
-            "output": "references/how-to-client-workspace-changes.md",
+            "output": "references/client/how-to/how-to-client-workspace-changes.md",
             "kind": "how-to",
-            "sha256": "d0af0e60bd80bea6c97663d70520b22a211a8a41736c795d01c109486943ae07"
+            "sha256": "978603bdb7817aa94a3021f791c57827f01f4339b0cf2f5daf075b4084053038"
         },
         {
             "source": "how-to/client-workspace-navigation.md",
-            "output": "references/how-to-client-workspace-navigation.md",
+            "output": "references/client/how-to/how-to-client-workspace-navigation.md",
             "kind": "how-to",
-            "sha256": "559609e40369dcf58341694bb5cae8af27b3bf15ed435b59b0133bacc9b51276"
+            "sha256": "911597eb563f9ed6496ce42f5b28af8ac2a44047ab8f1363d791a26992d9ac92"
         },
         {
             "source": "how-to/client-workspace-registry.md",
-            "output": "references/how-to-client-workspace-registry.md",
+            "output": "references/client/how-to/how-to-client-workspace-registry.md",
             "kind": "how-to",
-            "sha256": "371426dff8090754df3f5463c076845b4dfa173eff0428ff79a2ecb69499d990"
+            "sha256": "ddbd56a98f3ca0780fef2b2cfacf6e3d097ea5c99ac9d2a1b302df76acc4625d"
         },
         {
             "source": "how-to/host-agent-scope.md",
-            "output": "references/how-to-host-agent-scope.md",
+            "output": "references/host/how-to/how-to-host-agent-scope.md",
             "kind": "how-to",
-            "sha256": "db7486086a65132418639170eeb1b52ae0d9f9006fc8039f72f625c0822927fb"
+            "sha256": "072f6e913c8b6869665fb6753092495d59436570e61934ed6c9ef75c7e7c9255"
         },
         {
             "source": "how-to/host-command.md",
-            "output": "references/how-to-host-command.md",
+            "output": "references/host/how-to/how-to-host-command.md",
             "kind": "how-to",
-            "sha256": "6982d527bd4ccde3d9037356b39c6f90b841c60e585847e92bc3d30b164ab0d5"
+            "sha256": "66862c6b500832b8641035b67c2807bdb224184515f0c272e9ffc94cb4432d51"
         },
         {
             "source": "how-to/host-compaction.md",
-            "output": "references/how-to-host-compaction.md",
+            "output": "references/host/how-to/how-to-host-compaction.md",
             "kind": "how-to",
-            "sha256": "1def7b42283d2e6f5fab1ca527bdf2882ff25bd347b971f46102d972ecc98171"
+            "sha256": "c225fa31b83a7da1ca48bba0a913dc95e2b581d3075335cd673ca5827b5ae6b6"
         },
         {
             "source": "how-to/host-credentials.md",
-            "output": "references/how-to-host-credentials.md",
+            "output": "references/host/how-to/how-to-host-credentials.md",
             "kind": "how-to",
-            "sha256": "ac4cb6ccac4c23af8b6db3fb73830e836e3feba7af62346b98c83c17f54a83c7"
+            "sha256": "84d53baa8ce78218ef25e5691601d5c1d5d677da6b694c1bc1627c9ecdae8d43"
         },
         {
             "source": "how-to/host-directory-picker.md",
-            "output": "references/how-to-host-directory-picker.md",
+            "output": "references/host/how-to/how-to-host-directory-picker.md",
             "kind": "how-to",
-            "sha256": "0a5c5f6b46823c6973c7c505a68395c746db989a44969cf252d6291be8f11f0f"
+            "sha256": "d62e42224bfd315e82c9e288612c40d9631b5de00450842163340f13eab2f7d9"
         },
         {
             "source": "how-to/host-goal.md",
-            "output": "references/how-to-host-goal.md",
+            "output": "references/host/how-to/how-to-host-goal.md",
             "kind": "how-to",
-            "sha256": "8b5ea96963a9b16471a1698143a4cf54308666174f82d531f74236376a6a7913"
+            "sha256": "656b84b8ef44daeaa0bb2e1855833967ffd661ff8128e2f3feadae3bd82fb5b0"
         },
         {
             "source": "how-to/host-jobs.md",
-            "output": "references/how-to-host-jobs.md",
+            "output": "references/host/how-to/how-to-host-jobs.md",
             "kind": "how-to",
-            "sha256": "d5f986e613f1e231191d5ed6f701613be01134c0201522cabd464e3652afb841"
+            "sha256": "979fcc8623a2e78fb4a7ddb688ac953f105d6410db3e4d4c298b9ca23809f5d8"
         },
         {
             "source": "how-to/host-llm-adapter.md",
-            "output": "references/how-to-host-llm-adapter.md",
+            "output": "references/host/how-to/how-to-host-llm-adapter.md",
             "kind": "how-to",
-            "sha256": "7853473f2457377e156cd36c16bb2e6e82eab60313417ee8351aa2e8950bdc65"
+            "sha256": "f8fd5faf93bf23169482bfd2a718f0c204332d9034b0666bd96f28716e6a5113"
         },
         {
             "source": "how-to/host-llm-message.md",
-            "output": "references/how-to-host-llm-message.md",
+            "output": "references/host/how-to/how-to-host-llm-message.md",
             "kind": "how-to",
-            "sha256": "d331bd212efd3e89efe0084bde886f9aacd963ff904b688854dfb31c3ea1b473"
+            "sha256": "3251e37c7cb31e3787cd3caf5374fe1e318f218168ff57aabea4daa3e7f43ed3"
         },
         {
             "source": "how-to/host-persistence.md",
-            "output": "references/how-to-host-persistence.md",
+            "output": "references/host/how-to/how-to-host-persistence.md",
             "kind": "how-to",
-            "sha256": "7df873901f54a2d315d1e16f2844510b5b394c43fdbf1f137e898f21a3cdb2d9"
+            "sha256": "c1459bd0f57fa196a87bb795843452653bce09fe88e2bfb13fd2362e30b79ebe"
         },
         {
             "source": "how-to/host-prompt-policy.md",
-            "output": "references/how-to-host-prompt-policy.md",
+            "output": "references/host/how-to/how-to-host-prompt-policy.md",
             "kind": "how-to",
-            "sha256": "e8c31e0c4f6d894fb4a25a8165a96fe99f682f53583384e689aed536463df826"
+            "sha256": "d78ff05bd78f3e7ab2406472ecc8b9838bfe10626f08e46cd78745a691b7487f"
         },
         {
             "source": "how-to/host-scope.md",
-            "output": "references/how-to-host-scope.md",
+            "output": "references/host/how-to/how-to-host-scope.md",
             "kind": "how-to",
-            "sha256": "1cdc0298902f1b34f442007ec8af5a763d2f5ef5b472f5e4ea27627e0753e759"
+            "sha256": "9263428e95943c682b5fb6f7475ad9c8ffda426a0173f7773b7ca1593978f40a"
         },
         {
             "source": "how-to/host-service.md",
-            "output": "references/how-to-host-service.md",
+            "output": "references/host/how-to/how-to-host-service.md",
             "kind": "how-to",
-            "sha256": "92bc5a75aed8e80511260baf78ace75b5fd060743d24cf33389f4a71f1374ceb"
+            "sha256": "5a829454591e1ff71d870b53284a8384c1d163820747d7b744bf9ff660d89152"
         },
         {
             "source": "how-to/host-session-event.md",
-            "output": "references/how-to-host-session-event.md",
+            "output": "references/host/how-to/how-to-host-session-event.md",
             "kind": "how-to",
-            "sha256": "d336b1c7fa3c452172c0ef2be5d58489c943f19562c25a6ce9fd2a714af93082"
+            "sha256": "872499e2afab2ab6586ab8209e9eb70401e761f9e4ee8a357e41895bf12f7e8d"
         },
         {
             "source": "how-to/host-session-fork.md",
-            "output": "references/how-to-host-session-fork.md",
+            "output": "references/host/how-to/how-to-host-session-fork.md",
             "kind": "how-to",
-            "sha256": "0b1e4bec29ffbfdca41b0864e28b98dc856f09bc6ebf57032c6bb3a031330db1"
+            "sha256": "62bfe0cba2bbe304c73a7c8a886d8a720ed58e94fd01f3d2f784902452fb948e"
         },
         {
             "source": "how-to/host-session-query.md",
-            "output": "references/how-to-host-session-query.md",
+            "output": "references/host/how-to/how-to-host-session-query.md",
             "kind": "how-to",
-            "sha256": "4ef41aaff7ea519a4f97f8519a7de5bd6b501e05029b769f18e51812b8acb360"
+            "sha256": "de74fc6abc158749a25ddc541ad3f70320ea8acb82c524de68a25f2b6ba36190"
         },
         {
             "source": "how-to/host-session-surface.md",
-            "output": "references/how-to-host-session-surface.md",
+            "output": "references/host/how-to/how-to-host-session-surface.md",
             "kind": "how-to",
-            "sha256": "8fc0f15514e65371384c707f91cd3994833e13551bd07f97e185bfb5cabf8c6f"
+            "sha256": "31d92313af228662f0c0c5aa01928c18249144a201bfe9b31ccd3503e901a923"
         },
         {
             "source": "how-to/host-session-title.md",
-            "output": "references/how-to-host-session-title.md",
+            "output": "references/host/how-to/how-to-host-session-title.md",
             "kind": "how-to",
-            "sha256": "6d510dd3dce0bf7057d7d65f82d717220ffadb07e076b2db7a9ed4e0b771ed41"
+            "sha256": "716d4604e771fd07fedd9c55de40796dd58f4b7a1041a03c41581d607512765f"
         },
         {
             "source": "how-to/host-shell-env.md",
-            "output": "references/how-to-host-shell-env.md",
+            "output": "references/host/how-to/how-to-host-shell-env.md",
             "kind": "how-to",
-            "sha256": "03d642204da5f11d882551f197fb163cc55f006353792785da454c5f3fc05b5c"
+            "sha256": "19c3ed46d03abdf40ae7326629a5a766f278303c00062602ec4fba93501a62aa"
         },
         {
             "source": "how-to/host-subagent.md",
-            "output": "references/how-to-host-subagent.md",
+            "output": "references/host/how-to/how-to-host-subagent.md",
             "kind": "how-to",
-            "sha256": "1f0b1eac2be4fef8bcee7c02db8496436531373d8e08e27ce0b2c8f7a2fe1a43"
+            "sha256": "0309b5464e98685f842f8fb7781eb6ee2b6c0609f405c6d4b615e153f8b13171"
         },
         {
             "source": "how-to/host-tool.md",
-            "output": "references/how-to-host-tool.md",
+            "output": "references/host/how-to/how-to-host-tool.md",
             "kind": "how-to",
-            "sha256": "25c5daae407a9435c556c90599d976bea78097fd0dd242b88b57c58995fb2195"
+            "sha256": "eb0203d49304e07f01063406588b6a4403f793eb9b3e8ac37998543c01a5d995"
         },
         {
             "source": "how-to/host-user-questions.md",
-            "output": "references/how-to-host-user-questions.md",
+            "output": "references/host/how-to/how-to-host-user-questions.md",
             "kind": "how-to",
-            "sha256": "a1ae8efbcd5c2f09039859fb649706a5a5f9034546cd85e802d5a227b9131931"
+            "sha256": "15a28f0ca97b9430355e7dad02af2ea5311e7dc0ebe1553a612c09a291be1d15"
         },
         {
             "source": "how-to/host-workflow.md",
-            "output": "references/how-to-host-workflow.md",
+            "output": "references/host/how-to/how-to-host-workflow.md",
             "kind": "how-to",
-            "sha256": "b25dd064c5cd1a1b801c9e61a99d17855d108548f6b5c720eb48a2e3f62cd859"
+            "sha256": "05cedcf48abd987f7000180dde87e6c9e2161b1efac22ff0fe14608a1c94f4b3"
         },
         {
             "source": "how-to/infra-app-args.md",
-            "output": "references/how-to-infra-app-args.md",
+            "output": "references/infra/how-to/how-to-infra-app-args.md",
             "kind": "how-to",
             "topic": "infra-profile",
-            "sha256": "d93dc8faf48b5891a94ed465966f709bbd3e923c716c30fe098748daf1a3ba2c"
+            "sha256": "7765bd088a7ef9834f81f070a180a3c1dae0e4718f9678f8ea03bf3402407dfd"
         },
         {
             "source": "how-to/infra-http-route.md",
-            "output": "references/how-to-infra-http-route.md",
+            "output": "references/infra/how-to/how-to-infra-http-route.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "7472923f31c0331bb847fef5e58555ec0d2ce6c4b814abd6cb17214ce2a0068a"
+            "sha256": "f87de3456864ea24908d570ab789fcb9feb0cc647ad4c068c0152f4887d48f49"
         },
         {
             "source": "how-to/infra-invariants.md",
-            "output": "references/how-to-infra-invariants.md",
+            "output": "references/infra/how-to/how-to-infra-invariants.md",
             "kind": "how-to",
-            "sha256": "de116d55d78e2bf1a2a6a924b6f945a1649ba4960dbed2067e29414520543cee"
+            "sha256": "ac40f1a4abe566c025039408c0d68bbf49c45ce483ccb1b8fe7ff9eb9e83c41e"
         },
         {
             "source": "how-to/infra-live-config.md",
-            "output": "references/how-to-infra-live-config.md",
+            "output": "references/infra/how-to/how-to-infra-live-config.md",
             "kind": "how-to",
             "topic": "infra-profile",
-            "sha256": "49f85d1097dd2a0ecb558396d9ff955969233a34770f2635646867a7fabc6494"
+            "sha256": "c189e145c49a2cc66395dd78ad8d221438bae66241f99b960aab7db7d9cffa0f"
         },
         {
             "source": "how-to/infra-persistence.md",
-            "output": "references/how-to-infra-persistence.md",
+            "output": "references/infra/how-to/how-to-infra-persistence.md",
             "kind": "how-to",
             "topic": "infra-persistence",
-            "sha256": "e5cc74d0b7621600dd6967be47a51f45c8fe768d39c74e20b17e5890e54d4f31"
+            "sha256": "96565550abf99e413be96ce5fa8dd2b9e3e4e1008636c02bea625f6c08c6c4c9"
         },
         {
             "source": "how-to/infra-profile-bundle.md",
-            "output": "references/how-to-infra-profile-bundle.md",
+            "output": "references/infra/how-to/how-to-infra-profile-bundle.md",
             "kind": "how-to",
             "topic": "infra-profile",
-            "sha256": "da94f9a865134f59c9059d51e866a20bab18880fb80308ed6f74b313475b6816"
+            "sha256": "abeab313630f630b10ae96370556095749a2648e933e19c62ff6e29b1e8c3636"
         },
         {
             "source": "how-to/infra-provider-artifacts.md",
-            "output": "references/how-to-infra-provider-artifacts.md",
+            "output": "references/infra/how-to/how-to-infra-provider-artifacts.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "3cb127cdcca6939ae1716a56ee624b13f07133285c2b9e503839f1e355ad13dd"
+            "sha256": "b0199e6e965b968249a061e789cd2241f37ecd49598b676565bce6bb53fa5230"
         },
         {
             "source": "how-to/infra-provider-browser-use.md",
-            "output": "references/how-to-infra-provider-browser-use.md",
+            "output": "references/infra/how-to/how-to-infra-provider-browser-use.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "a859eaadb6f7dac6aa2d93ca08719d5bef8ee21ed5ca919b578b40efa88398e1"
+            "sha256": "e5587f1c8e1696d7f55806cd840c124afe87f45ac0ad6d813262e7cd6055d8af"
         },
         {
             "source": "how-to/infra-provider-computer-use.md",
-            "output": "references/how-to-infra-provider-computer-use.md",
+            "output": "references/infra/how-to/how-to-infra-provider-computer-use.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "616199c74af44d50a32629eb1937aa96e23a67d45a17db1f7fae020dbd7ac107"
+            "sha256": "83c4c279720f121ca188ac292d8755399e432ef408b59577c0a4b904fc52dc4d"
         },
         {
             "source": "how-to/infra-provider-execution.md",
-            "output": "references/how-to-infra-provider-execution.md",
+            "output": "references/infra/how-to/how-to-infra-provider-execution.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "eea12e1116e002b66c1ec495c0395587b6b6833b13ffbe347f1b172450445b37"
+            "sha256": "83c86296ea6fefe4b848394422814bcd9f01e53b6bf76f690863ca4717fe4248"
         },
         {
             "source": "how-to/infra-provider-fs.md",
-            "output": "references/how-to-infra-provider-fs.md",
+            "output": "references/infra/how-to/how-to-infra-provider-fs.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "59552086452111829b3670164c69b24fc4ec51ea06e7af5112cc690b878996cc"
+            "sha256": "a3b5cc1db189ae383d64bf63faa558d13430f4d05921c59be396595e7f6fdc16"
         },
         {
             "source": "how-to/infra-provider-lsp.md",
-            "output": "references/how-to-infra-provider-lsp.md",
+            "output": "references/infra/how-to/how-to-infra-provider-lsp.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "509ff6234bdb57a0a2148b6aa78b87d2b5bed7344e989c6a947c5d263281d267"
+            "sha256": "563a8dbebe87c5c0d2515f78e415c855a37bf4495aea26886749d88adb99d195"
         },
         {
             "source": "how-to/infra-provider-mcp-resources.md",
-            "output": "references/how-to-infra-provider-mcp-resources.md",
+            "output": "references/infra/how-to/how-to-infra-provider-mcp-resources.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "6f33d82506a21118ed0487b58996282a4983860fbc1b72b78063625840b293cf"
+            "sha256": "7706c35527e99b07e3d1b0bbf77669abc627559814da649aac740f6eea390eff"
         },
         {
             "source": "how-to/infra-provider-ptc.md",
-            "output": "references/how-to-infra-provider-ptc.md",
+            "output": "references/infra/how-to/how-to-infra-provider-ptc.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "cada05f47b41ced7cf39ef58bd89c12122546dae9744b397d4b7a03727cfd3c3"
+            "sha256": "7ad7b31a90dfc0efbc0b72f8cc4e637ac32aa8be21369976650185f9d3a0500f"
         },
         {
             "source": "how-to/infra-provider-skill.md",
-            "output": "references/how-to-infra-provider-skill.md",
+            "output": "references/infra/how-to/how-to-infra-provider-skill.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "8b00941fde08a18fd0aac2d46a6e8ae1728f7a22cdf567446bb903f21666f03c"
+            "sha256": "cb20a78cd4fa820e25ad8a9a91f5f923aba0199a4dbbede1d37103f89030e274"
         },
         {
             "source": "how-to/infra-provider-speech.md",
-            "output": "references/how-to-infra-provider-speech.md",
+            "output": "references/infra/how-to/how-to-infra-provider-speech.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "f069f927bec4c1151854282ed6634c92d01ee2c60a3485bab40fdb4277ea8065"
+            "sha256": "560729f2dc0100db2468da1fa9cbfecb6c4eb600211cbed0943e111f862d21aa"
         },
         {
             "source": "how-to/infra-provider-terminal.md",
-            "output": "references/how-to-infra-provider-terminal.md",
+            "output": "references/infra/how-to/how-to-infra-provider-terminal.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "92101efd6490eb18b25659b7bf6e528aea6795b37872a3b500cbde4b6b4f042b"
+            "sha256": "7cea133bdf7a5039922f4e321d52c40f1a424ff1dadeaa2a0d13cfd61d60124d"
         },
         {
             "source": "how-to/infra-provider-web.md",
-            "output": "references/how-to-infra-provider-web.md",
+            "output": "references/infra/how-to/how-to-infra-provider-web.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "71763ae2af57ce91db66df189e43fa820a46519f74b36329fa7e6f5d3d569eca"
+            "sha256": "618d4769e791ea07f57f5fb4c949a445fa9f9299df639c277bd7c08633335d00"
         },
         {
             "source": "how-to/infra-webhook.md",
-            "output": "references/how-to-infra-webhook.md",
+            "output": "references/infra/how-to/how-to-infra-webhook.md",
             "kind": "how-to",
             "topic": "infra-integration",
-            "sha256": "e6121af20b9e2f63cfbb70a547945a933faef4c72fc06272e8133df4b87b06d5"
+            "sha256": "484a0e726740e68bf6f4f0a68e3b84d02860fad9165c84375a3ad9a6817776d8"
         },
         {
             "source": "examples/example-client-command-ui.md",
-            "output": "references/example-client-command-ui.md",
+            "output": "references/client/examples/example-client-command-ui.md",
             "kind": "example",
-            "sha256": "0fef7921c5efafcabe6b97ffc4f7d6020eca76a84adaef6792277a2db2f849e3"
+            "sha256": "a7020bde976f7e1a449734a4dc5349a174f7c6a7a645ea4b348adac7373b188a"
         },
         {
             "source": "examples/example-client-file-reference-provider.md",
-            "output": "references/example-client-file-reference-provider.md",
+            "output": "references/client/examples/example-client-file-reference-provider.md",
             "kind": "example",
-            "sha256": "6cc6ec48692734390ca7e0728b6e823758c60300af04289ef102446e1253b1ea"
+            "sha256": "e8cbc20565e9ba0a2aa3d467bc39c71d90b1e56d0ac181d4b742a8d8cf277526"
         },
         {
             "source": "examples/example-client-sidebar-tab.md",
-            "output": "references/example-client-sidebar-tab.md",
+            "output": "references/client/examples/example-client-sidebar-tab.md",
             "kind": "example",
             "sha256": "3882b04668b8b88f863e034d42b1571f0d5890a23534b062486e3a759c089ff1"
         },
         {
             "source": "examples/example-client-slot-contribution.md",
-            "output": "references/example-client-slot-contribution.md",
+            "output": "references/client/examples/example-client-slot-contribution.md",
             "kind": "example",
-            "sha256": "2223893ed85749091e6f2887e909d7e7dfb3e8dbbf64c3db89809a1fafe4d693"
+            "sha256": "f74947978dbb7a2d7c9867b51383787f7dd927779dcfb3e4bd034d8fcfad2c08"
         },
         {
             "source": "examples/example-host-command.md",
-            "output": "references/example-host-command.md",
+            "output": "references/host/examples/example-host-command.md",
             "kind": "example",
-            "sha256": "3d7bc532e0f4cecb52a567f5983aa6c6c86059d9ad1e68a65905113a90f04d3b"
+            "sha256": "cb2ac810b9fb3bb58c8a251a2a4eb6e71728ff3646a93dc8572246ef627562ee"
         },
         {
             "source": "examples/example-host-compaction.md",
-            "output": "references/example-host-compaction.md",
+            "output": "references/host/examples/example-host-compaction.md",
             "kind": "example",
-            "sha256": "53298fd4d6d870748067da2ce83e4fadf8c3de66413a339e8b8bd2bc6176fcfc"
+            "sha256": "2f527bc7f80481e4d9f405a02c53bb468b8bde388806d2874da1aa3346b78851"
         },
         {
             "source": "examples/example-host-credentials.md",
-            "output": "references/example-host-credentials.md",
+            "output": "references/host/examples/example-host-credentials.md",
             "kind": "example",
-            "sha256": "3ff9115a896b98aae077fc3254bdcfbf477847064b52af7de69aa38ae5d3ba27"
+            "sha256": "ebb144eca780e44a3decccf8ac8fe95b2e786d8f8cc87325e6e7e350ccce0143"
         },
         {
             "source": "examples/example-host-directory-picker.md",
-            "output": "references/example-host-directory-picker.md",
+            "output": "references/host/examples/example-host-directory-picker.md",
             "kind": "example",
-            "sha256": "f6f96d5d3769823ac8af77033551dcd0691e92d47a1ea8457084ddef073ba095"
+            "sha256": "54a325fc50ef410dab9516783c753c337512413382630c351eb18b543bbcb89c"
         },
         {
             "source": "examples/example-host-goal.md",
-            "output": "references/example-host-goal.md",
+            "output": "references/host/examples/example-host-goal.md",
             "kind": "example",
-            "sha256": "b08c812498a5bca5cee584bd093815d6bf7ac5e9cff9da172bdcbc37e7df0c6b"
+            "sha256": "d02ed9c20e4c38097f30040bd9594889d9af97626e825b5bf4876e7fb45d9cad"
         },
         {
             "source": "examples/example-host-jobs.md",
-            "output": "references/example-host-jobs.md",
+            "output": "references/host/examples/example-host-jobs.md",
             "kind": "example",
-            "sha256": "87c806df512da1c5dee5c93595e5afa1283d8125e2b020879623c8ef4c2ce52d"
+            "sha256": "63dd494e98f63df42d8444f04b680e3db5375bb5152fa96795c79a59434a03f2"
         },
         {
             "source": "examples/example-host-scope.md",
-            "output": "references/example-host-scope.md",
+            "output": "references/host/examples/example-host-scope.md",
             "kind": "example",
-            "sha256": "4f8cc4816fdebdcfdda2a89afd1b35ac9d76b11ad84a47fda20ed348b7a008ba"
+            "sha256": "75d6e56f16d22b7449ce2bd9bf84eb5b5eecc416618a8274ff5bb1012c7dee94"
         },
         {
             "source": "examples/example-host-service.md",
-            "output": "references/example-host-service.md",
+            "output": "references/host/examples/example-host-service.md",
             "kind": "example",
-            "sha256": "bf75b92fa1054340c4c9cec0c57c8dc0666e24255e8a008392557ee0672f6ae5"
+            "sha256": "40b7ffff149dd1a1b25f9bba8c54215aa8f8ded9d795f2090721f849d42b0ef1"
         },
         {
             "source": "examples/example-host-session-query.md",
-            "output": "references/example-host-session-query.md",
+            "output": "references/host/examples/example-host-session-query.md",
             "kind": "example",
-            "sha256": "f124fe3929dfd990a555d206eb107352b0e5d029afece11e4abc3a39a325d24f"
+            "sha256": "010bd53bf4bc716e4411ba7d3b9f81bac9343fa2125e6acb1252740573aebbb1"
         },
         {
             "source": "examples/example-host-session-title.md",
-            "output": "references/example-host-session-title.md",
+            "output": "references/host/examples/example-host-session-title.md",
             "kind": "example",
-            "sha256": "64414d419b78b20dfb5d4043f99c0685124a7aaa2470cc13e7e7fb51bf57fa54"
+            "sha256": "26af567e14302665a025c61f0af52506595d85db75a730c93e151b73e0c9a850"
         },
         {
             "source": "examples/example-host-shell-env.md",
-            "output": "references/example-host-shell-env.md",
+            "output": "references/host/examples/example-host-shell-env.md",
             "kind": "example",
-            "sha256": "6a144834282717fd6e0fd74e2de24e6b9b53b881ada88b4d18cd145891d9bd3b"
+            "sha256": "0388c12d59031bb3e59ee30bb6e75881f0d2d0e9561e951e31c9dd0a02dd896d"
         },
         {
             "source": "examples/example-host-subagent.md",
-            "output": "references/example-host-subagent.md",
+            "output": "references/host/examples/example-host-subagent.md",
             "kind": "example",
-            "sha256": "266b750ee72dce49a7a19e4448502ad6d59b4edc3934b3acea626757c8a4f670"
+            "sha256": "4787c3b05c1199cd4f2de2c80dc4b165f87cc040903e674baf4609550bd5b74c"
         },
         {
             "source": "examples/example-host-tool.md",
-            "output": "references/example-host-tool.md",
+            "output": "references/host/examples/example-host-tool.md",
             "kind": "example",
-            "sha256": "965fe682440ae57ed2ffd2a0a68e7d6abb440124d03e0c7ee17e6d0d38d24270"
+            "sha256": "d10a0f749d57bd8dcdf8da3e3561e9a48f370b8f91730c2bbf3e5ca1869261e0"
         },
         {
             "source": "examples/example-host-user-questions.md",
-            "output": "references/example-host-user-questions.md",
+            "output": "references/host/examples/example-host-user-questions.md",
             "kind": "example",
-            "sha256": "32800ab75264519752a7c927d6595b19e9b21ecad5183a8d37de8ac7a6181780"
+            "sha256": "a8a81bc2eb85e7700dea9a5fad0c6105434fe5436cc23d17f1f3841c6ceda375"
         },
         {
             "source": "examples/example-host-workflow.md",
-            "output": "references/example-host-workflow.md",
+            "output": "references/host/examples/example-host-workflow.md",
             "kind": "example",
-            "sha256": "fc1560f0d5d0c6f9d1791ba8c347a807cb8de31a126085e370f8fddc3a3fdb8a"
+            "sha256": "6042bd4fcf9c57f3d10117586bf12370bc9e5995ff775b5664714412ae476561"
         },
         {
             "source": "examples/example-infra-app-args.md",
-            "output": "references/example-infra-app-args.md",
+            "output": "references/infra/examples/example-infra-app-args.md",
             "kind": "example",
             "topic": "infra-profile",
-            "sha256": "d57fcaabe63e9637b057e1169db4469b88d28b5eb63bb1ea744ee14cb81cc7d5"
+            "sha256": "7e3472933bd49989deea2a546c43c315ebe70191120a222530da4efd6921d4aa"
         },
         {
             "source": "examples/example-infra-http-route.md",
-            "output": "references/example-infra-http-route.md",
+            "output": "references/infra/examples/example-infra-http-route.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "d97fb40939289dcc067fd4d81fb0b7f13f6f571295507f28b3511b75e3a55377"
+            "sha256": "32ed754f259ddbe9c44871b7b0b003f7102399a4afe344cb81fb6a65823012ed"
         },
         {
             "source": "examples/example-infra-invariants.md",
-            "output": "references/example-infra-invariants.md",
+            "output": "references/infra/examples/example-infra-invariants.md",
             "kind": "example",
             "sha256": "5836168dc8b4e3481fb6ff8f7b008f7e6783fe8830aea0bc160226aaae4082a3"
         },
         {
             "source": "examples/example-infra-persistence.md",
-            "output": "references/example-infra-persistence.md",
+            "output": "references/infra/examples/example-infra-persistence.md",
             "kind": "example",
             "topic": "infra-persistence",
             "sha256": "5129b355758d3bd6d6edbe535c92a97b572c930fc437660b79bacf24b9e5f827"
         },
         {
             "source": "examples/example-infra-profile-bundle.md",
-            "output": "references/example-infra-profile-bundle.md",
+            "output": "references/infra/examples/example-infra-profile-bundle.md",
             "kind": "example",
             "topic": "infra-profile",
-            "sha256": "1b21eedd3558c3ea7b9eda1dcee259bbf5af9f2769d21fdf72090abb908fbe25"
+            "sha256": "7ebf5c69c603bc06445d09e79f75f765952d9a5c9a67305ab0fa92685d72892f"
         },
         {
             "source": "examples/example-infra-provider-artifacts.md",
-            "output": "references/example-infra-provider-artifacts.md",
+            "output": "references/infra/examples/example-infra-provider-artifacts.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "703457448c5588aca87c1481a5c530f5be3b5ea706b36aa439599ec3d6d61993"
+            "sha256": "d1ae6943fa5f2b8a17092f82174a12432861b78702e70afe127e9836c6127f66"
         },
         {
             "source": "examples/example-infra-provider-browser-use.md",
-            "output": "references/example-infra-provider-browser-use.md",
+            "output": "references/infra/examples/example-infra-provider-browser-use.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "f5e9fabd891800a1c12d49026ad4067b9c98d838960dc6d21973786cf8275612"
+            "sha256": "5bbe3a3123392c88f57d3344dc988d6a0604de14ed9b2ff4e3dcc0b27c055e60"
         },
         {
             "source": "examples/example-infra-provider-computer-use.md",
-            "output": "references/example-infra-provider-computer-use.md",
+            "output": "references/infra/examples/example-infra-provider-computer-use.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "43c63184d2701da51aa909ed1988a1b43334c6b55dfaf1ac9860b33bd26049c4"
+            "sha256": "377276c5e9a1d10b4933a0524bad515ae3601e9a900f3d5e3de8f956bdf0fe7f"
         },
         {
             "source": "examples/example-infra-provider-execution.md",
-            "output": "references/example-infra-provider-execution.md",
+            "output": "references/infra/examples/example-infra-provider-execution.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "47f86313cba38cacb7699e02c1b5535024e8703e8aa8c4a983db7d3c8c7282a8"
+            "sha256": "1ab1da60caaab528585b26e07b0253a36d18313578c876c7a933132d90f2813f"
         },
         {
             "source": "examples/example-infra-provider-fs.md",
-            "output": "references/example-infra-provider-fs.md",
+            "output": "references/infra/examples/example-infra-provider-fs.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "b496795ad00b7491882fbcffcda37a3bb2d34262ef5cf7a0b431feab387cdc9e"
+            "sha256": "56e66f26b1a85a26e718d64c3b89a5d5af589b68a760f8d3362938960878444e"
         },
         {
             "source": "examples/example-infra-provider-lsp.md",
-            "output": "references/example-infra-provider-lsp.md",
+            "output": "references/infra/examples/example-infra-provider-lsp.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "fbb0d85e7c7e0707fde7c2035697aa37c13969103a23dd99ea113fa25832fc96"
+            "sha256": "f789822446bc91e11a59c05191035fab2363e09a2e36413767fb1b8bfb0a7118"
         },
         {
             "source": "examples/example-infra-provider-mcp-resources.md",
-            "output": "references/example-infra-provider-mcp-resources.md",
+            "output": "references/infra/examples/example-infra-provider-mcp-resources.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "65c53af56e0adf1f6cc614c6f0647f1214a9f179731cedd5540254b44b72aca3"
+            "sha256": "589005e2b6565749e4bdf278f1e75f65b6966fa2e1a6b6364e0264928dd32114"
         },
         {
             "source": "examples/example-infra-provider-ptc.md",
-            "output": "references/example-infra-provider-ptc.md",
+            "output": "references/infra/examples/example-infra-provider-ptc.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "48ba7cbe13c219cad93b9ff129355cb8328d26756d7b831cd798a13776be48db"
+            "sha256": "659209d9a381ff980ca6d7272eaacc39889dbe0944f8516387f817015adf8651"
         },
         {
             "source": "examples/example-infra-provider-skill.md",
-            "output": "references/example-infra-provider-skill.md",
+            "output": "references/infra/examples/example-infra-provider-skill.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "c5d0d57524ae0bd62a2f2a74ab36a4c64d9061cd9a50c6b27c6992d423e43492"
+            "sha256": "2f83c9277c4d34afc0c7038e1fbc2afb9a9e6a2d8751f77d5bdd437cc2b9fe97"
         },
         {
             "source": "examples/example-infra-provider-speech.md",
-            "output": "references/example-infra-provider-speech.md",
+            "output": "references/infra/examples/example-infra-provider-speech.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "cae5d119389f0ae69cb81847dcba3ccb438d7827fdec8042ae1c648fb620802d"
+            "sha256": "27535d4e40cd374891e9135cb76f89ff5fd596e3b1df7a4c2a263cec392e4338"
         },
         {
             "source": "examples/example-infra-provider-terminal.md",
-            "output": "references/example-infra-provider-terminal.md",
+            "output": "references/infra/examples/example-infra-provider-terminal.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "6922ae0ec237e3fc6aaf526a5c98af02cd7bfe1e8dff661a128fee3a8f3dd9c0"
+            "sha256": "6457c7f0a7743ea0c7cc8597193f5ba45e2316381861378c4af77cef5c0b5d22"
         },
         {
             "source": "examples/example-infra-provider-web.md",
-            "output": "references/example-infra-provider-web.md",
+            "output": "references/infra/examples/example-infra-provider-web.md",
             "kind": "example",
             "topic": "infra-integration",
-            "sha256": "391875753121eb2196fc6081961c2e255cee905a695d39ab8c83d718ff61efda"
+            "sha256": "a210a2b50e5fb42343d5ed046c708b041db11badef40af00861683578428b31c"
         },
         {
             "source": "examples/example-infra-webhook.md",
-            "output": "references/example-infra-webhook.md",
+            "output": "references/infra/examples/example-infra-webhook.md",
             "kind": "example",
             "topic": "infra-integration",
             "sha256": "13b73ca27242d748f55cfd9553393f4b15c78de2bcbf488c302dc4269fc26174"
@@ -1242,22 +1242,28 @@
             "source": "maintenance/source-map.md",
             "output": "maintenance/source-map.md",
             "kind": "maintenance",
-            "sha256": "413de6febbf05e00c6d6e54a3bbb5b3fe392135bc0a48aeb4baa637595a38e07"
+            "sha256": "77f0d8e4c7ad5171c486daa0b0012f012506a541d85f58bfd773a22fd4f92184"
         },
         {
             "source": "maintenance/skill-maintenance.md",
             "output": "maintenance/skill-maintenance.md",
             "kind": "maintenance",
             "sha256": "3cc4ca9efa5f04a55cff778579e4f3b9c6f1e3dd1759070a6d56e991acec12d9"
+        },
+        {
+            "source": "indexes/object-index.md",
+            "output": "references/object-index.md",
+            "kind": "index",
+            "sha256": "64b285f33a7f89f2e4b1fa3659ccc4bca6d9cd4102e6b953381b7aa4f3f195c6"
         }
     ],
-    "claimsSha256": "348a670a2f5ab769445572b590c4099e2ad6a72148911d3ec7725046bf6ce794",
-    "coverageSha256": "bb342199f6646d77eb016e9c3170ff489f0ae40da3265678a8e5843a50063792",
+    "claimsSha256": "1c88db95808a5209f06e21318ab2dad7753f27a1fc10b16652f310473f3651a2",
+    "coverageSha256": "cf32b8e000722221799f11c0677c23f325f2920f9e300d3744ce1953408c3764",
     "capabilityCandidatesSha256": "08a6a4f025f041f78b670d475874f2a263f712f0d72c4d5f434201e313f133e9",
     "apiEntriesSha256": "4cde68b87ce104d29d3653d81bfda7bcc34b477fd9662809b8765c17b8a729bf",
     "apiSymbolsSha256": "8024a4a8d366d3817fe2ef59b42d8821de0bfa14a7f4419aee1ecf9f56838541",
     "taskCandidatesSha256": "13a96c784d6289ae90e1b1dc55224c89f52613e39d19d6ca9b858a22a2f9a598",
-    "apiSurfaceSha256": "23e30ad7e2669bf37a2593ceb750b650af1416f98acb82b356ad332c7762fc60",
+    "apiSurfaceSha256": "269598e0212c77660d80d7a24632b5ec91395eaf240c90de37d3987577df2ee9",
     "taskScenariosSha256": "396f184460659069ec75ab3c1e34f4ff6852cb83b35be68df94bacafbcc896ff",
     "taskScenarioScriptsSha256": "811d7d30e2d9b9fe0a1345266b567b8c93cfd1a3ab96c3207f09b00a0da1ecf3"
 }

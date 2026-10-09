@@ -253,10 +253,12 @@ export function validateSkillSource(targetArgument, options = {}) {
         if (
             entry.kind === "example" &&
             (manifest.taskNavigation !== "entrypoint" ||
-                !/^references\/example-[^/]+\.md$/.test(output))
+                !/^references\/(?:host|client|infra)\/examples\/example-[^/]+\.md$/.test(
+                    output,
+                ))
         ) {
             throw new Error(
-                `Example must be a top-level references/example-*.md in entrypoint mode: ${output}`,
+                `Example must be a grouped references/<side>/examples/example-*.md in entrypoint mode: ${output}`,
             );
         }
         resolveInside(
@@ -306,10 +308,15 @@ export function validateSkillSource(targetArgument, options = {}) {
     }
     if (
         manifest.taskNavigation === "entrypoint" &&
-        files.some((file) => file.kind === "index")
+        (files.filter((file) => file.kind === "index").length !== 1 ||
+            !files.some(
+                (file) =>
+                    file.kind === "index" &&
+                    file.output === "references/object-index.md",
+            ))
     ) {
         throw new Error(
-            "Entrypoint must keep navigation, terms and keywords in SKILL.md, not separate index files.",
+            "Entrypoint needs only references/object-index.md as a separate index file.",
         );
     }
     for (const kind of ["api-guardrail", "how-to"]) {
@@ -1033,6 +1040,19 @@ export function validateSkillSource(targetArgument, options = {}) {
             ),
             "utf8",
         );
+        const objectIndexFile = files.find(
+            (file) => file.output === "references/object-index.md",
+        );
+        const objectIndexBody =
+            objectIndexFile &&
+            readFileSync(
+                resolveInside(
+                    target.skillSourcePath,
+                    objectIndexFile.source,
+                    "object index",
+                ),
+                "utf8",
+            );
         if (manifest.taskNavigation === "entrypoint") {
             const headings = [
                 "适用范围",
@@ -1104,6 +1124,16 @@ export function validateSkillSource(targetArgument, options = {}) {
                     "SKILL.md must place task and object tables in their named sections.",
                 );
             }
+            if (
+                !markdownSection(
+                    entrypointBody,
+                    "关键对象索引",
+                )?.content.includes("](references/object-index.md)")
+            ) {
+                throw new Error(
+                    "SKILL.md object names must link to references/object-index.md.",
+                );
+            }
         }
         const entrypointLinks = new Set(
             [
@@ -1119,6 +1149,16 @@ export function validateSkillSource(targetArgument, options = {}) {
                 throw new Error(`Duplicate plugin task id: ${task.id}`);
             taskIds.add(task.id);
             requireString(task.outcome, `${label}.outcome`);
+            if (task.navigationLabel !== undefined)
+                requireString(task.navigationLabel, `${label}.navigationLabel`);
+            if (
+                task.navigationGroup !== undefined &&
+                !["host", "client", "infra", "other"].includes(
+                    task.navigationGroup,
+                )
+            ) {
+                throw new Error(`${label}.navigationGroup is unsupported.`);
+            }
             if (
                 !Array.isArray(task.candidates) ||
                 task.candidates.length === 0
@@ -1308,9 +1348,9 @@ export function validateSkillSource(targetArgument, options = {}) {
                     for (const example of files.filter(
                         (file) => file.kind === "example",
                     )) {
-                        const relativeExample = example.output.replace(
-                            /^references\//,
-                            "",
+                        const relativeExample = posix.relative(
+                            posix.dirname(destination.output),
+                            example.output,
                         );
                         if (
                             section.content.includes(`](${relativeExample})`) ||
@@ -1352,17 +1392,25 @@ export function validateSkillSource(targetArgument, options = {}) {
                         ),
                         "utf8",
                     );
-                    return manifest.taskNavigation === "entrypoint"
-                        ? markdownSection(body, destination.section).content
-                        : body;
+                    return {
+                        output: destination.output,
+                        body:
+                            manifest.taskNavigation === "entrypoint"
+                                ? markdownSection(body, destination.section)
+                                      .content
+                                : body,
+                    };
                 });
                 for (const objectId of task.apiObjects) {
                     const object = apiObjects.get(objectId);
-                    const relative = object.owner.replace(/^references\//, "");
                     if (
-                        !howToSections.some((body) =>
-                            body.includes(`](${relative}`),
-                        )
+                        !howToSections.some(({ output, body }) => {
+                            const relative = posix.relative(
+                                posix.dirname(output),
+                                object.owner,
+                            );
+                            return body.includes(`](${relative}`);
+                        })
                     ) {
                         throw new Error(
                             `${label} HOW-TO does not link API reference for ${objectId}: ${object.owner}`,
@@ -1400,7 +1448,11 @@ export function validateSkillSource(targetArgument, options = {}) {
                 coverage,
                 files,
                 target.skillSourcePath,
-                { entrypoint: entrypointBody, routing: routingBody },
+                {
+                    entrypoint: entrypointBody,
+                    routing: routingBody,
+                    objectIndex: objectIndexBody,
+                },
                 manifest.taskNavigation === "entrypoint"
                     ? apiSurface
                     : undefined,
@@ -1408,6 +1460,14 @@ export function validateSkillSource(targetArgument, options = {}) {
             if (entrypointBody !== rendered.entrypoint) {
                 throw new Error(
                     "SKILL.md task navigation differs from taskPaths; run sync-task-navigation.mjs.",
+                );
+            }
+            if (
+                manifest.taskNavigation === "entrypoint" &&
+                objectIndexBody !== rendered.objectIndex
+            ) {
+                throw new Error(
+                    "Object index differs from api-surface.json; run sync-task-navigation.mjs.",
                 );
             }
             if (

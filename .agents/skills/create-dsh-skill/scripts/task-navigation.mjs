@@ -6,6 +6,8 @@ export const navigationStart = "<!-- BEGIN GENERATED TASK NAVIGATION -->";
 export const navigationEnd = "<!-- END GENERATED TASK NAVIGATION -->";
 export const objectIndexStart = "<!-- BEGIN GENERATED OBJECT INDEX -->";
 export const objectIndexEnd = "<!-- END GENERATED OBJECT INDEX -->";
+export const objectTableStart = "<!-- BEGIN GENERATED OBJECT TABLE -->";
+export const objectTableEnd = "<!-- END GENERATED OBJECT TABLE -->";
 
 function cell(value) {
     return value.replaceAll("|", "\\|").replaceAll(/\s+/g, " ").trim();
@@ -36,6 +38,15 @@ function replaceBlock(
 }
 
 function taskLabel(task) {
+    if (task.navigationLabel !== undefined) {
+        if (
+            typeof task.navigationLabel !== "string" ||
+            !task.navigationLabel.trim()
+        ) {
+            throw new Error(`${task.id} needs a non-empty navigationLabel.`);
+        }
+        return task.navigationLabel;
+    }
     if (task.entry) {
         if (
             !Array.isArray(task.userIntents) ||
@@ -49,6 +60,63 @@ function taskLabel(task) {
         return task.userIntents[0];
     }
     return task.outcome;
+}
+
+const taskGroups = [
+    { id: "host", title: "Host 与 Agent", prefix: "references/host/how-to/" },
+    {
+        id: "client",
+        title: "Web Client 与跨侧交互",
+        prefix: "references/client/how-to/",
+    },
+    {
+        id: "infra",
+        title: "配置、运行时与 Provider",
+        prefix: "references/infra/how-to/",
+    },
+];
+
+function taskGroup(task) {
+    if (task.navigationGroup) return task.navigationGroup;
+    const output = task.destinations[0]?.output ?? "";
+    return (
+        taskGroups.find(({ prefix }) => output.startsWith(prefix))?.id ??
+        "other"
+    );
+}
+
+export function renderEntrypointTasks(rows) {
+    const featured = rows.filter(({ task }) => task.entry);
+    const other = rows.filter(({ task }) => !task.entry);
+    const sections = [
+        "### 常用入口",
+        ...featured.map(
+            ({ task }) =>
+                `- [${cell(taskLabel(task))}](${task.entry.output}#${task.entry.anchor})`,
+        ),
+    ];
+    for (const group of [
+        ...taskGroups,
+        { id: "other", title: "其他开发任务" },
+    ]) {
+        const matches = other.filter(
+            ({ task }) => taskGroup(task) === group.id,
+        );
+        if (!matches.length) continue;
+        sections.push(
+            `### ${group.title}`,
+            [
+                "| 开发任务 |",
+                "| --- |",
+                ...matches.map(({ task, links }) =>
+                    links.length === 1
+                        ? `| ${links[0].replace(/^\[[^\]]+\]/, `[${cell(taskLabel(task))}]`)} |`
+                        : `| ${cell(taskLabel(task))}：${links.join("、")} |`,
+                ),
+            ].join("\n"),
+        );
+    }
+    return sections.join("\n\n");
 }
 
 export function renderTaskNavigation(
@@ -69,6 +137,7 @@ export function renderTaskNavigation(
     }
     const featuredRows = ["| 用户任务 | 先读 |", "| --- | --- |"];
     const routingRows = ["| 用户任务 | 起点 |", "| --- | --- |"];
+    const entrypointRows = [];
     const destinationOwners = new Map();
     const orderedTasks = apiSurface
         ? [...featured, ...tasks.filter((task) => !task.entry)]
@@ -113,6 +182,7 @@ export function renderTaskNavigation(
             );
         }
         routingRows.push(`| ${cell(taskLabel(task))} | ${links.join("、")} |`);
+        if (apiSurface) entrypointRows.push({ task, links });
         if (task.entry) {
             featuredRows.push(
                 `| ${cell(taskLabel(task))} | [${cell(task.entry.section)}](${task.entry.output}#${task.entry.anchor}) |`,
@@ -137,7 +207,15 @@ export function renderTaskNavigation(
     const objects = apiSurface.objects.filter(
         (object) => object.decision === "included",
     );
-    const objectRows = ["| 关键对象 | 权威契约 |", "| --- | --- |"];
+    const objectRows = ["| 权威契约 |", "| --- |"];
+    const objectNames = new Map();
+    const symbolCounts = new Map();
+    for (const object of objects) {
+        symbolCounts.set(
+            object.symbol,
+            (symbolCounts.get(object.symbol) ?? 0) + 1,
+        );
+    }
     for (const object of objects.sort(
         (a, b) => a.symbol.localeCompare(b.symbol) || a.id.localeCompare(b.id),
     )) {
@@ -153,17 +231,62 @@ export function renderTaskNavigation(
             throw new Error(
                 `Missing API section for ${object.id}: ${object.section}`,
             );
+        let label = `\`${cell(object.symbol)}\``;
+        if (symbolCounts.get(object.symbol) > 1) {
+            const packageName = /^export:([^:]+):/.exec(object.entry)?.[1];
+            if (!packageName)
+                throw new Error(
+                    `Cannot distinguish duplicate API symbol: ${object.id}`,
+                );
+            label += `（\`${cell(packageName)}\`）`;
+        }
         objectRows.push(
-            `| ${cell(object.symbol)} (${cell(object.id)}) | [${cell(object.section)}](${object.owner}#${section.anchor}) |`,
+            `| [${label}](${object.owner.replace(/^references\//, "")}#${section.anchor}) |`,
         );
+        const candidateSide = object.owner.split("/")[1];
+        const side = ["host", "client", "infra"].includes(candidateSide)
+            ? candidateSide
+            : "other";
+        const names = objectNames.get(side) ?? new Set();
+        names.add(object.symbol);
+        objectNames.set(side, names);
+    }
+    const nameRows = [];
+    for (const side of ["host", "client", "infra", "other"]) {
+        const names = [...(objectNames.get(side) ?? [])];
+        if (!names.length) continue;
+        nameRows.push(
+            `### ${side === "other" ? "其他" : side[0].toUpperCase() + side.slice(1)}`,
+            "",
+        );
+        for (let index = 0; index < names.length; index += 12) {
+            nameRows.push(
+                `- ${names
+                    .slice(index, index + 12)
+                    .map((name) => `\`${name}\``)
+                    .join("、")}`,
+            );
+        }
+        nameRows.push("");
     }
     return {
         entrypoint: replaceBlock(
-            replaceBlock(bodies.entrypoint, routingRows.join("\n"), "SKILL.md"),
-            objectRows.join("\n"),
+            replaceBlock(
+                bodies.entrypoint,
+                renderEntrypointTasks(entrypointRows),
+                "SKILL.md",
+            ),
+            nameRows.join("\n").trimEnd(),
             "SKILL.md object index",
             objectIndexStart,
             objectIndexEnd,
+        ),
+        objectIndex: replaceBlock(
+            bodies.objectIndex,
+            objectRows.join("\n"),
+            "object index",
+            objectTableStart,
+            objectTableEnd,
         ),
         featuredIds: featured.map((task) => task.id),
     };

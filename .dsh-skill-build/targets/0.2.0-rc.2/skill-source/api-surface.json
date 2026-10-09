@@ -4108,7 +4108,7 @@
                     "reason": "Context.workspaces 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-cordis.md",
+            "owner": "references/host/api/api-host-cordis.md",
             "section": "Context"
         },
         {
@@ -5311,7 +5311,7 @@
                     "reason": "Fiber.update 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-cordis.md",
+            "owner": "references/host/api/api-host-cordis.md",
             "section": "Fiber"
         },
         {
@@ -5674,7 +5674,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-cordis.md",
+            "owner": "references/host/api/api-host-cordis.md",
             "section": "Plugin"
         },
         {
@@ -5772,7 +5772,7 @@
                     "reason": "RegistryService.values 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-cordis.md",
+            "owner": "references/host/api/api-host-cordis.md",
             "section": "RegistryService"
         },
         {
@@ -5800,7 +5800,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-cordis.md",
+            "owner": "references/host/api/api-host-cordis.md",
             "section": "Service"
         },
         {
@@ -6075,7 +6075,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "AgentLoop"
         },
         {
@@ -6109,7 +6109,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "AgentLoop Config"
         },
         {
@@ -6296,7 +6296,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "Agent"
         },
         {
@@ -6395,7 +6395,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "AgentHandle"
         },
         {
@@ -6543,7 +6543,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "AgentRegistry"
         },
         {
@@ -6726,7 +6726,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "CreateAgentOptions"
         },
         {
@@ -6980,7 +6980,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-agent.md",
+            "owner": "references/host/api/api-host-agent.md",
             "section": "ResumeAgentOptions"
         },
         {
@@ -7710,7 +7710,7 @@
             "source": "packages/api/gateway/src/client/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`isRemoteFailure`"
         },
         {
@@ -7991,7 +7991,7 @@
                     "reason": "ClientRemote.$stream 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`ClientRemote`"
         },
         {
@@ -14793,7 +14793,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-profile-runtime.md",
+            "owner": "references/infra/api/api-infra-profile-runtime.md",
             "section": "Profile"
         },
         {
@@ -15911,7 +15911,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-artifacts.md",
+            "owner": "references/infra/api/api-infra-provider-artifacts.md",
             "section": "AttachmentStore"
         },
         {
@@ -16677,7 +16677,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-credentials.md",
+            "owner": "references/host/api/api-host-credentials.md",
             "section": "AuthorizationFlow"
         },
         {
@@ -16922,7 +16922,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-credentials.md",
+            "owner": "references/host/api/api-host-credentials.md",
             "section": "AuthorizationService"
         },
         {
@@ -16964,7 +16964,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-credentials.md",
+            "owner": "references/host/api/api-host-credentials.md",
             "section": "AuthorizationSession"
         },
         {
@@ -17041,7 +17041,7 @@
             "source": "packages/browser-use/browser-use/src/brand.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "BrowserUseProviderName"
         },
         {
@@ -17065,7 +17065,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "BrowserUseRegistry"
         },
         {
@@ -17114,7 +17114,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`FileUploadProgress`"
         },
         {
@@ -17142,7 +17142,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`FileUploadService`"
         },
         {
@@ -17466,7 +17466,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`LocaleRuntime`"
         },
         {
@@ -18052,7 +18052,7 @@
                     "reason": "ClientModuleSystem.version 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-modules.md",
+            "owner": "references/client/api/api-client-modules.md",
             "section": "`ClientModuleSystem`"
         },
         {
@@ -18229,7 +18229,7 @@
             "source": "packages/client/modules/src/client/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-modules.md",
+            "owner": "references/client/api/api-client-modules.md",
             "section": "`createClientModuleSystem`"
         },
         {
@@ -18502,7 +18502,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-modules.md",
+            "owner": "references/client/api/api-client-modules.md",
             "section": "`ClientModuleRegistry`"
         },
         {
@@ -18796,7 +18796,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`ResourceProvider<P>`"
         },
         {
@@ -18826,7 +18826,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`ResourceSnapshot<Value>`"
         },
         {
@@ -18866,7 +18866,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`Resources`"
         },
         {
@@ -18877,7 +18877,7 @@
             "source": "packages/client/resources/src/client/contract.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`UseResource`"
         },
         {
@@ -19057,7 +19057,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`ShortcutCommand`"
         },
         {
@@ -19405,7 +19405,7 @@
                     "reason": "Shortcuts.stopSequenceMs 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`Shortcuts`"
         },
         {
@@ -19800,7 +19800,7 @@
             "source": "packages/client/store/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`createSnapshotStore`"
         },
         {
@@ -19811,7 +19811,7 @@
             "source": "packages/client/store/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`defineStore`"
         },
         {
@@ -20292,7 +20292,7 @@
                     "reason": "ChatNode.visibility 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`ChatNode`"
         },
         {
@@ -20303,7 +20303,7 @@
             "source": "packages/client/ui-chat/src/client/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`ChatNodeDataMap`"
         },
         {
@@ -23240,7 +23240,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`ActionSpec`"
         },
         {
@@ -23288,7 +23288,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`CommandContribution`"
         },
         {
@@ -23318,7 +23318,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`CommandDecoration`"
         },
         {
@@ -23470,7 +23470,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`CommandUiContract`"
         },
         {
@@ -23506,7 +23506,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`CommandUiRuntime`"
         },
         {
@@ -23525,7 +23525,7 @@
                     "reason": "CommandUiSpec.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`CommandUiSpec`"
         },
         {
@@ -23757,7 +23757,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`PopupSelectSpec`"
         },
         {
@@ -23937,7 +23937,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`SelectConfirmation`"
         },
         {
@@ -23991,7 +23991,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`SelectOption`"
         },
         {
@@ -24015,7 +24015,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-commands.md",
+            "owner": "references/client/api/api-client-commands.md",
             "section": "`SelectOptionGroup`"
         },
         {
@@ -25731,7 +25731,7 @@
                     "reason": "ConversationEventRegistry.registerFallback 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`ConversationEventRegistry`"
         },
         {
@@ -26595,7 +26595,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`ConversationNodeDefinition<State>`"
         },
         {
@@ -27132,7 +27132,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`ConversationViewBuilder<Node, Snapshot>`"
         },
         {
@@ -27168,7 +27168,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`ConversationViewDefinition<Node, Snapshot>`"
         },
         {
@@ -29477,7 +29477,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`UiConversation`"
         },
         {
@@ -29961,7 +29961,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-interaction.md",
+            "owner": "references/client/api/api-client-interaction.md",
             "section": "`InputTriggerCandidate`"
         },
         {
@@ -30271,7 +30271,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-interaction.md",
+            "owner": "references/client/api/api-client-interaction.md",
             "section": "`InputTriggerServiceContract`"
         },
         {
@@ -30372,7 +30372,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-interaction.md",
+            "owner": "references/client/api/api-client-interaction.md",
             "section": "`InputTriggerSource`"
         },
         {
@@ -30905,7 +30905,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`ILayout`"
         },
         {
@@ -30961,7 +30961,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`LayoutController`"
         },
         {
@@ -31234,7 +31234,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`PluginConfigViewProps`"
         },
         {
@@ -31252,7 +31252,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`PluginDetailProps`"
         },
         {
@@ -31555,7 +31555,7 @@
                     "reason": "PluginsSubject.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`PluginsSubject`"
         },
         {
@@ -31674,7 +31674,7 @@
             "source": "packages/client/ui-primitives/src/Button.tsx",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`Button`"
         },
         {
@@ -34764,7 +34764,7 @@
             "source": "packages/client/ui-primitives/src/HoverCard.tsx",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`Menu`"
         },
         {
@@ -34990,7 +34990,7 @@
             "source": "packages/client/ui-primitives/src/Menu.tsx",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`MenuSurface`"
         },
         {
@@ -36536,7 +36536,7 @@
             "source": "packages/client/ui-primitives/src/Pill.tsx",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`Tag`"
         },
         {
@@ -37624,7 +37624,7 @@
                     "reason": "SlotRegistry.subscribe 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotRegistry`"
         },
         {
@@ -38180,7 +38180,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-conversation.md",
+            "owner": "references/client/api/api-client-conversation.md",
             "section": "`UiSession`"
         },
         {
@@ -38282,7 +38282,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`ConfigForm<T>`"
         },
         {
@@ -38336,7 +38336,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`ConfigFormSnapshot<T>`"
         },
         {
@@ -38373,7 +38373,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`ConfigForms`"
         },
         {
@@ -38679,7 +38679,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-settings.md",
+            "owner": "references/client/api/api-client-settings.md",
             "section": "`SettingsSchemaService`"
         },
         {
@@ -38754,7 +38754,7 @@
                     "reason": "DocumentContent.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-preview.md",
+            "owner": "references/client/api/api-client-preview.md",
             "section": "`DocumentContent`"
         },
         {
@@ -38775,7 +38775,7 @@
             "source": "packages/client/ui-sidebar-documentpreview/src/client/document/registry.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-preview.md",
+            "owner": "references/client/api/api-client-preview.md",
             "section": "`DocumentLoadMode`"
         },
         {
@@ -38829,7 +38829,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-preview.md",
+            "owner": "references/client/api/api-client-preview.md",
             "section": "`DocumentPreviewDefinition`"
         },
         {
@@ -38877,7 +38877,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-preview.md",
+            "owner": "references/client/api/api-client-preview.md",
             "section": "`DocumentPreviewProps`"
         },
         {
@@ -39405,7 +39405,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`ISidebarRight`"
         },
         {
@@ -40188,7 +40188,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarRightTabClaim`"
         },
         {
@@ -40254,7 +40254,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarRightTabDefinition`"
         },
         {
@@ -40304,7 +40304,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarRightTabInjected`"
         },
         {
@@ -40400,7 +40400,7 @@
                     "reason": "SidebarRightTabParamsMap.browser 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarRightTabParamsMap`"
         },
         {
@@ -40450,7 +40450,7 @@
             "source": "packages/client/ui-sidebar-right/src/client/tab-registry.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarRightTabPriority`"
         },
         {
@@ -40702,7 +40702,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarBrandMarkOwnerProps`"
         },
         {
@@ -40803,7 +40803,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`SidebarPanelMetadata`"
         },
         {
@@ -41070,7 +41070,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`ComposedProps`"
         },
         {
@@ -41571,7 +41571,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-services.md",
+            "owner": "references/client/api/api-client-services.md",
             "section": "`LocaleNamespaceMap`"
         },
         {
@@ -41649,7 +41649,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`PropsRenderFactories`"
         },
         {
@@ -41674,7 +41674,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`PropsRenderSlots`"
         },
         {
@@ -41685,7 +41685,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`PropsRuntime`"
         },
         {
@@ -41706,7 +41706,7 @@
             "source": "packages/client/store/src/contract.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`PropsStore`"
         },
         {
@@ -41717,7 +41717,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`RegisterFactory`"
         },
         {
@@ -42139,7 +42139,7 @@
                     "reason": "SlotCore.subscribeFactory 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotCore`"
         },
         {
@@ -42190,7 +42190,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotEntryDef`"
         },
         {
@@ -42261,7 +42261,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotFactoryMap`"
         },
         {
@@ -42302,7 +42302,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotKind`"
         },
         {
@@ -42323,7 +42323,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotMap`"
         },
         {
@@ -42506,7 +42506,7 @@
             "source": "packages/client/ui-slots/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-slots.md",
+            "owner": "references/client/api/api-client-slots.md",
             "section": "`SlotScope`"
         },
         {
@@ -43150,7 +43150,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`ThemeDefinition`"
         },
         {
@@ -43219,7 +43219,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`ThemeRuntime`"
         },
         {
@@ -43286,7 +43286,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`ThemeSnapshot`"
         },
         {
@@ -43368,7 +43368,7 @@
             "source": "packages/client/ui-theme/src/client/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-shared-ui.md",
+            "owner": "references/client/api/api-client-shared-ui.md",
             "section": "`ThemeTokenOverrides`"
         },
         {
@@ -43663,7 +43663,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-interaction.md",
+            "owner": "references/client/api/api-client-interaction.md",
             "section": "`ToolCallOwnerProps`"
         },
         {
@@ -43762,7 +43762,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-interaction.md",
+            "owner": "references/client/api/api-client-interaction.md",
             "section": "`ToolCallViewProps`"
         },
         {
@@ -44134,7 +44134,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-sidebar.md",
+            "owner": "references/client/api/api-client-sidebar.md",
             "section": "`UiWorkspace`"
         },
         {
@@ -44481,7 +44481,7 @@
             "source": "packages/boot/cmdline/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-cmdline.md",
+            "owner": "references/infra/api/api-infra-cmdline.md",
             "section": "AppExit"
         },
         {
@@ -44549,7 +44549,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-cmdline.md",
+            "owner": "references/infra/api/api-infra-cmdline.md",
             "section": "CmdlineArgs"
         },
         {
@@ -44612,7 +44612,7 @@
             "source": "packages/boot/cmdline/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-cmdline.md",
+            "owner": "references/infra/api/api-infra-cmdline.md",
             "section": "parseCmdline"
         },
         {
@@ -44670,7 +44670,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-commands.md",
+            "owner": "references/host/api/api-host-commands.md",
             "section": "CommandDefinition"
         },
         {
@@ -44716,7 +44716,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-commands.md",
+            "owner": "references/host/api/api-host-commands.md",
             "section": "CommandDescriptor"
         },
         {
@@ -44828,7 +44828,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-commands.md",
+            "owner": "references/host/api/api-host-commands.md",
             "section": "CommandInvocation"
         },
         {
@@ -44854,7 +44854,7 @@
                     "reason": "CommandResult.text 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-commands.md",
+            "owner": "references/host/api/api-host-commands.md",
             "section": "CommandResult"
         },
         {
@@ -44897,7 +44897,7 @@
                     "reason": "CommandRuntime.registerFileReceiptResolver 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-commands.md",
+            "owner": "references/host/api/api-host-commands.md",
             "section": "CommandRuntime"
         },
         {
@@ -45129,7 +45129,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-compaction.md",
+            "owner": "references/host/api/api-host-compaction.md",
             "section": "CompactionEngine"
         },
         {
@@ -45205,7 +45205,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-compaction.md",
+            "owner": "references/host/api/api-host-compaction.md",
             "section": "CompactionResult"
         },
         {
@@ -45216,7 +45216,7 @@
             "source": "packages/compaction/compaction/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-compaction.md",
+            "owner": "references/host/api/api-host-compaction.md",
             "section": "CompactionTrigger"
         },
         {
@@ -45272,7 +45272,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-compaction.md",
+            "owner": "references/host/api/api-host-compaction.md",
             "section": "ManualCompactionError"
         },
         {
@@ -45293,7 +45293,7 @@
             "source": "packages/compaction/compaction/src/checkpoint.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-compaction.md",
+            "owner": "references/host/api/api-host-compaction.md",
             "section": "compactCheckpointSource"
         },
         {
@@ -45366,7 +45366,7 @@
             "source": "packages/computer-use/computer-use/src/brand.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-provider-computer-use.md",
+            "owner": "references/infra/api/api-infra-provider-computer-use.md",
             "section": "ComputerUseProviderName"
         },
         {
@@ -45390,7 +45390,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-computer-use.md",
+            "owner": "references/infra/api/api-infra-provider-computer-use.md",
             "section": "ComputerUseRegistry"
         },
         {
@@ -45451,7 +45451,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-live-config.md",
+            "owner": "references/infra/api/api-infra-live-config.md",
             "section": "ConfigEditor"
         },
         {
@@ -45565,7 +45565,7 @@
             "source": "packages/credentials/credentials/src/types.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-credentials.md",
+            "owner": "references/host/api/api-host-credentials.md",
             "section": "CredentialKey"
         },
         {
@@ -45631,7 +45631,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-credentials.md",
+            "owner": "references/host/api/api-host-credentials.md",
             "section": "CredentialProvider"
         },
         {
@@ -45717,7 +45717,7 @@
             "source": "packages/credentials/credentials/src/types.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-credentials.md",
+            "owner": "references/host/api/api-host-credentials.md",
             "section": "CredentialRef"
         },
         {
@@ -45941,7 +45941,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "BrowserMcpAttachConfig"
         },
         {
@@ -45965,7 +45965,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "BrowserMcpConfig"
         },
         {
@@ -46001,7 +46001,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "BrowserMcpLaunchConfig"
         },
         {
@@ -46049,7 +46049,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "SessionMcpOptions"
         },
         {
@@ -46060,7 +46060,7 @@
             "source": "packages/experimental/browser-use-runtime/src/mcp.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "mountSessionMcp"
         },
         {
@@ -46071,7 +46071,7 @@
             "source": "packages/experimental/browser-use-runtime/src/mcp.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "validateBrowserMcpConfig"
         },
         {
@@ -46095,7 +46095,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "OwnedSessionResource"
         },
         {
@@ -46125,7 +46125,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "SessionResourceOptions"
         },
         {
@@ -46161,7 +46161,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-browser-use.md",
+            "owner": "references/infra/api/api-infra-provider-browser-use.md",
             "section": "SessionResources"
         },
         {
@@ -46418,7 +46418,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-speech.md",
+            "owner": "references/infra/api/api-infra-provider-speech.md",
             "section": "SpeechProvider"
         },
         {
@@ -46749,7 +46749,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-speech.md",
+            "owner": "references/infra/api/api-infra-provider-speech.md",
             "section": "Transcript"
         },
         {
@@ -46815,7 +46815,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-speech.md",
+            "owner": "references/infra/api/api-infra-provider-speech.md",
             "section": "SpeechToText default"
         },
         {
@@ -46875,7 +46875,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`FileSearchConfig`"
         },
         {
@@ -46905,7 +46905,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`WorkspaceFileSearch`"
         },
         {
@@ -47047,7 +47047,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`LocalFileReferenceService`"
         },
         {
@@ -47160,7 +47160,7 @@
             "source": "packages/context/file-reference/src/grammar.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`activeAtToken`"
         },
         {
@@ -47171,7 +47171,7 @@
             "source": "packages/context/file-reference/src/grammar.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`formatFileMention`"
         },
         {
@@ -47237,7 +47237,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`FileReferenceCandidate`"
         },
         {
@@ -47255,7 +47255,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`FileReferenceService`"
         },
         {
@@ -47401,7 +47401,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-fs.md",
+            "owner": "references/infra/api/api-infra-provider-fs.md",
             "section": "FileSystem"
         },
         {
@@ -47529,7 +47529,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-fs.md",
+            "owner": "references/infra/api/api-infra-provider-fs.md",
             "section": "FsError"
         },
         {
@@ -47569,7 +47569,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-fs.md",
+            "owner": "references/infra/api/api-infra-provider-fs.md",
             "section": "FsInfo"
         },
         {
@@ -47643,7 +47643,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-fs.md",
+            "owner": "references/infra/api/api-infra-provider-fs.md",
             "section": "FsTarget"
         },
         {
@@ -47885,7 +47885,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-goal.md",
+            "owner": "references/host/api/api-host-goal.md",
             "section": "CreateGoalRequest"
         },
         {
@@ -48338,7 +48338,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-goal.md",
+            "owner": "references/host/api/api-host-goal.md",
             "section": "GoalRef"
         },
         {
@@ -48410,7 +48410,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-goal.md",
+            "owner": "references/host/api/api-host-goal.md",
             "section": "GoalService"
         },
         {
@@ -48595,7 +48595,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-goal.md",
+            "owner": "references/host/api/api-host-goal.md",
             "section": "GoalView"
         },
         {
@@ -48775,7 +48775,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-directory-picker.md",
+            "owner": "references/host/api/api-host-directory-picker.md",
             "section": "DirectoryEntry"
         },
         {
@@ -48819,7 +48819,7 @@
                     "reason": "DirectoryListing.truncated 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-directory-picker.md",
+            "owner": "references/host/api/api-host-directory-picker.md",
             "section": "DirectoryListing"
         },
         {
@@ -48837,7 +48837,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-directory-picker.md",
+            "owner": "references/host/api/api-host-directory-picker.md",
             "section": "DirectoryPicker"
         },
         {
@@ -48895,7 +48895,7 @@
                     "reason": "DirectoryPickerCapabilities.native 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-directory-picker.md",
+            "owner": "references/host/api/api-host-directory-picker.md",
             "section": "DirectoryPickerCapabilities"
         },
         {
@@ -48914,7 +48914,7 @@
                     "reason": "DirectoryPickerCapability.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-directory-picker.md",
+            "owner": "references/host/api/api-host-directory-picker.md",
             "section": "DirectoryPickerCapability"
         },
         {
@@ -48938,7 +48938,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-directory-picker.md",
+            "owner": "references/host/api/api-host-directory-picker.md",
             "section": "DirectoryPickerError"
         },
         {
@@ -49095,7 +49095,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webserver.md",
+            "owner": "references/infra/api/api-infra-webserver.md",
             "section": "WebRoute"
         },
         {
@@ -49171,7 +49171,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webserver.md",
+            "owner": "references/infra/api/api-infra-webserver.md",
             "section": "WebServer"
         },
         {
@@ -49195,7 +49195,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webserver.md",
+            "owner": "references/infra/api/api-infra-webserver.md",
             "section": "WebUpgradeRoute"
         },
         {
@@ -49309,7 +49309,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-invariants.md",
+            "owner": "references/infra/api/api-infra-invariants.md",
             "section": "Config"
         },
         {
@@ -49333,7 +49333,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-invariants.md",
+            "owner": "references/infra/api/api-infra-invariants.md",
             "section": "InvariantError"
         },
         {
@@ -49361,7 +49361,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-invariants.md",
+            "owner": "references/infra/api/api-infra-invariants.md",
             "section": "InvariantInstaller"
         },
         {
@@ -49379,7 +49379,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-invariants.md",
+            "owner": "references/infra/api/api-infra-invariants.md",
             "section": "InvariantRegistry"
         },
         {
@@ -49557,7 +49557,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-jobs.md",
+            "owner": "references/host/api/api-host-jobs.md",
             "section": "JobHandle"
         },
         {
@@ -49581,7 +49581,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-jobs.md",
+            "owner": "references/host/api/api-host-jobs.md",
             "section": "JobHooks"
         },
         {
@@ -49847,7 +49847,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-jobs.md",
+            "owner": "references/host/api/api-host-jobs.md",
             "section": "JobRegistry"
         },
         {
@@ -49944,7 +49944,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-jobs.md",
+            "owner": "references/host/api/api-host-jobs.md",
             "section": "JobSpec"
         },
         {
@@ -50032,7 +50032,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-jobs.md",
+            "owner": "references/host/api/api-host-jobs.md",
             "section": "JobView"
         },
         {
@@ -50151,7 +50151,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-llm.md",
+            "owner": "references/host/api/api-host-llm.md",
             "section": "AdapterRegistrationHandle"
         },
         {
@@ -50331,7 +50331,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-llm-message.md",
+            "owner": "references/host/api/api-host-llm-message.md",
             "section": "AssistantStreamAccumulator"
         },
         {
@@ -50349,7 +50349,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-llm-message.md",
+            "owner": "references/host/api/api-host-llm-message.md",
             "section": "AssistantStreamRecord"
         },
         {
@@ -51051,7 +51051,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-llm.md",
+            "owner": "references/host/api/api-host-llm.md",
             "section": "LlmAdapter"
         },
         {
@@ -51861,7 +51861,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-llm.md",
+            "owner": "references/host/api/api-host-llm.md",
             "section": "LlmRuntime"
         },
         {
@@ -51897,7 +51897,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-llm-message.md",
+            "owner": "references/host/api/api-host-llm-message.md",
             "section": "Message"
         },
         {
@@ -53456,7 +53456,7 @@
             "source": "packages/llm/llm/src/message.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-llm-message.md",
+            "owner": "references/host/api/api-host-llm-message.md",
             "section": "createMessage"
         },
         {
@@ -53623,7 +53623,7 @@
             "source": "packages/llm/llm/src/assistant-stream.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-llm-message.md",
+            "owner": "references/host/api/api-host-llm-message.md",
             "section": "expandAssistantStream"
         },
         {
@@ -53897,7 +53897,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-lsp.md",
+            "owner": "references/infra/api/api-infra-provider-lsp.md",
             "section": "Lsp"
         },
         {
@@ -54022,7 +54022,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-lsp.md",
+            "owner": "references/infra/api/api-infra-provider-lsp.md",
             "section": "LspProvider"
         },
         {
@@ -54033,7 +54033,7 @@
             "source": "packages/lsp/lsp/src/brand.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-provider-lsp.md",
+            "owner": "references/infra/api/api-infra-provider-lsp.md",
             "section": "LspProviderId"
         },
         {
@@ -54079,7 +54079,7 @@
                     "reason": "LspProviderQuery.workspaceRoot 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-infra-provider-lsp.md",
+            "owner": "references/infra/api/api-infra-provider-lsp.md",
             "section": "LspProviderQuery"
         },
         {
@@ -54115,7 +54115,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-lsp.md",
+            "owner": "references/infra/api/api-infra-provider-lsp.md",
             "section": "LspQueryRequest"
         },
         {
@@ -54133,7 +54133,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-lsp.md",
+            "owner": "references/infra/api/api-infra-provider-lsp.md",
             "section": "LspQueryResult"
         },
         {
@@ -54236,7 +54236,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-mcp-resources.md",
+            "owner": "references/infra/api/api-infra-provider-mcp-resources.md",
             "section": "McpResourceProvider"
         },
         {
@@ -54254,7 +54254,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-mcp-resources.md",
+            "owner": "references/infra/api/api-infra-provider-mcp-resources.md",
             "section": "McpResourceRequest"
         },
         {
@@ -54272,7 +54272,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-mcp-resources.md",
+            "owner": "references/infra/api/api-infra-provider-mcp-resources.md",
             "section": "McpResourceRuntime"
         },
         {
@@ -54308,7 +54308,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-profile-manifest.md",
+            "owner": "references/infra/api/api-infra-profile-manifest.md",
             "section": "DshBundleManifest"
         },
         {
@@ -54510,7 +54510,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-profile-manifest.md",
+            "owner": "references/infra/api/api-infra-profile-manifest.md",
             "section": "DshProfileManifest"
         },
         {
@@ -54853,7 +54853,7 @@
             "source": "packages/boot/plugin-manager/src/operations.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-infra-package-operations.md",
+            "owner": "references/infra/api/api-infra-package-operations.md",
             "section": "runPluginCommand"
         },
         {
@@ -55753,7 +55753,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-profile-runtime.md",
+            "owner": "references/infra/api/api-infra-profile-runtime.md",
             "section": "PluginManager"
         },
         {
@@ -56023,7 +56023,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-ptc.md",
+            "owner": "references/infra/api/api-infra-provider-ptc.md",
             "section": "PtcBindingNamespace"
         },
         {
@@ -56106,7 +56106,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-ptc.md",
+            "owner": "references/infra/api/api-infra-provider-ptc.md",
             "section": "PtcRunRequest"
         },
         {
@@ -56142,7 +56142,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-ptc.md",
+            "owner": "references/infra/api/api-infra-provider-ptc.md",
             "section": "PtcRunResult"
         },
         {
@@ -56281,7 +56281,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-ptc.md",
+            "owner": "references/infra/api/api-infra-provider-ptc.md",
             "section": "PtcRuntime"
         },
         {
@@ -56397,7 +56397,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-execution.md",
+            "owner": "references/infra/api/api-infra-provider-execution.md",
             "section": "ConfinedArgv"
         },
         {
@@ -56674,7 +56674,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-execution.md",
+            "owner": "references/infra/api/api-infra-provider-execution.md",
             "section": "SandboxProvider"
         },
         {
@@ -56952,7 +56952,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-scope.md",
+            "owner": "references/host/api/api-host-scope.md",
             "section": "Scope"
         },
         {
@@ -57050,7 +57050,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-scope.md",
+            "owner": "references/host/api/api-host-scope.md",
             "section": "ScopedLayers"
         },
         {
@@ -57061,7 +57061,7 @@
             "source": "packages/core/scope/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-scope.md",
+            "owner": "references/host/api/api-host-scope.md",
             "section": "bindScopeParent"
         },
         {
@@ -57082,7 +57082,7 @@
             "source": "packages/core/scope/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-scope.md",
+            "owner": "references/host/api/api-host-scope.md",
             "section": "createScope"
         },
         {
@@ -57133,7 +57133,7 @@
             "source": "packages/core/scope/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-scope.md",
+            "owner": "references/host/api/api-host-scope.md",
             "section": "scopeTarget"
         },
         {
@@ -57257,7 +57257,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-persistence.md",
+            "owner": "references/host/api/api-host-persistence.md",
             "section": "SessionHandle"
         },
         {
@@ -57552,7 +57552,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-persistence.md",
+            "owner": "references/host/api/api-host-persistence.md",
             "section": "SessionPersistence"
         },
         {
@@ -57689,7 +57689,7 @@
                     "reason": "SessionPersistenceSnapshot.sizeBytes 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-persistence.md",
+            "owner": "references/host/api/api-host-persistence.md",
             "section": "SessionPersistenceSnapshot"
         },
         {
@@ -57973,7 +57973,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session.md",
+            "owner": "references/host/api/api-host-session.md",
             "section": "ProjectionDefinition"
         },
         {
@@ -58224,7 +58224,7 @@
                     "reason": "SessionProjectionRegistry.viewCheckpoint 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-session.md",
+            "owner": "references/host/api/api-host-session.md",
             "section": "SessionProjectionRegistry"
         },
         {
@@ -58709,7 +58709,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-query.md",
+            "owner": "references/host/api/api-host-session-query.md",
             "section": "SessionEventResultFilter"
         },
         {
@@ -59250,7 +59250,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-query.md",
+            "owner": "references/host/api/api-host-session-query.md",
             "section": "SessionObservation"
         },
         {
@@ -59377,7 +59377,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-query.md",
+            "owner": "references/host/api/api-host-session-query.md",
             "section": "SessionQueryEngine"
         },
         {
@@ -59395,7 +59395,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-query.md",
+            "owner": "references/host/api/api-host-session-query.md",
             "section": "SessionQueryError"
         },
         {
@@ -59455,7 +59455,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-query.md",
+            "owner": "references/host/api/api-host-session-query.md",
             "section": "SessionResultFilter"
         },
         {
@@ -60218,7 +60218,7 @@
                     "reason": "SessionReferenceMentionCandidate.sessionId 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`SessionReferenceMentionCandidate`"
         },
         {
@@ -60248,7 +60248,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-references.md",
+            "owner": "references/client/api/api-client-references.md",
             "section": "`SessionReferenceResolver`"
         },
         {
@@ -60506,7 +60506,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-title.md",
+            "owner": "references/host/api/api-host-session-title.md",
             "section": "SessionTitleProvider"
         },
         {
@@ -60517,7 +60517,7 @@
             "source": "packages/session/session-title/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-session-title.md",
+            "owner": "references/host/api/api-host-session-title.md",
             "section": "SessionTitleProviderId"
         },
         {
@@ -60553,7 +60553,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-title.md",
+            "owner": "references/host/api/api-host-session-title.md",
             "section": "SessionTitleProviderRequest"
         },
         {
@@ -60583,7 +60583,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-title.md",
+            "owner": "references/host/api/api-host-session-title.md",
             "section": "SessionTitleProviderResult"
         },
         {
@@ -60619,7 +60619,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-title.md",
+            "owner": "references/host/api/api-host-session-title.md",
             "section": "SessionTitleService"
         },
         {
@@ -61294,7 +61294,7 @@
                     "reason": "Session.toolHistory 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-session.md",
+            "owner": "references/host/api/api-host-session.md",
             "section": "Session"
         },
         {
@@ -61351,7 +61351,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session.md",
+            "owner": "references/host/api/api-host-session.md",
             "section": "SessionEvent"
         },
         {
@@ -61769,7 +61769,7 @@
                     "reason": "SessionEventMap.workspace/changes 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-session.md",
+            "owner": "references/host/api/api-host-session.md",
             "section": "SessionEventMap"
         },
         {
@@ -61935,7 +61935,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-surface.md",
+            "owner": "references/host/api/api-host-session-surface.md",
             "section": "SessionMessageProjection"
         },
         {
@@ -61971,7 +61971,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-surface.md",
+            "owner": "references/host/api/api-host-session-surface.md",
             "section": "SessionMessageProjectionContext"
         },
         {
@@ -62113,7 +62113,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session.md",
+            "owner": "references/host/api/api-host-session.md",
             "section": "SessionStore"
         },
         {
@@ -62284,7 +62284,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-session-surface.md",
+            "owner": "references/host/api/api-host-session-surface.md",
             "section": "SurfaceFoldResult"
         },
         {
@@ -62612,7 +62612,7 @@
             "source": "packages/core/session/src/fork.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-session-surface.md",
+            "owner": "references/host/api/api-host-session-surface.md",
             "section": "buildForkSeed"
         },
         {
@@ -62754,7 +62754,7 @@
             "source": "packages/core/session/src/surface.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-session-surface.md",
+            "owner": "references/host/api/api-host-session-surface.md",
             "section": "foldSurface"
         },
         {
@@ -62904,7 +62904,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-live-config.md",
+            "owner": "references/infra/api/api-infra-live-config.md",
             "section": "SettingsConflictError"
         },
         {
@@ -62988,7 +62988,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-live-config.md",
+            "owner": "references/infra/api/api-infra-live-config.md",
             "section": "SettingsDescriptor"
         },
         {
@@ -63048,7 +63048,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-live-config.md",
+            "owner": "references/infra/api/api-infra-live-config.md",
             "section": "SettingsForms"
         },
         {
@@ -63082,7 +63082,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-live-config.md",
+            "owner": "references/infra/api/api-infra-live-config.md",
             "section": "SettingsPathOp"
         },
         {
@@ -63189,7 +63189,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-shell-env.md",
+            "owner": "references/host/api/api-host-shell-env.md",
             "section": "BashEnvContributor"
         },
         {
@@ -63207,7 +63207,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-shell-env.md",
+            "owner": "references/host/api/api-host-shell-env.md",
             "section": "BashEnvVariable"
         },
         {
@@ -63237,7 +63237,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-shell-env.md",
+            "owner": "references/host/api/api-host-shell-env.md",
             "section": "BashEnvVariableInfo"
         },
         {
@@ -63285,7 +63285,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-shell-env.md",
+            "owner": "references/host/api/api-host-shell-env.md",
             "section": "ShellEnvRegistry"
         },
         {
@@ -63628,7 +63628,7 @@
                     "reason": "ShellExecution.status 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-infra-provider-execution.md",
+            "owner": "references/infra/api/api-infra-provider-execution.md",
             "section": "ShellExecution"
         },
         {
@@ -63658,7 +63658,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-execution.md",
+            "owner": "references/infra/api/api-infra-provider-execution.md",
             "section": "ShellExecutor"
         },
         {
@@ -64042,7 +64042,7 @@
                     "reason": "SkillCandidate.whenToUse 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-infra-provider-skill.md",
+            "owner": "references/infra/api/api-infra-provider-skill.md",
             "section": "SkillCandidate"
         },
         {
@@ -64146,7 +64146,7 @@
                     "reason": "SkillDefinition.whenToUse 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-infra-provider-skill.md",
+            "owner": "references/infra/api/api-infra-provider-skill.md",
             "section": "SkillDefinition"
         },
         {
@@ -64258,7 +64258,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-skill.md",
+            "owner": "references/infra/api/api-infra-provider-skill.md",
             "section": "SkillProvider"
         },
         {
@@ -64431,7 +64431,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-skill.md",
+            "owner": "references/infra/api/api-infra-provider-skill.md",
             "section": "SkillRegistry"
         },
         {
@@ -64690,7 +64690,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-artifacts.md",
+            "owner": "references/infra/api/api-infra-provider-artifacts.md",
             "section": "SaveTextSpill"
         },
         {
@@ -64748,7 +64748,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-artifacts.md",
+            "owner": "references/infra/api/api-infra-provider-artifacts.md",
             "section": "SpillRef"
         },
         {
@@ -64791,7 +64791,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-artifacts.md",
+            "owner": "references/infra/api/api-infra-provider-artifacts.md",
             "section": "SpillStore"
         },
         {
@@ -64870,7 +64870,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-storage-domain.md",
+            "owner": "references/infra/api/api-infra-storage-domain.md",
             "section": "Domain"
         },
         {
@@ -65006,7 +65006,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-storage-domain.md",
+            "owner": "references/infra/api/api-infra-storage-domain.md",
             "section": "DomainFacility"
         },
         {
@@ -65135,7 +65135,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-storage-domain.md",
+            "owner": "references/infra/api/api-infra-storage-domain.md",
             "section": "DomainSpec"
         },
         {
@@ -65249,7 +65249,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-storage-domain.md",
+            "owner": "references/infra/api/api-infra-storage-domain.md",
             "section": "KvTable"
         },
         {
@@ -65521,7 +65521,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-storage.md",
+            "owner": "references/infra/api/api-infra-storage.md",
             "section": "Storage"
         },
         {
@@ -65570,7 +65570,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-storage.md",
+            "owner": "references/infra/api/api-infra-storage.md",
             "section": "StorageError"
         },
         {
@@ -65687,7 +65687,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentAddress`"
         },
         {
@@ -65723,7 +65723,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentCatalogEntry`"
         },
         {
@@ -65759,7 +65759,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentCatalogRow`"
         },
         {
@@ -65789,7 +65789,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentIdentityProjection`"
         },
         {
@@ -65807,7 +65807,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentInterruptReceipt`"
         },
         {
@@ -65833,7 +65833,7 @@
                     "reason": "SubagentListEntry.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentListEntry`"
         },
         {
@@ -65851,7 +65851,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentPromptReceipt`"
         },
         {
@@ -65905,7 +65905,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentPromptRequest`"
         },
         {
@@ -65945,7 +65945,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-subagent.md",
+            "owner": "references/client/api/api-client-subagent.md",
             "section": "`SubagentTimingProjection`"
         },
         {
@@ -67101,7 +67101,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-subagent.md",
+            "owner": "references/host/api/api-host-subagent.md",
             "section": "SubagentProvider"
         },
         {
@@ -67176,7 +67176,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-subagent.md",
+            "owner": "references/host/api/api-host-subagent.md",
             "section": "SubagentRun"
         },
         {
@@ -67374,7 +67374,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-subagent.md",
+            "owner": "references/host/api/api-host-subagent.md",
             "section": "SubagentRuntime"
         },
         {
@@ -67497,7 +67497,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-subagent.md",
+            "owner": "references/host/api/api-host-subagent.md",
             "section": "SubagentStartRequest"
         },
         {
@@ -68133,7 +68133,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-execution.md",
+            "owner": "references/infra/api/api-infra-provider-execution.md",
             "section": "SubprocessHandle"
         },
         {
@@ -68261,7 +68261,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-execution.md",
+            "owner": "references/infra/api/api-infra-provider-execution.md",
             "section": "SubprocessRuntime"
         },
         {
@@ -68869,7 +68869,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "PromptContext"
         },
         {
@@ -68921,7 +68921,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "PromptSection"
         },
         {
@@ -68992,7 +68992,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "SystemPrompt"
         },
         {
@@ -69158,7 +69158,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-terminal.md",
+            "owner": "references/infra/api/api-infra-provider-terminal.md",
             "section": "TerminalBackend"
         },
         {
@@ -69237,7 +69237,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-terminal.md",
+            "owner": "references/infra/api/api-infra-provider-terminal.md",
             "section": "TerminalBackendSession"
         },
         {
@@ -69594,7 +69594,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-terminal.md",
+            "owner": "references/infra/api/api-infra-provider-terminal.md",
             "section": "TerminalSessionService"
         },
         {
@@ -70009,7 +70009,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "Config"
         },
         {
@@ -70112,7 +70112,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "DefineToolOptions"
         },
         {
@@ -71005,7 +71005,7 @@
                     "reason": "PostToolDecision.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "PostToolDecision"
         },
         {
@@ -71024,7 +71024,7 @@
                     "reason": "PreToolDecision.kind 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "PreToolDecision"
         },
         {
@@ -71832,7 +71832,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "ToolDefinition"
         },
         {
@@ -72005,7 +72005,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "ToolExecution"
         },
         {
@@ -72316,7 +72316,7 @@
             "source": "packages/core/tools/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "ToolGuard"
         },
         {
@@ -72553,7 +72553,7 @@
                     "reason": "ToolRunContext.token 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "ToolRunContext"
         },
         {
@@ -72614,7 +72614,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "ToolRuntime"
         },
         {
@@ -73023,7 +73023,7 @@
             "source": "packages/core/tools/src/schema.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-tools.md",
+            "owner": "references/host/api/api-host-tools.md",
             "section": "defineTool"
         },
         {
@@ -73127,7 +73127,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-typert-build.md",
+            "owner": "references/client/api/api-client-typert-build.md",
             "section": "TypertPluginOptions"
         },
         {
@@ -73138,7 +73138,7 @@
             "source": "packages/typert/generator/src/tsdown-plugin.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-typert-build.md",
+            "owner": "references/client/api/api-client-typert-build.md",
             "section": "typertPlugin"
         },
         {
@@ -73378,7 +73378,7 @@
             "source": "packages/typert/protocol/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`Remote`"
         },
         {
@@ -73409,7 +73409,7 @@
                     "reason": "RemoteError.isDSHRemoteError 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`RemoteError`"
         },
         {
@@ -73984,7 +73984,7 @@
                     "reason": "RemoteErrorDetailsMap.workspace/session-active 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`RemoteErrorDetailsMap`"
         },
         {
@@ -74133,7 +74133,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`RemoteResult<T>`"
         },
         {
@@ -74144,7 +74144,7 @@
             "source": "packages/typert/protocol/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`RemoteScope`"
         },
         {
@@ -77782,7 +77782,7 @@
                     "reason": "TypertRemoteService.typertRemote 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-remote.md",
+            "owner": "references/client/api/api-client-remote.md",
             "section": "`TypertRemoteService`"
         },
         {
@@ -77901,7 +77901,7 @@
             "source": "packages/interaction/user-approval/src/types.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "ApprovalOutcome"
         },
         {
@@ -77953,7 +77953,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "ApprovalRequest"
         },
         {
@@ -78000,7 +78000,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-prompt-policy.md",
+            "owner": "references/host/api/api-host-prompt-policy.md",
             "section": "ApprovalService"
         },
         {
@@ -78085,7 +78085,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-user-questions.md",
+            "owner": "references/host/api/api-host-user-questions.md",
             "section": "AskUserQuestionAnswer"
         },
         {
@@ -78245,7 +78245,7 @@
             "source": "packages/interaction/user-questions/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-user-questions.md",
+            "owner": "references/host/api/api-host-user-questions.md",
             "section": "AskUserQuestionRequest"
         },
         {
@@ -78323,7 +78323,7 @@
             "source": "packages/interaction/user-questions/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-host-user-questions.md",
+            "owner": "references/host/api/api-host-user-questions.md",
             "section": "TimedUserQuestionResult"
         },
         {
@@ -78394,7 +78394,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-user-questions.md",
+            "owner": "references/host/api/api-host-user-questions.md",
             "section": "UserQuestionService"
         },
         {
@@ -78518,7 +78518,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebFetchProvider"
         },
         {
@@ -78536,7 +78536,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebFetchRequest"
         },
         {
@@ -78572,7 +78572,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebFetchResult"
         },
         {
@@ -78608,7 +78608,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebRuntime"
         },
         {
@@ -78632,7 +78632,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebRuntimeConfig"
         },
         {
@@ -78662,7 +78662,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebSearchProvider"
         },
         {
@@ -78686,7 +78686,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebSearchRequest"
         },
         {
@@ -78716,7 +78716,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-provider-web.md",
+            "owner": "references/infra/api/api-infra-provider-web.md",
             "section": "WebSearchResult"
         },
         {
@@ -78830,7 +78830,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webhook.md",
+            "owner": "references/infra/api/api-infra-webhook.md",
             "section": "Config"
         },
         {
@@ -78979,7 +78979,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webhook.md",
+            "owner": "references/infra/api/api-infra-webhook.md",
             "section": "VerifiedWebhookDelivery"
         },
         {
@@ -79079,7 +79079,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webhook.md",
+            "owner": "references/infra/api/api-infra-webhook.md",
             "section": "WebhookRule"
         },
         {
@@ -79113,7 +79113,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webhook.md",
+            "owner": "references/infra/api/api-infra-webhook.md",
             "section": "WebhookRuntime"
         },
         {
@@ -79161,7 +79161,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-infra-webhook.md",
+            "owner": "references/infra/api/api-infra-webhook.md",
             "section": "WebhookSessionRequest"
         },
         {
@@ -79309,7 +79309,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-workflow.md",
+            "owner": "references/host/api/api-host-workflow.md",
             "section": "WorkflowEngine"
         },
         {
@@ -79327,7 +79327,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-workflow.md",
+            "owner": "references/host/api/api-host-workflow.md",
             "section": "WorkflowError"
         },
         {
@@ -79461,7 +79461,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-workflow.md",
+            "owner": "references/host/api/api-host-workflow.md",
             "section": "WorkflowResult"
         },
         {
@@ -79535,7 +79535,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-workflow.md",
+            "owner": "references/host/api/api-host-workflow.md",
             "section": "WorkflowRun"
         },
         {
@@ -79624,7 +79624,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-host-workflow.md",
+            "owner": "references/host/api/api-host-workflow.md",
             "section": "WorkflowStartRequest"
         },
         {
@@ -79739,7 +79739,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-workspace-data.md",
+            "owner": "references/client/api/api-client-workspace-data.md",
             "section": "`WorkspaceChanges`"
         },
         {
@@ -79793,7 +79793,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-workspace-data.md",
+            "owner": "references/client/api/api-client-workspace-data.md",
             "section": "`WorkspaceChangesSummary`"
         },
         {
@@ -79872,7 +79872,7 @@
                     "reason": "WorkspaceFileDiff.path 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-workspace-data.md",
+            "owner": "references/client/api/api-client-workspace-data.md",
             "section": "`WorkspaceFileDiff`"
         },
         {
@@ -80092,7 +80092,7 @@
                     "reason": "Workspace.updatedAt 不参与该对象在本 Skill 已核实的插件任务契约。"
                 }
             ],
-            "owner": "references/api-client-workspace-data.md",
+            "owner": "references/client/api/api-client-workspace-data.md",
             "section": "`Workspace`"
         },
         {
@@ -80199,7 +80199,7 @@
             "source": "packages/workspace/workspace/src/index.ts",
             "decision": "included",
             "members": [],
-            "owner": "references/api-client-workspace-data.md",
+            "owner": "references/client/api/api-client-workspace-data.md",
             "section": "`WorkspaceId`"
         },
         {
@@ -80366,7 +80366,7 @@
                     "decision": "included"
                 }
             ],
-            "owner": "references/api-client-workspace-data.md",
+            "owner": "references/client/api/api-client-workspace-data.md",
             "section": "`WorkspaceRegistry`"
         },
         {

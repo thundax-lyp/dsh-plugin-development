@@ -13,10 +13,11 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-command-ui.md",
+                    "output": "references/client/how-to/how-to-client-command-ui.md",
                     "section": "贡献 Client 命令 UI"
                 }
-            ]
+            ],
+            "navigationLabel": "在 Client 添加插件命令界面"
         },
         {
             "id": "client-conversation-node",
@@ -38,7 +39,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-conversation-node.md",
+                    "output": "references/client/how-to/how-to-client-conversation-node.md",
                     "section": "让可回放的 Session 事件在 Chat 中显示"
                 }
             ]
@@ -61,7 +62,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-document-preview.md",
+                    "output": "references/client/how-to/how-to-client-document-preview.md",
                     "section": "给文件后缀注册独立的预览 renderer"
                 }
             ]
@@ -79,7 +80,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-file-reference-provider.md",
+                    "output": "references/client/how-to/how-to-client-file-reference-provider.md",
                     "section": "为 `@file` 提供 Host 发现后端"
                 }
             ]
@@ -101,7 +102,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-input-trigger.md",
+                    "output": "references/client/how-to/how-to-client-input-trigger.md",
                     "section": "注册一个 `/` 或 `@` 来源"
                 }
             ]
@@ -124,7 +125,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-locale-shortcuts.md",
+                    "output": "references/client/how-to/how-to-client-locale-shortcuts.md",
                     "section": "给 slot 组件提供可切换文案与命令"
                 }
             ]
@@ -151,7 +152,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-publish-remote.md",
+                    "output": "references/client/how-to/how-to-client-publish-remote.md",
                     "section": "发布 Host Remote 供 Client 调用"
                 }
             ]
@@ -175,7 +176,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-reference-candidates.md",
+                    "output": "references/client/how-to/how-to-client-reference-candidates.md",
                     "section": "在 Client 读取 `@file` 与 `@session` 候选"
                 }
             ]
@@ -193,7 +194,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-remote-call.md",
+                    "output": "references/client/how-to/how-to-client-remote-call.md",
                     "section": "从 Client 调用已装载的 Remote namespace"
                 }
             ]
@@ -216,7 +217,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-resource-provider.md",
+                    "output": "references/client/how-to/how-to-client-resource-provider.md",
                     "section": "注册一个按地址读取的 Resource Provider"
                 }
             ]
@@ -242,10 +243,11 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-settings-card.md",
+                    "output": "references/client/how-to/how-to-client-settings-card.md",
                     "section": "Host 服务命名空间时显示可编辑 Web 卡片"
                 }
-            ]
+            ],
+            "navigationLabel": "为 Host 服务添加可编辑设置卡片"
         },
         {
             "id": "client-sidebar-panel",
@@ -259,10 +261,11 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-sidebar-panel.md",
+                    "output": "references/client/how-to/how-to-client-sidebar-panel.md",
                     "section": "左栏全局面板贡献"
                 }
-            ]
+            ],
+            "navigationLabel": "在左侧栏添加插件面板"
         },
         {
             "id": "client-sidebar-tab",
@@ -283,7 +286,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-sidebar-tab.md",
+                    "output": "references/client/how-to/how-to-client-sidebar-tab.md",
                     "section": "贡献右侧栏 Tab"
                 }
             ]
@@ -311,7 +314,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-slot-contribution.md",
+                    "output": "references/client/how-to/how-to-client-slot-contribution.md",
                     "section": "在已有页面的 slot 显示插件内容"
                 }
             ]
@@ -328,10 +331,11 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-subagent-navigation.md",
+                    "output": "references/client/how-to/how-to-client-subagent-navigation.md",
                     "section": "Client 子 Agent 导航与控制"
                 }
-            ]
+            ],
+            "navigationLabel": "在 Client 导航和控制子 Agent"
         },
         {
             "id": "client-theme-ui",
@@ -350,7 +354,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-theme-ui.md",
+                    "output": "references/client/how-to/how-to-client-theme-ui.md",
                     "section": "让 Web 扩展遵守主题与多语言样式"
                 }
             ]
@@ -372,7 +376,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-tool-view.md",
+                    "output": "references/client/how-to/how-to-client-tool-view.md",
                     "section": "为自己的工具名注册 Tool View"
                 }
             ]
@@ -389,7 +393,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-upload-file.md",
+                    "output": "references/client/how-to/how-to-client-upload-file.md",
                     "section": "向指定 Session 上传浏览器文件"
                 }
             ]
@@ -409,7 +413,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-web-package.md",
+                    "output": "references/client/how-to/how-to-client-web-package.md",
                     "section": "让一个 Client UI 包随 Profile 在浏览器出现"
                 }
             ]
@@ -426,7 +430,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-workspace-changes.md",
+                    "output": "references/client/how-to/how-to-client-workspace-changes.md",
                     "section": "消费逐轮 Workspace 变更摘要"
                 }
             ]
@@ -443,7 +447,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-workspace-navigation.md",
+                    "output": "references/client/how-to/how-to-client-workspace-navigation.md",
                     "section": "导航 Workspace 与 Session"
                 }
             ]
@@ -461,10 +465,12 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-client-workspace-registry.md",
+                    "output": "references/client/how-to/how-to-client-workspace-registry.md",
                     "section": "Host Registry 操作"
                 }
-            ]
+            ],
+            "navigationLabel": "在 Host 管理 Workspace 与会话",
+            "navigationGroup": "host"
         },
         {
             "id": "scope-agent-capability",
@@ -484,7 +490,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-agent-scope.md",
+                    "output": "references/host/how-to/how-to-host-agent-scope.md",
                     "section": "只为一个 Agent 注册能力"
                 }
             ]
@@ -502,7 +508,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-command.md",
+                    "output": "references/host/how-to/how-to-host-command.md",
                     "section": "注册一个由交互界面执行的命令"
                 }
             ]
@@ -520,7 +526,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-compaction.md",
+                    "output": "references/host/how-to/how-to-host-compaction.md",
                     "section": "挂载或实现压缩 backend"
                 }
             ]
@@ -539,7 +545,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-credentials.md",
+                    "output": "references/host/how-to/how-to-host-credentials.md",
                     "section": "保存插件凭据并注册授权流程"
                 }
             ]
@@ -556,7 +562,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-directory-picker.md",
+                    "output": "references/host/how-to/how-to-host-directory-picker.md",
                     "section": "接入可替换的目录选择后端"
                 }
             ]
@@ -574,7 +580,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-goal.md",
+                    "output": "references/host/how-to/how-to-host-goal.md",
                     "section": "从插件管理一项跨轮次目标"
                 }
             ]
@@ -592,7 +598,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-jobs.md",
+                    "output": "references/host/how-to/how-to-host-jobs.md",
                     "section": "注册可被 Agent 收取的长任务"
                 }
             ]
@@ -611,7 +617,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-llm-adapter.md",
+                    "output": "references/host/how-to/how-to-host-llm-adapter.md",
                     "section": "接入一个新的 LLM Provider"
                 }
             ]
@@ -633,7 +639,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-llm-message.md",
+                    "output": "references/host/how-to/how-to-host-llm-message.md",
                     "section": "记录一次模型流并可重复回放"
                 }
             ]
@@ -651,7 +657,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-persistence.md",
+                    "output": "references/host/how-to/how-to-host-persistence.md",
                     "section": "实现并挂载一个 Session 存储后端"
                 }
             ]
@@ -672,7 +678,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-prompt-policy.md",
+                    "output": "references/host/how-to/how-to-host-prompt-policy.md",
                     "section": "注册一个提示词段并限制工具执行"
                 }
             ]
@@ -690,7 +696,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-scope.md",
+                    "output": "references/host/how-to/how-to-host-scope.md",
                     "section": "为 Agent 隔离插件注册与事件"
                 }
             ]
@@ -708,7 +714,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-service.md",
+                    "output": "references/host/how-to/how-to-host-service.md",
                     "section": "提供并消费一个 Host Service"
                 }
             ]
@@ -728,7 +734,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-session-event.md",
+                    "output": "references/host/how-to/how-to-host-session-event.md",
                     "section": "为插件记录可恢复的领域事实"
                 }
             ]
@@ -745,7 +751,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-session-fork.md",
+                    "output": "references/host/how-to/how-to-host-session-fork.md",
                     "section": "从精确日志边界创建子 Session"
                 }
             ]
@@ -763,7 +769,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-session-query.md",
+                    "output": "references/host/how-to/how-to-host-session-query.md",
                     "section": "查询历史或实现全文搜索 backend"
                 }
             ]
@@ -780,7 +786,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-session-surface.md",
+                    "output": "references/host/how-to/how-to-host-session-surface.md",
                     "section": "让插件事件改变模型可见消息"
                 }
             ]
@@ -797,7 +803,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-session-title.md",
+                    "output": "references/host/how-to/how-to-host-session-title.md",
                     "section": "注册一个自定义标题 provider"
                 }
             ]
@@ -814,7 +820,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-shell-env.md",
+                    "output": "references/host/how-to/how-to-host-shell-env.md",
                     "section": "为模型 Shell 调用贡献环境事实"
                 }
             ]
@@ -832,7 +838,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-subagent.md",
+                    "output": "references/host/how-to/how-to-host-subagent.md",
                     "section": "组合或调用具名委派 provider"
                 }
             ]
@@ -852,12 +858,12 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-tool.md",
+                    "output": "references/host/how-to/how-to-host-tool.md",
                     "section": "让 Agent 调用一个可取消的模型工具"
                 }
             ],
             "entry": {
-                "output": "references/how-to-host-tool.md",
+                "output": "references/host/how-to/how-to-host-tool.md",
                 "section": "让 Agent 调用一个可取消的模型工具",
                 "anchor": "让-agent-调用一个可取消的模型工具"
             },
@@ -879,7 +885,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-user-questions.md",
+                    "output": "references/host/how-to/how-to-host-user-questions.md",
                     "section": "在工具中取得结构化回答"
                 }
             ]
@@ -897,7 +903,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-host-workflow.md",
+                    "output": "references/host/how-to/how-to-host-workflow.md",
                     "section": "从插件运行一次编排脚本"
                 }
             ]
@@ -914,7 +920,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-app-args.md",
+                    "output": "references/infra/how-to/how-to-infra-app-args.md",
                     "section": "为自定义 Profile 解析应用参数"
                 }
             ]
@@ -932,7 +938,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-http-route.md",
+                    "output": "references/infra/how-to/how-to-infra-http-route.md",
                     "section": "给 Web Profile 添加具名 HTTP 路由"
                 }
             ]
@@ -950,10 +956,11 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-invariants.md",
+                    "output": "references/infra/how-to/how-to-infra-invariants.md",
                     "section": "给插件组合装载包拥有的不变式检查"
                 }
-            ]
+            ],
+            "navigationLabel": "为 Profile 加入运行时自检"
         },
         {
             "id": "expose-live-config",
@@ -969,7 +976,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-live-config.md",
+                    "output": "references/infra/how-to/how-to-infra-live-config.md",
                     "section": "让插件配置在运行中安全更新"
                 }
             ]
@@ -995,7 +1002,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-persistence.md",
+                    "output": "references/infra/how-to/how-to-infra-persistence.md",
                     "section": "保存插件自有记录并在重启后读取"
                 }
             ]
@@ -1032,7 +1039,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-profile-bundle.md",
+                    "output": "references/infra/how-to/how-to-infra-profile-bundle.md",
                     "section": "制作可安装的 Profile 组合包"
                 }
             ]
@@ -1058,7 +1065,7 @@
             "configurationOnly": true,
             "destinations": [
                 {
-                    "output": "references/how-to-infra-profile-bundle.md",
+                    "output": "references/infra/how-to/how-to-infra-profile-bundle.md",
                     "section": "在 Profile 中安装并检查组合包"
                 }
             ]
@@ -1079,7 +1086,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-artifacts.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-artifacts.md",
                     "section": "从插件调用 Spill 与附件存储"
                 }
             ],
@@ -1114,7 +1121,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-browser-use.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-browser-use.md",
                     "section": "选择并装载一个 Browser use provider"
                 }
             ]
@@ -1134,7 +1141,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-computer-use.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-computer-use.md",
                     "section": "选择并装载一个 Computer use provider"
                 }
             ],
@@ -1160,7 +1167,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-execution.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-execution.md",
                     "section": "通过 ShellExecutor 运行受限命令"
                 }
             ]
@@ -1183,7 +1190,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-fs.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-fs.md",
                     "section": "在 Host 插件中通过 ctx.fs 读取文件"
                 }
             ]
@@ -1203,7 +1210,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-lsp.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-lsp.md",
                     "section": "为文件扩展名注册 LSP provider"
                 }
             ],
@@ -1225,7 +1232,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-mcp-resources.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-mcp-resources.md",
                     "section": "注册具名 MCP 资源 provider"
                 }
             ]
@@ -1243,7 +1250,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-ptc.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-ptc.md",
                     "section": "在 Host 插件中运行带 binding 的程序"
                 }
             ]
@@ -1261,7 +1268,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-skill.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-skill.md",
                     "section": "注册虚拟 Agent Skill"
                 }
             ]
@@ -1280,7 +1287,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-speech.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-speech.md",
                     "section": "注册语音转写 provider"
                 }
             ]
@@ -1298,7 +1305,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-terminal.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-terminal.md",
                     "section": "在 Agent 作用域中使用持久 PTY"
                 }
             ]
@@ -1320,7 +1327,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-provider-web.md",
+                    "output": "references/infra/how-to/how-to-infra-provider-web.md",
                     "section": "注册可用的 Web 搜索 provider"
                 }
             ]
@@ -1339,7 +1346,7 @@
             ],
             "destinations": [
                 {
-                    "output": "references/how-to-infra-webhook.md",
+                    "output": "references/infra/how-to/how-to-infra-webhook.md",
                     "section": "让可信外部事件创建一次 Agent 会话"
                 }
             ]
@@ -4593,12 +4600,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/acp-app/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/acp-app/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4613,12 +4620,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/base/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/base/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4633,12 +4640,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/headless/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/headless/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4653,12 +4660,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/sdk-app/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/sdk-app/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4673,12 +4680,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/sdk-minimal/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/sdk-minimal/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4693,12 +4700,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/web-app/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/web-app/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4713,12 +4720,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "composition:packages/bundle/web-app/presets/cordis.patch.yml 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             },
             "mergedInto": "package:@deepseek-ai/dsh",
             "relationship": "composition:packages/bundle/web-app/presets/cordis.patch.yml 是「制作可安装的 Profile 组合包」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -4813,12 +4820,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-profile-bundle.md"
+                "references/infra/how-to/how-to-infra-profile-bundle.md"
             ],
             "summary": "cookbook:adding-a-package 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
+                "references/infra/how-to/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
             }
         },
         {
@@ -4831,12 +4838,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-client-publish-remote.md"
+                "references/client/how-to/how-to-client-publish-remote.md"
             ],
             "summary": "cookbook:adding-a-remote-api 支持「发布 Host Remote 供 Client 调用」任务。",
             "pluginTask": "发布 Host Remote 供 Client 调用",
             "ownerSections": {
-                "references/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
+                "references/client/how-to/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
             }
         },
         {
@@ -4857,12 +4864,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-settings-card.md"
+                "references/client/how-to/how-to-client-settings-card.md"
             ],
             "summary": "cookbook:adding-a-settings-card 支持「Host 服务命名空间时显示可编辑 Web 卡片」任务。",
             "pluginTask": "Host 服务命名空间时显示可编辑 Web 卡片",
             "ownerSections": {
-                "references/how-to-client-settings-card.md": "Host 服务命名空间时显示可编辑 Web 卡片"
+                "references/client/how-to/how-to-client-settings-card.md": "Host 服务命名空间时显示可编辑 Web 卡片"
             }
         },
         {
@@ -4875,12 +4882,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-tool.md"
+                "references/host/how-to/how-to-host-tool.md"
             ],
             "summary": "cookbook:adding-a-tool 支持「让 Agent 调用一个可取消的模型工具」任务。",
             "pluginTask": "让 Agent 调用一个可取消的模型工具",
             "ownerSections": {
-                "references/how-to-host-tool.md": "让 Agent 调用一个可取消的模型工具"
+                "references/host/how-to/how-to-host-tool.md": "让 Agent 调用一个可取消的模型工具"
             }
         },
         {
@@ -4901,12 +4908,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-llm-adapter.md"
+                "references/host/how-to/how-to-host-llm-adapter.md"
             ],
             "summary": "cookbook:adding-an-llm-adapter 支持「接入一个新的 LLM Provider」任务。",
             "pluginTask": "接入一个新的 LLM Provider",
             "ownerSections": {
-                "references/how-to-host-llm-adapter.md": "接入一个新的 LLM Provider"
+                "references/host/how-to/how-to-host-llm-adapter.md": "接入一个新的 LLM Provider"
             }
         },
         {
@@ -4951,12 +4958,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-cordis.md"
+                "references/host/api/api-host-cordis.md"
             ],
             "summary": "package:@deepseek-ai/cordis：Meta-Framework for Modern JavaScript Applications",
             "pluginTask": "提供并消费一个 Host Service",
             "ownerSections": {
-                "references/api-host-cordis.md": "Context"
+                "references/host/api/api-host-cordis.md": "Context"
             }
         },
         {
@@ -5025,12 +5032,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-profile-bundle.md"
+                "references/infra/how-to/how-to-infra-profile-bundle.md"
             ],
             "summary": "package:@deepseek-ai/dsh：dsh CLI: profile launch, plugin management, and configuration inspection",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
+                "references/infra/how-to/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
             }
         },
         {
@@ -5059,12 +5066,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-agent.md"
+                "references/host/api/api-host-agent.md"
             ],
             "summary": "package:@deepseek-ai/dsh-agent：Agent interface, registry, initiator scope, and event vocabulary for the DeepSeek Harness",
             "pluginTask": "只为一个 Agent 注册能力",
             "ownerSections": {
-                "references/api-host-agent.md": "Agent"
+                "references/host/api/api-host-agent.md": "Agent"
             }
         },
         {
@@ -5093,12 +5100,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-agent.md"
+                "references/host/api/api-host-agent.md"
             ],
             "summary": "package:@deepseek-ai/dsh-agent-loop：The concrete agent loop plugin for the DeepSeek Harness",
             "pluginTask": "只为一个 Agent 注册能力",
             "ownerSections": {
-                "references/api-host-agent.md": "AgentLoop"
+                "references/host/api/api-host-agent.md": "AgentLoop"
             }
         },
         {
@@ -5119,12 +5126,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-profile-bundle.md"
+                "references/infra/how-to/how-to-infra-profile-bundle.md"
             ],
             "summary": "package:@deepseek-ai/dsh-agent-preset：Declare an Agent capability composition in Cordis YAML",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
+                "references/infra/how-to/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
             }
         },
         {
@@ -5137,12 +5144,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-profile-bundle.md"
+                "references/infra/how-to/how-to-infra-profile-bundle.md"
             ],
             "summary": "package:@deepseek-ai/dsh-agent-preset-registry：Declarative Agent preset registry and profile-backed editing",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
+                "references/infra/how-to/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
             }
         },
         {
@@ -5179,12 +5186,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-remote.md"
+                "references/client/api/api-client-remote.md"
             ],
             "summary": "package:@deepseek-ai/dsh-api-gateway：Typert Remote Host dispatcher and Client API endpoint",
             "pluginTask": "发布 Host Remote 供 Client 调用",
             "ownerSections": {
-                "references/api-client-remote.md": "`isRemoteFailure`"
+                "references/client/api/api-client-remote.md": "`isRemoteFailure`"
             }
         },
         {
@@ -5205,12 +5212,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-remote.md"
+                "references/client/api/api-client-remote.md"
             ],
             "summary": "package:@deepseek-ai/dsh-api-remotes：Remote BFF assembly for application-selected Host capabilities",
             "pluginTask": "从 Client 调用已装载的 Remote namespace",
             "ownerSections": {
-                "references/api-client-remote.md": "`ClientRemote`"
+                "references/client/api/api-client-remote.md": "`ClientRemote`"
             }
         },
         {
@@ -5263,12 +5270,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-runtime.md"
+                "references/infra/api/api-infra-profile-runtime.md"
             ],
             "summary": "package:@deepseek-ai/dsh-app-boot：Shared boot glue for the app bins: .env loading, fail-loud Loader guards, snapshot-aware config resolution, and the Loader boot sequence",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-runtime.md": "Profile"
+                "references/infra/api/api-infra-profile-runtime.md": "Profile"
             }
         },
         {
@@ -5289,12 +5296,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-artifacts.md"
+                "references/infra/api/api-infra-provider-artifacts.md"
             ],
             "summary": "package:@deepseek-ai/dsh-attachment：Durable immutable attachment storage seam for the DeepSeek Harness",
             "pluginTask": "从插件调用 Spill 与附件存储",
             "ownerSections": {
-                "references/api-infra-provider-artifacts.md": "AttachmentStore"
+                "references/infra/api/api-infra-provider-artifacts.md": "AttachmentStore"
             }
         },
         {
@@ -5315,12 +5322,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-credentials.md"
+                "references/host/api/api-host-credentials.md"
             ],
             "summary": "package:@deepseek-ai/dsh-authorization：Authorization seam (ctx.authorization): plugin-owned flows that obtain a credential through a conversation with the human",
             "pluginTask": "保存插件凭据并注册授权流程",
             "ownerSections": {
-                "references/api-host-credentials.md": "AuthorizationFlow"
+                "references/host/api/api-host-credentials.md": "AuthorizationFlow"
             }
         },
         {
@@ -5365,12 +5372,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-browser-use.md"
+                "references/infra/api/api-infra-provider-browser-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-browser-use：Exclusive named browser-use provider registration",
             "pluginTask": "选择并装载一个 Browser use provider",
             "ownerSections": {
-                "references/api-infra-provider-browser-use.md": "BrowserUseRegistry"
+                "references/infra/api/api-infra-provider-browser-use.md": "BrowserUseRegistry"
             }
         },
         {
@@ -5399,12 +5406,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-services.md"
+                "references/client/api/api-client-services.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-file-upload：Agent-scoped browser file upload, streaming intake, and staged receipt service",
             "pluginTask": "向指定 Session 上传浏览器文件",
             "ownerSections": {
-                "references/api-client-services.md": "`FileUploadProgress`"
+                "references/client/api/api-client-services.md": "`FileUploadProgress`"
             }
         },
         {
@@ -5425,12 +5432,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-services.md"
+                "references/client/api/api-client-services.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-locale：Locale plugin: Host-backed preference, extensible language catalog, browser fallback, and typed built-in dictionaries",
             "pluginTask": "给 slot 组件提供可切换文案与命令",
             "ownerSections": {
-                "references/api-client-services.md": "`LocaleRuntime`"
+                "references/client/api/api-client-services.md": "`LocaleRuntime`"
             }
         },
         {
@@ -5443,12 +5450,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-modules.md"
+                "references/client/api/api-client-modules.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-modules：Client module system, dual-face: node half composes the __DSH_BOOT__ entry graph (incremental dsh.client scan, bundle route, index tap, webPlugins service); browser half is the lazy-CJS module table the vendored cordis Loader consumes as its internal seam",
             "pluginTask": "让一个 Client UI 包随 Profile 在浏览器出现",
             "ownerSections": {
-                "references/api-client-modules.md": "`ClientModuleRegistry`"
+                "references/client/api/api-client-modules.md": "`ClientModuleRegistry`"
             }
         },
         {
@@ -5469,12 +5476,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-services.md"
+                "references/client/api/api-client-services.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-resources：Unified client resource model: protocol-registered providers turn URL addresses into live values, consumed through the useResource global standard hook",
             "pluginTask": "注册一个按地址读取的 Resource Provider",
             "ownerSections": {
-                "references/api-client-services.md": "`ResourceProvider<P>`"
+                "references/client/api/api-client-services.md": "`ResourceProvider<P>`"
             }
         },
         {
@@ -5487,12 +5494,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-services.md"
+                "references/client/api/api-client-services.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-shortcuts：Application keyboard command registry and physical-key routing",
             "pluginTask": "给 slot 组件提供可切换文案与命令",
             "ownerSections": {
-                "references/api-client-services.md": "`ShortcutCommand`"
+                "references/client/api/api-client-services.md": "`ShortcutCommand`"
             }
         },
         {
@@ -5505,12 +5512,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-services.md"
+                "references/client/api/api-client-services.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-store：React-free observable and snapshot-store contracts with the shared Zustand/Immer engine",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/api-client-services.md": "`createSnapshotStore`"
+                "references/client/api/api-client-services.md": "`createSnapshotStore`"
             }
         },
         {
@@ -5563,12 +5570,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-conversation.md"
+                "references/client/api/api-client-conversation.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-chat：Chat Conversation target, node definitions, renderers, and details surface",
             "pluginTask": "让可回放的 Session 事件在 Chat 中显示",
             "ownerSections": {
-                "references/api-client-conversation.md": "`ChatNode`"
+                "references/client/api/api-client-conversation.md": "`ChatNode`"
             }
         },
         {
@@ -5581,12 +5588,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-commands.md"
+                "references/client/api/api-client-commands.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-commands：Client command surface: global directory cache, '/' source, three command UI kinds, popupSelect registry",
             "pluginTask": "贡献 Client 命令 UI",
             "ownerSections": {
-                "references/api-client-commands.md": "`ActionSpec`"
+                "references/client/api/api-client-commands.md": "`ActionSpec`"
             }
         },
         {
@@ -5599,12 +5606,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-conversation.md"
+                "references/client/api/api-client-conversation.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-conversation：Target-neutral Conversation assembly, shell, composer, queue, and view navigation",
             "pluginTask": "让可回放的 Session 事件在 Chat 中显示",
             "ownerSections": {
-                "references/api-client-conversation.md": "`ConversationEventRegistry`"
+                "references/client/api/api-client-conversation.md": "`ConversationEventRegistry`"
             }
         },
         {
@@ -5665,12 +5672,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-interaction.md"
+                "references/client/api/api-client-interaction.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-input-trigger：Input trigger pipeline: '/' and '@' detection, candidate menu, pick routing to registered sources",
             "pluginTask": "注册一个 `/` 或 `@` 来源",
             "ownerSections": {
-                "references/api-client-interaction.md": "`InputTriggerCandidate`"
+                "references/client/api/api-client-interaction.md": "`InputTriggerCandidate`"
             }
         },
         {
@@ -5691,12 +5698,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-sidebar.md"
+                "references/client/api/api-client-sidebar.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-layout：Shell plugin: three-column AppFrame with drag handles, ctx.layout viewing-state service (navigation + panels)",
             "pluginTask": "贡献右侧栏 Tab",
             "ownerSections": {
-                "references/api-client-sidebar.md": "`ILayout`"
+                "references/client/api/api-client-sidebar.md": "`ILayout`"
             }
         },
         {
@@ -5749,12 +5756,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-settings.md"
+                "references/client/api/api-client-settings.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-plugin-manager：Plugin management for the dsh web client: the sidebar Plugins panel installs, enables, disables, retries, and composes installed plugin packages",
             "pluginTask": "Host 服务命名空间时显示可编辑 Web 卡片",
             "ownerSections": {
-                "references/api-client-settings.md": "`PluginConfigViewProps`"
+                "references/client/api/api-client-settings.md": "`PluginConfigViewProps`"
             }
         },
         {
@@ -5767,12 +5774,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-shared-ui.md"
+                "references/client/api/api-client-shared-ui.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-primitives：Pure React atoms for the dsh web UI: controls, icons, markdown, and JSON inspectors (zero cordis)",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/api-client-shared-ui.md": "`Button`"
+                "references/client/api/api-client-shared-ui.md": "`Button`"
             }
         },
         {
@@ -5793,12 +5800,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-slots.md"
+                "references/client/api/api-client-slots.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-renderer：Browser UI renderer: React slot bindings, ctx.uiRenderer, and the assembled application root",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/api-client-slots.md": "`SlotRegistry`"
+                "references/client/api/api-client-slots.md": "`SlotRegistry`"
             }
         },
         {
@@ -5819,12 +5826,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-conversation.md"
+                "references/client/api/api-client-conversation.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-session：Session Controller adapter for React and session-scoped slots",
             "pluginTask": "让可回放的 Session 事件在 Chat 中显示",
             "ownerSections": {
-                "references/api-client-conversation.md": "`UiSession`"
+                "references/client/api/api-client-conversation.md": "`UiSession`"
             }
         },
         {
@@ -5837,12 +5844,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-settings.md"
+                "references/client/api/api-client-settings.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-settings：Settings domain base plugin: shared configuration forms and the canonical settings slot-type contract",
             "pluginTask": "Host 服务命名空间时显示可编辑 Web 卡片",
             "ownerSections": {
-                "references/api-client-settings.md": "`ConfigForm<T>`"
+                "references/client/api/api-client-settings.md": "`ConfigForm<T>`"
             }
         },
         {
@@ -5895,12 +5902,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-settings-card.md"
+                "references/client/how-to/how-to-client-settings-card.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-settings-plugins：Built-in plugins settings section for the dsh web client: the Settings navigation entry and the tab chrome feature-owned tabs register into",
             "pluginTask": "Host 服务命名空间时显示可编辑 Web 卡片",
             "ownerSections": {
-                "references/how-to-client-settings-card.md": "Host 服务命名空间时显示可编辑 Web 卡片"
+                "references/client/how-to/how-to-client-settings-card.md": "Host 服务命名空间时显示可编辑 Web 卡片"
             }
         },
         {
@@ -5937,12 +5944,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-slot-contribution.md"
+                "references/client/how-to/how-to-client-slot-contribution.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-settings-web-search：Settings page of the DeepSeek web-search provider on the dsh web client's Plugins page: its API key, endpoint, and per-request search budget",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/how-to-client-slot-contribution.md": "在已有页面的 slot 显示插件内容"
+                "references/client/how-to/how-to-client-slot-contribution.md": "在已有页面的 slot 显示插件内容"
             },
             "mergedInto": "package:@deepseek-ai/dsh-client-ui-slots",
             "relationship": "package:@deepseek-ai/dsh-client-ui-settings-web-search 是「在已有页面的 slot 显示插件内容」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -5965,12 +5972,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-sidebar.md"
+                "references/client/api/api-client-sidebar.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-sidebar：Sidebar plugin: session multi-level tree, search, grouping, state dots",
             "pluginTask": "左栏全局面板贡献",
             "ownerSections": {
-                "references/api-client-sidebar.md": "`SidebarBrandMarkOwnerProps`"
+                "references/client/api/api-client-sidebar.md": "`SidebarBrandMarkOwnerProps`"
             }
         },
         {
@@ -5991,12 +5998,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-preview.md"
+                "references/client/api/api-client-preview.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-sidebar-documentpreview：Extensible Sidebar previews for Office documents, spreadsheets, Markdown, code, images, PDF, HTML, and plain text",
             "pluginTask": "给文件后缀注册独立的预览 renderer",
             "ownerSections": {
-                "references/api-client-preview.md": "`DocumentContent`"
+                "references/client/api/api-client-preview.md": "`DocumentContent`"
             }
         },
         {
@@ -6017,12 +6024,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-sidebar.md"
+                "references/client/api/api-client-sidebar.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-sidebar-right：Right Sidebar: the docking surface's session-bound state, its panel and header expand control, and the navigation service over it",
             "pluginTask": "贡献右侧栏 Tab",
             "ownerSections": {
-                "references/api-client-sidebar.md": "`ISidebarRight`"
+                "references/client/api/api-client-sidebar.md": "`ISidebarRight`"
             }
         },
         {
@@ -6051,12 +6058,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-slots.md"
+                "references/client/api/api-client-slots.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-slots：Slot registry pure core: typed ordinary Slots and reusable Component Factories, derived props, Store seats, and renderer installation",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/api-client-slots.md": "`ComposedProps`"
+                "references/client/api/api-client-slots.md": "`ComposedProps`"
             }
         },
         {
@@ -6077,12 +6084,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-shared-ui.md"
+                "references/client/api/api-client-shared-ui.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-theme：Theme plugin: Host bootstrap for the pre-plugin palette; DOM-free ThemeRuntime for light/dark/system state; --dsw-* token styles and Appearance settings row",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/api-client-shared-ui.md": "`ThemeDefinition`"
+                "references/client/api/api-client-shared-ui.md": "`ThemeDefinition`"
             }
         },
         {
@@ -6095,12 +6102,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-interaction.md"
+                "references/client/api/api-client-interaction.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-tool：Client Tool call-tree renderer and keyed per-tool presentation slot",
             "pluginTask": "为自己的工具名注册 Tool View",
             "ownerSections": {
-                "references/api-client-interaction.md": "`ToolCallOwnerProps`"
+                "references/client/api/api-client-interaction.md": "`ToolCallOwnerProps`"
             }
         },
         {
@@ -6137,12 +6144,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-sidebar.md"
+                "references/client/api/api-client-sidebar.md"
             ],
             "summary": "package:@deepseek-ai/dsh-client-ui-workspace：Workspace picker plugin: one WorkspacePicker registered into the sidebar and empty-state workspace slots",
             "pluginTask": "导航 Workspace 与 Session",
             "ownerSections": {
-                "references/api-client-sidebar.md": "`UiWorkspace`"
+                "references/client/api/api-client-sidebar.md": "`UiWorkspace`"
             }
         },
         {
@@ -6163,12 +6170,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-cmdline.md"
+                "references/infra/api/api-infra-cmdline.md"
             ],
             "summary": "package:@deepseek-ai/dsh-cmdline：Immutable command-line handoff from a dsh launcher to any app plugin that injects cmdlineArgs",
             "pluginTask": "为自定义 Profile 解析应用参数",
             "ownerSections": {
-                "references/api-infra-cmdline.md": "AppExit"
+                "references/infra/api/api-infra-cmdline.md": "AppExit"
             }
         },
         {
@@ -6205,12 +6212,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-commands.md"
+                "references/host/api/api-host-commands.md"
             ],
             "summary": "package:@deepseek-ai/dsh-commands：Plugin-owned human command registry for DeepSeek Harness UIs",
             "pluginTask": "注册一个由交互界面执行的命令",
             "ownerSections": {
-                "references/api-host-commands.md": "CommandDefinition"
+                "references/host/api/api-host-commands.md": "CommandDefinition"
             }
         },
         {
@@ -6223,12 +6230,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-compaction.md"
+                "references/host/api/api-host-compaction.md"
             ],
             "summary": "package:@deepseek-ai/dsh-compaction：Abstract compaction service seam (ctx.compaction) for the DeepSeek Harness",
             "pluginTask": "挂载或实现压缩 backend",
             "ownerSections": {
-                "references/api-host-compaction.md": "compactCheckpointSource"
+                "references/host/api/api-host-compaction.md": "compactCheckpointSource"
             }
         },
         {
@@ -6265,12 +6272,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-computer-use.md"
+                "references/infra/api/api-infra-provider-computer-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-computer-use：Exclusive named computer-use provider registration",
             "pluginTask": "选择并装载一个 Computer use provider",
             "ownerSections": {
-                "references/api-infra-provider-computer-use.md": "ComputerUseRegistry"
+                "references/infra/api/api-infra-provider-computer-use.md": "ComputerUseRegistry"
             }
         },
         {
@@ -6283,12 +6290,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-live-config.md"
+                "references/infra/api/api-infra-live-config.md"
             ],
             "summary": "package:@deepseek-ai/dsh-config-editor：Persist plugin configuration through profile patches and Loader reconciliation",
             "pluginTask": "让插件配置在运行中安全更新",
             "ownerSections": {
-                "references/api-infra-live-config.md": "ConfigEditor"
+                "references/infra/api/api-infra-live-config.md": "ConfigEditor"
             },
             "mergedInto": "package:@deepseek-ai/dsh-settings",
             "relationship": "package:@deepseek-ai/dsh-config-editor 是「让插件配置在运行中安全更新」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6319,12 +6326,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-credentials.md"
+                "references/host/api/api-host-credentials.md"
             ],
             "summary": "package:@deepseek-ai/dsh-credentials：Abstract credential seam (ctx.credentials): settings carry references to secrets, providers own the values",
             "pluginTask": "保存插件凭据并注册授权流程",
             "ownerSections": {
-                "references/api-host-credentials.md": "CredentialKey"
+                "references/host/api/api-host-credentials.md": "CredentialKey"
             }
         },
         {
@@ -6393,12 +6400,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-speech.md"
+                "references/infra/how-to/how-to-infra-provider-speech.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-api-speech-to-text：Authenticated experimental speech transcription for browser clients",
             "pluginTask": "注册语音转写 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-speech.md": "注册语音转写 provider"
+                "references/infra/how-to/how-to-infra-provider-speech.md": "注册语音转写 provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-experimental-speech-to-text",
             "relationship": "package:@deepseek-ai/dsh-experimental-api-speech-to-text 是「注册语音转写 provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6421,12 +6428,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-browser-use.md"
+                "references/infra/how-to/how-to-infra-provider-browser-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp：Experimental per-Session Chromium browser tools through chrome-devtools-mcp",
             "pluginTask": "选择并装载一个 Browser use provider",
             "ownerSections": {
-                "references/how-to-infra-provider-browser-use.md": "选择并装载一个 Browser use provider"
+                "references/infra/how-to/how-to-infra-provider-browser-use.md": "选择并装载一个 Browser use provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-browser-use",
             "relationship": "package:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp 是「选择并装载一个 Browser use provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6441,12 +6448,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-browser-use.md"
+                "references/infra/how-to/how-to-infra-provider-browser-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp：Experimental per-Session Chromium browser tools through @playwright/mcp",
             "pluginTask": "选择并装载一个 Browser use provider",
             "ownerSections": {
-                "references/how-to-infra-provider-browser-use.md": "选择并装载一个 Browser use provider"
+                "references/infra/how-to/how-to-infra-provider-browser-use.md": "选择并装载一个 Browser use provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-browser-use",
             "relationship": "package:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp 是「选择并装载一个 Browser use provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6461,12 +6468,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-browser-use.md"
+                "references/infra/api/api-infra-provider-browser-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-browser-use-runtime：Session-owned browser resource lifecycles and MCP integration for experimental providers",
             "pluginTask": "选择并装载一个 Browser use provider",
             "ownerSections": {
-                "references/api-infra-provider-browser-use.md": "OwnedSessionResource"
+                "references/infra/api/api-infra-provider-browser-use.md": "OwnedSessionResource"
             }
         },
         {
@@ -6479,12 +6486,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-browser-use.md"
+                "references/infra/how-to/how-to-infra-provider-browser-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-browser-use-stagehand-native：Experimental Stagehand browser tools with separately configured native models",
             "pluginTask": "选择并装载一个 Browser use provider",
             "ownerSections": {
-                "references/how-to-infra-provider-browser-use.md": "选择并装载一个 Browser use provider"
+                "references/infra/how-to/how-to-infra-provider-browser-use.md": "选择并装载一个 Browser use provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-browser-use",
             "relationship": "package:@deepseek-ai/dsh-experimental-browser-use-stagehand-native 是「选择并装载一个 Browser use provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6515,12 +6522,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-computer-use.md"
+                "references/infra/how-to/how-to-infra-provider-computer-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp：Experimental computer use through an installed Cua Driver MCP executable",
             "pluginTask": "选择并装载一个 Computer use provider",
             "ownerSections": {
-                "references/how-to-infra-provider-computer-use.md": "选择并装载一个 Computer use provider"
+                "references/infra/how-to/how-to-infra-provider-computer-use.md": "选择并装载一个 Computer use provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-computer-use",
             "relationship": "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp 是「选择并装载一个 Computer use provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6535,12 +6542,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-computer-use.md"
+                "references/infra/how-to/how-to-infra-provider-computer-use.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-native：Experimental computer-use provider embedding the Cua Driver native npm SDK",
             "pluginTask": "选择并装载一个 Computer use provider",
             "ownerSections": {
-                "references/how-to-infra-provider-computer-use.md": "选择并装载一个 Computer use provider"
+                "references/infra/how-to/how-to-infra-provider-computer-use.md": "选择并装载一个 Computer use provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-computer-use",
             "relationship": "package:@deepseek-ai/dsh-experimental-computer-use-cua-driver-native 是「选择并装载一个 Computer use provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6579,12 +6586,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-speech.md"
+                "references/infra/api/api-infra-provider-speech.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-speech-to-text：Experimental speech recognition with independently selectable providers",
             "pluginTask": "注册语音转写 provider",
             "ownerSections": {
-                "references/api-infra-provider-speech.md": "SpeechToText default"
+                "references/infra/api/api-infra-provider-speech.md": "SpeechToText default"
             }
         },
         {
@@ -6597,12 +6604,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-speech.md"
+                "references/infra/how-to/how-to-infra-provider-speech.md"
             ],
             "summary": "package:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice：Local SenseVoice ONNX transcription with a managed sherpa-onnx process",
             "pluginTask": "注册语音转写 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-speech.md": "注册语音转写 provider"
+                "references/infra/how-to/how-to-infra-provider-speech.md": "注册语音转写 provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-experimental-speech-to-text",
             "relationship": "package:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice 是「注册语音转写 provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -6649,12 +6656,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-references.md"
+                "references/client/api/api-client-references.md"
             ],
             "summary": "package:@deepseek-ai/dsh-file-reference：File-reference discovery contract and shared @file grammar",
             "pluginTask": "为 `@file` 提供 Host 发现后端",
             "ownerSections": {
-                "references/api-client-references.md": "`FileReferenceCandidate`"
+                "references/client/api/api-client-references.md": "`FileReferenceCandidate`"
             }
         },
         {
@@ -6667,12 +6674,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-references.md"
+                "references/client/api/api-client-references.md"
             ],
             "summary": "package:@deepseek-ai/dsh-file-reference-local：Local-filesystem ctx.fileReferences provider with bounded fuzzy indexes",
             "pluginTask": "为 `@file` 提供 Host 发现后端",
             "ownerSections": {
-                "references/api-client-references.md": "`LocalFileReferenceService`"
+                "references/client/api/api-client-references.md": "`LocalFileReferenceService`"
             }
         },
         {
@@ -6685,12 +6692,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-fs.md"
+                "references/infra/api/api-infra-provider-fs.md"
             ],
             "summary": "package:@deepseek-ai/dsh-fs：Abstract filesystem capability seam (ctx.fs) for the DeepSeek Harness — vocabulary types, the FileSystem service (text IO + optional version-guarded atomic mutations), and the fs/* policy event vocabulary",
             "pluginTask": "在 Host 插件中通过 ctx.fs 读取文件",
             "ownerSections": {
-                "references/api-infra-provider-fs.md": "FileSystem"
+                "references/infra/api/api-infra-provider-fs.md": "FileSystem"
             }
         },
         {
@@ -6735,12 +6742,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-goal.md"
+                "references/host/api/api-host-goal.md"
             ],
             "summary": "package:@deepseek-ai/dsh-goal：Event-sourced same-session goal state and lifecycle service for the DeepSeek Harness",
             "pluginTask": "从插件管理一项跨轮次目标",
             "ownerSections": {
-                "references/api-host-goal.md": "CreateGoalRequest"
+                "references/host/api/api-host-goal.md": "CreateGoalRequest"
             }
         },
         {
@@ -6809,12 +6816,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-directory-picker.md"
+                "references/host/api/api-host-directory-picker.md"
             ],
             "summary": "package:@deepseek-ai/dsh-host-directory-picker：Abstract workspace-directory picking seam (ctx.directoryPicker) for the DeepSeek Harness web GUI host",
             "pluginTask": "接入可替换的目录选择后端",
             "ownerSections": {
-                "references/api-host-directory-picker.md": "DirectoryEntry"
+                "references/host/api/api-host-directory-picker.md": "DirectoryEntry"
             }
         },
         {
@@ -6883,12 +6890,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-webserver.md"
+                "references/infra/api/api-infra-webserver.md"
             ],
             "summary": "package:@deepseek-ai/dsh-host-webserver：Web route-registration plugin: HTTP and upgrade routes, index transform taps, and static dist fallback; knows no harness concepts",
             "pluginTask": "给 Web Profile 添加具名 HTTP 路由",
             "ownerSections": {
-                "references/api-infra-webserver.md": "WebRoute"
+                "references/infra/api/api-infra-webserver.md": "WebRoute"
             }
         },
         {
@@ -6909,12 +6916,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-invariants.md"
+                "references/infra/api/api-infra-invariants.md"
             ],
             "summary": "package:@deepseek-ai/dsh-invariants：Registry service for package-owned DeepSeek Harness runtime invariants",
             "pluginTask": "给插件组合装载包拥有的不变式检查",
             "ownerSections": {
-                "references/api-infra-invariants.md": "Config"
+                "references/infra/api/api-infra-invariants.md": "Config"
             }
         },
         {
@@ -6927,12 +6934,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-jobs.md"
+                "references/host/api/api-host-jobs.md"
             ],
             "summary": "package:@deepseek-ai/dsh-jobs：Background job registry (ctx.jobs) for the DeepSeek Harness — shared ids, owner isolation, polling, cancellation, and completion listeners for long-running tool work",
             "pluginTask": "注册可被 Agent 收取的长任务",
             "ownerSections": {
-                "references/api-host-jobs.md": "JobHandle"
+                "references/host/api/api-host-jobs.md": "JobHandle"
             }
         },
         {
@@ -6969,12 +6976,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-llm.md"
+                "references/host/api/api-host-llm.md"
             ],
             "summary": "package:@deepseek-ai/dsh-llm：Provider-neutral LLM service interface for the DeepSeek Harness",
             "pluginTask": "接入一个新的 LLM Provider",
             "ownerSections": {
-                "references/api-host-llm.md": "AdapterRegistrationHandle"
+                "references/host/api/api-host-llm.md": "AdapterRegistrationHandle"
             }
         },
         {
@@ -7051,12 +7058,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-lsp.md"
+                "references/infra/api/api-infra-provider-lsp.md"
             ],
             "summary": "package:@deepseek-ai/dsh-lsp：Abstract LSP capability seam (ctx.lsp) for the DeepSeek Harness — language-server provider registry keyed by branded id and extension mapping, order-independent per-query selection, normalized definition/references/implementation/hover requests and results, and the LspError taxonomy",
             "pluginTask": "为文件扩展名注册 LSP provider",
             "ownerSections": {
-                "references/api-infra-provider-lsp.md": "Lsp"
+                "references/infra/api/api-infra-provider-lsp.md": "Lsp"
             }
         },
         {
@@ -7069,12 +7076,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-lsp.md"
+                "references/infra/how-to/how-to-infra-provider-lsp.md"
             ],
             "summary": "package:@deepseek-ai/dsh-lsp-stdio：Generic stdio language-server provider for the DeepSeek Harness LSP capability seam (ctx.lsp) — spawns configured servers, translates JSON-RPC, and serves transient-open goToDefinition/findReferences/goToImplementation/hover queries in the host filesystem namespace",
             "pluginTask": "为文件扩展名注册 LSP provider",
             "ownerSections": {
-                "references/how-to-infra-provider-lsp.md": "为文件扩展名注册 LSP provider"
+                "references/infra/how-to/how-to-infra-provider-lsp.md": "为文件扩展名注册 LSP provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-lsp",
             "relationship": "package:@deepseek-ai/dsh-lsp-stdio 是「为文件扩展名注册 LSP provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -7097,12 +7104,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-mcp-resources.md"
+                "references/infra/api/api-infra-provider-mcp-resources.md"
             ],
             "summary": "package:@deepseek-ai/dsh-mcp-resources：Scoped MCP resource discovery and reading through shared model tools",
             "pluginTask": "注册具名 MCP 资源 provider",
             "ownerSections": {
-                "references/api-infra-provider-mcp-resources.md": "McpResourceProvider"
+                "references/infra/api/api-infra-provider-mcp-resources.md": "McpResourceProvider"
             }
         },
         {
@@ -7155,12 +7162,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-manifest.md"
+                "references/infra/api/api-infra-profile-manifest.md"
             ],
             "summary": "package:@deepseek-ai/dsh-package-manifest：Shared type declarations for package.json.dsh configuration fields",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-manifest.md": "DshBundleManifest"
+                "references/infra/api/api-infra-profile-manifest.md": "DshBundleManifest"
             }
         },
         {
@@ -7197,12 +7204,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-profile-runtime.md"
+                "references/infra/api/api-infra-profile-runtime.md"
             ],
             "summary": "package:@deepseek-ai/dsh-plugin-manager：Current-profile plugin and bundle management shared by dsh CLI, Web and agent tools",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/api-infra-profile-runtime.md": "PluginManager"
+                "references/infra/api/api-infra-profile-runtime.md": "PluginManager"
             }
         },
         {
@@ -7223,12 +7230,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-ptc.md"
+                "references/infra/api/api-infra-provider-ptc.md"
             ],
             "summary": "package:@deepseek-ai/dsh-ptc-runtime：Abstract PTC execution seam (ctx.ptcRuntime) for the DeepSeek Harness",
             "pluginTask": "在 Host 插件中运行带 binding 的程序",
             "ownerSections": {
-                "references/api-infra-provider-ptc.md": "PtcBindingNamespace"
+                "references/infra/api/api-infra-provider-ptc.md": "PtcBindingNamespace"
             }
         },
         {
@@ -7241,12 +7248,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-ptc.md"
+                "references/infra/how-to/how-to-infra-provider-ptc.md"
             ],
             "summary": "package:@deepseek-ai/dsh-ptc-runtime-node：Sandboxed Node process implementation of the DeepSeek Harness PTC execution capability",
             "pluginTask": "在 Host 插件中运行带 binding 的程序",
             "ownerSections": {
-                "references/how-to-infra-provider-ptc.md": "在 Host 插件中运行带 binding 的程序"
+                "references/infra/how-to/how-to-infra-provider-ptc.md": "在 Host 插件中运行带 binding 的程序"
             },
             "mergedInto": "package:@deepseek-ai/dsh-ptc-runtime",
             "relationship": "package:@deepseek-ai/dsh-ptc-runtime-node 是「在 Host 插件中运行带 binding 的程序」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -7293,12 +7300,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-execution.md"
+                "references/infra/api/api-infra-provider-execution.md"
             ],
             "summary": "package:@deepseek-ai/dsh-sandbox：Abstract process-sandbox seam (ctx.sandbox) for the DeepSeek Harness: same-world confinement vocabulary and the SandboxProvider contract",
             "pluginTask": "通过 ShellExecutor 运行受限命令",
             "ownerSections": {
-                "references/api-infra-provider-execution.md": "ConfinedArgv"
+                "references/infra/api/api-infra-provider-execution.md": "ConfinedArgv"
             }
         },
         {
@@ -7351,12 +7358,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-scope.md"
+                "references/host/api/api-host-scope.md"
             ],
             "summary": "package:@deepseek-ai/dsh-scope：Scoped-context registration primitive (scope tags, scope-filtered event dispatch) for the DeepSeek Harness",
             "pluginTask": "为 Agent 隔离插件注册与事件",
             "ownerSections": {
-                "references/api-host-scope.md": "bindScopeParent"
+                "references/host/api/api-host-scope.md": "bindScopeParent"
             }
         },
         {
@@ -7409,12 +7416,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-session-surface.md"
+                "references/host/api/api-host-session-surface.md"
             ],
             "summary": "package:@deepseek-ai/dsh-session：Event-sourced session store for the DeepSeek Harness",
             "pluginTask": "为插件记录可恢复的领域事实",
             "ownerSections": {
-                "references/api-host-session-surface.md": "buildForkSeed"
+                "references/host/api/api-host-session-surface.md": "buildForkSeed"
             }
         },
         {
@@ -7499,12 +7506,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-persistence.md"
+                "references/host/api/api-host-persistence.md"
             ],
             "summary": "package:@deepseek-ai/dsh-session-persistence：Abstract durable session persistence seam (ctx.sessionPersistence) for the DeepSeek Harness",
             "pluginTask": "实现并挂载一个 Session 存储后端",
             "ownerSections": {
-                "references/api-host-persistence.md": "SessionHandle"
+                "references/host/api/api-host-persistence.md": "SessionHandle"
             }
         },
         {
@@ -7525,12 +7532,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-session.md"
+                "references/host/api/api-host-session.md"
             ],
             "summary": "package:@deepseek-ai/dsh-session-projection：Session-projection seam: the merge-extensible projection type table, the provider contract, and the ctx.sessionProjections registry serving whole current values of log-derived per-session state",
             "pluginTask": "为插件记录可恢复的领域事实",
             "ownerSections": {
-                "references/api-host-session.md": "ProjectionDefinition"
+                "references/host/api/api-host-session.md": "ProjectionDefinition"
             }
         },
         {
@@ -7551,12 +7558,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-session-query.md"
+                "references/host/api/api-host-session-query.md"
             ],
             "summary": "package:@deepseek-ai/dsh-session-query：Combined session query service contract with concrete reads, traces, and filters",
             "pluginTask": "查询历史或实现全文搜索 backend",
             "ownerSections": {
-                "references/api-host-session-query.md": "SessionEventResultFilter"
+                "references/host/api/api-host-session-query.md": "SessionEventResultFilter"
             }
         },
         {
@@ -7577,12 +7584,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-references.md"
+                "references/client/api/api-client-references.md"
             ],
             "summary": "package:@deepseek-ai/dsh-session-reference：Cross-session snapshot references and durable untrusted model context (ctx.sessionReferenceResolver)",
             "pluginTask": "在 Client 读取 `@file` 与 `@session` 候选",
             "ownerSections": {
-                "references/api-client-references.md": "`SessionReferenceMentionCandidate`"
+                "references/client/api/api-client-references.md": "`SessionReferenceMentionCandidate`"
             }
         },
         {
@@ -7627,12 +7634,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-session-title.md"
+                "references/host/api/api-host-session-title.md"
             ],
             "summary": "package:@deepseek-ai/dsh-session-title：Log-backed session title service and provider registry for the DeepSeek Harness",
             "pluginTask": "注册一个自定义标题 provider",
             "ownerSections": {
-                "references/api-host-session-title.md": "SessionTitleProvider"
+                "references/host/api/api-host-session-title.md": "SessionTitleProvider"
             }
         },
         {
@@ -7677,12 +7684,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/api-infra-live-config.md"
+                "references/infra/api/api-infra-live-config.md"
             ],
             "summary": "package:@deepseek-ai/dsh-settings：Abstract user-settings seam (ctx.settings) for the DeepSeek Harness",
             "pluginTask": "让插件配置在运行中安全更新",
             "ownerSections": {
-                "references/api-infra-live-config.md": "SettingsConflictError"
+                "references/infra/api/api-infra-live-config.md": "SettingsConflictError"
             }
         },
         {
@@ -7695,12 +7702,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-execution.md"
+                "references/infra/api/api-infra-provider-execution.md"
             ],
             "summary": "package:@deepseek-ai/dsh-shell：Abstract bash executor seam (ctx.shell) for the DeepSeek Harness",
             "pluginTask": "通过 ShellExecutor 运行受限命令",
             "ownerSections": {
-                "references/api-infra-provider-execution.md": "ShellExecution"
+                "references/infra/api/api-infra-provider-execution.md": "ShellExecution"
             }
         },
         {
@@ -7713,12 +7720,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-shell-env.md"
+                "references/host/api/api-host-shell-env.md"
             ],
             "summary": "package:@deepseek-ai/dsh-shell-env：Tool-independent managed DSH_* shell environment registry",
             "pluginTask": "为模型 Shell 调用贡献环境事实",
             "ownerSections": {
-                "references/api-host-shell-env.md": "BashEnvContributor"
+                "references/host/api/api-host-shell-env.md": "BashEnvContributor"
             }
         },
         {
@@ -7731,12 +7738,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-skill.md"
+                "references/infra/api/api-infra-provider-skill.md"
             ],
             "summary": "package:@deepseek-ai/dsh-skill：Agent skill provider registry for the DeepSeek Harness",
             "pluginTask": "注册虚拟 Agent Skill",
             "ownerSections": {
-                "references/api-infra-provider-skill.md": "SkillCandidate"
+                "references/infra/api/api-infra-provider-skill.md": "SkillCandidate"
             }
         },
         {
@@ -7773,12 +7780,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-artifacts.md"
+                "references/infra/api/api-infra-provider-artifacts.md"
             ],
             "summary": "package:@deepseek-ai/dsh-spill：Abstract spill storage seam (ctx.spillStore) for the DeepSeek Harness — save oversized tool text and return a retrieval locator",
             "pluginTask": "从插件调用 Spill 与附件存储",
             "ownerSections": {
-                "references/api-infra-provider-artifacts.md": "SaveTextSpill"
+                "references/infra/api/api-infra-provider-artifacts.md": "SaveTextSpill"
             }
         },
         {
@@ -7815,12 +7822,12 @@
                 "infra-persistence"
             ],
             "owners": [
-                "references/api-infra-storage.md"
+                "references/infra/api/api-infra-storage.md"
             ],
             "summary": "package:@deepseek-ai/dsh-storage：Storage hub (ctx.storage): named backend registry plus mounted data-form facilities for the DeepSeek Harness",
             "pluginTask": "保存插件自有记录并在重启后读取",
             "ownerSections": {
-                "references/api-infra-storage.md": "Storage"
+                "references/infra/api/api-infra-storage.md": "Storage"
             }
         },
         {
@@ -7833,12 +7840,12 @@
                 "infra-persistence"
             ],
             "owners": [
-                "references/api-infra-storage-domain.md"
+                "references/infra/api/api-infra-storage-domain.md"
             ],
             "summary": "package:@deepseek-ai/dsh-storage-domain：Domain data form (ctx.storage.domain): schema-validated, event-emitting KV domains over storage backends for the DeepSeek Harness",
             "pluginTask": "保存插件自有记录并在重启后读取",
             "ownerSections": {
-                "references/api-infra-storage-domain.md": "Domain"
+                "references/infra/api/api-infra-storage-domain.md": "Domain"
             }
         },
         {
@@ -7851,12 +7858,12 @@
                 "infra-persistence"
             ],
             "owners": [
-                "references/how-to-infra-persistence.md"
+                "references/infra/how-to/how-to-infra-persistence.md"
             ],
             "summary": "package:@deepseek-ai/dsh-storage-json：JSON file KV storage backend for the DeepSeek Harness storage hub",
             "pluginTask": "保存插件自有记录并在重启后读取",
             "ownerSections": {
-                "references/how-to-infra-persistence.md": "保存插件自有记录并在重启后读取"
+                "references/infra/how-to/how-to-infra-persistence.md": "保存插件自有记录并在重启后读取"
             },
             "mergedInto": "package:@deepseek-ai/dsh-storage",
             "relationship": "package:@deepseek-ai/dsh-storage-json 是「保存插件自有记录并在重启后读取」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -7871,12 +7878,12 @@
                 "infra-persistence"
             ],
             "owners": [
-                "references/how-to-infra-persistence.md"
+                "references/infra/how-to/how-to-infra-persistence.md"
             ],
             "summary": "package:@deepseek-ai/dsh-storage-sqlite：SQLite storage backend (kv facet) for the DeepSeek Harness storage hub",
             "pluginTask": "保存插件自有记录并在重启后读取",
             "ownerSections": {
-                "references/how-to-infra-persistence.md": "保存插件自有记录并在重启后读取"
+                "references/infra/how-to/how-to-infra-persistence.md": "保存插件自有记录并在重启后读取"
             },
             "mergedInto": "package:@deepseek-ai/dsh-storage",
             "relationship": "package:@deepseek-ai/dsh-storage-sqlite 是「保存插件自有记录并在重启后读取」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -7891,12 +7898,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-subagent.md"
+                "references/host/api/api-host-subagent.md"
             ],
             "summary": "package:@deepseek-ai/dsh-subagent：Abstract subagent seam (ctx.subagents): named-provider registry for delegating to child agents",
             "pluginTask": "组合或调用具名委派 provider",
             "ownerSections": {
-                "references/api-host-subagent.md": "SubagentProvider"
+                "references/host/api/api-host-subagent.md": "SubagentProvider"
             }
         },
         {
@@ -7965,12 +7972,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-execution.md"
+                "references/infra/api/api-infra-provider-execution.md"
             ],
             "summary": "package:@deepseek-ai/dsh-subprocess：Subprocess seam (ctx.subprocess) for the DeepSeek Harness — managed process groups, bounded spill-backed output, and escalated kills behind one abstract service",
             "pluginTask": "通过 ShellExecutor 运行受限命令",
             "ownerSections": {
-                "references/api-infra-provider-execution.md": "SubprocessHandle"
+                "references/infra/api/api-infra-provider-execution.md": "SubprocessHandle"
             }
         },
         {
@@ -7999,12 +8006,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-prompt-policy.md"
+                "references/host/api/api-host-prompt-policy.md"
             ],
             "summary": "package:@deepseek-ai/dsh-system-prompt：System prompt assembly registry for the DeepSeek Harness",
             "pluginTask": "注册一个提示词段并限制工具执行",
             "ownerSections": {
-                "references/api-host-prompt-policy.md": "PromptContext"
+                "references/host/api/api-host-prompt-policy.md": "PromptContext"
             }
         },
         {
@@ -8017,12 +8024,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-terminal.md"
+                "references/infra/api/api-infra-provider-terminal.md"
             ],
             "summary": "package:@deepseek-ai/dsh-terminal：Persistent PTY session seam for the DeepSeek Harness — owner-scoped ids, backend registry, interactive sends, reads, signals, and awaited cleanup",
             "pluginTask": "在 Agent 作用域中使用持久 PTY",
             "ownerSections": {
-                "references/api-infra-provider-terminal.md": "TerminalBackend"
+                "references/infra/api/api-infra-provider-terminal.md": "TerminalBackend"
             }
         },
         {
@@ -8267,12 +8274,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-tools.md"
+                "references/host/api/api-host-tools.md"
             ],
             "summary": "package:@deepseek-ai/dsh-tools：Tool registry and execution pipeline for the DeepSeek Harness",
             "pluginTask": "让 Agent 调用一个可取消的模型工具",
             "ownerSections": {
-                "references/api-host-tools.md": "Config"
+                "references/host/api/api-host-tools.md": "Config"
             }
         },
         {
@@ -8285,12 +8292,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-typert-build.md"
+                "references/client/api/api-client-typert-build.md"
             ],
             "summary": "package:@deepseek-ai/dsh-typert-generator：TypeScript project analyzer and model-driven Typert artifact generator",
             "pluginTask": "发布 Host Remote 供 Client 调用",
             "ownerSections": {
-                "references/api-client-typert-build.md": "typertPlugin"
+                "references/client/api/api-client-typert-build.md": "typertPlugin"
             }
         },
         {
@@ -8303,12 +8310,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-client-publish-remote.md"
+                "references/client/how-to/how-to-client-publish-remote.md"
             ],
             "summary": "package:@deepseek-ai/dsh-typert-loader：Loader integration for generated Typert package contributions",
             "pluginTask": "发布 Host Remote 供 Client 调用",
             "ownerSections": {
-                "references/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
+                "references/client/how-to/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
             }
         },
         {
@@ -8321,12 +8328,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-remote.md"
+                "references/client/api/api-client-remote.md"
             ],
             "summary": "package:@deepseek-ai/dsh-typert-protocol：Compiler-independent Remote metadata and Typert provider protocols",
             "pluginTask": "从 Client 调用已装载的 Remote namespace",
             "ownerSections": {
-                "references/api-client-remote.md": "`Remote`"
+                "references/client/api/api-client-remote.md": "`Remote`"
             }
         },
         {
@@ -8339,12 +8346,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-client-publish-remote.md"
+                "references/client/how-to/how-to-client-publish-remote.md"
             ],
             "summary": "package:@deepseek-ai/dsh-typert-registry：Runtime registry for generated package reflection and Zod schemas",
             "pluginTask": "发布 Host Remote 供 Client 调用",
             "ownerSections": {
-                "references/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
+                "references/client/how-to/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
             }
         },
         {
@@ -8357,12 +8364,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-prompt-policy.md"
+                "references/host/api/api-host-prompt-policy.md"
             ],
             "summary": "package:@deepseek-ai/dsh-user-approval：User-approval seam (ctx.approval) for the DeepSeek Harness: one-shot permission decisions dispatched to composed answerers over the approval/request waterfall, fail-closed by default",
             "pluginTask": "注册一个提示词段并限制工具执行",
             "ownerSections": {
-                "references/api-host-prompt-policy.md": "ApprovalOutcome"
+                "references/host/api/api-host-prompt-policy.md": "ApprovalOutcome"
             }
         },
         {
@@ -8375,12 +8382,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-user-questions.md"
+                "references/host/api/api-host-user-questions.md"
             ],
             "summary": "package:@deepseek-ai/dsh-user-questions：Abstract user-questions seam (ctx.userQuestions) for asking the human during agent runs",
             "pluginTask": "在工具中取得结构化回答",
             "ownerSections": {
-                "references/api-host-user-questions.md": "AskUserQuestionAnswer"
+                "references/host/api/api-host-user-questions.md": "AskUserQuestionAnswer"
             }
         },
         {
@@ -8433,12 +8440,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-provider-web.md"
+                "references/infra/api/api-infra-provider-web.md"
             ],
             "summary": "package:@deepseek-ai/dsh-web：Abstract web access capability seam (ctx.web) for the DeepSeek Harness — search/fetch provider registry, registration-order-independent selection, request/result vocabulary, and the WebError taxonomy",
             "pluginTask": "注册可用的 Web 搜索 provider",
             "ownerSections": {
-                "references/api-infra-provider-web.md": "WebFetchProvider"
+                "references/infra/api/api-infra-provider-web.md": "WebFetchProvider"
             }
         },
         {
@@ -8459,12 +8466,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-web.md"
+                "references/infra/how-to/how-to-infra-provider-web.md"
             ],
             "summary": "package:@deepseek-ai/dsh-web-fetch-http：Anonymous public HTTP(S) fetch provider for the DeepSeek Harness web capability seam (ctx.web)",
             "pluginTask": "注册可用的 Web 搜索 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
+                "references/infra/how-to/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-web",
             "relationship": "package:@deepseek-ai/dsh-web-fetch-http 是「注册可用的 Web 搜索 provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -8487,12 +8494,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-web.md"
+                "references/infra/how-to/how-to-infra-provider-web.md"
             ],
             "summary": "package:@deepseek-ai/dsh-web-search-deepseek：DeepSeek-backed search provider (native web_search via the Anthropic-compatible API) for the DeepSeek Harness web capability seam (ctx.web)",
             "pluginTask": "注册可用的 Web 搜索 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
+                "references/infra/how-to/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-web",
             "relationship": "package:@deepseek-ai/dsh-web-search-deepseek 是「注册可用的 Web 搜索 provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -8507,12 +8514,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-web.md"
+                "references/infra/how-to/how-to-infra-provider-web.md"
             ],
             "summary": "package:@deepseek-ai/dsh-web-search-exa：Exa-backed search provider for the DeepSeek Harness web capability seam (ctx.web)",
             "pluginTask": "注册可用的 Web 搜索 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
+                "references/infra/how-to/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-web",
             "relationship": "package:@deepseek-ai/dsh-web-search-exa 是「注册可用的 Web 搜索 provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -8527,12 +8534,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-web.md"
+                "references/infra/how-to/how-to-infra-provider-web.md"
             ],
             "summary": "package:@deepseek-ai/dsh-web-search-perplexity：Perplexity-backed search provider for the DeepSeek Harness web capability seam (ctx.web)",
             "pluginTask": "注册可用的 Web 搜索 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
+                "references/infra/how-to/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
             },
             "mergedInto": "package:@deepseek-ai/dsh-web",
             "relationship": "package:@deepseek-ai/dsh-web-search-perplexity 是「注册可用的 Web 搜索 provider」组合中的具体 Profile 层或后端实现；主候选记录共同装载步骤。"
@@ -8547,12 +8554,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-webhook.md"
+                "references/infra/api/api-infra-webhook.md"
             ],
             "summary": "package:@deepseek-ai/dsh-webhook：Fire-and-forget webhook rule runtime that creates Workspace-backed DeepSeek Harness Sessions",
             "pluginTask": "让可信外部事件创建一次 Agent 会话",
             "ownerSections": {
-                "references/api-infra-webhook.md": "VerifiedWebhookDelivery"
+                "references/infra/api/api-infra-webhook.md": "VerifiedWebhookDelivery"
             }
         },
         {
@@ -8565,12 +8572,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/api-infra-webhook.md"
+                "references/infra/api/api-infra-webhook.md"
             ],
             "summary": "package:@deepseek-ai/dsh-webhook-github：Signed GitHub HTTP webhook adapter for the DeepSeek Harness webhook runtime",
             "pluginTask": "让可信外部事件创建一次 Agent 会话",
             "ownerSections": {
-                "references/api-infra-webhook.md": "Config"
+                "references/infra/api/api-infra-webhook.md": "Config"
             }
         },
         {
@@ -8591,12 +8598,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/api-host-workflow.md"
+                "references/host/api/api-host-workflow.md"
             ],
             "summary": "package:@deepseek-ai/dsh-workflow：Workflow capability seam: ctx.workflowEngine service, run vocabulary, and workflow/* events",
             "pluginTask": "从插件运行一次编排脚本",
             "ownerSections": {
-                "references/api-host-workflow.md": "WorkflowEngine"
+                "references/host/api/api-host-workflow.md": "WorkflowEngine"
             }
         },
         {
@@ -8617,12 +8624,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-workspace-data.md"
+                "references/client/api/api-client-workspace-data.md"
             ],
             "summary": "package:@deepseek-ai/dsh-workspace：Workspace entity registry (ctx.workspaceRegistry): durable workspace records with validated session attachment over the domain data form for the DeepSeek Harness",
             "pluginTask": "Host Registry 操作",
             "ownerSections": {
-                "references/api-client-workspace-data.md": "`Workspace`"
+                "references/client/api/api-client-workspace-data.md": "`Workspace`"
             }
         },
         {
@@ -8635,12 +8642,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/api-client-workspace-data.md"
+                "references/client/api/api-client-workspace-data.md"
             ],
             "summary": "package:@deepseek-ai/dsh-workspace-changes：Per-turn workspace file changes recorded from git working-tree snapshots and whole-file captures, with per-file comparisons, for the DeepSeek Harness",
             "pluginTask": "消费逐轮 Workspace 变更摘要",
             "ownerSections": {
-                "references/api-client-workspace-data.md": "`WorkspaceChanges`"
+                "references/client/api/api-client-workspace-data.md": "`WorkspaceChanges`"
             }
         },
         {
@@ -8717,12 +8724,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-prompt-policy.md"
+                "references/host/how-to/how-to-host-prompt-policy.md"
             ],
             "summary": "subsystems:approval 支持「注册一个提示词段并限制工具执行」任务。",
             "pluginTask": "注册一个提示词段并限制工具执行",
             "ownerSections": {
-                "references/how-to-host-prompt-policy.md": "注册一个提示词段并限制工具执行"
+                "references/host/how-to/how-to-host-prompt-policy.md": "注册一个提示词段并限制工具执行"
             }
         },
         {
@@ -8735,12 +8742,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-artifacts.md"
+                "references/infra/how-to/how-to-infra-provider-artifacts.md"
             ],
             "summary": "subsystems:attachment 支持「从插件调用 Spill 与附件存储」任务。",
             "pluginTask": "从插件调用 Spill 与附件存储",
             "ownerSections": {
-                "references/how-to-infra-provider-artifacts.md": "从插件调用 Spill 与附件存储"
+                "references/infra/how-to/how-to-infra-provider-artifacts.md": "从插件调用 Spill 与附件存储"
             }
         },
         {
@@ -8753,12 +8760,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-profile-bundle.md"
+                "references/infra/how-to/how-to-infra-profile-bundle.md"
             ],
             "summary": "subsystems:boot 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
+                "references/infra/how-to/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
             }
         },
         {
@@ -8779,12 +8786,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-web-package.md"
+                "references/client/how-to/how-to-client-web-package.md"
             ],
             "summary": "subsystems:client-modules 支持「让一个 Client UI 包随 Profile 在浏览器出现」任务。",
             "pluginTask": "让一个 Client UI 包随 Profile 在浏览器出现",
             "ownerSections": {
-                "references/how-to-client-web-package.md": "让一个 Client UI 包随 Profile 在浏览器出现"
+                "references/client/how-to/how-to-client-web-package.md": "让一个 Client UI 包随 Profile 在浏览器出现"
             }
         },
         {
@@ -8797,12 +8804,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-resource-provider.md"
+                "references/client/how-to/how-to-client-resource-provider.md"
             ],
             "summary": "subsystems:client-resources 支持「注册一个按地址读取的 Resource Provider」任务。",
             "pluginTask": "注册一个按地址读取的 Resource Provider",
             "ownerSections": {
-                "references/how-to-client-resource-provider.md": "注册一个按地址读取的 Resource Provider"
+                "references/client/how-to/how-to-client-resource-provider.md": "注册一个按地址读取的 Resource Provider"
             }
         },
         {
@@ -8815,12 +8822,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-command.md"
+                "references/host/how-to/how-to-host-command.md"
             ],
             "summary": "subsystems:commands 支持「注册一个由交互界面执行的命令」任务。",
             "pluginTask": "注册一个由交互界面执行的命令",
             "ownerSections": {
-                "references/how-to-host-command.md": "注册一个由交互界面执行的命令"
+                "references/host/how-to/how-to-host-command.md": "注册一个由交互界面执行的命令"
             }
         },
         {
@@ -8833,12 +8840,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-compaction.md"
+                "references/host/how-to/how-to-host-compaction.md"
             ],
             "summary": "subsystems:compaction 支持「挂载或实现压缩 backend」任务。",
             "pluginTask": "挂载或实现压缩 backend",
             "ownerSections": {
-                "references/how-to-host-compaction.md": "挂载或实现压缩 backend"
+                "references/host/how-to/how-to-host-compaction.md": "挂载或实现压缩 backend"
             }
         },
         {
@@ -8859,12 +8866,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-conversation-node.md"
+                "references/client/how-to/how-to-client-conversation-node.md"
             ],
             "summary": "subsystems:conversation 支持「让可回放的 Session 事件在 Chat 中显示」任务。",
             "pluginTask": "让可回放的 Session 事件在 Chat 中显示",
             "ownerSections": {
-                "references/how-to-client-conversation-node.md": "让可回放的 Session 事件在 Chat 中显示"
+                "references/client/how-to/how-to-client-conversation-node.md": "让可回放的 Session 事件在 Chat 中显示"
             }
         },
         {
@@ -8877,12 +8884,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-service.md"
+                "references/host/how-to/how-to-host-service.md"
             ],
             "summary": "subsystems:core 支持「提供并消费一个 Host Service」任务。",
             "pluginTask": "提供并消费一个 Host Service",
             "ownerSections": {
-                "references/how-to-host-service.md": "提供并消费一个 Host Service"
+                "references/host/how-to/how-to-host-service.md": "提供并消费一个 Host Service"
             }
         },
         {
@@ -8895,12 +8902,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-credentials.md"
+                "references/host/how-to/how-to-host-credentials.md"
             ],
             "summary": "subsystems:credentials 支持「保存插件凭据并注册授权流程」任务。",
             "pluginTask": "保存插件凭据并注册授权流程",
             "ownerSections": {
-                "references/how-to-host-credentials.md": "保存插件凭据并注册授权流程"
+                "references/host/how-to/how-to-host-credentials.md": "保存插件凭据并注册授权流程"
             }
         },
         {
@@ -8921,12 +8928,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-profile-bundle.md"
+                "references/infra/how-to/how-to-infra-profile-bundle.md"
             ],
             "summary": "subsystems:extensions 支持「制作可安装的 Profile 组合包」任务。",
             "pluginTask": "制作可安装的 Profile 组合包",
             "ownerSections": {
-                "references/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
+                "references/infra/how-to/how-to-infra-profile-bundle.md": "制作可安装的 Profile 组合包"
             }
         },
         {
@@ -8947,12 +8954,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-fs.md"
+                "references/infra/how-to/how-to-infra-provider-fs.md"
             ],
             "summary": "subsystems:filesystem 支持「在 Host 插件中通过 ctx.fs 读取文件」任务。",
             "pluginTask": "在 Host 插件中通过 ctx.fs 读取文件",
             "ownerSections": {
-                "references/how-to-infra-provider-fs.md": "在 Host 插件中通过 ctx.fs 读取文件"
+                "references/infra/how-to/how-to-infra-provider-fs.md": "在 Host 插件中通过 ctx.fs 读取文件"
             }
         },
         {
@@ -8965,12 +8972,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-goal.md"
+                "references/host/how-to/how-to-host-goal.md"
             ],
             "summary": "subsystems:goal 支持「从插件管理一项跨轮次目标」任务。",
             "pluginTask": "从插件管理一项跨轮次目标",
             "ownerSections": {
-                "references/how-to-host-goal.md": "从插件管理一项跨轮次目标"
+                "references/host/how-to/how-to-host-goal.md": "从插件管理一项跨轮次目标"
             }
         },
         {
@@ -8983,12 +8990,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-infra-invariants.md"
+                "references/infra/how-to/how-to-infra-invariants.md"
             ],
             "summary": "subsystems:invariants 支持「给插件组合装载包拥有的不变式检查」任务。",
             "pluginTask": "给插件组合装载包拥有的不变式检查",
             "ownerSections": {
-                "references/how-to-infra-invariants.md": "给插件组合装载包拥有的不变式检查"
+                "references/infra/how-to/how-to-infra-invariants.md": "给插件组合装载包拥有的不变式检查"
             }
         },
         {
@@ -9001,12 +9008,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-jobs.md"
+                "references/host/how-to/how-to-host-jobs.md"
             ],
             "summary": "subsystems:jobs 支持「注册可被 Agent 收取的长任务」任务。",
             "pluginTask": "注册可被 Agent 收取的长任务",
             "ownerSections": {
-                "references/how-to-host-jobs.md": "注册可被 Agent 收取的长任务"
+                "references/host/how-to/how-to-host-jobs.md": "注册可被 Agent 收取的长任务"
             }
         },
         {
@@ -9019,12 +9026,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-llm-adapter.md"
+                "references/host/how-to/how-to-host-llm-adapter.md"
             ],
             "summary": "subsystems:llm-streaming 支持「接入一个新的 LLM Provider」任务。",
             "pluginTask": "接入一个新的 LLM Provider",
             "ownerSections": {
-                "references/how-to-host-llm-adapter.md": "接入一个新的 LLM Provider"
+                "references/host/how-to/how-to-host-llm-adapter.md": "接入一个新的 LLM Provider"
             }
         },
         {
@@ -9037,12 +9044,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-lsp.md"
+                "references/infra/how-to/how-to-infra-provider-lsp.md"
             ],
             "summary": "subsystems:lsp 支持「为文件扩展名注册 LSP provider」任务。",
             "pluginTask": "为文件扩展名注册 LSP provider",
             "ownerSections": {
-                "references/how-to-infra-provider-lsp.md": "为文件扩展名注册 LSP provider"
+                "references/infra/how-to/how-to-infra-provider-lsp.md": "为文件扩展名注册 LSP provider"
             }
         },
         {
@@ -9055,12 +9062,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-mcp-resources.md"
+                "references/infra/how-to/how-to-infra-provider-mcp-resources.md"
             ],
             "summary": "subsystems:mcp 支持「注册具名 MCP 资源 provider」任务。",
             "pluginTask": "注册具名 MCP 资源 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-mcp-resources.md": "注册具名 MCP 资源 provider"
+                "references/infra/how-to/how-to-infra-provider-mcp-resources.md": "注册具名 MCP 资源 provider"
             }
         },
         {
@@ -9097,12 +9104,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-persistence.md"
+                "references/host/how-to/how-to-host-persistence.md"
             ],
             "summary": "subsystems:persistence 支持「实现并挂载一个 Session 存储后端」任务。",
             "pluginTask": "实现并挂载一个 Session 存储后端",
             "ownerSections": {
-                "references/how-to-host-persistence.md": "实现并挂载一个 Session 存储后端"
+                "references/host/how-to/how-to-host-persistence.md": "实现并挂载一个 Session 存储后端"
             }
         },
         {
@@ -9147,12 +9154,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-execution.md"
+                "references/infra/how-to/how-to-infra-provider-execution.md"
             ],
             "summary": "subsystems:sandbox 支持「通过 ShellExecutor 运行受限命令」任务。",
             "pluginTask": "通过 ShellExecutor 运行受限命令",
             "ownerSections": {
-                "references/how-to-infra-provider-execution.md": "通过 ShellExecutor 运行受限命令"
+                "references/infra/how-to/how-to-infra-provider-execution.md": "通过 ShellExecutor 运行受限命令"
             }
         },
         {
@@ -9173,12 +9180,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-scope.md"
+                "references/host/how-to/how-to-host-scope.md"
             ],
             "summary": "subsystems:scope 支持「为 Agent 隔离插件注册与事件」任务。",
             "pluginTask": "为 Agent 隔离插件注册与事件",
             "ownerSections": {
-                "references/how-to-host-scope.md": "为 Agent 隔离插件注册与事件"
+                "references/host/how-to/how-to-host-scope.md": "为 Agent 隔离插件注册与事件"
             }
         },
         {
@@ -9191,12 +9198,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-session-event.md"
+                "references/host/how-to/how-to-host-session-event.md"
             ],
             "summary": "subsystems:session 支持「为插件记录可恢复的领域事实」任务。",
             "pluginTask": "为插件记录可恢复的领域事实",
             "ownerSections": {
-                "references/how-to-host-session-event.md": "为插件记录可恢复的领域事实"
+                "references/host/how-to/how-to-host-session-event.md": "为插件记录可恢复的领域事实"
             }
         },
         {
@@ -9209,12 +9216,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-session-event.md"
+                "references/host/how-to/how-to-host-session-event.md"
             ],
             "summary": "subsystems:session-projection 支持「为插件记录可恢复的领域事实」任务。",
             "pluginTask": "为插件记录可恢复的领域事实",
             "ownerSections": {
-                "references/how-to-host-session-event.md": "为插件记录可恢复的领域事实"
+                "references/host/how-to/how-to-host-session-event.md": "为插件记录可恢复的领域事实"
             }
         },
         {
@@ -9227,12 +9234,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-session-query.md"
+                "references/host/how-to/how-to-host-session-query.md"
             ],
             "summary": "subsystems:session-query 支持「查询历史或实现全文搜索 backend」任务。",
             "pluginTask": "查询历史或实现全文搜索 backend",
             "ownerSections": {
-                "references/how-to-host-session-query.md": "查询历史或实现全文搜索 backend"
+                "references/host/how-to/how-to-host-session-query.md": "查询历史或实现全文搜索 backend"
             }
         },
         {
@@ -9245,12 +9252,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-reference-candidates.md"
+                "references/client/how-to/how-to-client-reference-candidates.md"
             ],
             "summary": "subsystems:session-reference 支持「在 Client 读取 `@file` 与 `@session` 候选」任务。",
             "pluginTask": "在 Client 读取 `@file` 与 `@session` 候选",
             "ownerSections": {
-                "references/how-to-client-reference-candidates.md": "在 Client 读取 `@file` 与 `@session` 候选"
+                "references/client/how-to/how-to-client-reference-candidates.md": "在 Client 读取 `@file` 与 `@session` 候选"
             }
         },
         {
@@ -9279,12 +9286,12 @@
                 "infra-profile"
             ],
             "owners": [
-                "references/how-to-infra-live-config.md"
+                "references/infra/how-to/how-to-infra-live-config.md"
             ],
             "summary": "subsystems:settings 支持「让插件配置在运行中安全更新」任务。",
             "pluginTask": "让插件配置在运行中安全更新",
             "ownerSections": {
-                "references/how-to-infra-live-config.md": "让插件配置在运行中安全更新"
+                "references/infra/how-to/how-to-infra-live-config.md": "让插件配置在运行中安全更新"
             }
         },
         {
@@ -9297,12 +9304,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-execution.md"
+                "references/infra/how-to/how-to-infra-provider-execution.md"
             ],
             "summary": "subsystems:shell 支持「通过 ShellExecutor 运行受限命令」任务。",
             "pluginTask": "通过 ShellExecutor 运行受限命令",
             "ownerSections": {
-                "references/how-to-infra-provider-execution.md": "通过 ShellExecutor 运行受限命令"
+                "references/infra/how-to/how-to-infra-provider-execution.md": "通过 ShellExecutor 运行受限命令"
             }
         },
         {
@@ -9315,12 +9322,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-sidebar-tab.md"
+                "references/client/how-to/how-to-client-sidebar-tab.md"
             ],
             "summary": "subsystems:sidebar-right 支持「贡献右侧栏 Tab」任务。",
             "pluginTask": "贡献右侧栏 Tab",
             "ownerSections": {
-                "references/how-to-client-sidebar-tab.md": "贡献右侧栏 Tab"
+                "references/client/how-to/how-to-client-sidebar-tab.md": "贡献右侧栏 Tab"
             }
         },
         {
@@ -9333,12 +9340,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-skill.md"
+                "references/infra/how-to/how-to-infra-provider-skill.md"
             ],
             "summary": "subsystems:skills 支持「注册虚拟 Agent Skill」任务。",
             "pluginTask": "注册虚拟 Agent Skill",
             "ownerSections": {
-                "references/how-to-infra-provider-skill.md": "注册虚拟 Agent Skill"
+                "references/infra/how-to/how-to-infra-provider-skill.md": "注册虚拟 Agent Skill"
             }
         },
         {
@@ -9351,12 +9358,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-slot-contribution.md"
+                "references/client/how-to/how-to-client-slot-contribution.md"
             ],
             "summary": "subsystems:slots 支持「在已有页面的 slot 显示插件内容」任务。",
             "pluginTask": "在已有页面的 slot 显示插件内容",
             "ownerSections": {
-                "references/how-to-client-slot-contribution.md": "在已有页面的 slot 显示插件内容"
+                "references/client/how-to/how-to-client-slot-contribution.md": "在已有页面的 slot 显示插件内容"
             }
         },
         {
@@ -9369,12 +9376,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-artifacts.md"
+                "references/infra/how-to/how-to-infra-provider-artifacts.md"
             ],
             "summary": "subsystems:spill 支持「从插件调用 Spill 与附件存储」任务。",
             "pluginTask": "从插件调用 Spill 与附件存储",
             "ownerSections": {
-                "references/how-to-infra-provider-artifacts.md": "从插件调用 Spill 与附件存储"
+                "references/infra/how-to/how-to-infra-provider-artifacts.md": "从插件调用 Spill 与附件存储"
             }
         },
         {
@@ -9395,12 +9402,12 @@
                 "infra-persistence"
             ],
             "owners": [
-                "references/how-to-infra-persistence.md"
+                "references/infra/how-to/how-to-infra-persistence.md"
             ],
             "summary": "subsystems:storage 支持「保存插件自有记录并在重启后读取」任务。",
             "pluginTask": "保存插件自有记录并在重启后读取",
             "ownerSections": {
-                "references/how-to-infra-persistence.md": "保存插件自有记录并在重启后读取"
+                "references/infra/how-to/how-to-infra-persistence.md": "保存插件自有记录并在重启后读取"
             }
         },
         {
@@ -9413,12 +9420,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-subagent.md"
+                "references/host/how-to/how-to-host-subagent.md"
             ],
             "summary": "subsystems:subagent 支持「组合或调用具名委派 provider」任务。",
             "pluginTask": "组合或调用具名委派 provider",
             "ownerSections": {
-                "references/how-to-host-subagent.md": "组合或调用具名委派 provider"
+                "references/host/how-to/how-to-host-subagent.md": "组合或调用具名委派 provider"
             }
         },
         {
@@ -9431,12 +9438,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-execution.md"
+                "references/infra/how-to/how-to-infra-provider-execution.md"
             ],
             "summary": "subsystems:subprocess 支持「通过 ShellExecutor 运行受限命令」任务。",
             "pluginTask": "通过 ShellExecutor 运行受限命令",
             "ownerSections": {
-                "references/how-to-infra-provider-execution.md": "通过 ShellExecutor 运行受限命令"
+                "references/infra/how-to/how-to-infra-provider-execution.md": "通过 ShellExecutor 运行受限命令"
             }
         },
         {
@@ -9449,12 +9456,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-prompt-policy.md"
+                "references/host/how-to/how-to-host-prompt-policy.md"
             ],
             "summary": "subsystems:system-prompt 支持「注册一个提示词段并限制工具执行」任务。",
             "pluginTask": "注册一个提示词段并限制工具执行",
             "ownerSections": {
-                "references/how-to-host-prompt-policy.md": "注册一个提示词段并限制工具执行"
+                "references/host/how-to/how-to-host-prompt-policy.md": "注册一个提示词段并限制工具执行"
             }
         },
         {
@@ -9467,12 +9474,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-terminal.md"
+                "references/infra/how-to/how-to-infra-provider-terminal.md"
             ],
             "summary": "subsystems:terminal 支持「在 Agent 作用域中使用持久 PTY」任务。",
             "pluginTask": "在 Agent 作用域中使用持久 PTY",
             "ownerSections": {
-                "references/how-to-infra-provider-terminal.md": "在 Agent 作用域中使用持久 PTY"
+                "references/infra/how-to/how-to-infra-provider-terminal.md": "在 Agent 作用域中使用持久 PTY"
             }
         },
         {
@@ -9501,12 +9508,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-tool.md"
+                "references/host/how-to/how-to-host-tool.md"
             ],
             "summary": "subsystems:tools 支持「让 Agent 调用一个可取消的模型工具」任务。",
             "pluginTask": "让 Agent 调用一个可取消的模型工具",
             "ownerSections": {
-                "references/how-to-host-tool.md": "让 Agent 调用一个可取消的模型工具"
+                "references/host/how-to/how-to-host-tool.md": "让 Agent 调用一个可取消的模型工具"
             }
         },
         {
@@ -9519,12 +9526,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-client-publish-remote.md"
+                "references/client/how-to/how-to-client-publish-remote.md"
             ],
             "summary": "subsystems:typert 支持「发布 Host Remote 供 Client 调用」任务。",
             "pluginTask": "发布 Host Remote 供 Client 调用",
             "ownerSections": {
-                "references/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
+                "references/client/how-to/how-to-client-publish-remote.md": "发布 Host Remote 供 Client 调用"
             }
         },
         {
@@ -9537,12 +9544,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-user-questions.md"
+                "references/host/how-to/how-to-host-user-questions.md"
             ],
             "summary": "subsystems:user-questions 支持「在工具中取得结构化回答」任务。",
             "pluginTask": "在工具中取得结构化回答",
             "ownerSections": {
-                "references/how-to-host-user-questions.md": "在工具中取得结构化回答"
+                "references/host/how-to/how-to-host-user-questions.md": "在工具中取得结构化回答"
             }
         },
         {
@@ -9563,12 +9570,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-provider-web.md"
+                "references/infra/how-to/how-to-infra-provider-web.md"
             ],
             "summary": "subsystems:web 支持「注册可用的 Web 搜索 provider」任务。",
             "pluginTask": "注册可用的 Web 搜索 provider",
             "ownerSections": {
-                "references/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
+                "references/infra/how-to/how-to-infra-provider-web.md": "注册可用的 Web 搜索 provider"
             }
         },
         {
@@ -9581,12 +9588,12 @@
                 "client-web"
             ],
             "owners": [
-                "references/how-to-client-web-package.md"
+                "references/client/how-to/how-to-client-web-package.md"
             ],
             "summary": "subsystems:web-client 支持「让一个 Client UI 包随 Profile 在浏览器出现」任务。",
             "pluginTask": "让一个 Client UI 包随 Profile 在浏览器出现",
             "ownerSections": {
-                "references/how-to-client-web-package.md": "让一个 Client UI 包随 Profile 在浏览器出现"
+                "references/client/how-to/how-to-client-web-package.md": "让一个 Client UI 包随 Profile 在浏览器出现"
             }
         },
         {
@@ -9599,12 +9606,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-http-route.md"
+                "references/infra/how-to/how-to-infra-http-route.md"
             ],
             "summary": "subsystems:web-server 支持「给 Web Profile 添加具名 HTTP 路由」任务。",
             "pluginTask": "给 Web Profile 添加具名 HTTP 路由",
             "ownerSections": {
-                "references/how-to-infra-http-route.md": "给 Web Profile 添加具名 HTTP 路由"
+                "references/infra/how-to/how-to-infra-http-route.md": "给 Web Profile 添加具名 HTTP 路由"
             }
         },
         {
@@ -9617,12 +9624,12 @@
                 "infra-integration"
             ],
             "owners": [
-                "references/how-to-infra-webhook.md"
+                "references/infra/how-to/how-to-infra-webhook.md"
             ],
             "summary": "subsystems:webhook 支持「让可信外部事件创建一次 Agent 会话」任务。",
             "pluginTask": "让可信外部事件创建一次 Agent 会话",
             "ownerSections": {
-                "references/how-to-infra-webhook.md": "让可信外部事件创建一次 Agent 会话"
+                "references/infra/how-to/how-to-infra-webhook.md": "让可信外部事件创建一次 Agent 会话"
             }
         },
         {
@@ -9635,12 +9642,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-host-workflow.md"
+                "references/host/how-to/how-to-host-workflow.md"
             ],
             "summary": "subsystems:workflow 支持「从插件运行一次编排脚本」任务。",
             "pluginTask": "从插件运行一次编排脚本",
             "ownerSections": {
-                "references/how-to-host-workflow.md": "从插件运行一次编排脚本"
+                "references/host/how-to/how-to-host-workflow.md": "从插件运行一次编排脚本"
             }
         },
         {
@@ -9653,12 +9660,12 @@
                 "host-core"
             ],
             "owners": [
-                "references/how-to-client-workspace-registry.md"
+                "references/client/how-to/how-to-client-workspace-registry.md"
             ],
             "summary": "subsystems:workspace 支持「Host Registry 操作」任务。",
             "pluginTask": "Host Registry 操作",
             "ownerSections": {
-                "references/how-to-client-workspace-registry.md": "Host Registry 操作"
+                "references/client/how-to/how-to-client-workspace-registry.md": "Host Registry 操作"
             }
         }
     ]

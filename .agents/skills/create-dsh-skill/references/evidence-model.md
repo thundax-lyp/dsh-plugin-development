@@ -37,7 +37,7 @@
             "signature": "ExampleConfig",
             "source": "packages/example/src/index.ts",
             "decision": "included",
-            "owner": "references/api-example-config.md",
+            "owner": "references/infra/api/api-example-config.md",
             "section": "ExampleConfig 配置对象",
             "members": [
                 { "name": "enabled", "signature": "boolean", "decision": "included" }
@@ -59,7 +59,7 @@
     "kind": "implemented-behavior",
     "topic": "example",
     "decision": "accepted",
-    "owner": "references/api-example-config.md",
+    "owner": "references/infra/api/api-example-config.md",
     "summary": "ExampleConfig 的已核实配置契约。",
     "evidence": [
         {
@@ -101,10 +101,10 @@
             "decision": "included",
             "candidates": ["package:@deepseek-ai/dsh-example"],
             "topics": ["example"],
-            "owners": ["references/api-example-config.md"],
+            "owners": ["references/infra/api/api-example-config.md"],
             "summary": "ExampleConfig 的配置入口。",
             "pluginTask": "配置并装载 Example 插件",
-            "ownerSections": { "references/api-example-config.md": "ExampleConfig 配置对象" }
+            "ownerSections": { "references/infra/api/api-example-config.md": "ExampleConfig 配置对象" }
         }
     ],
     "taskPaths": [
@@ -116,12 +116,12 @@
             "apiObjects": ["example-config"],
             "destinations": [
                 {
-                    "output": "references/how-to-configure-example.md",
+                    "output": "references/infra/how-to/how-to-configure-example.md",
                     "section": "配置并验证 Example"
                 }
             ],
             "entry": {
-                "output": "references/how-to-configure-example.md",
+                "output": "references/infra/how-to/how-to-configure-example.md",
                 "section": "配置并验证 Example",
                 "anchor": "配置并验证-example"
             },

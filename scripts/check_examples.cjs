@@ -113,10 +113,27 @@ try {
         "how-to-add-remote-api.md",
         "how-to-edit-owned-plugin-config.md",
     ]);
-    for (const file of fs.readdirSync(refs).filter((f) => f.endsWith(".md"))) {
-        if (multiFileExamples.has(file)) continue;
+    function markdownFiles(dir) {
+        return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) return markdownFiles(fullPath);
+            return entry.isFile() && entry.name.endsWith(".md")
+                ? [path.relative(refs, fullPath)]
+                : [];
+        });
+    }
+    const files = markdownFiles(refs);
+    const copied = new Set();
+    for (const file of files) {
+        const basename = path.basename(file);
+        if (multiFileExamples.has(basename)) continue;
+        if (copied.has(basename))
+            throw Error(
+                `Duplicate reference basename in example checker: ${basename}`,
+            );
+        copied.add(basename);
         const text = fs.readFileSync(path.join(refs, file), "utf8");
-        fs.writeFileSync(path.join(workspace, file), text);
+        fs.writeFileSync(path.join(workspace, basename), text);
         for (const block of text.matchAll(
             /^```(tsx?[^\n]*)\n([\s\S]*?)^```\s*$/gm,
         )) {
@@ -160,12 +177,19 @@ try {
     const fixtures = path.join(path.dirname(root), "evidence", "tests");
     const configEditor = path.join(fixtures, "config-editor-consumer");
     const remoteNotes = path.join(fixtures, "remote-notes-consumer");
-    if (fs.existsSync(path.join(refs, "how-to-edit-owned-plugin-config.md"))) {
+    if (
+        files.some(
+            (file) =>
+                path.basename(file) === "how-to-edit-owned-plugin-config.md",
+        )
+    ) {
         if (!fs.existsSync(configEditor))
             throw Error("Missing config-editor multi-file example consumer");
         run("npm", ["run", "build"], { cwd: configEditor });
     }
-    if (fs.existsSync(path.join(refs, "how-to-add-remote-api.md"))) {
+    if (
+        files.some((file) => path.basename(file) === "how-to-add-remote-api.md")
+    ) {
         if (!fs.existsSync(remoteNotes))
             throw Error("Missing remote-notes multi-file example consumer");
         run("node_modules/.bin/tsc", ["-b", "tsconfig.host.json"], {
