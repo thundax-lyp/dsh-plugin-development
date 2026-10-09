@@ -13,6 +13,8 @@ description: 仅在用户显式调用 $create-dsh-skill 时，按最新已发布
 
 **分发文档的正文使用中文。** `SKILL.md`、reference 和 maintenance 中面向读者的段落、列表、表格说明、示例讲解及代码注释都用中文；标题可以使用英文。保留公开 API 名称、包名、命令、文件路径、协议字段、代码标识符与必要的检索关键词原文，不翻译会改变契约或破坏可执行性的内容。冻结前逐篇检查正文，不把上游英文文档整段复制为产物说明。
 
+**版本账本的格式由生成器负责。** `evidence/` 的核心候选 JSON、`skill-source/` 的裁决 JSON 和 `provenance.json` 使用 4 空格缩进与一个末尾换行；公开成员、对象和成员清单按稳定 ID 排序。`.dsh-skill-build/` 不由 Prettier 批量改写，运行 `pnpm format:ledgers` 检查新创建契约的核心账本。一次性诊断报告可留在本地并由 `.gitignore` 排除；`generated-skill/` 保留每个版本通过验证的产物，不作为诊断报告排除。已有冻结目标的账本若需规范化，先确认仅改变顺序或格式，再重新冻结哈希并验证生成目录。
+
 Skill 创建以目标 tag 为唯一事实输入。创建工作区用 commit 锁定 checkout 和取证；面向 npm 安装用户的生成 Skill 以已发布的 `@deepseek-ai/dsh-agent` 版本号标明适用范围，不把 Git commit 当成安装版本，也不在任何分发文件中写入目标 commit。生成阶段将现有 `skills/dsh-plugin-development/**` 视为不存在：不读取、不比较、不修补，也不从旧 source-map、旧 Skill 或 DOCS diff 生成目标知识。新 Skill 在隔离目录完整生成并通过验证后才整体替换正式目录。交付前仍须审阅 Git diff；该检查只确认本次仓库改动范围，不是升级事实的来源。
 
 正式 Skill 面向插件作者，只写目标版本的可用契约、具体限制、操作步骤和读者应执行的验证。候选的 `included/merged/excluded`、任务的 `covered`、本次检查的 `Not Covered`、未运行状态及创建账本文件名只留在 `evidence/`、`skill-source/` 的非分发 JSON、验证报告和 PR 中，不写进分发正文。目标版本确实缺少公开入口或独立构建路径时，在相关 how-to 直接说明可观察的产品限制与替代操作；不要把维护者尚未运行的检查误写成产品限制。正式 reference 可以告诉读者“运行浏览器 smoke 并验证重连”，不写“本次未覆盖浏览器 smoke”。

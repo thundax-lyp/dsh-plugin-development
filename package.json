@@ -5,6 +5,7 @@
     "scripts": {
         "format": "prettier --write .",
         "format:check": "prettier --check .",
+        "format:ledgers": "node scripts/check_build_json_format.mjs",
         "verify:skill": "node scripts/validate_skill.mjs",
         "verify:examples": "node scripts/check_examples.cjs",
         "test:validation": "node --test scripts/*.test.mjs .agents/skills/create-dsh-skill/tests/*.test.mjs"

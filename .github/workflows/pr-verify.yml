@@ -38,6 +38,9 @@ jobs:
             - name: Verify Prettier formatting
               run: pnpm format:check
 
+            - name: Verify versioned build JSON formatting
+              run: pnpm format:ledgers
+
             - name: Verify repository structure
               shell: bash
               run: |

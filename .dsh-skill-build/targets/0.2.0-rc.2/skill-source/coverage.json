@@ -1827,6 +1827,11 @@
             "taskId": "ship-profile-bundle"
         },
         {
+            "candidate": "task:docs/user/develop/practice/index.zh.md:111",
+            "decision": "included",
+            "taskId": "provide-host-service"
+        },
+        {
             "candidate": "task:docs/user/develop/practice/index.zh.md:58",
             "decision": "included",
             "taskId": "provide-host-service"
@@ -1838,11 +1843,6 @@
         },
         {
             "candidate": "task:docs/user/develop/practice/index.zh.md:90",
-            "decision": "included",
-            "taskId": "provide-host-service"
-        },
-        {
-            "candidate": "task:docs/user/develop/practice/index.zh.md:111",
             "decision": "included",
             "taskId": "provide-host-service"
         },
@@ -1862,12 +1862,12 @@
             "reason": "用户指南的模型/MCP 配置帮助终端用户启用现成服务，插件作者的 Provider/Remote 接入由各自 HOW-TO 拥有。"
         },
         {
-            "candidate": "task:docs/user/guide/providers.zh.md:7",
+            "candidate": "task:docs/user/guide/providers.zh.md:41",
             "decision": "excluded",
             "reason": "用户指南的模型/MCP 配置帮助终端用户启用现成服务，插件作者的 Provider/Remote 接入由各自 HOW-TO 拥有。"
         },
         {
-            "candidate": "task:docs/user/guide/providers.zh.md:41",
+            "candidate": "task:docs/user/guide/providers.zh.md:7",
             "decision": "excluded",
             "reason": "用户指南的模型/MCP 配置帮助终端用户启用现成服务，插件作者的 Provider/Remote 接入由各自 HOW-TO 拥有。"
         },
@@ -1887,14 +1887,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/acp/acp/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-acp 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/acp/acp/README.zh.md:175",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/acp/acp/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-acp 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/api/README.zh.md:52",
@@ -1932,14 +1932,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/api/session-controller/README.zh.md:90",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-api-session-controller 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/api/session-controller/README.zh.md:122",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/api/session-controller/README.zh.md:90",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-api-session-controller 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/api/settings-controller/README.zh.md:37",
@@ -1962,14 +1962,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/api/workspace-files/README.zh.md:60",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-api-workspace-files 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/api/workspace-files/README.zh.md:152",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/api/workspace-files/README.zh.md:60",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-api-workspace-files 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/attachment/README.zh.md:44",
@@ -1977,14 +1977,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/attachment/attachment-local/README.zh.md:30",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-attachment-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/attachment/attachment-local/README.zh.md:142",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/attachment/attachment-local/README.zh.md:30",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-attachment-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/attachment/attachment/README.zh.md:124",
@@ -1997,16 +1997,6 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/boot/app-boot/README.zh.md:71",
-            "decision": "included",
-            "taskId": "ship-profile-bundle"
-        },
-        {
-            "candidate": "task:packages/boot/app-boot/README.zh.md:75",
-            "decision": "included",
-            "taskId": "ship-profile-bundle"
-        },
-        {
             "candidate": "task:packages/boot/app-boot/README.zh.md:208",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
@@ -2017,14 +2007,24 @@
             "reason": "该标题明确标记为待定的 YAML 配置 dump 稳定性；目标版本没有可验证的当前插件开发任务。"
         },
         {
-            "candidate": "task:packages/boot/cmdline/README.zh.md:64",
+            "candidate": "task:packages/boot/app-boot/README.zh.md:71",
             "decision": "included",
-            "taskId": "parse-app-args"
+            "taskId": "ship-profile-bundle"
+        },
+        {
+            "candidate": "task:packages/boot/app-boot/README.zh.md:75",
+            "decision": "included",
+            "taskId": "ship-profile-bundle"
         },
         {
             "candidate": "task:packages/boot/cmdline/README.zh.md:138",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/boot/cmdline/README.zh.md:64",
+            "decision": "included",
+            "taskId": "parse-app-args"
         },
         {
             "candidate": "task:packages/boot/config-editor/README.zh.md:74",
@@ -2042,14 +2042,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/boot/plugin-manager/README.zh.md:71",
-            "decision": "included",
-            "taskId": "ship-profile-bundle"
-        },
-        {
             "candidate": "task:packages/boot/plugin-manager/README.zh.md:153",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/boot/plugin-manager/README.zh.md:71",
+            "decision": "included",
+            "taskId": "ship-profile-bundle"
         },
         {
             "candidate": "task:packages/browser-use/README.zh.md:38",
@@ -2092,14 +2092,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/bundle/web-app/README.zh.md:47",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-web-app 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/bundle/web-app/README.zh.md:161",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/bundle/web-app/README.zh.md:47",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-web-app 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/client/README.zh.md:104",
@@ -2117,14 +2117,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/client/hmr/README.zh.md:38",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-client-hmr 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/client/hmr/README.zh.md:121",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/client/hmr/README.zh.md:38",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-client-hmr 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/client/locale/README.zh.md:141",
@@ -2132,14 +2132,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/client/modules/README.zh.md:48",
-            "decision": "included",
-            "taskId": "client-load-web-half"
-        },
-        {
             "candidate": "task:packages/client/modules/README.zh.md:137",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/client/modules/README.zh.md:48",
+            "decision": "included",
+            "taskId": "client-load-web-half"
         },
         {
             "candidate": "task:packages/client/product-analytics/README.zh.md:65",
@@ -2187,12 +2187,12 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/client/ui-chat/src/client/conversation-nodes/README.zh.md:23",
+            "candidate": "task:packages/client/ui-chat/src/client/conversation-nodes/README.zh.md:123",
             "decision": "included",
             "taskId": "client-conversation-node"
         },
         {
-            "candidate": "task:packages/client/ui-chat/src/client/conversation-nodes/README.zh.md:123",
+            "candidate": "task:packages/client/ui-chat/src/client/conversation-nodes/README.zh.md:23",
             "decision": "included",
             "taskId": "client-conversation-node"
         },
@@ -2227,6 +2227,11 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/client/ui-dockkit/README.zh.md:104",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/client/ui-dockkit/README.zh.md:45",
             "decision": "excluded",
             "reason": "DockKit 是无 Cordis 的布局组件库，嵌入说明不等于一个可安装的 DSH Client 插件任务。"
@@ -2235,11 +2240,6 @@
             "candidate": "task:packages/client/ui-dockkit/README.zh.md:81",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-client-ui-dockkit 的「构建形态」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/client/ui-dockkit/README.zh.md:104",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/client/ui-goal/README.zh.md:84",
@@ -2287,11 +2287,6 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/client/ui-plugin-manager/README.zh.md:58",
-            "decision": "included",
-            "taskId": "client-settings-card"
-        },
-        {
             "candidate": "task:packages/client/ui-plugin-manager/README.zh.md:106",
             "decision": "included",
             "taskId": "client-settings-card"
@@ -2300,6 +2295,11 @@
             "candidate": "task:packages/client/ui-plugin-manager/README.zh.md:157",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/client/ui-plugin-manager/README.zh.md:58",
+            "decision": "included",
+            "taskId": "client-settings-card"
         },
         {
             "candidate": "task:packages/client/ui-primitives/README.zh.md:206",
@@ -2337,14 +2337,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/client/ui-settings-general/README.zh.md:48",
-            "decision": "excluded",
-            "reason": "这是内置设置页面的用户操作；自有设置卡片和模型 provider 分别由 Client Settings/Host LlmAdapter 任务拥有。"
-        },
-        {
             "candidate": "task:packages/client/ui-settings-general/README.zh.md:121",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/client/ui-settings-general/README.zh.md:48",
+            "decision": "excluded",
+            "reason": "这是内置设置页面的用户操作；自有设置卡片和模型 provider 分别由 Client Settings/Host LlmAdapter 任务拥有。"
         },
         {
             "candidate": "task:packages/client/ui-settings-models/README.md:54",
@@ -2387,17 +2387,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/client/ui-settings/README.zh.md:30",
-            "decision": "included",
-            "taskId": "client-settings-card"
-        },
-        {
             "candidate": "task:packages/client/ui-settings/README.zh.md:109",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/client/ui-settings/README.zh.md:30",
+            "decision": "included",
+            "taskId": "client-settings-card"
+        },
+        {
             "candidate": "task:packages/client/ui-shortcuts/README.zh.md:80",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/client/ui-sidebar-browser/README.zh.md:113",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2407,7 +2412,7 @@
             "reason": "@deepseek-ai/dsh-client-ui-sidebar-browser 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/client/ui-sidebar-browser/README.zh.md:113",
+            "candidate": "task:packages/client/ui-sidebar-documentpreview/README.zh.md:148",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2415,11 +2420,6 @@
             "candidate": "task:packages/client/ui-sidebar-documentpreview/README.zh.md:47",
             "decision": "included",
             "taskId": "client-document-preview"
-        },
-        {
-            "candidate": "task:packages/client/ui-sidebar-documentpreview/README.zh.md:148",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/client/ui-sidebar-files/README.zh.md:68",
@@ -2487,6 +2487,11 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/client/web/README.zh.md:126",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/client/web/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-client-web 的「启动过程是怎样的」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
@@ -2495,11 +2500,6 @@
             "candidate": "task:packages/client/web/README.zh.md:46",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-client-web 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/client/web/README.zh.md:126",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/compaction/README.zh.md:48",
@@ -2557,12 +2557,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/context/agent-instructions/README.zh.md:222",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/context/agent-instructions/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-agent-instructions 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/context/agent-instructions/README.zh.md:222",
+            "candidate": "task:packages/context/file-reference-local/README.zh.md:132",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2572,12 +2577,12 @@
             "reason": "@deepseek-ai/dsh-file-reference-local 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/context/file-reference-local/README.zh.md:132",
+            "candidate": "task:packages/context/file-reference/README.zh.md:105",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/context/file-reference/README.zh.md:105",
+            "candidate": "task:packages/context/session-reference/README.zh.md:141",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2587,7 +2592,7 @@
             "reason": "@deepseek-ai/dsh-session-reference 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/context/session-reference/README.zh.md:141",
+            "candidate": "task:packages/context/time-context/README.zh.md:144",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2597,7 +2602,7 @@
             "reason": "@deepseek-ai/dsh-time-context 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/context/time-context/README.zh.md:144",
+            "candidate": "task:packages/context/tmux-context/README.zh.md:134",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2607,12 +2612,12 @@
             "reason": "@deepseek-ai/dsh-tmux-context 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/context/tmux-context/README.zh.md:134",
+            "candidate": "task:packages/core/README.zh.md:55",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/core/README.zh.md:55",
+            "candidate": "task:packages/core/agent-default-model/README.zh.md:120",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2622,7 +2627,7 @@
             "reason": "现成默认模型选择器的配置，不是创建 Agent 作用域扩展或新模型 adapter 的独立任务。"
         },
         {
-            "candidate": "task:packages/core/agent-default-model/README.zh.md:120",
+            "candidate": "task:packages/core/agent-loop/README.zh.md:222",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2630,11 +2635,6 @@
             "candidate": "task:packages/core/agent-loop/README.zh.md:30",
             "decision": "included",
             "taskId": "scope-agent-capability"
-        },
-        {
-            "candidate": "task:packages/core/agent-loop/README.zh.md:222",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/core/agent-tool-presentation/README.zh.md:113",
@@ -2647,17 +2647,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/core/scope/README.zh.md:44",
-            "decision": "included",
-            "taskId": "register-scoped-contribution"
-        },
-        {
             "candidate": "task:packages/core/scope/README.zh.md:106",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/core/scope/README.zh.md:44",
+            "decision": "included",
+            "taskId": "register-scoped-contribution"
+        },
+        {
             "candidate": "task:packages/core/session/README.zh.md:197",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/core/system-prompt/README.zh.md:180",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2667,7 +2672,7 @@
             "taskId": "guard-host-tool-execution"
         },
         {
-            "candidate": "task:packages/core/system-prompt/README.zh.md:180",
+            "candidate": "task:packages/core/tools/README.zh.md:240",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2675,11 +2680,6 @@
             "candidate": "task:packages/core/tools/README.zh.md:62",
             "decision": "included",
             "taskId": "guard-host-tool-execution"
-        },
-        {
-            "candidate": "task:packages/core/tools/README.zh.md:240",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/credentials/README.zh.md:45",
@@ -2702,14 +2702,14 @@
             "taskId": "store-plugin-credential"
         },
         {
-            "candidate": "task:packages/credentials/credentials/README.zh.md:83",
-            "decision": "included",
-            "taskId": "store-plugin-credential"
-        },
-        {
             "candidate": "task:packages/credentials/credentials/README.zh.md:182",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/credentials/credentials/README.zh.md:83",
+            "decision": "included",
+            "taskId": "store-plugin-credential"
         },
         {
             "candidate": "task:packages/credentials/deepseek-account-platform/README.zh.md:96",
@@ -2757,14 +2757,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/experimental/agent-team/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "实验性 Agent Team 预置配置需要专用团队运行时，不能由普通 Cordis 插件步骤推导为稳定产品形态。"
-        },
-        {
             "candidate": "task:packages/experimental/agent-team/README.zh.md:213",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/experimental/agent-team/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "实验性 Agent Team 预置配置需要专用团队运行时，不能由普通 Cordis 插件步骤推导为稳定产品形态。"
         },
         {
             "candidate": "task:packages/experimental/api-speech-to-text/README.zh.md:73",
@@ -2792,14 +2792,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/experimental/browser-use-stagehand-native/README.zh.md:30",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-experimental-browser-use-stagehand-native 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/experimental/browser-use-stagehand-native/README.zh.md:164",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/experimental/browser-use-stagehand-native/README.zh.md:30",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-experimental-browser-use-stagehand-native 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/experimental/client-ui-agent-team/README.zh.md:95",
@@ -2812,12 +2812,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/experimental/computer-use-cua-driver-mcp/README.zh.md:121",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/experimental/computer-use-cua-driver-mcp/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/experimental/computer-use-cua-driver-mcp/README.zh.md:121",
+            "candidate": "task:packages/experimental/computer-use-cua-driver-native/README.zh.md:138",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2827,7 +2832,7 @@
             "reason": "@deepseek-ai/dsh-experimental-computer-use-cua-driver-native 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/experimental/computer-use-cua-driver-native/README.zh.md:138",
+            "candidate": "task:packages/experimental/inspector/README.zh.md:147",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2835,11 +2840,6 @@
             "candidate": "task:packages/experimental/inspector/README.zh.md:44",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-experimental-inspector 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/experimental/inspector/README.zh.md:147",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/experimental/ptc-runtime-python/README.zh.md:134",
@@ -2887,12 +2887,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/extensions/cordis-client-runner/README.zh.md:138",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/extensions/cordis-client-runner/README.zh.md:73",
             "decision": "excluded",
             "reason": "动态双半包的一次 run 内部流程由预装 runner 实现，不是新 Client UI 包的公开装载步骤。"
         },
         {
-            "candidate": "task:packages/extensions/cordis-client-runner/README.zh.md:138",
+            "candidate": "task:packages/extensions/cordis-host-runner/README.zh.md:145",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2902,12 +2907,12 @@
             "reason": "@deepseek-ai/dsh-cordis-host-runner 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/extensions/cordis-host-runner/README.zh.md:145",
+            "candidate": "task:packages/extensions/tool-cordis/README.zh.md:75",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/extensions/tool-cordis/README.zh.md:75",
+            "candidate": "task:packages/extensions/ui-cordis/README.zh.md:119",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2917,12 +2922,12 @@
             "reason": "现成动态插件面板的刷新实现，不是第三方 Client slot 或 Remote 的注册契约。"
         },
         {
-            "candidate": "task:packages/extensions/ui-cordis/README.zh.md:119",
+            "candidate": "task:packages/feedback/README.zh.md:40",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/feedback/README.zh.md:40",
+            "candidate": "task:packages/feedback/command-feedback/README.zh.md:147",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2932,7 +2937,7 @@
             "reason": "官方反馈事件的记录流程属于内置产品功能，插件的自有可回放事实应通过 Session 事件契约实现。"
         },
         {
-            "candidate": "task:packages/feedback/command-feedback/README.zh.md:147",
+            "candidate": "task:packages/feedback/message-feedback/README.zh.md:101",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2942,12 +2947,12 @@
             "reason": "@deepseek-ai/dsh-message-feedback 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/feedback/message-feedback/README.zh.md:101",
+            "candidate": "task:packages/fs/README.zh.md:51",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/fs/README.zh.md:51",
+            "candidate": "task:packages/fs/fs-local/README.zh.md:142",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2957,12 +2962,12 @@
             "reason": "@deepseek-ai/dsh-fs-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/fs/fs-local/README.zh.md:142",
+            "candidate": "task:packages/fs/fs-observation-policy/README.zh.md:132",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/fs/fs-observation-policy/README.zh.md:132",
+            "candidate": "task:packages/fs/fs-sandbox/README.zh.md:128",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -2972,19 +2977,9 @@
             "reason": "内置文件策略/模型工具的执行说明，不是自有 FileSystem provider 或 Tool 的独立公开注册任务。"
         },
         {
-            "candidate": "task:packages/fs/fs-sandbox/README.zh.md:128",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
             "candidate": "task:packages/fs/fs/README.zh.md:120",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
-            "candidate": "task:packages/fs/tool-fs-search/README.zh.md:53",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-tool-fs-search 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/fs/tool-fs-search/README.zh.md:104",
@@ -2997,12 +2992,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/fs/tool-fs-search/README.zh.md:53",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-tool-fs-search 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+        },
+        {
+            "candidate": "task:packages/fs/tool-fs/README.zh.md:250",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/fs/tool-fs/README.zh.md:53",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-fs 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/fs/tool-fs/README.zh.md:250",
+            "candidate": "task:packages/fs/tool-str-replace-editor/README.zh.md:140",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3015,11 +3020,6 @@
             "candidate": "task:packages/fs/tool-str-replace-editor/README.zh.md:75",
             "decision": "excluded",
             "reason": "内置文件策略/模型工具的执行说明，不是自有 FileSystem provider 或 Tool 的独立公开注册任务。"
-        },
-        {
-            "candidate": "task:packages/fs/tool-str-replace-editor/README.zh.md:140",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/goal/README.zh.md:45",
@@ -3037,12 +3037,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/goal/goal/README.zh.md:165",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/goal/goal/README.zh.md:34",
             "decision": "included",
             "taskId": "manage-session-goal"
         },
         {
-            "candidate": "task:packages/goal/goal/README.zh.md:165",
+            "candidate": "task:packages/goal/tool-goal/README.zh.md:156",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3050,11 +3055,6 @@
             "candidate": "task:packages/goal/tool-goal/README.zh.md:42",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-goal 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/goal/tool-goal/README.zh.md:156",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/guard/README.zh.md:44",
@@ -3067,14 +3067,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/guard/timeout-policy/README.zh.md:67",
-            "decision": "excluded",
-            "reason": "内置超时策略如何融合 deadline 的实现说明；自有 Tool 的取消与失败由 ToolRunContext 契约约束。"
-        },
-        {
             "candidate": "task:packages/guard/timeout-policy/README.zh.md:126",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/guard/timeout-policy/README.zh.md:67",
+            "decision": "excluded",
+            "reason": "内置超时策略如何融合 deadline 的实现说明；自有 Tool 的取消与失败由 ToolRunContext 契约约束。"
         },
         {
             "candidate": "task:packages/hooks/README.zh.md:43",
@@ -3083,6 +3083,11 @@
         },
         {
             "candidate": "task:packages/hooks/hook-protocol/README.zh.md:132",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/hooks/hooks-claude-code/README.zh.md:185",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3097,7 +3102,7 @@
             "reason": "Claude Code/Codex hook 桥接器的运行与失败协议，不是新 Cordis 插件的通用注册入口。"
         },
         {
-            "candidate": "task:packages/hooks/hooks-claude-code/README.zh.md:185",
+            "candidate": "task:packages/hooks/hooks-codex/README.zh.md:180",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3112,12 +3117,12 @@
             "reason": "Claude Code/Codex hook 桥接器的运行与失败协议，不是新 Cordis 插件的通用注册入口。"
         },
         {
-            "candidate": "task:packages/hooks/hooks-codex/README.zh.md:180",
+            "candidate": "task:packages/host/README.zh.md:52",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/host/README.zh.md:52",
+            "candidate": "task:packages/host/directory-picker-auto/README.zh.md:113",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3127,24 +3132,19 @@
             "taskId": "provide-directory-picker"
         },
         {
-            "candidate": "task:packages/host/directory-picker-auto/README.zh.md:113",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
             "candidate": "task:packages/host/directory-picker-browse/README.md:34",
             "decision": "included",
             "taskId": "provide-directory-picker"
         },
         {
-            "candidate": "task:packages/host/directory-picker-browse/README.zh.md:42",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-host-directory-picker-browse 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/host/directory-picker-browse/README.zh.md:115",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/host/directory-picker-browse/README.zh.md:42",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-host-directory-picker-browse 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/host/directory-picker-native/README.zh.md:104",
@@ -3157,12 +3157,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/host/frontend-static/README.zh.md:110",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/host/frontend-static/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-host-frontend-static 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/host/frontend-static/README.zh.md:110",
+            "candidate": "task:packages/host/open-in-app/README.zh.md:118",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3170,11 +3175,6 @@
             "candidate": "task:packages/host/open-in-app/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-host-open-in-app 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/host/open-in-app/README.zh.md:118",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/host/plugin-inventory/README.zh.md:108",
@@ -3187,14 +3187,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/host/webserver/README.zh.md:30",
-            "decision": "included",
-            "taskId": "register-http-route"
-        },
-        {
             "candidate": "task:packages/host/webserver/README.zh.md:117",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/host/webserver/README.zh.md:30",
+            "decision": "included",
+            "taskId": "register-http-route"
         },
         {
             "candidate": "task:packages/identity/README.zh.md:35",
@@ -3217,14 +3217,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/interaction/permission-presets/README.zh.md:30",
-            "decision": "excluded",
-            "reason": "用户权限预设的现成配置，不是第三方工具权限或 approval service 的独立实现路径。"
-        },
-        {
             "candidate": "task:packages/interaction/permission-presets/README.zh.md:141",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/interaction/permission-presets/README.zh.md:30",
+            "decision": "excluded",
+            "reason": "用户权限预设的现成配置，不是第三方工具权限或 approval service 的独立实现路径。"
         },
         {
             "candidate": "task:packages/interaction/tool-ask-user/README.zh.md:162",
@@ -3247,14 +3247,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/jobs/jobs-local/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-jobs-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/jobs/jobs-local/README.zh.md:142",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/jobs/jobs-local/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-jobs-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/jobs/jobs/README.zh.md:132",
@@ -3262,14 +3262,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/jobs/tool-jobs/README.zh.md:44",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-tool-jobs 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/jobs/tool-jobs/README.zh.md:181",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/jobs/tool-jobs/README.zh.md:44",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-tool-jobs 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/llm/README.zh.md:48",
@@ -3292,11 +3292,6 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/llm/llm-deepseek/README.zh.md:38",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-llm-deepseek 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/llm/llm-deepseek/README.zh.md:104",
             "decision": "excluded",
             "reason": "已有 LLM provider 的配置或热更新，创建新 provider 以 LlmAdapter HOW-TO 为准。"
@@ -3307,9 +3302,9 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/llm/llm-pi-ai/README.zh.md:36",
+            "candidate": "task:packages/llm/llm-deepseek/README.zh.md:38",
             "decision": "excluded",
-            "reason": "已有 LLM provider 的配置或热更新，创建新 provider 以 LlmAdapter HOW-TO 为准。"
+            "reason": "@deepseek-ai/dsh-llm-deepseek 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/llm/llm-pi-ai/README.zh.md:107",
@@ -3322,14 +3317,19 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/llm/llm-retry/README.zh.md:34",
+            "candidate": "task:packages/llm/llm-pi-ai/README.zh.md:36",
             "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-llm-retry 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+            "reason": "已有 LLM provider 的配置或热更新，创建新 provider 以 LlmAdapter HOW-TO 为准。"
         },
         {
             "candidate": "task:packages/llm/llm-retry/README.zh.md:139",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/llm/llm-retry/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-llm-retry 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/llm/llm/README.zh.md:165",
@@ -3357,17 +3357,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/lsp/lsp-stdio/README.zh.md:30",
-            "decision": "included",
-            "taskId": "register-lsp-provider"
-        },
-        {
             "candidate": "task:packages/lsp/lsp-stdio/README.zh.md:153",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/lsp/lsp-stdio/README.zh.md:30",
+            "decision": "included",
+            "taskId": "register-lsp-provider"
+        },
+        {
             "candidate": "task:packages/lsp/lsp/README.zh.md:133",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/lsp/tool-lsp/README.zh.md:172",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3377,12 +3382,12 @@
             "reason": "@deepseek-ai/dsh-tool-lsp 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/lsp/tool-lsp/README.zh.md:172",
+            "candidate": "task:packages/mcp/README.zh.md:45",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/mcp/README.zh.md:45",
+            "candidate": "task:packages/mcp/mcp-client/README.zh.md:217",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3392,7 +3397,7 @@
             "reason": "@deepseek-ai/dsh-mcp-client 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/mcp/mcp-client/README.zh.md:217",
+            "candidate": "task:packages/mcp/mcp-resources/README.zh.md:129",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3402,19 +3407,9 @@
             "taskId": "register-mcp-resource-provider"
         },
         {
-            "candidate": "task:packages/mcp/mcp-resources/README.zh.md:129",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
             "candidate": "task:packages/plan/README.zh.md:42",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
-            "candidate": "task:packages/plan/plan-mode/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-plan-mode 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/plan/plan-mode/README.zh.md:136",
@@ -3425,6 +3420,11 @@
             "candidate": "task:packages/plan/plan-mode/README.zh.md:192",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/plan/plan-mode/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-plan-mode 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/preset/README.zh.md:37",
@@ -3447,6 +3447,11 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/preset/persona/README.zh.md:121",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/preset/persona/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-persona 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
@@ -3457,12 +3462,12 @@
             "reason": "预置 agent/preset 包的内部行注册或开发笔记，不是自有 Profile bundle 的独立任务。"
         },
         {
-            "candidate": "task:packages/preset/persona/README.zh.md:121",
+            "candidate": "task:packages/ptc-runtime/README.zh.md:45",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/ptc-runtime/README.zh.md:45",
+            "candidate": "task:packages/ptc-runtime/ptc-runtime-node/README.zh.md:148",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3475,11 +3480,6 @@
             "candidate": "task:packages/ptc-runtime/ptc-runtime-node/README.zh.md:92",
             "decision": "excluded",
             "reason": "PTC Node bootstrap 的源码/构建差异属于内置隔离运行时维护，不是通用插件装载步骤。"
-        },
-        {
-            "candidate": "task:packages/ptc-runtime/ptc-runtime-node/README.zh.md:148",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/ptc-runtime/ptc-runtime/README.zh.md:134",
@@ -3507,12 +3507,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/sandbox/sandbox-local/README.zh.md:139",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/sandbox/sandbox-local/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-sandbox-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/sandbox/sandbox-local/README.zh.md:139",
+            "candidate": "task:packages/sandbox/sandbox-policy/README.zh.md:152",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3520,11 +3525,6 @@
             "candidate": "task:packages/sandbox/sandbox-policy/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-sandbox-policy 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/sandbox/sandbox-policy/README.zh.md:152",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/sandbox/sandbox-windows-acl/README.zh.md:197",
@@ -3562,17 +3562,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/sdk/server/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-sdk-jsonrpc-server 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/sdk/server/README.zh.md:131",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/sdk/server/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-sdk-jsonrpc-server 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+        },
+        {
             "candidate": "task:packages/session-query/README.zh.md:46",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/session-query/session-log-export/README.zh.md:134",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3582,7 +3587,7 @@
             "reason": "@deepseek-ai/dsh-session-log-export 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session-query/session-log-export/README.zh.md:134",
+            "candidate": "task:packages/session-query/session-query-sqlite/README.zh.md:150",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3592,7 +3597,7 @@
             "reason": "@deepseek-ai/dsh-session-query-sqlite 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session-query/session-query-sqlite/README.zh.md:150",
+            "candidate": "task:packages/session-query/session-query/README.zh.md:156",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3602,7 +3607,7 @@
             "reason": "@deepseek-ai/dsh-session-query 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session-query/session-query/README.zh.md:156",
+            "candidate": "task:packages/session-query/tool-session-query/README.zh.md:175",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3612,12 +3617,12 @@
             "reason": "@deepseek-ai/dsh-tool-session-query 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session-query/tool-session-query/README.zh.md:175",
+            "candidate": "task:packages/session/README.zh.md:81",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/session/README.zh.md:81",
+            "candidate": "task:packages/session/session-checkpoint-policy/README.zh.md:120",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3625,11 +3630,6 @@
             "candidate": "task:packages/session/session-checkpoint-policy/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-session-checkpoint-policy 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/session/session-checkpoint-policy/README.zh.md:120",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/session/session-format-catalog/README.zh.md:103",
@@ -3672,17 +3672,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/session/session-persistence-jsonl/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-session-persistence-jsonl 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/session/session-persistence-jsonl/README.zh.md:169",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/session/session-persistence-jsonl/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-session-persistence-jsonl 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+        },
+        {
             "candidate": "task:packages/session/session-persistence/README.zh.md:157",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/session/session-projection-cache/README.zh.md:134",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3697,11 +3702,6 @@
             "reason": "内置 projection cache 的 checkpoint 策略，不是插件写入可回放事实或定义投影的直接入口。"
         },
         {
-            "candidate": "task:packages/session/session-projection-cache/README.zh.md:134",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
             "candidate": "task:packages/session/session-projection/README.zh.md:137",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
@@ -3712,17 +3712,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/session/session-telemetry-otel/README.zh.md:41",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-session-telemetry-otel 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/session/session-telemetry-otel/README.zh.md:147",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/session/session-telemetry-otel/README.zh.md:41",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-session-telemetry-otel 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+        },
+        {
             "candidate": "task:packages/session/session-telemetry/README.zh.md:122",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/session/session-title-all-prompts-llm/README.zh.md:110",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3732,7 +3737,7 @@
             "reason": "@deepseek-ai/dsh-session-title-all-prompts-llm 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session/session-title-all-prompts-llm/README.zh.md:110",
+            "candidate": "task:packages/session/session-title-first-prompt-llm/README.zh.md:110",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3742,7 +3747,7 @@
             "reason": "@deepseek-ai/dsh-session-title-first-prompt-llm 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session/session-title-first-prompt-llm/README.zh.md:110",
+            "candidate": "task:packages/session/session-title-llm/README.zh.md:122",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3752,19 +3757,9 @@
             "reason": "@deepseek-ai/dsh-session-title-llm 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/session/session-title-llm/README.zh.md:122",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
             "candidate": "task:packages/session/session-title/README.md:55",
             "decision": "included",
             "taskId": "register-session-title-provider"
-        },
-        {
-            "candidate": "task:packages/session/session-title/README.zh.md:34",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-session-title 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/session/session-title/README.zh.md:142",
@@ -3772,7 +3767,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/session/session-title/README.zh.md:34",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-session-title 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+        },
+        {
             "candidate": "task:packages/session/session-turn-outline/README.zh.md:119",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/settings/README.zh.md:37",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3780,11 +3785,6 @@
             "candidate": "task:packages/settings/README.zh.md:6",
             "decision": "included",
             "taskId": "expose-live-config"
-        },
-        {
-            "candidate": "task:packages/settings/README.zh.md:37",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/settings/settings/README.zh.md:77",
@@ -3797,12 +3797,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/shell/bash-local/README.zh.md:146",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/shell/bash-local/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-bash-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/shell/bash-local/README.zh.md:146",
+            "candidate": "task:packages/shell/bash-sandbox/README.zh.md:177",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3812,7 +3817,7 @@
             "reason": "@deepseek-ai/dsh-bash-sandbox 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/shell/bash-sandbox/README.zh.md:177",
+            "candidate": "task:packages/shell/pwsh-local/README.zh.md:155",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3822,7 +3827,7 @@
             "reason": "@deepseek-ai/dsh-pwsh-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/shell/pwsh-local/README.zh.md:155",
+            "candidate": "task:packages/shell/pwsh-sandbox/README.zh.md:146",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3830,11 +3835,6 @@
             "candidate": "task:packages/shell/pwsh-sandbox/README.zh.md:42",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-pwsh-sandbox 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/shell/pwsh-sandbox/README.zh.md:146",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/shell/shell-env/README.md:34",
@@ -3852,12 +3852,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/shell/tool-bash-persistent/README.zh.md:152",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/shell/tool-bash-persistent/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-bash-persistent 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/shell/tool-bash-persistent/README.zh.md:152",
+            "candidate": "task:packages/shell/tool-bash/README.zh.md:219",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3867,7 +3872,7 @@
             "reason": "@deepseek-ai/dsh-tool-bash 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/shell/tool-bash/README.zh.md:219",
+            "candidate": "task:packages/shell/tool-pwsh-persistent/README.zh.md:158",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3877,7 +3882,7 @@
             "reason": "@deepseek-ai/dsh-tool-pwsh-persistent 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/shell/tool-pwsh-persistent/README.zh.md:158",
+            "candidate": "task:packages/shell/tool-pwsh/README.zh.md:211",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3885,11 +3890,6 @@
             "candidate": "task:packages/shell/tool-pwsh/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-pwsh 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/shell/tool-pwsh/README.zh.md:211",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/skill/README.zh.md:47",
@@ -3902,14 +3902,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/skill/skill-filesystem/README.zh.md:58",
-            "decision": "included",
-            "taskId": "register-skill-provider"
-        },
-        {
             "candidate": "task:packages/skill/skill-filesystem/README.zh.md:155",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/skill/skill-filesystem/README.zh.md:58",
+            "decision": "included",
+            "taskId": "register-skill-provider"
         },
         {
             "candidate": "task:packages/skill/skill-office/README.zh.md:30",
@@ -3922,12 +3922,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/skill/skill/README.zh.md:144",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/skill/skill/README.zh.md:34",
             "decision": "included",
             "taskId": "register-skill-provider"
         },
         {
-            "candidate": "task:packages/skill/skill/README.zh.md:144",
+            "candidate": "task:packages/skill/tool-skill/README.zh.md:251",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3937,7 +3942,7 @@
             "taskId": "register-skill-provider"
         },
         {
-            "candidate": "task:packages/skill/tool-skill/README.zh.md:251",
+            "candidate": "task:packages/skill/tool-workspace-dependencies/README.zh.md:121",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -3952,19 +3957,9 @@
             "reason": "内置工作区依赖 payload 的构建过程，不是注册自有 Skill provider 的步骤。"
         },
         {
-            "candidate": "task:packages/skill/tool-workspace-dependencies/README.zh.md:121",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
             "candidate": "task:packages/spill/README.zh.md:44",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
-        },
-        {
-            "candidate": "task:packages/spill/spill-local/README.zh.md:30",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-spill-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/spill/spill-local/README.zh.md:131",
@@ -3972,9 +3967,9 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/spill/spill-policy/README.zh.md:30",
+            "candidate": "task:packages/spill/spill-local/README.zh.md:30",
             "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-spill-policy 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
+            "reason": "@deepseek-ai/dsh-spill-local 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/spill/spill-policy/README.zh.md:152",
@@ -3985,6 +3980,11 @@
             "candidate": "task:packages/spill/spill-policy/README.zh.md:159",
             "decision": "excluded",
             "reason": "标题标记未来的逐工具配置，目标版本没有可用的当前配置任务。"
+        },
+        {
+            "candidate": "task:packages/spill/spill-policy/README.zh.md:30",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-spill-policy 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/spill/spill/README.zh.md:140",
@@ -4027,17 +4027,12 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/storage/storage-json/README.zh.md:34",
-            "decision": "included",
-            "taskId": "persist-plugin-records"
-        },
-        {
             "candidate": "task:packages/storage/storage-json/README.zh.md:146",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/storage/storage-sqlite/README.zh.md:34",
+            "candidate": "task:packages/storage/storage-json/README.zh.md:34",
             "decision": "included",
             "taskId": "persist-plugin-records"
         },
@@ -4045,6 +4040,11 @@
             "candidate": "task:packages/storage/storage-sqlite/README.zh.md:135",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/storage/storage-sqlite/README.zh.md:34",
+            "decision": "included",
+            "taskId": "persist-plugin-records"
         },
         {
             "candidate": "task:packages/storage/storage/README.zh.md:135",
@@ -4057,12 +4057,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/subagent/subagent-acp/README.zh.md:166",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/subagent/subagent-acp/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-subagent-acp 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-acp/README.zh.md:166",
+            "candidate": "task:packages/subagent/subagent-claude-code/README.zh.md:185",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4072,7 +4077,7 @@
             "reason": "@deepseek-ai/dsh-subagent-claude-code 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-claude-code/README.zh.md:185",
+            "candidate": "task:packages/subagent/subagent-codex/README.zh.md:183",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4082,7 +4087,7 @@
             "reason": "@deepseek-ai/dsh-subagent-codex 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-codex/README.zh.md:183",
+            "candidate": "task:packages/subagent/subagent-dsh-sdk/README.zh.md:178",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4092,7 +4097,7 @@
             "reason": "@deepseek-ai/dsh-subagent-dsh-sdk 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-dsh-sdk/README.zh.md:178",
+            "candidate": "task:packages/subagent/subagent-fork-in-process/README.zh.md:150",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4102,12 +4107,12 @@
             "reason": "@deepseek-ai/dsh-subagent-fork-in-process 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-fork-in-process/README.zh.md:150",
+            "candidate": "task:packages/subagent/subagent-in-process-driver/README.zh.md:170",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-in-process-driver/README.zh.md:170",
+            "candidate": "task:packages/subagent/subagent-spawn-in-process/README.zh.md:143",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4117,12 +4122,12 @@
             "reason": "@deepseek-ai/dsh-subagent-spawn-in-process 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/subagent-spawn-in-process/README.zh.md:143",
+            "candidate": "task:packages/subagent/subagent/README.zh.md:199",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/subagent/subagent/README.zh.md:199",
+            "candidate": "task:packages/subagent/tool-subagent-control/README.zh.md:176",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4132,7 +4137,7 @@
             "reason": "@deepseek-ai/dsh-tool-subagent-control 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/subagent/tool-subagent-control/README.zh.md:176",
+            "candidate": "task:packages/subagent/tool-subagent/README.zh.md:217",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4140,11 +4145,6 @@
             "candidate": "task:packages/subagent/tool-subagent/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-subagent 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/subagent/tool-subagent/README.zh.md:217",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/subprocess/README.zh.md:44",
@@ -4182,14 +4182,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/terminal/terminal-bash/README.zh.md:49",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-terminal-bash 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/terminal/terminal-bash/README.zh.md:174",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/terminal/terminal-bash/README.zh.md:49",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-terminal-bash 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/terminal/terminal/README.zh.md:140",
@@ -4197,14 +4197,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/terminal/tool-terminal/README.zh.md:51",
-            "decision": "excluded",
-            "reason": "@deepseek-ai/dsh-tool-terminal 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
             "candidate": "task:packages/terminal/tool-terminal/README.zh.md:177",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/terminal/tool-terminal/README.zh.md:51",
+            "decision": "excluded",
+            "reason": "@deepseek-ai/dsh-tool-terminal 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
             "candidate": "task:packages/test-support/README.zh.md:47",
@@ -4232,17 +4232,22 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/test-support/loader-smoke/README.zh.md:54",
-            "decision": "excluded",
-            "reason": "仓库测试辅助包的维护说明，不是可供插件作者交付的运行时插件任务。"
-        },
-        {
             "candidate": "task:packages/test-support/loader-smoke/README.zh.md:124",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/test-support/loader-smoke/README.zh.md:54",
+            "decision": "excluded",
+            "reason": "仓库测试辅助包的维护说明，不是可供插件作者交付的运行时插件任务。"
+        },
+        {
             "candidate": "task:packages/test-support/remote-mock/README.zh.md:141",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/test-support/session-snapshot/README.zh.md:170",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4252,12 +4257,12 @@
             "reason": "仓库测试辅助包的维护说明，不是可供插件作者交付的运行时插件任务。"
         },
         {
-            "candidate": "task:packages/test-support/session-snapshot/README.zh.md:170",
+            "candidate": "task:packages/todo/README.zh.md:42",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/todo/README.zh.md:42",
+            "candidate": "task:packages/todo/tool-todo/README.zh.md:165",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4267,12 +4272,12 @@
             "reason": "@deepseek-ai/dsh-tool-todo 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/todo/tool-todo/README.zh.md:165",
+            "candidate": "task:packages/typert/README.zh.md:45",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/typert/README.zh.md:45",
+            "candidate": "task:packages/typert/generator/README.zh.md:136",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4282,7 +4287,7 @@
             "taskId": "host-publish-remote"
         },
         {
-            "candidate": "task:packages/typert/generator/README.zh.md:136",
+            "candidate": "task:packages/typert/loader/README.zh.md:119",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4290,11 +4295,6 @@
             "candidate": "task:packages/typert/loader/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-typert-loader 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/typert/loader/README.zh.md:119",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/typert/protocol/README.zh.md:149",
@@ -4347,17 +4347,12 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/util/http-proxy/README.zh.md:30",
-            "decision": "excluded",
-            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
-        },
-        {
             "candidate": "task:packages/util/http-proxy/README.zh.md:115",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/util/launch-environment/README.zh.md:73",
+            "candidate": "task:packages/util/http-proxy/README.zh.md:30",
             "decision": "excluded",
             "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
         },
@@ -4365,6 +4360,11 @@
             "candidate": "task:packages/util/launch-environment/README.zh.md:107",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/util/launch-environment/README.zh.md:73",
+            "decision": "excluded",
+            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
         },
         {
             "candidate": "task:packages/util/lazy-require/README.zh.md:86",
@@ -4382,16 +4382,6 @@
             "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
         },
         {
-            "candidate": "task:packages/util/output-retention/README.zh.md:58",
-            "decision": "excluded",
-            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
-        },
-        {
-            "candidate": "task:packages/util/output-retention/README.zh.md:85",
-            "decision": "excluded",
-            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
-        },
-        {
             "candidate": "task:packages/util/output-retention/README.zh.md:118",
             "decision": "excluded",
             "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
@@ -4400,6 +4390,16 @@
             "candidate": "task:packages/util/output-retention/README.zh.md:161",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/util/output-retention/README.zh.md:58",
+            "decision": "excluded",
+            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
+        },
+        {
+            "candidate": "task:packages/util/output-retention/README.zh.md:85",
+            "decision": "excluded",
+            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
         },
         {
             "candidate": "task:packages/util/package-manifest/README.zh.md:96",
@@ -4412,14 +4412,14 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
-            "candidate": "task:packages/util/timeout/README.zh.md:97",
-            "decision": "excluded",
-            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
-        },
-        {
             "candidate": "task:packages/util/timeout/README.zh.md:147",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
+            "candidate": "task:packages/util/timeout/README.zh.md:97",
+            "decision": "excluded",
+            "reason": "通用 proxy、启动快照、输出保留或 deadline 工具的内部使用说明；本 Skill 的可安装插件任务由相应 DSH Service/Tool 契约承担。"
         },
         {
             "candidate": "task:packages/util/values/README.zh.md:89",
@@ -4437,12 +4437,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/web/tool-web/README.zh.md:257",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/web/tool-web/README.zh.md:34",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-web 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/web/tool-web/README.zh.md:257",
+            "candidate": "task:packages/web/web-fetch-http/README.zh.md:139",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4452,7 +4457,7 @@
             "taskId": "register-web-provider"
         },
         {
-            "candidate": "task:packages/web/web-fetch-http/README.zh.md:139",
+            "candidate": "task:packages/web/web-search-deepseek/README.zh.md:167",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4462,7 +4467,7 @@
             "taskId": "register-web-provider"
         },
         {
-            "candidate": "task:packages/web/web-search-deepseek/README.zh.md:167",
+            "candidate": "task:packages/web/web-search-exa/README.zh.md:132",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4472,7 +4477,7 @@
             "taskId": "register-web-provider"
         },
         {
-            "candidate": "task:packages/web/web-search-exa/README.zh.md:132",
+            "candidate": "task:packages/web/web-search-perplexity/README.zh.md:155",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4482,7 +4487,7 @@
             "taskId": "register-web-provider"
         },
         {
-            "candidate": "task:packages/web/web-search-perplexity/README.zh.md:155",
+            "candidate": "task:packages/web/web/README.zh.md:158",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4490,11 +4495,6 @@
             "candidate": "task:packages/web/web/README.zh.md:34",
             "decision": "included",
             "taskId": "register-web-provider"
-        },
-        {
-            "candidate": "task:packages/web/web/README.zh.md:158",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/webhook/README.zh.md:36",
@@ -4527,12 +4527,17 @@
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
+            "candidate": "task:packages/workflow/tool-ralph/README.zh.md:170",
+            "decision": "excluded",
+            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
+        },
+        {
             "candidate": "task:packages/workflow/tool-ralph/README.zh.md:38",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-tool-ralph 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/workflow/tool-ralph/README.zh.md:170",
+            "candidate": "task:packages/workflow/tool-workflow/README.zh.md:178",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4542,7 +4547,7 @@
             "reason": "@deepseek-ai/dsh-tool-workflow 的「配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
         },
         {
-            "candidate": "task:packages/workflow/tool-workflow/README.zh.md:178",
+            "candidate": "task:packages/workflow/workflow-ptc/README.zh.md:163",
             "decision": "excluded",
             "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
@@ -4550,11 +4555,6 @@
             "candidate": "task:packages/workflow/workflow-ptc/README.zh.md:30",
             "decision": "excluded",
             "reason": "@deepseek-ai/dsh-workflow-ptc 的「最小配置」说明现成包的参数或构建启动条件；它不描述新插件通过公开入口注册自己的对象、组合包或 UI。"
-        },
-        {
-            "candidate": "task:packages/workflow/workflow-ptc/README.zh.md:163",
-            "decision": "excluded",
-            "reason": "所属包 README 的开发备注记录维护背景，不描述插件作者可执行的创建、装载或验证任务。"
         },
         {
             "candidate": "task:packages/workflow/workflow/README.zh.md:134",

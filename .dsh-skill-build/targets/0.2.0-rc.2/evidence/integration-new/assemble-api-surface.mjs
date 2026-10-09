@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
+import { buildApiSurfaceCandidates } from "../../../../../.agents/skills/create-dsh-skill/scripts/initialize-capability-coverage.mjs";
 
 const target = process.argv[2];
 if (!target) throw new Error("Pass the target directory.");
@@ -11,9 +12,19 @@ const infra = read("evidence/infra-runtime-new/recommendations.json");
 const profile = read("evidence/integration-new/profile-recommendations.json");
 let provider = { entries: [] };
 try { provider = read("evidence/infra-runtime-new/provider-recommendations.json"); } catch (error) { if (error.code !== "ENOENT") throw error; }
-const seed = read("evidence/integration-new/api-surface-seed.json");
 const discovered = read("evidence/api-symbol-candidates.json");
 const candidates = read("evidence/api-entry-candidates.json");
+for (const field of ["version", "tag", "commit", "remote"]) {
+    if (discovered[field] !== candidates[field]) throw new Error(`API candidate identity mismatch: ${field}`);
+}
+const seed = {
+    schemaVersion: 1,
+    version: discovered.version,
+    tag: discovered.tag,
+    commit: discovered.commit,
+    remote: discovered.remote,
+    ...buildApiSurfaceCandidates(candidates, discovered),
+};
 const manifest = read("skill-source/manifest.json");
 const files = new Map(manifest.files.map((file) => [file.output, file]));
 const byEntry = new Map(discovered.entries.map((entry) => [entry.entry, entry]));
@@ -106,6 +117,11 @@ for (const candidate of candidates.candidates) {
         }
     }
 }
-const out = { ...seed, entries, objects };
+const compareId = (left, right) => left < right ? -1 : left > right ? 1 : 0;
+const out = {
+    ...seed,
+    entries: entries.sort((left, right) => compareId(left.candidate, right.candidate)),
+    objects: objects.sort((left, right) => compareId(left.id, right.id)),
+};
 writeFileSync(join(target, "skill-source/api-surface.json"), `${JSON.stringify(out, null, 4)}\n`);
 process.stdout.write(`${selected.size} included entries, ${objects.filter((object) => object.decision === "included").length} included objects; ${entries.filter((entry) => entry.decision === "pending").length} entry decisions pending\n`);

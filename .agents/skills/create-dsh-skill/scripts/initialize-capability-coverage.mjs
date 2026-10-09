@@ -46,6 +46,39 @@ export function buildCoverageWorkQueue(candidateDocument, schemaVersion = 1) {
     };
 }
 
+export function buildApiSurfaceCandidates(apiEntries, apiSymbols) {
+    const compareId = (left, right) =>
+        left < right ? -1 : left > right ? 1 : 0;
+    return {
+        entries: apiEntries.candidates
+            .map((candidate) => ({
+                candidate: candidate.id,
+                decision: "pending",
+            }))
+            .sort((left, right) => compareId(left.candidate, right.candidate)),
+        objects: apiSymbols.entries
+            .flatMap((entry) =>
+                entry.symbols.map((symbol) => ({
+                    id: `${entry.entry}:${symbol.name}`,
+                    entry: entry.entry,
+                    symbol: symbol.name,
+                    signature: symbol.signature,
+                    source: symbol.source ?? entry.source,
+                    decision: "pending",
+                    members: symbol.members
+                        .map((member) => ({
+                            ...member,
+                            decision: "pending",
+                        }))
+                        .sort((left, right) =>
+                            compareId(left.name, right.name),
+                        ),
+                })),
+            )
+            .sort((left, right) => compareId(left.id, right.id)),
+    };
+}
+
 function writeJsonReplacing(path, value) {
     const temporary = `${path}.tmp-${process.pid}`;
     writeFileSync(temporary, `${JSON.stringify(value, null, 4)}\n`, {
@@ -127,24 +160,7 @@ export function initializeCoverage(targetArgument) {
         }
         writeJsonReplacing(apiSurfacePath, {
             ...apiSurface,
-            entries: apiEntries.candidates.map((candidate) => ({
-                candidate: candidate.id,
-                decision: "pending",
-            })),
-            objects: apiSymbols.entries.flatMap((entry) =>
-                entry.symbols.map((symbol) => ({
-                    id: `${entry.entry}:${symbol.name}`,
-                    entry: entry.entry,
-                    symbol: symbol.name,
-                    signature: symbol.signature,
-                    source: symbol.source ?? entry.source,
-                    decision: "pending",
-                    members: symbol.members.map((member) => ({
-                        ...member,
-                        decision: "pending",
-                    })),
-                })),
-            ),
+            ...buildApiSurfaceCandidates(apiEntries, apiSymbols),
         });
     }
     writeJsonReplacing(coveragePath, coverage);

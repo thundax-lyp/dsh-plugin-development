@@ -56,6 +56,8 @@ API 事实冲突按 **代码 → 注释 → 文档** 裁决。代码包括包导
 
 ## 验证与报告
 
+仓库维护源码和文档由 Prettier 检查；`.dsh-skill-build/` 与正式生成目录 `skills/dsh-plugin-development/` 不交给 Prettier 整目录重排，正式产物由 `verify:skill` 检查结构、链接、JSON 代码块和空白。新创建契约的核心版本账本统一由写入器使用 `JSON.stringify(value, null, 4)` 和一个末尾换行生成，并运行 `pnpm format:ledgers` 检查。命令行打印的 JSON 不属于账本格式。调整缩进或排序时只对当前目标做一次明确迁移、重新冻结哈希并验证生成产物，不批量重排历史版本或改写版本化的 `generated-skill/`。
+
 按变更面选择最小适用检查；公开契约、共享基础设施、生命周期或产物替换变化需要扩大验证范围。纯文档修改不运行无关的 DSH runtime 测试。完整创建与发布流程以[创建 Skill](.agents/skills/create-dsh-skill/SKILL.md)为准。
 
 | 变更面              | 必需检查                                                                       |

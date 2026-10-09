@@ -11,6 +11,8 @@ import {
     writeJsonAtomic,
 } from "./skill-build-contract.mjs";
 
+const compareId = (left, right) => (left < right ? -1 : left > right ? 1 : 0);
+
 function typeTarget(value) {
     if (typeof value === "string") return value;
     if (!value || typeof value !== "object") return null;
@@ -68,7 +70,9 @@ export function discoverPublicApiMembers(target) {
             sourceFor(target.checkoutPath, entry),
         ]),
     );
-    const sourceFiles = [...new Set([...roots.values()].filter(Boolean))];
+    const sourceFiles = [...new Set([...roots.values()].filter(Boolean))].sort(
+        compareId,
+    );
     const program = ts.createProgram(sourceFiles, {
         allowImportingTsExtensions: true,
         noEmit: true,
@@ -175,14 +179,14 @@ export function discoverPublicApiMembers(target) {
                 signature,
                 deprecated,
                 source: source && !source.startsWith("../") ? source : null,
-                members: members.sort((a, b) => a.name.localeCompare(b.name)),
+                members: members.sort((a, b) => compareId(a.name, b.name)),
             };
         });
         output.push({
             entry: entry.id,
             source: relative(target.checkoutPath, root).replaceAll("\\", "/"),
             status: "resolved",
-            symbols: symbols.sort((a, b) => a.name.localeCompare(b.name)),
+            symbols: symbols.sort((a, b) => compareId(a.name, b.name)),
         });
     }
     return {
@@ -191,7 +195,7 @@ export function discoverPublicApiMembers(target) {
         tag: target.provenance.tag,
         commit: target.provenance.commit,
         remote: target.provenance.remote,
-        entries: output,
+        entries: output.sort((a, b) => compareId(a.entry, b.entry)),
     };
 }
 

@@ -10,6 +10,7 @@ import {
 } from "../scripts/inventory-dsh-surface.mjs";
 import { discoverPublicApiMembers } from "../scripts/discover-public-api-members.mjs";
 import {
+    buildApiSurfaceCandidates,
     buildCoverageWorkQueue,
     initializeCoverage,
 } from "../scripts/initialize-capability-coverage.mjs";
@@ -156,6 +157,56 @@ test("public API discovery follows re-exports and lists members", (t) => {
     assert.deepEqual(
         driver.members.map((member) => member.name),
         ["run"],
+    );
+});
+
+test("API surface candidates are reproducible from discovery data", () => {
+    const entries = {
+        candidates: [{ id: "export:z" }, { id: "export:a" }],
+    };
+    const symbols = {
+        entries: [
+            {
+                entry: "export:z",
+                source: "z.ts",
+                symbols: [
+                    {
+                        name: "Z",
+                        signature: "Z",
+                        source: "z.ts",
+                        members: [
+                            { name: "later", signature: "string" },
+                            { name: "earlier", signature: "number" },
+                        ],
+                    },
+                ],
+            },
+            {
+                entry: "export:a",
+                source: "a.ts",
+                symbols: [{ name: "A", signature: "A", members: [] }],
+            },
+        ],
+    };
+    const expected = buildApiSurfaceCandidates(entries, symbols);
+    assert.deepEqual(
+        expected.entries.map((entry) => entry.candidate),
+        ["export:a", "export:z"],
+    );
+    assert.deepEqual(
+        expected.objects.map((object) => object.id),
+        ["export:a:A", "export:z:Z"],
+    );
+    assert.deepEqual(
+        expected.objects[1].members.map((member) => member.name),
+        ["earlier", "later"],
+    );
+    assert.deepEqual(
+        buildApiSurfaceCandidates(
+            { candidates: [...entries.candidates].reverse() },
+            { entries: [...symbols.entries].reverse() },
+        ),
+        expected,
     );
 });
 

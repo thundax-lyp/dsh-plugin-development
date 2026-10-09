@@ -125,7 +125,9 @@ for (const candidate of candidates) {
     }
     pending.push(candidate);
 }
-coverage.taskDiscoveries = candidates.map((candidate) => decisions.get(candidate.id) ?? { candidate: candidate.id, decision: "pending" });
+coverage.taskDiscoveries = candidates
+    .map((candidate) => decisions.get(candidate.id) ?? { candidate: candidate.id, decision: "pending" })
+    .sort((left, right) => left.candidate < right.candidate ? -1 : left.candidate > right.candidate ? 1 : 0);
 writeFileSync(join(target, "skill-source/coverage.json"), `${JSON.stringify(coverage, null, 4)}\n`);
 writeFileSync(join(target, "evidence/integration-new/pending-task-titles.json"), `${JSON.stringify(pending, null, 4)}\n`);
 process.stdout.write(`${candidates.length - pending.length} task title decisions; ${pending.length} pending\n`);
