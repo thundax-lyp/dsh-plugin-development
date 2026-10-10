@@ -16,11 +16,13 @@
 
 公开 `@deepseek-ai/dsh-client-ui-primitives` 时，`task-candidates.json` 还包含 `kind: "shared-ui-component-selection"` 的包级候选。它须在 `taskDiscoveries` 中纳入一个 `kind: "shared-ui-component-selection"` 的已覆盖 Client 控件选型任务；该任务引用已纳入的该包控件对象，并由独立 HOW-TO 链至其 API owner，入口关键词索引用“组件／控件”等查找词链至该 owner。冻结器会对 README 组件目录中已排除的公开控件拒绝“不是本入口已核实插件任务直接调用”或“由同入口的已纳入对象承担”这类泛化理由。是否纳入仍由目标 tag 的公开契约与插件用途决定，不按组件数量设配额。
 
+`entrypoint/SKILL.md` 的 frontmatter `description` 是 Agent 判断何时使用产物的入口；`metadata/openai.yaml` 的 `short_description` 和 `default_prompt` 与之保持同一能力边界。它们须同时说明查询、选用目标版本可供插件使用的公开 API／扩展点和实施、验证插件任务；目标 tag 提供共享 Web UI 包时，还要明说可查询现成 Web UI 组件是否存在及如何使用。不要只写“开发 Cordis 包和插件时”，也不要泛化为查询 DSH 的任何内置产品功能。查询时先核对消费项目版本与产物版本，再按公开导出、声明和运行时证据回答；素材未核实的 props 或行为不能由触发描述补成事实。编写完毕，用不含“插件”“开发”的自然问句检查描述能否引导 Agent 进入 Skill，再检查入口关键词、选型 HOW-TO 和 API owner 能否接住该问句；实际触发效果在 Agent 验证中观察。
+
 ## 任务导航与场景验证
 
 新准备的 schema v3 目标在 manifest 中设置 `"taskNavigation": "entrypoint"`。既有 `"generated"` 目标维持旧版双文件导航以便读取冻结素材。此模式要求每条 `covered` 任务的 `destinations` 指向 HOW-TO 中该任务独占、标题和正文非空的小节；不得让不同任务共用一个泛化小节。单对象任务也须如此；任务小节链接其 `apiObjects` 中每个对象的权威 API reference。HOW-TO 可按不重叠的任务边界拆成多篇，没有文件数上限；若 API 页已有完整用法，任务小节可链接而不重复，但须保留任务目标、缺失步骤和完成判据。首屏任务还需提供至少一个非空 `userIntents` 和精确的 `entry`：其 `section` 与 `anchor` 必须标识同一个 HOW-TO 标题。维护者审阅小节的操作步骤、装载和完成判据；结构门禁只核验位置、内容非空及对象链接。
 
-入口 `SKILL.md` 依次包含 `## 适用范围`、`## 插件形态`、`## 开发任务`、`## 关键对象索引`、`## 术语与边界`、`## 关键词索引`、`## 跨主题不变量`、`## 完成边界`。适用范围写精确 npm 版本和停止套用的条件；“插件形态”按目标 tag 的公开组合列出实际成立的产品形态数量、用途、呈现或发现位置、装载与使用方法，并链接各自的 HOW-TO，遵守[形态总览模板](reference-template.md#插件形态总览)。术语解释插件作者会混淆的概念及边界，关键词索引将符号、包名和能力词链接到对应权威 reference；不变量与完成边界写读者可执行的规则。任务表与对象名称放在入口同名小节的生成区；入口须链接 `references/object-index.md`，后者容纳对象名与权威契约链接表：
+入口 `SKILL.md` 依次包含 `## 适用范围`、`## 插件形态`、`## 开发任务`、`## 关键对象索引`、`## 术语与边界`、`## 关键词索引`、`## 跨主题不变量`、`## 完成边界`。适用范围写精确 npm 版本和停止套用的条件；“插件形态”按目标 tag 的公开组合列出实际成立的产品形态数量、用途、呈现或发现位置、装载与使用方法，并链接各自的 HOW-TO，遵守[形态总览模板](reference-template.md#插件形态总览)。术语解释插件作者会混淆的概念及边界，关键词索引将符号、包名、能力词和用户常用问法链接到对应权威 reference；目标版本存在的共享控件按实际用途补“对话框／弹窗／Modal”等问法，不以“Web UI 组件”一词代替全部检索入口。不变量与完成边界写读者可执行的规则。任务表与对象名称放在入口同名小节的生成区；入口须链接 `references/object-index.md`，后者容纳对象名与权威契约链接表：
 
 ```text
 <!-- BEGIN GENERATED TASK NAVIGATION -->

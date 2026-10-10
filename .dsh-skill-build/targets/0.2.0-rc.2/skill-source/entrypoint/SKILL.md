@@ -1,13 +1,13 @@
 ---
 name: dsh-plugin-development
-description: 为 @deepseek-ai/dsh-agent@0.2.0-rc.2 开发 Cordis 包和插件时，按任务查找公开入口、完整示例与验证方法。
+description: 查询 @deepseek-ai/dsh-agent@0.2.0-rc.2 插件可用的公开 API、扩展点和现成 Web UI 组件，并按任务开发、验证 Cordis 包与插件。
 ---
 
 # DSH Plugin Development
 
 ## 适用范围
 
-本 Skill 面向 `@deepseek-ai/dsh-agent@0.2.0-rc.2` 的插件作者。先确认消费项目所用的 DSH 包版本；版本不一致时停止套用具体 API 签名和装载步骤，重新核查该版本的公开声明。文中区分目标版本已经实现的行为、仓库门禁、基于公开原语的开发建议与外部协议要求。
+本 Skill 面向查询 `@deepseek-ai/dsh-agent@0.2.0-rc.2` 插件可用能力、选择公开入口和开发插件的读者。先确认消费项目所用的 DSH 包版本；版本不一致时停止套用具体 API 签名和装载步骤，重新核查该版本的公开声明。文中区分目标版本已经实现的行为、仓库门禁、基于公开原语的开发建议与外部协议要求。
 
 ## 插件形态
 
@@ -176,7 +176,7 @@ Remote 是 Host 与 Client 之间的调用方式，不单独构成用户可见�
 | `ctx.tools`、`defineTool`、模型工具结果 | [工具契约](references/host/api/api-host-tools.md) |
 | `dsh.client`、Client 模块、bundle | [Client 装载](references/client/api/api-client-modules.md) |
 | slot、Web 页面、渲染 | [Client slot](references/client/api/api-client-slots.md) |
-| Web UI 组件、控件、`primitive`、`List` | [共享控件选型与导出边界](references/client/api/api-client-shared-ui.md) |
+| Web UI 组件、控件、对话框、弹窗、`Modal`、`primitive`、`List` | [共享控件选型与导出边界](references/client/api/api-client-shared-ui.md) |
 | Remote、Typert、跨侧调用 | [Remote 契约](references/client/api/api-client-remote.md) |
 | Profile、bundle、patch、插件安装 | [Profile 契约](references/infra/api/api-infra-profile-manifest.md) |
 | 配置表单、状态持久化、webhook | [配置](references/infra/api/api-infra-live-config.md)、[存储](references/infra/api/api-infra-storage.md)、[Webhook](references/infra/api/api-infra-webhook.md) |

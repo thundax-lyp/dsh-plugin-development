@@ -18,13 +18,13 @@
             "source": "entrypoint/SKILL.md",
             "output": "SKILL.md",
             "kind": "entrypoint",
-            "sha256": "7467982991ed13e4077c194ec8de0e0f1ff19cd700d74bd7b92ed4eb57ea5d4d"
+            "sha256": "f3ff75cda360b1c3851cf3a8a28f54e455eba17d09ecc193cffe6e2ea5a201cd"
         },
         {
             "source": "metadata/openai.yaml",
             "output": "agents/openai.yaml",
             "kind": "metadata",
-            "sha256": "821057bbd030f4d4c87e658a27f95f61b4369cfd8b0462af07c9d8d1f15ee6ba"
+            "sha256": "0f7374bd9b117b538417778278b8bb016c19c5fba0b8b92060764a83d2b12255"
         },
         {
             "source": "api-guardrails/client-commands.md",
