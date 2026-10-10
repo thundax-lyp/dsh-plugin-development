@@ -53,7 +53,7 @@
 
 ### 共享 UI 组件裁决
 
-目标 tag 若公开 `@deepseek-ai/dsh-client-ui-primitives`，把“现成控件是否存在、该选哪一个、如何在插件 Client 中使用”作为独立开发任务。候选清单为此生成 `shared-ui-component-selection` 任务候选；把它映射到 `coverage.taskPaths` 中 `kind: "shared-ui-component-selection"` 的已覆盖 Client HOW-TO 任务，任务的 `apiObjects` 至少包含一个该包已纳入的公开控件。HOW-TO 链接控件契约；产物 `SKILL.md` 的关键词索引用“Web UI 组件／共享控件”等用户查找词直达契约。slot 说明装载和呈现位置，主题说明样式来源，都不能代替控件选型。
+目标 tag 若公开 `@deepseek-ai/dsh-client-ui-primitives`，把“现成控件是否存在、该选哪一个、如何在插件 Client 中使用”作为独立开发任务。这也包括未说明开发意图的提问，例如“DSH Web UI 提供对话框吗”；产物能力描述须让 Agent 能从此类提问进入 Skill。候选清单为此生成 `shared-ui-component-selection` 任务候选；把它映射到 `coverage.taskPaths` 中 `kind: "shared-ui-component-selection"` 的已覆盖 Client HOW-TO 任务，任务的 `apiObjects` 至少包含一个该包已纳入的公开控件。HOW-TO 链接控件契约；产物 `SKILL.md` 的关键词索引按目标版本实际控件收录“Web UI 组件／共享控件”及“对话框／弹窗／Modal”等用途词，直达契约或明确的导出边界。slot 说明装载和呈现位置，主题说明样式来源，都不能代替控件选型。
 
 逐行审阅目标版本 README 的组件目录并与包入口、声明和调用方核对。对 `Pill`/`Tag`、分段选择、提示、菜单等实际存在的不同用途分别裁决；不因同属 React 或同包就把一个控件算作另一个的替代。纳入的控件按选型差异和必要 props 给出契约，排除的控件逐项说明公开性、可用侧或插件使用路径的具体限制，不能批量写“由同入口已纳入对象承担”。不要求收录包内所有图标、类型或内部组件；用户想要的控件若未公开导出，在选型步骤中明确不存在公开入口，再给出可用的原生语义或本地组件方案。
 
