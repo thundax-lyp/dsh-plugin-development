@@ -36,6 +36,8 @@ node scripts/check_examples.cjs --dsh <target>/checkout --skill <target>/generat
 
 `--skill` 仅检查指定 Skill 目录；省略时两个脚本保持原有行为，检查正式 `skills/dsh-plugin-development/`。`--dsh` 验证传入 checkout 的 `HEAD` 与该 npm 版本对应 tag 指向同一 commit，并核查 source-map 路径；commit 不从分发 Skill 读取。示例编译依赖目标 checkout 的锁定依赖、Host 构建和 generated Remote 声明。
 
+若本目标配置了[契约回归与多文件示例](skill-source-contract.md#契约回归与多文件示例)，冻结验证同时校验正文断言和验证脚本的哈希；示例检查器从显式输入目录提取并运行对应真实编译/生成检查。不得用目标素材或手写替身使生成目录通过。
+
 以上检查全部通过后，维护者才可整体替换正式 Skill 目录。替换属于仓库修改，不代表已经暂存、提交、推送、创建 PR 或发布。
 
 ```text

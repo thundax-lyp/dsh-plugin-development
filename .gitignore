@@ -9,3 +9,9 @@
 /.dsh-skill-build/targets/*/evidence/integration-new/capability-audit-conflicts.json
 /.dsh-skill-build/targets/*/previous-generated-before-format/
 /.dsh-skill-build/targets/*/preserved-formal-before-replacement/
+/.dsh-skill-build/targets/*/evidence/**/consumer*/
+/.dsh-skill-build/targets/*/evidence/**/node_modules/
+/.dsh-skill-build/targets/*/evidence/**/*.log
+/.dsh-skill-build/targets/*/evidence/client/runtime-test-output.txt
+/.dsh-skill-build/targets/*/evidence/client/consumer-resolution.json
+/.dsh-skill-build/targets/*/evidence/agent-eval/

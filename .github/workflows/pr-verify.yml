@@ -60,6 +60,8 @@ jobs:
                     .agents/skills/create-dsh-skill/references/reference-template.md
                     .agents/skills/create-dsh-skill/references/skill-source-contract.md
                     .agents/skills/create-dsh-skill/references/output-contract.md
+                    .agents/skills/create-dsh-skill/scripts/contract-checks.mjs
+                    .agents/skills/create-dsh-skill/tests/contract-checks.test.mjs
                     .agents/skills/review-dsh-skill/SKILL.md
                     .agents/skills/review-dsh-skill/agents/openai.yaml
                     .agents/skills/review-dsh-skill/references/review-method.md

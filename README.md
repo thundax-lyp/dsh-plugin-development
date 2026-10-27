@@ -12,7 +12,7 @@ Invoke `$create-dsh-skill [version]` explicitly. Without a version, the creator 
 
 The [creator Skill](.agents/skills/create-dsh-skill/SKILL.md) prepares the exact checkout, inventories code exports and their object members alongside “how to” task headings, adjudicates each public API and task candidate, and writes a frozen `skill-source/`. It then builds a complete Skill in an isolated directory, validates that directory against the same checkout, and replaces `skills/dsh-plugin-development/` as a whole. The previous generated Skill is never an input to the new one.
 
-Selected common tasks link from the generated `SKILL.md` directly to their exact HOW-TO sections. The source validator checks each selected task's entry against its adjudicated task path; other tasks remain available through the task routing reference.
+Selected common tasks link from the generated `SKILL.md` directly to their exact HOW-TO sections. The source validator checks each selected task's entry against its adjudicated task path; other tasks remain available in the same entrypoint’s generated task table.
 
 The entry-point search and evidence rules are in [entrypoint scope](.agents/skills/create-dsh-skill/references/entrypoint-scope.md); the required document structure is in the [reference template](.agents/skills/create-dsh-skill/references/reference-template.md). Candidate coverage and source claims must be resolved before the source can be frozen.
 
@@ -32,7 +32,7 @@ pnpm format:check
 git diff --check
 ```
 
-For a generated output, follow the [creator's verification procedure](.agents/skills/create-dsh-skill/SKILL.md#验证与交付), passing the generated Skill and its exact DSH checkout to the validators. Host and Client examples are checked separately. Structural checks alone do not establish runtime behavior.
+For a generated output, follow the [creator's verification procedure](.agents/skills/create-dsh-skill/SKILL.md#验证与交付), passing the generated Skill and its exact DSH checkout to the validators. Host and Client examples are checked separately. Targets can freeze focused contract assertions and multi-file example validators; those validators read the selected output and run its generation and compilation steps. Structural checks alone do not establish runtime behavior.
 
 ## Repository layout
 
