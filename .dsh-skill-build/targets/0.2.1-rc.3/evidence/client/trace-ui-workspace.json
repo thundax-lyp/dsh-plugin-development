@@ -1,0 +1,69 @@
+{
+    "task": "client-ui-workspace",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-workspace/src/client/contract/slots.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-workspace: dictionaries')"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.slots.register({ name: 'sidebar.workspaces.session.menu.item', id: 'pin', order: 100, locale: NS, inject: pinInjected }, PinSessionMenuItem)"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.slots.register({ name: 'sidebar.workspaces.session.menu.item', id: 'archive', order: 400, locale: NS, inject: archiveInjected }, ArchiveSessionMenuItem)"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.slots.register({ name: 'sidebar.workspaces.session.row.action', id: 'pin', order: 200, locale: NS, inject: pinInjected }, PinSessionRowButton)"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/index.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-workspace/src/client/shortcuts.ts",
+            "ctx.shortcuts.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.registerFactory({ name: 'workspace.toast.content', scope: 'root' }, WorkspaceToast)"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-workspace/src/client/toast/register.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

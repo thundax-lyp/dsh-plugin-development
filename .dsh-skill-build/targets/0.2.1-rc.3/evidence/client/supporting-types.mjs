@@ -1,0 +1,7 @@
+import fs from 'node:fs';import ts from 'typescript';import path from 'node:path';
+const target=path.resolve('.dsh-skill-build/targets/0.2.1-rc.3');const result=JSON.parse(fs.readFileSync(target+'/evidence/client/result.json'));const cache=new Map();
+for(const o of result.objects.filter(o=>o.decision==='included')){
+ let sf=cache.get(o.source);if(!sf){sf=ts.createSourceFile(o.source,fs.readFileSync(target+'/checkout/'+o.source,'utf8'),ts.ScriptTarget.Latest,true);cache.set(o.source,sf)}
+ const decls=sf.statements.filter(n=>ts.isInterfaceDeclaration(n)||ts.isTypeAliasDeclaration(n));const page=result.files.find(f=>f.output===o.owner);if(!page)continue;const file=target+'/skill-source/'+page.source;let text=fs.readFileSync(file,'utf8');const start=text.indexOf('## '+o.section+'\n');if(start<0)continue;const end=text.indexOf('\n## ',start+4);const segment=text.slice(start,end<0?undefined:end);let names=new Set();let body=segment;let added=[];for(let i=0;i<6;i++){let change=false;for(const d of decls){const name=d.name.text;if(names.has(name)||name===o.symbol)continue;if(new RegExp('\\b'+name+'\\b').test(body)){names.add(name);let val=d.getText(sf).replace(/\/\*[^]*?\*\//g,'').replace(/^\s*\/\/.*$/gm,'').trim();added.push(val);body+='\n'+val;change=true;}}if(!change)break;}
+ if(added.length){const insert='\n同文件声明的形状依赖：\n\n```text\n'+added.join('\n\n')+'\n```\n';text=text.slice(0,end<0?text.length:end)+insert+text.slice(end<0?text.length:end);fs.writeFileSync(file,text)}
+}

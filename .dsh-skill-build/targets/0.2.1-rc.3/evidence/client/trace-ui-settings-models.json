@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-settings-models",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-models/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-models: copy dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-models/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-models/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

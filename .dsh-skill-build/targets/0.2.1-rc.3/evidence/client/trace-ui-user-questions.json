@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-user-questions",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-user-questions/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-user-questions: dictionaries')"
+        ],
+        [
+            "packages/client/ui-user-questions/src/client/index.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-user-questions/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "newContractGenerated": true,
+    "hostLoader": true,
+    "clientLazyBundle": true,
+    "clientMount": true,
+    "validCall": true,
+    "invalidInput": true,
+    "businessErrorDetails": true,
+    "preCancelled": true,
+    "inFlightCancelled": true,
+    "clientUnload": true,
+    "hostUnload": true,
+    "hostBlocks": 5,
+    "clientBlocks": 1
+}

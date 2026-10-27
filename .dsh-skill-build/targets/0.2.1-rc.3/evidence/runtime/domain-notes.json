@@ -1,0 +1,213 @@
+{
+    "fs": {
+        "title": "文件读取、原子写入与观察保护",
+        "service": "fs",
+        "setup": [
+            "@deepseek-ai/dsh-fs-local"
+        ],
+        "notes": "FileSystem.resolve 将路径解析为不透明 FsTarget；不要解析 targetKey。processPath 属于后端执行世界，不一定是 Host 路径。readBytes 必须给完整文件字节上限，超限拒绝而不截断；readByteRange 的 offset/length 是非负整数字节窗口。readText/streamText 为常规 UTF-8 文本；listDir 稳定排序且不读取内容。writeText 省略 expected 是无条件覆盖；createIfAbsent 拒绝已有文件，replaceIfVersion 携带旧版本拒绝缺失或变更。editText 先核对 version 再匹配文字；replaceAll=false 要求唯一匹配。watch 的 signal 只管初始化取消，调用者还必须 await close。fs/observed 是同步记录通知；write-intent/edit-intent 是单槽 waterfall，不是多个授权器叠加。观察保护由 fs-observation-policy 提供，裸 fs-local 不自动实施已读才写。",
+        "failure": "按 FsError.code 区分 FS_STALE_VERSION、FS_NOT_OBSERVED、FS_EDIT_NOT_FOUND、FS_AMBIGUOUS_EDIT、FS_ABORTED；冲突后重新读取并取得新版本，不能删掉 expected 强制重放。"
+    },
+    "storage": {
+        "title": "非 Session 状态的持久化",
+        "service": "storageDomain",
+        "setup": [
+            "@deepseek-ai/dsh-storage",
+            "@deepseek-ai/dsh-storage-json",
+            "@deepseek-ai/dsh-storage-domain"
+        ],
+        "notes": "Storage 是后端注册和数据形态挂载中心，不直接执行 IO。消费者使用 storageDomain.open(defineDomain(...))；schema 使用 zod，插件 Config 使用 schemastery。Domain 读取同步返回已校验内存值，返回对象不可原地修改；写入经每个 domain 的队列先持久化再更新内存并发 domain/changed。监听者抛错不会推翻已经提交的写入。调用者拥有 Domain handle，卸载必须 await close；同名 domain 在打开及关闭期间均被预留。global 初始 null 是未写哨兵，schema 不可接受 null。per-record、compatibleVersions 和 backup-and-skip 只用于明确声明的可兼容或可丢弃记录；权威数据默认因 invalid-record 拒绝打开。",
+        "failure": "重复后端/形态、backend-not-found、facet-unsupported、already-open、invalid-record、missing-key、closed 均要显式处理；没有跨表事务或跨进程变更广播，不能据 domain/changed 推断多实例一致性。"
+    },
+    "jobs": {
+        "title": "后台任务的所有权与输出",
+        "service": "jobs",
+        "setup": [
+            "@deepseek-ai/dsh-jobs-local"
+        ],
+        "notes": "JobRegistry 定义契约，jobs-local 提供执行。start 的 run 同步返回 cancel 与 done；先完成预检才调用 run，部分启动失败由生产者自行清理。done 必须在资源释放后才 settle，不能把业务完成等同于进程退出。owner 为 SessionId，可见性包含本 owner 与无 owner 任务；绑定 owner 时还要求该 id 对应当前 live Agent。read 消耗模型游标及一次性 result，readAt 使用独立 byte offset 不消耗其他读取者。output 环可能丢失旧数据，检查 lossy 和 spillPaths。job/registered 与 job/settled 是日志事实，fork 不转移 live execution ownership。",
+        "failure": "cancel 抛错可以导致注册记录强制失败但不能证明进程已停。wait 超时只结束等待，kill 才请求停止；完成通知与等待者交付避免重复。订阅 disposer 随调用 fiber 清理。"
+    },
+    "subprocess": {
+        "title": "受管理子进程与原始输出",
+        "service": "subprocess",
+        "setup": [
+            "@deepseek-ai/dsh-subprocess-local"
+        ],
+        "notes": "SubprocessRuntime 不补默认值，spawn 输入必须完整提供 argv、cwd、环境、stdio 和终止宽限。resolveExecutable 只接受绝对路径或 PATH 名，含分隔符的相对路径因基准不明拒绝。spawn 同步返回 handle，预先取消或非法参数可同步抛错；done 记录退出也可因基础设施错误拒绝。collect 输出以 offset 非消费读取，pipe 是调用者拥有的原始流。terminate 与 waitForExit 针对后端管理范围；释放 provider 时终止并等待仍运行的进程。spawnTerminal 负责真实 terminal 分配与整个会话停止，shell ready 判断由终端消费者负责。",
+        "failure": "取消后还须等待管理范围静止再释放调用资源。scrubbedParentEnv 清除敏感名称与全部 DSH_*，显式 env 随后覆盖；不要把此名称启发式当成凭证隔离证明。远程 fs/subprocess 必须使用同一执行世界。"
+    },
+    "shell": {
+        "title": "Shell 命令、期限与持久执行句柄",
+        "service": "shell",
+        "setup": [
+            "@deepseek-ai/dsh-subprocess-local",
+            "@deepseek-ai/dsh-bash-local"
+        ],
+        "notes": "先 ShellExecutor.resolve(request) 再 execute(spec)，不能将未解析 request 当 spec。foreground 由调用者 await result 决定，并不是不同的 spawn。onExpiry:none 不设截止，调用者等待超时后 handle 仍可用；kill 才在到期终止。result 在普通非零退出、超时和 abort 时返回描述结果，基础设施失败才 reject。done 在进程 close 后结算且不拒绝，生成失败由读取路径及 result 保留。ShellProcess.readOutput 是增量消费，与 subprocess 的 offset 读取不同。执行器单独 reload 不一定结束进程，subprocess 组合卸载拥有最终停止责任。",
+        "failure": "准备阶段超时可以返回已结算且无输出的 handle；准备失败或发布前取消会 reject。检查 timedOut、aborted、exit code，不把 Promise fulfilled 等同于命令成功。"
+    },
+    "sandbox": {
+        "title": "沙箱能力、执行策略与升级审批",
+        "service": "sandbox",
+        "setup": [
+            "@deepseek-ai/dsh-sandbox-local",
+            "@deepseek-ai/dsh-sandbox-policy"
+        ],
+        "notes": "SandboxProvider 封装受限执行原语，sandbox-policy 决定部署及每次执行策略；消费者必须读取有效 mode/workspace root，不能只看执行器默认 sandboxMode。sandboxMode=undefined 表示默认不做约束。批准升级与执行是不同阶段，审批不自动改变所有后续调用；按 approveEscalation/validateEscalationArgs 的策略核查请求。OS provider 有平台前置，本地和 SSH provider 不可混用路径假设。",
+        "failure": "SANDBOX_UNAVAILABLE 是能力不可用，不能静默回退为无沙箱。RunnerFailureRule 只识别所声明失败签名，命令失败不都属于 sandbox 拒绝；按结构化结果判断。"
+    },
+    "terminal": {
+        "title": "持久终端后端与会话",
+        "service": "terminals",
+        "setup": [
+            "@deepseek-ai/dsh-terminal",
+            "@deepseek-ai/dsh-terminal-bash"
+        ],
+        "notes": "TerminalSessionService 注册 backend 后才可按 type 创建会话。会话精确绑定创建它的 Agent 对象，不能因获知 id 就跨 Agent 操作。一次只允许一个 send；同步预留避免后台 job 发布前并发发送。stdin_read、inferred_idle、timeout、session_exit 是不同等待结果。spawn 先保留未发布资源，成功后发布；取消、owner 或 service 卸载必须等待 setup/rollback 与进程树清理。进程内会话不跨 Host 重启恢复。",
+        "failure": "NO_BACKEND、NO_SESSION、FOREIGN_SESSION、SEND_ACTIVE、OWNER_NOT_LIVE 必须分别处理；TerminalBackendCleanupError 代表资源清理仍失败，不能向用户报告已关闭。"
+    },
+    "credentials": {
+        "title": "插件凭证、引用与交互授权",
+        "service": "credentials",
+        "setup": [
+            "@deepseek-ai/dsh-credentials-local",
+            "@deepseek-ai/dsh-authorization"
+        ],
+        "notes": "CredentialKey 把插件 scope 与 id 组合，CredentialRef 是稳定配置引用而不是 secret。凭证 record 的 api-key/grant 判别分支不同，UI 只应显示 info 投影。AuthorizationFlow 以 key 注册且 methods 非空，每个 key 同时只准一个 attempt；run 必须在 attempt 内提交且结束时记录仍存在才算成功。用 session.commit 使取消与写入协调，notify 不阻塞流程，prompt 区分人类拒绝与界面故障。flow 注册返回 disposer，插件卸载撤销注册和运行中的会话。",
+        "failure": "AuthorizationDeclinedError 只用于人类明确拒绝，signal 撤销不能冒充人类回答。授权协议由 flow 自己实现；credentials 服务不是 Host 身份认证或多租户授权边界。"
+    },
+    "attachment": {
+        "title": "图片与文件附件的持久引用",
+        "service": "attachments",
+        "setup": [
+            "@deepseek-ai/dsh-attachment-local"
+        ],
+        "notes": "先保存并验证附件，后把耐久引用写入所属 Session event。saveImages 先全批验证再写入，存储失败不返回部分 refs，但已发布内容地址对象可能留下不可达数据。imageLimits 约束图像数量、总字节与类型，图像需完整解码验证；文件 verbatim 保存与图片 normalization 不同。文件流必须背压，不能整文件收集。readImage/readFileStream 核对 durable ref 与内容一致性；readImageRequest 是确定性的请求派生版本，其 identity 覆盖变换输入。imageHostPath/fileHostPath 允许 undefined，不可假设所有后端都提供 Host 文件。",
+        "failure": "不支持的文件或投影操作默认拒绝 ATTACHMENT_FILES_UNSUPPORTED/ATTACHMENT_PROJECTION_UNSUPPORTED。取消 signal 原因保留；完整性错误应中止消费，不要用损坏附件继续请求。"
+    },
+    "spill": {
+        "title": "大结果落盘与可检索定位符",
+        "service": "spillStore",
+        "setup": [
+            "@deepseek-ai/dsh-spill-local"
+        ],
+        "notes": "SpillStore 只有 saveText，保存完整 UTF-8 文本并返回 locator、准确 bytes 与 retrievalHint，不提供检索、搜索或删除 API。owner.sessionId 是写入命名空间，source 是描述，不授予 locator 读取权限。suggestedName 是被净化的单段提示。fork 继承日志中的定位符不复制旧文件，新 spill 归 child session。spill-policy 决定替换超长工具结果，失败时保留原 inline 内容，backend 自身必须 reject 真正存储失败。",
+        "failure": "locator 为不透明值，不解析成固定本地路径。保存失败由调用方选择保持原结果或失败，不能报告保存成功；过期与回收由后端负责。"
+    },
+    "web": {
+        "title": "搜索与抓取 Provider",
+        "service": "web",
+        "setup": [
+            "@deepseek-ai/dsh-web"
+        ],
+        "notes": "WebRuntime 分开注册 search/fetch provider，重复 id 拒绝。每次执行读取选择配置；指定 provider 必须已注册且 available；未指定时恰好一个可用 provider 才自动选择，多于一个报歧义，绝不按注册顺序选。search 对 maxResults 做结果上限，超出设置 truncated；fetch 的非 2xx 是描述性结果而不是必然 throw。register 返回 disposer 且随调用 fiber 清理。自定义 provider 要透传 signal；本地测试用脚本化 provider，不发外部请求。",
+        "failure": "WEB_DUPLICATE_PROVIDER、WEB_PROVIDER_CONFIGURED_MISSING、WEB_PROVIDER_CONFIGURED_UNAVAILABLE、WEB_PROVIDER_AMBIGUOUS、WEB_PROVIDER_UNAVAILABLE 均为不同组合错误；修复配置后再请求，不隐式换服务。"
+    },
+    "lsp": {
+        "title": "语言服务 Provider 与四类查询",
+        "service": "lsp",
+        "setup": [
+            "@deepseek-ai/dsh-lsp"
+        ],
+        "notes": "Lsp.registerProvider 一次验证 id 与所有 extensionToLanguage 路由，全部校验成功才发布。扩展名归一为小写带点，重复扩展或其他 provider 已占用均拒绝且不留下部分注册。query 按最终扩展名路由，.d.ts 使用 .ts，dotfile 无扩展。公开查询只有 goToDefinition/findReferences/goToImplementation/hover，没有任意 JSON-RPC 逃生接口。provider 拥有服务端通信，注册 disposer 同时释放全部扩展预留。",
+        "failure": "LSP_CONFLICT、LSP_INVALID_PROVIDER、LSP_UNAVAILABLE、LSP_MALFORMED_RESPONSE 和取消分开处理；不能对无 provider 的语言捏造空成功结果。"
+    },
+    "session": {
+        "title": "Session 耐久句柄、格式与只读投影",
+        "service": "sessionPersistence",
+        "setup": [
+            "@deepseek-ai/dsh-session-persistence-jsonl"
+        ],
+        "notes": "SessionPersistence 的 create/open 交付 SessionHandle。writer 所有权与 read-only access 不同，append/flush/close 的完成判据必须依据具体 handle；写入权丢失要停止后续 append。原始 Session event 是事实来源，projection/cache/query 是派生读取，不能据缓存路径存在声称事实已提交。格式迁移属于持久化后端读取过程，插件不得直接改写历史 JSONL 或绕过支持版本检查。当前格式与历史迁移工具不可混用。 append 是 best-effort，flush 才是耐久屏障；create 在本进程可见不保证崩溃前已经物化到其他进程，handle.flush 强制物化。revision 只在同服务实例、同 session id 内比较，相等可当未变，不相等不承诺变化内容；它不参与 resume 或 writer 所有权。",
+        "failure": "SessionAlreadyOwnedError、SessionOwnershipLostError、SessionReadOnlyError、SessionPersistenceCorruptionError、SessionFormatUnsupportedError、SessionHandleClosedError 分别代表所有权、访问模式、损坏、版本与生命周期问题；不能盲目重放未知是否成功的 append。"
+    },
+    "session-query": {
+        "title": "检索与导出会话的只读视图",
+        "service": "sessionQuery",
+        "setup": [
+            "@deepseek-ai/dsh-session-query-sqlite"
+        ],
+        "notes": "检索索引是耐久会话事实的派生 read model，查询结果不能充当 writer 认证或跨实例路由。消费者应保留 SessionId 与事件位置以便回查原日志，并按查询范围与可见性约束选择结果。session-log-export 生成面向消费的投影，不能把导出文本写回原日志。query provider 及依赖的 persistence/projection 必须在实际组合中可用。",
+        "failure": "索引失败或过期不等于源会话不存在；重建/刷新应遵守 provider 的代际与 checkpoint 契约，不能跨版本复制数据库。"
+    },
+    "schedule": {
+        "title": "定时任务的声明与投递",
+        "service": "schedule",
+        "setup": [
+            "@deepseek-ai/dsh-schedule"
+        ],
+        "notes": "调度记录区分一次性 at/after 与 every/daily/weekly/cron 等重复规则；规则、时区、间隔与未来时间在创建前校验。title/prompt 是任务内容，delivery receipt/history 是投递事实，不得把仅创建记录等同于完成执行。变更日志 fold 得到当前视图，修改内容与修改时间不同。运行依赖持久存储、Session 与子任务组合；外部模型执行必须另行授权，本地验证只测规则解析和脚本化执行。",
+        "failure": "InvalidRuleError、InvalidTimeZoneError、NotFutureError、FrequencyTooHighError、InvalidPromptError、SubagentSessionError 等区分输入与投递失败；不能因某次 Promise 返回就报告未来任务已经运行。"
+    },
+    "workspace": {
+        "title": "工作区归属与会话管理",
+        "service": "workspaces",
+        "setup": [
+            "@deepseek-ai/dsh-workspace"
+        ],
+        "notes": "WorkspaceRegistry 维护规范目录与 Session 归属，路径要 realpath 后比较；工作区记录和注册顺序通过 storageDomain 保持。create/remove 会保留 pending mutation 以恢复明确操作，不能根据孤立记录猜测。archive 与 unarchive 的存在检查不同；pin 不等于移动到工作区。活动检查和耐久 archive 写入不是单个原子步骤，不能承诺瞬间阻止所有正在执行的模型步骤。",
+        "failure": "WorkspaceActiveSessionError、WorkspaceUnknownSessionError、WorkspaceArchivedSessionPinError 与目录不存在分开处理；archive 的 stop provider 失败被记录后仍可完成隐藏，不证明执行已经停止。"
+    },
+    "deliverables": {
+        "title": "交付物与工作区变更呈现",
+        "service": "",
+        "setup": [
+            "@deepseek-ai/dsh-tool-present"
+        ],
+        "notes": "交付物呈现通过工具规范结果和 Client 消费协作，不将 Host 绝对路径当浏览器可访问链接。工作区变更是观察投影，不能替代文件实际版本或事务提交。附件、文件、终端结果分别由对应服务拥有；在 Session 中记录可重建的描述及引用，由 Client 纯渲染。",
+        "failure": "呈现失败与内容生成失败分开；不要因为工具返回描述就宣称浏览器已打开文件或用户已看到渲染。"
+    },
+    "feedback": {
+        "title": "反馈记录与命令入口",
+        "service": "",
+        "setup": [
+            "@deepseek-ai/dsh-message-feedback"
+        ],
+        "notes": "反馈服务保存用户对消息的明确输入，命令插件提供调用入口，Remote 与 Client 消费是独立组合。记录不能当成模型工具执行授权，UI 展示应读取持久或服务返回结果，不另外造第二份事实。",
+        "failure": "只更新成功返回后的反馈视图；失败保留原输入供重试，重复请求按接口实际幂等边界判断。"
+    },
+    "ssh": {
+        "title": "远程执行世界与配套后端",
+        "service": "ssh",
+        "setup": [
+            "@deepseek-ai/dsh-ssh"
+        ],
+        "notes": "SSH 管理传输与远程 helper，fs-ssh、subprocess-ssh、sandbox-ssh 组成同一远程执行世界；不要把本地 Host 文件路径作为远程可打开路径。取消、连接关闭和远端进程清理必须由相应 handle 确认，连接断开本身不证明远程进程静止。",
+        "failure": "helper/protocol/schemas 是传输实现边界，不是面向模型的任意远程命令工具；主机密钥和凭证配置由部署者决定。"
+    },
+    "browser-use": {
+        "title": "浏览器自动化能力注册",
+        "service": "browserUse",
+        "setup": [
+            "@deepseek-ai/dsh-browser-use"
+        ],
+        "notes": "BrowserUseRegistry 是独占名称注册表，仅保存一个 providerName。register(name) 返回异步 effect disposer；即使重复同一个名称，第二次注册也失败。provider 必须先停止自己的工具并等待工作清理，最后 await disposer 释放槽。注册表本身没有页面操作、截图或键鼠方法，实际功能由具体 provider 的工具提供；不能从 providerName 存在推断驱动已经可用。",
+        "failure": "清理期间仍保留 providerName，以阻止另一个 provider 抢占未释放资源。OS/浏览器权限与具体驱动错误由 provider 处理；名称注册不是用户授权。"
+    },
+    "computer-use": {
+        "title": "桌面控制能力注册",
+        "service": "computerUse",
+        "setup": [
+            "@deepseek-ai/dsh-computer-use"
+        ],
+        "notes": "ComputerUseRegistry 是独占名称注册表，仅保存一个 providerName。register(name) 返回异步 effect disposer；即使重复同一个名称，第二次注册也失败。provider 必须先停止自己的工具并等待工作清理，最后 await disposer 释放槽。注册表本身没有页面操作、截图或键鼠方法，实际功能由具体 provider 的工具提供；不能从 providerName 存在推断驱动已经可用。",
+        "failure": "清理期间仍保留 providerName，以阻止另一个 provider 抢占未释放资源。OS/浏览器权限与具体驱动错误由 provider 处理；名称注册不是用户授权。"
+    },
+    "telemetry": {
+        "title": "插件遥测通道与有界关闭",
+        "service": "otel",
+        "setup": [
+            "@deepseek-ai/dsh-otel"
+        ],
+        "notes": "OTel 只提供独立 reporter 工厂，挂载不创建队列、身份或网络连接。createEventReporter 为每个消费者建立独立计数批处理通道；createSessionLogReporter 建立按请求字节上限约束的 Session 日志通道。消费者在报告前负责授权与脱敏，并在所属 fiber 卸载时停止接收、排空并等待 shutdown。通道不共享队列或消费者身份。",
+        "failure": "SessionLog 的 maxRequestBytes 是正安全整数且不能超过 4000000，batch size 不可大于 queue size。SessionLogReporter.stopPending 停止待投递内容，shutdown 等待当前资源释放；外层截止与失败处理由 consumer 拥有，不能把排队成功当成服务器已收到。"
+    },
+    "util": {
+        "title": "工具输出预算、取消期限与进程代理",
+        "service": "",
+        "setup": [],
+        "notes": "这些是可直接导入的库，不向 Profile 挂载或注入 Service。ItemRetainer 限有序逻辑条目，TextRetainer 按字节保留 head/tail/headTail 且维持 UTF-8 边界。truncated 仅代表预算省略已观察内容，不包括权限失败、跳过二进制或上游本来不完整；seen 是已观察数而不是全源总量。deadline/idleWatchdog 只发取消通知，实际停止与 abandoned demand 释放由调用者拥有。HTTP 代理是进程策略，launcher安装；插件不能另建隐藏全局dispatcher。",
+        "failure": "clampTimeout 的公开 requested 必须正且有限，零不是公开禁用哨兵；deadline 内部 timeoutMs<=0 才表示不设 timer。signal reason 保留第一触发原因；必须 dispose timer。代理继承子进程时使用 proxyEnvironmentForChild；对其他HTTP客户端读取 proxyRouteFor，不绕过用户路由。"
+    }
+}

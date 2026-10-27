@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-sidebar",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-sidebar/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-sidebar: dictionaries')"
+        ],
+        [
+            "packages/client/ui-sidebar/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-sidebar/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

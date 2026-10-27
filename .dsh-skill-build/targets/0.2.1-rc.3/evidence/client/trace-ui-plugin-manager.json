@@ -1,0 +1,21 @@
+{
+    "task": "client-ui-plugin-manager",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-plugin-manager/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-plugin-manager: dictionaries')"
+        ],
+        [
+            "packages/client/ui-plugin-manager/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-plugin-manager/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-plugin-manager/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

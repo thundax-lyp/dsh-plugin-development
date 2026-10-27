@@ -1,0 +1,9 @@
+{
+    "task": "client-ui-settings-agent-loop",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-agent-loop/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-agent-loop: dictionaries')"
+        ]
+    ]
+}

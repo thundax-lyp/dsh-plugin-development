@@ -1,0 +1,25 @@
+{
+    "task": "client-ui-open-in-app",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-open-in-app/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'open-in-app: dictionaries')"
+        ],
+        [
+            "packages/client/ui-open-in-app/src/client/index.ts",
+            "ctx.shortcuts.register({"
+        ],
+        [
+            "packages/client/ui-open-in-app/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-open-in-app/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-open-in-app/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

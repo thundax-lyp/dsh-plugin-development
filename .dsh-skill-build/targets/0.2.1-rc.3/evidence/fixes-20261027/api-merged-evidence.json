@@ -1,0 +1,103 @@
+[
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationStepDataMap",
+        "owner": "references/client/api/api-client-ui-conversation-conversation.md",
+        "evidence": [
+            "packages/client/ui-conversation/src/client/contract/conversation.ts",
+            "packages/client/ui-chat/src/client/conversation-nodes/assistant.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationTurnDataMap",
+        "owner": "references/client/api/api-client-ui-conversation-conversation.md",
+        "evidence": [
+            "packages/client/ui-conversation/src/client/contract/conversation.ts",
+            "packages/client/ui-chat/src/client/conversation-nodes/turn-process.ts",
+            "packages/client/ui-chat/src/client/conversation-nodes/turn-tail.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationViewSnapshotMap",
+        "owner": "references/client/api/api-client-ui-conversation-conversation.md",
+        "evidence": [
+            "packages/client/ui-conversation/src/client/contract/conversation.ts",
+            "packages/client/ui-chat/src/client/contract/snapshot.ts",
+            "packages/client/ui-trajectory/src/client/trajectory-contract.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:ConversationGroupDataMap",
+        "owner": "references/client/api/api-client-ui-conversation-groups.md",
+        "evidence": [
+            "packages/client/ui-conversation/src/client/contract/groups.ts",
+            "packages/client/ui-chat/src/client/contract/process-groups.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:UserTextDataMap",
+        "owner": "references/client/api/api-client-ui-conversation-index.md",
+        "evidence": [
+            "packages/client/ui-conversation/src/client/index.ts",
+            "packages/client/ui-conversation/src/client/user-text/session-reference-rule.ts",
+            "packages/client/ui-goal/src/client/user-text-rules.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-conversation:./client:UserTextFacts",
+        "owner": "references/client/api/api-client-ui-conversation-index.md",
+        "evidence": [
+            "packages/client/ui-conversation/src/client/index.ts",
+            "packages/client/ui-conversation/src/client/user-text/session-reference-rule.ts",
+            "packages/client/ui-goal/src/client/user-text-rules.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-session:./client:SessionPendingInteractionMap",
+        "owner": "references/client/api/api-client-ui-session-index.md",
+        "evidence": [
+            "packages/client/ui-session/src/client/index.ts",
+            "packages/client/ui-approval/src/client/contract/slots.ts",
+            "packages/client/ui-user-questions/src/client/contract/slots.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightResourceParamsMap",
+        "owner": "references/client/api/api-client-ui-sidebar-right-params.md",
+        "evidence": [
+            "packages/client/ui-sidebar-right/src/client/contract/params.ts",
+            "packages/client/ui-sidebar-documentpreview/src/client/index.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-sidebar-right:./client:SidebarRightTabParamsMap",
+        "owner": "references/client/api/api-client-ui-sidebar-right-params.md",
+        "evidence": [
+            "packages/client/ui-sidebar-right/src/client/contract/params.ts",
+            "packages/client/ui-sidebar-browser/src/client/index.ts"
+        ]
+    },
+    {
+        "id": "export:@deepseek-ai/dsh-client-ui-slots:.:SlotMap",
+        "owner": "references/client/api/api-client-ui-slots-index.md",
+        "evidence": [
+            "packages/client/ui-slots/src/index.ts",
+            "packages/client/ui-settings/src/client/contract/slots.ts",
+            "packages/client/ui-approval/src/client/contract/slots.ts",
+            "packages/client/ui-conversation/src/client/contract/slots.ts",
+            "packages/client/ui-chat/src/client/contract/slots.ts",
+            "packages/client/ui-layout/src/client/index.ts",
+            "packages/client/ui-model-selection/src/client/slots.ts",
+            "packages/client/ui-plugin-manager/src/client/slot-contract.ts",
+            "packages/client/ui-renderer/src/client/registry.ts",
+            "packages/client/ui-settings-models/src/client/slot-contract.ts",
+            "packages/client/ui-sidebar-right/src/client/contract/slots.ts",
+            "packages/client/ui-sidebar-documentpreview/src/client/document/contract.ts",
+            "packages/client/ui-sidebar-files/src/client/index.ts",
+            "packages/client/ui-sidebar/src/client/contract/slots.ts",
+            "packages/client/ui-tool/src/client/contract/slots.ts",
+            "packages/client/ui-trajectory/src/client/trajectory-contract.ts",
+            "packages/client/ui-user-questions/src/client/contract/slots.ts",
+            "packages/client/ui-workspace/src/client/contract/slots.ts"
+        ]
+    }
+]

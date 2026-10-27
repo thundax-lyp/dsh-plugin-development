@@ -1,0 +1,25 @@
+{
+    "task": "client-ui-settings-account",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-account/src/client/index.ts",
+            "ctx.locale.register('settings.account', { en, zh }), 'account: dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-account/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-account/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-account/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-account/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

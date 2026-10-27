@@ -1,0 +1,25 @@
+{
+    "task": "client-ui-subagent",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-subagent/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-subagent: dictionaries')"
+        ],
+        [
+            "packages/client/ui-subagent/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-subagent/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-subagent/src/client/sidebar-chat/index.tsx",
+            "ctx.resources.register(subagentChatResourceProvider(ctx.sessions)),"
+        ],
+        [
+            "packages/client/ui-subagent/src/client/sidebar-chat/index.tsx",
+            "ctx.slots.register({"
+        ]
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "task": "client-ui-input-trigger",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-input-trigger/src/client/index.ts",
+            "ctx.locale.register(MENU_NS, { zh, en }), 'ui-input-trigger: menu dictionaries')"
+        ]
+    ]
+}

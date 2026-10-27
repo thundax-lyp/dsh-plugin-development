@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-settings-plugin-inventory",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-plugin-inventory/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-plugin-inventory: dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-plugin-inventory/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

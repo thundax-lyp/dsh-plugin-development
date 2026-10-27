@@ -1,0 +1,61 @@
+{
+    "task": "client-ui-sidebar-documentpreview",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/code/index.ts",
+            "ctx.locale.register(NS, { zh, en }))"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/excel/index.ts",
+            "ctx.locale.register('sidebarExcel', { zh, en }))"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/html/index.ts",
+            "ctx.locale.register('documentHtml', { zh, en }))"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/image/index.ts",
+            "ctx.locale.register('sidebarImage', { zh, en }), 'document-image: dictionaries')"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/index.ts",
+            "ctx.sidebarRightTabs.register(textDefinition()), 'ui-sidebar-documentpreview: text type')"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/index.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/index.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/markdown/index.ts",
+            "ctx.locale.register('documentMarkdown', { zh, en }), 'document-markdown: dictionaries')"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/office/index.ts",
+            "ctx.locale.register('sidebarOffice', { zh, en }))"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/office/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/office/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/office/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/pdf/index.ts",
+            "ctx.locale.register('sidebarPdf', { zh, en }))"
+        ],
+        [
+            "packages/client/ui-sidebar-documentpreview/src/client/text/index.ts",
+            "ctx.documentPreviews.register(textBodyDefinition(() => t('viewer.text'))))"
+        ]
+    ]
+}

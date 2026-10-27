@@ -1,0 +1,472 @@
+[
+    {
+        "entry": "export:@deepseek-ai/dsh-commands:.",
+        "source": "packages/interaction/commands/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "commands",
+                "signature": "commands: CommandRuntime"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-commands:.",
+        "source": "packages/interaction/commands/src/types.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "commands/change",
+                "signature": "'commands/change'(): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-compaction:.",
+        "source": "packages/compaction/compaction/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "compaction",
+                "signature": "compaction: CompactionEngine"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-compaction:.",
+        "source": "packages/compaction/compaction/src/index.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "compaction/summary-error",
+                "signature": "'compaction/summary-error'(payload: { session: Session; sourceEventSeqs: readonly SessionSeq[]; error: unknown; signal?: AbortSignal }, next: () => boolean): boolean",
+                "mode": "waterfall"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-compaction-tool-result-pruner:.",
+        "source": "packages/compaction/compaction-tool-result-pruner/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "toolResultPruner",
+                "signature": "toolResultPruner: ToolResultPruner"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-deepseek-llm-api-extensions:.",
+        "source": "packages/llm/deepseek-llm-api-extensions/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "deepseekLlmApiExtensions",
+                "signature": "deepseekLlmApiExtensions: DeepSeekLlmApiExtensionRegistry"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-agent-team:.",
+        "source": "packages/experimental/agent-team/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "agentTeams",
+                "signature": "agentTeams: TeamService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-api-speech-to-text:.",
+        "source": "packages/experimental/api-speech-to-text/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "speechController",
+                "signature": "speechController: SpeechController"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-claude-code-mods:.",
+        "source": "packages/experimental/claude-code-mods/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "claudeCodeMods",
+                "signature": "claudeCodeMods: ClaudeCodeMods"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-inspector:.",
+        "source": "packages/experimental/inspector/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "inspector",
+                "signature": "inspector: InspectorService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-speech-to-text:.",
+        "source": "packages/experimental/speech-to-text/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "speechToText",
+                "signature": "speechToText: SpeechToText"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-translator:.",
+        "source": "packages/experimental/translator/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "translator",
+                "signature": "translator: Translator"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-experimental-worktree:.",
+        "source": "packages/experimental/worktree/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "worktrees",
+                "signature": "worktrees: WorktreeService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-file-reference:.",
+        "source": "packages/context/file-reference/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "fileReferences",
+                "signature": "fileReferences: FileReferenceService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-goal:.",
+        "source": "packages/goal/goal/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "goals",
+                "signature": "goals: GoalService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-goal:.",
+        "source": "packages/goal/goal/src/types.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "goal/activation-changed",
+                "signature": "'goal/activation-changed'(payload: GoalActivationChanged): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-goal:.",
+        "source": "packages/goal/goal/src/domain.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "goal/changed",
+                "signature": "'goal/changed'(this: import('@deepseek-ai/dsh-scope').Scoped<Agent>, payload: { agent: Agent; change: GoalChanged }): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-llm:.",
+        "source": "packages/llm/llm/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "llm",
+                "signature": "llm: LlmRuntime"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-llm:.",
+        "source": "packages/llm/llm/src/index.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "llm/stream",
+                "signature": "'llm/stream'(this: LlmRuntime, options: GenerateOptions, next: () => AsyncIterable<StreamChunk>): AsyncIterable<StreamChunk>",
+                "mode": "waterfall"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-llm:.",
+        "source": "packages/llm/llm/src/types.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "llm/adapters-updated",
+                "signature": "'llm/adapters-updated'(): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-mcp-resources:.",
+        "source": "packages/mcp/mcp-resources/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "mcpResources",
+                "signature": "mcpResources: McpResourceRuntime"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+        "source": "packages/interaction/permission-presets/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "permissionPresets",
+                "signature": "permissionPresets: PermissionPresetService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-permission-presets:.",
+        "source": "packages/interaction/permission-presets/src/types.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "permission-presets/catalog-changed",
+                "signature": "'permission-presets/catalog-changed'(): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-plan-mode:.",
+        "source": "packages/plan/plan-mode/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "planMode",
+                "signature": "planMode: PlanModeController"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-ptc-runtime:.",
+        "source": "packages/ptc-runtime/ptc-runtime/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "ptcRuntime",
+                "signature": "ptcRuntime: PtcRuntime"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-session-reference:.",
+        "source": "packages/context/session-reference/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "sessionReferenceResolver",
+                "signature": "sessionReferenceResolver: SessionReferenceResolver"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-skill:.",
+        "source": "packages/skill/skill/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "skills",
+                "signature": "skills: SkillRegistry"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-skill:.",
+        "source": "packages/skill/skill/src/index.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "skills/change",
+                "signature": "'skills/change'(): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-subagent:.",
+        "source": "packages/subagent/subagent/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "subagents",
+                "signature": "subagents: SubagentRuntime"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-subagent:.",
+        "source": "packages/subagent/subagent/src/index.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "subagent/provider-added",
+                "signature": "'subagent/provider-added'(provider: SubagentProvider): void",
+                "mode": "emit"
+            },
+            {
+                "name": "subagent/provider-removed",
+                "signature": "'subagent/provider-removed'(name: string): void",
+                "mode": "emit"
+            },
+            {
+                "name": "subagent/start",
+                "signature": "'subagent/start'(this: Scoped<SubagentRuntime>, info: SubagentRunInfo): void",
+                "mode": "emit"
+            },
+            {
+                "name": "subagent/end",
+                "signature": "'subagent/end'(this: Scoped<SubagentRuntime>, info: SubagentRunEndInfo): void",
+                "mode": "emit"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-token-meter:.",
+        "source": "packages/llm/token-meter/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "tokenMeter",
+                "signature": "tokenMeter: TokenMeter"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-user-approval:.",
+        "source": "packages/interaction/user-approval/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "approval",
+                "signature": "approval: ApprovalService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-user-approval:.",
+        "source": "packages/interaction/user-approval/src/types.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "approval/request",
+                "signature": "'approval/request'( this: Scoped<Agent>, req: ApprovalRequestEvent, next: () => Promise<ApprovalOutcome>, ): Promise<ApprovalOutcome>",
+                "mode": "waterfall"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-user-questions:.",
+        "source": "packages/interaction/user-questions/src/types.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "user-questions/request",
+                "signature": "'user-questions/request'( this: Scoped<Agent>, request: AskUserQuestionRequestEvent, next: () => Promise<AskUserQuestionAnswer>, ): Promise<AskUserQuestionAnswer>",
+                "mode": "waterfall"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-user-questions:.",
+        "source": "packages/interaction/user-questions/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "userQuestions",
+                "signature": "userQuestions: UserQuestionService"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-webhook:.",
+        "source": "packages/experimental/webhook/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "webhookRuntime",
+                "signature": "webhookRuntime: WebhookRuntime"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-workflow:.",
+        "source": "packages/workflow/workflow/src/index.ts",
+        "symbol": "Context",
+        "members": [
+            {
+                "name": "workflowEngine",
+                "signature": "workflowEngine: WorkflowEngine"
+            }
+        ]
+    },
+    {
+        "entry": "export:@deepseek-ai/dsh-workflow:.",
+        "source": "packages/workflow/workflow/src/index.ts",
+        "symbol": "Events",
+        "members": [
+            {
+                "name": "workflow/start",
+                "signature": "'workflow/start'(info: WorkflowRunInfo): void",
+                "mode": "emit"
+            },
+            {
+                "name": "workflow/phase",
+                "signature": "'workflow/phase'(info: WorkflowRunInfo, title: string): void",
+                "mode": "emit"
+            },
+            {
+                "name": "workflow/log",
+                "signature": "'workflow/log'(info: WorkflowRunInfo, message: string): void",
+                "mode": "emit"
+            },
+            {
+                "name": "workflow/agent-start",
+                "signature": "'workflow/agent-start'(info: WorkflowRunInfo, agent: WorkflowAgentInfo): void",
+                "mode": "emit"
+            },
+            {
+                "name": "workflow/agent-end",
+                "signature": "'workflow/agent-end'(info: WorkflowRunInfo, agent: WorkflowAgentEndInfo): void",
+                "mode": "emit"
+            },
+            {
+                "name": "workflow/end",
+                "signature": "'workflow/end'(info: WorkflowRunInfo, result: WorkflowResultInfo): void",
+                "mode": "emit"
+            }
+        ]
+    }
+]

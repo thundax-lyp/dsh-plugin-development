@@ -1,0 +1,57 @@
+{
+    "schemaVersion": 1,
+    "scenarios": [
+        {
+            "taskId": "register-service",
+            "script": "core/scenarios/register-service.mjs",
+            "checks": [
+                "package-resolution",
+                "package-build",
+                "package-types",
+                "profile-load",
+                "service-call",
+                "unload"
+            ],
+            "timeoutMs": 120000
+        },
+        {
+            "taskId": "client-ui-primitives",
+            "script": "client/run-runtime.mjs",
+            "checks": [
+                "consumer-resolution",
+                "consumer-types",
+                "consumer-build",
+                "module-import",
+                "slot-mount",
+                "modal-interaction",
+                "unload"
+            ],
+            "timeoutMs": 180000
+        },
+        {
+            "taskId": "runtime-shell",
+            "script": "fixes-20261027/profile-check.mjs",
+            "checks": [
+                "base-patch-service-uniqueness",
+                "existing-config-override",
+                "provider-replacement-patch",
+                "real-loader-composition",
+                "shell-call",
+                "consumer-unload-keeps-shared-services"
+            ],
+            "timeoutMs": 60000
+        },
+        {
+            "taskId": "client-ui-settings",
+            "script": "fixes-20261027/settings-model-check.mjs",
+            "checks": [
+                "first-edit-baseline-revision",
+                "conflict-preserves-draft",
+                "discard-new-baseline",
+                "dispose-unsubscribes",
+                "late-save-no-ui-publication"
+            ],
+            "timeoutMs": 60000
+        }
+    ]
+}

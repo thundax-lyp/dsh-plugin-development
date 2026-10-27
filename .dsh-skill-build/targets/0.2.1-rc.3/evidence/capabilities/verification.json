@@ -1,0 +1,74 @@
+{
+    "target": "0.2.1-rc.3",
+    "checks": [
+        {
+            "kind": "npm-version-availability",
+            "result": "passed",
+            "packages": 98,
+            "evidence": "npm-availability.json"
+        },
+        {
+            "kind": "upstream-doc-typecheck",
+            "result": "passed",
+            "hostBlocks": 3,
+            "ignored": 0,
+            "firstFailure": "LlmModelInfo requires provider; corrected and recompiled"
+        },
+        {
+            "kind": "cordis-runtime-smoke",
+            "result": "passed",
+            "checks": [
+                "plugin-load",
+                "llm-call",
+                "llm-preaborted-call",
+                "skill-get",
+                "plugin-unload"
+            ],
+            "source": "runtime-smoke.ts"
+        },
+        {
+            "kind": "upstream-vitest",
+            "result": "passed",
+            "files": [
+                "packages/mcp/mcp-client/tests/apply.spec.ts",
+                "packages/mcp/mcp-client/tests/protocol.spec.ts",
+                "packages/workflow/workflow/tests/workflow.spec.ts",
+                "packages/skill/skill/tests/skill.spec.ts",
+                "packages/interaction/commands/tests/commands.spec.ts",
+                "packages/llm/llm/tests/service.spec.ts"
+            ],
+            "testFiles": 6,
+            "tests": 232
+        },
+        {
+            "kind": "independent-consumer-and-real-profile",
+            "result": "passed",
+            "preparation": [
+                "independent pnpm install of pinned npm peers and TypeScript",
+                "independent tsc build of the complete example package"
+            ],
+            "script": "verify-profile-scenario.mjs",
+            "repeatedOffline": true,
+            "assertions": {
+                "consumer-build": true,
+                "profile-load": true,
+                "llm-call": true,
+                "cancel": true,
+                "unload": true,
+                "profile-uninstall": true
+            },
+            "scope": "真实目标CLI装载独立编译消费包；通过公开llm服务直接调用，不包含Web或Agent模型轮次",
+            "notes": [
+                "第一次离线重现因pnpm10和11使用不同store而失败，后改为显式定位并校验已准备消费依赖版本并复制至新的临时消费包；重编译与Profile运行不联网",
+                "pnpm remove不接受--offline参数，复现脚本移除此标志并用npm_config_offline=true限制包管理器；再次完整通过",
+                "每次脚本在finally删除隔离home和临时消费包；初次人工Profile卸载后亦已回读并清理"
+            ]
+        }
+    ],
+    "notCovered": [
+        "完整 Web 模型选择器、真实 Agent 会话与真实 Agent Skill 触发导航未在本组执行",
+        "Workflow 命令的真实 Agent 子任务、MCP 完整 bundle 的配置到模型调用与重连未执行",
+        "实验平台提供方、外部认证与真实 Client/Remote 组合未执行"
+    ],
+    "reviewScope": "公开声明按目标源码及新构建lib/types校正；发现器any不作为分发契约。重点手工补充LLM、Skill、Subagent、Workflow、PTC、MCP、Commands、Approval、Goal生命周期，HOWTO通过完整API用法与独立example导航。实际验证范围以上述命令和断言为限，不能推为全部长尾行为已执行。"
+}

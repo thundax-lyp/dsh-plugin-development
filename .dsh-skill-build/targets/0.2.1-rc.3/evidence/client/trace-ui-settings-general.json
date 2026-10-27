@@ -1,0 +1,37 @@
+{
+    "task": "client-ui-settings-general",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.shortcuts.register({"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({ name: 'settings.trigger', locale: NS }, TriggerContent))"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({ name: 'settings.close', locale: NS }, CloseLabel))"
+        ],
+        [
+            "packages/client/ui-settings-general/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

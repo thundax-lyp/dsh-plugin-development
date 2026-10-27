@@ -1,0 +1,86 @@
+{
+    "files": [
+        {
+            "source": "examples/client-settings.md",
+            "output": "references/client/examples/example-client-settings.md",
+            "kind": "example"
+        },
+        {
+            "source": "examples/worker-image.md",
+            "output": "references/infra/examples/example-worker-image.md",
+            "kind": "example"
+        }
+    ],
+    "claims": [
+        {
+            "id": "fix-settings-draft-integration",
+            "kind": "implemented-behavior",
+            "topic": "client-ui-settings",
+            "decision": "accepted",
+            "owner": "references/client/examples/example-client-settings.md",
+            "summary": "自己的volatile Config与companion页面共享scope，通过SettingsFormModel首次编辑revision栅栏提交、失败保留草稿并清理页面所有资源。",
+            "evidence": [
+                {
+                    "category": "public-api",
+                    "path": "packages/client/ui-primitives/src/settings-form/form-model.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "packages/client/ui-settings/src/client/config-form.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "packages/client/ui-settings-agent-loop/src/client/index.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "packages/client/ui-settings-agent-loop/src/client/agent-loop-card-controller.ts"
+                },
+                {
+                    "category": "documentation",
+                    "path": "docs/cookbook/adding-a-settings-card.md"
+                }
+            ]
+        },
+        {
+            "id": "fix-worker-library-startup",
+            "kind": "implemented-behavior",
+            "topic": "capabilities-dsh-experimental-webworker-runtime",
+            "decision": "accepted",
+            "owner": "references/infra/examples/example-worker-image.md",
+            "summary": "参数化packer库生成VFS镜像，runtime模块挂载执行与overlay；完整Web Worker使用完整checkout/roster及page connect，不作为普通Host插件行。",
+            "evidence": [
+                {
+                    "category": "public-api",
+                    "path": "packages/experimental/webworker-packer/src/pack.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "packages/experimental/webworker-packer/src/bin.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "packages/experimental/webworker-runtime/src/client/index.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "packages/experimental/webworker-runtime/src/module-system/module-loader.ts"
+                },
+                {
+                    "category": "runtime",
+                    "path": "apps/web/src/preview.ts"
+                }
+            ]
+        }
+    ],
+    "coverageSuggestion": "现有接入 ui-settings task不再仅查询；保留其独占section/anchor并扩充outcome为查询与实施自有Config/companion页面。原worker runtime/packer tasks仍同section/anchor，只修正公开执行起点与验证。apiObjects现有包含SettingsFormModel等则核对必要对象连接，新增example无独立重复task。",
+    "checks": {
+        "hostBlocks": 1,
+        "clientBlocks": 1,
+        "selectedUpstreamFiles": 6,
+        "selectedUpstreamTests": 77,
+        "modelAssertions": 5,
+        "browserSettingsPage": false,
+        "browserWorkerPreview": false
+    }
+}

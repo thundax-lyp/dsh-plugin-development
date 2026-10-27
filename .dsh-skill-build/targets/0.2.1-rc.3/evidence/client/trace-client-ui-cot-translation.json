@@ -1,0 +1,13 @@
+{
+    "task": "client-client-ui-cot-translation",
+    "runtimeRegistrationSites": [
+        [
+            "packages/experimental/client-ui-cot-translation/src/client/mount.ts",
+            "ctx.locale.register(NS, { en, zh }))"
+        ],
+        [
+            "packages/experimental/client-ui-cot-translation/src/client/mount.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

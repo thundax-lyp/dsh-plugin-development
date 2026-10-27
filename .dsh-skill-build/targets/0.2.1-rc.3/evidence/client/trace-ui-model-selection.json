@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-model-selection",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-model-selection/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-model-selection: dictionaries')"
+        ],
+        [
+            "packages/client/ui-model-selection/src/client/slots.ts",
+            "ctx.slots.register("
+        ]
+    ]
+}

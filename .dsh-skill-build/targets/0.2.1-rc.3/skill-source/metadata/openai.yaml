@@ -1,0 +1,4 @@
+interface:
+    display_name: "DSH Plugin Development"
+    short_description: "查询 DSH 公开 API、扩展点与现成 Web UI 控件，制作并验证插件"
+    default_prompt: "使用 $dsh-plugin-development 查询目标版本可供插件使用的公开 API、扩展点和现成 Web UI 组件，或完成插件实现、装载与验证。先核对消费版本、运行侧与公开入口，再遵守资源所有权、取消、持久化和纯渲染契约。"

@@ -1,0 +1,13 @@
+{
+    "task": "client-client-ui-agent-team",
+    "runtimeRegistrationSites": [
+        [
+            "packages/experimental/client-ui-agent-team/src/client/mount.ts",
+            "ctx.locale.register(NS, { zh, en }), 'client-ui-agent-team: dictionaries')"
+        ],
+        [
+            "packages/experimental/client-ui-agent-team/src/client/mount.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}
