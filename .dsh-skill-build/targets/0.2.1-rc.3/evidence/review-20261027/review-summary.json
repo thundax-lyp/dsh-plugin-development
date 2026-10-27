@@ -1,0 +1,86 @@
+{
+    "version": "0.2.1-rc.3",
+    "commit": "1f81c047fc48fa190a683e469daa699857e9afe8",
+    "referenceCount": 1205,
+    "states": {
+        "部分审核": 1070,
+        "已审": 36,
+        "未审": 99
+    },
+    "groups": {
+        "infra": {
+            "部分审核": 462,
+            "已审": 11
+        },
+        "client": {
+            "部分审核": 433,
+            "已审": 13
+        },
+        "host": {
+            "未审": 99,
+            "部分审核": 174,
+            "已审": 12
+        },
+        "navigation": {
+            "部分审核": 1
+        }
+    },
+    "governance": {
+        "AGENTS.md": "已审",
+        "skills/dsh-plugin-development/SKILL.md": "已审",
+        "skills/dsh-plugin-development/agents/openai.yaml": "已审"
+    },
+    "findings": [
+        {
+            "id": "F1",
+            "priority": 1,
+            "title": "公开类型抽取失真"
+        },
+        {
+            "id": "F2",
+            "priority": 1,
+            "title": "默认Profile接入指导重复注册已有服务"
+        },
+        {
+            "id": "F3",
+            "priority": 1,
+            "title": "自建Remote缺生成和Client装配完整路径"
+        },
+        {
+            "id": "F4",
+            "priority": 2,
+            "title": "自定义设置页缺暂存revision与安全保存集成"
+        },
+        {
+            "id": "F5",
+            "priority": 2,
+            "title": "Worker库任务套用Host插件安装步骤"
+        }
+    ],
+    "verification": {
+        "markdownFiles": 1208,
+        "localLinks": 15945,
+        "sourcePaths": 1646,
+        "hostExamples": 10,
+        "clientExamples": 3,
+        "clientSourceTests": 79,
+        "hostSourceTests": 87,
+        "consumerOriginalTests": 15,
+        "consumerRaceProbes": 2,
+        "realAgentRuns": 5,
+        "generatedUnchanged": true,
+        "checkoutClean": true
+    },
+    "limits": [
+        "全目录语义未审完",
+        "未运行真实浏览器与外部模型",
+        "无reference正文消融",
+        "Agent对照为单个只读审核任务，不能证明普遍效益"
+    ],
+    "mutations": {
+        "generatedSkill": false,
+        "staged": false,
+        "committed": false,
+        "pushed": false
+    }
+}

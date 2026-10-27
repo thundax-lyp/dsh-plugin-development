@@ -1,0 +1,101 @@
+{
+    "baseline": {
+        "version": "0.2.1-rc.3",
+        "tag": "dsh-v0.2.1-rc.3",
+        "commit": "1f81c047fc48fa190a683e469daa699857e9afe8"
+    },
+    "consumer": {
+        "project": "dsh-web/packages/dsh-session-id",
+        "commit": "dbf0248fd8b2a77a3aeb44ae9688d936ba143303",
+        "packageVersion": "0.4.11",
+        "conditions": "identical source copies and exact local built SDK packages; read-only; same configured model and tools; only generated Skill availability differs"
+    },
+    "runs": {
+        "with-skill": {
+            "completed": true,
+            "commands": 15,
+            "referencesObserved": [
+                "SKILL.md",
+                "references/client/api/api-client-ui-primitives-clipboard.md",
+                "references/client/api/api-client-ui-primitives-modal.md",
+                "references/client/how-to/how-to-client-ui-primitives.md"
+            ],
+            "usage": {
+                "input_tokens": 460359,
+                "cached_input_tokens": 398080,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3049,
+                "reasoning_output_tokens": 81
+            },
+            "approximateElapsedSeconds": 100.9
+        },
+        "without-skill": {
+            "completed": true,
+            "commands": 18,
+            "referencesObserved": [],
+            "usage": {
+                "input_tokens": 597548,
+                "cached_input_tokens": 547072,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3464,
+                "reasoning_output_tokens": 78
+            },
+            "approximateElapsedSeconds": 129.4
+        },
+        "positive": {
+            "completed": true,
+            "commands": 4,
+            "referencesObserved": [
+                "SKILL.md",
+                "references/client/api/api-client-ui-primitives-modal.md",
+                "references/client/how-to/how-to-client-ui-primitives.md"
+            ],
+            "usage": {
+                "input_tokens": 104497,
+                "cached_input_tokens": 78976,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 693,
+                "reasoning_output_tokens": 7
+            },
+            "approximateElapsedSeconds": 50.8
+        },
+        "negative": {
+            "completed": true,
+            "commands": 1,
+            "referencesObserved": [],
+            "usage": {
+                "input_tokens": 41905,
+                "cached_input_tokens": 27904,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 294,
+                "reasoning_output_tokens": 12
+            },
+            "approximateElapsedSeconds": 24.6
+        },
+        "mismatch": {
+            "completed": true,
+            "commands": 4,
+            "referencesObserved": [
+                "SKILL.md"
+            ],
+            "usage": {
+                "input_tokens": 99085,
+                "cached_input_tokens": 77568,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 711,
+                "reasoning_output_tokens": 25
+            },
+            "approximateElapsedSeconds": 43.4
+        }
+    },
+    "interpretation": {
+        "reviewTask": "Both conditions found the same four issues; no demonstrated quality gain. Both initially blocked from Vitest by missing testing-library; without-Skill also completed source-only tsc. Both suggested Modal without reconciling the package rule allowing only writeClipboard as a DSH value import.",
+        "independentProbe": "After both controlled runs completed, parent supplied cached testing-library links to a separate validation copy. Existing 15 tests passed; 2 deferred clipboard probes reproduced late-after-unmount and overlapping timers; total17 passed. No real browser.",
+        "triggerChecks": {
+            "positive": "loaded Skill and Modal reference, correct root import and controlled example",
+            "negative": "did not load generated Skill reference",
+            "mismatch": "loaded entrypoint, refused to apply rc.3 signatures to rc.0"
+        },
+        "causalLimit": "one paired read-only review only; SDK source was available via package src exports in both conditions; no ablation or implementation comparison; cache/timing vary; no universal efficiency claim"
+    }
+}

@@ -1,0 +1,4946 @@
+{
+    "version": "0.2.1-rc.3",
+    "tag": "dsh-v0.2.1-rc.3",
+    "commit": "1f81c047fc48fa190a683e469daa699857e9afe8",
+    "counts": {
+        "已审": 12,
+        "部分审核": 174,
+        "未审": 99
+    },
+    "files": [
+        {
+            "path": "references/host/api/api-capabilities-acp-overview.md",
+            "task": "acp 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-compaction-overview.md",
+            "task": "compaction 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-context-overview.md",
+            "task": "context 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-acp.md",
+            "task": "@deepseek-ai/dsh-acp 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-agent-instructions.md",
+            "task": "@deepseek-ai/dsh-agent-instructions 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-command-compact.md",
+            "task": "@deepseek-ai/dsh-command-compact 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-command-goal.md",
+            "task": "@deepseek-ai/dsh-command-goal 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-commands.md",
+            "task": "@deepseek-ai/dsh-commands 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-compaction-basic.md",
+            "task": "@deepseek-ai/dsh-compaction-basic 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-compaction-image-offload.md",
+            "task": "@deepseek-ai/dsh-compaction-image-offload 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-compaction-tool-result-pruner.md",
+            "task": "@deepseek-ai/dsh-compaction-tool-result-pruner 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-compaction.md",
+            "task": "@deepseek-ai/dsh-compaction 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-cua-api.md",
+            "task": "dsh-cua-api 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-cua-bridge.md",
+            "task": "dsh-cua-bridge 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-cua-native-client.md",
+            "task": "dsh-cua-native-client 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-cua-protocol.md",
+            "task": "dsh-cua-protocol 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-cua-types.md",
+            "task": "dsh-cua-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-cua.md",
+            "task": "@deepseek-ai/dsh-cua 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-deepseek-llm-api-extensions.md",
+            "task": "@deepseek-ai/dsh-deepseek-llm-api-extensions 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-agent-team.md",
+            "task": "@deepseek-ai/dsh-experimental-agent-team 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-api-speech-to-text.md",
+            "task": "@deepseek-ai/dsh-experimental-api-speech-to-text 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-auto-review.md",
+            "task": "@deepseek-ai/dsh-experimental-auto-review 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-chrome-devtools-mcp.md",
+            "task": "@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-playwright-mcp.md",
+            "task": "@deepseek-ai/dsh-experimental-browser-use-playwright-mcp 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-runtime.md",
+            "task": "@deepseek-ai/dsh-experimental-browser-use-runtime 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-stagehand-native.md",
+            "task": "@deepseek-ai/dsh-experimental-browser-use-stagehand-native 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-define-mod.md",
+            "task": "dsh-experimental-claude-code-mods-define-mod 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-elements.md",
+            "task": "dsh-experimental-claude-code-mods-elements 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-host-ops.md",
+            "task": "dsh-experimental-claude-code-mods-host-ops 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-matcher.md",
+            "task": "dsh-experimental-claude-code-mods-matcher 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-tool-names.md",
+            "task": "dsh-experimental-claude-code-mods-tool-names 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-types.md",
+            "task": "dsh-experimental-claude-code-mods-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods.md",
+            "task": "@deepseek-ai/dsh-experimental-claude-code-mods 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-computer-use-cua-driver-mcp.md",
+            "task": "@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-computer-use-cua-driver-native.md",
+            "task": "@deepseek-ai/dsh-experimental-computer-use-cua-driver-native 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-cua-macos.md",
+            "task": "@deepseek-ai/dsh-experimental-cua-macos 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-control.md",
+            "task": "dsh-experimental-inspector-control 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-controller.md",
+            "task": "dsh-experimental-inspector-controller 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-json.md",
+            "task": "dsh-experimental-inspector-json 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-model.md",
+            "task": "dsh-experimental-inspector-model 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-observation.md",
+            "task": "dsh-experimental-inspector-observation 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-plugin.md",
+            "task": "dsh-experimental-inspector-plugin 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-reader.md",
+            "task": "dsh-experimental-inspector-reader 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector-snapshot.md",
+            "task": "dsh-experimental-inspector-snapshot 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-inspector.md",
+            "task": "@deepseek-ai/dsh-experimental-inspector 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-ptc-runtime-python.md",
+            "task": "@deepseek-ai/dsh-experimental-ptc-runtime-python 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-session-inspector.md",
+            "task": "@deepseek-ai/dsh-experimental-session-inspector 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-speech-to-text-sensevoice.md",
+            "task": "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-speech-to-text.md",
+            "task": "@deepseek-ai/dsh-experimental-speech-to-text 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-tool-agent-team.md",
+            "task": "@deepseek-ai/dsh-experimental-tool-agent-team 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-tool-worktree.md",
+            "task": "@deepseek-ai/dsh-experimental-tool-worktree 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-translator.md",
+            "task": "@deepseek-ai/dsh-experimental-translator 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-packer.md",
+            "task": "@deepseek-ai/dsh-experimental-webworker-packer 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-active.md",
+            "task": "dsh-experimental-webworker-runtime-active 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-als-runtime.md",
+            "task": "dsh-experimental-webworker-runtime-als-runtime 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-client.md",
+            "task": "dsh-experimental-webworker-runtime-client 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-fixture-manifest.md",
+            "task": "dsh-experimental-webworker-runtime-fixture-manifest 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-frames.md",
+            "task": "dsh-experimental-webworker-runtime-frames 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-image-gzip.md",
+            "task": "dsh-experimental-webworker-runtime-image-gzip 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-image-layout.md",
+            "task": "dsh-experimental-webworker-runtime-image-layout 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-image-manifest.md",
+            "task": "dsh-experimental-webworker-runtime-image-manifest 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-index-dcdbb.md",
+            "task": "dsh-experimental-webworker-runtime-index-dcdbb 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-memory.md",
+            "task": "dsh-experimental-webworker-runtime-memory 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-module-loader.md",
+            "task": "dsh-experimental-webworker-runtime-module-loader 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-module-proxies.md",
+            "task": "dsh-experimental-webworker-runtime-module-proxies 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-posix-path.md",
+            "task": "dsh-experimental-webworker-runtime-posix-path 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-process.md",
+            "task": "dsh-experimental-webworker-runtime-process 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-replaced-externals.md",
+            "task": "dsh-experimental-webworker-runtime-replaced-externals 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-synthetic-http.md",
+            "task": "dsh-experimental-webworker-runtime-synthetic-http 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-tar.md",
+            "task": "dsh-experimental-webworker-runtime-tar 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-transform.md",
+            "task": "dsh-experimental-webworker-runtime-transform 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-types.md",
+            "task": "dsh-experimental-webworker-runtime-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-worker-host.md",
+            "task": "dsh-experimental-webworker-runtime-worker-host 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime.md",
+            "task": "@deepseek-ai/dsh-experimental-webworker-runtime 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-experimental-worktree.md",
+            "task": "@deepseek-ai/dsh-experimental-worktree 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-file-reference-local.md",
+            "task": "@deepseek-ai/dsh-file-reference-local 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-file-reference.md",
+            "task": "@deepseek-ai/dsh-file-reference 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-goal-domain.md",
+            "task": "dsh-goal-domain 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-goal-fold.md",
+            "task": "dsh-goal-fold 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-goal-round-driver.md",
+            "task": "@deepseek-ai/dsh-goal-round-driver 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-goal-runtime.md",
+            "task": "dsh-goal-runtime 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-goal-types.md",
+            "task": "dsh-goal-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-goal.md",
+            "task": "@deepseek-ai/dsh-goal 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-harness-dev-context.md",
+            "task": "@deepseek-ai/dsh-harness-dev-context 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-hook-protocol.md",
+            "task": "@deepseek-ai/dsh-hook-protocol 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-hooks-claude-code.md",
+            "task": "@deepseek-ai/dsh-hooks-claude-code 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-hooks-codex.md",
+            "task": "@deepseek-ai/dsh-hooks-codex 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-api-key.md",
+            "task": "dsh-llm-api-key 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-assembler.md",
+            "task": "dsh-llm-assembler 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-assistant-stream.md",
+            "task": "dsh-llm-assistant-stream 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-attribution.md",
+            "task": "dsh-llm-attribution 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-brand.md",
+            "task": "dsh-llm-brand 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-call-config.md",
+            "task": "dsh-llm-call-config 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-content.md",
+            "task": "dsh-llm-content 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-account.md",
+            "task": "@deepseek-ai/dsh-llm-deepseek-account 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-adapter.md",
+            "task": "dsh-llm-deepseek-adapter 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-api-key.md",
+            "task": "@deepseek-ai/dsh-llm-deepseek-api-key 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-config.md",
+            "task": "dsh-llm-deepseek-config 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-defaults.md",
+            "task": "dsh-llm-deepseek-defaults 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-file-id.md",
+            "task": "dsh-llm-deepseek-file-id 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-file-store.md",
+            "task": "dsh-llm-deepseek-file-store 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-files-api.md",
+            "task": "dsh-llm-deepseek-files-api 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-host.md",
+            "task": "dsh-llm-deepseek-host 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-image-tokens.md",
+            "task": "dsh-llm-deepseek-image-tokens 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-listing-cache.md",
+            "task": "dsh-llm-deepseek-listing-cache 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-listing-config.md",
+            "task": "dsh-llm-deepseek-listing-config 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-listing.md",
+            "task": "dsh-llm-deepseek-listing 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-model-info.md",
+            "task": "dsh-llm-deepseek-model-info 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-request-pricing.md",
+            "task": "dsh-llm-deepseek-request-pricing 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-types.md",
+            "task": "dsh-llm-deepseek-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek-upload-index.md",
+            "task": "dsh-llm-deepseek-upload-index 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-deepseek.md",
+            "task": "@deepseek-ai/dsh-llm-deepseek 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-error.md",
+            "task": "dsh-llm-error 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-message.md",
+            "task": "dsh-llm-message 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-pi-ai.md",
+            "task": "@deepseek-ai/dsh-llm-pi-ai 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-retry-policy.md",
+            "task": "dsh-llm-retry-policy 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-retry.md",
+            "task": "@deepseek-ai/dsh-llm-retry 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm-types.md",
+            "task": "dsh-llm-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-llm.md",
+            "task": "@deepseek-ai/dsh-llm 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-mcp-client.md",
+            "task": "@deepseek-ai/dsh-mcp-client 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-mcp-resources.md",
+            "task": "@deepseek-ai/dsh-mcp-resources 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-permission-presets.md",
+            "task": "@deepseek-ai/dsh-permission-presets 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-plan-mode.md",
+            "task": "@deepseek-ai/dsh-plan-mode 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-plugin-package-inventory-deepseek.md",
+            "task": "@deepseek-ai/dsh-plugin-package-inventory-deepseek 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-ptc-runtime-node.md",
+            "task": "@deepseek-ai/dsh-ptc-runtime-node 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-ptc-runtime.md",
+            "task": "@deepseek-ai/dsh-ptc-runtime 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-repeat-tool-reminder.md",
+            "task": "@deepseek-ai/dsh-repeat-tool-reminder 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-session-reference.md",
+            "task": "@deepseek-ai/dsh-session-reference 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-session-title-all-prompts-llm.md",
+            "task": "@deepseek-ai/dsh-session-title-all-prompts-llm 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-skill-badge.md",
+            "task": "@deepseek-ai/dsh-skill-badge 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-skill-filesystem.md",
+            "task": "@deepseek-ai/dsh-skill-filesystem 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-skill-office.md",
+            "task": "@deepseek-ai/dsh-skill-office 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-skill.md",
+            "task": "@deepseek-ai/dsh-skill 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-acp.md",
+            "task": "@deepseek-ai/dsh-subagent-acp 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-assistant-output.md",
+            "task": "dsh-subagent-assistant-output 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-child-agent.md",
+            "task": "dsh-subagent-child-agent 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-claude-code.md",
+            "task": "@deepseek-ai/dsh-subagent-claude-code 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-codex.md",
+            "task": "@deepseek-ai/dsh-subagent-codex 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-continuation-messages.md",
+            "task": "dsh-subagent-continuation-messages 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-control-types.md",
+            "task": "dsh-subagent-control-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-depth.md",
+            "task": "dsh-subagent-depth 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-descriptor.md",
+            "task": "dsh-subagent-descriptor 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-dsh-sdk.md",
+            "task": "@deepseek-ai/dsh-subagent-dsh-sdk 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-error.md",
+            "task": "dsh-subagent-error 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-fork-in-process.md",
+            "task": "@deepseek-ai/dsh-subagent-fork-in-process 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-list-children.md",
+            "task": "dsh-subagent-list-children 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-out-of-process.md",
+            "task": "dsh-subagent-out-of-process 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-projection-types.md",
+            "task": "dsh-subagent-projection-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-spawn-in-process.md",
+            "task": "@deepseek-ai/dsh-subagent-spawn-in-process 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-structured.md",
+            "task": "dsh-subagent-structured 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent-types.md",
+            "task": "dsh-subagent-types 对象契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-subagent.md",
+            "task": "@deepseek-ai/dsh-subagent 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-time-context.md",
+            "task": "@deepseek-ai/dsh-time-context 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tmux-context.md",
+            "task": "@deepseek-ai/dsh-tmux-context 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-token-meter.md",
+            "task": "@deepseek-ai/dsh-token-meter 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [
+                "HOST-F1"
+            ],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-ask-user.md",
+            "task": "@deepseek-ai/dsh-tool-ask-user 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-call-timeout-policy.md",
+            "task": "@deepseek-ai/dsh-tool-call-timeout-policy 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-goal.md",
+            "task": "@deepseek-ai/dsh-tool-goal 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-ralph.md",
+            "task": "@deepseek-ai/dsh-tool-ralph 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-session-query.md",
+            "task": "@deepseek-ai/dsh-tool-session-query 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-skill.md",
+            "task": "@deepseek-ai/dsh-tool-skill 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-subagent-control.md",
+            "task": "@deepseek-ai/dsh-tool-subagent-control 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-subagent.md",
+            "task": "@deepseek-ai/dsh-tool-subagent 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-terminal.md",
+            "task": "@deepseek-ai/dsh-tool-terminal 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-workflow.md",
+            "task": "@deepseek-ai/dsh-tool-workflow 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-tool-workspace-dependencies.md",
+            "task": "@deepseek-ai/dsh-tool-workspace-dependencies 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-user-approval.md",
+            "task": "@deepseek-ai/dsh-user-approval 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-user-questions.md",
+            "task": "@deepseek-ai/dsh-user-questions 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-webhook-github.md",
+            "task": "@deepseek-ai/dsh-webhook-github 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-webhook.md",
+            "task": "@deepseek-ai/dsh-webhook 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-workflow-ptc.md",
+            "task": "@deepseek-ai/dsh-workflow-ptc 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-dsh-workflow.md",
+            "task": "@deepseek-ai/dsh-workflow 插件契约",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "精确版本公开导出检查"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-experimental-overview.md",
+            "task": "experimental 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-goal-overview.md",
+            "task": "goal 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-guard-overview.md",
+            "task": "guard 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-interaction-overview.md",
+            "task": "interaction 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-llm-overview.md",
+            "task": "llm 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-mcp-overview.md",
+            "task": "mcp 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-plan-overview.md",
+            "task": "plan 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-ptc-runtime-overview.md",
+            "task": "ptc-runtime 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-skill-overview.md",
+            "task": "skill 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-subagent-overview.md",
+            "task": "subagent 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/api/api-capabilities-workflow-overview.md",
+            "task": "workflow 能力选型",
+            "route": "HOWTO/能力选型页→对象页",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "部分审核",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": [
+                "未完成全部五维及全部行为分支；不以导出存在代替语义审核"
+            ]
+        },
+        {
+            "path": "references/host/examples/example-local-llm.md",
+            "task": "完整示例：本地脚本模型提供方",
+            "route": "主任务HOWTO→完整示例",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/examples/example-local-mcp.md",
+            "task": "完整示例：接入本地加法 MCP 服务器",
+            "route": "主任务HOWTO→完整示例",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/examples/example-runtime-skill.md",
+            "task": "完整示例：随插件提供只读 Skill",
+            "route": "主任务HOWTO→完整示例",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/examples/example-workflow-command.md",
+            "task": "完整示例：斜杠命令运行两项工作流委派",
+            "route": "主任务HOWTO→完整示例",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-acp.md",
+            "task": "用 ACP stdio 创建恢复和关闭持久 Agent操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-agent-instructions.md",
+            "task": "让 AGENTS.md 指令按工作区和字节预算进入模型上下文操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-command-compact.md",
+            "task": "提供不消耗模型轮次的手动压缩命令操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-command-goal.md",
+            "task": "让用户用斜杠命令控制持久 Goal操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-commands.md",
+            "task": "为用户注册直接执行的斜杠命令操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-compaction-basic.md",
+            "task": "用模型摘要压缩较早会话历史操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-compaction-image-offload.md",
+            "task": "持久记录图片省略并重新执行模型请求操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-compaction-tool-result-pruner.md",
+            "task": "在上下文压力下裁短超大工具文本操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-compaction.md",
+            "task": "实现可重放的会话压缩后端操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-cua.md",
+            "task": "通过授权对象 API 操作应用和窗口操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-deepseek-llm-api-extensions.md",
+            "task": "向 DeepSeek 请求贡献有归属的顶层扩展字段操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-agent-team-profile.md",
+            "task": "@deepseek-ai/dsh-experimental-agent-team-profile 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-agent-team.md",
+            "task": "创建具名 Teammate 并维护共享任务板操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-api-speech-to-text.md",
+            "task": "通过认证 Remote 转写浏览器录音操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-auto-review.md",
+            "task": "启用逐工具调用的模型权限审查操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-badge-skill-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-badge-skill-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-chrome-devtools-mcp.md",
+            "task": "通过 Chrome DevTools MCP 启动或附加浏览器操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-playwright-mcp.md",
+            "task": "通过 Playwright MCP 启动或附加浏览器操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-runtime.md",
+            "task": "为浏览器提供方管理 Session 连接归属操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-stagehand-native.md",
+            "task": "用 Stagehand 原生提供方执行浏览器动作操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-claude-code-mods.md",
+            "task": "为 Claude Code 兼容交互提供持久任务配置操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-computer-use-cua-driver-mcp.md",
+            "task": "用 MCP CUA driver 执行 Computer Use 操作操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-computer-use-cua-driver-native.md",
+            "task": "用原生 CUA driver 执行 Computer Use 操作操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-cot-translation-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-cot-translation-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-cua-macos.md",
+            "task": "在 macOS 提供应用窗口与辅助功能操作操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-inspector-profile.md",
+            "task": "@deepseek-ai/dsh-experimental-inspector-profile 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-inspector.md",
+            "task": "为插件提供运行时检查与诊断入口操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-plugin-market-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-plugin-market-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-ptc-runtime-python.md",
+            "task": "选择 CPython 后端运行模型程序操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-ralph-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-ralph-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-session-inspector.md",
+            "task": "在 Web 检查会话日志与投影操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-session-search.md",
+            "task": "@deepseek-ai/dsh-experimental-session-search 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-session-titles-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-session-titles-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-speech-to-text-sensevoice.md",
+            "task": "准备 SenseVoice 本地模型并转写录音操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-speech-to-text.md",
+            "task": "注册可取消的录音转写提供方操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-terminal-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-terminal-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-tool-agent-team.md",
+            "task": "@deepseek-ai/dsh-experimental-tool-agent-team 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-tool-worktree.md",
+            "task": "让模型创建受管理的 Git worktree操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-translator.md",
+            "task": "注册或调用按需文本翻译提供方操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-voice-input-bundle.md",
+            "task": "@deepseek-ai/dsh-experimental-voice-input-bundle 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-webworker-packer.md",
+            "task": "打包可在 Web Worker 中执行的插件代码操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [
+                "HOST-F3"
+            ],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-webworker-runtime.md",
+            "task": "运行并释放 Web Worker 插件环境操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [
+                "HOST-F3"
+            ],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-experimental-worktree.md",
+            "task": "在插件中创建和释放受管理 worktree操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-file-reference-local.md",
+            "task": "按有效工作区搜索本地文件引用操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-file-reference.md",
+            "task": "为 UI 提供不读取正文的文件补全候选操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-goal-round-driver.md",
+            "task": "驱动已激活 Goal 的后续轮次操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-goal.md",
+            "task": "维护有修订检查的持久 Goal操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约支持；HOST-F2有真实GoalService冲突复现",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [
+                "HOST-F2"
+            ],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-harness-dev-context.md",
+            "task": "为开发工作区注入 Harness 开发上下文操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-hook-protocol.md",
+            "task": "把生命周期事件投影为外部 Hook 协议操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-hooks-claude-code.md",
+            "task": "执行 Claude Code 格式的用户 Hook操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-hooks-codex.md",
+            "task": "执行 Codex 格式的用户 Hook操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-llm-deepseek-account.md",
+            "task": "使用账号授权激活 DeepSeek 模型路由操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-llm-deepseek-api-key.md",
+            "task": "使用 API Key 激活 DeepSeek 模型路由操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-llm-deepseek.md",
+            "task": "配置 DeepSeek 原生模型适配器操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-llm-pi-ai.md",
+            "task": "通过 pi-ai 配置多提供方模型操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-llm-retry.md",
+            "task": "按失败分类重试模型请求操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-llm.md",
+            "task": "实现注册并调用模型提供方操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-mcp-client.md",
+            "task": "发现并调用命名空间隔离的 MCP 工具操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-mcp-resources.md",
+            "task": "向模型提供 MCP 资源列表和读取工具操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-permission-presets.md",
+            "task": "为会话选择并持久记录权限预设操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-plan-mode.md",
+            "task": "提供有确认流程的计划模式切换操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-plugin-package-inventory-deepseek.md",
+            "task": "从官方来源发现可安装插件包操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-ptc-runtime-node.md",
+            "task": "在受管理 Node 进程中运行模型程序操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-ptc-runtime.md",
+            "task": "实现有显式结果与错误的程序执行提供方操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-repeat-tool-reminder.md",
+            "task": "为重复无进展的工具调用发出提醒操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-session-reference.md",
+            "task": "查询引用会话并提供可追溯摘要操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-session-title-all-prompts-llm.md",
+            "task": "根据后续提示更新会话标题操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-skill-badge.md",
+            "task": "@deepseek-ai/dsh-skill-badge 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-skill-filesystem.md",
+            "task": "从项目用户和自定义目录发现 Skill操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-skill-office.md",
+            "task": "为 Office 文档任务提供受约束的 Skill 指引操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-skill.md",
+            "task": "随插件提供可发现并加载的 Skill操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent-acp.md",
+            "task": "通过 ACP 后端执行外部子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent-claude-code.md",
+            "task": "通过 Claude Code 后端执行外部子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent-codex.md",
+            "task": "通过 Codex 后端执行外部子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent-dsh-sdk.md",
+            "task": "通过 DSH SDK 后端执行外部子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent-fork-in-process.md",
+            "task": "以父级已完成轮次启动 Fork 子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent-spawn-in-process.md",
+            "task": "以全新上下文启动本地子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约支持；HOST-F2有真实GoalService冲突复现",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [
+                "HOST-F2"
+            ],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-subagent.md",
+            "task": "启动受管理子任务并等待或中止执行操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "已审",
+            "evidence": [
+                "人工深读与相关精确版本契约"
+            ],
+            "findings": [],
+            "unverified": []
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-time-context.md",
+            "task": "将当前时间作为可重建上下文注入轮次操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tmux-context.md",
+            "task": "按轮次注入真实 tmux 位置变化操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-token-meter.md",
+            "task": "估算重放后的请求用量与上下文压力操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-ask-user.md",
+            "task": "让模型提出可等待或延时回答的问题操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-call-timeout-policy.md",
+            "task": "为工具调用执行协作式时间上限操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-goal.md",
+            "task": "让模型按授权创建读取和更新 Goal操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-ralph.md",
+            "task": "@deepseek-ai/dsh-tool-ralph 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-session-query.md",
+            "task": "让模型按工作区授权检索会话历史操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-skill.md",
+            "task": "向模型公布目录并加载 Skill 内容操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-subagent-control.md",
+            "task": "向可继续子任务发送消息并中止轮次操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-subagent.md",
+            "task": "为模型提供可配置的子任务委派工具操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-terminal.md",
+            "task": "@deepseek-ai/dsh-tool-terminal 使用路径",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-workflow.md",
+            "task": "让模型提交多 Agent 编排脚本操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-tool-workspace-dependencies.md",
+            "task": "向模型公开随包脚本运行时路径操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-user-approval.md",
+            "task": "为敏感操作请求一次性且失败关闭的审批操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-user-questions.md",
+            "task": "为插件提供可取消的结构化问答操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-webhook-github.md",
+            "task": "验证 GitHub 签名并投递受信 webhook操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-webhook.md",
+            "task": "将认证外部事件按规则变成 Workspace 会话操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-workflow-ptc.md",
+            "task": "在 Node PTC 中执行工作流与子任务操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        },
+        {
+            "path": "references/host/how-to/how-to-capabilities-dsh-workflow.md",
+            "task": "运行并可靠释放调用方拥有的编排操作指南",
+            "route": "SKILL首屏任务→HOWTO→API",
+            "startpoint": [
+                "同版本源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "仅契约/静态检查；未运行本文件完整项目集成",
+            "status": "未审",
+            "evidence": [],
+            "findings": [],
+            "unverified": [
+                "正文未深读；只作清单登记，不计已审"
+            ]
+        }
+    ]
+}

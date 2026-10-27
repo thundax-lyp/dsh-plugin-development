@@ -1,0 +1,6027 @@
+[
+    {
+        "path": "references/client/api/api-client-client-ui-agent-team-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-agent-team-teamaction.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-agent-team.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-claude-code-mods-band.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-claude-code-mods-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-claude-code-mods.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-cot-translation-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-cot-translation-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-cot-translation-preferences-form.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-cot-translation-translationbody.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-cot-translation-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-client-ui-cot-translation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-api-path.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-connect-protocol.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-connection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-peer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-recovery-config.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-rpc-host.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-rpc-schema.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-rpc.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection-socket.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-connection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-file-upload-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-file-upload-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-file-upload-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-file-upload.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-hmr-events.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-hmr-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-hmr.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-locale-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-locale-languagerow.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-locale-locale-settings.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-locale-settings-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-locale-zh.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-locale.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules-entries.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules-entry-lifecycle.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules-manifest.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules-release-change.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules-system.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-modules.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-product-analytics-events.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-product-analytics-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-product-analytics.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-resources-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-resources-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-resources.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-binding.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-config.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-configuration.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-native.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-persistence.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-shortcuts.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-store-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-store-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset-agentpresetlabel.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset-agentpresetseat.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset-agentpresetsection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset-seat-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset-section-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset-settings-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-agent-preset.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-approval-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-approval-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-approval.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-chat-nodes.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-chat-settings.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-conversation-context.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-group-tree.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-locale.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-presentation-policy.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-process-groups.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-snapshot.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-transcriptviewrow.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat-turn-process.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-chat.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-directory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-popup.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-popupselectview.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands-service.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-commands.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-apply.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-assembler.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-assembly.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-composer-blocks.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-context-producer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-conversation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-definition-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-draft-editor.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-event-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-group-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-groups.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-input.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-location-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-records.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-request-inspection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-service.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-snapshot.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-submission-settings.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-system-prompt.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-user-text-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-user-text.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-view-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation-views.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-conversation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-adapter.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-constraints.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-docksurface.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-floatlayer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-geometry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-initial.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-operations.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-planner.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-sequence.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-tree.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-dockkit.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-goal-goalbar.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-goal-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-goal-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-goal.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-menuview.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-service.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-input-trigger.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-jobs-joblistaction.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-jobs.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-layout-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-layout-service.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-layout.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-message-feedback-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-message-feedback-dialog.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-message-feedback-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-message-feedback-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-message-feedback-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-message-feedback.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-model-selection-directory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-model-selection-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-model-selection-service.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-model-selection-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-model-selection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-open-in-app-open-path.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-open-in-app-openinappaction.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-open-in-app-openpathaction.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-open-in-app-openpathemptyaction.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-open-in-app.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-permission-presets-catalog.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-permission-presets-permissionrow.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-permission-presets-permissionselect.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-permission-presets-settings-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-permission-presets.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plan-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plan-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plan.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager-config-ledger.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager-manager-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager-pluginmanagerpage.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager-slot-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-manager.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-market-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-market-market-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-plugin-market.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-brandwordmark.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-button.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-checkbox.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-clipboard.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-code-file-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-code-highlighting.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-codeblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-codetoolbar.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-commandtext.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-connectionindicator.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-darwin-desktop.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-diffblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-disclosurerow.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-fields.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-file-size.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-filetypeicon.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-fishlogo.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-focus.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-form-model.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-guide-artwork.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-highlight.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-hovercard.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-hovercardgroup.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-icons.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-imagelightbox.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-inlineeditor.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-input-modality.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-input.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-jsonblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-jsontree.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-keyboard-composition.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-linkicon.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-markdowndelegate.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-markdowntext.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-menu.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-menugroup.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-menusurface.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-modal.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-pathlabel.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-permissionicon.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-pill.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-plain-text.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-plugin-artwork.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-rank-by-name.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-readblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-referenceicon.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-relative-time.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-render.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-riskconfirmation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-searchblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-segmentedcontrol.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-segmentedtabs.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-settingsform.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-shortcutkeys.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-statedot.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-switch.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-tag.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-terminalblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-textshimmer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-toast.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-tooltip-placement.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-tooltip.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-useanchoredmaxheight.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-useanchoredposition.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-usedismissonoutsidepointer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-usemodallayer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-user-text.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives-webblock.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-primitives.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-renderer-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-renderer-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-renderer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-session-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-session.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-account-accountmenu.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-account-accountsection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-account-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-account-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-account.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-agent-loop-agent-loop-card-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-agent-loop-agentloopcard.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-agent-loop-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-agent-loop-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-agent-loop.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-config-form-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-config-form.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-chrome.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-generalsection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-settings-document-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-settingsdocumentaction.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-general.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-modelssection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-onboarding-config.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-operations.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-slot-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-models.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-plugin-inventory-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-plugin-inventory-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-plugin-inventory-plugininventorysettingstab.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-plugin-inventory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-plugins-pluginssettingssection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-plugins.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-schema.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-settings-mirror.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-shell-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-shell-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-shell-shell-card-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-shell-shellcard.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-shell.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent-subagent-card-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent-subagent-limits-card-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent-subagent-model-selection-card-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent-subagentcard.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-subagent.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-web-search-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-web-search-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-web-search-web-search-card-controller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-web-search-websearchcard.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings-web-search.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-settings.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-browserbody.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-browsercontroller.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-browserframe.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-browserpage.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-browserpersistence.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-browserpresentation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-types.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser-url.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-browser.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-config.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-face.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-rpc.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview-textpreview.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-documentpreview.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-files-face.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-files-filesbody.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-files-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-files-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-files.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-expandbutton.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-focus.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-guidebody.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-params.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-service.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-sidebarright.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-stores.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-tab-domain.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-tab-inventory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right-tab-registry.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-right.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-sidebar.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-slots-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-slots-renderer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-slots-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-subagent-subagentheaderlineage.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-subagent-subagentreadonlycomposer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-subagent.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme-appearancerow.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme-fontsettingsgroup.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme-index.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme-settings-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme-theme-settings.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-theme.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-tool-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-tool.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-trajectory-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-trajectory-trajectory-contract.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-trajectory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-user-questions-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-user-questions-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-user-questions.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-workspace-locales.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-workspace-navigation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-workspace-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-ui-workspace.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-web-apply-injections.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-web-boot.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-web-platform.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-web-seed.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/api/api-client-web.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/examples/example-client-overlay.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/examples/example-client-resource.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/examples/example-client-sidebar-page.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-client-ui-agent-team.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-client-ui-claude-code-mods.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-client-ui-cot-translation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-connection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-file-upload.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-hmr.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-locale.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-modules.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-product-analytics.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-resources.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-shortcuts.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-store.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-agent-preset.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-approval.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-chat.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-commands.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-conversation.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-dockkit.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-goal.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-input-trigger.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-jobs.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-layout.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-message-feedback.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-model-selection.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-open-in-app.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-permission-presets.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-plan.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-plugin-manager.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-plugin-market.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-primitives.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-renderer.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-session.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-account.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-agent-loop.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-general.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-models.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-plugin-inventory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-plugins.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-shell.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-subagent.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings-web-search.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-settings.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-sidebar-browser.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-sidebar-documentpreview.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-sidebar-files.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-sidebar-right.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-sidebar.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-slots.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-subagent.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-theme.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-tool.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-trajectory.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-user-questions.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-ui-workspace.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/client/how-to/how-to-client-web.md",
+        "group": "client",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-acp-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-compaction-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-context-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-acp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-agent-instructions.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-command-compact.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-command-goal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-commands.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-compaction-basic.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-compaction-image-offload.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-compaction-tool-result-pruner.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-compaction.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-cua-api.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-cua-bridge.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-cua-native-client.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-cua-protocol.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-cua-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-cua.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-deepseek-llm-api-extensions.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-agent-team.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-api-speech-to-text.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-auto-review.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-chrome-devtools-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-playwright-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-browser-use-stagehand-native.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-define-mod.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-elements.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-host-ops.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-matcher.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-tool-names.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-claude-code-mods.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-computer-use-cua-driver-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-computer-use-cua-driver-native.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-cua-macos.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-control.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-controller.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-json.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-model.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-observation.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-plugin.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-reader.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector-snapshot.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-inspector.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-ptc-runtime-python.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-session-inspector.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-speech-to-text-sensevoice.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-speech-to-text.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-tool-agent-team.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-tool-worktree.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-translator.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-packer.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-active.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-als-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-client.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-fixture-manifest.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-frames.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-image-gzip.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-image-layout.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-image-manifest.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-index-dcdbb.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-memory.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-module-loader.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-module-proxies.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-posix-path.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-process.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-replaced-externals.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-synthetic-http.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-tar.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-transform.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime-worker-host.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-webworker-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-experimental-worktree.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-file-reference-local.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-file-reference.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-goal-domain.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-goal-fold.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-goal-round-driver.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-goal-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-goal-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-goal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-harness-dev-context.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-hook-protocol.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-hooks-claude-code.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-hooks-codex.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-api-key.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-assembler.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-assistant-stream.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-attribution.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-brand.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-call-config.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-content.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-account.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-adapter.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-api-key.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-config.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-defaults.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-file-id.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-file-store.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-files-api.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-host.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-image-tokens.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-listing-cache.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-listing-config.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-listing.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-model-info.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-request-pricing.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek-upload-index.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-deepseek.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-error.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-message.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-pi-ai.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-retry-policy.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-retry.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-llm.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-mcp-client.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-mcp-resources.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-permission-presets.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-plan-mode.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-plugin-package-inventory-deepseek.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-ptc-runtime-node.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-ptc-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-repeat-tool-reminder.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-session-reference.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-session-title-all-prompts-llm.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-skill-badge.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-skill-filesystem.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-skill-office.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-skill.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-acp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-assistant-output.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-child-agent.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-claude-code.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-codex.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-continuation-messages.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-control-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-depth.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-descriptor.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-dsh-sdk.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-error.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-fork-in-process.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-list-children.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-out-of-process.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-projection-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-spawn-in-process.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-structured.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent-types.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-subagent.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-time-context.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tmux-context.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-token-meter.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-ask-user.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-call-timeout-policy.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-goal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-ralph.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-session-query.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-skill.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-subagent-control.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-subagent.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-terminal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-workflow.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-tool-workspace-dependencies.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-user-approval.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-user-questions.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-webhook-github.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-webhook.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-workflow-ptc.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-dsh-workflow.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-experimental-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-goal-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-guard-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-interaction-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-llm-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-mcp-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-plan-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-ptc-runtime-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-skill-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-subagent-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/api/api-capabilities-workflow-overview.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/examples/example-local-llm.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/examples/example-local-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/examples/example-runtime-skill.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/examples/example-workflow-command.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-acp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-agent-instructions.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-command-compact.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-command-goal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-commands.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-compaction-basic.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-compaction-image-offload.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-compaction-tool-result-pruner.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-compaction.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-cua.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-deepseek-llm-api-extensions.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-agent-team-profile.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-agent-team.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-api-speech-to-text.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-auto-review.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-badge-skill-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-chrome-devtools-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-playwright-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-browser-use-stagehand-native.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-claude-code-mods.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-computer-use-cua-driver-mcp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-computer-use-cua-driver-native.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-cot-translation-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-cua-macos.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-inspector-profile.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-inspector.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-plugin-market-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-ptc-runtime-python.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-ralph-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-session-inspector.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-session-search.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-session-titles-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-speech-to-text-sensevoice.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-speech-to-text.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-terminal-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-tool-agent-team.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-tool-worktree.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-translator.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-voice-input-bundle.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-webworker-packer.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-webworker-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-experimental-worktree.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-file-reference-local.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-file-reference.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-goal-round-driver.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-goal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-harness-dev-context.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-hook-protocol.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-hooks-claude-code.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-hooks-codex.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-llm-deepseek-account.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-llm-deepseek-api-key.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-llm-deepseek.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-llm-pi-ai.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-llm-retry.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-llm.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-mcp-client.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-mcp-resources.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-permission-presets.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-plan-mode.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-plugin-package-inventory-deepseek.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-ptc-runtime-node.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-ptc-runtime.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-repeat-tool-reminder.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-session-reference.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-session-title-all-prompts-llm.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-skill-badge.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-skill-filesystem.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-skill-office.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-skill.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent-acp.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent-claude-code.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent-codex.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent-dsh-sdk.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent-fork-in-process.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent-spawn-in-process.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-subagent.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-time-context.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tmux-context.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-token-meter.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-ask-user.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-call-timeout-policy.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-goal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-ralph.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-session-query.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-skill.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-subagent-control.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-subagent.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-terminal.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-workflow.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-tool-workspace-dependencies.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-user-approval.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-user-questions.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-webhook-github.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-webhook.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-workflow-ptc.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/host/how-to/how-to-capabilities-dsh-workflow.md",
+        "group": "host",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-group-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-group-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-hmr-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-hmr-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-include-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-include-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-loader-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-loader-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-loader-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-loader-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-loader-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-logger-console-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-logger-console-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-timer-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-plugin-timer-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-cordis-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-acp-app-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-acp-app-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-default-model-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-default-model-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-loop-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-loop-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-display-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-display-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-types-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-registry-types-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-preset-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-tool-presentation-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-agent-tool-presentation-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-account-controller-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-account-controller-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-account-controller-types-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-account-controller-types-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-account-controller-types-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-client-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-gateway-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-job-controller-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-job-controller-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-job-controller-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-job-controller-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-job-controller-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-job-controller-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remote-access-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-10.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-11.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-12.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-remotes-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-session-controller-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-settings-controller-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-settings-controller-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-terminal-controller-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-terminal-controller-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-terminal-controller-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-terminal-controller-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-terminal-controller-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-terminal-controller-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-client-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-default-workspace-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-default-workspace-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-controller-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-files-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-files-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-files-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-files-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-api-workspace-files-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-10.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-11.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-app-boot-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-client-ui-cordis-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-client-ui-cordis-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-client-ui-cordis-client-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-client-ui-cordis-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-client-ui-cordis-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-client-ui-cordis-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cmdline-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cmdline-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cmdline-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-config-editor-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-config-editor-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-client-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-client-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-client-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-client-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-client-runner-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-types-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-cordis-host-runner-types-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-headless-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-headless-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-headless-startup-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-headless-startup-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-hmr-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-hmr-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-auto-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-auto-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-auto-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-browse-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-browse-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-native-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-native-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-directory-picker-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-frontend-static-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-frontend-static-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-open-in-app-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-open-in-app-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-open-in-app-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-plugin-inventory-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-plugin-inventory-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-plugin-inventory-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-product-telemetry-otel-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-product-telemetry-otel-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-webserver-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-host-webserver-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-persona-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-persona-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-operations-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-operations-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-operations-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-registry-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-registry-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-tools-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-manager-tools-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-market-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-market-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-market-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-market-tools-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-plugin-market-tools-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-profile-boot-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-profile-boot-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-scope-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-scope-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-scope-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-scope-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-app-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-app-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-client-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-client-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-client-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-client-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-jsonrpc-server-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-jsonrpc-server-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-protocol-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-protocol-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-protocol-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-sdk-protocol-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-surface-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-surface-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-session-surface-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-settings-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-settings-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-settings-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-settings-types-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-settings-types-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-system-prompt-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-system-prompt-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-system-prompt-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-system-prompt-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tool-cordis-host-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tool-cordis-host-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tool-cordis-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tool-cordis-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-10.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-11.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-12.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-tools-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-generator-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-generator-root-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-generator-root-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-generator-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-generator-tsdown-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-generator-tsdown-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-loader-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-loader-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-10.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-11.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-12.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-13.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-4.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-5.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-6.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-7.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-8.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-9.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-protocol-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-registry-client-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-registry-client-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-registry-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-registry-root-2.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-registry-root-3.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-typert-registry-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-web-app-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-web-app-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-web-app-startup-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-dsh-web-app-startup-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-package-manifest-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-package-manifest.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-schemastery-root-1.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-core-schemastery-root-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-attachment-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-browser-use-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-computer-use-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-credentials-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-deliverables-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-attachment-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-attachment.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-authorization.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-bash-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-bash-sandbox.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-browser-use--brand.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-browser-use.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-command-feedback.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-computer-use--brand.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-computer-use.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-credentials-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-credentials.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-deepseek-account-platform--types.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-deepseek-account-platform.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-deepseek-account.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-fs-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-fs-observation-policy.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-fs-sandbox.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-fs-ssh.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-fs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-home-paths.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-http-proxy.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-jobs-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-jobs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-lsp-stdio.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-lsp.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-message-feedback.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-office-to-pdf.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-otel.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-output-retention.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-pwsh-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-pwsh-sandbox.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-sandbox-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-sandbox-policy.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-sandbox-ssh.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-sandbox-windows-acl.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-sandbox.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-schedule--client.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-schedule.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-checkpoint-policy.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-format-catalog--message-projections.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-format-catalog.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-format.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-log-deepseek.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-log-export--client.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-log-export.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-persistence-jsonl.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-persistence.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-projection-cache.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-projection.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-query-sqlite.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-query.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-stats.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-telemetry-otel.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-telemetry.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-title--client.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-title--types.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-title-first-prompt-llm.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-title-llm.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-title.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-session-turn-outline.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-shell-env.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-shell.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-spill-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-spill-policy--notice.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-spill-policy.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-spill.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-ssh--protocol.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-ssh--schemas.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-ssh.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-storage-domain.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-storage-json.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-storage-sqlite.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-storage.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-subprocess--control.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-subprocess-local--output.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-subprocess-local--runner.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-subprocess-local.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-subprocess-ssh.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-subprocess.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-terminal-bash.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-terminal.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-timeout.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-bash-persistent.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-bash.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-fs-search.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-fs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-jobs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-lsp.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-present--types.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-present.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-pwsh-persistent.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-pwsh.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-schedule.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-str-replace-editor.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-todo.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-web.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-tool-working-directory.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-web-deepseek-api.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-web-fetch-http.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-web-search-deepseek.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-web-search-exa.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-web-search-perplexity.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-web.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-win32-process.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-working-directory.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-workspace--types.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-workspace-changes.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-dsh-workspace.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-feedback-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-fs-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-jobs-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-lsp-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-sandbox-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-schedule-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-session-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-session-query-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-shell-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-spill-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-ssh-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-storage-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-subprocess-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-telemetry-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-terminal-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-util-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-web-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/api/api-runtime-workspace-overview.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/examples/example-core-remote.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/examples/example-core-service.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/examples/example-core-tool.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/examples/example-runtime-fs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/examples/example-runtime-storage.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/examples/example-runtime-web.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-core-advanced.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-core-profile.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-core-remote.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-core-service.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-core-state.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-core-tool.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-attachment.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-browser-use.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-computer-use.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-credentials.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-deliverables.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-feedback.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-fs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-jobs.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-lsp.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-sandbox.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-schedule.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-session-query.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-session.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-shell.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-spill.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-ssh.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-storage.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-subprocess.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-telemetry.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-terminal.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-util.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-web.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/infra/how-to/how-to-runtime-workspace.md",
+        "group": "infra",
+        "status": "未审"
+    },
+    {
+        "path": "references/object-index.md",
+        "group": "navigation",
+        "status": "未审"
+    }
+]

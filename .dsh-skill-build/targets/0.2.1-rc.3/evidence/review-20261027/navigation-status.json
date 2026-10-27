@@ -1,0 +1,24 @@
+{
+    "files": [
+        {
+            "path": "references/object-index.md",
+            "task": "按公开对象定位唯一契约",
+            "route": "SKILL.md关键对象索引与关键词→object-index→API小节",
+            "startpoint": [
+                "同版源码checkout",
+                "独立消费项目"
+            ],
+            "execution": "链接/锚点运行检查通过；未逐条复核5272对象正文",
+            "status": "部分审核",
+            "evidence": [
+                "validate_skill:15945链接/锚点通过",
+                "5272行对象链接无完全重复行",
+                "88组同名同包不同目标，可能合法重导出/子路径；未据此判重复缺陷"
+            ],
+            "findings": [],
+            "unverified": [
+                "5272条契约的逐项准确性与别名权威唯一性；实际读取/消融价值"
+            ]
+        }
+    ]
+}

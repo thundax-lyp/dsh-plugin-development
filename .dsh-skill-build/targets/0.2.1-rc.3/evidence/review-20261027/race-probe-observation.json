@@ -1,0 +1,27 @@
+{
+    "consumerCommit": "dbf0248fd8b2a77a3aeb44ae9688d936ba143303",
+    "path": "packages/dsh-session-id/src/client/SessionIdPanel.tsx",
+    "environment": "isolated copy; Vitest4.1.11/jsdom; mocked clipboard promises; real browser not run",
+    "originalTestsPassed": 15,
+    "augmentedTestsPassed": 17,
+    "probes": [
+        {
+            "sequence": [
+                "click copy with pending Promise",
+                "unmount owner",
+                "resolve Promise true"
+            ],
+            "observedTimersBeforeResolve": 0,
+            "observedTimersAfterResolve": 1
+        },
+        {
+            "sequence": [
+                "click copy A",
+                "click copy B while A pending",
+                "resolve A and B true"
+            ],
+            "observedTimersAfterResolve": 2
+        }
+    ],
+    "interpretation": "Confirms real consumer findings independently; these are consumer bugs, not evidence that generated Skill caused them. No consumer source modified outside isolated copies."
+}
