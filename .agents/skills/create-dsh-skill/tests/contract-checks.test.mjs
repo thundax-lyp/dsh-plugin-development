@@ -5,6 +5,7 @@ import {
     writeFileSync,
     rmSync,
     readFileSync,
+    renameSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -14,6 +15,7 @@ import {
     assertContractText,
     runContractExamples,
 } from "../scripts/contract-checks.mjs";
+import { loadTarget } from "../scripts/skill-build-contract.mjs";
 import { validateSkillSource } from "../scripts/validate-skill-source.mjs";
 import { createFixture, write } from "./fixture.mjs";
 
@@ -238,5 +240,32 @@ test("fenced API members count as owned content without accepting fenced heading
     );
     assert.doesNotThrow(() =>
         validateSkillSource(fixture.targetPath, { freeze: true }),
+    );
+});
+
+test("external exact checkout replaces a missing target checkout and reaches validators", (t) => {
+    const fixture = createFixture(t);
+    const external = fixture.checkoutPath + "-external";
+    renameSync(fixture.checkoutPath, external);
+    const loaded = loadTarget(fixture.targetPath, { checkoutPath: external });
+    assert.equal(loaded.checkoutPath, external);
+    write(join(external, "proof.ts"), "changed tracked evidence");
+    assert.throws(
+        () => loadTarget(fixture.targetPath, { checkoutPath: external }),
+        /working-tree/,
+    );
+
+    const { target, skillPath } = setup(t);
+    target.checkoutPath = external;
+    write(
+        join(target.evidencePath, "compile.mjs"),
+        `import assert from 'node:assert/strict';assert.equal(process.env.DSH_TARGET_CHECKOUT,${JSON.stringify(external)});console.log(JSON.stringify({hostBlocks:1,clientBlocks:0,checks:{externalCheckout:true}}))`,
+    );
+    Object.assign(target.manifest, loadContractChecks(target).hashes, {
+        status: "frozen",
+    });
+    assert.equal(
+        runContractExamples(target, skillPath)[0].checks.externalCheckout,
+        true,
     );
 });

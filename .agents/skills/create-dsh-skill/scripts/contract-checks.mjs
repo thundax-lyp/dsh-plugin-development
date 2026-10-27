@@ -236,10 +236,12 @@ export function runContractExamples(target, skillPath) {
 
 if (process.argv[1]?.endsWith("/contract-checks.mjs")) {
     try {
-        const [targetPath, skillPath] = process.argv.slice(2);
+        const [targetPath, skillPath, checkoutPath] = process.argv.slice(2);
         if (!targetPath || !skillPath)
-            throw new Error("Usage: contract-checks.mjs <target> <skill>");
-        const target = loadTarget(targetPath);
+            throw new Error(
+                "Usage: contract-checks.mjs <target> <skill> [checkout]",
+            );
+        const target = loadTarget(targetPath, { checkoutPath });
         process.stdout.write(
             JSON.stringify(runContractExamples(target, skillPath)) + "\n",
         );

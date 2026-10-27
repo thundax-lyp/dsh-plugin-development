@@ -115,14 +115,16 @@ export function assertIdentity(actual, expected, label) {
     }
 }
 
-export function loadTarget(targetArgument) {
+export function loadTarget(targetArgument, options = {}) {
     if (!targetArgument) {
         throw new Error("A prepared target path is required.");
     }
     const targetPath = resolve(targetArgument);
     const provenancePath = join(targetPath, "provenance.json");
     const manifestPath = join(targetPath, "skill-source", "manifest.json");
-    const checkoutPath = join(targetPath, "checkout");
+    const checkoutPath = options.checkoutPath
+        ? resolve(options.checkoutPath)
+        : join(targetPath, "checkout");
     for (const path of [
         targetPath,
         provenancePath,

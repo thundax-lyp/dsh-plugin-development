@@ -5,7 +5,7 @@ import { spawnSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 const evidence = dirname(fileURLToPath(import.meta.url))
 const target = resolve(evidence, '../..')
-const checkout = join(target, 'checkout')
+const checkout = process.env.DSH_TARGET_CHECKOUT ?? join(target, 'checkout')
 const skillFlag = process.argv.indexOf('--skill')
 if (skillFlag !== -1 && (!process.argv[skillFlag + 1] || process.argv[skillFlag + 1].startsWith('--'))) throw new Error('--skill requires a Skill root')
 const skillRoot = skillFlag === -1 ? undefined : resolve(process.argv[skillFlag + 1])

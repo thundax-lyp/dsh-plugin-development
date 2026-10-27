@@ -4,6 +4,7 @@ const path = require("node:path");
 const cp = require("node:child_process");
 const crypto = require("node:crypto");
 const { builtDeclarationPath } = require("./example_type_paths.cjs");
+const { resolveValidationTarget } = require("./example_validation_target.cjs");
 const repo = path.resolve(__dirname, "..");
 const argv = process.argv.slice(2);
 if (
@@ -23,18 +24,6 @@ const skill = fs.realpathSync(
         : path.join(repo, "skills/dsh-plugin-development"),
 );
 const refs = path.join(skill, "references");
-const preparedTarget = path.dirname(root);
-const contractPath = path.join(
-    preparedTarget,
-    "evidence",
-    "contract-checks.json",
-);
-const contractExamples = fs.existsSync(contractPath)
-    ? JSON.parse(fs.readFileSync(contractPath, "utf8")).examples
-    : [];
-const groupedOutputs = new Set(
-    contractExamples.flatMap((check) => check.outputs),
-);
 function run(command, args, options = {}) {
     const result = cp.spawnSync(command, args, {
         cwd: root,
@@ -60,6 +49,18 @@ try {
     )?.[1];
     if (!version) throw Error("Source map is missing the npm version");
     const tag = `dsh-v${version}`;
+    const preparedTarget = resolveValidationTarget(repo, skill, version);
+    const contractPath = path.join(
+        preparedTarget,
+        "evidence",
+        "contract-checks.json",
+    );
+    const contractExamples = fs.existsSync(contractPath)
+        ? JSON.parse(fs.readFileSync(contractPath, "utf8")).examples
+        : [];
+    const groupedOutputs = new Set(
+        contractExamples.flatMap((check) => check.outputs),
+    );
     if (
         git("rev-parse", "HEAD^{commit}") !==
         git("rev-parse", `refs/tags/${tag}^{commit}`)
@@ -108,6 +109,7 @@ try {
                 ),
                 preparedTarget,
                 skill,
+                root,
             ],
             {
                 cwd: repo,

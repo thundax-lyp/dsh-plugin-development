@@ -6,7 +6,7 @@ const require = createRequire(path.resolve('package.json'));
 const ts = require('typescript');
 const { builtDeclarationPath } = require('./scripts/example_type_paths.cjs');
 const target = path.resolve('.dsh-skill-build/targets/0.2.1-rc.3');
-const checkout = path.join(target, 'checkout');
+const checkout = process.env.DSH_TARGET_CHECKOUT ?? path.join(target, 'checkout');
 const source = path.join(target, 'skill-source');
 const skillIndex = process.argv.indexOf('--skill');
 const skillRoot = skillIndex < 0 ? null : path.resolve(process.argv[skillIndex + 1] ?? (() => { throw new Error('--skill 需要路径'); })());
