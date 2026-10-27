@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-agent-preset",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-agent-preset/src/client/index.ts",
+            "ctx.locale.register('settings.agentPreset', { zh, en }), 'ui-agent-preset: settings row dictionaries')"
+        ],
+        [
+            "packages/client/ui-agent-preset/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

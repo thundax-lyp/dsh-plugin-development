@@ -1,0 +1,9 @@
+{
+    "conflicts": [
+        {
+            "source": "packages/util/package-manifest/README.zh.md",
+            "claim": "读取方不强制 engines.dsh",
+            "ruling": "声明类型本身不强制；profile.ts与compatibility-preflight.ts实际对launcher拥有边界执行兼容性检查，代码优先。"
+        }
+    ]
+}

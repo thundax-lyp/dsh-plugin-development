@@ -1,0 +1,17 @@
+{
+    "checkedDeclarations": 4234,
+    "checkedMemberDeclarations": 808,
+    "checkedMemberNames": 366,
+    "checkedDependentMembers": 58,
+    "bareAnyOriginal": 242,
+    "aliases": 81,
+    "legitimateAny": [
+        "export:@deepseek-ai/dsh-client-store:.:ActionsDecl",
+        "export:@deepseek-ai/dsh-client-store:.:StoreDecl",
+        "export:@deepseek-ai/dsh-client-store:.:StoreFactory"
+    ],
+    "compilation": {
+        "client": [],
+        "host": []
+    }
+}

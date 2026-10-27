@@ -1,0 +1,21 @@
+{
+    "task": "client-ui-plan",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-plan/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-plan: dictionaries')"
+        ],
+        [
+            "packages/client/ui-plan/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-plan/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-plan/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

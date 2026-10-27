@@ -13,10 +13,15 @@ import {
     sha256File,
     writeJsonAtomic,
 } from "./skill-build-contract.mjs";
-import { markdownSection, withoutFencedCode } from "./markdown-structure.mjs";
+import {
+    markdownSection,
+    markdownSectionWithCode,
+    withoutFencedCode,
+} from "./markdown-structure.mjs";
 import { renderTaskNavigation } from "./task-navigation.mjs";
 import { loadTaskScenarios } from "./task-scenarios.mjs";
 import { validateSharedUiCoverage } from "./shared-ui-coverage.mjs";
+import { loadContractChecks, assertContractText } from "./contract-checks.mjs";
 
 const allowedKinds = new Set([
     "entrypoint",
@@ -64,7 +69,7 @@ function readOwnedSection(files, root, output, section, label) {
         throw new Error(`${label}.owner must be an API reference: ${output}`);
     }
     const body = readFileSync(resolveInside(root, entry.source, label), "utf8");
-    const owned = markdownSection(body, section);
+    const owned = markdownSectionWithCode(body, section);
     if (!owned || owned.level < 2)
         throw new Error(`${label}.section is missing in ${output}: ${section}`);
     if (!owned.content)
@@ -192,6 +197,7 @@ export function validateSkillSource(targetArgument, options = {}) {
     )
         ? loadTaskScenarios(target, coverage)
         : undefined;
+    const contractChecks = loadContractChecks(target);
     const controlHashes = {
         claimsSha256: sha256File(claimsPath),
         coverageSha256: sha256File(coveragePath),
@@ -205,6 +211,7 @@ export function validateSkillSource(targetArgument, options = {}) {
               }
             : {}),
         ...taskScenarios?.hashes,
+        ...contractChecks.hashes,
     };
     if (manifest.status === "frozen") {
         for (const [key, value] of Object.entries(controlHashes)) {
@@ -278,6 +285,17 @@ export function validateSkillSource(targetArgument, options = {}) {
             throw new Error(`Frozen source hash mismatch: ${entry.source}`);
         }
         return { ...entry, output, sha256 };
+    });
+    assertContractText(contractChecks, (output) => {
+        const file = files.find((entry) => entry.output === output);
+        return readFileSync(
+            resolveInside(
+                target.skillSourcePath,
+                file.source,
+                "contract assertion source",
+            ),
+            "utf8",
+        );
     });
     for (const output of requiredOutputs) {
         if (!outputs.has(output))

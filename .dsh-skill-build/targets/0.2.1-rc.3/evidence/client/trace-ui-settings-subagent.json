@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-settings-subagent",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-subagent/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-subagent: dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-subagent/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

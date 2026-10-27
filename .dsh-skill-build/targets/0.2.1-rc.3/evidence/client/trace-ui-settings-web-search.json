@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-settings-web-search",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-web-search/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-web-search: dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-web-search/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

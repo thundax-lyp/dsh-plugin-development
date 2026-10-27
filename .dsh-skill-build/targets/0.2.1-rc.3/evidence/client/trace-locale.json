@@ -1,0 +1,9 @@
+{
+    "task": "client-locale",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/locale/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

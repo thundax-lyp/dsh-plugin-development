@@ -1,0 +1,590 @@
+[
+    {
+        "package": "@deepseek-ai/dsh-acp",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-agent-instructions",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-command-compact",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-command-goal",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-commands",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-compaction",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-compaction-basic",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-compaction-image-offload",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-compaction-tool-result-pruner",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-cua",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-deepseek-llm-api-extensions",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-agent-team",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-agent-team-profile",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-api-speech-to-text",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-auto-review",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-badge-skill-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-browser-use-playwright-mcp",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-browser-use-runtime",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-browser-use-stagehand-native",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-claude-code-mods",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-computer-use-cua-driver-native",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-cot-translation-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-cua-macos",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-inspector",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-inspector-profile",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-plugin-market-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-ptc-runtime-python",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-ralph-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-session-inspector",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-session-search",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-session-titles-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-speech-to-text",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-terminal-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-tool-agent-team",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-tool-worktree",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-translator",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-voice-input-bundle",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-webworker-packer",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-webworker-runtime",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-experimental-worktree",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-file-reference",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-file-reference-local",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-goal",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-goal-round-driver",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-harness-dev-context",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-hook-protocol",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-hooks-claude-code",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-hooks-codex",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm-deepseek",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm-deepseek-account",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm-deepseek-api-key",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm-pi-ai",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm-retry",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-mcp-client",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-mcp-resources",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-permission-presets",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-plan-mode",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-plugin-package-inventory-deepseek",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-ptc-runtime",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-ptc-runtime-node",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-repeat-tool-reminder",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-session-reference",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-session-title-all-prompts-llm",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-skill",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-skill-badge",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-skill-filesystem",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-skill-office",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent-acp",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent-claude-code",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent-codex",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent-dsh-sdk",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent-fork-in-process",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-subagent-spawn-in-process",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-time-context",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tmux-context",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-token-meter",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-ask-user",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-call-timeout-policy",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-goal",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-ralph",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-session-query",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-skill",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-subagent",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-subagent-control",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-terminal",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-workflow",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-tool-workspace-dependencies",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-user-approval",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-user-questions",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-webhook",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-webhook-github",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-workflow",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-workflow-ptc",
+        "ok": true,
+        "stdout": "\"0.2.1-rc.3\"",
+        "stderr": ""
+    }
+]

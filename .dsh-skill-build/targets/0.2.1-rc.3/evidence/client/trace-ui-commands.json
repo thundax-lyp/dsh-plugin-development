@@ -1,0 +1,9 @@
+{
+    "task": "client-ui-commands",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-commands/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-commands: dictionaries')"
+        ]
+    ]
+}

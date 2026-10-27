@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-settings-shell",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-shell/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-shell: dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-shell/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

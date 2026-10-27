@@ -1,4 +1,4 @@
 interface:
     display_name: "DSH Plugin Development"
-    short_description: "查询 DSH 0.2.0-rc.2 插件公开 API、Web UI 组件并开发和验证扩展"
-    default_prompt: "使用此 Skill 查询 @deepseek-ai/dsh-agent@0.2.0-rc.2 插件可用的公开 API、扩展点和现成 Web UI 组件，或开发插件。先核对消费项目版本，再从 SKILL.md 选择任务或关键词，查阅对应 HOW-TO、API 契约与示例；按目标版本验证装载和行为。"
+    short_description: "查询 DSH 公开 API、扩展点与现成 Web UI 控件，制作并验证插件"
+    default_prompt: "使用 $dsh-plugin-development 查询目标版本可供插件使用的公开 API、扩展点和现成 Web UI 组件，或完成插件实现、装载与验证。先核对消费版本、运行侧与公开入口，再遵守资源所有权、取消、持久化和纯渲染契约。"

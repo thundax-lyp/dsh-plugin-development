@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-settings-plugins",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-settings-plugins/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-settings-plugins: section dictionaries')"
+        ],
+        [
+            "packages/client/ui-settings-plugins/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

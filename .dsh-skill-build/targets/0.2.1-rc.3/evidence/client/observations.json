@@ -1,0 +1,74 @@
+{
+    "version": "0.2.1-rc.3",
+    "observations": [
+        {
+            "fact": "Modal 公开，FoldToggle 未从 root export 导出。",
+            "paths": [
+                "packages/client/ui-primitives/src/index.ts",
+                "packages/client/ui-primitives/src/Modal.tsx",
+                "packages/client/ui-primitives/src/Modal.module.css",
+                "packages/client/ui-primitives/src/useModalLayer.ts"
+            ]
+        },
+        {
+            "fact": "dsh.client.inject 是 informational package dependencies，非 Cordis service injection；external 才是精确模块请求。",
+            "paths": [
+                "packages/util/package-manifest/src/types.ts",
+                "packages/client/modules/src/client/manifest.ts"
+            ]
+        },
+        {
+            "fact": "外部包不能导入未发布 clientBundle preset，需要独立构建 lazy-CJS factory。",
+            "paths": [
+                "packages/client/tsdown.client.ts",
+                "docs/cookbook/adding-a-settings-card.md"
+            ]
+        },
+        {
+            "fact": "插件预览图为内置 BUNDLE_PREVIEWS，第三方没有声明入口。",
+            "paths": [
+                "docs/cookbook/adding-a-plugin-preview.md",
+                "packages/client/ui-plugin-manager/src/client/PluginManagerPage.tsx"
+            ]
+        }
+    ],
+    "validation": {
+        "clientExampleCompile": {
+            "command": "node evidence/client/compile-examples.cjs",
+            "examples": [
+                "client-overlay",
+                "client-sidebar-page",
+                "client-resource"
+            ],
+            "diagnostics": 0
+        },
+        "independentConsumer": {
+            "dependencyResolution": "cordis/primitives/react/esbuild exports resolved from local locked dependencies",
+            "typecheck": "tsc -p tsconfig.json without workspace paths passed",
+            "factoryBuild": "Host ESM and browser lazy-CJS built",
+            "packageDryRun": "npm pack --dry-run --json passed; 6 files include both JS entries, both declaration entries, patch and package.json"
+        },
+        "runtime": {
+            "command": "node evidence/client/run-runtime.mjs",
+            "result": "passed",
+            "runner": "production ClientModuleSystem + production SlotRegistry/renderer via SlotTestRuntime/jsdom",
+            "assertions": [
+                "consumer-resolution",
+                "consumer-types",
+                "consumer-build",
+                "module-import",
+                "slot-mount",
+                "modal-interaction",
+                "unload"
+            ]
+        },
+        "NotCovered": [
+            "Full business Host web Profile launch and HTTP bundle serving for the independent consumer.",
+            "Real browser rendering geometry, physical pointer/keyboard behavior and native OS integration.",
+            "Right-sidebar and resource examples have declaration compilation but no full runtime scenario.",
+            "Remote, reconnect, permissions, file-upload, microphone and long-tail built-in feature behavior were not exercised in the Client scenario.",
+            "Agent Skill auto-trigger and natural language answer behavior require the assembled generated Skill; this subtask did not run those Agent observations."
+        ],
+        "scopeBoundary": "Long-tail HOW-TO tasks are explicit contract lookup/selection guidance, not claims of independently rebuilt product behavior."
+    }
+}

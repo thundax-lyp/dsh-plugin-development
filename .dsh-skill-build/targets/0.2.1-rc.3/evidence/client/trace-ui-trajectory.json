@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-trajectory",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-trajectory/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-trajectory: dictionaries')"
+        ],
+        [
+            "packages/client/ui-trajectory/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

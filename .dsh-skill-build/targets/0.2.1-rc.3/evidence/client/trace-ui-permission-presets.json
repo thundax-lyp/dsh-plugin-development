@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-permission-presets",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-permission-presets/src/client/index.ts",
+            "ctx.locale.register(PERMISSION_ACCESS_NS, { zh: accessZh, en: accessEn }),"
+        ],
+        [
+            "packages/client/ui-permission-presets/src/client/index.ts",
+            "ctx.locale.register('settings.permission', { zh, en }), 'ui-permission: settings row dictionaries')"
+        ],
+        [
+            "packages/client/ui-permission-presets/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

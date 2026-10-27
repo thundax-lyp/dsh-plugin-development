@@ -1,0 +1,9 @@
+当前材料不足以给出可靠的公开组件导入和可运行代码：
+
+- [package.json](<isolated-fixtures>/mismatch/package.json) 固定依赖 `@deepseek-ai/dsh-agent@0.2.0-rc.0`。
+- 本地仅有适用于 `0.2.1-rc.3` 的 [dsh-plugin-development Skill](<isolated-fixtures>/mismatch/.agents/skills/dsh-plugin-development/SKILL.md:9)，明确要求：“版本不同就停止套用签名及示例，先取得对应版本的 Skill。”
+- 项目没有锁文件，也未找到已安装包，无法核实 `0.2.0-rc.0` 的公开导出、组件参数和 Client 装载入口。
+
+需要提供 **`0.2.0-rc.0` 对应的本地 Skill，或该版本的包源码与类型声明路径**，才能继续给出准确代码。直接套用新版 Modal 示例会违反版本边界，不能称为当前依赖下可运行。
+
+已遵守只读、不安装、不联网、不修改文件的要求。

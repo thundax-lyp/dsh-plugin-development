@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-message-feedback",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-message-feedback/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-message-feedback: dictionaries')"
+        ],
+        [
+            "packages/client/ui-message-feedback/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-message-feedback/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

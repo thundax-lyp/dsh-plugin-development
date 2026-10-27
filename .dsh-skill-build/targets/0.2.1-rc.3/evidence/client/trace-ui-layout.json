@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-layout",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-layout/src/client/index.ts",
+            "ctx.locale.register('shortcuts.layout', { zh, en }), 'layout: command labels')"
+        ],
+        [
+            "packages/client/ui-layout/src/client/index.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-layout/src/client/index.ts",
+            "ctx.shortcuts.register({"
+        ]
+    ]
+}

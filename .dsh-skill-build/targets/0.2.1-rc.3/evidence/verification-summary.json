@@ -1,0 +1,53 @@
+{
+    "version": "0.2.1-rc.3",
+    "tag": "dsh-v0.2.1-rc.3",
+    "commit": "1f81c047fc48fa190a683e469daa699857e9afe8",
+    "formalReplaced": true,
+    "installedDigest": "693a941a5972ab2c569f0357a65fa9e26f3ddc1024a396e44b14ba2f4c57b0c9",
+    "capabilityCandidates": 464,
+    "capabilityDecisions": {
+        "included": 341,
+        "excluded": 58,
+        "merged": 65
+    },
+    "apiEntryDecisions": {
+        "included": 383,
+        "excluded": 250
+    },
+    "apiObjects": {
+        "included": 5272,
+        "excluded": 1373
+    },
+    "taskPaths": 196,
+    "featuredTasks": 2,
+    "distributedFiles": 1209,
+    "validation": {
+        "generatedMarkdown": 1208,
+        "localLinksAndAnchors": 15945,
+        "sourcePaths": 1646,
+        "hostTypeScriptBlocks": 10,
+        "clientTypeScriptBlocks": 3,
+        "validatorRegressionTests": 58,
+        "selectedUpstreamTests": 324,
+        "featuredScenarioChecks": [
+            6,
+            7
+        ],
+        "agentQuery": true,
+        "agentImplementationBuildAndRuntime": true,
+        "agentImplementationInitialCapacityFailureRecovered": true,
+        "agentFixtureNoDependencyInstallPolicy": false
+    },
+    "notCovered": [
+        "真实浏览器几何、像素与原生事件",
+        "真实WebSocket重连及Remote非owner授权",
+        "Windows/Linux原生后端与实验平台组合",
+        "全部长尾任务逐一端到端执行",
+        "执行中长任务取消和崩溃恢复的完整矩阵"
+    ],
+    "gitActions": {
+        "staged": false,
+        "committed": false,
+        "pushed": false
+    }
+}

@@ -1,0 +1,350 @@
+[
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "bits",
+        "Dict<number> | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "builder",
+        "Function | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "callback",
+        "Function | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "collapse",
+        "{ (value?: boolean | undefined): Schema<S, T, Mode>; (value?: boolean | undefined): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "comment",
+        "{ (text: string): Schema<S, T, Mode>; (text: string): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "constructor",
+        "string | Function | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "deprecated",
+        "{ (): Schema<S, T, Mode>; (): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "description",
+        "{ (text: string): Schema<S, T, Mode>; (text: string): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "dict",
+        "Dict<Schema<any, any, \"plain\">> | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "disabled",
+        "{ (value?: boolean | undefined): Schema<S, T, Mode>; (value?: boolean | undefined): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "experimental",
+        "{ (): Schema<S, T, Mode>; (): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "extra",
+        "{ <K extends keyof Schemastery.Meta>(key: K, value: Meta<any>[K]): Schema<S, T, Mode>; <K extends keyof Schemastery.Meta>(key: K, value: Meta<any>[K]): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "hidden",
+        "{ (value?: boolean | undefined): Schema<S, T, Mode>; (value?: boolean | undefined): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "i18n",
+        "{ (messages: Dict): Schema<S, T, Mode>; (messages: Dict): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "inner",
+        "Schema<any, any, \"plain\"> | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "link",
+        "{ (link: string): Schema<S, T, Mode>; (link: string): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "list",
+        "Schema<any, any, \"plain\">[] | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "loose",
+        "{ (value?: boolean | undefined): Schema<S, T, Mode>; (value?: boolean | undefined): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "max",
+        "{ (value: number): Schema<S, T, Mode>; (value: number): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "meta",
+        "Meta<T>"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "min",
+        "{ (value: number): Schema<S, T, Mode>; (value: number): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "pattern",
+        "{ (regexp: RegExp): Schema<S, T, Mode>; (regexp: RegExp): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "preserve",
+        "boolean | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "push",
+        "{ (value: Schema<any, any, \"plain\">): Schema<S, T, Mode>; (value: Schema<any, any, \"plain\">): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "refs",
+        "Dict<Schema<any, any, \"plain\">> | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "required",
+        "{ <R extends boolean = true>(value?: R | undefined): Schema<S, T, SetRequired<Mode, R>>; <R extends boolean = true>(value?: R | undefined): Schema<S, T, SetRequired<Mode, R>>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "role",
+        "{ (text: string, extra?: any): Schema<S, T, Mode>; (text: string, extra?: any): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "sKey",
+        "Schema<any, any, \"plain\"> | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "set",
+        "{ (key: string, value: Schema<any, any, \"plain\">): Schema<S, T, Mode>; (key: string, value: Schema<any, any, \"plain\">): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "simplify",
+        "{ (value?: any): any; (value?: any): any; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "step",
+        "{ (value: number): Schema<S, T, Mode>; (value: number): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "toJSON",
+        "{ (): Schema<S, T, Mode>; (): Schema<S, T, Mode>; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "toString",
+        "{ (inline?: boolean | undefined): string; (inline?: boolean | undefined): string; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "uid",
+        "number"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "value",
+        "T | undefined"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "volatile",
+        "{ (): Schema<NoInfer<S>, NoInfer<T>, Mode extends \"volatile-defined\" | \"defined\" ? \"volatile-defined\" : \"volatile\">; (): Schema<NoInfer<S>, NoInfer<T>, Mode extends \"volatile-defined\" | \"defined\" ? \"volatile-defined\" : \"volatile\">; }"
+    ],
+    [
+        "core-64b5a374763e4732",
+        "references/infra/api/api-core-schemastery-root-1.md",
+        "~standard",
+        "Props<unknown, unknown>"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "attachRpc",
+        "(channel: QuestionRpcChannel) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "attachSeat",
+        "(seat: QuestionSeat) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "attachWaterfall",
+        "(channel: QuestionWaterfallChannel) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "callId",
+        "ToolCallId | undefined"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "detachWaterfall",
+        "(channel: QuestionWaterfallChannel) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "dismiss",
+        "() => Promise<void>"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "dismissal",
+        "\"cancel\" | \"hide\""
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "engage",
+        "(now?: number) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "getSnapshot",
+        "() => QuestionCardSnapshot"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "hasWaterfall",
+        "() => boolean"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "holdFocus",
+        "(now?: number) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "key",
+        "string"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "kind",
+        "\"plan-review\" | \"question\""
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "liveKeys",
+        "() => readonly string[]"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "releaseFocus",
+        "(now?: number) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "review",
+        "readonly AskUserQuestionAnswerItem[] | undefined"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "sessionId",
+        "SessionId"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "setState",
+        "(state: UserQuestionState) => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "snapshot",
+        "() => QuestionCardSnapshot"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "takeTime",
+        "() => void"
+    ],
+    [
+        "export:@deepseek-ai/dsh-client-ui-user-questions:./client:QuestionWait",
+        "references/client/api/api-client-ui-user-questions-slots.md",
+        "timeout",
+        "() => void"
+    ]
+]

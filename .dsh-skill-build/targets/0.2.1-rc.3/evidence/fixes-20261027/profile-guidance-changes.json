@@ -1,0 +1,390 @@
+{
+    "updated": [
+        "capabilities-dsh-acp.md",
+        "capabilities-dsh-agent-instructions.md",
+        "capabilities-dsh-command-compact.md",
+        "capabilities-dsh-command-goal.md",
+        "capabilities-dsh-compaction-basic.md",
+        "capabilities-dsh-compaction-image-offload.md",
+        "capabilities-dsh-compaction-tool-result-pruner.md",
+        "capabilities-dsh-compaction.md",
+        "capabilities-dsh-cua.md",
+        "capabilities-dsh-deepseek-llm-api-extensions.md",
+        "capabilities-dsh-experimental-agent-team.md",
+        "capabilities-dsh-experimental-api-speech-to-text.md",
+        "capabilities-dsh-experimental-auto-review.md",
+        "capabilities-dsh-experimental-browser-use-chrome-devtools-mcp.md",
+        "capabilities-dsh-experimental-browser-use-playwright-mcp.md",
+        "capabilities-dsh-experimental-browser-use-runtime.md",
+        "capabilities-dsh-experimental-browser-use-stagehand-native.md",
+        "capabilities-dsh-experimental-claude-code-mods.md",
+        "capabilities-dsh-experimental-computer-use-cua-driver-mcp.md",
+        "capabilities-dsh-experimental-computer-use-cua-driver-native.md",
+        "capabilities-dsh-experimental-cua-macos.md",
+        "capabilities-dsh-experimental-inspector.md",
+        "capabilities-dsh-experimental-ptc-runtime-python.md",
+        "capabilities-dsh-experimental-session-inspector.md",
+        "capabilities-dsh-experimental-speech-to-text-sensevoice.md",
+        "capabilities-dsh-experimental-speech-to-text.md",
+        "capabilities-dsh-experimental-tool-worktree.md",
+        "capabilities-dsh-experimental-translator.md",
+        "capabilities-dsh-experimental-worktree.md",
+        "capabilities-dsh-file-reference-local.md",
+        "capabilities-dsh-file-reference.md",
+        "capabilities-dsh-goal-round-driver.md",
+        "capabilities-dsh-goal.md",
+        "capabilities-dsh-harness-dev-context.md",
+        "capabilities-dsh-hook-protocol.md",
+        "capabilities-dsh-hooks-claude-code.md",
+        "capabilities-dsh-hooks-codex.md",
+        "capabilities-dsh-llm-deepseek-account.md",
+        "capabilities-dsh-llm-deepseek-api-key.md",
+        "capabilities-dsh-llm-deepseek.md",
+        "capabilities-dsh-llm-pi-ai.md",
+        "capabilities-dsh-llm-retry.md",
+        "capabilities-dsh-mcp-resources.md",
+        "capabilities-dsh-permission-presets.md",
+        "capabilities-dsh-plan-mode.md",
+        "capabilities-dsh-plugin-package-inventory-deepseek.md",
+        "capabilities-dsh-ptc-runtime-node.md",
+        "capabilities-dsh-repeat-tool-reminder.md",
+        "capabilities-dsh-session-reference.md",
+        "capabilities-dsh-session-title-all-prompts-llm.md",
+        "capabilities-dsh-skill-filesystem.md",
+        "capabilities-dsh-skill-office.md",
+        "capabilities-dsh-subagent-acp.md",
+        "capabilities-dsh-subagent-claude-code.md",
+        "capabilities-dsh-subagent-codex.md",
+        "capabilities-dsh-subagent-dsh-sdk.md",
+        "capabilities-dsh-subagent-fork-in-process.md",
+        "capabilities-dsh-subagent-spawn-in-process.md",
+        "capabilities-dsh-time-context.md",
+        "capabilities-dsh-tmux-context.md",
+        "capabilities-dsh-token-meter.md",
+        "capabilities-dsh-tool-ask-user.md",
+        "capabilities-dsh-tool-call-timeout-policy.md",
+        "capabilities-dsh-tool-goal.md",
+        "capabilities-dsh-tool-session-query.md",
+        "capabilities-dsh-tool-skill.md",
+        "capabilities-dsh-tool-subagent-control.md",
+        "capabilities-dsh-tool-subagent.md",
+        "capabilities-dsh-tool-workflow.md",
+        "capabilities-dsh-tool-workspace-dependencies.md",
+        "capabilities-dsh-user-approval.md",
+        "capabilities-dsh-user-questions.md",
+        "capabilities-dsh-webhook-github.md",
+        "capabilities-dsh-webhook.md",
+        "runtime-attachment.md",
+        "runtime-browser-use.md",
+        "runtime-computer-use.md",
+        "runtime-credentials.md",
+        "runtime-deliverables.md",
+        "runtime-feedback.md",
+        "runtime-fs.md",
+        "runtime-jobs.md",
+        "runtime-lsp.md",
+        "runtime-sandbox.md",
+        "runtime-schedule.md",
+        "runtime-session-query.md",
+        "runtime-session.md",
+        "runtime-shell.md",
+        "runtime-spill.md",
+        "runtime-ssh.md",
+        "runtime-storage.md",
+        "runtime-subprocess.md",
+        "runtime-telemetry.md",
+        "runtime-terminal.md",
+        "runtime-util.md",
+        "runtime-web.md",
+        "runtime-workspace.md"
+    ],
+    "baseEntries": {
+        "@deepseek-ai/dsh-plugin-manager/tools": [
+            "tool-plugin-manager"
+        ],
+        "@deepseek-ai/dsh-plugin-manager": [
+            "plugin-manager"
+        ],
+        "@deepseek-ai/cordis-plugin-timer": [
+            "timer"
+        ],
+        "@deepseek-ai/dsh-hmr": [
+            "hmr"
+        ],
+        "@deepseek-ai/dsh-llm": [
+            "llm"
+        ],
+        "@deepseek-ai/dsh-deepseek-llm-api-extensions": [
+            "deepseek-llm-api-extensions"
+        ],
+        "@deepseek-ai/dsh-session": [
+            "session"
+        ],
+        "@deepseek-ai/dsh-session-log-deepseek": [
+            "session-log-deepseek"
+        ],
+        "@deepseek-ai/dsh-typert-registry": [
+            "typert"
+        ],
+        "@deepseek-ai/dsh-typert-loader": [
+            "typert-loader"
+        ],
+        "@deepseek-ai/dsh-api-gateway": [
+            "typert-gateway"
+        ],
+        "@deepseek-ai/dsh-api-remote-access": [
+            "remote-access"
+        ],
+        "@deepseek-ai/dsh-session-title": [
+            "session-title"
+        ],
+        "@deepseek-ai/dsh-session-title-first-prompt-llm": [
+            "session-title-llm"
+        ],
+        "@deepseek-ai/dsh-user-questions": [
+            "user-questions"
+        ],
+        "@deepseek-ai/dsh-agent": [
+            "agent"
+        ],
+        "@deepseek-ai/dsh-plugin-package-inventory-deepseek": [
+            "plugin-package-inventory-deepseek"
+        ],
+        "@deepseek-ai/dsh-agent-default-model": [
+            "agent-default-model"
+        ],
+        "@deepseek-ai/dsh-jobs-local": [
+            "jobs"
+        ],
+        "@deepseek-ai/dsh-llm-retry": [
+            "llm-retry"
+        ],
+        "@deepseek-ai/dsh-config-editor": [
+            "config-editor"
+        ],
+        "@deepseek-ai/dsh-settings": [
+            "settings"
+        ],
+        "@deepseek-ai/dsh-authorization": [
+            "authorization"
+        ],
+        "@deepseek-ai/dsh-deepseek-account-platform": [
+            "deepseek-account"
+        ],
+        "@deepseek-ai/dsh-credentials-local": [
+            "credentials"
+        ],
+        "@deepseek-ai/dsh-llm-pi-ai": [
+            "llm-pi-ai"
+        ],
+        "@deepseek-ai/dsh-session-persistence-jsonl": [
+            "session-persistence-jsonl"
+        ],
+        "@deepseek-ai/dsh-attachment-local": [
+            "attachment-local"
+        ],
+        "@deepseek-ai/dsh-session-query-sqlite": [
+            "session-query-sqlite"
+        ],
+        "@deepseek-ai/dsh-working-directory": [
+            "working-directory"
+        ],
+        "@deepseek-ai/dsh-tool-working-directory": [
+            "tool-working-directory"
+        ],
+        "@deepseek-ai/dsh-session-projection": [
+            "session-projection"
+        ],
+        "@deepseek-ai/dsh-storage": [
+            "storage"
+        ],
+        "@deepseek-ai/dsh-storage-json": [
+            "storage-json"
+        ],
+        "@deepseek-ai/dsh-storage-domain": [
+            "storage-domain"
+        ],
+        "@deepseek-ai/dsh-session-projection-cache": [
+            "session-projection-cache"
+        ],
+        "@deepseek-ai/dsh-otel": [
+            "otel"
+        ],
+        "@deepseek-ai/dsh-session-telemetry-otel": [
+            "session-telemetry-otel"
+        ],
+        "@deepseek-ai/dsh-subprocess-local": [
+            "subprocess"
+        ],
+        "@deepseek-ai/dsh-sandbox-local": [
+            "sandbox"
+        ],
+        "@deepseek-ai/dsh-sandbox-policy": [
+            "sandbox-policy"
+        ],
+        "@deepseek-ai/dsh-bash-sandbox": [
+            "bash-sandbox"
+        ],
+        "@deepseek-ai/dsh-pwsh-sandbox": [
+            "pwsh-sandbox"
+        ],
+        "@deepseek-ai/dsh-user-approval": [
+            "approval"
+        ],
+        "@deepseek-ai/dsh-permission-presets": [
+            "permission"
+        ],
+        "@deepseek-ai/dsh-shell-env": [
+            "shell-env"
+        ],
+        "@deepseek-ai/dsh-tool-bash": [
+            "tool-bash"
+        ],
+        "@deepseek-ai/dsh-tool-pwsh": [
+            "tool-pwsh"
+        ],
+        "@deepseek-ai/dsh-tool-jobs": [
+            "tool-jobs"
+        ],
+        "@deepseek-ai/dsh-fs-observation-policy": [
+            "fs-observation-policy"
+        ],
+        "@deepseek-ai/dsh-tool-fs": [
+            "tool-fs"
+        ],
+        "@deepseek-ai/dsh-tool-fs-search": [
+            "tool-fs-search"
+        ],
+        "@deepseek-ai/dsh-agent-instructions": [
+            "agent-instructions"
+        ],
+        "@deepseek-ai/dsh-skill": [
+            "skill"
+        ],
+        "@deepseek-ai/dsh-skill-filesystem": [
+            "skill-filesystem"
+        ],
+        "@deepseek-ai/dsh-tool-skill": [
+            "tool-skill"
+        ],
+        "@deepseek-ai/dsh-commands": [
+            "commands"
+        ],
+        "@deepseek-ai/dsh-command-feedback": [
+            "command-feedback"
+        ],
+        "@deepseek-ai/dsh-goal": [
+            "goal"
+        ],
+        "@deepseek-ai/dsh-goal-round-driver": [
+            "goal-round-driver"
+        ],
+        "@deepseek-ai/dsh-command-goal": [
+            "command-goal"
+        ],
+        "@deepseek-ai/dsh-plan-mode": [
+            "plan-mode"
+        ],
+        "@deepseek-ai/dsh-token-meter": [
+            "token-meter"
+        ],
+        "@deepseek-ai/dsh-compaction-basic": [
+            "compaction-basic"
+        ],
+        "@deepseek-ai/dsh-command-compact": [
+            "command-compact"
+        ],
+        "@deepseek-ai/dsh-subagent": [
+            "subagent"
+        ],
+        "@deepseek-ai/dsh-subagent-spawn-in-process": [
+            "subagent-spawn-in-process"
+        ],
+        "@deepseek-ai/dsh-subagent-fork-in-process": [
+            "subagent-fork-in-process"
+        ],
+        "@deepseek-ai/dsh-tool-subagent-control": [
+            "tool-subagent-control"
+        ],
+        "@deepseek-ai/dsh-tool-subagent-control/list-agents": [
+            "tool-subagent-list-agents"
+        ],
+        "@deepseek-ai/dsh-tool-subagent": [
+            "tool-subagent",
+            "tool-subagent-fork"
+        ],
+        "@deepseek-ai/dsh-ptc-runtime-node": [
+            "ptc-runtime"
+        ],
+        "@deepseek-ai/dsh-workflow-ptc": [
+            "workflow-ptc"
+        ],
+        "@deepseek-ai/dsh-tool-workflow": [
+            "tool-workflow"
+        ],
+        "@deepseek-ai/dsh-tool-call-timeout-policy": [
+            "timeout-policy"
+        ],
+        "@deepseek-ai/dsh-spill-local": [
+            "spill-local"
+        ],
+        "@deepseek-ai/dsh-spill-policy": [
+            "spill-policy"
+        ],
+        "@deepseek-ai/dsh-session-checkpoint-policy": [
+            "session-checkpoint-policy"
+        ],
+        "@deepseek-ai/dsh-compaction-tool-result-pruner": [
+            "tool-result-pruner"
+        ],
+        "@deepseek-ai/dsh-compaction-image-offload": [
+            "image-offload"
+        ],
+        "@deepseek-ai/dsh-tool-todo": [
+            "tool-todo"
+        ],
+        "@deepseek-ai/dsh-tool-goal": [
+            "tool-goal"
+        ],
+        "@deepseek-ai/dsh-repeat-tool-reminder": [
+            "repeat-tool-reminder"
+        ],
+        "@deepseek-ai/dsh-web": [
+            "web"
+        ],
+        "@deepseek-ai/dsh-web-search-deepseek": [
+            "web-search-deepseek"
+        ],
+        "@deepseek-ai/dsh-web-deepseek-api": [
+            "web-deepseek-api"
+        ],
+        "@deepseek-ai/dsh-web-fetch-http": [
+            "web-fetch-http"
+        ],
+        "@deepseek-ai/dsh-tool-web": [
+            "tool-web"
+        ],
+        "@deepseek-ai/dsh-mcp-resources": [
+            "mcp-resources"
+        ],
+        "@deepseek-ai/dsh-tools": [
+            "tools"
+        ],
+        "@deepseek-ai/dsh-system-prompt": [
+            "system-prompt"
+        ],
+        "@deepseek-ai/dsh-agent-loop": [
+            "agent-loop"
+        ],
+        "@deepseek-ai/dsh-fs-sandbox": [
+            "fs-sandbox"
+        ],
+        "@deepseek-ai/dsh-llm-deepseek-api-key": [
+            "llm-deepseek"
+        ],
+        "@deepseek-ai/dsh-llm-deepseek-account": [
+            "llm-deepseek-account"
+        ]
+    },
+    "canonical": "how-to/core-profile.md#在已有-profile-中复用或替换服务"
+}

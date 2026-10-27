@@ -3,6 +3,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 const cp = require("node:child_process");
 const crypto = require("node:crypto");
+const { builtDeclarationPath } = require("./example_type_paths.cjs");
+const { resolveValidationTarget } = require("./example_validation_target.cjs");
 const repo = path.resolve(__dirname, "..");
 const argv = process.argv.slice(2);
 if (
@@ -47,6 +49,18 @@ try {
     )?.[1];
     if (!version) throw Error("Source map is missing the npm version");
     const tag = `dsh-v${version}`;
+    const preparedTarget = resolveValidationTarget(repo, skill, version);
+    const contractPath = path.join(
+        preparedTarget,
+        "evidence",
+        "contract-checks.json",
+    );
+    const contractExamples = fs.existsSync(contractPath)
+        ? JSON.parse(fs.readFileSync(contractPath, "utf8")).examples
+        : [];
+    const groupedOutputs = new Set(
+        contractExamples.flatMap((check) => check.outputs),
+    );
     if (
         git("rev-parse", "HEAD^{commit}") !==
         git("rev-parse", `refs/tags/${tag}^{commit}`)
@@ -84,6 +98,28 @@ try {
             temporaryLinks.push(link);
         }
     }
+    let reports = [];
+    if (contractExamples.length) {
+        const result = cp.execFileSync(
+            process.execPath,
+            [
+                path.join(
+                    repo,
+                    ".agents/skills/create-dsh-skill/scripts/contract-checks.mjs",
+                ),
+                preparedTarget,
+                skill,
+                root,
+            ],
+            {
+                cwd: repo,
+                encoding: "utf8",
+                timeout: 900000,
+                maxBuffer: 16 * 1024 * 1024,
+            },
+        );
+        reports = JSON.parse(result);
+    }
     workspace = fs.mkdtempSync(path.join(root, ".skill-validation-"));
     const name = path.basename(workspace);
     const reviewRemoteDeclaration = path.join(
@@ -109,6 +145,7 @@ try {
     );
     let hostCount = 0;
     const client = [];
+    const groupedBlockCounts = new Map();
     const multiFileExamples = new Set([
         "how-to-add-remote-api.md",
         "how-to-edit-owned-plugin-config.md",
@@ -133,7 +170,15 @@ try {
             );
         copied.add(basename);
         const text = fs.readFileSync(path.join(refs, file), "utf8");
-        fs.writeFileSync(path.join(workspace, basename), text);
+        const grouped = groupedOutputs.has(
+            `references/${file.split(path.sep).join("/")}`,
+        );
+        const ordinaryText = text.replace(
+            /^```(tsx?[^\n]*)\n([\s\S]*?)^```\s*$/gm,
+            (block, info) =>
+                grouped && !["ts", "tsx"].includes(info.trim()) ? "" : block,
+        );
+        fs.writeFileSync(path.join(workspace, basename), ordinaryText);
         for (const block of text.matchAll(
             /^```(tsx?[^\n]*)\n([\s\S]*?)^```\s*$/gm,
         )) {
@@ -149,11 +194,44 @@ try {
                     source: file,
                     line: text.slice(0, block.index).split("\n").length,
                 });
-            } else
+            } else {
+                if (!grouped)
+                    throw Error(
+                        `Unassigned TypeScript fence: ${file}: ${block[1]}`,
+                    );
+                const output = `references/${file.split(path.sep).join("/")}`;
+                const count = groupedBlockCounts.get(output) ?? {
+                    host: 0,
+                    client: 0,
+                };
+                count[block[1].startsWith("tsx") ? "client" : "host"]++;
+                groupedBlockCounts.set(output, count);
+            }
+        }
+    }
+    if (contractExamples.length) {
+        for (const report of reports) {
+            const counts = report.outputs.reduce(
+                (total, output) => {
+                    const count = groupedBlockCounts.get(output);
+                    return {
+                        host: total.host + (count?.host ?? 0),
+                        client: total.client + (count?.client ?? 0),
+                    };
+                },
+                { host: 0, client: 0 },
+            );
+            if (
+                report.hostBlocks < counts.host ||
+                report.clientBlocks < counts.client
+            )
                 throw Error(
-                    `Unassigned TypeScript fence: ${file}: ${block[1]}`,
+                    `Grouped validator did not account for every TypeScript block: ${report.id}`,
                 );
         }
+        console.log(
+            `Frozen contract/example validators: ${reports.map((report) => `${report.id} (${report.hostBlocks} Host / ${report.clientBlocks} Client files)`).join(", ")}`,
+        );
     }
     if (!hostCount || !client.length)
         throw Error("Expected both Host and Client examples");
@@ -217,17 +295,12 @@ try {
     );
     if (!parsed || parsed.errors.length)
         throw Error("Cannot parse Client compiler configuration");
-    function built(p) {
-        if (!p.includes("/src"))
-            throw Error(`Unsupported declaration mapping: ${p}`);
-        return p.replace("/src", "/lib/types").replace(/\.ts$/, ".d.ts");
-    }
     const options = {
         ...parsed.options,
         paths: Object.fromEntries(
             Object.entries(parsed.options.paths).map(([k, v]) => [
                 k,
-                v.map(built),
+                v.map(builtDeclarationPath),
             ]),
         ),
         noEmit: true,

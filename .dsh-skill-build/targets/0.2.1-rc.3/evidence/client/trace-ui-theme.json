@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-theme",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-theme/src/client/index.ts",
+            "ctx.locale.register(SETTINGS_NS, { zh, en }), 'ui-theme: settings row dictionaries')"
+        ],
+        [
+            "packages/client/ui-theme/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

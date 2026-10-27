@@ -1,0 +1,43 @@
+{
+    "version": "0.2.1-rc.3",
+    "tag": "dsh-v0.2.1-rc.3",
+    "commit": "1f81c047fc48fa190a683e469daa699857e9afe8",
+    "installedDigest": "a7a871655ca60deb1c1c603528a5fa979be59a6cf0e7a3b36290fe5f46515582",
+    "files": 1211,
+    "markdown": 1210,
+    "claims": 1205,
+    "capabilities": {
+        "total": 464,
+        "included": 341,
+        "merged": 65,
+        "excluded": 58
+    },
+    "validationTests": {
+        "passed": 65,
+        "failed": 0
+    },
+    "formalExamples": {
+        "ordinaryHost": 10,
+        "ordinaryClient": 4,
+        "remoteHostFiles": 5,
+        "remoteClientFiles": 1,
+        "settingsWorkerHostFiles": 1,
+        "settingsWorkerClientFiles": 1
+    },
+    "taskScenarios": {
+        "tasks": 4,
+        "checks": 24
+    },
+    "committed": false,
+    "agentEvaluation": {
+        "queryCompleted": true,
+        "implementationCompletedAfterNetworkRetry": true,
+        "independentBuildPassed": true,
+        "isolatedBehaviorTestsPassed": 14,
+        "realUserProfile": false
+    },
+    "preCommitWhitespaceNormalization": {
+        "sourceFiles": 238,
+        "semanticChanges": false
+    }
+}

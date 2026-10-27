@@ -1,0 +1,13 @@
+{
+    "task": "client-client-ui-claude-code-mods",
+    "runtimeRegistrationSites": [
+        [
+            "packages/experimental/client-ui-claude-code-mods/src/client/mount.ts",
+            "ctx.locale.register(NS, { zh, en }), 'client-ui-claude-code-mods: dictionaries')"
+        ],
+        [
+            "packages/experimental/client-ui-claude-code-mods/src/client/mount.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "task": "client-ui-jobs",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-jobs/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-jobs: dictionaries')"
+        ]
+    ]
+}

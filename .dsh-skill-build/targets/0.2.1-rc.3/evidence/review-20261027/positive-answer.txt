@@ -1,0 +1,33 @@
+从公开包入口导入：
+
+```tsx
+import { useState } from 'react'
+import { Modal } from '@deepseek-ai/dsh-client-ui-primitives'
+
+export function Example() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>打开对话框</button>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        title="编辑名称"
+        closeLabel="关闭"
+      >
+        <input aria-label="名称" data-modal-autofocus />
+      </Modal>
+    </>
+  )
+}
+```
+
+- **受控状态**：父组件持有 `open`；`onClose` 必须将它设为 `false`。
+- **Escape**：Modal 已处理关闭；嵌套菜单会先消费 Escape，无须另加全局监听。
+- **初始焦点**：在目标元素上加 `data-modal-autofocus`，不要用 React `autoFocus`。
+- **关闭后焦点**：Modal 恢复打开前的焦点，通常就是打开按钮；应保持该按钮挂载。
+
+默认头部必须传 `title` 和本地化的 `closeLabel`。组件需在 DSH Web shell 内、通过已有页面或 slot 渲染，导入不会自动挂载。
+
+依据本地 [Modal 契约](/private<isolated-fixtures>/positive/.agents/skills/dsh-plugin-development/references/client/api/api-client-ui-primitives-modal.md)，适用 `0.2.1-rc.3`；当前未安装依赖，未做浏览器运行验证。

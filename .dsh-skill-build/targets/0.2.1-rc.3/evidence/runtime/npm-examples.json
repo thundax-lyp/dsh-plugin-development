@@ -1,0 +1,50 @@
+[
+    {
+        "package": "@deepseek-ai/cordis@4.0.5",
+        "status": 0,
+        "result": "\"4.0.5\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-fs@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-storage-domain@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-web@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-client-ui-primitives@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-typert-generator@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-llm@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    },
+    {
+        "package": "@deepseek-ai/dsh-skill@0.2.1-rc.3",
+        "status": 0,
+        "result": "\"0.2.1-rc.3\"",
+        "error": ""
+    }
+]

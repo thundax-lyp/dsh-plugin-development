@@ -1,0 +1,81 @@
+{
+    "task": "client-ui-tool",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-tool/src/client/apply.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/ask-question-row.tsx",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/bash-sample.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'bash', locale: NS }, BashRow))"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'create_goal', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'schedule_list', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'cordis_inspect_query', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'session_event_read', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'session_trace', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'send_message', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'job_kill', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'terminal_signal', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'team_task_create', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/details-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'wait_agent', locale: NS }, DetailsRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/file-mutation-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'edit', locale: NS }, FileMutationRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/read-image-row.tsx",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/read-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'read', locale: NS }, ReadRow))"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/search-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'grep', locale: NS }, SearchRow)"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/todo-row.tsx",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-tool/src/client/tool/toolviews/web-row.tsx",
+            "ctx.slots.register({ name: 'tool.call.toolview', key: 'web_search', locale: NS }, WebRow)"
+        ]
+    ]
+}

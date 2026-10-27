@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-sidebar-browser",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-sidebar-browser/src/client/index.ts",
+            "ctx.shortcuts.register({"
+        ],
+        [
+            "packages/client/ui-sidebar-browser/src/client/index.ts",
+            "ctx.locale.register(namespace, { zh, en }), 'ui-sidebar-browser.copy')"
+        ],
+        [
+            "packages/client/ui-sidebar-browser/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}

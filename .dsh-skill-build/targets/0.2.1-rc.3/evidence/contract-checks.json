@@ -1,0 +1,152 @@
+{
+    "schemaVersion": 1,
+    "assertions": [
+        {
+            "id": "register-indexed-callable",
+            "output": "references/client/api/api-client-ui-renderer-registry.md",
+            "includes": [
+                "readonly register: SlotCore['register']"
+            ],
+            "excludes": [
+                "readonly register: SlotCore;"
+            ]
+        },
+        {
+            "id": "resource-indexed-result",
+            "output": "references/client/api/api-client-resources-contract.md",
+            "includes": [
+                "RemoteResult<ResourceProtocolMap[P]>",
+                "readonly failure: RemoteFailure | undefined"
+            ]
+        },
+        {
+            "id": "settings-model-constructor",
+            "output": "references/client/api/api-client-ui-primitives-form-model.md",
+            "includes": [
+                "class SettingsFormModel<T>",
+                "constructor(scope: SettingsFormScope<T>, specs: SettingsFieldSpec[], secrets?: SettingsSecretSpec[])"
+            ]
+        },
+        {
+            "id": "provider-config-type-value",
+            "output": "references/host/api/api-capabilities-dsh-llm-deepseek-api-key.md",
+            "includes": [
+                "interface Config extends ProtocolConfig, ModelListingConfig",
+                "export declare const Config:"
+            ],
+            "excludes": [
+                "string（由包提供的只读文本常量"
+            ],
+            "section": "Config（.）"
+        },
+        {
+            "id": "shell-result-method",
+            "output": "references/infra/how-to/how-to-runtime-shell.md",
+            "includes": [
+                "execution.result()",
+                "不再装载 bash-local"
+            ],
+            "excludes": [
+                "给 Profile 装载 subprocess-local 与 bash-local"
+            ]
+        },
+        {
+            "id": "existing-profile-reuse",
+            "output": "references/infra/how-to/how-to-core-profile.md",
+            "includes": [
+                "在已有 Profile 中复用或替换服务",
+                "config",
+                "disabled: true",
+                "local-bash-replacement"
+            ]
+        },
+        {
+            "id": "goal-base-reuse",
+            "output": "references/host/how-to/how-to-capabilities-dsh-goal.md",
+            "includes": [
+                "base 已声明本包",
+                "只添加自己的贡献插件",
+                "how-to-core-profile.md#在已有-profile-中复用或替换服务"
+            ]
+        },
+        {
+            "id": "remote-generation-and-mount",
+            "output": "references/infra/examples/example-core-remote.md",
+            "includes": [
+                "typertPlugin",
+                "workspace",
+                "faces:['host']",
+                "$mount",
+                "ctx.inject",
+                "reverse()",
+                "./types"
+            ]
+        },
+        {
+            "id": "settings-edit-baseline",
+            "output": "references/client/how-to/how-to-client-ui-settings.md",
+            "includes": [
+                "首次 edit/reset",
+                "baseline revision",
+                "冲突",
+                "保留草稿",
+                "example-client-settings.md"
+            ]
+        },
+        {
+            "id": "worker-library-path",
+            "output": "references/host/how-to/how-to-capabilities-dsh-experimental-webworker-runtime.md",
+            "includes": [
+                "本包是浏览器 Worker 运行库",
+                "connectWorkerHost",
+                "terminate()",
+                "../../infra/examples/example-worker-image.md"
+            ]
+        }
+    ],
+    "examples": [
+        {
+            "id": "api-contract-consumers",
+            "outputs": [
+                "references/client/api/api-client-ui-renderer-registry.md",
+                "references/host/api/api-capabilities-dsh-llm-deepseek-api-key.md"
+            ],
+            "script": "fixes-20261027/api-verify.mjs",
+            "inputs": [
+                "fixes-20261027/api-declaration-observations.json",
+                "fixes-20261027/api-member-ownership.json",
+                "fixes-20261027/api-dependent-declarations.json"
+            ],
+            "args": [
+                "--skill",
+                "{skill}"
+            ],
+            "timeoutMs": 180000
+        },
+        {
+            "id": "new-remote-contract",
+            "outputs": [
+                "references/infra/examples/example-core-remote.md"
+            ],
+            "script": "fixes-20261027/remote-check.mjs",
+            "args": [
+                "--example",
+                "{example}"
+            ],
+            "timeoutMs": 300000
+        },
+        {
+            "id": "settings-and-worker-examples",
+            "outputs": [
+                "references/client/examples/example-client-settings.md",
+                "references/infra/examples/example-worker-image.md"
+            ],
+            "script": "fixes-20261027/settings-worker-check.mjs",
+            "args": [
+                "--skill",
+                "{skill}"
+            ],
+            "timeoutMs": 180000
+        }
+    ]
+}

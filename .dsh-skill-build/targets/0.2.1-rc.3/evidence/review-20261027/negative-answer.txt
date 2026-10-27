@@ -1,0 +1,26 @@
+项目虽依赖 `@deepseek-ai/dsh-agent`，但这次只是普通 HTTP 请求，不适用 DSH Skill，无需读取框架资料。
+
+Node.js 18+ 可直接使用内置 `fetch`：
+
+```js
+async function main() {
+  const response = await fetch("https://api.example.com/data", {
+    headers: { Accept: "application/json" },
+  });
+
+  if (response.status !== 200) {
+    const body = await response.text();
+    throw new Error(`HTTP ${response.status}: ${body}`);
+  }
+
+  const data = await response.json();
+  console.log(data);
+}
+
+main().catch((error) => {
+  console.error(error.message);
+  process.exitCode = 1;
+});
+```
+
+`fetch` 遇到非 200 状态不会自动抛错，需要显式检查；网络错误和 JSON 解析错误会由末尾的 `catch` 捕获。若希望接受所有 2xx 响应，将条件改为 `!response.ok`。

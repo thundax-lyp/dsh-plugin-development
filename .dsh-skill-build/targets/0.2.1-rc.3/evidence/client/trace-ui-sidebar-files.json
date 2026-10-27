@@ -1,0 +1,17 @@
+{
+    "task": "client-ui-sidebar-files",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-sidebar-files/src/client/index.ts",
+            "ctx.shortcuts.register({"
+        ],
+        [
+            "packages/client/ui-sidebar-files/src/client/index.ts",
+            "ctx.sidebarRightTabs.register(filesDefinition(t)), 'ui-sidebar-files: files type')"
+        ],
+        [
+            "packages/client/ui-sidebar-files/src/client/index.ts",
+            "ctx.slots.register("
+        ]
+    ]
+}

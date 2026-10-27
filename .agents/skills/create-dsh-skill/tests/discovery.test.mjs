@@ -136,6 +136,14 @@ test("public API discovery follows re-exports and lists members", (t) => {
         join(checkoutPath, "packages/tool/src/types.ts"),
         "export interface Tool { name: string; run(input: string): Promise<void> }\nexport class Driver { private secret = 1; protected helper() {} public run() {} *[Symbol.iterator]() { yield 1 } }\n",
     );
+    const longFields = Array.from(
+        { length: 50 },
+        (_, index) => `field${index}: string`,
+    ).join("; ");
+    write(
+        join(checkoutPath, "packages/tool/src/index.ts"),
+        `export * from './types.ts'\nexport interface Untruncated { run(input: { ${longFields} }): void }\n`,
+    );
     const provenance = {
         version: "1.0.0",
         tag: "dsh-v1.0.0",
@@ -146,11 +154,27 @@ test("public API discovery follows re-exports and lists members", (t) => {
         join(evidencePath, "api-entry-candidates.json"),
         `${JSON.stringify({ schemaVersion: 1, ...provenance, candidates: [{ id: "export:@deepseek-ai/dsh-tool:.", package: "@deepseek-ai/dsh-tool", subpath: ".", path: "packages/tool/package.json", declaration: { types: "./lib/types/index.d.ts" } }] })}\n`,
     );
+    // Ignored build output must not replace authored entrypoint evidence.
+    write(
+        join(checkoutPath, "packages/tool/lib/types/index.d.ts"),
+        "export interface WrongBuiltType { stale: true }\n",
+    );
     const result = discoverPublicApiMembers({
         checkoutPath,
         evidencePath,
         provenance,
     });
+    assert.equal(result.entries[0].source, "packages/tool/src/index.ts");
+    assert(
+        !result.entries[0].symbols.some(
+            (item) => item.name === "WrongBuiltType",
+        ),
+    );
+    const long = result.entries[0].symbols.find(
+        (item) => item.name === "Untruncated",
+    );
+    assert(long.members[0].signature.includes("field49"));
+    assert(!long.members[0].signature.includes("..."));
     const tool = result.entries[0].symbols.find((item) => item.name === "Tool");
     assert.deepEqual(
         tool.members.map((member) => member.name),

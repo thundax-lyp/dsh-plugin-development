@@ -1,0 +1,61 @@
+{
+    "task": "client-ui-chat",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-chat: dictionaries')"
+        ],
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.slots.registerFactory({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/apply.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.registerFactory({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.register({"
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.register("
+        ],
+        [
+            "packages/client/ui-chat/src/client/chat/register-node-renderers.ts",
+            "ctx.slots.register("
+        ]
+    ]
+}

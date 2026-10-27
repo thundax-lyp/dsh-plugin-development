@@ -173,3 +173,11 @@ node .agents/skills/create-dsh-skill/scripts/validate-skill-source.mjs <target> 
 结构门禁通过后，维护者仍须逐条走查主要插件任务：入口任务能否到达 HOW-TO，并在需要代码时从对应步骤到达 example；对象索引能否到达权威 API 契约；代码及配置是否构成最小完整包，是否写明安装/装载、失败/取消/卸载及完成判据。缺少可公开验证的外部安装路径时，明确标注尚不能提供可直接运行的独立项目 example；不要以示例编译通过代替装载证明。人工检查的结果与尚未验证的路径写入交付报告。
 
 再按[有限压缩与完整性](reference-template.md#有限压缩与完整性)审阅每个纳入和合并的入口：以公开 API 成员底账逐项核对正文归属或具体排除理由，正文是否保留完成任务所需的对象类型、属性和特有契约，跨入口合并是否有语义依据，example 是否因追求短篇幅被裁成片段。逐成员按[废弃筛选](reference-template.md#废弃筛选)核查标记范围；可用父类型与待废弃成员不能一起被误删或一起写入常规指导。再从正文反查每个 API 的公开声明来源。冻结器检查发现范围、裁决状态、链接和可识别的 `@deprecated` 标记，不衡量文档是否足够详细、不能发现所有“待废弃”措辞或证明业务步骤可运行；不能用它的 PASS 代替这项审稿。
+
+## 契约回归与多文件示例
+
+对公开签名失真、重复装载、生成链或异步状态等已确认风险，在 `evidence/contract-checks.json` 记录定向断言。格式为 `schemaVersion: 1`、`assertions` 和 `examples`：正文断言包含唯一 `id`、映射后的 `output`、可选 `section`、必需 `includes` 和可选 `excludes`；比较时只归一化空白，不替换类型语义。断言来自精确源码的人工裁决，不替代源码取证。真实 API 的 any 或长文本常量应保留；禁止把无法解析或过长的签名直接写成 any/string，或静默截断 callable。重导出可链接同版本的完整权威段，须保留 type/value、运行侧及相应声明导入条件。
+
+`examples` 每项包含唯一 `id`、`outputs`（manifest 中的 API、HOW-TO 或 example 输出）、`script`（相对 evidence 的普通 .mjs 文件）、`args`、`inputs`（可选辅助输入）和 `timeoutMs`（1—300000）。参数 `{skill}` 替换为被检查目录，`{example}` 替换为第一项输出文件。脚本必须从该目录提取实际文件进行编译或构建，不得回退到正式目录、素材或伪造的 Remote 声明。stdout 只输出一份 JSON，包含非负整数 `hostBlocks`、`clientBlocks` 与非空 `checks`，每项检查均须 true。报告区分普通声明编译、构建配置执行、真实装载和行为，不把文件计数当运行证明。
+
+冻结锁定清单、脚本和辅助输入的哈希；锁定后删除清单或修改任一输入会失败。旧冻结目标未配置此清单时维持原检查。源码冻结检查正文断言；`check_examples.cjs` 在显式生成目录及正式目录检查中运行对应验证器。多文件示例可以用 `ts 任务名:host` / `tsx 任务名:client` 标记需要联合生成与编译的块；只有配置了冻结验证器的 example 才能使用这些标记，未分配的 TypeScript fence 仍失败。普通 ts/tsx 继续按运行侧检查，不以将代码改成 text/javascript 来回避类型检查。

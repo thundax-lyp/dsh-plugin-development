@@ -50,3 +50,41 @@ export function markdownSection(text, title, anchor) {
             .trim(),
     };
 }
+
+// API contracts live in code fences. Keep their content while ignoring
+// headings inside those fences when locating the owning Markdown section.
+export function markdownSectionWithCode(text, title) {
+    const lines = text.split("\n");
+    let fence,
+        start,
+        level,
+        end = lines.length,
+        matches = 0;
+    for (let index = 0; index < lines.length; index++) {
+        const marker = lines[index].match(/^(`{3,}|~{3,})/);
+        if (marker) {
+            if (!fence) fence = marker[1];
+            else if (marker[1] === fence) fence = undefined;
+            continue;
+        }
+        if (fence) continue;
+        const heading = lines[index].match(/^(#{1,6})\s+(.+?)\s*#*$/);
+        if (!heading) continue;
+        if (
+            start !== undefined &&
+            end === lines.length &&
+            heading[1].length <= level
+        )
+            end = index;
+        if (heading[2] === title) {
+            matches++;
+            if (start === undefined) {
+                start = index + 1;
+                level = heading[1].length;
+            }
+        }
+    }
+    return matches === 1
+        ? { level, content: lines.slice(start, end).join("\n").trim() }
+        : undefined;
+}

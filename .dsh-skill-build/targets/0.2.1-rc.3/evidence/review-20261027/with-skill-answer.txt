@@ -1,0 +1,31 @@
+已按 EVALUATION.md 完成只读审核。**公开 API 用法基本匹配 rc.3，但发现 3 项应修正的交互／生命周期问题，另有 1 项列表状态问题。** 以下均有静态代码证据；尚未在浏览器复现。
+
+1. **[P2] 并发复制会产生多个计时器，旧结果可能覆盖新反馈。**
+   [SessionIdPanel.tsx:69](<isolated-fixtures>/with-skill/packages/dsh-session-id/src/client/SessionIdPanel.tsx:69) 仅在点击时清理计时器。连续点击 A、B，若两次 Promise 都尚未完成，两次成功回调仍各自创建计时器；后创建者覆盖保存的句柄，较早计时器可能提前清除新反馈。旧请求晚到的失败也能覆盖新成功。
+   **最小修正：**用递增请求序号，仅允许最新请求更新状态；成功回调创建计时器前再清理旧句柄。补 deferred Promise 测试，覆盖连续点击、逆序完成及成功／失败交错。
+
+2. **[P2] 等待复制时关闭面板或卸载，晚到成功仍会创建计时器。**
+   [SessionIdPanel.tsx:65](<isolated-fixtures>/with-skill/packages/dsh-session-id/src/client/SessionIdPanel.tsx:65) 的 cleanup 只能清理当时已有的计时器；未完成 Promise 随后仍执行 `setStatus` 和 `setTimeout`。关闭面板、过滤掉该行、插件卸载均可能触发。不能据此声称 React 会崩溃，但确有卸载后异步工作残留。
+   **最小修正：**cleanup 标记 owner 已失效并使请求序号失效；所有完成分支检查 owner 和序号。`writeClipboard` 无取消参数，只能忽略晚到结果，不能承诺撤回已发出的系统复制。
+   现有[生命周期测试:251](<isolated-fixtures>/with-skill/packages/dsh-session-id/tests/session-id-panel.spec.tsx:251) 都先等待复制完成，未覆盖上述窗口。
+
+3. **[P2] 自制弹窗缺少键盘和焦点生命周期。**
+   [SessionIdEntry.tsx:49](<isolated-fixtures>/with-skill/packages/dsh-session-id/src/client/SessionIdEntry.tsx:49) 自建 portal；[SessionIdPanel.tsx:138](<isolated-fixtures>/with-skill/packages/dsh-session-id/src/client/SessionIdPanel.tsx:138) 只有遮罩／关闭按钮，没有 Escape、初始焦点、Tab 圈定和关闭后恢复焦点的实现。`aria-modal` 本身不提供这些行为。
+   **最小修正：**复用公开 `Modal`，传入 `open`、`onClose`、本地化 `title`、`closeLabel`，搜索框标记 `data-modal-autofocus`，移除重复 portal／遮罩；复制请求的清理仍由业务组件负责。
+
+4. **[P2] 首次列表尚未到达时误报“暂无会话”。**
+   [SessionIdPanel.tsx:163](<isolated-fixtures>/with-skill/packages/dsh-session-id/src/client/SessionIdPanel.tsx:163) 忽略 `snapshot.phase`。SDK 明确区分 `pending` 和 `ready`；首次成功拉取前的空列表不能证明没有会话。
+   **最小修正：**`pending` 显示加载状态，仅在 `ready` 且无行时显示空状态；补 pending→ready 测试。
+
+公开入口核对结果：
+
+| 项目 | 准确入口与结论 |
+|---|---|
+| Sidebar | `@deepseek-ai/dsh-client-ui-sidebar/client` 提供契约扩展；`sidebar.footer.action` 为 root/list slot，owner 传 `wide: boolean`。现有 `ctx.slots.inject` → `register({name,id,locale,inject}, Component)` 匹配。 |
+| 会话列表 | `@deepseek-ai/dsh-api-session-controller/client` 的 `ISessions.list` 为 `ObservableSnapshot<SessionListState>`；`getSnapshot()` 和返回 unsubscribe 的 `subscribe(fn)` 匹配现有 `useSyncExternalStore`。按 `ids` 取列表成员正确，`byId` 还可能包含额外 fallback。 |
+| 弹窗 | `@deepseek-ai/dsh-client-ui-primitives` 根导出 `Modal`；本地实现调用 `useModalLayer`，提供 Escape、Tab 和焦点恢复。 |
+| 剪贴板 | 同一根入口导出 `writeClipboard(text: string): Promise<boolean>`。现有用户点击触发及 false／reject 失败反馈正确。实现优先使用 Clipboard API；仅在 API 缺失时回退 `execCommand`，权限拒绝返回 false。 |
+
+**卸载链静态核对通过：**本地 renderer 将 `slots.inject`、`slots.register` 纳入 Cordis effect；字典注册也返回 disposer。React 面板卸载会释放列表订阅，portal 随 owner 移除。未发现“未保存 register 返回值就必然泄漏”的问题；复制 Promise 是上述独立缺口。
+
+**检查边界：**本地元数据确认相关 SDK 为 `0.2.1-rc.3`、Cordis 为 `4.0.5`。直接运行 TypeScript（禁用增量写入）及 Vitest 后，两者均因缺少 `@testing-library/react` 受阻；Vitest 两个 suite 均未执行测试断言。这是副本依赖限制，不是插件失败证据。未联网、安装依赖或修改源文件；浏览器装载、真实剪贴板权限、焦点和停用行为仍待验证。

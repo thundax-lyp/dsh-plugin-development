@@ -1,0 +1,13 @@
+{
+    "task": "client-ui-approval",
+    "runtimeRegistrationSites": [
+        [
+            "packages/client/ui-approval/src/client/index.ts",
+            "ctx.locale.register(NS, { zh, en }), 'ui-approval: dictionaries')"
+        ],
+        [
+            "packages/client/ui-approval/src/client/index.ts",
+            "ctx.slots.register({"
+        ]
+    ]
+}
