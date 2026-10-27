@@ -34,12 +34,10 @@ function sourceFor(checkoutPath, candidate) {
     const possibilities = [];
     if (typePath && !typePath.includes("*")) {
         const clean = typePath.replace(/^\.\//, "");
-        possibilities.push(clean);
-        possibilities.push(
-            clean
-                .replace(/^lib\/types\//, "src/")
-                .replace(/\.d\.[cm]?ts$/, ".ts"),
-        );
+        const authored = clean
+            .replace(/^lib\/types\//, "src/")
+            .replace(/\.d\.[cm]?ts$/, ".ts");
+        if (!authored.startsWith("lib/")) possibilities.push(authored);
     }
     possibilities.push(
         `src/${subpath}.ts`,
@@ -47,6 +45,12 @@ function sourceFor(checkoutPath, candidate) {
         `src/${subpath}/index.ts`,
         `src/${subpath}/index.tsx`,
     );
+    // Prefer authored sources. A local declaration build must not replace the
+    // target's tracked evidence with ignored lib/types artifacts.
+    if (typePath && !typePath.includes("*")) {
+        const clean = typePath.replace(/^\.\//, "");
+        if (!clean.startsWith("lib/")) possibilities.push(clean);
+    }
     for (const path of possibilities) {
         const full = resolve(checkoutPath, packageRoot, path);
         if (
@@ -134,7 +138,11 @@ export function discoverPublicApiMembers(target) {
             let signature = "unknown";
             try {
                 const type = checker.getDeclaredTypeOfSymbol(symbol);
-                signature = checker.typeToString(type);
+                signature = checker.typeToString(
+                    type,
+                    undefined,
+                    ts.TypeFormatFlags.NoTruncation,
+                );
                 members = checker
                     .getPropertiesOfType(type)
                     .flatMap((member) => {
@@ -164,6 +172,8 @@ export function discoverPublicApiMembers(target) {
                                         member,
                                         memberDeclaration,
                                     ),
+                                    undefined,
+                                    ts.TypeFormatFlags.NoTruncation,
                                 ),
                                 deprecated: member
                                     .getJsDocTags(checker)
